@@ -17,7 +17,9 @@
   "dependencies": {
     "hono": "4.8.2",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "posthog-js": "^1.118.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.7.5",

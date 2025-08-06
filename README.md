@@ -88,3 +88,13 @@ npx wrangler tail
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [React Documentation](https://reactjs.org/)
 - [Hono Documentation](https://hono.dev/)
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and fill in:
+
+- `VITE_POSTHOG_KEY` – PostHog project key
+- `VITE_POSTHOG_HOST` – PostHog instance URL (defaults to `https://app.posthog.com`)
+- `VITE_SUPABASE_URL` – Supabase project URL
+- `VITE_SUPABASE_ANON_KEY` – Supabase public anon key
+- `VITE_STRIPE_PAYMENT_LINK` – Stripe payment link used for early access checkout
