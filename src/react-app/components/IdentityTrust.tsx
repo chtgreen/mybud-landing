@@ -11,7 +11,7 @@ const IdentityTrust: FC = () => {
         style={{ color: 'var(--text-zinc-800)' }}
       >
             <span className="block">{t('identityTrust.title1')}</span>
-            <span className="block">{t('identityTrust.title2')}</span>
+            {t('identityTrust.title2') && <span className="block">{t('identityTrust.title2')}</span>}
           </h2>
           <p 
             className="text-lg leading-relaxed max-w-2xl mx-auto"

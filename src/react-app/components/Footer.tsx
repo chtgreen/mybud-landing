@@ -17,6 +17,14 @@ const Footer: FC = () => {
     {
       questionKey: 'footer.faq3.question',
       answerKey: 'footer.faq3.answer'
+    },
+    {
+      questionKey: 'footer.faq4.question',
+      answerKey: 'footer.faq4.answer'
+    },
+    {
+      questionKey: 'footer.faq5.question',
+      answerKey: 'footer.faq5.answer'
     }
   ];
 

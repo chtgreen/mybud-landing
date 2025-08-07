@@ -13,14 +13,16 @@ import BetaSignup from '../components/BetaSignup';
 import ComingSoon from '../components/ComingSoon';
 import Footer from '../components/Footer';
 import PaymentModal from '../components/PaymentModal';
+import BetaModal from '../components/BetaModal';
 
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
+  const [betaModalOpen, setBetaModalOpen] = useState(false);
   const { isLoading } = useLanguage();
 
   const handleCTAClick = () => {
-    posthog.capture('cta_clicked');
-    setPaymentOpen(true);
+    posthog.capture('hero_cta_clicked');
+    setBetaModalOpen(true);
   };
 
   // Show loading while language is being initialized
@@ -52,6 +54,10 @@ const LandingPage = () => {
         open={paymentOpen}
         onClose={() => setPaymentOpen(false)}
         stripeLink={import.meta.env.VITE_STRIPE_PAYMENT_LINK as string}
+      />
+      <BetaModal
+        open={betaModalOpen}
+        onClose={() => setBetaModalOpen(false)}
       />
     </>
   );

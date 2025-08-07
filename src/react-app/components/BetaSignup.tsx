@@ -10,9 +10,8 @@ const BetaSignup: FC = () => {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!email || isSubmitting) return;
-    
+    if (!email.trim()) return;
+
     setIsSubmitting(true);
 
     try {
@@ -20,9 +19,9 @@ const BetaSignup: FC = () => {
         .from('beta_signups')
         .insert([
           {
-            email,
-            instagram: instagram || null,
-            source: 'landing_page'
+            email: email.trim(),
+            instagram: instagram.trim() || null,
+            created_at: new Date().toISOString(),
           }
         ]);
 
@@ -30,26 +29,25 @@ const BetaSignup: FC = () => {
 
       // Track successful signup
       if (typeof posthog !== 'undefined') {
-        posthog.capture('beta_signup_completed', {
+        posthog.capture('newsletter_signup_completed', {
           email,
           has_instagram: !!instagram,
+          source: 'beta_section'
         });
       }
 
       // Show success message
       alert(t('betaSignup.successMessage'));
-      
-      // Reset form
       setEmail('');
       setInstagram('');
-      
     } catch (error) {
-            console.error('Error:', error);
+      console.error('Error:', error);
       alert(t('betaSignup.errorMessage'));
 
       if (typeof posthog !== 'undefined') {
-        posthog.capture('beta_signup_error', {
+        posthog.capture('newsletter_signup_error', {
           error: error instanceof Error ? error.message : 'Unknown error',
+          source: 'beta_section'
         });
       }
     } finally {
@@ -58,90 +56,47 @@ const BetaSignup: FC = () => {
   };
 
   return (
-    <section id="beta-form" className="py-20 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12">
-          <h2 
-            className="text-2xl md:text-3xl font-medium mb-6"
-            style={{ color: 'var(--text-zinc-800)' }}
-          >
-            {t('betaSignup.title')}
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {t('betaSignup.newsletterTitle')}
           </h2>
-          <p 
-            className="text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: 'var(--text-zinc-600)' }}
-          >
-            {t('betaSignup.subtitle')}
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('betaSignup.newsletterDesc')}
           </p>
         </div>
 
-        <div className="max-w-md mx-auto">
-          <div className="card p-6">
-            <form onSubmit={submit} className="space-y-4" id="beta-form-submit">
-              <div>
-                <input
-                  type="email"
-                  id="beta-email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t('betaSignup.emailPlaceholder')}
-                  required
-                  disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-lg border transition"
-                  style={{
-                    borderColor: 'var(--border-zinc-200)',
-                    background: 'var(--bg-white)',
-                    color: 'var(--text-zinc-800)'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = 'var(--emerald-600)'}
-                  onBlur={(e) => e.target.style.borderColor = 'var(--border-zinc-200)'}
-                />
-              </div>
+        <form onSubmit={submit} className="max-w-lg mx-auto space-y-4">
+          <input
+            type="email"
+            placeholder={t('betaSignup.emailPlaceholder')}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            required
+          />
+          
+          <input
+            type="text"
+            placeholder={t('betaSignup.instagramPlaceholder')}
+            value={instagram}
+            onChange={(e) => setInstagram(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+          />
 
-              <div>
-                <input
-                  type="text"
-                  id="beta-instagram"
-                  value={instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
-                  placeholder={t('betaSignup.instagramPlaceholder')}
-                  disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-lg border transition"
-                  style={{
-                    borderColor: 'var(--border-zinc-200)',
-                    background: 'var(--bg-white)',
-                    color: 'var(--text-zinc-800)'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = 'var(--emerald-600)'}
-                  onBlur={(e) => e.target.style.borderColor = 'var(--border-zinc-200)'}
-                />
-              </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full btn-primary py-3 px-6 disabled:opacity-50"
+          >
+            {isSubmitting ? 'Enviando...' : t('betaSignup.button')}
+          </button>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-primary mt-6 text-lg py-4"
-              >
-                {isSubmitting ? '...' : t('betaSignup.button')}
-              </button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <a
-                href="#"
-                className="text-emerald text-sm font-medium"
-              >
-                {t('betaSignup.vipLink')}
-              </a>
-              <p
-                className="text-xs mt-4"
-                style={{ color: 'var(--text-slate-500)' }}
-              >
-                {t('betaSignup.privacy')}
-              </p>
-            </div>
-          </div>
-        </div>
+          <p className="text-xs text-gray-500 text-center">
+            {t('betaSignup.privacy')}
+          </p>
+        </form>
       </div>
     </section>
   );

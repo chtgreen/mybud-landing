@@ -2,11 +2,11 @@
   "hero": {
     "title1": "My Bud.",
     "title2": "Você cuida das plantas.",
-    "title3": "Nós cuidamos do resto.",
-    "subtitle": "Organize e simplifique todas as etapas do cultivo. O app que te acompanha da germinação até a extração.",
-    "primaryCta": "Assine agora",
+    "title3": "A gente cuida do resto.",
+    "subtitle": "Organize seu cultivo do jeito certo, sem gambiarra nem estresse. Tudo o que você precisa — na palma da mão.",
+    "primaryCta": "Quero entrar pro beta",
     "secondaryCta": "Assista à demo",
-    "trustElement": "Junte-se a comunidade grower que mais cresce no Brasil.",
+    "trustElement": "Vagas limitadas. Ganha acesso ao beta + 6 meses de premium após o lançamento.",
     "phone": {
       "plants": "Plantas",
       "subtitle": "Acompanhe o desenvolvimento",
@@ -22,49 +22,53 @@
     }
   },
   "features": {
-    "title": "Nunca mais perca uma planta de bobeira",
-    "subtitle": "Tudo que você precisa para simplificvar seu cultivo e turbinar suas colheitas.",
+    "title": "Nunca mais se perca no seu cultivo",
+    "subtitle": "Lembretes, organização por estágios, stickers automáticos nos vídeos e tudo mais que um grower precisa pra manter o controle sem complicação.",
     "journal": {
-      "title": "Diário de cultivo integrado",
-      "description": "Videos, fotos, notas, progresso, você manda o app organiza o histórico, por planta, grow e vaso."
+      "title": "Funciona do seu jeito",
+      "description": "Anote por voz, registre com fotos ou vídeos, personalize como quiser. Nada é obrigatório — mas tudo pode ser registrado."
     },
     "voice": {
-      "title": "Anotações por voz",
-      "description": "Mãos na terra? Apenas fale. Diga o que fez, e o app transcreve e organiza tudo no diário da sua planta."
+      "title": "Do balde à estufa",
+      "description": "Se seu grow é no armário ou no sistema mais avançado, o My Bud se adapta. A gente te ajuda a tirar o melhor do que você já tem."
     },
     "alerts": {
-      "title": "Alertas inteligentes",
-      "description": "Seja lembrado na hora certa. Receba notificações personalizadas de rega, nutrientes, e mudanças de fotoperíodo, sua planta cresce e o app se adapta a sua planta."
+      "title": "Dias de vida e estágios visíveis sempre",
+      "description": "Saiba exatamente em que fase cada planta está e quantos dias faltam para cada etapa importante."
     },
     "guides": {
-      "title": "Guias para iniciantes",
-      "description": "Começando agora? MyBud te guia em cada passo com dicas práticas e sem julgamentos, para sua primeira colheita ser um sucesso."
+      "title": "Sticker automático nos vídeos da planta",
+      "description": "Cada vídeo recebe automaticamente um sticker com estágio, data e informações da planta. Perfeito para o Instagram."
     }
   },
   "appShowcase": {
     "title": "Veja o My Bud em ação",
     "subtitle": "Clique nas funcionalidades para ver como o My Bud simplifica cada etapa do seu cultivo",
     "dashboard": {
-      "title": "Dashboards intuitivos",
-      "desc": "Acompanha suas áreas de cultivos, plantas e vasos, com visões gerais no dashboard. Todas informações importantes de forma rápida, clar e organizada."
+      "title": "Tarefas recorrentes com lembrete",
+      "desc": "Configure tarefas que se repetem automaticamente e receba lembretes na hora certa. Nunca mais esqueça a rega ou nutrição."
     },
     "voice": {
-      "title": "Documente por voz e video",
-      "desc": "Mãos na terra? Apenas fale. Quer documentar seu manejo com video? Toque e grave. O app transcreve e organiza tudo no diário da sua planta. Quer conversar com sua planta como se foste um whatsapp? Toque e fale. O app transcreve e organiza tudo no diário da sua planta."
+      "title": "Registro de voz, texto, foto ou vídeo",
+      "desc": "Registre do seu jeito: fale, escreva, fotografe ou filme. Tudo fica organizado automaticamente no histórico da planta."
+    },
+    "qr": {
+      "title": "QR Code por planta",
+      "desc": "Aponte a câmera e o app reconhece sua planta na hora. Sem confusão, tudo organizado."
     },
     "alerts": {
-      "title": "Alertas inteligentes",
-      "desc": "Receba lembretes personalizados para rega, nutrientes e mudanças de fotoperíodo. Nunca mais esqueça nada."
+      "title": "Histórico completo da planta",
+      "desc": "Veja toda a jornada da sua planta em uma timeline organizada. Cada registro, foto e vídeo no lugar certo."
     },
     "journal": {
-      "title": "Diário de cultivo",
-      "desc": "Histórico completo e organizado de cada etapa. Acompanhe a evolução e aprenda com cada ciclo."
+      "title": "Timeline organizada do seu cultivo",
+      "desc": "Visualize todo o progresso do seu cultivo em uma linha do tempo clara e organizada. Do plantio à colheita."
     }
   },
   "identityTrust": {
-    "title1": "Pensado por growers,",
-    "title2": "para growers",
-    "description": "O My Bud é o parceiro digital de quem leva o cultivo a sério e quer colher mais buds, com menos estresse.",
+    "title1": "Feito por quem cultiva.",
+    "title2": "",
+    "description": "O My Bud nasceu da frustração de quem esqueceu a última rega, perdeu o dia da virada da flora ou confundiu genética. É um diário esperto, que entende sua rotina — com leveza, privacidade e respeito à sua liberdade de cultivar.",
     "private": {
       "title": "100% privado",
       "desc": "Seus dados ficam no seu dispositivo. Sempre."
@@ -82,31 +86,61 @@
     "title": "Amado pelos growers",
     "subtitle": "Não acredite só na nossa palavra. Veja o que os primeiros testers acharam.",
     "1": {
-      "text": "\"Nunca mais esqueci uma rega. A simplicidade dos alertas salvou meu ciclo. Indispensável.\"",
+      "text": "\"Coloquei uma nota por voz dizendo 'regar planta 2 com FPJ' e virou tarefa. Muito bom.\"",
       "author": "@cutlvar",
       "location": "São Paulo"
     },
     "2": {
-      "text": "\"Até meu cultivo improvisado ficou pro. Saber a fase exata de cada planta mudou o jogo.\"",
+      "text": "\"Agora eu sei exatamente quantos dias de flora tem cada planta. Finalmente!\"",
       "author": "marina",
       "location": "Rio de Janeiro"
     },
     "3": {
-      "text": "\"Mais fácil que planilha e muito mais bonito. A anotação por voz é genial.\"",
+      "text": "\"Com o sticker no vídeo eu consigo lembrar qual planta é qual. E ficou massa no Insta.\"",
       "author": "carlos",
       "location": "Belo Horizonte"
     }
   },
   "betaSignup": {
-    "title": "Garanta seu acesso à beta e receba atualizações exclusivas",
-    "subtitle": "Junte-se à primeira onda de growers que estão moldando o futuro do cultivo. Você terá acesso antecipado, vantagens exclusivas e nossa eterna gratidão.",
+    "title": "Faça parte dos 100 primeiros e receba o que ninguém mais vai ter.",
+    "subtitle": "Estamos construindo o My Bud junto com a comunidade — testando tudo em tempo real, com transparência total. É DIY, feito em público, do nosso jeito.",
+    "benefits": {
+      "title": "Quem apoia agora recebe:",
+      "premium": "6 meses de premium após o lançamento",
+      "kit": "Kit com camiseta, adesivos e QR Codes personalizados com a sua logo",
+      "access": "Acesso ao Close Friends no Instagram e ao Discord exclusivo de desenvolvimento",
+      "priority": "Prioridade nos testes e nas novas funcionalidades"
+    },
+    "qrDescription": "O QR Code identifica a planta automaticamente com o app. Você cola no vaso e nunca mais esquece a genética ou estágio. Só os 100 primeiros terão a versão com a própria logo.",
+    "supportButton": "Quero apoiar e garantir meu lugar",
+    "newsletterButton": "Só quero receber novidades por e-mail",
+    "newsletterTitle": "Quer ter acesso ao beta?",
+    "newsletterDesc": "Sem problema. Deixe seu contato e a gente te envia as novidades, vídeos dos bastidores e possivelmente um convite pro acesso antecipado gratuito quando rolar.",
     "emailPlaceholder": "Seu melhor email",
     "instagramPlaceholder": "@seu_instagram (opcional, para VIPs)",
     "button": "Quero testar o app",
-    "vipLink": "Não quer testar? Entrar na lista VIP para novidades",
     "privacy": "Apenas dicas boas. Nada de spam. Respeitamos sua privacidade.",
     "successMessage": "Obrigado! Você está na lista da beta. 🌱",
     "errorMessage": "Algo deu errado. Tente novamente."
+  },
+  "paymentModal": {
+    "title": "Você está entrando no grupo de fundadores do My Bud.",
+    "subtitle": "O app está sendo feito em público, com quem cultiva de verdade.",
+    "price": "Se você apoiar agora com R$ 300, recebe:",
+    "benefits": {
+      "earlyAccess": "Ganha acesso ao beta",
+      "premium": "6 meses de premium após o lançamento",
+      "kit": "Kit com camiseta, adesivos e QR Codes com sua logo",
+      "community": "Acesso ao Close Friends e Discord do time",
+      "decisions": "Participação nas decisões do desenvolvimento"
+    },
+    "launch": "Lançamento oficial estimado: Novembro 2025.",
+    "paymentTitle": "Como apoiar:",
+    "paymentMethod": "Chave Pix: pix@mybud.app",
+    "paymentInstruction": "Envie o comprovante para:",
+    "whatsapp": "WhatsApp: +55 48 3199-2171",
+    "followUp": "Após receber o comprovante, entraremos em contato para confirmar tudo e enviar o kit.",
+    "closeButton": "Fechar"
   },
   "comingSoon": {
     "title": "Em breve nas suas lojas favoritas",
@@ -120,16 +154,24 @@
     "tagline": "Seu parceiro digital de cultivo.",
     "faqTitle": "Dúvidas frequentes",
     "faq1": {
-      "question": "É seguro para growers no Brasil?",
-      "answer": "Sim. Segurança é nossa prioridade #1. Não pedimos seu nome, CPF ou dados pessoais. Todas as informações do seu grow são privadas, criptografadas e pertencem apenas a você."
+      "question": "O app é gratuito?",
+      "answer": "Você vai poder usar de graça, com limite de plantas. Quem entrar no beta recebe acesso premium liberado por 6 meses."
     },
     "faq2": {
-      "question": "O aplicativo é gratuito?",
-      "answer": "O acesso beta é 100% gratuito e sem pegadinhas. No futuro, teremos uma versão PRO com funcionalidades avançadas, mas sempre haverá um plano gratuito para te ajudar a organizar seu cultivo."
+      "question": "Funciona offline?",
+      "answer": "Por enquanto, não. Mas estamos otimizando tudo pra funcionar rápido e leve mesmo com internet ruim."
     },
     "faq3": {
-      "question": "Preciso fornecer meus dados pessoais?",
-      "answer": "Não. Apenas um email é necessário para criar sua conta e garantir que só você tenha acesso a ela. Seu anonimato e privacidade são fundamentais para nós."
+      "question": "É seguro usar?",
+      "answer": "A real: não existe anonimato 100%. A gente salva o mínimo possível, mas seu IP ainda passa por nossos servidores. Infelizmente, o silêncio ainda é a melhor proteção do grower — e a gente respeita isso. Nada é compartilhado. A lei obriga a guardar alguns dados, e a gente segue o que for preciso. Mas você decide o que registra ou não."
+    },
+    "faq4": {
+      "question": "Preciso mostrar minhas plantas?",
+      "answer": "Não. Pode registrar tudo sem tirar uma foto sequer. Tudo é opcional."
+    },
+    "faq5": {
+      "question": "Posso usar só pra organizar sem anotar tudo?",
+      "answer": "Claro. Se quiser só ver os dias de flora e saber quando colher, já vale."
     },
     "privacy": "Política de privacidade",
     "terms": "Termos de serviço",
