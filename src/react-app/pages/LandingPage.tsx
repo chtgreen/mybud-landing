@@ -7,6 +7,7 @@ import Hero from '../components/Hero';
 import FeaturesSection from '../components/FeaturesSection';
 import AppShowcase from '../components/AppShowcase';
 import IdentityTrust from '../components/IdentityTrust';
+import Associations from '../components/Associations';
 import Testimonials from '../components/Testimonials';
 import BetaSignup from '../components/BetaSignup';
 import ComingSoon from '../components/ComingSoon';
@@ -42,6 +43,7 @@ const LandingPage = () => {
       <FeaturesSection />
       <AppShowcase />
       <IdentityTrust />
+      <Associations />
       <BetaSignup />
       <Testimonials />
       <ComingSoon />

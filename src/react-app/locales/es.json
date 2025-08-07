@@ -139,6 +139,28 @@
   "header": {
     "languageSelector": "Idioma"
   },
+  "associations": {
+    "title1": "¿Eres una asociación o pequeña facilidad?",
+    "title2": "Tenemos software a tu escala",
+    "description": "Desarrollamos soluciones específicas para asociaciones cannábicas y pequeñas facilidades que necesitan gestión profesional sin complejidad innecesaria.",
+    "management": {
+      "title": "Gestión facilitada",
+      "desc": "Organiza miembros, áreas de cultivo y procesos en una plataforma simple e intuitiva. Control total sin complicación."
+    },
+    "tracking": {
+      "title": "Trazabilidad de planta a extracción",
+      "desc": "De la planta a la extracción, mantén trazabilidad completa con códigos únicos e historial detallado de cada etapa."
+    },
+    "reports": {
+      "title": "Reportes",
+      "desc": "Informes automáticos para cumplimiento, auditoría y gestión. Datos organizados y siempre actualizados para toma de decisiones."
+    },
+    "compliance": {
+      "title": "Cumplimiento simplificado",
+      "desc": "Mantente en conformidad con protocolos y regulaciones a través de sistemas automatizados y alertas inteligentes."
+    },
+    "cta": "Agendar presentación"
+  },
   "themeSelector": {
     "title": "🎨 Probar Colores",
     "subtitle": "Elige tu onda",

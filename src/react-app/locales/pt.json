@@ -2,11 +2,11 @@
   "hero": {
     "title1": "My Bud.",
     "title2": "Você cuida das plantas.",
-    "title3": "A gente cuida do resto.",
-    "subtitle": "Organize e simplifique todas as etapas do cultivo. Da semente ao hash.",
-    "primaryCta": "Quero ter acesso antecipado",
+    "title3": "Nós cuidamos do resto.",
+    "subtitle": "Organize e simplifique todas as etapas do cultivo. O app que te acompanha da germinação até a extração.",
+    "primaryCta": "Assine agora",
     "secondaryCta": "Assista à demo",
-    "trustElement": "Beta 100% gratuito. Sem spam, sem pressão.",
+    "trustElement": "Junte-se a comunidade grower que mais cresce no Brasil.",
     "phone": {
       "plants": "Plantas",
       "subtitle": "Acompanhe o desenvolvimento",
@@ -22,11 +22,11 @@
     }
   },
   "features": {
-    "title": "O app feito por quem vive a rotina do grow",
-    "subtitle": "Ferramentas que resolvem as dores reais do cultivo, da semente ao hash.",
+    "title": "Nunca mais perca uma planta de bobeira",
+    "subtitle": "Tudo que você precisa para simplificvar seu cultivo e turbinar suas colheitas.",
     "journal": {
       "title": "Diário de cultivo integrado",
-      "description": "Nunca mais perca o controle das fases. MyBud organiza o histórico e os estágios de cada planta automaticamente."
+      "description": "Videos, fotos, notas, progresso, você manda o app organiza o histórico, por planta, grow e vaso."
     },
     "voice": {
       "title": "Anotações por voz",
@@ -34,7 +34,7 @@
     },
     "alerts": {
       "title": "Alertas inteligentes",
-      "description": "Seja lembrado na hora certa. Receba notificações personalizadas de rega, nutrientes, e mudanças de fotoperíodo."
+      "description": "Seja lembrado na hora certa. Receba notificações personalizadas de rega, nutrientes, e mudanças de fotoperíodo, sua planta cresce e o app se adapta a sua planta."
     },
     "guides": {
       "title": "Guias para iniciantes",
@@ -45,12 +45,12 @@
     "title": "Veja o My Bud em ação",
     "subtitle": "Clique nas funcionalidades para ver como o My Bud simplifica cada etapa do seu cultivo",
     "dashboard": {
-      "title": "Painel das plantas",
-      "desc": "Acompanhe todas as suas plantas em uma tela. Veja fases, status e próximas ações de forma organizada."
+      "title": "Dashboards intuitivos",
+      "desc": "Acompanha suas áreas de cultivos, plantas e vasos, com visões gerais no dashboard. Todas informações importantes de forma rápida, clar e organizada."
     },
     "voice": {
-      "title": "Anotações por voz",
-      "desc": "Mãos na terra? Apenas fale. O My Bud transcreve e organiza suas observações automaticamente no diário."
+      "title": "Documente por voz e video",
+      "desc": "Mãos na terra? Apenas fale. Quer documentar seu manejo com video? Toque e grave. O app transcreve e organiza tudo no diário da sua planta. Quer conversar com sua planta como se foste um whatsapp? Toque e fale. O app transcreve e organiza tudo no diário da sua planta."
     },
     "alerts": {
       "title": "Alertas inteligentes",
@@ -64,7 +64,7 @@
   "identityTrust": {
     "title1": "Pensado por growers,",
     "title2": "para growers",
-    "description": "O My Bud é o parceiro digital de quem leva o cultivo a sério e quer colher mais buds, com menos estresse. Nós transformamos as dores do dia a dia em uma ferramenta simples e poderosa, com a privacidade e a cultura canábica em primeiro lugar.",
+    "description": "O My Bud é o parceiro digital de quem leva o cultivo a sério e quer colher mais buds, com menos estresse.",
     "private": {
       "title": "100% privado",
       "desc": "Seus dados ficam no seu dispositivo. Sempre."
@@ -138,6 +138,28 @@
   },
   "header": {
     "languageSelector": "Idioma"
+  },
+  "associations": {
+    "title1": "É associação ou pequena facilidade?",
+    "title2": "Temos software na sua escala",
+    "description": "Desenvolvemos soluções específicas para associações cannábicas e pequenas facilidades que precisam de gestão profissional sem complexidade desnecessária.",
+    "management": {
+      "title": "Gestão facilitada",
+      "desc": "Organize membros, áreas de cultivo e processos em uma plataforma simples e intuitiva. Controle total sem complicação."
+    },
+    "tracking": {
+      "title": "Identificação e rastreabilidade",
+      "desc": "Da planta à extração, mantenha rastreabilidade completa com códigos únicos e histórico detalhado de cada etapa."
+    },
+    "reports": {
+      "title": "Reports",
+      "desc": "Relatórios automáticos para compliance, auditoria e gestão. Dados organizados e sempre atualizados para tomada de decisão."
+    },
+    "compliance": {
+      "title": "Compliance simplificado",
+      "desc": "Mantenha-se em conformidade com protocolos e regulamentações através de sistemas automatizados e alertas inteligentes."
+    },
+    "cta": "Agendar apresentação"
   },
   "themeSelector": {
     "title": "🎨 Testar Cores",

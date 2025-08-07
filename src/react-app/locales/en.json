@@ -139,6 +139,28 @@
   "header": {
     "languageSelector": "Language"
   },
+  "associations": {
+    "title1": "Are you an association or small facility?",
+    "title2": "We have software that fits your scale",
+    "description": "We develop specific solutions for cannabis associations and small facilities that need professional management without unnecessary complexity.",
+    "management": {
+      "title": "Simplified management",
+      "desc": "Organize members, cultivation areas and processes in a simple and intuitive platform. Total control without complication."
+    },
+    "tracking": {
+      "title": "Plant-to-extraction tracking",
+      "desc": "From plant to extraction, maintain complete traceability with unique codes and detailed history of each stage."
+    },
+    "reports": {
+      "title": "Reports",
+      "desc": "Automatic reports for compliance, auditing and management. Organized data, always updated for decision making."
+    },
+    "compliance": {
+      "title": "Simplified compliance",
+      "desc": "Stay compliant with protocols and regulations through automated systems and intelligent alerts."
+    },
+    "cta": "Schedule presentation"
+  },
   "themeSelector": {
     "title": "🎨 Test Colors",
     "subtitle": "Pick your vibe",
