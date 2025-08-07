@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { t, getLanguageName, getLanguageFlag, SUPPORTED_LANGUAGES, Language } from '../lib/i18n';
+import { Language } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {

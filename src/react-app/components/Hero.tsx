@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
-import { useLanguage } from '../contexts/LanguageContext';
+
 
 interface HeroProps {
   onCTAClick: () => void;
@@ -164,12 +164,7 @@ const OrganicBackground: FC = () => {
   );
 };
 
-const scrollToBetaForm = () => {
-  const betaForm = document.getElementById('beta-form');
-  if (betaForm) {
-    betaForm.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+
 
 const scrollToFeatures = () => {
   const features = document.getElementById('features');
@@ -179,7 +174,6 @@ const scrollToFeatures = () => {
 };
 
 const Hero: FC<HeroProps> = ({ onCTAClick }) => {
-  const { currentLanguage } = useLanguage();
 
   return (
     <section className="min-h-screen max-h-[1200px] relative hero-organic flex items-center">

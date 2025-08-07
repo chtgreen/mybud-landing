@@ -6,7 +6,7 @@ import {
   SUPPORTED_LANGUAGES, 
   DEFAULT_LANGUAGE, 
   setCurrentLanguage as setI18nLanguage,
-  getCurrentLanguage,
+
   detectBrowserLanguage
 } from '../lib/i18n';
 

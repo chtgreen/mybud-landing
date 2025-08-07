@@ -44,12 +44,12 @@ const BetaSignup: FC = () => {
       setInstagram('');
       
     } catch (error) {
-      console.error('Error:', error);
+            console.error('Error:', error);
       alert(t('betaSignup.errorMessage'));
-      
+
       if (typeof posthog !== 'undefined') {
         posthog.capture('beta_signup_error', {
-          error: error.message,
+          error: error instanceof Error ? error.message : 'Unknown error',
         });
       }
     } finally {
