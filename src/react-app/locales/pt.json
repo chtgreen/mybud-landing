@@ -57,8 +57,8 @@
       "desc": "Aponte a câmera e o app reconhece sua planta na hora. Sem confusão, tudo organizado."
     },
     "alerts": {
-      "title": "Histórico completo da planta",
-      "desc": "Veja toda a jornada da sua planta em uma timeline organizada. Cada registro, foto e vídeo no lugar certo."
+      "title": "Acompanhamento detalhado por planta",
+      "desc": "Monitore o desenvolvimento individual de cada planta com registros específicos, fotos e anotações organizadas por data."
     },
     "journal": {
       "title": "Timeline organizada do seu cultivo",
@@ -70,8 +70,8 @@
     "title2": "",
     "description": "O My Bud nasceu da frustração de quem esqueceu a última rega, perdeu o dia da virada da flora ou confundiu genética. É um diário esperto, que entende sua rotina — com leveza, privacidade e respeito à sua liberdade de cultivar.",
     "private": {
-      "title": "100% privado",
-      "desc": "Seus dados ficam no seu dispositivo. Sempre."
+      "title": "Integração inteligente",
+      "desc": "Conecta com sensores, sistemas hidropônicos e dispositivos IoT para automação completa."
     },
     "community": {
       "title": "Feito em comunidade",
