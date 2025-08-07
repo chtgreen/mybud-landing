@@ -5,7 +5,7 @@
   --emerald-green: #059669;
   --deep-teal: #0f766e;
   --light-emerald: #6ee7b7;
-  --soft-yellow: #fbbf24;
+  --soft-yellow: #fbbf24; /* Adjusted for better contrast */
   --off-white: #f8fafc;
   --night-gray: #1e293b;
 
@@ -32,6 +32,31 @@
   --border-zinc-200: var(--border-soft);
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
+  /* Hero professional - Serious grow environment */
+  --hero-primary: var(--primary);
+  --hero-secondary: #10b981;
+  --hero-accent: var(--light-emerald);
+  --hero-deep: var(--primary-dark);
+  --hero-base: #f1f5f9;
+  --hero-neutral: var(--border-soft);
+  --hero-grow: #065f46;
+  --hero-gradient: linear-gradient(
+    135deg,
+    #065f46 0%,
+    #047857 10%,
+    var(--primary) 20%,
+    #10b981 35%,
+    var(--light-emerald) 50%,
+    #22c55e 65%,
+    #16a34a 80%,
+    #15803d 95%,
+    #14532d 100%
+  );
+  --hero-overlay: linear-gradient(
+    rgba(6, 95, 70, 0.3),
+    rgba(52, 211, 153, 0.1)
+  );
+
   /* Enhanced emerald effects */
   --emerald-glow: 0 0 30px rgba(110, 231, 183, 0.4);
   --emerald-text-shadow: 0 2px 4px rgba(6, 95, 70, 0.3);
@@ -54,9 +79,15 @@ body {
 }
 
 @keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .language-selector {
@@ -67,22 +98,22 @@ body {
 
 .soft-shadow {
   box-shadow: 0 4px 20px rgba(5, 150, 105, 0.1);
-}
-
-.gradient-text {
+  }
+  
+  .gradient-text {
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  
 .mybud-card {
   background: white;
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+      transition: all 0.3s ease;
 }
 
 .mybud-card:hover {
@@ -98,7 +129,11 @@ body {
 }
 
 .cta-button {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
   transition: all 0.3s ease;
   border-radius: 12px;
   border: none;
@@ -127,11 +162,25 @@ body {
   transform: translateY(-2px);
 }
 
-.section-light { background: white; }
-.section-soft { background: var(--background); }
-.bg-primary-soft { background: rgba(110, 231, 183, 0.15); }
-.text-primary { color: var(--primary); }
-.text-primary-dark { color: var(--primary-dark); }
+.section-light {
+  background: white;
+}
+
+.section-soft {
+  background: var(--background);
+}
+
+.bg-primary-soft {
+  background: rgba(110, 231, 183, 0.15);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
 
 .card {
   background: var(--bg-white);
@@ -150,28 +199,79 @@ body {
   font-weight: 500;
 }
 
-/* Animations */
+/* Animações para o hero */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.hero-animate-1 { animation: fadeInUp 1s ease-out 0.2s both; }
-.hero-animate-2 { animation: fadeInUp 1s ease-out 0.4s both; }
-.hero-animate-3 { animation: fadeInUp 1s ease-out 0.6s both; }
-.hero-animate-4 { animation: fadeInUp 1s ease-out 0.8s both; }
-.hero-animate-5 { animation: fadeInUp 1s ease-out 1s both; }
-.app-animate { animation: fadeInRight 1.2s ease-out 0.6s both; }
+.hero-animate-1 {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-animate-2 {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-animate-3 {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-animate-4 {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.hero-animate-5 {
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+.app-animate {
+  animation: fadeInRight 1.2s ease-out 0.6s both;
+}
+
+/* Cinematic vignette effect */
+.bg-radial-gradient {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.input-focus:focus {
+  box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.4);
+  border-color: var(--primary-light);
+  outline: none;
+}
 
 .btn-primary {
   background: var(--emerald-600);
@@ -205,189 +305,278 @@ body {
   border-color: var(--emerald-600);
 }
 
-/* Hero Organic Styles */
-.hero-organic {
+.section-light {
+  background: white;
+}
+
+.section-soft {
+  background: var(--background);
+}
+
+.bg-primary-soft {
+  background: rgba(110, 231, 183, 0.15);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+/* Emerald-700/800 Green Focused Theme Alternatives */
+.hero-organic.theme-emerald-deep {
   background:
-    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
-    radial-gradient(ellipse at bottom right, #a7f3d0 0%, #6ee7b7 35%, #34d399 70%),
-    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
+    radial-gradient(
+      ellipse at top left,
+      #047857 0%,
+      #065f46 25%,
+      #047857 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #065f46 0%,
+      #047857 35%,
+      #134e4a 70%
+    ),
+    linear-gradient(
+      135deg,
+      #047857 0%,
+      #065f46 40%,
+      #047857 80%,
+      #059669 100%
+    ) !important;
+}
+
+/* iPhone Frame Video Styles */
+.iphone-frame {
+  transition: all 0.3s ease;
+}
+
+.iphone-frame:hover {
+  transform: scale(1.05);
+}
+
+.video-container {
   position: relative;
+  background: white;
+}
+
+/* Future video element ready */
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2.5rem;
+}
+
+/* Responsive hero optimizations */
+@media (min-height: 900px) {
+  .hero-organic {
+    max-height: 90vh;
+  }
+}
+
+@media (min-height: 1000px) {
+  .hero-organic {
+    max-height: 85vh;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-organic {
+    max-height: 80vh;
+  }
+}
+
+/* Optimize spacing for ultra-wide screens */
+@media (min-width: 1920px) {
+  .hero-organic .container {
+    max-width: 1400px;
+  }
+}
+
+/* Fix content overflow inside iPhone frame */
+.video-container {
   overflow: hidden;
 }
 
-.organic-bubble {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.1;
-  animation: float 8s ease-in-out infinite;
-  background: radial-gradient(circle at 30% 30%, rgba(52, 211, 153, 0.3), rgba(5, 150, 105, 0.1));
-  border: 1px solid rgba(52, 211, 153, 0.2);
-  will-change: transform;
+/* Responsive content sizing inside phone */
+@media (max-height: 600px) {
+  .video-container .text-base {
+    font-size: 0.75rem !important;
+  }
+  .video-container .text-xs {
+    font-size: 0.625rem !important;
+  }
+  .video-container .p-3 {
+    padding: 0.5rem !important;
+  }
+  .video-container .p-2 {
+    padding: 0.375rem !important;
+  }
+  .video-container .space-y-2 > * + * {
+    margin-top: 0.25rem !important;
+  }
 }
 
-.organic-bubble:nth-child(2n) {
-  animation-delay: -2s;
-  animation-duration: 12s;
-}
-
-.organic-bubble:nth-child(3n) {
-  animation-delay: -4s;
-  animation-duration: 10s;
-}
-
-.organic-bubble:nth-child(4n) {
-  animation-delay: -6s;
-  animation-duration: 14s;
-}
-
-.grow-element {
-  position: absolute;
-  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.15), transparent);
-  border-radius: 60% 40% 40% 60%;
-  opacity: 0.6;
-  animation: organicFloat 15s ease-in-out infinite;
-}
-
-.grow-element:nth-child(2n) {
-  border-radius: 40% 60% 60% 40%;
-  animation-delay: -5s;
-  background: radial-gradient(ellipse, rgba(4, 120, 87, 0.12), transparent);
-}
-
-.grow-element:nth-child(3n) {
-  border-radius: 70% 30% 50% 50%;
-  animation-delay: -10s;
-  background: radial-gradient(ellipse, rgba(6, 95, 70, 0.18), transparent);
-}
-
-.grow-lights {
-  position: absolute;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%);
-  filter: blur(20px);
-  animation: growLightPulse 6s ease-in-out infinite;
-}
-
-.grow-lights:nth-child(2n) {
-  animation-delay: -3s;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
-}
-
-.leaf-pattern {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(4, 120, 87, 0.1) 2px, transparent 3px),
-    radial-gradient(circle at 80% 60%, rgba(52, 211, 153, 0.08) 1px, transparent 2px),
-    radial-gradient(circle at 40% 80%, rgba(6, 95, 70, 0.12) 1.5px, transparent 2.5px);
-  background-size: 150px 150px, 200px 200px, 120px 120px;
-  animation: leafPattern 20s linear infinite;
-}
-
-.expertise-indicator {
-  position: absolute;
-  width: 8px; height: 8px;
-  background: radial-gradient(circle, #10b981 0%, #047857 100%);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
-  animation: expertisePulse 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(120deg); }
-  66% { transform: translateY(-10px) rotate(240deg); }
-}
-
-@keyframes organicFloat {
-  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-  25% { transform: translateY(-30px) translateX(10px) scale(1.1); }
-  50% { transform: translateY(-15px) translateX(-15px) scale(0.9); }
-  75% { transform: translateY(-25px) translateX(5px) scale(1.05); }
-}
-
-@keyframes growLightPulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.2); }
-}
-
-@keyframes leafPattern {
-  0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
-  100% { background-position: 150px 150px, -200px 200px, 120px -120px; }
-}
-
-@keyframes expertisePulse {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 25px rgba(16, 185, 129, 0.8); }
-}
-
-/* Theme variations */
-.hero-organic.theme-emerald-deep {
-  background:
-    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #047857 50%),
-    radial-gradient(ellipse at bottom right, #065f46 0%, #047857 35%, #134e4a 70%),
-    linear-gradient(135deg, #047857 0%, #065f46 40%, #047857 80%, #059669 100%) !important;
+@media (max-height: 500px) {
+  .video-container h2 {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .video-container .h-8 {
+    height: 1.5rem !important;
+  }
+  .video-container .pt-8 {
+    padding-top: 1.5rem !important;
+  }
 }
 
 .hero-organic.theme-forest-emerald {
   background:
-    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #134e4a 50%),
-    radial-gradient(ellipse at bottom right, #047857 0%, #065f46 35%, #0f3730 70%),
-    linear-gradient(135deg, #065f46 0%, #047857 40%, #065f46 80%, #134e4a 100%) !important;
+    radial-gradient(
+      ellipse at top left,
+      #065f46 0%,
+      #047857 25%,
+      #134e4a 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #047857 0%,
+      #065f46 35%,
+      #0f3730 70%
+    ),
+    linear-gradient(
+      135deg,
+      #065f46 0%,
+      #047857 40%,
+      #065f46 80%,
+      #134e4a 100%
+    ) !important;
 }
 
 .hero-organic.theme-mint-emerald {
   background:
-    radial-gradient(ellipse at top left, #047857 0%, #059669 25%, #047857 50%),
-    radial-gradient(ellipse at bottom right, #059669 0%, #047857 35%, #10b981 70%),
-    linear-gradient(135deg, #047857 0%, #059669 40%, #047857 80%, #10b981 100%) !important;
+    radial-gradient(
+      ellipse at top left,
+      #047857 0%,
+      #059669 25%,
+      #047857 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #059669 0%,
+      #047857 35%,
+      #10b981 70%
+    ),
+    linear-gradient(
+      135deg,
+      #047857 0%,
+      #059669 40%,
+      #047857 80%,
+      #10b981 100%
+    ) !important;
 }
 
 .hero-organic.theme-sage-emerald {
   background:
-    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #059669 50%),
-    radial-gradient(ellipse at bottom right, #065f46 0%, #047857 35%, #059669 70%),
-    linear-gradient(135deg, #047857 0%, #065f46 40%, #059669 80%, #047857 100%) !important;
+    radial-gradient(
+      ellipse at top left,
+      #047857 0%,
+      #065f46 25%,
+      #059669 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #065f46 0%,
+      #047857 35%,
+      #059669 70%
+    ),
+    linear-gradient(
+      135deg,
+      #047857 0%,
+      #065f46 40%,
+      #059669 80%,
+      #047857 100%
+    ) !important;
 }
 
 .hero-organic.theme-teal-emerald {
   background:
-    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #059669 50%),
-    radial-gradient(ellipse at bottom right, #047857 0%, #065f46 35%, #134e4a 70%),
-    linear-gradient(135deg, #065f46 0%, #047857 40%, #065f46 80%, #134e4a 100%) !important;
+    radial-gradient(
+      ellipse at top left,
+      #065f46 0%,
+      #047857 25%,
+      #059669 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #047857 0%,
+      #065f46 35%,
+      #134e4a 70%
+    ),
+    linear-gradient(
+      135deg,
+      #065f46 0%,
+      #047857 40%,
+      #065f46 80%,
+      #134e4a 100%
+    ) !important;
 }
 
-.hero-organic.theme-white {
+/* White theme only for the main hero section, not bottom sections */
+.hero-organic.theme-white.flex.items-center {
   background:
-    radial-gradient(ellipse at top left, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%),
-    radial-gradient(ellipse at bottom right, #e2e8f0 0%, #cbd5e1 35%, #94a3b8 70%),
-    linear-gradient(135deg, #ffffff 0%, #f8fafc 40%, #f1f5f9 80%, #e2e8f0 100%) !important;
+    radial-gradient(
+      ellipse at top left,
+      #ffffff 0%,
+      #f8fafc 25%,
+      #f1f5f9 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #e2e8f0 0%,
+      #cbd5e1 35%,
+      #94a3b8 70%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fafc 40%,
+      #f1f5f9 80%,
+      #e2e8f0 100%
+    ) !important;
 }
 
-.hero-organic.theme-white h1,
-.hero-organic.theme-white p,
-.hero-organic.theme-white span:not(.gradient-text) {
+/* White theme specific text colors - only for main hero section */
+.hero-organic.theme-white.flex.items-center h1,
+.hero-organic.theme-white.flex.items-center p,
+.hero-organic.theme-white.flex.items-center span:not(.gradient-text) {
   color: #1e293b !important;
   text-shadow: none !important;
 }
 
-.hero-organic.theme-white .gradient-text {
+.hero-organic.theme-white.flex.items-center .gradient-text {
   background: linear-gradient(90deg, #059669, #047857);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
 }
 
-.hero-organic.theme-white .cta-button {
+/* Ensure buttons maintain proper styling in white theme - only main hero */
+.hero-organic.theme-white.flex.items-center .cta-button {
   background: linear-gradient(135deg, #059669, #047857) !important;
   color: white !important;
 }
 
-.hero-organic.theme-white .secondary-button {
+.hero-organic.theme-white.flex.items-center .secondary-button {
   border-color: #059669 !important;
   color: #059669 !important;
 }
 
-.hero-organic.theme-white .secondary-button:hover {
+.hero-organic.theme-white.flex.items-center .secondary-button:hover {
   background: #059669 !important;
   color: white !important;
 }
@@ -395,10 +584,11 @@ body {
 /* Theme selector styles */
 .theme-selector {
   position: fixed;
-  top: 80px; right: 20px;
+  top: 80px;
+  right: 20px;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -416,66 +606,285 @@ body {
   margin-bottom: 4px;
 }
 
-.theme-option:hover { background: rgba(4, 120, 87, 0.1); }
-.theme-option.active { background: rgba(4, 120, 87, 0.2); font-weight: 600; }
+.theme-option:hover {
+  background: rgba(4, 120, 87, 0.1);
+}
+
+.theme-option.active {
+  background: rgba(4, 120, 87, 0.2);
+  font-weight: 600;
+}
 
 .theme-preview {
-  width: 20px; height: 20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.theme-preview.original { background: linear-gradient(45deg, #6ee7b7, #a7f3d0); }
-.theme-preview.emerald-deep { background: linear-gradient(45deg, #047857, #065f46); }
-.theme-preview.forest-emerald { background: linear-gradient(45deg, #065f46, #134e4a); }
-.theme-preview.mint-emerald { background: linear-gradient(45deg, #047857, #059669); }
-.theme-preview.sage-emerald { background: linear-gradient(45deg, #047857, #065f46); }
-.theme-preview.teal-emerald { background: linear-gradient(45deg, #065f46, #047857); }
-.theme-preview.white { background: linear-gradient(45deg, #ffffff, #e2e8f0); border: 1px solid #cbd5e1; }
-
-/* iPhone Frame Styles */
-.iphone-frame {
-  transition: all 0.3s ease;
+.theme-preview.original {
+  background: linear-gradient(45deg, #6ee7b7, #a7f3d0);
+}
+.theme-preview.emerald-deep {
+  background: linear-gradient(45deg, #047857, #065f46);
+}
+.theme-preview.forest-emerald {
+  background: linear-gradient(45deg, #065f46, #134e4a);
+}
+.theme-preview.mint-emerald {
+  background: linear-gradient(45deg, #047857, #059669);
+}
+.theme-preview.sage-emerald {
+  background: linear-gradient(45deg, #047857, #065f46);
+}
+.theme-preview.teal-emerald {
+  background: linear-gradient(45deg, #065f46, #047857);
 }
 
-.iphone-frame:hover {
-  transform: scale(1.05);
+.theme-preview.white {
+  background: linear-gradient(45deg, #ffffff, #e2e8f0);
+  border: 1px solid #cbd5e1;
 }
 
-.video-container {
+/* Organic Cannabis Grower Design - Much Lighter Original */
+.hero-organic {
+  background:
+    radial-gradient(
+      ellipse at top left,
+      #6ee7b7 0%,
+      #34d399 25%,
+      #10b981 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #a7f3d0 0%,
+      #6ee7b7 35%,
+      #34d399 70%
+    ),
+    linear-gradient(
+      135deg,
+      #10b981 0%,
+      #34d399 40%,
+      #6ee7b7 80%,
+      #a7f3d0 100%
+    );
   position: relative;
-  background: white;
   overflow: hidden;
 }
 
-/* Responsive optimizations */
+/* Organic Bubbles - Like plant cells or cannabis resin bubbles */
+.organic-bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(52, 211, 153, 0.3),
+    rgba(5, 150, 105, 0.1)
+  );
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  will-change: transform;
+}
+
+/* Mobile optimizations for bubbles */
 @media (max-width: 768px) {
   .organic-bubble {
     opacity: 0.08;
     animation-duration: 6s;
   }
   
+  /* Hide phone mockups on mobile to save space */
   .iphone-frame {
     display: none !important;
   }
   
+  /* Adjust layout when phone is hidden */
   .hero-organic .lg\:w-1\/2 {
     width: 100% !important;
   }
+  
+  /* Center content when phone is hidden */
+  .app-showcase .lg\:flex-row {
+    flex-direction: column !important;
+  }
 }
 
-@media (min-height: 900px) {
-  .hero-organic { max-height: 90vh; }
+.organic-bubble:nth-child(2n) {
+  animation-delay: -2s;
+  animation-duration: 12s;
 }
 
-@media (min-height: 1000px) {
-  .hero-organic { max-height: 85vh; }
+.organic-bubble:nth-child(3n) {
+  animation-delay: -4s;
+  animation-duration: 10s;
 }
 
-@media (min-width: 1536px) {
-  .hero-organic { max-height: 80vh; }
+.organic-bubble:nth-child(4n) {
+  animation-delay: -6s;
+  animation-duration: 14s;
 }
 
-@media (min-width: 1920px) {
-  .hero-organic .container { max-width: 1400px; }
+/* Cannabis-inspired organic shapes */
+.grow-element {
+  position: absolute;
+  background: radial-gradient(
+    ellipse,
+    rgba(16, 185, 129, 0.15),
+    transparent
+  );
+  border-radius: 60% 40% 40% 60%;
+  opacity: 0.6;
+  animation: organicFloat 15s ease-in-out infinite;
 }
+
+.grow-element:nth-child(2n) {
+  border-radius: 40% 60% 60% 40%;
+  animation-delay: -5s;
+  background: radial-gradient(
+    ellipse,
+    rgba(4, 120, 87, 0.12),
+    transparent
+  );
+}
+
+.grow-element:nth-child(3n) {
+  border-radius: 70% 30% 50% 50%;
+  animation-delay: -10s;
+  background: radial-gradient(
+    ellipse,
+    rgba(6, 95, 70, 0.18),
+    transparent
+  );
+}
+
+/* Professional grow room ambiance */
+.grow-lights {
+  position: absolute;
+  background: radial-gradient(
+    circle,
+    rgba(52, 211, 153, 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  animation: growLightPulse 6s ease-in-out infinite;
+}
+
+.grow-lights:nth-child(2n) {
+  animation-delay: -3s;
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.15) 0%,
+    transparent 60%
+  );
+}
+
+/* Cannabis leaf inspired pattern overlay */
+.leaf-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(4, 120, 87, 0.1) 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(52, 211, 153, 0.08) 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(6, 95, 70, 0.12) 1.5px,
+      transparent 2.5px
+    );
+  background-size:
+    150px 150px,
+    200px 200px,
+    120px 120px;
+  animation: leafPattern 20s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(240deg);
+  }
+}
+
+@keyframes organicFloat {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-30px) translateX(10px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-15px) scale(0.9);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px) scale(1.05);
+  }
+}
+
+@keyframes growLightPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes leafPattern {
+  0% {
+    background-position:
+      0px 0px,
+      0px 0px,
+      0px 0px;
+  }
+  100% {
+    background-position:
+      150px 150px,
+      -200px 200px,
+      120px -120px;
+  }
+}
+
+/* Professional grower expertise indicators */
+.expertise-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #10b981 0%, #047857 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+  animation: expertisePulse 4s ease-in-out infinite;
+}
+
+@keyframes expertisePulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+  }
+  }

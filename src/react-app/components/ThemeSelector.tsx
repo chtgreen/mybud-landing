@@ -1,110 +1,78 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type FC } from 'react';
+import { t } from '../lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface ThemeSelectorProps {
   onThemeChange?: (theme: string) => void;
-  currentLanguage?: string;
 }
 
-const ThemeSelector: React.FC<ThemeSelectorProps> = ({ 
-  onThemeChange, 
-  currentLanguage = 'pt' 
-}) => {
-  const [activeTheme, setActiveTheme] = useState('original');
+const ThemeSelector: FC<ThemeSelectorProps> = ({ onThemeChange }) => {
+  const [currentTheme, setCurrentTheme] = useState('original');
+  const { currentLanguage } = useLanguage();
 
-  const themes = {
-    original: {
-      pt: 'Original',
-      en: 'Original', 
-      es: 'Original'
-    },
-    'emerald-deep': {
-      pt: 'Emerald 700',
-      en: 'Emerald 700',
-      es: 'Esmeralda 700'
-    },
-    'forest-emerald': {
-      pt: 'Emerald 800',
-      en: 'Emerald 800',
-      es: 'Esmeralda 800'
-    },
-    'mint-emerald': {
-      pt: 'Verde Intenso',
-      en: 'Intense Green',
-      es: 'Verde Intenso'
-    },
-    'sage-emerald': {
-      pt: 'Verde Grow',
-      en: 'Grow Green',
-      es: 'Verde Cultivo'
-    },
-    'teal-emerald': {
-      pt: 'Verde Natural',
-      en: 'Natural Green',
-      es: 'Verde Natural'
-    },
-    white: {
-      pt: 'Branco',
-      en: 'White',
-      es: 'Blanco'
-    }
+  const testThemeSwitch = () => {
+    console.log('Testing theme switch functionality');
   };
 
-  const titles = {
-    pt: '🎨 Testar Cores',
-    en: '🎨 Test Colors',
-    es: '🎨 Probar Colores'
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme) {
-      setActiveTheme(savedTheme);
-      switchTheme(savedTheme);
-    }
-  }, []);
-
-  const switchTheme = (themeName: string) => {
-    const organicSections = document.querySelectorAll('.hero-organic');
+  const switchTheme = (themeId: string) => {
+    console.log(`Switching to theme: ${themeId}`);
     
-    if (organicSections.length === 0) return;
-
+    // Find all sections with hero-organic class
+    const organicSections = document.querySelectorAll('.hero-organic');
+    console.log(`Found ${organicSections.length} organic sections`);
+    
+    if (organicSections.length === 0) {
+      console.error('No organic sections found!');
+      return;
+    }
+    
+    // Remove all theme classes from all organic sections
     const themeClasses = [
       'theme-emerald-deep',
-      'theme-forest-emerald',
+      'theme-forest-emerald', 
       'theme-mint-emerald',
       'theme-sage-emerald',
       'theme-teal-emerald',
-      'theme-white',
+      'theme-white'
     ];
     
-    organicSections.forEach((section) => {
+    organicSections.forEach((section, index) => {
+      console.log(`Processing section ${index + 1}:`, section);
+      
       // Remove all theme classes
       themeClasses.forEach((className) => {
-        section.classList.remove(className);
+        if (section.classList.contains(className)) {
+          section.classList.remove(className);
+          console.log(`Removed ${className} from section ${index + 1}`);
+        }
       });
-
+      
       // Add new theme class if not original
-      if (themeName !== 'original') {
-        section.classList.add(`theme-${themeName}`);
+      if (themeId !== 'original') {
+        section.classList.add(`theme-${themeId}`);
+        console.log(`Added theme-${themeId} to section ${index + 1}`);
+      } else {
+        console.log(`Reset to original theme for section ${index + 1}`);
       }
     });
-
-    setActiveTheme(themeName);
-    localStorage.setItem('selectedTheme', themeName);
-    onThemeChange?.(themeName);
+    
+    // Save theme preference
+    localStorage.setItem('selectedTheme', themeId);
+    setCurrentTheme(themeId);
+    console.log(`Successfully switched to theme: ${themeId}`);
+    
+    onThemeChange?.(themeId);
   };
 
-  const testThemeSwitch = () => {
-    console.log('=== THEME SWITCH DEBUG ===');
-    const organicSections = document.querySelectorAll('.hero-organic');
-    console.log('Organic sections found:', organicSections.length);
-
-    organicSections.forEach((section, index) => {
-      console.log(`Section ${index + 1}:`, section);
-      console.log('- Current classes:', section.className);
-    });
-    console.log('=== END DEBUG ===');
-  };
+  // Load saved theme on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+      switchTheme(savedTheme);
+    } else {
+      switchTheme('original');
+    }
+  }, []);
 
   return (
     <div className="theme-selector" id="themeSelector">
@@ -114,12 +82,13 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           fontWeight: 600,
           color: '#047857',
           marginBottom: '12px',
-          textAlign: 'center',
+          textAlign: 'center'
         }}
+        id="theme-title"
       >
-        {titles[currentLanguage as keyof typeof titles]}
+        🎨 {t('themeSelector.title', currentLanguage)}
       </div>
-      
+        
       <button
         onClick={testThemeSwitch}
         style={{
@@ -130,25 +99,88 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           color: 'white',
           border: 'none',
           borderRadius: '4px',
-          fontSize: '10px',
+          fontSize: '10px'
         }}
       >
         Test Theme Switch
       </button>
 
-      {Object.entries(themes).map(([themeKey, themeLabels]) => (
-        <div
-          key={themeKey}
-          className={`theme-option ${activeTheme === themeKey ? 'active' : ''}`}
-          onClick={() => switchTheme(themeKey)}
-          data-theme={themeKey}
-        >
-          <div className={`theme-preview ${themeKey}`}></div>
-          <span style={{ fontSize: '13px', color: '#374151' }}>
-            {themeLabels[currentLanguage as keyof typeof themeLabels]}
-          </span>
-        </div>
-      ))}
+      <div
+        className={`theme-option ${currentTheme === 'original' ? 'active' : ''}`}
+        onClick={() => switchTheme('original')}
+        data-theme="original"
+      >
+        <div className="theme-preview original"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          {t('themeSelector.original', currentLanguage)}
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'emerald-deep' ? 'active' : ''}`}
+        onClick={() => switchTheme('emerald-deep')}
+        data-theme="emerald-deep"
+      >
+        <div className="theme-preview emerald-deep"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Emerald 700
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'forest-emerald' ? 'active' : ''}`}
+        onClick={() => switchTheme('forest-emerald')}
+        data-theme="forest-emerald"
+      >
+        <div className="theme-preview forest-emerald"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Emerald 800
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'mint-emerald' ? 'active' : ''}`}
+        onClick={() => switchTheme('mint-emerald')}
+        data-theme="mint-emerald"
+      >
+        <div className="theme-preview mint-emerald"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Verde Intenso
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'sage-emerald' ? 'active' : ''}`}
+        onClick={() => switchTheme('sage-emerald')}
+        data-theme="sage-emerald"
+      >
+        <div className="theme-preview sage-emerald"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Verde Grow
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'teal-emerald' ? 'active' : ''}`}
+        onClick={() => switchTheme('teal-emerald')}
+        data-theme="teal-emerald"
+      >
+        <div className="theme-preview teal-emerald"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Verde Natural
+        </span>
+      </div>
+
+      <div
+        className={`theme-option ${currentTheme === 'white' ? 'active' : ''}`}
+        onClick={() => switchTheme('white')}
+        data-theme="white"
+      >
+        <div className="theme-preview white"></div>
+        <span style={{ fontSize: '13px', color: '#374151' }}>
+          Branco
+        </span>
+      </div>
     </div>
   );
 };

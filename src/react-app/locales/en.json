@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "title1": "My Bud.",
+    "title2": "You handle the plants.",
+    "title3": "We'll handle the rest.",
+    "subtitle": "Organize and simplify every stage of your grow. From seed to hash.",
+    "primaryCta": "Get early access",
+    "secondaryCta": "Watch the demo",
+    "trustElement": "Beta is 100% free. No spam, no pressure.",
+    "phone": {
+      "plants": "Plants",
+      "subtitle": "Track development",
+      "todayTasks": "Today's tasks",
+      "watering": "Water plants - last cycle 2 days ago",
+      "yourPlants": "Your plants",
+      "plantA": "Plant A",
+      "plantB": "Plant B",
+      "week3": "Week 3",
+      "week8": "Week 8",
+      "quickNote": "Quick note",
+      "addNote": "Tap to add observation"
+    }
+  },
+  "features": {
+    "title": "The app built by those who live the grow routine",
+    "subtitle": "Tools that solve the real pains of cultivation, from seed to hash.",
+    "journal": {
+      "title": "Integrated grow journal",
+      "description": "Never lose track of stages again. My Bud automatically organizes the history and phases for each plant."
+    },
+    "voice": {
+      "title": "Voice notes",
+      "description": "Hands dirty? Just talk. Say what you did, and the app transcribes and logs it in your plant's journal."
+    },
+    "alerts": {
+      "title": "Smart alerts",
+      "description": "Get reminded at the right time. Receive custom notifications for watering, nutrients, and photoperiod changes."
+    },
+    "guides": {
+      "title": "Beginner's guides",
+      "description": "Just starting? My Bud guides you every step of the way with practical, judgment-free tips for a successful first harvest."
+    }
+  },
+  "appShowcase": {
+    "title": "See My Bud in action",
+    "subtitle": "Click on the features to see how My Bud simplifies every stage of your grow",
+    "dashboard": {
+      "title": "Plant dashboard",
+      "desc": "Track all your plants on one screen. See phases, status and next actions in an organized way."
+    },
+    "voice": {
+      "title": "Voice notes",
+      "desc": "Hands in the dirt? Just talk. My Bud transcribes and organizes your observations automatically in the journal."
+    },
+    "alerts": {
+      "title": "Smart alerts",
+      "desc": "Get personalized reminders for watering, nutrients and photoperiod changes. Never forget anything again."
+    },
+    "journal": {
+      "title": "Grow journal",
+      "desc": "Complete and organized history of every stage. Track evolution and learn from each cycle."
+    }
+  },
+  "identityTrust": {
+    "title1": "Designed by growers,",
+    "title2": "for growers",
+    "description": "My Bud is the digital partner for those who take growing seriously and want to harvest more buds with less stress. We turned daily pains into a simple, powerful tool, with privacy and cannabis culture first.",
+    "private": {
+      "title": "100% private",
+      "desc": "Your data stays on your device. Always."
+    },
+    "community": {
+      "title": "Community-built",
+      "desc": "Developed with real feedback from growers."
+    },
+    "tested": {
+      "title": "Grower-tested",
+      "desc": "Validated in practice, in real grows."
+    }
+  },
+  "testimonials": {
+    "title": "Loved by growers",
+    "subtitle": "Don't just take our word for it. See what the first testers are saying.",
+    "1": {
+      "text": "\"I never forgot a watering again. The simplicity of the alerts saved my cycle. A must-have.\"",
+      "author": "@cutlvar",
+      "location": "São Paulo"
+    },
+    "2": {
+      "text": "\"Even my makeshift grow felt pro. Knowing the exact stage of each plant was a game-changer.\"",
+      "author": "marina",
+      "location": "Rio de Janeiro"
+    },
+    "3": {
+      "text": "\"Easier than a spreadsheet and so much prettier. The voice note feature is brilliant.\"",
+      "author": "carlos",
+      "location": "Belo Horizonte"
+    }
+  },
+  "betaSignup": {
+    "title": "Secure your beta access and get exclusive updates",
+    "subtitle": "Join the first wave of growers shaping the future of cultivation. You'll get early access, exclusive perks, and our eternal gratitude.",
+    "emailPlaceholder": "Your best email",
+    "instagramPlaceholder": "@your_instagram (optional, for VIPs)",
+    "button": "I want to test the app",
+    "vipLink": "Don't want to test? Join the VIP list for news",
+    "privacy": "Only good tips. No spam. We respect your privacy.",
+    "successMessage": "Thank you! You're on the beta list. 🌱",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "comingSoon": {
+    "title": "Coming soon to your favorite stores",
+    "subtitle": "Be the first to know when My Bud arrives in app stores",
+    "ctaText": "Join the beta now for early access before the official launch",
+    "iosText": "Notify on App Store",
+    "androidText": "Notify on Google Play"
+  },
+  "footer": {
+    "brand": "mybud",
+    "tagline": "Your digital cultivation partner.",
+    "faqTitle": "Frequently asked questions",
+    "faq1": {
+      "question": "Is it safe for growers in Brazil?",
+      "answer": "Yes. Security is our #1 priority. We don't ask for your name, ID, or personal data. All your grow information is private, encrypted, and belongs only to you."
+    },
+    "faq2": {
+      "question": "Is the app free?",
+      "answer": "Beta access is 100% free with no strings attached. In the future, we'll have a PRO version with advanced features, but there will always be a free plan to help you organize your grow."
+    },
+    "faq3": {
+      "question": "Do I need to provide my personal data?",
+      "answer": "No. Only an email is required to create your account and ensure only you can access it. Your anonymity and privacy are fundamental to us."
+    },
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "contact": "Contact",
+    "copyright": "© 2024 My Bud. All rights reserved."
+  },
+  "header": {
+    "languageSelector": "Language"
+  },
+  "themeSelector": {
+    "title": "🎨 Test Colors",
+    "subtitle": "Pick your vibe",
+    "emerald": "Original",
+    "purple": "Intense Green",
+    "amber": "Grow Green",
+    "blue": "Natural Green",
+    "original": "Original",
+    "emerald-deep": "Emerald 700",
+    "forest": "Emerald 800",
+    "mint": "Intense Green",
+    "sage": "Grow Green",
+    "teal": "Natural Green",
+    "white": "White"
+  }
+}

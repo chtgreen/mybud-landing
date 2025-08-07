@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
+import { t, getLanguageName, getLanguageFlag, SUPPORTED_LANGUAGES, Language } from '../lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {
-  onLanguageChange?: (language: string) => void;
-  currentLanguage?: string;
+  onLanguageChange?: (language: Language) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-  onLanguageChange, 
-  currentLanguage = 'pt' 
-}) => {
+const Header: React.FC<HeaderProps> = ({ onLanguageChange }) => {
+  const { currentLanguage, changeLanguage } = useLanguage();
   const [logoTextClass, setLogoTextClass] = useState('text-white');
 
   useEffect(() => {
@@ -36,7 +35,8 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = e.target.value;
+    const newLanguage = e.target.value as Language;
+    changeLanguage(newLanguage);
     onLanguageChange?.(newLanguage);
   };
 

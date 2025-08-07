@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "title1": "My Bud.",
+    "title2": "Você cuida das plantas.",
+    "title3": "A gente cuida do resto.",
+    "subtitle": "Organize e simplifique todas as etapas do cultivo. Da semente ao hash.",
+    "primaryCta": "Quero ter acesso antecipado",
+    "secondaryCta": "Assista à demo",
+    "trustElement": "Beta 100% gratuito. Sem spam, sem pressão.",
+    "phone": {
+      "plants": "Plantas",
+      "subtitle": "Acompanhe o desenvolvimento",
+      "todayTasks": "Tarefas de hoje",
+      "watering": "Regar plantas - último ciclo há 2 dias",
+      "yourPlants": "Suas plantas",
+      "plantA": "Planta A",
+      "plantB": "Planta B",
+      "week3": "Semana 3",
+      "week8": "Semana 8",
+      "quickNote": "Anotação rápida",
+      "addNote": "Toque para adicionar observação"
+    }
+  },
+  "features": {
+    "title": "O app feito por quem vive a rotina do grow",
+    "subtitle": "Ferramentas que resolvem as dores reais do cultivo, da semente ao hash.",
+    "journal": {
+      "title": "Diário de cultivo integrado",
+      "description": "Nunca mais perca o controle das fases. MyBud organiza o histórico e os estágios de cada planta automaticamente."
+    },
+    "voice": {
+      "title": "Anotações por voz",
+      "description": "Mãos na terra? Apenas fale. Diga o que fez, e o app transcreve e organiza tudo no diário da sua planta."
+    },
+    "alerts": {
+      "title": "Alertas inteligentes",
+      "description": "Seja lembrado na hora certa. Receba notificações personalizadas de rega, nutrientes, e mudanças de fotoperíodo."
+    },
+    "guides": {
+      "title": "Guias para iniciantes",
+      "description": "Começando agora? MyBud te guia em cada passo com dicas práticas e sem julgamentos, para sua primeira colheita ser um sucesso."
+    }
+  },
+  "appShowcase": {
+    "title": "Veja o My Bud em ação",
+    "subtitle": "Clique nas funcionalidades para ver como o My Bud simplifica cada etapa do seu cultivo",
+    "dashboard": {
+      "title": "Painel das plantas",
+      "desc": "Acompanhe todas as suas plantas em uma tela. Veja fases, status e próximas ações de forma organizada."
+    },
+    "voice": {
+      "title": "Anotações por voz",
+      "desc": "Mãos na terra? Apenas fale. O My Bud transcreve e organiza suas observações automaticamente no diário."
+    },
+    "alerts": {
+      "title": "Alertas inteligentes",
+      "desc": "Receba lembretes personalizados para rega, nutrientes e mudanças de fotoperíodo. Nunca mais esqueça nada."
+    },
+    "journal": {
+      "title": "Diário de cultivo",
+      "desc": "Histórico completo e organizado de cada etapa. Acompanhe a evolução e aprenda com cada ciclo."
+    }
+  },
+  "identityTrust": {
+    "title1": "Pensado por growers,",
+    "title2": "para growers",
+    "description": "O My Bud é o parceiro digital de quem leva o cultivo a sério e quer colher mais buds, com menos estresse. Nós transformamos as dores do dia a dia em uma ferramenta simples e poderosa, com a privacidade e a cultura canábica em primeiro lugar.",
+    "private": {
+      "title": "100% privado",
+      "desc": "Seus dados ficam no seu dispositivo. Sempre."
+    },
+    "community": {
+      "title": "Feito em comunidade",
+      "desc": "Desenvolvido com feedback real de cultivadores."
+    },
+    "tested": {
+      "title": "Testado por growers",
+      "desc": "Validado na prática, em grows reais."
+    }
+  },
+  "testimonials": {
+    "title": "Amado pelos growers",
+    "subtitle": "Não acredite só na nossa palavra. Veja o que os primeiros testers acharam.",
+    "1": {
+      "text": "\"Nunca mais esqueci uma rega. A simplicidade dos alertas salvou meu ciclo. Indispensável.\"",
+      "author": "@cutlvar",
+      "location": "São Paulo"
+    },
+    "2": {
+      "text": "\"Até meu cultivo improvisado ficou pro. Saber a fase exata de cada planta mudou o jogo.\"",
+      "author": "marina",
+      "location": "Rio de Janeiro"
+    },
+    "3": {
+      "text": "\"Mais fácil que planilha e muito mais bonito. A anotação por voz é genial.\"",
+      "author": "carlos",
+      "location": "Belo Horizonte"
+    }
+  },
+  "betaSignup": {
+    "title": "Garanta seu acesso à beta e receba atualizações exclusivas",
+    "subtitle": "Junte-se à primeira onda de growers que estão moldando o futuro do cultivo. Você terá acesso antecipado, vantagens exclusivas e nossa eterna gratidão.",
+    "emailPlaceholder": "Seu melhor email",
+    "instagramPlaceholder": "@seu_instagram (opcional, para VIPs)",
+    "button": "Quero testar o app",
+    "vipLink": "Não quer testar? Entrar na lista VIP para novidades",
+    "privacy": "Apenas dicas boas. Nada de spam. Respeitamos sua privacidade.",
+    "successMessage": "Obrigado! Você está na lista da beta. 🌱",
+    "errorMessage": "Algo deu errado. Tente novamente."
+  },
+  "comingSoon": {
+    "title": "Em breve nas suas lojas favoritas",
+    "subtitle": "Seja o primeiro a saber quando o My Bud chegar às lojas de apps",
+    "ctaText": "Entre no beta agora para ter acesso antecipado antes do lançamento oficial",
+    "iosText": "Notificar na App Store",
+    "androidText": "Notificar no Google Play"
+  },
+  "footer": {
+    "brand": "mybud",
+    "tagline": "Seu parceiro digital de cultivo.",
+    "faqTitle": "Dúvidas frequentes",
+    "faq1": {
+      "question": "É seguro para growers no Brasil?",
+      "answer": "Sim. Segurança é nossa prioridade #1. Não pedimos seu nome, CPF ou dados pessoais. Todas as informações do seu grow são privadas, criptografadas e pertencem apenas a você."
+    },
+    "faq2": {
+      "question": "O aplicativo é gratuito?",
+      "answer": "O acesso beta é 100% gratuito e sem pegadinhas. No futuro, teremos uma versão PRO com funcionalidades avançadas, mas sempre haverá um plano gratuito para te ajudar a organizar seu cultivo."
+    },
+    "faq3": {
+      "question": "Preciso fornecer meus dados pessoais?",
+      "answer": "Não. Apenas um email é necessário para criar sua conta e garantir que só você tenha acesso a ela. Seu anonimato e privacidade são fundamentais para nós."
+    },
+    "privacy": "Política de privacidade",
+    "terms": "Termos de serviço",
+    "contact": "Contato",
+    "copyright": "© 2024 My Bud. Todos os direitos reservados."
+  },
+  "header": {
+    "languageSelector": "Idioma"
+  },
+  "themeSelector": {
+    "title": "🎨 Testar Cores",
+    "subtitle": "escolha a vibe",
+    "emerald": "Original",
+    "purple": "Verde Intenso",
+    "amber": "Verde Grow",
+    "blue": "Verde Natural",
+    "original": "Original",
+    "emerald-deep": "Emerald 700",
+    "forest": "Emerald 800",
+    "mint": "Verde Intenso",
+    "sage": "Verde Grow",
+    "teal": "Verde Natural",
+    "white": "Branco"
+  }
+}
