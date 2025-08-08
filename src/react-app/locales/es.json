@@ -126,15 +126,19 @@
   "paymentModal": {
     "title": "Estás entrando al grupo de fundadores de My Bud.",
     "subtitle": "La app está siendo hecha en público, con quienes cultivan de verdad.",
+    "diyStatement": "Esta app está siendo construida en público, lado a lado con cultivadores reales. Es un proyecto DIY — y al apoyar ahora, te conviertes en parte del equipo que está moldeando el futuro de My Bud.",
     "price": "Si apoyas ahora con 70€, recibes:",
     "benefits": {
-      "earlyAccess": "Acceso anticipado a la app",
-      "premium": "6 meses premium",
-      "kit": "Kit con camiseta, stickers y QR Codes con tu logo",
-      "community": "Acceso al Close Friends y Discord del equipo",
-      "decisions": "Participación en las decisiones del desarrollo"
+      "earlyAccess": "Acceso anticipado a la app My Bud",
+      "premium": "6 meses de acceso premium",
+      "kit": "Kit físico con camiseta, stickers y QR Codes personalizados con tu logo",
+      "community": "Acceso a nuestro Close Friends en Instagram + servidor privado de Discord",
+      "priority": "Prioridad en probar nuevas funcionalidades y moldear el roadmap",
+      "behindScenes": "Acceso tras bambalinas a nuestro proceso de desarrollo (DIY + en público)"
     },
-    "launch": "La app será lanzada en noviembre.",
+    "qrCodesInfo": "Recibirás QR Codes exclusivos para identificar tus plantas — con tu propio logo impreso en el centro. Esto nunca se volverá a ofrecer. Solo los primeros 100 seguidores tendrán esta versión personalizada.",
+    "discordAccess": "También tendrás acceso a nuestro Close Friends en Instagram y un servidor privado de Discord con el equipo de desarrollo. Ahí es donde compartimos contenido tras bambalinas, probamos nuevas funcionalidades y recopilamos feedback real de cultivadores.",
+    "launch": "🚀 El lanzamiento oficial está planeado para noviembre de 2025. Pero los seguidores comenzarán a probar funcionalidades en las próximas semanas.",
     "paymentTitle": "Cómo apoyar:",
     "paymentMethod": "PayPal: payments@mybud.app",
     "paymentInstruction": "Envía la confirmación del pago a:",
@@ -217,5 +221,46 @@
     "sage": "Verde Cultivo",
     "teal": "Verde Natural",
     "white": "Blanco"
+  },
+  "common": {
+    "preparing": "Preparando video..."
+  },
+  "heroBridge": {
+    "growthPoints": {
+      "1": {
+        "description": "Primeros cultivadores probando",
+        "detail": "Validación inicial del producto"
+      },
+      "2": {
+        "description": "Crecimiento orgánico",
+        "detail": "Boca a boca funcionando"
+      },
+      "3": {
+        "description": "Asociaciones estratégicas",
+        "detail": "Las marcas comienzan a unirse"
+      },
+      "4": {
+        "description": "Escala y retención",
+        "detail": "Usuarios comprometidos y activos"
+      },
+      "5": {
+        "description": "Expansión de mercado",
+        "detail": "Nuevos países e idiomas"
+      },
+      "6": {
+        "description": "Consolidación total",
+        "detail": "Liderazgo en el segmento"
+      },
+      "7": {
+        "description": "Es solo el comienzo",
+        "detail": "El potencial real aún está por venir"
+      }
+    },
+    "benefits": {
+      "continuous": "Crecimiento continuo",
+      "trend": "Tendencia positiva",
+      "data": "Datos reales",
+      "evolution": "Evolucionando juntos"
+    }
   }
 }

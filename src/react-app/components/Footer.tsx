@@ -1,9 +1,14 @@
 import { useState, type FC } from 'react';
 import posthog from 'posthog-js';
-import { t } from '../lib/i18n';
+import { t, hasContentOverride } from '../lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const { currentLanguage } = useLanguage();
+  
+  // Detect if we're in B2B context (unified condition)
+  const isB2B = hasContentOverride();
 
   const faqs = [
     {
@@ -76,11 +81,12 @@ const Footer: FC = () => {
             </div>
           </div>
 
-          {/* FAQ Section (Right) */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-6">
-              {t('footer.faqTitle')}
-            </h3>
+          {/* FAQ Section (Right) - Hidden on B2B */}
+          {!isB2B && (
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">
+                {t('footer.faqTitle')}
+              </h3>
             <div className="space-y-3">
               {faqs.map((faq, index) => (
                 <div
@@ -121,6 +127,7 @@ const Footer: FC = () => {
               ))}
             </div>
           </div>
+          )}
         </div>
 
         {/* Legal Links - Centralized Row */}
@@ -146,6 +153,22 @@ const Footer: FC = () => {
             >
               {t('footer.contact')}
             </a>
+            <span className="text-gray-300">•</span>
+            {isB2B ? (
+              <a
+                href={`/${currentLanguage}`}
+                className="text-sm text-gray-500 hover:text-emerald-600 transition-colors font-medium"
+              >
+                B2C
+              </a>
+            ) : (
+              <a
+                href={`/${currentLanguage}/b2b`}
+                className="text-sm text-gray-500 hover:text-emerald-600 transition-colors font-medium"
+              >
+                B2B
+              </a>
+            )}
           </div>
         </div>
 

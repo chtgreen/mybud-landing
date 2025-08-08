@@ -3,10 +3,16 @@ import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
 
-const BetaSignup: FC = () => {
+interface BetaSignupProps {
+  background?: 'white' | 'gray';
+}
+
+const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
   const [email, setEmail] = useState('');
   const [instagram, setInstagram] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,7 +62,7 @@ const BetaSignup: FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className={`py-20 cta-organic organic-background ${bgClass}`}>
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

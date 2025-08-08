@@ -1,9 +1,15 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
 
-const Associations: FC = () => {
+interface AssociationsProps {
+  background?: 'white' | 'gray';
+}
+
+const Associations: FC<AssociationsProps> = ({ background = 'gray' }) => {
+  const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className={`py-20 ${bgClass}`}>
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-12">
           <h2 

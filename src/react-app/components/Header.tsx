@@ -1,85 +1,83 @@
-import { useState, useEffect } from 'react';
-import { Language } from '../lib/i18n';
+import React, { useState, useEffect } from 'react';
+import { Language, hasContentOverride } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {
-  onLanguageChange?: (language: Language) => void;
+  onLanguageChange: (lang: Language) => void;
+  isB2B?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ onLanguageChange }) => {
-  const { currentLanguage, changeLanguage } = useLanguage();
+const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [logoTextClass, setLogoTextClass] = useState('text-white');
+  const { currentLanguage } = useLanguage();
+
+  // Detect if we're in B2B context
+  const isB2B = typeof isB2BProp === 'boolean' ? isB2BProp : hasContentOverride();
 
   useEffect(() => {
-    const logoText = document.getElementById('logo-text');
-    const heroSection = document.querySelector('.hero-organic');
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
 
-    if (!heroSection || !logoText) return;
+      if (isB2B) {
+        setLogoTextClass('text-slate-800');
+      } else {
+        setLogoTextClass(scrolled ? 'text-slate-800' : 'text-white');
+      }
+    };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setLogoTextClass('text-white');
-          } else {
-            setLogoTextClass('text-slate-800');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    if (isB2B) {
+      // Always dark logo text on B2B
+      setLogoTextClass('text-slate-800');
+    }
 
-    observer.observe(heroSection);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
-    return () => observer.disconnect();
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isB2B]);
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = e.target.value as Language;
-    changeLanguage(newLanguage);
-    onLanguageChange?.(newLanguage);
+    onLanguageChange(newLanguage);
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 py-4">
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center">
-            <svg
-              className="w-5 h-5 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              />
-            </svg>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div className="container mx-auto px-6 w-full py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <div className={`w-8 h-8 ${isB2B ? 'bg-emerald-600' : 'bg-green-500'} rounded-lg flex items-center justify-center shadow-md`}>
+              <span className="text-white font-bold text-sm">M</span>
+            </div>
+            <span className={`font-bold text-lg transition-colors ${logoTextClass}`}>
+              mybud
+            </span>
           </div>
-          <div
-            id="logo-text"
-            className={`text-2xl font-bold transition-colors duration-300 ${logoTextClass}`}
-          >
-            mybud
-          </div>
-        </div>
 
-        {/* Language Selector */}
-        <div className="language-selector rounded-full px-3 py-2 soft-shadow">
-          <select
-            id="language-select"
-            value={currentLanguage}
-            onChange={handleLanguageChange}
-            className="bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-700 cursor-pointer"
-          >
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-          </select>
+          {/* Navigation & Language Selector */}
+          <div className="flex items-center space-x-4">
+            {/* Language Selector */}
+            <div className={`language-selector rounded-full px-3 py-2 backdrop-blur-sm border transition-all ${isB2B
+              ? 'bg-white/10 border-gray-300/30'
+              : isScrolled
+                ? 'bg-white/10 border-gray-300/30'
+                : 'bg-white/5 border-white/20'
+              }`}>
+              <select
+                id="language-select"
+                value={currentLanguage}
+                onChange={handleLanguageChange}
+                className="bg-transparent border-none focus:ring-0 text-sm font-medium cursor-pointer text-black"
+              >
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
     </header>

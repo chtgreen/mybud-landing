@@ -126,15 +126,19 @@
   "paymentModal": {
     "title": "You're entering the My Bud founders group.",
     "subtitle": "The app is being made in public, with those who really grow.",
+    "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of My Bud.",
     "price": "If you support now with $75 USD, you get:",
     "benefits": {
-      "earlyAccess": "Early access to the app",
-      "premium": "6 months premium",
-      "kit": "Kit with t-shirt, stickers and QR Codes with your logo",
-      "community": "Access to Close Friends and team Discord",
-      "decisions": "Participation in development decisions"
+      "earlyAccess": "Early access to the My Bud app",
+      "premium": "6 months of premium access",
+      "kit": "Physical kit with a t-shirt, stickers, and personalized QR Codes with your logo",
+      "community": "Access to our Close Friends Instagram + private Discord server",
+      "priority": "Priority in testing new features and shaping the roadmap",
+      "behindScenes": "Behind-the-scenes access to our dev process (DIY + in public)"
     },
-    "launch": "The app will be launched in November.",
+    "qrCodesInfo": "You'll receive exclusive QR Codes to identify your plants — with your own logo printed in the center. This will never be offered again. Only the first 100 supporters will have this personalized version.",
+    "discordAccess": "You'll also get access to our Close Friends on Instagram and a private Discord server with the dev team. That's where we share behind-the-scenes content, test new features, and collect real feedback from growers.",
+    "launch": "🚀 The official launch is planned for November 2025. But supporters will start testing features in the coming weeks.",
     "paymentTitle": "How to support:",
     "paymentMethod": "PayPal: payments@mybud.app",
     "paymentInstruction": "Send payment confirmation to:",
@@ -217,5 +221,46 @@
     "sage": "Grow Green",
     "teal": "Natural Green",
     "white": "White"
+  },
+  "common": {
+    "preparing": "Preparing video..."
+  },
+  "heroBridge": {
+    "growthPoints": {
+      "1": {
+        "description": "First growers testing",
+        "detail": "Initial product validation"
+      },
+      "2": {
+        "description": "Organic growth",
+        "detail": "Word of mouth working"
+      },
+      "3": {
+        "description": "Strategic partnerships",
+        "detail": "Brands starting to join"
+      },
+      "4": {
+        "description": "Scale and retention",
+        "detail": "Engaged and active users"
+      },
+      "5": {
+        "description": "Market expansion",
+        "detail": "New countries and languages"
+      },
+      "6": {
+        "description": "Total consolidation",
+        "detail": "Leadership in the segment"
+      },
+      "7": {
+        "description": "It's just the beginning",
+        "detail": "The real potential is yet to come"
+      }
+    },
+    "benefits": {
+      "continuous": "Continuous growth",
+      "trend": "Positive trend",
+      "data": "Real data",
+      "evolution": "Growing together"
+    }
   }
 }

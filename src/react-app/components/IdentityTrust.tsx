@@ -1,9 +1,15 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
 
-const IdentityTrust: FC = () => {
+interface IdentityTrustProps {
+  background?: 'white' | 'gray';
+}
+
+const IdentityTrust: FC<IdentityTrustProps> = ({ background = 'gray' }) => {
+  const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className={`py-20 organic-background ${bgClass}`}>
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12">
           <h2 
@@ -22,8 +28,8 @@ const IdentityTrust: FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* 100% Privado */}
-          <div className="card text-center">
+          {/* Integração Inteligente */}
+          <div className="card growth-hover text-center">
             <div className="p-3 rounded-lg inline-flex mb-4 bg-emerald-100">
               <svg
                 className="w-6 h-6 text-emerald-600"
@@ -51,7 +57,7 @@ const IdentityTrust: FC = () => {
           </div>
 
           {/* Feito em Comunidade */}
-          <div className="card text-center">
+          <div className="card growth-hover text-center">
             <div className="p-3 rounded-lg inline-flex mb-4 bg-emerald-100">
               <svg
                 className="w-6 h-6 text-emerald-600"
@@ -79,7 +85,7 @@ const IdentityTrust: FC = () => {
           </div>
 
           {/* Testado por Growers */}
-          <div className="card text-center">
+          <div className="card growth-hover text-center">
             <div className="p-3 rounded-lg inline-flex mb-4 bg-emerald-100">
               <svg
                 className="w-6 h-6 text-emerald-600"

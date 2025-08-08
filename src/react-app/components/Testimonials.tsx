@@ -1,7 +1,13 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
 
-const Testimonials: FC = () => {
+interface TestimonialsProps {
+  background?: 'white' | 'gray';
+}
+
+const Testimonials: FC<TestimonialsProps> = ({ background = 'gray' }) => {
+  const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
+
   const testimonials = [
     {
       textKey: 'testimonials.1.text',
@@ -21,7 +27,7 @@ const Testimonials: FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className={`py-20 ${bgClass} organic-background`}>
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-medium mb-6 text-zinc-800">

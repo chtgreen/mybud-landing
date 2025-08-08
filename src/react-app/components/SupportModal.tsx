@@ -79,6 +79,11 @@ const SupportModal: FC<SupportModalProps> = ({ open, onClose }) => {
           <p className="text-gray-600 mb-4">
             {t('paymentModal.subtitle')}
           </p>
+          <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 mb-4">
+            <p className="text-emerald-800 text-sm leading-relaxed">
+              {t('paymentModal.diyStatement')}
+            </p>
+          </div>
           <p className="text-lg font-medium text-gray-800 mb-4">
             {t('paymentModal.price')}
           </p>
@@ -104,9 +109,27 @@ const SupportModal: FC<SupportModalProps> = ({ open, onClose }) => {
             </li>
             <li className="flex items-start space-x-3">
               <span className="text-emerald-500 mt-1">–</span>
-              <span className="text-gray-700">{t('paymentModal.benefits.decisions')}</span>
+              <span className="text-gray-700">{t('paymentModal.benefits.priority')}</span>
+            </li>
+            <li className="flex items-start space-x-3">
+              <span className="text-emerald-500 mt-1">–</span>
+              <span className="text-gray-700">{t('paymentModal.benefits.behindScenes')}</span>
             </li>
           </ul>
+        </div>
+
+        {/* QR Codes Info */}
+        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
+          <p className="text-amber-800 text-sm leading-relaxed">
+            {t('paymentModal.qrCodesInfo')}
+          </p>
+        </div>
+
+        {/* Discord Access Info */}
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+          <p className="text-blue-800 text-sm leading-relaxed">
+            {t('paymentModal.discordAccess')}
+          </p>
         </div>
 
         <div className="text-center space-y-4 mb-6">

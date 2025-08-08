@@ -63,8 +63,39 @@ export const initializeLanguage = async (): Promise<Language> => {
   return initialLanguage;
 };
 
-// Translation function
+// Global content override for B2B context
+let contentOverride: Record<string, any> | null = null;
+
+// Set content override (used by B2B page)
+export const setContentOverride = (override: Record<string, any> | null): void => {
+  contentOverride = override;
+};
+
+// Helper to check if a content override is active (B2B context)
+export const hasContentOverride = (): boolean => contentOverride !== null;
+
+// Translation function with content override support
 export const t = (key: string, lang?: Language): string => {
+  // Check for content override first (B2B context)
+  if (contentOverride) {
+    const keys = key.split('.');
+    let value: any = contentOverride;
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        value = null;
+        break;
+      }
+    }
+    
+    if (typeof value === 'string') {
+      return value;
+    }
+  }
+  
+  // Fall back to regular translations
   const targetLang = lang || currentLanguage;
   
   // If requesting a different language than currently loaded, return key as fallback
