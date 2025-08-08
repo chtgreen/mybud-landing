@@ -186,7 +186,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 <button
                   className={isB2B ? 
                     "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-none border-0" :
-                    "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white/90 text-gray-900 border border-white/50 hover:bg-white/95 hover:text-gray-800 transition-colors shadow-lg"
+                    "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white text-gray-900 border border-white/50 hover:bg-white hover:text-gray-800 transition-colors shadow-lg"
                   }
                   onClick={onCTAClick}
                 >

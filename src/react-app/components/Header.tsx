@@ -59,13 +59,10 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) =
 
           {/* Navigation & Language Selector */}
           <div className="flex items-center space-x-4">
-            {/* Language Selector */}
-            <div className={`language-selector rounded-full px-3 py-2 backdrop-blur-sm border transition-all ${isB2B
-              ? 'bg-white/10 border-gray-300/30'
-              : isScrolled
-                ? 'bg-white/10 border-gray-300/30'
-                : 'bg-white/5 border-white/20'
-              }`}>
+            {/* Language Selector with solid white background */}
+            <div className={
+              `language-selector rounded-full px-3 py-2 border transition-all bg-white border-gray-300`
+            }>
               <select
                 id="language-select"
                 value={currentLanguage}

@@ -641,6 +641,7 @@ body {
   background: var(--emerald-800);
   transform: none;
   box-shadow: none;
+  opacity: 1;
 }
 
 .btn-secondary {
@@ -656,6 +657,8 @@ body {
 .btn-secondary:hover {
   color: var(--text-zinc-800);
   border-color: var(--emerald-600);
+  background: var(--emerald-50);
+  opacity: 1;
 }
 
 .section-light {

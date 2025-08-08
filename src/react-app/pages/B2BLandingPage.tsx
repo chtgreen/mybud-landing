@@ -53,6 +53,7 @@ interface B2BContent {
     cta: string;
     brandSticker?: string;
     sampleTask?: string;
+    placeholder?: string;
   };
   stats: {
     title?: string;
@@ -64,6 +65,10 @@ interface B2BContent {
     repurchaseLabel: string;
     countries: string;
     countriesLabel: string;
+    users?: { value: string; label: string };
+    engagement?: { value: string; label: string };
+    retention?: { value: string; label: string };
+    growth?: { value: string; label: string };
   };
   identityTrust: {
     title1: string;
@@ -72,6 +77,9 @@ interface B2BContent {
     private: { title: string; desc: string };
     community: { title: string; desc: string };
     tested: { title: string; desc: string };
+    card1?: { title: string; description: string };
+    card2?: { title: string; description: string };
+    card3?: { title: string; description: string };
   };
   testimonials: {
     title: string;
@@ -79,6 +87,7 @@ interface B2BContent {
     1: { text: string; author: string; location: string };
     2: { text: string; author: string; location: string };
     3: { text: string; author: string; location: string };
+    testimonial1?: { text: string; author: string; location: string };
   };
   faq: {
     title: string;
@@ -135,7 +144,7 @@ const b2bContent: B2BContent = {
     title2: '',
     title3: '',
     subtitle: 'Sua marca dentro da rotina do grower — visível nas tarefas, nas fotos e nos dados.',
-    overline: 'We don’t just grow cultivars — we grow your sales numbers.',
+    overline: 'Não cultivamos apenas variedades — cultivamos seus números de vendas.',
     primaryCta: 'Agendar conversa',
     secondaryCta: 'Pedir media kit',
     trustElement: ''
@@ -283,6 +292,173 @@ const b2bContent: B2BContent = {
   }
 };
 
+// --- Spanish B2B translations ---
+const b2bContentEs: B2BContent = {
+  hero: {
+    title1: 'Haz crecer las ventas con uso real, no con promesas.',
+    title2: '',
+    title3: '',
+    subtitle: 'Tu marca dentro de la rutina del cultivador — visible en las tareas, las fotos y los datos.',
+    overline: 'No solo cultivamos variedades — cultivamos tus números de ventas.',
+    primaryCta: 'Agendar una llamada',
+    secondaryCta: 'Solicitar media kit',
+    trustElement: ''
+  },
+  features: {
+    title: 'Cómo funciona',
+    subtitle: 'El marketing del cannabis está restringido y carece de datos confiables. My Bud coloca tu marca en el momento exacto del cultivo, dentro de la app que el cultivador usa todos los días — y entrega métricas que realmente puedes rastrear.',
+    journal: {
+      title: 'Paso 1 — De la etiqueta a la app',
+      description: 'Tu tabla se convierte en tareas accionables por fase. El QR en el empaque lleva al cliente directamente al cronograma en My Bud.'
+    },
+    voice: {
+      title: 'Paso 2 — Uso visible y útil',
+      description: 'Las tareas aparecen en el diario de cultivo con stickers en fotos y videos. Sin anuncios forzados — presencia natural dentro de lo que el cultivador ya hace.'
+    },
+    alerts: {
+      title: 'Paso 3 — Datos que importan',
+      description: 'Sigues la adherencia al cronograma, abandono, recompra y evidencia visual de uso. Datos agregados y anónimos, listos para la decisión.'
+    },
+    guides: {
+      title: 'Paso 4 — Sigue a tus influencers',
+      description: 'Acceso premium a cultivadores influencers estratégicos. Sigue cultivos en tiempo real, stickers de marca y códigos únicos para rastrear ventas.'
+    }
+  },
+  appShowcase: {
+    title: 'Tipos de asociación',
+    subtitle: '',
+    dashboard: {
+      title: 'Semillas y criadores',
+      desc: 'Catálogo en vivo en la app, genética actualizada y presencia en el diario.'
+    },
+    voice: {
+      title: 'Insumos y nutrientes',
+      desc: 'Tu línea de productos se convierte en tareas por fase con consejos, dosis y prueba de uso.'
+    },
+    qr: {
+      title: 'Equipamiento',
+      desc: 'LEDs, carpas, macetas y más apareciendo en configuraciones de cultivo y tareas diarias.'
+    },
+    alerts: {
+      title: 'Otros',
+      desc: 'Consultoría, servicios, laboratorios — integración vía My Bud.'
+    }
+  },
+  sponsorship: {
+    title: 'Casos de éxito',
+    subtitle: 'Marcas que ya están creciendo con nosotros.',
+    cta: 'Unirse como socio',
+    placeholder: 'Logo de marca asociada'
+  },
+  stats: {
+    growers: '15K+',
+    growersLabel: 'Cultivadores registrados',
+    repurchase: '78%',
+    repurchaseLabel: 'Tasa de recompra',
+    countries: '12',
+    countriesLabel: 'Países activos',
+    users: {
+      value: '15K+',
+      label: 'Cultivadores registrados'
+    },
+    engagement: {
+      value: '78%',
+      label: 'Tasa de adherencia al cronograma'
+    },
+    retention: {
+      value: '92%',
+      label: 'Retención después de 30 días'
+    },
+    growth: {
+      value: '340%',
+      label: 'Crecimiento mensual'
+    }
+  },
+  identityTrust: {
+    title1: 'Confianza y',
+    title2: 'Legitimidad',
+    description: 'Somos serios sobre el cultivo y sobre los negocios.',
+    private: {
+      title: 'Equipo Técnico Real',
+      desc: 'Agrónomos, desarrolladores y cultivadores con años de experiencia práctica.'
+    },
+    community: {
+      title: 'Tecnología Probada',
+      desc: 'Plataforma estable con más de 15.000 cultivadores activos y creciendo.'
+    },
+    tested: {
+      title: 'Asociaciones Estratégicas',
+      desc: 'Colaboramos con marcas establecidas y tiendas de confianza en el mercado.'
+    }
+  },
+  testimonials: {
+    title: 'Lo que dicen nuestros socios',
+    subtitle: 'Resultados reales de marcas que confían en My Bud.',
+    1: {
+      text: 'Vemos exactamente cómo los cultivadores usan nuestros productos. Los datos son increíbles para el desarrollo de productos.',
+      author: 'Socio',
+      location: 'Marca asociada'
+    },
+    2: {
+      text: 'La presencia orgánica en el diario es mucho más valiosa que cualquier anuncio tradicional.',
+      author: 'Patrocinador',
+      location: 'Marca asociada'
+    },
+    3: {
+      text: 'Finalmente podemos medir el ROI real de nuestro marketing en cannabis.',
+      author: 'Socio',
+      location: 'Marca asociada'
+    }
+  },
+  faq: {
+    title: 'FAQ',
+    subtitle: 'Respuestas rápidas para empezar bien.',
+    visible: {
+      q1: { q: '¿Cómo aparece y se mide la marca?', a: 'En las tareas por fase, en el diario público y en la vitrina del perfil. Medimos adherencia, abandono, recompra y evidencia visual, siempre de forma agregada y anónima.' },
+      q2: { q: '¿Puedo personalizar mi vitrina?', a: 'Sí. Ficha técnica, videos, consejos y cronogramas alineados con tu línea.' },
+      q3: { q: '¿Cómo funciona el patrocinio de cultivadores públicos?', a: 'Eliges perfiles estratégicos. La marca aparece en las publicaciones y tareas de esos perfiles, con stickers en las publicaciones. Seguimiento en tiempo real del uso.' },
+      q4: { q: '¿Existe exclusividad por categoría?', a: 'Podemos trabajar exclusividad por período y categoría en acuerdos estratégicos.' },
+      q5: { q: '¿Puedo rastrear ventas o leads?', a: 'Entregamos UTMs y cupones para atribución, además de informes de recompra cuando aplique.' }
+    }
+  },
+  betaSignup: {
+    title: '¿Listo para poner tu marca dentro del cultivo?',
+    subtitle: 'Vamos a conectar tu marca con quien cultiva de verdad.',
+    benefits: {
+      title: 'Si eres seleccionado, obtienes:',
+      premium: 'Acceso anticipado a la plataforma',
+      kit: 'Visibilidad destacada en la app',
+      access: 'Influencia directa en la construcción del producto',
+      priority: 'Posicionamiento como referencia en la comunidad cultivadora'
+    },
+    qrDescription: '',
+    supportButton: 'Agendar llamada',
+    newsletterButton: 'Agendar llamada',
+    newsletterTitle: '¿Listo para poner tu marca dentro del cultivo?',
+    newsletterDesc: 'Vamos a conectar tu marca con quien cultiva de verdad.',
+    emailPlaceholder: 'E-mail',
+    instagramPlaceholder: 'Sitio web (opcional)',
+    button: 'Agendar llamada',
+    privacy: 'O solicita el media kit: comercial@mybud.app',
+    successMessage: '¡Recibido! Te contactaremos pronto. 🚀',
+    errorMessage: 'Algo salió mal. Inténtalo de nuevo.'
+  },
+  modal: {
+    title: 'Hablemos sobre rendimiento real en el cultivo.',
+    subtitle: 'Cuéntanos en 30 segundos qué quieres lograr y cuándo. Volveremos con un plan directo al punto.',
+    fields: {
+      company: 'Nombre de la empresa',
+      fullName: 'Nombre completo',
+      email: 'E-mail',
+      category: 'Categoría',
+      objective: 'Objetivo principal (texto corto)',
+      market: 'Mercado objetivo (país/estado)',
+      mediaKit: 'Quiero recibir el media kit por email'
+    },
+    submit: 'Enviar y agendar'
+  }
+};
+
 // --- English B2B translations ---
 const b2bContentEn: B2BContent = {
   hero: {
@@ -427,7 +603,10 @@ export default function B2BLandingPage() {
 
   useEffect(() => {
     // Set B2B content override based on current language
-    const selectedContent = currentLanguage === 'en' ? b2bContentEn : b2bContent;
+    const selectedContent = 
+      currentLanguage === 'en' ? b2bContentEn :
+      currentLanguage === 'es' ? b2bContentEs :
+      b2bContent;
     setContentOverride(selectedContent);
 
     // Track page view
@@ -442,10 +621,12 @@ export default function B2BLandingPage() {
   }, [currentLanguage]);
 
   const handleCTAClick = () => {
-    setShowModal(true);
+    // Redirect to calendar booking instead of opening modal
+    window.open('https://calendly.com/mybud-app/30min', '_blank');
     posthog.capture('b2b_cta_clicked', {
       button: 'primary_cta',
-      location: 'hero'
+      location: 'hero',
+      action: 'calendar_redirect'
     });
   };
 
