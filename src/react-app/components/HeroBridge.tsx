@@ -10,7 +10,7 @@ const HeroBridge: FC<HeroBridgeProps> = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
   const [autoTooltip, setAutoTooltip] = useState<number | null>(null);
-  const [shownTooltips, setShownTooltips] = useState<Set<number>>(new Set());
+  const [, setShownTooltips] = useState<Set<number>>(new Set());
   const VIEWBOX = { minX: 0, minY: -10, width: 520, height: 170, groupTranslateY: 14 };
   const [isHovering, setIsHovering] = useState(false);
 

@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
 import { t, hasContentOverride } from '../lib/i18n';
 import HeroBridge from './HeroBridge';
@@ -8,6 +8,16 @@ interface HeroProps {
   onCTAClick: () => void;
   // Remove onGrowthProgress prop since we don't need header updates anymore
 }
+
+// Provide a generic container used by HeroLayout for theming
+export const HeroContainer: FC<{ theme: 'emerald' | 'white'; children: ReactNode }> = ({ theme, children }) => {
+  const isWhite = theme === 'white';
+  return (
+    <section className={`min-h-screen max-h-[1200px] relative ${isWhite ? 'bg-white hero-b2b' : 'hero-organic'} flex items-center`}>
+      {children}
+    </section>
+  );
+};
 
 const IPhoneMockup: FC = () => {
   const [isLoading, setIsLoading] = useState(false);

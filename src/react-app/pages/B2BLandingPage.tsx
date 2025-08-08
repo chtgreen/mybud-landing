@@ -283,6 +283,141 @@ const b2bContent: B2BContent = {
   }
 };
 
+// --- English B2B translations ---
+const b2bContentEn: B2BContent = {
+  hero: {
+    title1: 'Grow sales with real usage, not promises.',
+    title2: '',
+    title3: '',
+    subtitle: 'Put your brand inside the grower\'s routine — visible in tasks, photos and hard data.',
+    overline: 'We don’t just grow cultivars — we grow your revenue.',
+    primaryCta: 'Schedule a call',
+    secondaryCta: 'Request media kit',
+    trustElement: ''
+  },
+  features: {
+    title: 'How it works',
+    subtitle: 'Cannabis marketing is restricted and short on trustworthy data. My Bud places your brand at the exact moment of the grow, inside the app the grower uses every day — and delivers metrics you can actually track.',
+    journal: {
+      title: 'Step 1 — From label to app',
+      description: 'Your feeding chart becomes actionable tasks for each phase. The QR on the package takes customers straight to the schedule in My Bud.'
+    },
+    voice: {
+      title: 'Step 2 — Useful, visible usage',
+      description: 'Tasks appear in the grow diary with branded stickers on photos and videos. No forced ads — natural presence in what the grower already does.'
+    },
+    alerts: {
+      title: 'Step 3 — Data that matters',
+      description: 'Track adherence, drop-off, repurchase and visual proof of use. Aggregated, anonymous, decision-ready data.'
+    },
+    guides: {
+      title: 'Step 4 — Follow your influencers',
+      description: 'Premium access for strategic grower influencers. Monitor grows in real time, brand stickers and unique codes to track sales.'
+    }
+  },
+  appShowcase: {
+    title: 'Partnership types',
+    subtitle: '',
+    dashboard: {
+      title: 'Seeds & breeders',
+      desc: 'Live catalog in-app, up-to-date genetics and presence in the diary.'
+    },
+    voice: {
+      title: 'Inputs & nutrients',
+      desc: 'Your product line becomes phase-based tasks with tips, doses and proof of use.'
+    },
+    qr: {
+      title: 'Equipment',
+      desc: 'LEDs, tents, pots and more showing up in grow setups and daily tasks.'
+    },
+    alerts: {
+      title: 'Other',
+      desc: 'Consulting, services, labs — integration via My Bud.'
+    }
+  },
+  sponsorship: {
+    title: 'Presence that becomes routine.',
+    subtitle: 'Sponsor strategic public growers. Your brand appears in tasks, diaries and posts with watering stickers. Follow how creators use your products — and find new partners inside the ecosystem.',
+    cta: 'Schedule a call',
+    brandSticker: 'Brand sticker',
+    sampleTask: 'Apply nutrients — Veg stage'
+  },
+  stats: {
+    title: 'We’re after numbers that matter',
+    description: 'With a grow-focused app available in three languages from day one, we\'re set to scale. We\'re looking for partnerships that create real impact — here are the numbers we expect to hit together.*',
+    note: '*Projections based on early tests and potential market size.',
+    growers: '10,000+',
+    growersLabel: 'active growers (goal)',
+    repurchase: '30%+',
+    repurchaseLabel: 'expected repurchase with partnerships',
+    countries: '3',
+    countriesLabel: 'languages at launch'
+  },
+  identityTrust: {
+    title1: 'Discretion and intelligence',
+    title2: 'in one place.',
+    description: 'Ethical reports with clean data and zero unnecessary exposure. See schedule adherence, drop-off, repurchase and photos of real usage — all aggregated, anonymous and ready for action.',
+    private: { title: 'Transparent data', desc: 'Clear, actionable metrics without black boxes.' },
+    community: { title: 'Built with community', desc: 'Developed with real feedback from growers and partner brands.' },
+    tested: { title: 'Validated by brands', desc: 'Tested and approved by companies that already increased sales through real usage.' }
+  },
+  testimonials: {
+    title: 'Who will partner with us?',
+    subtitle: 'Real feedback from early conversations.',
+    1: { text: '"My Bud turned our feeding schedule into tasks the community actually follows."', author: 'Laura, CanaNutrients', location: 'USA' },
+    2: { text: '"Seeing real-time media of our LEDs inside diaries sealed the deal."', author: 'Mark, BrightGrow', location: 'Canada' },
+    3: { text: '"Finally, metrics that matter instead of likes."', author: 'Diego, SeedMasters', location: 'Spain' }
+  },
+  faq: {
+    title: 'FAQ',
+    subtitle: 'Quick answers to get you started.',
+    visible: {
+      q1: { q: 'How does the brand appear and get measured?', a: 'Inside phase-based tasks, public diaries and profile showcases. We track adherence, drop-off, repurchase and visual proof — always aggregated and anonymous.' },
+      q2: { q: 'Can I customize my showcase?', a: 'Yes. Tech sheet, videos, tips and schedules aligned with your product line.' },
+      q3: { q: 'How does public grower sponsorship work?', a: 'You pick strategic profiles. Your brand shows in their posts and tasks with stickers. Real-time monitoring of usage.' },
+      q4: { q: 'Is there category exclusivity?', a: 'We can work exclusivity by period and category in strategic agreements.' },
+      q5: { q: 'Can I track sales or leads?', a: 'We deliver UTMs and coupons for attribution plus repurchase reports when applicable.' }
+    }
+  },
+  betaSignup: {
+    title: 'Ready to put your brand inside the grow?',
+    subtitle: 'Let’s connect your company with real growers.',
+    benefits: {
+      title: 'If selected, you get:',
+      premium: 'Early access to the platform',
+      kit: 'Highlighted visibility inside the app',
+      access: 'Direct influence on product roadmap',
+      priority: 'Positioning as a reference in the grower community'
+    },
+    qrDescription: '',
+    supportButton: 'Schedule a call',
+    newsletterButton: 'Schedule a call',
+    newsletterTitle: 'Ready to put your brand inside the grow?',
+    newsletterDesc: 'Let’s connect your company with real growers.',
+    emailPlaceholder: 'Email',
+    instagramPlaceholder: 'Website (optional)',
+    button: 'Schedule a call',
+    privacy: 'Or request the media kit: comercial@mybud.app',
+    successMessage: 'Received! We\'ll get back to you soon. 🚀',
+    errorMessage: 'Something went wrong. Please try again.'
+  },
+  modal: {
+    title: 'Let’s talk about real grow performance.',
+    subtitle: 'Tell us in 30 seconds what you want to achieve and by when. We\'ll come back with a straight-to-the-point plan.',
+    fields: {
+      company: 'Company name',
+      fullName: 'Full name',
+      email: 'Email',
+      category: 'Category',
+      objective: 'Main goal (short text)',
+      market: 'Target market (country/state)',
+      mediaKit: 'I want to receive the media kit by email'
+    },
+    submit: 'Send & book'
+  }
+} as B2BContent;
+// --- end English translations ---
+
 // B2B content is now set via global override in i18n
 
 export default function B2BLandingPage() {
@@ -291,8 +426,9 @@ export default function B2BLandingPage() {
   useScrollEnhancement();
 
   useEffect(() => {
-    // Set B2B content override
-    setContentOverride(b2bContent);
+    // Set B2B content override based on current language
+    const selectedContent = currentLanguage === 'en' ? b2bContentEn : b2bContent;
+    setContentOverride(selectedContent);
 
     // Track page view
     posthog.capture('b2b_page_view', {
