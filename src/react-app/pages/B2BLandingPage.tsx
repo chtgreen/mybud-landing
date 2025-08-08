@@ -17,6 +17,7 @@ import BetaModal from '../components/BetaModal';
 import Sponsorship from '../components/Sponsorship';
 import Stats from '../components/Stats';
 import FAQ from '../components/FAQ';
+import SimpleTextSection from '../components/SimpleTextSection';
 
 // B2B Content Definition
 
@@ -93,6 +94,7 @@ interface B2BContent {
     title: string;
     subtitle: string;
     visible: {
+      q0?: { q: string; a: string };
       q1: { q: string; a: string };
       q2: { q: string; a: string };
       q3: { q: string; a: string };
@@ -140,61 +142,61 @@ interface B2BContent {
 
 const b2bContent: B2BContent = {
   hero: {
-    title1: 'Cresça vendas com uso real, não com promessas.',
+    title1: 'Saiba como, quando e por que growers usam seu produto direto da rotina deles.',
     title2: '',
     title3: '',
-    subtitle: 'Sua marca dentro da rotina do grower — visível nas tarefas, nas fotos e nos dados.',
-    overline: 'Não cultivamos apenas variedades — cultivamos seus números de vendas.',
+    subtitle: 'Do app ao uso visível em fotos e tarefas, o MyBud transforma o cultivo em métricas que você pode acompanhar e usar para vender mais.',
+    overline: 'Dados que crescem junto com as suas vendas.',
     primaryCta: 'Agendar conversa',
     secondaryCta: 'Pedir media kit',
     trustElement: ''
   },
   features: {
-    title: 'Como funciona',
-    subtitle: 'Marketing na cannabis é travado: restrições, pouco dado confiável e campanhas que não viram rotina. O My Bud coloca sua marca no momento certo do cultivo, dentro do app que o grower usa todos os dias — e entrega métricas que você realmente consegue acompanhar.',
-    journal: {
-      title: 'Passo 1 — Do rótulo para o app',
-      description: 'Sua tabela vira tarefas acionáveis por fase. O QR na embalagem leva o cliente direto ao cronograma no My Bud.'
-    },
-    voice: {
-      title: 'Passo 2 — Uso visível e útil',
-      description: 'As tarefas aparecem no diário de cultivo com stickers nas fotos e vídeos. Sem anúncio forçado — presença natural dentro do que o grower já faz.'
-    },
-    alerts: {
-      title: 'Passo 3 — Dados que importam',
-      description: 'Você acompanha adesão ao cronograma, abandono, recompra e evidências visuais de uso. Dados agregados e anônimos, prontos para decisão.'
-    },
-    guides: {
-      title: 'Passo 4 — Acompanha seus influencers',
-      description: 'Acesso premium growers influencers estratégicos. Acompanhe cultivos em tempo real, stickers da marca e códigos únicos para trackear vendas.'
-    }
-  },
-  appShowcase: {
-    title: 'Tipos de parceria',
+    title: 'Tipos de parcerias',
     subtitle: '',
-    dashboard: {
+    journal: {
       title: 'Sementes & breeders',
-      desc: 'Catálogo vivo no app, genéticas atualizadas e presença no diário.'
+      description: 'Catálogo vivo no app, genéticas atualizadas e presença no diário.'
     },
     voice: {
       title: 'Insumos e fertilizantes',
-      desc: 'Sua linha vira tarefas por fase, com dicas, doses e provas de uso.'
-    },
-    qr: {
-      title: 'Equipamentos',
-      desc: 'LEDs, tendas, vasos e afins aparecendo no setup e nas ações do dia a dia.'
+      description: 'Sua linha vira tarefas por fase, com dicas, doses e provas de uso.'
     },
     alerts: {
-      title: 'Outro',
-      desc: 'Consultoria, serviços, laboratórios — integração via My Bud.'
+      title: 'Equipamentos',
+      description: 'LEDs, tendas, vasos e afins aparecendo no setup e nas ações do dia a dia.'
+    },
+    guides: {
+      title: 'Dispositivos Inteligentes',
+      description: 'Você faz o hardware, nós integramos com o app.'
+    }
+  },
+  appShowcase: {
+    title: 'Como funciona',
+    subtitle: 'Processo simples e eficaz para colocar sua marca dentro da rotina do grower.',
+    dashboard: {
+      title: 'Passo 1 — Dados que importam',
+      desc: 'Sua tabela de nutrição, pragas ou manejo vira um cronograma interativo no app. O grower recebe as tarefas na fase certa, com doses, dicas e provas visuais de uso. Você acompanha adesão, abandono e recompra — tudo agregado e anônimo.'
+    },
+    voice: {
+      title: 'Passo 2 — Uso visível e útil',
+      desc: 'Sua marca aparece de forma natural nas tarefas e no diário de cultivo, com stickers nas fotos e vídeos.'
+    },
+    qr: {
+      title: 'Passo 3 — Acompanhe seus influenciadores',
+      desc: 'Veja em tempo real como perfis estratégicos usam seu produto, com stickers e códigos únicos para rastrear vendas.'
+    },
+    alerts: {
+      title: 'Passo 4 (opcional) — Do rótulo para o app',
+      desc: 'Se quiser, podemos conectar sua embalagem ao app via QR para levar o cliente direto ao cronograma do seu produto. Não é obrigatório para começar.'
     }
   },
   sponsorship: {
-    title: 'Presença que vira rotina.',
-    subtitle: 'Patrocine perfis públicos estratégicos. Sua marca aparece nas tarefas, no diário e nas publicações com stickers de rega. Acompanhe como os criadores usam — e encontre novos perfis para patrocinar dentro do ecossistema.',
+    title: 'Marketing na cannabis é travado, nós destravamos com dados reais.',
+    subtitle: 'Restrição de anúncios, métricas rasas e campanhas que não viram rotina. O MyBud coloca sua marca no momento exato do cultivo, no app que o grower abre todo dia, e te entrega dados acionáveis sobre o uso real dos seus produtos.',
     cta: 'Agendar conversa',
     brandSticker: 'Sticker de marca',
-    sampleTask: 'Aplicar nutrientes — Fase vegetativa'
+    sampleTask: 'Aplicar nutrientes - Fase vegetativa'
   },
   stats: {
     title: 'Estamos atrás de números que contam',
@@ -233,7 +235,7 @@ const b2bContent: B2BContent = {
       location: 'Growshop Alpha'
     },
     2: {
-      text: '“QR no rótulo → cronograma no app. Um toque, zero fricção.”',
+      text: '"Em uma campanha que usou QR no rótulo, o cliente acessou o cronograma no app com um toque. Zero fricção."',
       author: 'Time de Marketing',
       location: 'Marca de nutrientes'
     },
@@ -247,6 +249,7 @@ const b2bContent: B2BContent = {
     title: 'FAQ',
     subtitle: 'Respostas rápidas para começar certo.',
     visible: {
+      q0: { q: 'Que dados e insights vou receber?', a: 'Adesão ao cronograma, abandono, recompra, evidências visuais e métricas agregadas para orientar decisões.' },
       q1: { q: 'Como a marca aparece e é medida?', a: 'Nas tarefas por fase, no diário público e na vitrine do perfil. Medimos adesão, abandono, recompra e evidências visuais, sempre de forma agregada e anônima.' },
       q2: { q: 'Posso personalizar minha vitrine?', a: 'Sim. Ficha técnica, vídeos, dicas e cronogramas alinhados à sua linha.' },
       q3: { q: 'Como funciona o patrocínio de growers públicos?', a: 'Você escolhe perfis estratégicos. A marca aparece nas postagens e tarefas desses perfis, com stickers nas publicações. Acompanhamento em tempo real do uso.' },
@@ -635,14 +638,19 @@ export default function B2BLandingPage() {
       <Header onLanguageChange={changeLanguage} isB2B />
 
       <Hero onCTAClick={handleCTAClick} /> {/* Section 1: white */}
-      <FeaturesSection background="gray" /> {/* Section 2: gray */}
-      <Sponsorship background="white" /> {/* Section 3: white */}
-      <AppShowcase background="gray" /> {/* Section 4: gray */}
-      <Stats background="white" /> {/* Section 5: white */}
-      <FAQ background="gray" /> {/* Section 6: gray */}
-      <IdentityTrust background="white" /> {/* Section 7: white */}
-      <Testimonials background="gray" /> {/* Section 8: gray */}
-      <BetaSignup background="white" /> {/* Section 9: white */}
+      <Sponsorship background="gray" /> {/* Section 2: gray - Marketing na cannabis é travado */}
+      <AppShowcase background="white" /> {/* Section 3: white - Como funciona */}
+      <SimpleTextSection 
+        background="gray" 
+        title="Quer ir além dos dados?"
+        subtitle="Patrocine growers influencers estratégicos para gerar awareness e prova social. Veja como eles usam seus produtos, se compartilham e permita que publiquem com seus stickers."
+        ctaText="Agendar conversa"
+        ctaAction={handleCTAClick}
+             /> {/* Section 4: gray - Quer ir além dos dados */}
+      <FeaturesSection background="white" /> {/* Section 5: white - Tipos de parcerias */}
+      <Stats background="gray" /> {/* Section 6: gray */}
+      <FAQ background="white" /> {/* Section 7: white */}
+      <BetaSignup background="gray" /> {/* Section 8: gray */}
       <Footer />
 
       {showModal && (

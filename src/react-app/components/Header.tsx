@@ -8,7 +8,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [logoTextClass, setLogoTextClass] = useState('text-white');
   const { currentLanguage } = useLanguage();
 
@@ -18,7 +17,6 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) =
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 20;
-      setIsScrolled(scrolled);
 
       if (isB2B) {
         setLogoTextClass('text-slate-800');
