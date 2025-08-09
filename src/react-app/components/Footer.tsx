@@ -134,7 +134,7 @@ const Footer: FC = () => {
         <div className="border-t border-gray-100 mt-8 pt-6">
           <div className="flex justify-center items-center gap-6 mb-4">
             <a
-              href="#"
+              href={`/privacy-policy-${currentLanguage}.html`}
               className="text-sm text-gray-500 hover:text-emerald-600 transition-colors"
             >
               {t('footer.privacy')}
