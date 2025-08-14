@@ -8,15 +8,15 @@ interface BetaSignupProps {
 }
 
 const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [instagram, setInstagram] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !name.trim()) return;
 
     setIsSubmitting(true);
 
@@ -26,7 +26,8 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
         .insert([
           {
             email: email.trim(),
-            instagram: instagram.trim() || null,
+            // Store name in existing column for compatibility until DB has a proper 'name' column
+            instagram: name.trim(),
             created_at: new Date().toISOString(),
           }
         ]);
@@ -37,7 +38,7 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
       if (typeof posthog !== 'undefined') {
         posthog.capture('newsletter_signup_completed', {
           email,
-          has_instagram: !!instagram,
+          has_name: !!name,
           source: 'beta_section'
         });
       }
@@ -45,7 +46,7 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
       // Show success message
       alert(t('betaSignup.successMessage'));
       setEmail('');
-      setInstagram('');
+      setName('');
     } catch (error) {
       console.error('Error:', error);
       alert(t('betaSignup.errorMessage'));
@@ -75,20 +76,21 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
         <form onSubmit={submit} className="max-w-lg mx-auto space-y-4">
           <input
+            type="text"
+            placeholder={t('betaSignup.namePlaceholder')}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            required
+          />
+
+          <input
             type="email"
             placeholder={t('betaSignup.emailPlaceholder')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             required
-          />
-          
-          <input
-            type="text"
-            placeholder={t('betaSignup.instagramPlaceholder')}
-            value={instagram}
-            onChange={(e) => setInstagram(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
           />
 
           <button

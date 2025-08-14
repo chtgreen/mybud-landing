@@ -71,6 +71,9 @@ export const setContentOverride = (override: Record<string, any> | null): void =
   contentOverride = override;
 };
 
+// Access currently loaded translations (for B2B content override from JSON)
+export const getLoadedTranslations = (): Record<string, any> => loadedTranslations;
+
 // Helper to check if a content override is active (B2B context)
 export const hasContentOverride = (): boolean => contentOverride !== null;
 

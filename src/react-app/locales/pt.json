@@ -62,7 +62,7 @@
     }
   },
   "identityTrust": {
-    "title1": "Feito por quem cultiva.",
+    "title1": "Feito por growers para growers.",
     "title2": "",
     "description": "O My Bud nasceu da frustração de quem esqueceu a última rega, perdeu o dia da virada da flora ou confundiu genética. É um diário esperto, que entende sua rotina com leveza, privacidade e respeito à sua liberdade de cultivar.",
     "private": {
@@ -112,8 +112,8 @@
     "newsletterButton": "Só quero receber novidades por e-mail",
     "newsletterTitle": "Quer ter acesso ao beta?",
     "newsletterDesc": "Sem problema. Deixe seu contato e a gente te envia as novidades, vídeos dos bastidores e possivelmente um convite pro acesso antecipado gratuito quando rolar.",
+    "namePlaceholder": "Seu nome",
     "emailPlaceholder": "Seu melhor email",
-    "instagramPlaceholder": "@seu_instagram (opcional, para VIPs)",
     "button": "Quero testar o app",
     "privacy": "Apenas dicas boas. Nada de spam. Respeitamos sua privacidade.",
     "successMessage": "Obrigado! Você está na lista da beta. 🌱",

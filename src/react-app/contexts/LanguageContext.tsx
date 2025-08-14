@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import posthog from 'posthog-js';
 import { 
   Language, 
@@ -26,6 +26,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const [currentLanguage, setCurrentLanguage] = useState<Language>(DEFAULT_LANGUAGE);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
   const { lang } = useParams<{ lang: string }>();
 
   useEffect(() => {
@@ -78,14 +79,26 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setCurrentLanguage(newLanguage);
     await setI18nLanguage(newLanguage);
     
-    // Navigate to new language URL
-    navigate(`/${newLanguage}`, { replace: true });
+    // Preserve the current path structure when changing language
+    const currentPath = location.pathname;
+    const pathSegments = currentPath.split('/').filter(Boolean);
+    
+    // Remove the current language if it exists and reconstruct the path
+    if (pathSegments.length > 0 && SUPPORTED_LANGUAGES.includes(pathSegments[0] as Language)) {
+      pathSegments[0] = newLanguage;
+    } else {
+      pathSegments.unshift(newLanguage);
+    }
+    
+    const newPath = '/' + pathSegments.join('/');
+    navigate(newPath, { replace: true });
     
     // Track language change
     if (typeof posthog !== 'undefined') {
       posthog.capture('language_changed', {
         new_language: newLanguage,
         previous_language: previousLanguage,
+        path: newPath
       });
     }
     

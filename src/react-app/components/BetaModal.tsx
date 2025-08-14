@@ -9,8 +9,8 @@ interface BetaModalProps {
 }
 
 const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [instagram, setInstagram] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [showNewsletterForm, setShowNewsletterForm] = useState(false);
@@ -19,7 +19,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !name.trim()) return;
 
     setIsSubmitting(true);
 
@@ -29,7 +29,8 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
         .insert([
           {
             email: email.trim(),
-            instagram: instagram.trim() || null,
+            // Temporarily store name in existing column until DB has proper 'name'
+            instagram: name.trim(),
             created_at: new Date().toISOString(),
           }
         ]);
@@ -40,7 +41,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_completed', {
           email,
-          has_instagram: !!instagram,
+          has_name: !!name,
           source: 'beta_modal'
         });
       }
@@ -48,7 +49,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
       // Show success message
       alert(t('betaSignup.successMessage'));
       setEmail('');
-      setInstagram('');
+      setName('');
       onClose();
     } catch (error) {
       console.error('Error:', error);
@@ -147,7 +148,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div className="bg-emerald-500 h-2 rounded-full" style={{width: '78%'}}></div>
               </div>
-                              <p className="text-xs text-gray-500 mt-2">Lançamento oficial estimado: Novembro 2025</p>
+              <p className="text-xs text-gray-500 mt-2">Lançamento oficial estimado: Novembro 2025</p>
             </div>
 
             {/* Access Options */}
@@ -178,7 +179,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                       Discord privado do desenvolvimento
                     </li>
                   </ul>
-                                     {!showPaymentDetails ? (
+                  {!showPaymentDetails ? (
                      <button
                        onClick={handleSupportClick}
                        className="w-full btn-primary py-3 px-4"
@@ -241,20 +242,21 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                 ) : (
                   <form onSubmit={submit} className="space-y-3">
                     <input
+                      type="text"
+                      placeholder="Seu nome"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
+                      required
+                    />
+
+                    <input
                       type="email"
                       placeholder="Seu melhor email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
                       required
-                    />
-                    
-                    <input
-                      type="text"
-                      placeholder="@instagram (opcional)"
-                      value={instagram}
-                      onChange={(e) => setInstagram(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
                     />
 
                     <button
