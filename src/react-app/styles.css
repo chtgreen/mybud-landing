@@ -1,7 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/uncut-sans");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 :root {
+  /* Font Family Variables */
+  --font-primary: "Uncut Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-secondary: "Instrument Serif", Georgia, Times, serif;
+
+  /* Font Size Variables */
+  --font-size-base: 1.25rem; /* 18px - increased from default 16px */
+  --font-size-sm: 0.875rem; /* 14px - increased from 12px */
+  --font-size-xs: 0.75rem; /* 12px - increased from 10px */
+
   /* My Bud Brand Colors (Refined based on "tech, nature, trust") */
+  --emerald-200: #a7f3d0;
   --emerald-green: #059669;
   --deep-teal: #0f766e;
   --light-emerald: #6ee7b7;
@@ -63,7 +74,7 @@
   --emerald-border-glow: 0 0 20px rgba(110, 231, 183, 0.6);
 
   /* ELEVATED VISUAL SYSTEM - Organic + Digital + Underground */
-  
+
   /* Refined Color Palette */
   --organic-emerald-50: #ecfdf5;
   --organic-emerald-100: #d1fae5;
@@ -160,7 +171,7 @@
 
 .organic-background::before,
 .organic-background::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -185,38 +196,26 @@
 .hero-organic {
   position: relative;
   background:
-    radial-gradient(
-      ellipse at top left,
-      #6ee7b7 0%,
-      #34d399 25%,
-      #10b981 50%
-    ),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
     radial-gradient(
       ellipse at bottom right,
       #a7f3d0 0%,
       #6ee7b7 35%,
       #34d399 70%
     ),
-    linear-gradient(
-      135deg,
-      #10b981 0%,
-      #34d399 40%,
-      #6ee7b7 80%,
-      #a7f3d0 100%
-    );
+    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
   overflow: hidden;
 }
 
 .hero-organic::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    var(--growth-gradient-primary),
-    var(--growth-gradient-secondary),
+  background:
+    var(--growth-gradient-primary), var(--growth-gradient-secondary),
     var(--growth-gradient-tertiary);
   animation: breatheHero 12s ease-in-out infinite;
   pointer-events: none;
@@ -239,7 +238,7 @@
 }
 
 .cta-organic::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -259,7 +258,8 @@
 
 /* Breathing Animations - Organic Growth Feeling */
 @keyframes breatheGrowth {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(var(--breath-scale-min)) translateY(0);
     opacity: var(--breath-opacity-min);
   }
@@ -278,7 +278,8 @@
 }
 
 @keyframes breatheHero {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1) rotate(0deg);
     opacity: 0.4;
   }
@@ -301,7 +302,7 @@
   .organic-background {
     transition: --breath-opacity-max 0.3s ease;
   }
-  
+
   .scroll-enhanced {
     --breath-opacity-max: 0.8;
     --breath-duration: 6s;
@@ -315,7 +316,7 @@
 }
 
 .light-rays::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
@@ -337,8 +338,12 @@
 }
 
 @keyframes rotateRays {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Micro-Interactions - Growth-Inspired Hover Effects */
@@ -349,7 +354,7 @@
 }
 
 .growth-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -372,7 +377,7 @@
 
 .growth-hover:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 10px 25px rgba(6, 95, 70, 0.15),
     0 0 30px rgba(110, 231, 183, 0.2);
 }
@@ -390,7 +395,7 @@
 }
 
 .btn-organic::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -411,16 +416,17 @@
 
 .btn-organic:hover {
   transform: translateY(-1px);
-  box-shadow: 
+  box-shadow:
     0 8px 20px rgba(6, 95, 70, 0.25),
     0 0 25px rgba(110, 231, 183, 0.3);
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-primary);
   background: var(--background);
   color: var(--text-dark);
   line-height: 1.6;
+  font-size: var(--font-size-base);
 }
 
 .text-emerald {
@@ -451,22 +457,22 @@ body {
 
 .soft-shadow {
   box-shadow: 0 4px 20px rgba(5, 150, 105, 0.1);
-  }
-  
-  .gradient-text {
+}
+
+.gradient-text {
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-  }
-  
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .mybud-card {
   background: white;
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .mybud-card:hover {
@@ -482,11 +488,7 @@ body {
 }
 
 .cta-button {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-dark)
-  );
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   transition: all 0.3s ease;
   border-radius: 12px;
   border: none;
@@ -546,7 +548,7 @@ body {
 .badge {
   background: var(--emerald-100);
   color: var(--emerald-700);
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   padding: 0.125rem 0.5rem;
   border-radius: 0.375rem;
   font-weight: 500;
@@ -633,12 +635,14 @@ body {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   box-shadow: none;
 }
 
 .btn-primary:hover {
-  background: var(--emerald-800);
+  background: var(--emerald-200);
   transform: none;
   box-shadow: none;
   opacity: 1;
@@ -684,25 +688,14 @@ body {
 /* Emerald-700/800 Green Focused Theme Alternatives */
 .hero-organic.theme-emerald-deep {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #047857 0%,
-      #065f46 25%,
-      #047857 50%
-    ),
+    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #047857 50%),
     radial-gradient(
       ellipse at bottom right,
       #065f46 0%,
       #047857 35%,
       #134e4a 70%
     ),
-    linear-gradient(
-      135deg,
-      #047857 0%,
-      #065f46 40%,
-      #047857 80%,
-      #059669 100%
-    ) !important;
+    linear-gradient(135deg, #047857 0%, #065f46 40%, #047857 80%, #059669 100%) !important;
 }
 
 /* iPhone Frame Video Styles */
@@ -761,10 +754,10 @@ body {
 /* Responsive content sizing inside phone */
 @media (max-height: 600px) {
   .video-container .text-base {
-    font-size: 0.75rem !important;
+    font-size: var(--font-size-sm) !important;
   }
   .video-container .text-xs {
-    font-size: 0.625rem !important;
+    font-size: var(--font-size-xs) !important;
   }
   .video-container .p-3 {
     padding: 0.5rem !important;
@@ -779,7 +772,7 @@ body {
 
 @media (max-height: 500px) {
   .video-container h2 {
-    font-size: 0.75rem !important;
+    font-size: var(--font-size-sm) !important;
     margin-bottom: 0.25rem !important;
   }
   .video-container .h-8 {
@@ -792,118 +785,63 @@ body {
 
 .hero-organic.theme-forest-emerald {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #065f46 0%,
-      #047857 25%,
-      #134e4a 50%
-    ),
+    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #134e4a 50%),
     radial-gradient(
       ellipse at bottom right,
       #047857 0%,
       #065f46 35%,
       #0f3730 70%
     ),
-    linear-gradient(
-      135deg,
-      #065f46 0%,
-      #047857 40%,
-      #065f46 80%,
-      #134e4a 100%
-    ) !important;
+    linear-gradient(135deg, #065f46 0%, #047857 40%, #065f46 80%, #134e4a 100%) !important;
 }
 
 .hero-organic.theme-mint-emerald {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #047857 0%,
-      #059669 25%,
-      #047857 50%
-    ),
+    radial-gradient(ellipse at top left, #047857 0%, #059669 25%, #047857 50%),
     radial-gradient(
       ellipse at bottom right,
       #059669 0%,
       #047857 35%,
       #10b981 70%
     ),
-    linear-gradient(
-      135deg,
-      #047857 0%,
-      #059669 40%,
-      #047857 80%,
-      #10b981 100%
-    ) !important;
+    linear-gradient(135deg, #047857 0%, #059669 40%, #047857 80%, #10b981 100%) !important;
 }
 
 .hero-organic.theme-sage-emerald {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #047857 0%,
-      #065f46 25%,
-      #059669 50%
-    ),
+    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #059669 50%),
     radial-gradient(
       ellipse at bottom right,
       #065f46 0%,
       #047857 35%,
       #059669 70%
     ),
-    linear-gradient(
-      135deg,
-      #047857 0%,
-      #065f46 40%,
-      #059669 80%,
-      #047857 100%
-    ) !important;
+    linear-gradient(135deg, #047857 0%, #065f46 40%, #059669 80%, #047857 100%) !important;
 }
 
 .hero-organic.theme-teal-emerald {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #065f46 0%,
-      #047857 25%,
-      #059669 50%
-    ),
+    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #059669 50%),
     radial-gradient(
       ellipse at bottom right,
       #047857 0%,
       #065f46 35%,
       #134e4a 70%
     ),
-    linear-gradient(
-      135deg,
-      #065f46 0%,
-      #047857 40%,
-      #065f46 80%,
-      #134e4a 100%
-    ) !important;
+    linear-gradient(135deg, #065f46 0%, #047857 40%, #065f46 80%, #134e4a 100%) !important;
 }
 
 /* White theme only for the main hero section, not bottom sections */
 .hero-organic.theme-white.flex.items-center {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #ffffff 0%,
-      #f8fafc 25%,
-      #f1f5f9 50%
-    ),
+    radial-gradient(ellipse at top left, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%),
     radial-gradient(
       ellipse at bottom right,
       #e2e8f0 0%,
       #cbd5e1 35%,
       #94a3b8 70%
     ),
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #f8fafc 40%,
-      #f1f5f9 80%,
-      #e2e8f0 100%
-    ) !important;
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 40%, #f1f5f9 80%, #e2e8f0 100%) !important;
 }
 
 /* White theme specific text colors - only for main hero section */
@@ -944,7 +882,7 @@ body {
   right: 20px;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -1005,25 +943,14 @@ body {
 /* Organic Cannabis Grower Design - Much Lighter Original */
 .hero-organic {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #6ee7b7 0%,
-      #34d399 25%,
-      #10b981 50%
-    ),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
     radial-gradient(
       ellipse at bottom right,
       #a7f3d0 0%,
       #6ee7b7 35%,
       #34d399 70%
     ),
-    linear-gradient(
-      135deg,
-      #10b981 0%,
-      #34d399 40%,
-      #6ee7b7 80%,
-      #a7f3d0 100%
-    );
+    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1049,17 +976,17 @@ body {
     opacity: 0.08;
     animation-duration: 6s;
   }
-  
+
   /* Hide phone mockups on mobile to save space */
   .iphone-frame {
     display: none !important;
   }
-  
+
   /* Adjust layout when phone is hidden */
   .hero-organic .lg\:w-1\/2 {
     width: 100% !important;
   }
-  
+
   /* Center content when phone is hidden */
   .app-showcase .lg\:flex-row {
     flex-direction: column !important;
@@ -1084,11 +1011,7 @@ body {
 /* Cannabis-inspired organic shapes */
 .grow-element {
   position: absolute;
-  background: radial-gradient(
-    ellipse,
-    rgba(16, 185, 129, 0.15),
-    transparent
-  );
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.15), transparent);
   border-radius: 60% 40% 40% 60%;
   opacity: 0.6;
   animation: organicFloat 15s ease-in-out infinite;
@@ -1097,21 +1020,13 @@ body {
 .grow-element:nth-child(2n) {
   border-radius: 40% 60% 60% 40%;
   animation-delay: -5s;
-  background: radial-gradient(
-    ellipse,
-    rgba(4, 120, 87, 0.12),
-    transparent
-  );
+  background: radial-gradient(ellipse, rgba(4, 120, 87, 0.12), transparent);
 }
 
 .grow-element:nth-child(3n) {
   border-radius: 70% 30% 50% 50%;
   animation-delay: -10s;
-  background: radial-gradient(
-    ellipse,
-    rgba(6, 95, 70, 0.18),
-    transparent
-  );
+  background: radial-gradient(ellipse, rgba(6, 95, 70, 0.18), transparent);
 }
 
 /* Professional grow room ambiance */
@@ -1243,7 +1158,7 @@ body {
     transform: scale(1.5);
     box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
   }
-  }
+}
 
 /* ============================================
    THEME VARIANTS
@@ -1252,36 +1167,39 @@ body {
 /* Default Theme (B2C - Light Green) - Original Vibrant Colors */
 .hero-organic {
   background:
-    radial-gradient(
-      ellipse at top left,
-      #6ee7b7 0%,
-      #34d399 25%,
-      #10b981 50%
-    ),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
     radial-gradient(
       ellipse at bottom right,
       #a7f3d0 0%,
       #6ee7b7 35%,
       #34d399 70%
     ),
-    linear-gradient(
-      135deg,
-      #10b981 0%,
-      #34d399 40%,
-      #6ee7b7 80%,
-      #a7f3d0 100%
-    );
+    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
   position: relative;
   overflow: hidden;
 }
 
 /* White Theme with Subtle Green (B2B) */
 .theme-white {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #ecfdf5 75%, #f0fdf4 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #f1f5f9 50%,
+    #ecfdf5 75%,
+    #f0fdf4 100%
+  ) !important;
 }
 
 .theme-white .hero-organic {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #ecfdf5 75%, #f0fdf4 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #f1f5f9 50%,
+    #ecfdf5 75%,
+    #f0fdf4 100%
+  ) !important;
 }
 
 /* Improved CTA Button Styles */
@@ -1295,13 +1213,18 @@ body {
 }
 
 .cta-button-improved::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -1342,7 +1265,7 @@ body {
 }
 
 .hero-b2b::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1410,12 +1333,32 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(110, 231, 183, 0.08) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.06) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 50% 10%, rgba(5, 150, 105, 0.04) 1px, transparent 1px),
-    radial-gradient(circle at 10% 90%, rgba(6, 95, 70, 0.05) 1.5px, transparent 1.5px);
-  background-size: 180px 180px, 120px 120px, 80px 80px, 200px 200px;
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(110, 231, 183, 0.08) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(16, 185, 129, 0.06) 1.5px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(5, 150, 105, 0.04) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(6, 95, 70, 0.05) 1.5px,
+      transparent 1.5px
+    );
+  background-size:
+    180px 180px,
+    120px 120px,
+    80px 80px,
+    200px 200px;
   animation: leafPatternFlow 30s linear infinite;
   opacity: 0.6;
   pointer-events: none;
@@ -1428,12 +1371,32 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 40%, rgba(110, 231, 183, 0.4) 0.8px, transparent 0.8px),
-    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.3) 0.6px, transparent 0.6px),
-    radial-gradient(circle at 40% 80%, rgba(5, 150, 105, 0.35) 0.7px, transparent 0.7px),
-    radial-gradient(circle at 90% 60%, rgba(6, 95, 70, 0.4) 0.5px, transparent 0.5px);
-  background-size: 300px 300px, 250px 250px, 200px 200px, 350px 350px;
+  background-image:
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(110, 231, 183, 0.4) 0.8px,
+      transparent 0.8px
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(16, 185, 129, 0.3) 0.6px,
+      transparent 0.6px
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(5, 150, 105, 0.35) 0.7px,
+      transparent 0.7px
+    ),
+    radial-gradient(
+      circle at 90% 60%,
+      rgba(6, 95, 70, 0.4) 0.5px,
+      transparent 0.5px
+    );
+  background-size:
+    300px 300px,
+    250px 250px,
+    200px 200px,
+    350px 350px;
   animation: particlesFloat 40s ease-in-out infinite;
   opacity: 0.7;
   pointer-events: none;
@@ -1441,7 +1404,8 @@ body {
 }
 
 @keyframes subtleBreath {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1);
   }
@@ -1452,7 +1416,8 @@ body {
 }
 
 @keyframes subtleFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg) scale(1);
     opacity: 0.3;
   }
@@ -1470,10 +1435,9 @@ body {
   }
 }
 
-
-
 @keyframes greenPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scale(1) rotate(0deg);
   }
@@ -1492,7 +1456,8 @@ body {
 }
 
 @keyframes slowPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1) translateY(0px);
   }
@@ -1508,37 +1473,74 @@ body {
 
 @keyframes leafPatternFlow {
   0% {
-    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-position:
+      0px 0px,
+      0px 0px,
+      0px 0px,
+      0px 0px;
   }
   25% {
-    background-position: 50px 50px, -30px 40px, 20px -20px, 40px 30px;
+    background-position:
+      50px 50px,
+      -30px 40px,
+      20px -20px,
+      40px 30px;
   }
   50% {
-    background-position: 100px 80px, -60px 80px, 40px -40px, 80px 60px;
+    background-position:
+      100px 80px,
+      -60px 80px,
+      40px -40px,
+      80px 60px;
   }
   75% {
-    background-position: 150px 50px, -90px 40px, 60px -20px, 120px 30px;
+    background-position:
+      150px 50px,
+      -90px 40px,
+      60px -20px,
+      120px 30px;
   }
   100% {
-    background-position: 180px 0px, -120px 0px, 80px 0px, 200px 0px;
+    background-position:
+      180px 0px,
+      -120px 0px,
+      80px 0px,
+      200px 0px;
   }
 }
 
 @keyframes particlesFloat {
-  0%, 100% {
-    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  0%,
+  100% {
+    background-position:
+      0px 0px,
+      0px 0px,
+      0px 0px,
+      0px 0px;
     opacity: 0.7;
   }
   25% {
-    background-position: 80px -50px, -60px 40px, 30px 60px, 40px -30px;
+    background-position:
+      80px -50px,
+      -60px 40px,
+      30px 60px,
+      40px -30px;
     opacity: 0.9;
   }
   50% {
-    background-position: 150px -100px, -120px 80px, 60px 120px, 80px -60px;
+    background-position:
+      150px -100px,
+      -120px 80px,
+      60px 120px,
+      80px -60px;
     opacity: 0.8;
   }
   75% {
-    background-position: 220px -50px, -180px 40px, 90px 60px, 120px -30px;
+    background-position:
+      220px -50px,
+      -180px 40px,
+      90px 60px,
+      120px -30px;
     opacity: 0.9;
   }
 }
@@ -1547,7 +1549,9 @@ body {
 .animate-ready {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .animate-in {

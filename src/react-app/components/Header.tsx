@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Language, hasContentOverride } from '../lib/i18n';
+import { Language, isB2B as isB2BContext } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {
@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) =
   const { currentLanguage } = useLanguage();
 
   // Detect if we're in B2B context
-  const isB2B = typeof isB2BProp === 'boolean' ? isB2BProp : hasContentOverride();
+  const isB2B = typeof isB2BProp === 'boolean' ? isB2BProp : isB2BContext();
 
   useEffect(() => {
     const handleScroll = () => {

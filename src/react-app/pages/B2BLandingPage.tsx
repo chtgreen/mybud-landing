@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
-import { setContentOverride } from '../lib/i18n';
-import b2bJson from '../locales/b2b.json';
+import { setCurrentNamespace } from '../lib/i18n';
 import Header from '../components/Header';
 
 import Hero from '../components/Hero';
@@ -18,7 +17,7 @@ import Stats from '../components/Stats';
 import FAQ from '../components/FAQ';
 import SimpleTextSection from '../components/SimpleTextSection';
 
-// B2B content is now set via global override in i18n
+// B2B content is selected via namespace in i18n
 
 // Shared URL for scheduling B2B calls
 const B2B_CALENDAR_URL =
@@ -30,19 +29,13 @@ export default function B2BLandingPage() {
   useScrollEnhancement();
 
   useEffect(() => {
-    // Set B2B content override from JSON override (pt|es|en)
-    const override = (b2bJson as Record<string, any>)[currentLanguage] || null;
-    setContentOverride(override);
+    // Select B2B namespace when this page mounts
+    setCurrentNamespace('b2b');
 
     // Track page view
     posthog.capture('b2b_page_view', {
       language: currentLanguage
     });
-
-    // Cleanup function to remove content override when component unmounts
-    return () => {
-      setContentOverride(null);
-    };
   }, [currentLanguage]);
 
   const handleCTAClick = () => {

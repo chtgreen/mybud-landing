@@ -28,9 +28,9 @@ const SimpleTextSection: FC<SimpleTextSectionProps> = ({
         </p>
         {ctaText && ctaAction && (
           <div className="flex justify-center">
-            <button 
+            <button
               onClick={ctaAction}
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-emerald-800 border border-emerald-300 hover:bg-emerald-50 transition-colors"
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-emerald-800 border border-emerald-300 hover:bg-emerald-200 transition-colors"
             >
               {ctaText}
             </button>

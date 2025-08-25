@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import posthog from 'posthog-js';
-import { t, hasContentOverride } from '../lib/i18n';
+import { t, isB2B as isB2BContext } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: FC = () => {
@@ -8,7 +8,7 @@ const Footer: FC = () => {
   const { currentLanguage } = useLanguage();
   
   // Detect if we're in B2B context (unified condition)
-  const isB2B = hasContentOverride();
+  const isB2B = isB2BContext();
 
   const faqs = [
     {

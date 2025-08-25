@@ -1,266 +1,348 @@
 {
-  "hero": {
-    "title1": "My Bud.",
-    "title2": "You handle the plants.",
-    "title3": "We'll handle the rest.",
-    "subtitle": "Organize your grow the right way, without workarounds or stress. Everything you need — in the palm of your hand.",
-    "primaryCta": "Join the beta",
-    "secondaryCta": "Watch the demo",
-    "trustElement": "Limited spots. Early access + 6 months premium.",
-    "phone": {
-      "plants": "Plants",
-      "subtitle": "Track development",
-      "todayTasks": "Today's tasks",
-      "watering": "Water plants - last cycle 2 days ago",
-      "yourPlants": "Your plants",
-      "plantA": "Plant A",
-      "plantB": "Plant B",
-      "week3": "Week 3",
-      "week8": "Week 8",
-      "quickNote": "Quick note",
-      "addNote": "Tap to add observation"
-    }
-  },
-  "features": {
-    "title": "Never get lost in your grow again",
-    "subtitle": "Reminders, stage organization, automatic video stickers and everything a grower needs to stay in control without complications.",
-    "journal": {
-      "title": "Works your way",
-      "description": "Voice notes, photo or video records, customize as you want. Nothing is mandatory — but everything can be logged."
-    },
-    "voice": {
-      "title": "From bucket to greenhouse",
-      "description": "Whether your grow is in a closet or the most advanced system, My Bud adapts. We help you get the best from what you already have."
-    },
-    "alerts": {
-      "title": "Life days and stages always visible",
-      "description": "Know exactly what phase each plant is in and how many days until each important stage."
-    },
-    "guides": {
-      "title": "Automatic stickers on plant videos",
-      "description": "Each video automatically gets a sticker with stage, date and plant info. Perfect for Instagram."
-    }
-  },
-  "appShowcase": {
-    "title": "See My Bud in action",
-    "subtitle": "Click on the features to see how My Bud simplifies every stage of your grow",
-    "dashboard": {
-      "title": "Recurring tasks with reminders",
-      "desc": "Set up tasks that repeat automatically and get reminders at the right time. Never forget watering or nutrition again."
-    },
-    "voice": {
-      "title": "Voice, text, photo or video recording",
-      "desc": "Record your way: speak, write, photograph or film. Everything gets organized automatically in the plant's history."
-    },
-    "qr": {
-      "title": "QR Code per plant",
-      "desc": "Point the camera and the app recognizes your plant instantly. No confusion, everything organized."
-    },
-    "alerts": {
-      "title": "Complete plant history",
-      "desc": "See your plant's entire journey in an organized timeline. Every record, photo and video in the right place."
-    },
-    "journal": {
-      "title": "Organized grow timeline",
-      "desc": "Visualize all your grow progress in a clear and organized timeline. From planting to harvest."
-    }
-  },
-  "identityTrust": {
-    "title1": "Made by those who grow.",
-    "title2": "",
-    "description": "My Bud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
-    "private": {
-      "title": "Smart integration",
-      "desc": "Connects with sensors, hydroponic systems and IoT devices for complete automation."
-    },
-    "community": {
-      "title": "Community-built",
-      "desc": "Developed with real feedback from growers."
-    },
-    "tested": {
-      "title": "Grower-tested",
-      "desc": "Validated in practice, in real grows."
-    }
-  },
-  "testimonials": {
-    "title": "Loved by growers",
-    "subtitle": "Don't just take our word for it. See what the first testers are saying.",
-    "1": {
-      "text": "\"I added a voice note saying 'water plant 2 with compost tea' and it became a task. Really good.\"",
-      "author": "@cutlvar",
-      "location": "São Paulo"
-    },
-    "2": {
-      "text": "\"Now I know exactly how many flower days each plant has. Finally!\"",
-      "author": "marina",
-      "location": "Rio de Janeiro"
-    },
-    "3": {
-      "text": "\"With the sticker on the video I can remember which plant is which. And it looked awesome on Insta.\"",
-      "author": "carlos",
-      "location": "Belo Horizonte"
-    }
-  },
-  "betaSignup": {
-    "title": "Be part of the first 100 and get what no one else will have.",
-    "subtitle": "We're building My Bud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
-    "benefits": {
-      "title": "Those who support now get:",
-      "premium": "6 months premium in the app",
-      "kit": "Kit with t-shirt, stickers and QR Codes personalized with your logo",
-      "access": "Access to Close Friends on Instagram and exclusive development Discord",
-      "priority": "Priority in testing and new features"
-    },
-    "qrDescription": "The QR Code automatically identifies the plant with the app. You stick it on the pot and never forget the genetics or stage again. Only the first 100 will have the version with their own logo.",
-    "supportButton": "I want to support and secure my spot",
-    "newsletterButton": "I just want to receive news by email",
-    "newsletterTitle": "Just want to follow along for now?",
-    "newsletterDesc": "No problem. Leave your contact and we'll send you the news, behind-the-scenes videos and possibly an invitation for free early access when it happens.",
-    "namePlaceholder": "Your name",
-    "emailPlaceholder": "Your best email",
-    "button": "I want to test the app",
-    "privacy": "Only good tips. No spam. We respect your privacy.",
-    "successMessage": "Thank you! You're on the beta list. 🌱",
-    "errorMessage": "Something went wrong. Please try again."
-  },
-  "paymentModal": {
-    "title": "You're entering the My Bud founders group.",
-    "subtitle": "The app is being made in public, with those who really grow.",
-    "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of My Bud.",
-    "price": "If you support now with $75 USD, you get:",
-    "benefits": {
-      "earlyAccess": "Early access to the My Bud app",
-      "premium": "6 months of premium access",
-      "kit": "Physical kit with a t-shirt, stickers, and personalized QR Codes with your logo",
-      "community": "Access to our Close Friends Instagram + private Discord server",
-      "priority": "Priority in testing new features and shaping the roadmap",
-      "behindScenes": "Behind-the-scenes access to our dev process (DIY + in public)"
-    },
-    "qrCodesInfo": "You'll receive exclusive QR Codes to identify your plants — with your own logo printed in the center. This will never be offered again. Only the first 100 supporters will have this personalized version.",
-    "discordAccess": "You'll also get access to our Close Friends on Instagram and a private Discord server with the dev team. That's where we share behind-the-scenes content, test new features, and collect real feedback from growers.",
-    "launch": "🚀 The official launch is planned for November 2025. But supporters will start testing features in the coming weeks.",
-    "paymentTitle": "How to support:",
-    "paymentMethod": "PayPal: payments@mybud.app",
-    "paymentInstruction": "Send payment confirmation to:",
-    "whatsapp": "WhatsApp: +55 48 3199-2171",
-    "followUp": "After receiving confirmation, we'll contact you to confirm everything and send the kit.",
-    "closeButton": "Close"
-  },
-  "comingSoon": {
-    "title": "Coming soon to your favorite stores",
-    "subtitle": "Be the first to know when My Bud arrives in app stores",
-    "ctaText": "Join the beta now for early access before the official launch",
-    "iosText": "Notify on App Store",
-    "androidText": "Notify on Google Play"
-  },
-  "footer": {
-    "brand": "mybud",
-    "tagline": "Your digital cultivation partner.",
-    "faqTitle": "Frequently asked questions",
-    "faq1": {
-      "question": "Is the app free?",
-      "answer": "You'll be able to use it for free, with a plant limit. Those who join the beta get premium access unlocked for 6 months."
-    },
-    "faq2": {
-      "question": "Does it work offline?",
-      "answer": "Not yet. But we're optimizing everything to work fast and light even with poor internet."
-    },
-    "faq3": {
-      "question": "Is it safe to use?",
-      "answer": "The real talk: 100% anonymity doesn't exist. We save as little as possible, but your IP still goes through our servers. Unfortunately, silence is still the best protection for growers — and we respect that. Nothing is shared. The law requires keeping some data, and we follow what's necessary. But you decide what to record or not."
-    },
-    "faq4": {
-      "question": "Do I need to show my plants?",
-      "answer": "No. You can record everything without taking a single photo. Everything is optional."
-    },
-    "faq5": {
-      "question": "Can I use it just to organize without logging everything?",
-      "answer": "Of course. If you just want to see flower days and know when to harvest, that's already worth it."
-    },
-    "privacy": "Privacy policy",
-    "terms": "Terms of service",
-    "contact": "Contact",
-    "copyright": "© 2024 My Bud. All rights reserved."
-  },
-  "header": {
-    "languageSelector": "Language"
-  },
-  "associations": {
-    "title1": "Are you an association or small facility?",
-    "title2": "We have software that fits your scale",
-    "description": "We develop specific solutions for cannabis associations and small facilities that need professional management without unnecessary complexity.",
-    "management": {
-      "title": "Simplified management",
-      "desc": "Organize members, cultivation areas and processes in a simple and intuitive platform. Total control without complication."
-    },
-    "tracking": {
-      "title": "Plant-to-extraction tracking",
-      "desc": "From plant to extraction, maintain complete traceability with unique codes and detailed history of each stage."
-    },
-    "reports": {
-      "title": "Reports",
-      "desc": "Automatic reports for compliance, auditing and management. Organized data, always updated for decision making."
-    },
-    "compliance": {
-      "title": "Simplified compliance",
-      "desc": "Stay compliant with protocols and regulations through automated systems and intelligent alerts."
-    },
-    "cta": "Schedule presentation"
-  },
-  "themeSelector": {
-    "title": "🎨 Test Colors",
-    "subtitle": "Pick your vibe",
-    "emerald": "Original",
-    "purple": "Intense Green",
-    "amber": "Grow Green",
-    "blue": "Natural Green",
-    "original": "Original",
-    "emerald-deep": "Emerald 700",
-    "forest": "Emerald 800",
-    "mint": "Intense Green",
-    "sage": "Grow Green",
-    "teal": "Natural Green",
-    "white": "White"
-  },
-  "common": {
-    "preparing": "Preparing video..."
-  },
-  "heroBridge": {
-    "growthPoints": {
-      "1": {
-        "description": "First growers testing",
-        "detail": "Initial product validation"
-      },
-      "2": {
-        "description": "Organic growth",
-        "detail": "Word of mouth working"
-      },
-      "3": {
-        "description": "Strategic partnerships",
-        "detail": "Brands starting to join"
-      },
-      "4": {
-        "description": "Scale and retention",
-        "detail": "Engaged and active users"
-      },
-      "5": {
-        "description": "Market expansion",
-        "detail": "New countries and languages"
-      },
-      "6": {
-        "description": "Total consolidation",
-        "detail": "Leadership in the segment"
-      },
-      "7": {
-        "description": "It's just the beginning",
-        "detail": "The real potential is yet to come"
+  "b2c": {
+    "hero": {
+      "title1": "My Bud.",
+      "title2": "You handle the plants.",
+      "title3": "We'll handle the rest.",
+      "subtitle": "Organize your grow the right way, without workarounds or stress. Everything you need — in the palm of your hand.",
+      "primaryCta": "Join the beta",
+      "secondaryCta": "Watch the demo",
+      "trustElement": "Limited spots. Early access + 6 months premium.",
+      "phone": {
+        "plants": "Plants",
+        "subtitle": "Track development",
+        "todayTasks": "Today's tasks",
+        "watering": "Water plants - last cycle 2 days ago",
+        "yourPlants": "Your plants",
+        "plantA": "Plant A",
+        "plantB": "Plant B",
+        "week3": "Week 3",
+        "week8": "Week 8",
+        "quickNote": "Quick note",
+        "addNote": "Tap to add observation"
       }
     },
-    "benefits": {
-      "continuous": "Continuous growth",
-      "trend": "Positive trend",
-      "data": "Real data",
-      "evolution": "Growing together"
+    "features": {
+      "title": "Never get lost in your grow again",
+      "subtitle": "Reminders, stage organization, automatic video stickers and everything a grower needs to stay in control without complications.",
+      "journal": {
+        "title": "Works your way",
+        "description": "Voice notes, photo or video records, customize as you want. Nothing is mandatory — but everything can be logged."
+      },
+      "voice": {
+        "title": "From bucket to greenhouse",
+        "description": "Whether your grow is in a closet or the most advanced system, My Bud adapts. We help you get the best from what you already have."
+      },
+      "alerts": {
+        "title": "Life days and stages always visible",
+        "description": "Know exactly what phase each plant is in and how many days until each important stage."
+      },
+      "guides": {
+        "title": "Automatic stickers on plant videos",
+        "description": "Each video automatically gets a sticker with stage, date and plant info. Perfect for Instagram."
+      }
+    },
+    "appShowcase": {
+      "title": "See My Bud in action",
+      "subtitle": "Click on the features to see how My Bud simplifies every stage of your grow",
+      "dashboard": {
+        "title": "Recurring tasks with reminders",
+        "desc": "Set up tasks that repeat automatically and get reminders at the right time. Never forget watering or nutrition again."
+      },
+      "voice": {
+        "title": "Voice, text, photo or video recording",
+        "desc": "Record your way: speak, write, photograph or film. Everything gets organized automatically in the plant's history."
+      },
+      "qr": {
+        "title": "QR Code per plant",
+        "desc": "Point the camera and the app recognizes your plant instantly. No confusion, everything organized."
+      },
+      "alerts": {
+        "title": "Complete plant history",
+        "desc": "See your plant's entire journey in an organized timeline. Every record, photo and video in the right place."
+      },
+      "journal": {
+        "title": "Organized grow timeline",
+        "desc": "Visualize all your grow progress in a clear and organized timeline. From planting to harvest."
+      }
+    },
+    "identityTrust": {
+      "title1": "Made by those who grow.",
+      "title2": "",
+      "description": "My Bud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
+      "private": {
+        "title": "Smart integration",
+        "desc": "Connects with sensors, hydroponic systems and IoT devices for complete automation."
+      },
+      "community": {
+        "title": "Community-built",
+        "desc": "Developed with real feedback from growers."
+      },
+      "tested": {
+        "title": "Grower-tested",
+        "desc": "Validated in practice, in real grows."
+      }
+    },
+    "testimonials": {
+      "title": "Loved by growers",
+      "subtitle": "Don't just take our word for it. See what the first testers are saying.",
+      "1": {
+        "text": "\"I added a voice note saying 'water plant 2 with compost tea' and it became a task. Really good.\"",
+        "author": "@cutlvar",
+        "location": "São Paulo"
+      },
+      "2": {
+        "text": "\"Now I know exactly how many flower days each plant has. Finally!\"",
+        "author": "marina",
+        "location": "Rio de Janeiro"
+      },
+      "3": {
+        "text": "\"With the sticker on the video I can remember which plant is which. And it looked awesome on Insta.\"",
+        "author": "carlos",
+        "location": "Belo Horizonte"
+      }
+    },
+    "betaSignup": {
+      "title": "Be part of the first 100 and get what no one else will have.",
+      "subtitle": "We're building My Bud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
+      "benefits": {
+        "title": "Those who support now get:",
+        "premium": "6 months premium in the app",
+        "kit": "Kit with t-shirt, stickers and QR Codes personalized with your logo",
+        "access": "Access to Close Friends on Instagram and exclusive development Discord",
+        "priority": "Priority in testing and new features"
+      },
+      "qrDescription": "The QR Code automatically identifies the plant with the app. You stick it on the pot and never forget the genetics or stage again. Only the first 100 will have the version with their own logo.",
+      "supportButton": "I want to support and secure my spot",
+      "newsletterButton": "I just want to receive news by email",
+      "newsletterTitle": "Just want to follow along for now?",
+      "newsletterDesc": "No problem. Leave your contact and we'll send you the news, behind-the-scenes videos and possibly an invitation for free early access when it happens.",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your best email",
+      "button": "I want to test the app",
+      "privacy": "Only good tips. No spam. We respect your privacy.",
+      "successMessage": "Thank you! You're on the beta list. 🌱",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "paymentModal": {
+      "title": "You're entering the My Bud founders group.",
+      "subtitle": "The app is being made in public, with those who really grow.",
+      "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of My Bud.",
+      "price": "If you support now with $75 USD, you get:",
+      "benefits": {
+        "earlyAccess": "Early access to the My Bud app",
+        "premium": "6 months of premium access",
+        "kit": "Physical kit with a t-shirt, stickers, and personalized QR Codes with your logo",
+        "community": "Access to our Close Friends Instagram + private Discord server",
+        "priority": "Priority in testing new features and shaping the roadmap",
+        "behindScenes": "Behind-the-scenes access to our dev process (DIY + in public)"
+      },
+      "qrCodesInfo": "You'll receive exclusive QR Codes to identify your plants — with your own logo printed in the center. This will never be offered again. Only the first 100 supporters will have this personalized version.",
+      "discordAccess": "You'll also get access to our Close Friends on Instagram and a private Discord server with the dev team. That's where we share behind-the-scenes content, test new features, and collect real feedback from growers.",
+      "launch": "🚀 The official launch is planned for November 2025. But supporters will start testing features in the coming weeks.",
+      "paymentTitle": "How to support:",
+      "paymentMethod": "PayPal: payments@mybud.app",
+      "paymentInstruction": "Send payment confirmation to:",
+      "whatsapp": "WhatsApp: +55 48 3199-2171",
+      "followUp": "After receiving confirmation, we'll contact you to confirm everything and send the kit.",
+      "closeButton": "Close"
+    },
+    "comingSoon": {
+      "title": "Coming soon to your favorite stores",
+      "subtitle": "Be the first to know when My Bud arrives in app stores",
+      "ctaText": "Join the beta now for early access before the official launch",
+      "iosText": "Notify on App Store",
+      "androidText": "Notify on Google Play"
+    },
+    "footer": {
+      "brand": "mybud",
+      "tagline": "Your digital cultivation partner.",
+      "faqTitle": "Frequently asked questions",
+      "faq1": {
+        "question": "Is the app free?",
+        "answer": "You'll be able to use it for free, with a plant limit. Those who join the beta get premium access unlocked for 6 months."
+      },
+      "faq2": {
+        "question": "Does it work offline?",
+        "answer": "Not yet. But we're optimizing everything to work fast and light even with poor internet."
+      },
+      "faq3": {
+        "question": "Is it safe to use?",
+        "answer": "The real talk: 100% anonymity doesn't exist. We save as little as possible, but your IP still goes through our servers. Unfortunately, silence is still the best protection for growers — and we respect that. Nothing is shared. The law requires keeping some data, and we follow what's necessary. But you decide what to record or not."
+      },
+      "faq4": {
+        "question": "Do I need to show my plants?",
+        "answer": "No. You can record everything without taking a single photo. Everything is optional."
+      },
+      "faq5": {
+        "question": "Can I use it just to organize without logging everything?",
+        "answer": "Of course. If you just want to see flower days and know when to harvest, that's already worth it."
+      },
+      "privacy": "Privacy policy",
+      "terms": "Terms of service",
+      "contact": "Contact",
+      "copyright": "© 2024 My Bud. All rights reserved."
+    },
+    "header": {
+      "languageSelector": "Language"
+    },
+    "associations": {
+      "title1": "Are you an association or small facility?",
+      "title2": "We have software that fits your scale",
+      "description": "We develop specific solutions for cannabis associations and small facilities that need professional management without unnecessary complexity.",
+      "management": {
+        "title": "Simplified management",
+        "desc": "Organize members, cultivation areas and processes in a simple and intuitive platform. Total control without complication."
+      },
+      "tracking": {
+        "title": "Plant-to-extraction tracking",
+        "desc": "From plant to extraction, maintain complete traceability with unique codes and detailed history of each stage."
+      },
+      "reports": {
+        "title": "Reports",
+        "desc": "Automatic reports for compliance, auditing and management. Organized data, always updated for decision making."
+      },
+      "compliance": {
+        "title": "Simplified compliance",
+        "desc": "Stay compliant with protocols and regulations through automated systems and intelligent alerts."
+      },
+      "cta": "Schedule presentation"
+    },
+    "themeSelector": {
+      "title": "🎨 Test Colors",
+      "subtitle": "Pick your vibe",
+      "emerald": "Original",
+      "purple": "Intense Green",
+      "amber": "Grow Green",
+      "blue": "Natural Green",
+      "original": "Original",
+      "emerald-deep": "Emerald 700",
+      "forest": "Emerald 800",
+      "mint": "Intense Green",
+      "sage": "Grow Green",
+      "teal": "Natural Green",
+      "white": "White"
+    },
+    "common": {
+      "preparing": "Preparing video..."
+    },
+    "heroBridge": {
+      "growthPoints": {
+        "1": {
+          "description": "First growers testing",
+          "detail": "Initial product validation"
+        },
+        "2": {
+          "description": "Organic growth",
+          "detail": "Word of mouth working"
+        },
+        "3": {
+          "description": "Strategic partnerships",
+          "detail": "Brands starting to join"
+        },
+        "4": {
+          "description": "Scale and retention",
+          "detail": "Engaged and active users"
+        },
+        "5": {
+          "description": "Market expansion",
+          "detail": "New countries and languages"
+        },
+        "6": {
+          "description": "Total consolidation",
+          "detail": "Leadership in the segment"
+        },
+        "7": {
+          "description": "It's just the beginning",
+          "detail": "The real potential is yet to come"
+        }
+      },
+      "benefits": {
+        "continuous": "Continuous growth",
+        "trend": "Positive trend",
+        "data": "Real data",
+        "evolution": "Growing together"
+      }
+    }
+  },
+  "b2b": {
+    "hero": {
+      "title1": "Grow sales with real usage, not promises.",
+      "title2": "",
+      "title3": "",
+      "subtitle": "Put your brand inside the grower's routine — visible in tasks, photos and hard data.",
+      "overline": "We don’t just grow cultivars — we grow your revenue.",
+      "primaryCta": "Schedule a call",
+      "secondaryCta": "Request media kit",
+      "trustElement": ""
+    },
+    "features": {
+      "title": "Partnership types",
+      "subtitle": "",
+      "journal": { "title": "Seeds & breeders", "description": "Live catalog in-app, up-to-date genetics and presence in the diary." },
+      "voice": { "title": "Inputs & nutrients", "description": "Your product line becomes phase-based tasks with tips, doses and proof of use." },
+      "alerts": { "title": "Equipment", "description": "LEDs, tents, pots and more showing up in grow setups and daily tasks." },
+      "guides": { "title": "Smart devices", "description": "You build the hardware, we integrate it with the app." }
+    },
+    "appShowcase": {
+      "title": "How it works",
+      "subtitle": "A simple, effective process to put your brand inside the grower’s routine.",
+      "dashboard": { "title": "Step 1 — Data that matters", "desc": "Your feeding, pest or care chart becomes an interactive schedule in the app. The grower receives tasks at the right phase, with doses, tips and visual proof of use. You track adherence, drop-off and repurchase — all aggregated and anonymous." },
+      "voice": { "title": "Step 2 — Useful, visible usage", "desc": "Your brand appears naturally in tasks and the grow diary, with stickers on photos and videos." },
+      "qr": { "title": "Step 3 — Follow your influencers", "desc": "See in real time how strategic profiles use your product, with stickers and unique codes to track sales." },
+      "alerts": { "title": "Step 4 (optional) — From label to app", "desc": "If you want, we can connect your packaging to the app via QR to take customers straight to your product’s schedule. Not required to start." }
+    },
+    "sponsorship": {
+      "title": "Cannabis marketing is locked down, we unlock it with real data.",
+      "subtitle": "Ad restrictions, shallow metrics and campaigns that never become routine. MyBud puts your brand at the exact moment of the grow, inside the app the grower opens every day, and delivers actionable data on the real use of your products.",
+      "cta": "Schedule a call",
+      "brandSticker": "Brand sticker",
+      "sampleTask": "Apply nutrients — Veg stage"
+    },
+    "stats": {
+      "title": "We’re after numbers that matter",
+      "description": "With a grow-focused app available in three languages from day one, we’re set to scale. We’re looking for partnerships that create real impact — here are the numbers we expect to hit together.*",
+      "note": "*Projections based on early tests and potential market size.",
+      "growers": "10,000+",
+      "growersLabel": "active growers (goal)",
+      "repurchase": "30%+",
+      "repurchaseLabel": "expected repurchase with partnerships",
+      "countries": "3",
+      "countriesLabel": "languages at launch"
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Quick answers to get you started.",
+      "visible": {
+        "q0": { "q": "What data and insights will I receive?", "a": "Adherence to schedule, drop-off, repurchase, visual proof and aggregated metrics to guide decisions." },
+        "q1": { "q": "How does the brand appear and get measured?", "a": "Inside phase-based tasks, public diaries and profile showcases. We track adherence, drop-off, repurchase and visual proof — always aggregated and anonymous." },
+        "q2": { "q": "Can I customize my showcase?", "a": "Yes. Tech sheet, videos, tips and schedules aligned with your product line." },
+        "q3": { "q": "How does public grower sponsorship work?", "a": "You pick strategic profiles. Your brand shows in their posts and tasks with stickers. Real-time monitoring of usage." },
+        "q4": { "q": "Is there category exclusivity?", "a": "We can work exclusivity by period and category in strategic agreements." },
+        "q5": { "q": "Can I track sales or leads?", "a": "We deliver UTMs and coupons for attribution plus repurchase reports when applicable." }
+      }
+    },
+    "betaSignup": {
+      "title": "Ready to put your brand inside the grow?",
+      "subtitle": "Let’s connect your brand with real growers.",
+      "benefits": { "title": "If selected, you get:", "premium": "Early access to the platform", "kit": "Highlighted visibility in the app", "access": "Direct influence on product development", "priority": "Positioning as a reference in the grower community" },
+      "qrDescription": "",
+      "supportButton": "Schedule a call",
+      "newsletterButton": "Schedule a call",
+      "newsletterTitle": "Ready to put your brand inside the grow?",
+      "newsletterDesc": "Let’s connect your brand with real growers.",
+      "emailPlaceholder": "Email",
+      "namePlaceholder": "Name",
+      "button": "Schedule a call",
+      "privacy": "Or request the media kit: comercial@mybud.app",
+      "successMessage": "Received! We will get back shortly. 🚀",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "modal": {
+      "title": "Let’s talk about real grow performance.",
+      "subtitle": "Tell us in 30 seconds what you want to achieve and by when. We'll come back with a straight-to-the-point plan.",
+      "fields": { "company": "Company name", "fullName": "Full name", "email": "Email", "category": "Category", "objective": "Main goal (short text)", "market": "Target market (country/state)", "mediaKit": "I want to receive the media kit by email" },
+      "submit": "Send & book"
     }
   }
 }

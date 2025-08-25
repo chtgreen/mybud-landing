@@ -6,8 +6,8 @@ import {
   SUPPORTED_LANGUAGES, 
   DEFAULT_LANGUAGE, 
   setCurrentLanguage as setI18nLanguage,
-
-  detectBrowserLanguage
+  detectBrowserLanguage,
+  subscribeI18n
 } from '../lib/i18n';
 
 interface LanguageContextType {
@@ -25,6 +25,7 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>(DEFAULT_LANGUAGE);
   const [isLoading, setIsLoading] = useState(true);
+  const [i18nTick, setI18nTick] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
   const { lang } = useParams<{ lang: string }>();
@@ -72,6 +73,12 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     initializeLanguage();
   }, [lang, navigate]);
 
+  // Subscribe to in-memory i18n edits and force rerender
+  useEffect(() => {
+    const unsubscribe = subscribeI18n(() => setI18nTick(t => t + 1));
+    return unsubscribe;
+  }, []);
+
   const changeLanguage = async (newLanguage: Language) => {
     setIsLoading(true);
     const previousLanguage = currentLanguage;
@@ -105,6 +112,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setIsLoading(false);
   };
 
+  // i18nTick is unused in value; its state update triggers rerenders of children
+  // Read it to satisfy TS noUnusedLocals without affecting behavior
+  void i18nTick;
   return (
     <LanguageContext.Provider value={{ 
       currentLanguage, 

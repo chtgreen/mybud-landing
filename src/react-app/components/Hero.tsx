@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
-import { t, hasContentOverride } from '../lib/i18n';
+import { t, isB2B } from '../lib/i18n';
 import HeroBridge from './HeroBridge';
 
 
@@ -151,40 +151,40 @@ const scrollToFeatures = () => {
 
 const Hero: FC<HeroProps> = ({ onCTAClick }) => {
   // Detect if we're in B2B context
-  const isB2B = hasContentOverride();
+  const isB2BContext = isB2B();
 
   return (
-    <section className={`min-h-screen max-h-[1200px] relative ${isB2B ? 'bg-white hero-b2b' : 'hero-organic'} flex items-center`}>
-      {!isB2B && <OrganicBackground />}
-      {isB2B && <B2BBackground />}
+    <section className={`min-h-screen max-h-[1200px] relative ${isB2BContext ? 'bg-white hero-b2b' : 'hero-organic'} flex items-center`}>
+      {!isB2BContext && <OrganicBackground />}
+      {isB2BContext && <B2BBackground />}
       
       <div className="py-12 md:py-16 lg:py-20 xl:py-24 relative z-20 min-h-[80vh] lg:min-h-[70vh] xl:min-h-[65vh] flex items-center w-full">
         <div className="container mx-auto px-6 max-w-7xl w-full">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16 w-full">
             <div className="lg:w-1/2 text-center lg:text-left">
-              {isB2B && t('hero.overline') && (
+              {isB2BContext && t('hero.overline') && (
                 <div className="inline-flex items-center space-x-2 bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium mb-4 border border-gray-200 tracking-wider uppercase hero-animate-1">
                   <span>{t('hero.overline')}</span>
                 </div>
               )}
               <h1 
-                className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${isB2B ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
-                style={!isB2B ? { textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)' } : {}}
+                className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${isB2BContext ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
+                style={!isB2BContext ? { textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)' } : {}}
               >
                 <span>{t('hero.title1')}</span><br />
                 <span>{t('hero.title2')}</span><br />
                 <span className="hero-title-3">{t('hero.title3')}</span>
               </h1>
               <p 
-                className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 hero-animate-3 ${isB2B ? 'text-gray-700' : 'text-emerald-100'}`}
-                style={!isB2B ? { textShadow: '0 1px 5px rgba(0, 0, 0, 0.2)' } : {}}
+                className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 hero-animate-3 ${isB2BContext ? 'text-gray-700' : 'text-emerald-100'}`}
+                style={!isB2BContext ? { textShadow: '0 1px 5px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.subtitle')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-4">
                 <button
-                  className={isB2B ? 
+                  className={isB2BContext ? 
                     "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-none border-0" :
                     "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white/90 text-gray-900 border border-white/50 hover:bg-white/95 hover:text-gray-800 transition-colors shadow-lg"
                   }
@@ -197,7 +197,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                     {t('hero.secondaryCta').includes('media kit') ? (
                       <a
                         href="mailto:comercial@mybud.app"
-                        className={isB2B ? 
+                        className={isB2BContext ? 
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
                         }
@@ -206,7 +206,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                       </a>
                     ) : (
                       <button
-                        className={isB2B ? 
+                        className={isB2BContext ? 
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
                         }
@@ -220,15 +220,15 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
               </div>
 
               <p 
-                className={`text-sm hero-animate-5 ${isB2B ? 'text-gray-600' : 'text-emerald-100'}`}
-                style={!isB2B ? { textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' } : {}}
+                className={`text-sm hero-animate-5 ${isB2BContext ? 'text-gray-600' : 'text-emerald-100'}`}
+                style={!isB2BContext ? { textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.trustElement')}
               </p>
             </div>
 
             <div className="lg:w-1/2 relative app-animate flex items-center justify-center">
-              {isB2B ? <HeroBridge /> : <IPhoneMockup />}
+              {isB2BContext ? <HeroBridge /> : <IPhoneMockup />}
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -15,6 +15,7 @@ import ComingSoon from '../components/ComingSoon';
 import Footer from '../components/Footer';
 import SupportModal from '../components/SupportModal';
 import BetaModal from '../components/BetaModal';
+import { setCurrentNamespace } from '../lib/i18n';
 
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
@@ -23,6 +24,10 @@ const LandingPage = () => {
   
   // Apply scroll-responsive background enhancements
   useScrollEnhancement();
+
+  useEffect(() => {
+    setCurrentNamespace('b2c');
+  }, []);
 
   const handleCTAClick = () => {
     posthog.capture('hero_cta_clicked');
