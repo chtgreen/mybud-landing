@@ -202,14 +202,55 @@
   },
   "b2b": {
     "hero": {
-      "title1": "Saiba como, quando e por que growers usam seu produto direto da rotina deles.",
-      "title2": "",
+      "title1": "Dados que crescem junto com suas vendas.",
+      "title2": "Saiba como, quando e por que growers estão usando seu produto em rotinas reais de cultivo.",
       "title3": "",
-      "subtitle": "Do app ao uso visível em fotos e tarefas, o MyBud transforma o cultivo em métricas que você pode acompanhar e usar para vender mais.",
-      "overline": "Dados que crescem junto com as suas vendas.",
+      "subtitle": "Do app ao uso visível em fotos e tarefas, o My Bud transforma cultivos em métricas que você pode acompanhar e usar para vender mais.",
+      "overline": "",
       "primaryCta": "Agendar conversa",
-      "secondaryCta": "Pedir media kit",
-      "trustElement": ""
+      "secondaryCta": "Solicitar Media Kit",
+      "trustElement": "",
+      "graphHighlights": [
+        "+70% Parcerias estratégicas",
+        "Conteúdo relevante",
+        "Reconhecimento da marca",
+        "Decisões estratégicas",
+        "Crescimento nas vendas",
+        "Parcerias sólidas"
+      ]
+    },
+    "sponsorship": {
+      "title": "O Marketing na cannabis é travado, mas nós destravamos com dados reais.",
+      "subtitle": "",
+      "description": "Restrição de anúncios, métricas rasas e campanhas que não viram retorno. O My Bud posiciona sua marca no momento exato do cultivo, no app que o grower abre todo dia, e te entrega dados acionáveis sobre o uso real dos seus produtos.",
+      "cta": "Agendar conversa",
+      "brandSticker": "Sticker de marca",
+      "sampleTask": "Aplicar nutrientes - Fase vegetativa"
+    },
+    "appShowcase": {
+      "title": "Como funciona",
+      "subtitle": "Processos simples e eficientes para colocar sua marca dentro da rotina do grower.",
+      "dashboard": {
+        "title": "Dados que importam",
+        "desc": "Sua tabela de nutrição, pragas ou manejo vira um cronograma interativo no app. O grower recebe as tarefas na fase certa, com doses, dicas e provas visuais de uso. Você acompanha adesão, abandono e recompra — tudo agregado e anônimo."
+      },
+      "voice": {
+        "title": "Uso visível e útil",
+        "desc": "Sua marca aparece de forma natural nas tarefas e no diário de cultivo, com stickers nas fotos e vídeos."
+      },
+      "qr": {
+        "title": "Acompanhe seus influenciadores",
+        "desc": "Veja em tempo real como perfis estratégicos usam seu produto, com stickers e códigos únicos para rastrear vendas."
+      },
+      "alerts": {
+        "title": "Do rótulo para o app (opcional)",
+        "desc": "Se quiser, podemos conectar sua embalagem ao app via QR para levar o cliente direto ao cronograma do seu produto. Não é obrigatório para começar."
+      }
+    },
+    "beyondData": {
+      "title": "Quer ir além dos dados?",
+      "text": "Patrocine growers influenciadores estratégicos para gerar awareness e prova social. Veja como eles usam seus produtos, se estão compartilhando conteúdo e permita que publiquem com seus stickers exclusivos.",
+      "cta": "Agende uma conversa e saiba mais!"
     },
     "features": {
       "title": "Tipos de parcerias",
@@ -227,51 +268,24 @@
         "description": "LEDs, tendas, vasos e afins aparecendo no setup e nas ações do dia a dia."
       },
       "guides": {
-        "title": "Dispositivos Inteligentes",
+        "title": "Dispositivos inteligentes",
         "description": "Você faz o hardware, nós integramos com o app."
       }
     },
-    "appShowcase": {
-      "title": "Como funciona",
-      "subtitle": "Processo simples e eficaz para colocar sua marca dentro da rotina do grower.",
-      "dashboard": {
-        "title": "Passo 1 — Dados que importam",
-        "desc": "Sua tabela de nutrição, pragas ou manejo vira um cronograma interativo no app. O grower recebe as tarefas na fase certa, com doses, dicas e provas visuais de uso. Você acompanha adesão, abandono e recompra — tudo agregado e anônimo."
-      },
-      "voice": {
-        "title": "Passo 2 — Uso visível e útil",
-        "desc": "Sua marca aparece de forma natural nas tarefas e no diário de cultivo, com stickers nas fotos e vídeos."
-      },
-      "qr": {
-        "title": "Passo 3 — Acompanhe seus influenciadores",
-        "desc": "Veja em tempo real como perfis estratégicos usam seu produto, com stickers e códigos únicos para rastrear vendas."
-      },
-      "alerts": {
-        "title": "Passo 4 (opcional) — Do rótulo para o app",
-        "desc": "Se quiser, podemos conectar sua embalagem ao app via QR para levar o cliente direto ao cronograma do seu produto. Não é obrigatório para começar."
-      }
-    },
-    "sponsorship": {
-      "title": "Marketing na cannabis é travado, nós destravamos com dados reais.",
-      "subtitle": "Restrição de anúncios, métricas rasas e campanhas que não viram rotina. O MyBud coloca sua marca no momento exato do cultivo, no app que o grower abre todo dia, e te entrega dados acionáveis sobre o uso real dos seus produtos.",
-      "cta": "Agendar conversa",
-      "brandSticker": "Sticker de marca",
-      "sampleTask": "Aplicar nutrientes - Fase vegetativa"
-    },
     "stats": {
-      "title": "Estamos atrás de números que contam",
-      "description": "Com um app voltado e facilitado para o grow, já nascemos em 3 idiomas e temos a base para crescer. Estamos almejando parcerias que gerem impacto real — e estes são os números que esperamos alcançar juntos.*",
+      "title": "Estamos buscando números que contam",
+      "description": "Com um app criado e facilitado para grows em grande e pequena escala, já nascemos em 3 idiomas e temos muita base para crescer. Buscamos parcerias que geram impacto real — e estes são os números que esperamos alcançar juntos.*",
       "note": "*Projeções baseadas em testes iniciais e mercado potencial.",
       "growers": "10.000+",
-      "growersLabel": "growers ativos (meta)",
-      "repurchase": "30%+",
-      "repurchaseLabel": "recompra esperada com parcerias",
+      "growersLabel": "Growers ativos (meta)",
       "countries": "3",
-      "countriesLabel": "idiomas desde o lançamento"
+      "countriesLabel": "Idiomas desde o lançamento",
+      "repurchase": "30%+",
+      "repurchaseLabel": "Recompra esperada com parcerias"
     },
     "faq": {
-      "title": "FAQ",
-      "subtitle": "Respostas rápidas para começar certo.",
+      "title": "Respostas rápidas para começar certo.",
+      "subtitle": "",
       "visible": {
         "q1": {
           "q": "Que dados e insights vou receber?",
@@ -299,20 +313,20 @@
       "title": "Pronto para colocar sua marca dentro do grow?",
       "subtitle": "Vamos conectar sua marca com quem cultiva de verdade.",
       "benefits": {
-        "title": "Se selecionado, você ganha:",
-        "premium": "Acesso antecipado à plataforma",
-        "kit": "Visibilidade destacada no app",
-        "access": "Influência direta na construção do produto",
-        "priority": "Posicionamento como referência na comunidade grower"
+        "title": "",
+        "premium": "",
+        "kit": "",
+        "access": "",
+        "priority": ""
       },
       "qrDescription": "",
       "supportButton": "Agendar conversa",
-      "newsletterButton": "Agendar conversa",
+      "newsletterButton": "Solicitar Media Kit",
       "newsletterTitle": "Pronto para colocar sua marca dentro do grow?",
       "newsletterDesc": "Vamos conectar sua marca com quem cultiva de verdade.",
       "emailPlaceholder": "E-mail",
-      "namePlaceholder": "Nome",
-      "button": "Agendar conversa",
+      "namePlaceholder": "Site (opcional)",
+      "button": "Agende uma conversa",
       "privacy": "Ou peça o media kit: comercial@mybud.app",
       "successMessage": "Recebido! Vamos retornar em breve. 🚀",
       "errorMessage": "Algo deu errado. Tente novamente."
@@ -327,7 +341,8 @@
         "category": "Categoria",
         "objective": "Objetivo principal (texto curto)",
         "market": "Mercado-alvo (país/estado)",
-        "mediaKit": "Quero receber o media kit por e-mail"
+        "mediaKit": "Quero receber o media kit por e-mail",
+        "website": "Site (opcional)"
       },
       "submit": "Enviar e agendar"
     }
