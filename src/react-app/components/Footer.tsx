@@ -1,6 +1,13 @@
 export function Footer() {
   return (
-    <footer className="section bg-primary" style={{ color: 'white' }}>
+    <footer 
+      className="section" 
+      style={{ 
+        color: 'white',
+        background: 'linear-gradient(180deg, #E6E7E8 0%, var(--color-primary) 15%, var(--color-primary) 100%)',
+        position: 'relative'
+      }}
+    >
       <div className="container">
         <div className="grid grid-3" style={{ marginBottom: 'var(--spacing-2xl)' }}>
           {/* Logo & Tagline */}

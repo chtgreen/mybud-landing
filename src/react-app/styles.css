@@ -210,7 +210,7 @@ p {
 }
 
 .btn:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .btn-primary {
@@ -222,6 +222,7 @@ p {
 .btn-primary:hover {
   background: #1f6b4f;
   box-shadow: var(--shadow-hover);
+  filter: brightness(0.95);
 }
 
 .btn-secondary {
@@ -313,6 +314,59 @@ p {
   background: linear-gradient(180deg, var(--color-off-white) 0%, var(--color-gradient-soft) 100%);
 }
 
+.bg-gradient-hero {
+  background: linear-gradient(180deg, #E6E7E8 0%, #EFF2FE 100%);
+  position: relative;
+}
+
+.bg-gradient-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.bg-gradient-features {
+  background: linear-gradient(90deg, #EFF2FE 0%, #D5C0FD 100%);
+  position: relative;
+}
+
+.bg-gradient-features::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(170, 210, 104, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bg-gradient-lavender-fade {
+  background: linear-gradient(180deg, #D5C0FD 0%, #E6E7E8 100%);
+}
+
+.bg-vignette {
+  position: relative;
+}
+
+.bg-vignette::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.03) 80%);
+  pointer-events: none;
+}
+
 /* ===========================
    8. UTILITIES
    =========================== */
@@ -365,7 +419,7 @@ p {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(120px);
   }
   to {
     opacity: 1;
@@ -375,6 +429,87 @@ p {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(-8px) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(170, 210, 104, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(170, 210, 104, 0.6));
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes idleSway {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-2px) translateY(-3px);
+  }
+  50% {
+    transform: translateX(2px) translateY(-2px);
+  }
+  75% {
+    transform: translateX(-2px) translateY(-1px);
+  }
+}
+
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.phone-mockup {
+  animation: breathe 1.2s ease-in-out infinite;
+}
+
+.budzinho-animated {
+  animation: idleSway 3s ease-in-out infinite;
+}
+
+.budzinho-animated:hover {
+  animation: wave 0.6s ease-in-out;
+}
+
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* ===========================
