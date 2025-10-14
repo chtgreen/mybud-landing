@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mybud-landing",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application"
+  },
+  "vars": {
+    "VITE_POSTHOG_KEY": "phc_YrZnbL6jRmlruBFkYbLHvhml6muFRTjzaNONbaMSNwx",
+    "VITE_POSTHOG_HOST": "https://app.posthog.com",
+    "VITE_SUPABASE_URL": "https://xtgypohwmdpavazjmhcz.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0Z3lwb2h3bWRwYXZhemptaGN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4MjE2NDYsImV4cCI6MjA1MzM5NzY0Nn0.HvCwgdobsSWFuXgs3Mj4dgPKBOKNrsTleSyHYf-K5cE",
+    "VITE_STRIPE_PAYMENT_LINK": ""
+  },
+  "routes": [
+    {
+      "pattern": "lp.mybud.app",
+      "custom_domain": true
+    }
+  ]
+}
