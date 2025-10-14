@@ -1,4 +1,11 @@
-body {
-  font-family: "Uncut Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1.125rem; /* 18px - increased base size */
+/* Base reset */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
