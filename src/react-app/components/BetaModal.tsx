@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { useState, useEffect, type FC } from 'react';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
@@ -8,57 +8,86 @@ interface BetaModalProps {
   onClose: () => void;
 }
 
+type SubmissionStatus = 'idle' | 'success' | 'error';
+
+const SHOP_URL =
+  'https://store.mybud.app/?utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
+
+const priorityBenefits = [
+  'betaModal.priority.benefits.premium',
+  'betaModal.priority.benefits.physicalKit',
+  'betaModal.priority.benefits.immediateAccess',
+  'betaModal.priority.benefits.priorityFeedback'
+] as const;
+
 const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPaymentDetails, setShowPaymentDetails] = useState(false);
-  const [showNewsletterForm, setShowNewsletterForm] = useState(false);
+  const [status, setStatus] = useState<SubmissionStatus>('idle');
 
-  if (!open) return null;
+  useEffect(() => {
+    if (!open) return;
 
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim() || !name.trim()) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open) {
+      setEmail('');
+      setStatus('idle');
+      setIsSubmitting(false);
+    }
+  }, [open]);
+
+  if (!open) {
+    return null;
+  }
+
+  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail) return;
 
     setIsSubmitting(true);
+    setStatus('idle');
 
     try {
-      const { error } = await supabase
-        .from('beta_signups')
-        .insert([
-          {
-            email: email.trim(),
-            // Temporarily store name in existing column until DB has proper 'name'
-            instagram: name.trim(),
-            created_at: new Date().toISOString(),
-          }
-        ]);
+      const { error } = await supabase.from('beta_signups').insert([
+        {
+          email: trimmedEmail,
+          instagram: '',
+          created_at: new Date().toISOString()
+        }
+      ]);
 
       if (error) throw error;
 
-      // Track successful signup
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_completed', {
-          email,
-          has_name: !!name,
-          source: 'beta_modal'
+          email: trimmedEmail,
+          source: 'beta_modal',
+          channel: 'modal_free_access'
         });
       }
 
-      // Show success message
-      alert(t('betaSignup.successMessage'));
+      setStatus('success');
       setEmail('');
-      setName('');
-      onClose();
     } catch (error) {
       console.error('Error:', error);
-      alert(t('betaSignup.errorMessage'));
+      setStatus('error');
 
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_error', {
           error: error instanceof Error ? error.message : 'Unknown error',
-          source: 'beta_modal'
+          source: 'beta_modal',
+          channel: 'modal_free_access'
         });
       }
     } finally {
@@ -66,219 +95,176 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
     }
   };
 
-  const handleSupportClick = () => {
+  const handlePurchaseClick = () => {
     if (typeof posthog !== 'undefined') {
       posthog.capture('priority_access_clicked', {
         source: 'beta_modal',
-        choice: 'paid_priority'
+        choice: 'paid_priority',
+        destination: 'shopify'
       });
     }
-    setShowPaymentDetails(true);
+    window.open(SHOP_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleNewsletterClick = () => {
-    if (typeof posthog !== 'undefined') {
-      posthog.capture('free_waitlist_clicked', {
-        source: 'beta_modal',
-        choice: 'free_waitlist'
-      });
-    }
-    setShowNewsletterForm(true);
-  };
-
-  const handlePaymentMethodClick = () => {
-    if (typeof posthog !== 'undefined') {
-      posthog.capture('payment_method_clicked', {
-        method: 'pix',
-        source: 'beta_modal'
-      });
-    }
-  };
-
-  const handleWhatsAppClick = () => {
-    if (typeof posthog !== 'undefined') {
-      posthog.capture('whatsapp_contact_clicked', {
-        context: 'payment_confirmation',
-        source: 'beta_modal'
-      });
-    }
-  };
-
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
+  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
       onClose();
     }
   };
 
   return (
-    <>
-      <div 
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-        onClick={handleBackdropClick}
-      >
-        <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-          {/* Header */}
-          <div className="flex justify-between items-center p-6 border-b">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">
-                {t('betaSignup.title')}
-              </h2>
-              <p className="text-gray-600 mt-1">
-                {t('betaSignup.subtitle')}
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-gray-400 hover:text-gray-600"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+    <div
+      className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+      onClick={handleBackdropClick}
+    >
+      <div className="relative bg-white rounded-[24px] border border-[#E6E7E8] shadow-[0_32px_60px_rgba(15,61,34,0.15)] max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          aria-label={t('betaModal.close')}
+        >
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <div className="px-6 pt-6 pb-4 space-y-3">
+          <div className="text-sm font-medium text-gray-600">
+            {t('betaModal.progress.label')}
           </div>
+          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-full bg-[#288664]" style={{ width: '78%' }} />
+          </div>
+          <p className="text-xs text-gray-500">
+            {t('betaModal.progress.eta')}
+          </p>
+        </div>
 
-          {/* Content */}
-          <div className="p-6">
-            {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
-                <span>Desenvolvimento em progresso</span>
-                <span>78% completo</span>
+        <div className="px-6 pb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border-2 border-[#288664] rounded-3xl p-6 md:p-8 flex flex-col gap-6">
+              <div className="space-y-4">
+                <span className="inline-flex items-center rounded-full bg-[#288664] text-white text-xs font-semibold uppercase tracking-wide px-3 py-1">
+                  {t('betaModal.priority.chip')}
+                </span>
+                <div>
+                  <h2 className="text-2xl font-semibold text-gray-900">
+                    {t('betaModal.priority.title')}
+                  </h2>
+                  <p className="text-sm text-gray-600 mt-2">
+                    {t('betaModal.priority.description')}
+                  </p>
+                </div>
+                <div className="text-3xl font-semibold text-gray-900">
+                  {t('betaModal.priority.price')}
+                </div>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  {priorityBenefits.map((benefitKey) => (
+                    <li
+                      key={benefitKey}
+                      className="flex items-start gap-3 leading-relaxed"
+                    >
+                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#288664]/10 text-[#288664] mt-0.5">
+                        <svg
+                          className="w-3 h-3"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-7.071 7.071a1 1 0 01-1.414 0L3.293 8.85a1 1 0 011.414-1.414l3.222 3.222 6.364-6.364a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span>{t(benefitKey)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-emerald-500 h-2 rounded-full" style={{width: '78%'}}></div>
+
+              <div className="space-y-2">
+                <button
+                  type="button"
+                  onClick={handlePurchaseClick}
+                  className="w-full inline-flex items-center justify-center rounded-full bg-[#EB4C80] hover:bg-[#288664] text-white font-semibold text-sm py-3 transition-colors"
+                >
+                  {t('betaModal.priority.cta')}
+                </button>
+                <div className="text-xs text-gray-600">
+                  <div>{t('betaModal.priority.counter')}</div>
+                  <div className="text-gray-500 mt-1">
+                    {t('betaModal.priority.microcopy')}
+                  </div>
+                </div>
               </div>
-              <p className="text-xs text-gray-500 mt-2">Lançamento oficial estimado: Novembro 2025</p>
             </div>
 
-            {/* Access Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {/* Priority Access Card */}
-              <div className="border-2 border-emerald-500 rounded-lg p-6 relative">
-                <div className="absolute -top-3 left-4 bg-emerald-500 text-white px-3 py-1 rounded text-sm font-medium">
-                  Acesso Prioritário
-                </div>
-                <div className="mt-2">
-                  <div className="text-2xl font-bold text-gray-900 mb-2">R$ 300</div>
-                  <p className="text-sm text-gray-600 mb-4">Apoie o desenvolvimento e receba:</p>
-                  <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div>
-                      Acesso imediato quando lançar
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div>
-                      6 meses premium inclusos
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div>
-                      Kit físico exclusivo
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div>
-                      Discord privado do desenvolvimento
-                    </li>
-                  </ul>
-                  {!showPaymentDetails ? (
-                     <button
-                       onClick={handleSupportClick}
-                       className="w-full btn-primary py-3 px-4"
-                     >
-                       Apoiar Projeto
-                     </button>
-                   ) : (
-                     <div className="space-y-3">
-                       <div className="text-sm font-medium text-gray-900 mb-2">Como apoiar:</div>
-                       <div 
-                         className="bg-gray-50 p-3 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
-                         onClick={handlePaymentMethodClick}
-                       >
-                         <div className="text-sm font-medium text-gray-700">Chave Pix:</div>
-                         <div className="text-sm font-mono text-gray-800">pix@mybud.app</div>
-                       </div>
-                       <div 
-                         className="bg-emerald-50 p-3 rounded-lg cursor-pointer hover:bg-emerald-100 transition-colors"
-                         onClick={handleWhatsAppClick}
-                       >
-                         <div className="text-sm font-medium text-emerald-700">Enviar comprovante:</div>
-                         <div className="text-sm font-mono text-emerald-800">+55 48 3199-2171</div>
-                       </div>
-                       <div className="text-xs text-gray-500">
-                         Após o pagamento, entraremos em contato para confirmar e enviar o kit.
-                       </div>
-                     </div>
-                   )}
-                </div>
+            <div className="border border-[#E6E7E8] rounded-3xl p-6 md:p-8 flex flex-col gap-6">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-semibold text-gray-900">
+                  {t('betaModal.free.title')}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {t('betaModal.free.description')}
+                </p>
               </div>
 
-              {/* Free Access Card */}
-              <div className="border border-gray-300 rounded-lg p-6">
-                <div className="text-lg font-semibold text-gray-900 mb-2">Acesso Gratuito</div>
-                <p className="text-sm text-gray-600 mb-4">Receba atualizações e entre na lista de acesso antecipado</p>
-                
-                {!showNewsletterForm ? (
-                  <div>
-                    <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3"></div>
-                        Atualizações do desenvolvimento
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3"></div>
-                        Lista de acesso antecipado
-                      </li>
-                      <li className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3"></div>
-                        Possível convite beta gratuito
-                      </li>
-                    </ul>
-                    <button
-                      onClick={handleNewsletterClick}
-                      className="w-full btn-secondary py-3 px-4"
-                    >
-                      Receber Atualizações
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={submit} className="space-y-3">
-                    <input
-                      type="text"
-                      placeholder="Seu nome"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
-                      required
-                    />
-
-                    <input
-                      type="email"
-                      placeholder="Seu melhor email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
-                      required
-                    />
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full btn-primary py-2 px-4 text-sm disabled:opacity-50"
-                    >
-                      {isSubmitting ? 'Enviando...' : 'Confirmar Inscrição'}
-                    </button>
-
-                    <p className="text-xs text-gray-500 text-center">
-                      Sem spam. Respeitamos sua privacidade.
-                    </p>
-                  </form>
+              <form onSubmit={submit} className="space-y-4">
+                <label htmlFor="beta-modal-email" className="sr-only">
+                  {t('betaModal.free.form.label')}
+                </label>
+                <input
+                  id="beta-modal-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(event) => {
+                    if (status !== 'idle') {
+                      setStatus('idle');
+                    }
+                    setEmail(event.target.value);
+                  }}
+                  placeholder={t('betaModal.free.form.placeholder')}
+                  className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center rounded-full border border-[#E6E7E8] bg-white text-[#288664] font-semibold text-sm py-3 transition-colors hover:bg-[#288664]/5 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting
+                    ? t('betaModal.free.form.loading')
+                    : t('betaModal.free.form.cta')}
+                </button>
+                <p className="text-xs text-gray-500">
+                  {t('betaModal.free.form.microcopy')}
+                </p>
+                {status === 'success' && (
+                  <p className="text-xs font-medium text-[#288664]">
+                    {t('betaModal.free.form.success')}
+                  </p>
                 )}
-              </div>
+                {status === 'error' && (
+                  <p className="text-xs font-medium text-red-500">
+                    {t('betaModal.free.form.error')}
+                  </p>
+                )}
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default BetaModal; 
+export default BetaModal;

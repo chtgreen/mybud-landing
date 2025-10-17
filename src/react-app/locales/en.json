@@ -127,6 +127,41 @@
       "successMessage": "Thank you! You're on the beta list. 🌱",
       "errorMessage": "Something went wrong. Please try again."
     },
+    "betaModal": {
+      "close": "Close modal",
+      "progress": {
+        "label": "Development in progress — 78% complete",
+        "eta": "Estimated launch: November 2025"
+      },
+      "priority": {
+        "chip": "Priority Access",
+        "title": "Secure your Kit + Premium Access",
+        "description": "Support development and receive your Founder Kit with real benefits:",
+        "price": "R$ 300",
+        "benefits": {
+          "premium": "6 months of Premium access",
+          "physicalKit": "Exclusive physical kit (t-shirt, pipe, poster)",
+          "immediateAccess": "Immediate access when the app launches",
+          "priorityFeedback": "Priority and private feedback group"
+        },
+        "cta": "Buy Kit now",
+        "counter": "Only 72 units in the current batch.",
+        "microcopy": "Limited stock. Once it’s gone, it’s gone."
+      },
+      "free": {
+        "title": "Prefer to wait?",
+        "description": "Join the list to get updates and early access when we open the beta.",
+        "form": {
+          "label": "Email",
+          "placeholder": "Your best email",
+          "cta": "Get updates",
+          "loading": "Sending...",
+          "microcopy": "No spam. Privacy guaranteed.",
+          "success": "All set! Confirm your email to secure your spot.",
+          "error": "Something went wrong. Please try again."
+        }
+      }
+    },
     "paymentModal": {
       "title": "You're entering the MyBud founders group.",
       "subtitle": "The app is being made in public, with those who really grow.",
@@ -187,7 +222,13 @@
       "copyright": "© 2024 MyBud. All rights reserved."
     },
     "header": {
-      "languageSelector": "Language"
+      "languageSelector": "Language",
+      "nav": {
+        "features": "Features",
+        "beta": "Beta",
+        "kit": "Founder Kit"
+      },
+      "cta": "Buy Kit + Premium"
     },
     "associations": {
       "title1": "Are you an association or small facility?",

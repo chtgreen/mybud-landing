@@ -68,7 +68,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-emerald-50">
-      <Header onLanguageChange={changeLanguage} />
+      <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
       <Hero onCTAClick={handleCTAClick} /> {/* Section 1: Hero organic */}
       <VoiceNotesSection /> {/* Section 2: Voice Notes - Killer Feature */}

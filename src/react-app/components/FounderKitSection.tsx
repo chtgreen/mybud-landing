@@ -15,7 +15,7 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
   const bgClass = background === 'gray' ? 'bg-gray-50' : 'bg-white';
 
   return (
-    <section className={`py-16 md:py-24 ${bgClass}`}>
+    <section id="kit" className={`py-16 md:py-24 ${bgClass}`}>
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Title and Subtitle */}
         <div className="text-center mb-12">
@@ -119,4 +119,3 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
 };
 
 export default FounderKitSection;
-

@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
 
 interface Stage {
   icon: string;
@@ -130,4 +129,3 @@ export const PlantTimeline: FC<PlantTimelineProps> = ({ className = '', compact 
 };
 
 export default PlantTimeline;
-

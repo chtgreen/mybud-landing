@@ -1,39 +1,53 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { getLoadedTranslations, getCurrentNamespace, getCurrentLanguage, type Language, applyNamespaceEdits, subscribeI18n } from '../lib/i18n';
+import {
+  getLoadedTranslations,
+  getCurrentNamespace,
+  getCurrentLanguage,
+  type Language,
+  applyNamespaceEdits,
+  subscribeI18n,
+  type TranslationTree
+} from '../lib/i18n';
 
 type FlatMap = Record<string, string>;
+type NestedTranslations = TranslationTree;
 
-const flatten = (obj: any, prefix = ''): FlatMap => {
+const isRecord = (value: unknown): value is NestedTranslations =>
+  typeof value === 'object' && value !== null && !Array.isArray(value);
+
+const flatten = (source: NestedTranslations | undefined, prefix = ''): FlatMap => {
   const out: FlatMap = {};
-  if (!obj || typeof obj !== 'object') return out;
-  for (const key of Object.keys(obj)) {
-    const value = obj[key];
+  if (!isRecord(source)) return out;
+  for (const [key, value] of Object.entries(source)) {
     const path = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === 'object') {
-      Object.assign(out, flatten(value, path));
-    } else if (typeof value === 'string') {
+    if (typeof value === 'string') {
       out[path] = value;
+    } else if (isRecord(value)) {
+      Object.assign(out, flatten(value, path));
     }
   }
   return out;
 };
 
-const setByPath = (obj: any, path: string[], value: string) => {
-  let ref = obj;
+const setByPath = (target: NestedTranslations, path: string[], value: string) => {
+  let ref: NestedTranslations = target;
   for (let i = 0; i < path.length; i++) {
     const k = path[i];
     const isLeaf = i === path.length - 1;
     if (isLeaf) {
       ref[k] = value;
     } else {
-      if (typeof ref[k] !== 'object' || !ref[k]) ref[k] = {};
-      ref = ref[k];
+      const child = ref[k];
+      if (!isRecord(child)) {
+        ref[k] = {} as TranslationTree;
+      }
+      ref = ref[k] as NestedTranslations;
     }
   }
 };
 
-const buildNested = (flat: FlatMap): Record<string, any> => {
-  const root: Record<string, any> = {};
+const buildNested = (flat: FlatMap): NestedTranslations => {
+  const root: NestedTranslations = {} as TranslationTree;
   for (const [path, value] of Object.entries(flat)) {
     const parts = path.split('.');
     setByPath(root, parts, value);
@@ -61,9 +75,16 @@ const CopyEditor: React.FC<CopyEditorProps> = ({ onClose }) => {
   const lang = getCurrentLanguage() as Language;
   const ns = getCurrentNamespace();
   const translations = getLoadedTranslations();
-  const currentNsObj = translations?.[ns] || {};
 
-  const initialFlat = useMemo(() => flatten(currentNsObj), [currentNsObj]);
+  const currentNamespaceTranslations = useMemo(() => {
+    const candidate = translations?.[ns];
+    return isRecord(candidate) ? candidate : {};
+  }, [translations, ns]);
+
+  const initialFlat = useMemo(
+    () => flatten(currentNamespaceTranslations),
+    [currentNamespaceTranslations]
+  );
   const [filter, setFilter] = useState('');
   const [flatEdits, setFlatEdits] = useState<FlatMap>(initialFlat);
 
@@ -73,8 +94,9 @@ const CopyEditor: React.FC<CopyEditorProps> = ({ onClose }) => {
 
   useEffect(() => {
     const unsubscribe = subscribeI18n(() => {
-      const updated = flatten(getLoadedTranslations()?.[getCurrentNamespace()] || {});
-      setFlatEdits(updated);
+      const namespaceData = getLoadedTranslations()?.[getCurrentNamespace()];
+      const flattened = flatten(isRecord(namespaceData) ? namespaceData : {});
+      setFlatEdits(flattened);
     });
     return unsubscribe;
   }, []);
@@ -87,7 +109,7 @@ const CopyEditor: React.FC<CopyEditorProps> = ({ onClose }) => {
   }, [flatEdits, filter]);
 
   const handleChange = (k: string, v: string) => {
-    setFlatEdits(prev => {
+    setFlatEdits((prev) => {
       const next = { ...prev, [k]: v };
       // apply live updates to in-memory i18n
       const nested = buildNested(next);

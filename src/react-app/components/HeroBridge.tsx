@@ -1,9 +1,7 @@
 import { useState, useEffect, type FC } from 'react';
 import { t } from '../lib/i18n';
 
-interface HeroBridgeProps {
-  // Remove onGrowthProgress since we're not updating header anymore
-}
+type HeroBridgeProps = Record<string, never>;
 
 const HeroBridge: FC<HeroBridgeProps> = () => {
   const [animationProgress, setAnimationProgress] = useState(0);

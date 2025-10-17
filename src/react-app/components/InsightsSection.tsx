@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
 import { InsightCards } from './InsightCards';
 import { ActivityFeed } from './ActivityFeed';
 
@@ -229,4 +228,3 @@ const InsightsSection: FC = () => {
 };
 
 export default InsightsSection;
-

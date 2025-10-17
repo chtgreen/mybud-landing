@@ -1,6 +1,42 @@
+type TranslationLeaf = string | TranslationTree;
+export interface TranslationTree {
+  [key: string]: TranslationLeaf;
+}
+
+const isTranslationTree = (value: unknown): value is TranslationTree =>
+  typeof value === 'object' && value !== null && !Array.isArray(value);
+
+const resolveTranslation = (
+  tree: TranslationTree | undefined,
+  keys: readonly string[]
+): TranslationLeaf | undefined => {
+  let current: TranslationLeaf | undefined = tree;
+  for (const key of keys) {
+    if (isTranslationTree(current) && key in current) {
+      current = current[key];
+    } else {
+      return undefined;
+    }
+  }
+  return current;
+};
+
+const deepMerge = (target: TranslationTree, source: TranslationTree): TranslationTree => {
+  for (const [key, value] of Object.entries(source)) {
+    if (isTranslationTree(value)) {
+      const existingChild = target[key];
+      const baseChild = isTranslationTree(existingChild) ? existingChild : {};
+      target[key] = deepMerge({ ...baseChild }, value);
+    } else {
+      target[key] = value;
+    }
+  }
+  return target;
+};
+
 // Supported languages
 export const SUPPORTED_LANGUAGES = ['pt', 'en', 'es'] as const;
-export type Language = typeof SUPPORTED_LANGUAGES[number];
+export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
 // Default language
 export const DEFAULT_LANGUAGE: Language = 'pt';
@@ -11,15 +47,19 @@ let currentNamespace: ContentNamespace = 'b2c';
 
 // Current language state
 let currentLanguage: Language = DEFAULT_LANGUAGE;
-let loadedTranslations: Record<string, any> = {};
+let loadedTranslations: TranslationTree = {};
 
 // Load translations for a specific language
-const loadTranslations = async (lang: Language): Promise<Record<string, any>> => {
+const loadTranslations = async (lang: Language): Promise<TranslationTree> => {
   try {
     const response = await import(`../locales/${lang}.json`);
-    return response.default || response;
-  } catch (error) {
-    console.warn(`Failed to load translations for ${lang}, falling back to ${DEFAULT_LANGUAGE}`);
+    const data = (response.default || response) as unknown;
+    return isTranslationTree(data) ? (data as TranslationTree) : {};
+  } catch (err) {
+    console.warn(
+      `Failed to load translations for ${lang}, falling back to ${DEFAULT_LANGUAGE}`,
+      err
+    );
     if (lang !== DEFAULT_LANGUAGE) {
       return loadTranslations(DEFAULT_LANGUAGE);
     }
@@ -75,7 +115,7 @@ export const initializeLanguage = async (): Promise<Language> => {
 };
 
 // Access currently loaded translations
-export const getLoadedTranslations = (): Record<string, any> => loadedTranslations;
+export const getLoadedTranslations = (): TranslationTree => loadedTranslations;
 
 // Translation function that resolves within the current namespace first
 export const t = (key: string, lang?: Language): string => {
@@ -89,41 +129,20 @@ export const t = (key: string, lang?: Language): string => {
 
   const keys = key.split('.');
 
-  // 1) Try namespaced lookup (b2c/b2b)
-  let value: any = loadedTranslations?.[currentNamespace];
-  for (const k of keys) {
-    if (value && typeof value === 'object' && k in value) {
-      value = value[k];
-    } else {
-      value = undefined;
-      break;
-    }
-  }
-  if (typeof value === 'string') return value;
+  const namespaceTree = isTranslationTree(loadedTranslations[currentNamespace])
+    ? (loadedTranslations[currentNamespace] as TranslationTree)
+    : undefined;
+  const namespacedValue = resolveTranslation(namespaceTree, keys);
+  if (typeof namespacedValue === 'string') return namespacedValue;
 
-  // 2) Secondary fallback to b2c namespace for shared strings
-  value = loadedTranslations?.['b2c'];
-  for (const k of keys) {
-    if (value && typeof value === 'object' && k in value) {
-      value = value[k];
-    } else {
-      value = undefined;
-      break;
-    }
-  }
-  if (typeof value === 'string') return value;
+  const b2cTree = isTranslationTree(loadedTranslations.b2c)
+    ? (loadedTranslations.b2c as TranslationTree)
+    : undefined;
+  const b2cValue = resolveTranslation(b2cTree, keys);
+  if (typeof b2cValue === 'string') return b2cValue;
 
-  // 3) Fallback to root (backward-compat, while migrating)
-  value = loadedTranslations;
-  for (const k of keys) {
-    if (value && typeof value === 'object' && k in value) {
-      value = value[k];
-    } else {
-      value = undefined;
-      break;
-    }
-  }
-  if (typeof value === 'string') return value;
+  const fallbackValue = resolveTranslation(loadedTranslations, keys);
+  if (typeof fallbackValue === 'string') return fallbackValue;
 
   console.warn(`Translation not found for key: ${key}, language: ${targetLang}, namespace: ${currentNamespace}`);
   return key;
@@ -166,26 +185,14 @@ const notifyI18nUpdate = () => {
   }
 };
 
-const deepMerge = (target: any, source: any) => {
-  if (!source || typeof source !== 'object') return target;
-  for (const key of Object.keys(source)) {
-    const sVal = source[key];
-    if (sVal && typeof sVal === 'object' && !Array.isArray(sVal)) {
-      if (!target[key] || typeof target[key] !== 'object') target[key] = {};
-      deepMerge(target[key], sVal);
-    } else {
-      target[key] = sVal;
-    }
-  }
-  return target;
-};
-
 // Apply partial edits to current namespace (e.g., from CopyEditor) and notify subscribers
-export const applyNamespaceEdits = (partial: Record<string, any>) => {
+export const applyNamespaceEdits = (partial: TranslationTree) => {
   if (!loadedTranslations) loadedTranslations = {};
-  if (!loadedTranslations[currentNamespace] || typeof loadedTranslations[currentNamespace] !== 'object') {
+  const existingNamespace = resolveTranslation(loadedTranslations, [currentNamespace]);
+  if (!isTranslationTree(existingNamespace)) {
     loadedTranslations[currentNamespace] = {};
   }
-  deepMerge(loadedTranslations[currentNamespace], partial);
+  const currentTree = loadedTranslations[currentNamespace] as TranslationTree;
+  loadedTranslations[currentNamespace] = deepMerge(currentTree, partial);
   notifyI18nUpdate();
 };

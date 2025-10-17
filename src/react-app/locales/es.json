@@ -127,6 +127,41 @@
       "successMessage": "¡Gracias! Estás en la lista beta. 🌱",
       "errorMessage": "Algo salió mal. Inténtalo de nuevo."
     },
+    "betaModal": {
+      "close": "Cerrar modal",
+      "progress": {
+        "label": "Desarrollo en progreso — 78% completado",
+        "eta": "Lanzamiento estimado: noviembre de 2025"
+      },
+      "priority": {
+        "chip": "Acceso prioritario",
+        "title": "Asegura tu Kit + Acceso Premium",
+        "description": "Apoya el desarrollo y recibe tu Founder Kit con beneficios reales:",
+        "price": "R$ 300",
+        "benefits": {
+          "premium": "6 meses de acceso Premium",
+          "physicalKit": "Kit físico exclusivo (camiseta, pipa, póster)",
+          "immediateAccess": "Acceso inmediato cuando lancemos la app",
+          "priorityFeedback": "Prioridad y grupo privado de feedback"
+        },
+        "cta": "Comprar Kit ahora",
+        "counter": "Solo 72 unidades en el lote actual.",
+        "microcopy": "Stock limitado. Cuando se acabe, se acabó."
+      },
+      "free": {
+        "title": "¿Prefieres esperar?",
+        "description": "Únete a la lista y recibe novedades y acceso anticipado cuando abramos la beta.",
+        "form": {
+          "label": "E-mail",
+          "placeholder": "Tu mejor e-mail",
+          "cta": "Recibir novedades",
+          "loading": "Enviando...",
+          "microcopy": "Nada de spam. Privacidad garantizada.",
+          "success": "¡Listo! Confirma tu e-mail para asegurar tu lugar.",
+          "error": "Algo salió mal. Inténtalo de nuevo."
+        }
+      }
+    },
     "paymentModal": {
       "title": "Estás entrando al grupo de fundadores de MyBud.",
       "subtitle": "La app está siendo hecha en público, con quienes cultivan de verdad.",
@@ -187,7 +222,13 @@
       "copyright": "© 2024 MyBud. Todos los derechos reservados."
     },
     "header": {
-      "languageSelector": "Idioma"
+      "languageSelector": "Idioma",
+      "nav": {
+        "features": "Funciones",
+        "beta": "Beta",
+        "kit": "Kit Fundador"
+      },
+      "cta": "Comprar Kit + Premium"
     },
     "associations": {
       "title1": "¿Eres una asociación o pequeña facilidad?",

@@ -547,6 +547,12 @@ body {
   border: 1px solid var(--border-soft);
 }
 
+.language-selector--transparent {
+  background: transparent;
+  border-color: transparent;
+  backdrop-filter: none;
+}
+
 .soft-shadow {
   box-shadow: 0 4px 20px rgba(5, 150, 105, 0.1);
 }

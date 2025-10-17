@@ -43,10 +43,10 @@ const Footer: FC = () => {
             {/* mybud Logo & Brand */}
             <div className="mb-6">
               <div className="flex items-center mb-6">
-                <img 
-                  src="/mybud-logo-green.svg" 
-                  alt="MyBud Logo" 
-                  className="h-32 w-auto"
+                <img
+                  src="/mybud-logo-green.svg"
+                  alt="MyBud Logo"
+                  className="h-16 w-auto"
                   style={{
                     filter: 'invert(41%) sepia(89%) saturate(1891%) hue-rotate(313deg) brightness(95%) contrast(92%)'
                   }}

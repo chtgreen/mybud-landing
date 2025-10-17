@@ -158,6 +158,41 @@
       "successMessage": "Obrigado! Você está na lista da beta. 🌱",
       "errorMessage": "Algo deu errado. Tente novamente."
     },
+    "betaModal": {
+      "close": "Fechar modal",
+      "progress": {
+        "label": "Desenvolvimento em progresso — 78% completo",
+        "eta": "Lançamento oficial estimado: Novembro 2025"
+      },
+      "priority": {
+        "chip": "Acesso Prioritário",
+        "title": "Garanta seu Kit + Acesso Premium",
+        "description": "Apoie o desenvolvimento e receba o seu Founder Kit com benefícios reais:",
+        "price": "R$ 300",
+        "benefits": {
+          "premium": "6 meses de acesso Premium",
+          "physicalKit": "Kit físico exclusivo (camisa, piteira, cartaz)",
+          "immediateAccess": "Acesso imediato quando o app lançar",
+          "priorityFeedback": "Prioridade e grupo fechado de feedback"
+        },
+        "cta": "Comprar Kit agora",
+        "counter": "Só 72 unidades no lote atual.",
+        "microcopy": "Estoque limitado. Acabou, acabou."
+      },
+      "free": {
+        "title": "Prefere esperar?",
+        "description": "Entre na lista e receba novidades e acesso antecipado quando abrirmos o beta.",
+        "form": {
+          "label": "E-mail",
+          "placeholder": "Seu melhor e-mail",
+          "cta": "Receber atualizações",
+          "loading": "Enviando...",
+          "microcopy": "Nada de spam. Privacidade garantida.",
+          "success": "Pronto! Confirme seu e-mail pra garantir seu lugar.",
+          "error": "Algo deu errado. Tente novamente."
+        }
+      }
+    },
     "testimonials": {
       "title": "Quem já testou, recomenda.",
       "subtitle": "Antes do lançamento o MyBud já organiza cultivos reais.",
@@ -235,7 +270,13 @@
       "copyright": "© 2024 MyBud. Todos os direitos reservados."
     },
     "header": {
-      "languageSelector": "Idioma"
+      "languageSelector": "Idioma",
+      "nav": {
+        "features": "Funcionalidades",
+        "beta": "Beta",
+        "kit": "Kit Founder"
+      },
+      "cta": "Comprar Kit + Premium"
     },
     "themeSelector": {
       "title": "🎨 Testar Cores",

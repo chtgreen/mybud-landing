@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
 import { PlantTimeline } from './PlantTimeline';
 
 const PlantTimelineSection: FC = () => {
@@ -209,4 +208,3 @@ const PlantTimelineSection: FC = () => {
 };
 
 export default PlantTimelineSection;
-

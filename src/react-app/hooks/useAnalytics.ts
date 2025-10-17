@@ -8,6 +8,8 @@ interface AnalyticsConfig {
   scrollThresholds?: number[];
 }
 
+type AnalyticsEventProperties = Record<string, unknown>;
+
 export const useAnalytics = (config: AnalyticsConfig) => {
   const startTimeRef = useRef<number | undefined>(undefined);
   const scrollThresholdsReached = useRef<Set<number>>(new Set());
@@ -15,15 +17,18 @@ export const useAnalytics = (config: AnalyticsConfig) => {
   const lastScrollPosition = useRef(0);
   const readingStartTime = useRef<number | undefined>(undefined);
   
-  const trackEvent = useCallback((eventName: string, properties: Record<string, any> = {}) => {
-    if (typeof posthog !== 'undefined') {
-      posthog.capture(eventName, {
-        section: config.sectionName,
-        timestamp: Date.now(),
-        ...properties
-      });
-    }
-  }, [config.sectionName]);
+  const trackEvent = useCallback(
+    (eventName: string, properties: AnalyticsEventProperties = {}) => {
+      if (typeof posthog !== 'undefined') {
+        posthog.capture(eventName, {
+          section: config.sectionName,
+          timestamp: Date.now(),
+          ...properties
+        });
+      }
+    },
+    [config.sectionName]
+  );
 
   const trackTimeSpent = useCallback(() => {
     if (startTimeRef.current) {
@@ -130,17 +135,20 @@ export const useAnalytics = (config: AnalyticsConfig) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [config.trackScroll, trackScrollProgress]);
 
-  const trackInteraction = useCallback((interactionType: string, details: Record<string, any> = {}) => {
-    const timeOnSection = startTimeRef.current ? Date.now() - startTimeRef.current : 0;
-    
-    trackEvent('user_interaction', {
-      interaction_type: interactionType,
-      time_before_interaction_ms: timeOnSection,
-      time_before_interaction_seconds: Math.round(timeOnSection / 1000),
-      scroll_thresholds_reached: Array.from(scrollThresholdsReached.current),
-      ...details
-    });
-  }, [trackEvent]);
+  const trackInteraction = useCallback(
+    (interactionType: string, details: AnalyticsEventProperties = {}) => {
+      const timeOnSection = startTimeRef.current ? Date.now() - startTimeRef.current : 0;
+
+      trackEvent('user_interaction', {
+        interaction_type: interactionType,
+        time_before_interaction_ms: timeOnSection,
+        time_before_interaction_seconds: Math.round(timeOnSection / 1000),
+        scroll_thresholds_reached: Array.from(scrollThresholdsReached.current),
+        ...details
+      });
+    },
+    [trackEvent]
+  );
 
   const setupTracking = useCallback((element: Element | null) => {
     if (!element) return;

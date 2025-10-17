@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
 import { VoiceNoteDemo } from './VoiceNoteDemo';
 
 const VoiceNotesSection: FC = () => {
@@ -143,4 +142,3 @@ const VoiceNotesSection: FC = () => {
 };
 
 export default VoiceNotesSection;
-

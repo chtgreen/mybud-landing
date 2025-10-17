@@ -50,7 +50,7 @@ export default function B2BLandingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header onLanguageChange={changeLanguage} isB2B />
+      <Header onLanguageChange={changeLanguage} isB2B onCTAClick={handleCTAClick} />
 
       <Hero onCTAClick={handleCTAClick} /> {/* Section 1: white */}
       <Sponsorship background="gray" /> {/* Section 2: gray - Marketing na cannabis é travado */}
