@@ -40,6 +40,7 @@ const IPhoneMockup: FC = () => {
 
         {/* Video Container - More Vertical Aspect */}
         <div className="relative bg-black w-full aspect-[9/19.5] overflow-hidden rounded-[2rem] shadow-inner">
+          
           {!isLoading ? (
             /* Play Button State */
             <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
@@ -158,7 +159,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
       {!isB2BContext && <OrganicBackground />}
       {isB2BContext && <B2BBackground />}
       
-      <div className="py-12 md:py-16 lg:py-20 xl:py-24 relative z-20 min-h-[80vh] lg:min-h-[70vh] xl:min-h-[65vh] flex items-center w-full">
+      <div className="py-12 md:py-16 lg:py-20 xl:py-24 relative z-10 min-h-[80vh] lg:min-h-[70vh] xl:min-h-[65vh] flex items-center w-full">
         <div className="container mx-auto px-6 max-w-7xl w-full">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16 w-full">
             <div className="lg:w-1/2 text-center lg:text-left">
@@ -168,8 +169,21 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 </div>
               )}
               <h1 
-                className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${isB2BContext ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
-                style={!isB2BContext ? { textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)' } : {}}
+                className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 uppercase ${isB2BContext ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
+                style={!isB2BContext ? { 
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
+                  fontFamily: '"Schabo Condensed", "Bebas Neue", "Impact", sans-serif',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.1',
+                  fontWeight: 'normal',
+                  fontStretch: 'condensed'
+                } : {
+                  fontFamily: '"Schabo Condensed", "Bebas Neue", "Impact", sans-serif',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.1',
+                  fontWeight: 'normal',
+                  fontStretch: 'condensed'
+                }}
               >
                 <span>{t('hero.title1')}</span><br />
                 <span>{t('hero.title2')}</span><br />
@@ -184,10 +198,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-4">
                 <button
-                  className={isB2BContext ? 
-                    "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-none border-0" :
-                    "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white/90 text-gray-900 border border-white/50 hover:bg-white/95 hover:text-gray-800 transition-colors shadow-lg"
-                  }
+                  className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors border-0"
                   onClick={onCTAClick}
                 >
                   <span>{t('hero.primaryCta')}</span>
@@ -219,15 +230,64 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 )}
               </div>
 
+              {/* Trust Element / Microcopy */}
               <p 
-                className={`text-sm hero-animate-5 ${isB2BContext ? 'text-gray-600' : 'text-emerald-100'}`}
+                className={`text-sm mb-4 hero-animate-5 ${isB2BContext ? 'text-gray-600' : 'text-emerald-100'}`}
                 style={!isB2BContext ? { textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.trustElement')}
               </p>
+
+              {/* Counter and Badges for B2C */}
+              {!isB2BContext && (
+                <div className="space-y-3 hero-animate-6">
+                  {/* Counter */}
+                  {t('hero.counter') && (
+                    <div className="inline-flex items-center gap-2 badge-community px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      <span>{t('hero.counter')}</span>
+                    </div>
+                  )}
+
+                  {/* Badges */}
+                  {t('hero.badges') && (
+                    <div className="text-sm text-emerald-100 flex items-center gap-2 justify-center lg:justify-start">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' }}>{t('hero.badges')}</span>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="lg:w-1/2 relative app-animate flex items-center justify-center">
+              {/* Grafismo lilás vívido e orgânico atrás do celular */}
+              {!isB2BContext && (
+                <div 
+                  className="absolute opacity-90 -z-10"
+                  style={{
+                    left: '-30%',
+                    top: '50%',
+                    width: '170%',
+                    height: '170%',
+                    transform: 'translateY(-50%) scaleX(1.3) rotate(-15deg)',
+                    transformOrigin: 'center'
+                  }}
+                >
+                  <svg className="w-full h-full" viewBox="0 0 349.643 341.112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                    <path 
+                      fill="#D5C0FD" 
+                      fillRule="nonzero" 
+                      d="M 239.4375 170.554688 C 253.699219 157.519531 264.015625 140.238281 268.355469 120.699219 C 270.953125 109.007812 263.703125 97.394531 252.078125 94.492188 C 234.640625 90.136719 206.53125 87.234375 174.820312 87.234375 C 143.113281 87.234375 115.003906 90.136719 97.5625 94.492188 C 85.941406 97.394531 78.691406 109.007812 81.285156 120.699219 C 85.625 140.238281 95.945312 157.519531 110.203125 170.554688 C 95.945312 183.59375 85.625 200.871094 81.285156 220.410156 C 78.691406 232.105469 85.941406 243.714844 97.5625 246.617188 C 115.003906 250.976562 143.113281 253.878906 174.820312 253.878906 C 206.53125 253.878906 234.640625 250.976562 252.078125 246.617188 C 263.703125 243.714844 270.953125 232.105469 268.355469 220.410156 C 264.015625 200.871094 253.699219 183.59375 239.4375 170.554688"
+                    />
+                  </svg>
+                </div>
+              )}
+              
               {isB2BContext ? <HeroBridge /> : <IPhoneMockup />}
             </div>
           </div>

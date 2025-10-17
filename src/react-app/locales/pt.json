@@ -1,13 +1,16 @@
 {
   "b2c": {
     "hero": {
-      "title1": "My Bud",
+      "title1": "MyBud.",
       "title2": "Você cuida das plantas,",
       "title3": "a gente cuida do resto.",
-      "subtitle": "Transforme voz, fotos e vídeos em registros automatizados do seu cultivo, acompanhando o ciclo da semente à colheita, sem perder um detalhe.",
-      "primaryCta": "Quero entrar pro Beta",
-      "secondaryCta": "Assistir à Demo",
-      "trustElement": "Vagas limitadas. Ganhe acesso ao Beta + 6 meses Premium após o lançamento",
+      "subtitle": "Transforme voz, fotos e vídeos em registros automáticos do seu cultivo. Timeline por planta, estágios com contador de dias e lembretes que funcionam. Da semente à colheita, sem perder nada.",
+      "primaryCta": "Quero meu Kit – BUD + acesso Premium",
+      "secondaryCta": "Assistir à demo curta (2 min)",
+      "trustElement": "Cada Founder Kit dá direito a entrada antecipada no MyBud + até 6 meses Premium grátis + itens exclusivos que não serão vendidos depois. Estoque limitado, acabou, acabou.",
+      "counter": "Só 72 Founder Kits restantes",
+      "badges": "Privacidade primeiro • Dados anônimos • iOS & Android (em breve)",
+      "alertBar": "Junte-se aos primeiros growers: o MyBud ainda está em beta, mas quem entra agora tem prioridade, voz ativa nas melhorias e acesso premium garantido.",
       "phone": {
         "plants": "Plantas",
         "subtitle": "Acompanhe o desenvolvimento",
@@ -22,16 +25,42 @@
         "addNote": "Toque para adicionar observação"
       }
     },
+    "problem": {
+      "title": "O problema que todo grower vive",
+      "subtitle": "Nunca mais se perca no cultivo.",
+      "description": "Na correria, anotar tudo é chato — e quando falha, o prejuízo é real. O My Bud registra seu diário de cultivo: fale, tire uma foto, filme e pronto! O app organiza por planta, data e fase. Você vê onde está e o que vem a seguir.",
+      "indicators": {
+        "plantA": "Planta A: 45 dias de vida",
+        "plantB": "Planta B: 12 dias de floração",
+        "nextWatering": "Próxima rega: em 2 dias"
+      },
+      "timeline": {
+        "title": "Linha do tempo da planta",
+        "description": "Histórico visual e organizado por estágios e dias."
+      },
+      "voice": {
+        "title": "Registro por voz",
+        "description": "Fale o que quiser e o MyBud transforma em nota ou tarefa."
+      },
+      "tasks": {
+        "title": "Tarefas e lembretes",
+        "description": "Nada fica pra trás: rega, poda, nutrientes no momento certo."
+      },
+      "stickers": {
+        "title": "Stickers automáticos",
+        "description": "QR codes com dados diretos do app (planta, estágio, dia)."
+      }
+    },
     "features": {
       "title": "Nunca mais se perca no seu cultivo",
-      "subtitle": "Na correria da rotina, anotar tudo pode ser chato. My Bud registra seu diário de cultivo: fale, tire uma foto, filme e pronto! O app organiza por planta, data e fase. Você vê exatamente aonde está e o que vem a seguir nessa jornada.",
+      "subtitle": "Na correria da rotina, anotar tudo pode ser chato. MyBud registra seu diário de cultivo: fale, tire uma foto, filme e pronto! O app organiza por planta, data e fase. Você vê exatamente aonde está e o que vem a seguir nessa jornada.",
       "journal": {
         "title": "Linha do tempo da planta",
         "description": "Histórico completo do cultivo, visual e organizado."
       },
       "voice": {
         "title": "Registro por voz",
-        "description": "Diga o que fez e o My Bud transforma em nota ou tarefa."
+        "description": "Diga o que fez e o MyBud transforma em nota ou tarefa."
       },
       "alerts": {
         "title": "Tarefas e lembretes",
@@ -44,40 +73,46 @@
     },
     "appShowcase": {
       "title": "Como funciona",
-      "subtitle": "Clique nas funcionalidades para entender como o My Bud simplifica cada etapa do seu cultivo.",
-      "dashboard": {
+      "subtitle": "Clique nas funcionalidades para entender como o MyBud simplifica cada etapa do seu cultivo.",
+      "step1": {
         "title": "Registre do seu jeito",
-        "desc": "Fale, fotografe ou filme. O My Bud salva com data, planta e fase."
+        "desc": "Fale, fotografe ou filme."
       },
-      "voice": {
-        "title": "Organize tudo automaticamente",
-        "desc": "O app cria a linha do tempo da planta, coletando todas as atividades, fotos e vídeos delas."
+      "step2": {
+        "title": "Organiza tudo sozinho",
+        "desc": "Timeline clara por planta."
       },
-      "qr": {
-        "title": "Receba avisos no momento certo",
-        "desc": "My Bud te envia lembretes para regar, podar e aplicar nutrientes na hora exata."
+      "step3": {
+        "title": "Avisa no momento certo",
+        "desc": "Rega, poda, nutrição."
       },
-      "alerts": {
-        "title": "Compartilhe com estilo e segurança",
-        "desc": "Poste no Instagram com stickers automáticos mostrando o estágio e dias da planta."
+      "step4": {
+        "title": "Compartilhe com estilo",
+        "desc": "Stickers automáticos para Insta."
       }
     },
     "identityTrust": {
-      "title1": "Feito por growers para growers.",
-      "title2": "",
-      "description": "O My Bud nasceu da frustração de quem esqueceu uma última rega, perdeu o dia da virada para flora ou confundiu genética. É um diário esperto, que entende sua rotina com leveza, privacidade e respeito à sua liberdade de cultivar.",
+      "title1": "Por trás do app",
+      "title2": "Feito de grower, para grower.",
+      "description": "O MyBud nasceu da frustração de quem já esqueceu regas ou confundiu datas. É um diário/assistente que respeita a privacidade do cultivador e entende sua rotina com leveza e liberdade.",
       "private": {
         "title": "Integração inteligente",
-        "desc": "Conecta com sensores, sistemas hidropônicos e dispositivos para automação completa."
+        "desc": "Pronto para conectar sensores e IoT."
       },
       "community": {
         "title": "Feito em comunidade",
-        "desc": "Desenvolvido com feedback verdadeiro de cultivadores experientes."
+        "desc": "Construído com feedback real de cultivadores."
       },
       "tested": {
-        "title": "Testado por growers",
-        "desc": "Validado, na prática e em diferentes etapas, em cultivos reais."
+        "title": "Testado no mundo real",
+        "desc": "Rodando em cultivos reais durante o beta."
       }
+    },
+    "demo": {
+      "title": "Veja o app rodando antes de entrar.",
+      "subtitle": "Aula rápida (15 min) mostrando registro por voz, timeline por planta, lembretes e checklists.",
+      "cta": "Assistir à demo agora",
+      "afterWatching": "Curtiu? Entre no beta gratuito"
     },
     "associations": {
       "title1": "É associação ou tem um cultivo coletivo?",
@@ -99,52 +134,79 @@
         "title": "Compliance simplificado",
         "desc": "Mantenha-se atualizado e em dia com protocolos e regulamentações através de sistemas automatizados e alertas inteligentes."
       },
-      "cta": "Agendar apresentação do My Bud"
+      "cta": "Agendar apresentação do MyBud"
     },
     "betaSignup": {
-      "title": "Quer ter acesso à versão Beta?",
-      "subtitle": "É pra já! Deixe seu contato que a gente te envia novidades, vídeos dos bastidores e, quem sabe, acessos antecipados e gratuitos no pré-lançamento.",
-      "benefits": {
-        "title": "",
-        "premium": "",
-        "kit": "",
-        "access": "",
-        "priority": ""
+      "title": "Entre no beta gratuito",
+      "subtitle": "Ajude a construir o app perfeito para growers enquanto testa em primeira mão.",
+      "whatWeExpect": {
+        "title": "O que esperamos de você",
+        "useApp": "Usar o app alguns minutos por dia",
+        "survey": "Responder um formulário semanal de 2 min",
+        "call": "Estar disponível para 1 call de 15 min com o fundador"
       },
-      "qrDescription": "",
-      "supportButton": "Quero testar o My Bud",
-      "newsletterButton": "",
-      "newsletterTitle": "Quer ter acesso à versão Beta?",
-      "newsletterDesc": " É pra já! Deixe seu contato que a gente te envia novidades, vídeos dos bastidores e, quem sabe, acessos antecipados e gratuitos no pré-lançamento.",
-      "namePlaceholder": "Nome",
-      "emailPlaceholder": "E-mail",
-      "button": "Quero testar o My Bud",
-      "privacy": "Apenas dicas boas. Nada de spam. Respeitamos sua privacidade.",
+      "whatYouGet": {
+        "title": "O que você recebe",
+        "earlyAccess": "Acesso antecipado",
+        "premium": "2 meses de Premium no lançamento",
+        "support": "Suporte e prioridade nas melhorias"
+      },
+      "emailPlaceholder": "Seu melhor e-mail",
+      "instagramPlaceholder": "@seu_instagram (VIP - opcional)",
+      "button": "Quero testar o app",
+      "privacy": "Nada de spam. Só dicas boas. Privacidade garantida.",
       "successMessage": "Obrigado! Você está na lista da beta. 🌱",
       "errorMessage": "Algo deu errado. Tente novamente."
     },
     "testimonials": {
+      "title": "Quem já testou, recomenda.",
+      "subtitle": "Antes do lançamento o MyBud já organiza cultivos reais.",
+      "counter": "+{count} growers já estão usando o MyBud em beta fechado.",
       "1": {
-        "text": "\"Consegui mais um teste por anotar ‘rega’ pelo mic e contar RVR e ver depois. Muito bom!\"",
-        "author": "@cultvar",
-        "location": "São Paulo"
+        "text": "\"Falei 'regar planta 2 com PPF' e virou tarefa. Brabo.\"",
+        "author": "@Hugo",
+        "location": "BA"
       },
       "2": {
-        "text": "\"Agora sei até exatamente quantos dias de flora tem cada planta. Maravilhoso!\"",
-        "author": "marina",
-        "location": "Rio de Janeiro"
+        "text": "\"Agora eu sei exatamente quantos dias de flora tem cada planta.\"",
+        "author": "Manu",
+        "location": "SP"
       },
       "3": {
-        "text": "\"Com o sticker no vídeo eu sei qual é cada uma na hora! E fico menos perdido no Insta.\"",
-        "author": "carlos",
-        "location": "Belo Horizonte"
-      },
-      "title": "Usado e amado pelos growers",
-      "subtitle": "Te damos mais que a nossa palavra, veja o que os primeiros testers acharam do My Bud."
+        "text": "\"Com o sticker eu não confundo mais as plantas. E fica massa no Insta.\"",
+        "author": "Vinícius",
+        "location": "PR"
+      }
+    },
+    "founderKit": {
+      "title": "Founder Kits: faça parte desde o começo.",
+      "subtitle": "Apoie o projeto e receba acesso antecipado + itens colecionáveis exclusivos.",
+      "counter": "Lote atual: só {count} disponíveis",
+      "microcopy": "Cada kit dá direito a entrada antecipada, até 6 meses Premium grátis e itens exclusivos.",
+      "cta": "Quero meu Kit BUD + acesso Premium",
+      "kit": {
+        "bud": {
+          "name": "Kit BUD",
+          "price": "R$ 299",
+          "benefits": [
+            "6 meses Premium",
+            "Camisa exclusiva MyBud",
+            "Pipeira premium",
+            "Cartaz arte canábica"
+          ]
+        }
+      }
+    },
+    "ctaFinal": {
+      "title": "Chega de perder rega, fase e colheita.",
+      "subtitle": "Seu cultivo mais organizado começa agora.",
+      "primaryCta": "Quero meu Kit – BUD + acesso Premium",
+      "secondaryCta": "Assistir à demo curta (2 min)",
+      "microcopy": "Estoque limitado. Só {count} Founder Kits restantes."
     },
     "comingSoon": {
       "title": "Em breve nas suas lojas favoritas!",
-      "subtitle": "Seja o primeiro a saber quando o My Bud vai chegar às lojas de apps.",
+      "subtitle": "Seja o primeiro a saber quando o MyBud vai chegar às lojas de apps.",
       "ctaText": "Entre no Beta agora para ter acesso antecipado antes do lançamento oficial!",
       "iosText": "App Store",
       "androidText": "Google Play"
@@ -154,29 +216,23 @@
       "tagline": "Seu parceiro digital de cultivo.",
       "faqTitle": "FAQ",
       "faq1": {
-        "question": "O app é gratuito?",
-        "answer": "Você vai poder usar de graça, com limite de plantas. Quem entrar no beta recebe acesso premium liberado por 6 meses."
+        "question": "O app já está nas lojas?",
+        "answer": "Ainda não. Estamos em beta fechado. Quem entra agora garante até 6 meses Premium."
       },
       "faq2": {
-        "question": "Funciona offline?",
-        "answer": "Por enquanto, não. Mas estamos otimizando tudo pra funcionar rápido e leve mesmo com internet ruim."
+        "question": "Preciso mostrar meu grow?",
+        "answer": "Não. Você controla tudo. Os dados são anônimos."
       },
       "faq3": {
-        "question": "É seguro usar?",
-        "answer": "A real: não existe anonimato 100%. A gente salva o mínimo possível, mas seu IP ainda passa por nossos servidores. Infelizmente, o silêncio ainda é a melhor proteção do grower e a gente respeita isso. Nada é compartilhado. A lei obriga a guardar alguns dados, e a gente segue o que for preciso. Mas você decide o que registra ou não."
+        "question": "Quanto vai custar depois?",
+        "answer": "Premium = R$ 30/mês. Quem entra no beta ganha meses grátis."
       },
-      "faq4": {
-        "question": "Preciso mostrar minhas plantas?",
-        "answer": "Não. Pode registrar tudo sem tirar uma foto sequer. Tudo é opcional."
-      },
-      "faq5": {
-        "question": "Posso usar só pra organizar sem anotar tudo?",
-        "answer": "Claro. Se quiser só ver os dias de flora e saber quando colher, já vale."
-      },
-      "privacy": "Política de privacidade",
-      "terms": "Termos de uso",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso",
+      "eula": "EULA",
       "contact": "Contato",
-      "copyright": "© 2024 My Bud. Todos os direitos reservados."
+      "legalNotice": "O MyBud é uma ferramenta de organização e registro. Respeite a legislação local.",
+      "copyright": "© 2024 MyBud. Todos os direitos reservados."
     },
     "header": {
       "languageSelector": "Idioma"
@@ -205,7 +261,7 @@
       "title1": "Dados que crescem junto com suas vendas.",
       "title2": "Saiba como, quando e por que growers estão usando seu produto em rotinas reais de cultivo.",
       "title3": "",
-      "subtitle": "Do app ao uso visível em fotos e tarefas, o My Bud transforma cultivos em métricas que você pode acompanhar e usar para vender mais.",
+      "subtitle": "Do app ao uso visível em fotos e tarefas, o MyBud transforma cultivos em métricas que você pode acompanhar e usar para vender mais.",
       "overline": "",
       "primaryCta": "Agendar conversa",
       "secondaryCta": "Solicitar Media Kit",
@@ -222,7 +278,7 @@
     "sponsorship": {
       "title": "O Marketing na cannabis é travado, mas nós destravamos com dados reais.",
       "subtitle": "",
-      "description": "Restrição de anúncios, métricas rasas e campanhas que não viram retorno. O My Bud posiciona sua marca no momento exato do cultivo, no app que o grower abre todo dia, e te entrega dados acionáveis sobre o uso real dos seus produtos.",
+      "description": "Restrição de anúncios, métricas rasas e campanhas que não viram retorno. O MyBud posiciona sua marca no momento exato do cultivo, no app que o grower abre todo dia, e te entrega dados acionáveis sobre o uso real dos seus produtos.",
       "cta": "Agendar conversa",
       "brandSticker": "Sticker de marca",
       "sampleTask": "Aplicar nutrientes - Fase vegetativa"

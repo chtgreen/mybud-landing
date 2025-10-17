@@ -112,8 +112,7 @@ const FeaturesSection: FC<FeaturesSectionProps> = ({ background = 'gray' }) => {
 			<div className="container mx-auto px-6 max-w-6xl">
 				<div className="text-center mb-16">
 					<h2
-						className="text-2xl md:text-3xl font-medium mb-6"
-						style={{ color: 'var(--text-zinc-800)' }}
+						className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900"
 						id="features-title"
 					>
 						{t('features.title')}

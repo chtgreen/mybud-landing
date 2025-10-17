@@ -1,13 +1,16 @@
 {
   "b2c": {
     "hero": {
-      "title1": "My Bud.",
+      "title1": "MyBud.",
       "title2": "You handle the plants.",
       "title3": "We'll handle the rest.",
-      "subtitle": "Organize your grow the right way, without workarounds or stress. Everything you need — in the palm of your hand.",
-      "primaryCta": "Join the beta",
+      "subtitle": "Transform voice, photos and videos into automatic records of your grow. Timeline per plant, stages with day counter and reminders that work. From seed to harvest, without missing a thing.",
+      "primaryCta": "I want my Kit - BUD + Premium access",
       "secondaryCta": "Watch the demo",
-      "trustElement": "Limited spots. Early access + 6 months premium.",
+      "trustElement": "Each Founder Kit grants early access to MyBud + up to 6 months free Premium + exclusive items that won't be sold later. Limited stock, once it's gone, it's gone.",
+      "counter": "Only 72 Founder Kits remaining",
+      "badges": "Privacy first • Anonymous data • iOS & Android (coming soon)",
+      "alertBar": "Join the first growers: MyBud is still in beta, but those who join now have priority, active voice in improvements and guaranteed premium access.",
       "phone": {
         "plants": "Plants",
         "subtitle": "Track development",
@@ -31,7 +34,7 @@
       },
       "voice": {
         "title": "From bucket to greenhouse",
-        "description": "Whether your grow is in a closet or the most advanced system, My Bud adapts. We help you get the best from what you already have."
+        "description": "Whether your grow is in a closet or the most advanced system, MyBud adapts. We help you get the best from what you already have."
       },
       "alerts": {
         "title": "Life days and stages always visible",
@@ -43,8 +46,8 @@
       }
     },
     "appShowcase": {
-      "title": "See My Bud in action",
-      "subtitle": "Click on the features to see how My Bud simplifies every stage of your grow",
+      "title": "See MyBud in action",
+      "subtitle": "Click on the features to see how MyBud simplifies every stage of your grow",
       "dashboard": {
         "title": "Recurring tasks with reminders",
         "desc": "Set up tasks that repeat automatically and get reminders at the right time. Never forget watering or nutrition again."
@@ -69,7 +72,7 @@
     "identityTrust": {
       "title1": "Made by those who grow.",
       "title2": "",
-      "description": "My Bud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
+      "description": "MyBud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
       "private": {
         "title": "Smart integration",
         "desc": "Connects with sensors, hydroponic systems and IoT devices for complete automation."
@@ -104,7 +107,7 @@
     },
     "betaSignup": {
       "title": "Be part of the first 100 and get what no one else will have.",
-      "subtitle": "We're building My Bud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
+      "subtitle": "We're building MyBud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
       "benefits": {
         "title": "Those who support now get:",
         "premium": "6 months premium in the app",
@@ -125,12 +128,12 @@
       "errorMessage": "Something went wrong. Please try again."
     },
     "paymentModal": {
-      "title": "You're entering the My Bud founders group.",
+      "title": "You're entering the MyBud founders group.",
       "subtitle": "The app is being made in public, with those who really grow.",
-      "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of My Bud.",
+      "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of MyBud.",
       "price": "If you support now with $75 USD, you get:",
       "benefits": {
-        "earlyAccess": "Early access to the My Bud app",
+        "earlyAccess": "Early access to the MyBud app",
         "premium": "6 months of premium access",
         "kit": "Physical kit with a t-shirt, stickers, and personalized QR Codes with your logo",
         "community": "Access to our Close Friends Instagram + private Discord server",
@@ -149,7 +152,7 @@
     },
     "comingSoon": {
       "title": "Coming soon to your favorite stores",
-      "subtitle": "Be the first to know when My Bud arrives in app stores",
+      "subtitle": "Be the first to know when MyBud arrives in app stores",
       "ctaText": "Join the beta now for early access before the official launch",
       "iosText": "Notify on App Store",
       "androidText": "Notify on Google Play"
@@ -181,7 +184,7 @@
       "privacy": "Privacy policy",
       "terms": "Terms of service",
       "contact": "Contact",
-      "copyright": "© 2024 My Bud. All rights reserved."
+      "copyright": "© 2024 MyBud. All rights reserved."
     },
     "header": {
       "languageSelector": "Language"

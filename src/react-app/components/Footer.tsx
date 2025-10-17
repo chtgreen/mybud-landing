@@ -22,14 +22,6 @@ const Footer: FC = () => {
     {
       questionKey: 'footer.faq3.question',
       answerKey: 'footer.faq3.answer'
-    },
-    {
-      questionKey: 'footer.faq4.question',
-      answerKey: 'footer.faq4.answer'
-    },
-    {
-      questionKey: 'footer.faq5.question',
-      answerKey: 'footer.faq5.answer'
     }
   ];
 
@@ -48,11 +40,18 @@ const Footer: FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Brand Info (Left) */}
           <div>
-            {/* mybud Brand */}
+            {/* mybud Logo & Brand */}
             <div className="mb-6">
-              <h4 className="text-xl font-bold text-emerald-600 mb-2">
-                {t('footer.brand')}
-              </h4>
+              <div className="flex items-center mb-6">
+                <img 
+                  src="/mybud-logo-green.svg" 
+                  alt="MyBud Logo" 
+                  className="h-32 w-auto"
+                  style={{
+                    filter: 'invert(41%) sepia(89%) saturate(1891%) hue-rotate(313deg) brightness(95%) contrast(92%)'
+                  }}
+                />
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {t('footer.tagline')}
               </p>
@@ -62,19 +61,19 @@ const Footer: FC = () => {
             <div className="flex space-x-3">
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-emerald-600 transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-instagram text-lg"></i>
               </a>
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-emerald-600 transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-discord text-lg"></i>
               </a>
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-emerald-600 transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-reddit-alien text-lg"></i>
               </a>
@@ -132,24 +131,31 @@ const Footer: FC = () => {
 
         {/* Legal Links - Centralized Row */}
         <div className="border-t border-gray-100 mt-8 pt-6">
-          <div className="flex justify-center items-center gap-6 mb-4">
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-emerald-600 transition-colors"
+              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
             >
               {t('footer.privacy')}
             </a>
             <span className="text-gray-300">•</span>
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-emerald-600 transition-colors"
+              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
             >
               {t('footer.terms')}
             </a>
             <span className="text-gray-300">•</span>
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-emerald-600 transition-colors"
+              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
+            >
+              {t('footer.eula')}
+            </a>
+            <span className="text-gray-300">•</span>
+            <a
+              href="mailto:contato@mybud.app"
+              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
             >
               {t('footer.contact')}
             </a>
@@ -157,19 +163,28 @@ const Footer: FC = () => {
             {isB2B ? (
               <a
                 href={`/${currentLanguage}`}
-                className="text-sm text-gray-500 hover:text-emerald-600 transition-colors font-medium"
+                className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors font-medium"
               >
                 B2C
               </a>
             ) : (
               <a
                 href={`/${currentLanguage}/b2b`}
-                className="text-sm text-gray-500 hover:text-emerald-600 transition-colors font-medium"
+                className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors font-medium"
               >
                 B2B
               </a>
             )}
           </div>
+
+          {/* Legal Notice */}
+          {!isB2B && t('footer.legalNotice') && (
+            <div className="text-center mb-4">
+              <p className="text-xs text-gray-500 italic">
+                {t('footer.legalNotice')}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Copyright */}
@@ -181,7 +196,7 @@ const Footer: FC = () => {
             href="https://cht.green"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-emerald-600 transition-colors"
+            className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-[#eb4c80] transition-colors"
           >
             <span className="font-bold">by cht.green</span>
             <span className="text-sm">🇧🇷</span>

@@ -1,32 +1,68 @@
 @import url("https://fonts.cdnfonts.com/css/uncut-sans");
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
+/* Schabo Condensed - Local Font */
+@font-face {
+  font-family: 'Schabo Condensed';
+  src: url('/fonts/SCHABO-Condensed.woff2') format('woff2'),
+       url('/fonts/SCHABO-Condensed.woff') format('woff'),
+       url('/fonts/SCHABO-Condensed.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Font Family Variables */
   --font-primary: "Uncut Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-secondary: "Instrument Serif", Georgia, Times, serif;
+  --font-display: "Schabo Condensed", "Bebas Neue", "Oswald", "Impact", sans-serif;
 
   /* Font Size Variables */
   --font-size-base: 1.25rem; /* 18px - increased from default 16px */
   --font-size-sm: 0.875rem; /* 14px - increased from 12px */
   --font-size-xs: 0.75rem; /* 12px - increased from 10px */
 
-  /* My Bud Brand Colors (Refined based on "tech, nature, trust") */
+  /* ===================================
+     MYBUD 2025 COLOR PALETTE
+     Essência: natureza + tecnologia + comunidade
+     =================================== */
+  
+  /* Primary Colors */
+  --verde-bud: #288664; /* Verde principal - botões, ícones, CTAs */
+  --verde-claro: #AAD268; /* Hover states, crescimento */
+  
+  /* Neutral Base */
+  --off-white: #E6E7E8; /* Fundo principal, cards */
+  
+  /* Accent Colors */
+  --rosa-vivo: #EB4C80; /* Emoção, comunidade, CTA secundário */
+  --lilas-claro: #D5C0FD; /* Educação, onboarding, estados neutros */
+  --rosa-suave: #F9C9DE; /* Mensagens, conquistas, badges */
+  --azul-suave: #EFF2FE; /* Dados, relatórios, gráficos */
+  
+  /* Neutrals */
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* Legacy Brand Colors (for backwards compatibility) */
   --emerald-200: #a7f3d0;
-  --emerald-green: #059669;
+  --emerald-green: var(--verde-bud);
   --deep-teal: #0f766e;
   --light-emerald: #6ee7b7;
-  --soft-yellow: #fbbf24; /* Adjusted for better contrast */
-  --off-white: #f8fafc;
+  --soft-yellow: #fbbf24;
   --night-gray: #1e293b;
 
-  /* Semantic colors */
-  --primary: var(--emerald-green);
+  /* Semantic colors - Updated to MyBud 2025 */
+  --primary: var(--verde-bud);
   --primary-dark: var(--deep-teal);
-  --primary-light: var(--light-emerald);
-  --accent: var(--soft-yellow);
+  --primary-light: var(--verde-claro);
+  --accent: var(--rosa-vivo);
+  --accent-secondary: var(--lilas-claro);
+  --accent-soft: var(--rosa-suave);
   --background: var(--off-white);
-  --text-dark: var(--night-gray);
+  --background-soft: var(--azul-suave);
+  --text-dark: var(--black);
   --text-muted: #64748b;
   --border-soft: #e2e8f0;
 
@@ -45,7 +81,7 @@
 
   /* Hero professional - Serious grow environment */
   --hero-primary: var(--primary);
-  --hero-secondary: #10b981;
+  --hero-secondary: #288664;
   --hero-accent: var(--light-emerald);
   --hero-deep: var(--primary-dark);
   --hero-base: #f1f5f9;
@@ -53,19 +89,18 @@
   --hero-grow: #065f46;
   --hero-gradient: linear-gradient(
     135deg,
-    #065f46 0%,
-    #047857 10%,
-    var(--primary) 20%,
-    #10b981 35%,
-    var(--light-emerald) 50%,
-    #22c55e 65%,
-    #16a34a 80%,
-    #15803d 95%,
-    #14532d 100%
+    #047857 0%,
+    #288664 15%,
+    var(--primary) 30%,
+    #288664 45%,
+    var(--light-emerald) 60%,
+    #a7f3d0 75%,
+    #d1fae5 90%,
+    #ecfdf5 100%
   );
   --hero-overlay: linear-gradient(
-    rgba(6, 95, 70, 0.3),
-    rgba(52, 211, 153, 0.1)
+    rgba(110, 231, 183, 0.08),
+    rgba(236, 253, 245, 0.05)
   );
 
   /* Enhanced emerald effects */
@@ -81,8 +116,8 @@
   --organic-emerald-200: #a7f3d0;
   --organic-emerald-300: #6ee7b7;
   --organic-emerald-400: #34d399;
-  --organic-emerald-500: #10b981;
-  --organic-emerald-600: #059669;
+  --organic-emerald-500: #288664;
+  --organic-emerald-600: #288664;
   --organic-emerald-700: #047857;
   --organic-emerald-800: #065f46;
   --organic-emerald-900: #064e3b;
@@ -115,25 +150,25 @@
   /* Organic Growth Gradients - Breathing, Living Backgrounds */
   --growth-gradient-primary: radial-gradient(
     ellipse 100% 60% at 50% 0%,
-    rgba(16, 185, 129, 0.15) 0%,
-    rgba(6, 95, 70, 0.08) 25%,
-    rgba(15, 118, 110, 0.05) 50%,
-    rgba(52, 211, 153, 0.03) 75%,
+    rgba(110, 231, 183, 0.06) 0%,
+    rgba(52, 211, 153, 0.03) 25%,
+    rgba(167, 243, 208, 0.02) 50%,
+    rgba(209, 250, 229, 0.01) 75%,
     transparent 100%
   );
 
   --growth-gradient-secondary: radial-gradient(
     ellipse 80% 70% at 20% 100%,
-    rgba(110, 231, 183, 0.12) 0%,
-    rgba(52, 211, 153, 0.06) 35%,
-    rgba(16, 185, 129, 0.03) 65%,
+    rgba(167, 243, 208, 0.04) 0%,
+    rgba(209, 250, 229, 0.02) 35%,
+    rgba(236, 253, 245, 0.01) 65%,
     transparent 100%
   );
 
   --growth-gradient-tertiary: radial-gradient(
     ellipse 60% 80% at 80% 20%,
-    rgba(6, 95, 70, 0.08) 0%,
-    rgba(15, 118, 110, 0.04) 40%,
+    rgba(110, 231, 183, 0.03) 0%,
+    rgba(167, 243, 208, 0.015) 40%,
     transparent 70%
   );
 
@@ -196,14 +231,14 @@
 .hero-organic {
   position: relative;
   background:
-    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #288664 50%),
     radial-gradient(
       ellipse at bottom right,
-      #a7f3d0 0%,
-      #6ee7b7 35%,
-      #34d399 70%
+      #ffffff 0%,
+      #ecfdf5 25%,
+      #d1fae5 60%
     ),
-    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
+    linear-gradient(135deg, #288664 0%, #34d399 25%, #6ee7b7 45%, #a7f3d0 70%, #ecfdf5 90%, #ffffff 100%);
   overflow: hidden;
 }
 
@@ -429,6 +464,63 @@ body {
   font-size: var(--font-size-base);
 }
 
+/* ===================================
+   MYBUD 2025 TYPOGRAPHY SYSTEM
+   =================================== */
+
+/* Display Typography - Schabo Condensed para impacto */
+.text-display,
+.display-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em; /* 80% tracking para legibilidade */
+  line-height: 1.1;
+}
+
+.text-display-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.text-display-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 3rem;
+  line-height: 1.05;
+}
+
+.text-display-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+/* Secondary Typography - Instrument Serif Italic para contraste emocional */
+.text-serif-italic,
+.serif-accent {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+/* Primary Typography - Uncut Sans (já é o padrão do body) */
+.text-primary-font {
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
 .text-emerald {
   color: var(--emerald-600);
 }
@@ -487,24 +579,60 @@ body {
   outline: none;
 }
 
+/* ===================================
+   MYBUD 2025 CTA BUTTONS
+   Flat 2D design com rosa-vivo para emoção e conversão
+   =================================== */
+
 .cta-button {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  transition: all 0.3s ease;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #288664 0%, #047857 100%);
   border: none;
+  border-radius: 12px;
   color: white;
+  font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(40, 134, 100, 0.3), 0 0 0 0 rgba(40, 134, 100, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  box-shadow: 0 6px 25px rgba(40, 134, 100, 0.4), 0 0 0 4px rgba(170, 210, 104, 0.15);
+  transform: translateY(-2px) scale(1.02);
 }
 
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 2px 10px rgba(40, 134, 100, 0.3);
+}
+
+/* CTA Secundário com rosa-vivo para emoção/comunidade */
 .secondary-button {
   background: white;
-  border: 2px solid transparent;
+  border: 2px solid var(--primary);
   color: var(--primary);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -517,24 +645,82 @@ body {
   transform: translateY(-2px);
 }
 
+/* CTA alternativo com rosa-vivo para ações emocionais/comunitárias */
+.cta-button-community {
+  background: #eb4c80;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+}
+
+.cta-button-community:hover {
+  background: #d13a6a;
+  transform: translateY(-1px);
+}
+
+/* ===================================
+   MYBUD 2025 BACKGROUNDS & SECTIONS
+   Com foco em respirabilidade e hierarquia
+   =================================== */
+
 .section-light {
   background: white;
 }
 
 .section-soft {
-  background: var(--background);
+  background: var(--background); /* off-white */
+}
+
+.section-data {
+  background: var(--azul-suave); /* Para dados, relatórios, gráficos */
+}
+
+.section-education {
+  background: linear-gradient(135deg, rgba(213, 192, 253, 0.3), rgba(213, 192, 253, 0.1));
+}
+
+.section-achievement {
+  background: linear-gradient(135deg, rgba(249, 201, 222, 0.4), rgba(249, 201, 222, 0.15));
 }
 
 .bg-primary-soft {
-  background: rgba(110, 231, 183, 0.15);
+  background: rgba(40, 134, 100, 0.1); /* verde-bud suave */
 }
 
+.bg-growth-soft {
+  background: rgba(170, 210, 104, 0.15); /* verde-claro suave */
+}
+
+.bg-community-soft {
+  background: rgba(235, 76, 128, 0.08); /* rosa-vivo suave */
+}
+
+/* Text colors with new palette */
 .text-primary {
-  color: var(--primary);
+  color: var(--verde-bud);
 }
 
 .text-primary-dark {
   color: var(--primary-dark);
+}
+
+.text-primary-light {
+  color: var(--verde-claro);
+}
+
+.text-accent {
+  color: var(--rosa-vivo);
+}
+
+.text-accent-secondary {
+  color: var(--lilas-claro);
+}
+
+.text-muted-soft {
+  color: var(--text-muted);
 }
 
 .card {
@@ -545,9 +731,64 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
+/* ===================================
+   MYBUD 2025 BADGES & INDICATORS
+   Com cores de acento semânticas
+   =================================== */
+
 .badge {
   background: var(--emerald-100);
   color: var(--emerald-700);
+  font-size: var(--font-size-sm);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Badge de educação/onboarding - lilás-claro */
+.badge-education {
+  background: var(--lilas-claro);
+  color: #7c3aed; /* roxo mais escuro para contraste */
+  font-size: var(--font-size-sm);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Badge de conquistas/mensagens - rosa-suave */
+.badge-achievement {
+  background: var(--rosa-suave);
+  color: #be185d; /* rosa escuro para contraste */
+  font-size: var(--font-size-sm);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Badge de dados/relatórios - azul-suave */
+.badge-data {
+  background: var(--azul-suave);
+  color: #1e40af; /* azul escuro para contraste */
+  font-size: var(--font-size-sm);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Badge de crescimento - verde-claro */
+.badge-growth {
+  background: var(--verde-claro);
+  color: #3f6212; /* verde escuro para contraste */
+  font-size: var(--font-size-sm);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Badge de comunidade - rosa-vivo */
+.badge-community {
+  background: var(--rosa-vivo);
+  color: white;
   font-size: var(--font-size-sm);
   padding: 0.125rem 0.5rem;
   border-radius: 0.375rem;
@@ -629,23 +870,19 @@ body {
 }
 
 .btn-primary {
-  background: var(--emerald-700);
+  background: #eb4c80;
   color: #ffffff;
   border-radius: 0.75rem;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  transition: background-color 0.2s ease;
   box-shadow: none;
 }
 
 .btn-primary:hover {
-  background: var(--emerald-200);
-  transform: none;
-  box-shadow: none;
-  opacity: 1;
+  background: #d13a6a;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -695,7 +932,7 @@ body {
       #047857 35%,
       #134e4a 70%
     ),
-    linear-gradient(135deg, #047857 0%, #065f46 40%, #047857 80%, #059669 100%) !important;
+    linear-gradient(135deg, #047857 0%, #065f46 40%, #047857 80%, #288664 100%) !important;
 }
 
 /* iPhone Frame Video Styles */
@@ -797,31 +1034,31 @@ body {
 
 .hero-organic.theme-mint-emerald {
   background:
-    radial-gradient(ellipse at top left, #047857 0%, #059669 25%, #047857 50%),
+    radial-gradient(ellipse at top left, #047857 0%, #288664 25%, #047857 50%),
     radial-gradient(
       ellipse at bottom right,
-      #059669 0%,
+      #288664 0%,
       #047857 35%,
-      #10b981 70%
+      #288664 70%
     ),
-    linear-gradient(135deg, #047857 0%, #059669 40%, #047857 80%, #10b981 100%) !important;
+    linear-gradient(135deg, #047857 0%, #288664 40%, #047857 80%, #288664 100%) !important;
 }
 
 .hero-organic.theme-sage-emerald {
   background:
-    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #059669 50%),
+    radial-gradient(ellipse at top left, #047857 0%, #065f46 25%, #288664 50%),
     radial-gradient(
       ellipse at bottom right,
       #065f46 0%,
       #047857 35%,
-      #059669 70%
+      #288664 70%
     ),
-    linear-gradient(135deg, #047857 0%, #065f46 40%, #059669 80%, #047857 100%) !important;
+    linear-gradient(135deg, #047857 0%, #065f46 40%, #288664 80%, #047857 100%) !important;
 }
 
 .hero-organic.theme-teal-emerald {
   background:
-    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #059669 50%),
+    radial-gradient(ellipse at top left, #065f46 0%, #047857 25%, #288664 50%),
     radial-gradient(
       ellipse at bottom right,
       #047857 0%,
@@ -853,7 +1090,7 @@ body {
 }
 
 .hero-organic.theme-white.flex.items-center .gradient-text {
-  background: linear-gradient(90deg, #059669, #047857);
+  background: linear-gradient(90deg, #288664, #047857);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
@@ -861,17 +1098,17 @@ body {
 
 /* Ensure buttons maintain proper styling in white theme - only main hero */
 .hero-organic.theme-white.flex.items-center .cta-button {
-  background: linear-gradient(135deg, #059669, #047857) !important;
+  background: linear-gradient(135deg, #288664, #047857) !important;
   color: white !important;
 }
 
 .hero-organic.theme-white.flex.items-center .secondary-button {
-  border-color: #059669 !important;
-  color: #059669 !important;
+  border-color: #288664 !important;
+  color: #288664 !important;
 }
 
 .hero-organic.theme-white.flex.items-center .secondary-button:hover {
-  background: #059669 !important;
+  background: #288664 !important;
   color: white !important;
 }
 
@@ -926,7 +1163,7 @@ body {
   background: linear-gradient(45deg, #065f46, #134e4a);
 }
 .theme-preview.mint-emerald {
-  background: linear-gradient(45deg, #047857, #059669);
+  background: linear-gradient(45deg, #047857, #288664);
 }
 .theme-preview.sage-emerald {
   background: linear-gradient(45deg, #047857, #065f46);
@@ -943,14 +1180,14 @@ body {
 /* Organic Cannabis Grower Design - Much Lighter Original */
 .hero-organic {
   background:
-    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #288664 50%),
     radial-gradient(
       ellipse at bottom right,
       #a7f3d0 0%,
       #6ee7b7 35%,
       #34d399 70%
     ),
-    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
+    linear-gradient(135deg, #288664 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1141,7 +1378,7 @@ body {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: radial-gradient(circle, #10b981 0%, #047857 100%);
+  background: radial-gradient(circle, #288664 0%, #047857 100%);
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
   animation: expertisePulse 4s ease-in-out infinite;
@@ -1167,14 +1404,14 @@ body {
 /* Default Theme (B2C - Light Green) - Original Vibrant Colors */
 .hero-organic {
   background:
-    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #10b981 50%),
+    radial-gradient(ellipse at top left, #6ee7b7 0%, #34d399 25%, #288664 50%),
     radial-gradient(
       ellipse at bottom right,
       #a7f3d0 0%,
       #6ee7b7 35%,
       #34d399 70%
     ),
-    linear-gradient(135deg, #10b981 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
+    linear-gradient(135deg, #288664 0%, #34d399 40%, #6ee7b7 80%, #a7f3d0 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1204,7 +1441,7 @@ body {
 
 /* Improved CTA Button Styles */
 .cta-button-improved {
-  background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
+  background: linear-gradient(135deg, #288664 0%, #047857 50%, #065f46 100%);
   border: 2px solid transparent;
   box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
   transition: all 0.3s ease;
@@ -1245,8 +1482,8 @@ body {
 
 /* B2B Specific CTA Button */
 .cta-button-b2b {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  border: 2px solid #059669;
+  background: linear-gradient(135deg, #288664 0%, #047857 100%);
+  border: 2px solid #288664;
   box-shadow: 0 4px 15px rgba(5, 150, 105, 0.25);
   transition: all 0.3s ease;
 }
@@ -1564,4 +1801,14 @@ body {
 .animate-ready section:first-child {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Scrollbar Hide - Para carrosséis horizontais */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }

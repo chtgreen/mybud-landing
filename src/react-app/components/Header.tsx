@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) => {
-  const [logoTextClass, setLogoTextClass] = useState('text-white');
+  const [useWhiteLogo, setUseWhiteLogo] = useState(true);
   const { currentLanguage } = useLanguage();
 
   // Detect if we're in B2B context
@@ -16,18 +16,21 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) =
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
+      // Change logo when scrolled past most of the hero section (80% of viewport height)
+      const scrolled = window.scrollY > window.innerHeight * 0.8;
 
       if (isB2B) {
-        setLogoTextClass('text-slate-800');
+        // B2B has white background, use green logo
+        setUseWhiteLogo(false);
       } else {
-        setLogoTextClass(scrolled ? 'text-slate-800' : 'text-white');
+        // Use green logo when scrolled into white section, white logo on green hero
+        setUseWhiteLogo(!scrolled);
       }
     };
 
     if (isB2B) {
-      // Always dark logo text on B2B
-      setLogoTextClass('text-slate-800');
+      // Always green logo on B2B (white background)
+      setUseWhiteLogo(false);
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -46,13 +49,12 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp }) =
       <div className="container mx-auto px-6 w-full py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className={`w-8 h-8 ${isB2B ? 'bg-emerald-600' : 'bg-green-500'} rounded-lg flex items-center justify-center shadow-md`}>
-              <span className="text-white font-bold text-sm">M</span>
-            </div>
-            <span className={`font-bold text-lg transition-colors ${logoTextClass}`}>
-              mybud
-            </span>
+          <div className="flex items-center">
+            <img 
+              src={useWhiteLogo ? '/mybud-logo-white.svg' : '/mybud-logo-green.svg'} 
+              alt="mybud logo" 
+              className="h-40 md:h-48 lg:h-56 w-auto transition-opacity duration-300"
+            />
           </div>
 
           {/* Navigation & Language Selector */}
