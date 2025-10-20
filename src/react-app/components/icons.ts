@@ -1,0 +1,31 @@
+import type { LucideIcon } from 'lucide-react';
+export type { LucideIcon };
+
+export {
+  AlertTriangle,
+  BarChart3,
+  Bolt,
+  BookOpenCheck,
+  Brain,
+  Check,
+  CheckCircle2,
+  Clock3,
+  Droplet,
+  Droplets,
+  Flower2,
+  Globe2,
+  Lightbulb,
+  Lock,
+  Mic,
+  Microscope,
+  NotebookPen,
+  Palette,
+  Rocket,
+  Scissors,
+  Sprout,
+  Target,
+  Thermometer,
+  Timer,
+  Bot,
+  Wrench,
+} from 'lucide-react';

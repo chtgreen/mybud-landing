@@ -1,6 +1,15 @@
 import type { FC } from 'react';
 import { InsightCards } from './InsightCards';
 import { ActivityFeed } from './ActivityFeed';
+import {
+  BarChart3,
+  BookOpenCheck,
+  Bot,
+  Lightbulb,
+  Microscope,
+  NotebookPen,
+  Target,
+} from './icons';
 
 const InsightsSection: FC = () => {
   return (
@@ -16,20 +25,30 @@ const InsightsSection: FC = () => {
         <div className="text-center mb-16 space-y-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full border border-blue-200">
-            <span className="text-2xl">🤖</span>
-            <span className="text-sm font-medium text-blue-700">AI-Powered Intelligence</span>
+            <Bot className="w-5 h-5 text-blue-700" aria-hidden="true" />
+            <span className="text-sm font-medium text-blue-700">Inteligência do mybud</span>
           </div>
 
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
-            Your Personal<br />
-            <span className="text-emerald-600">Grow Coach</span>
+            Seu parceiro<br />
+            <span className="text-emerald-600">de cultivo pessoal</span>
           </h2>
           
           {/* Subtitle */}
+          <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6">
+            <img
+              src="/budzinho-contorno-verde-4.svg"
+              alt="Ilustração do Budzinho, seu parceiro de cultivo"
+              className="w-20 h-20 md:w-24 md:h-24 drop-shadow-[0_12px_24px_rgba(40,134,100,0.25)]"
+            />
+            <p className="text-lg md:text-xl text-gray-700 max-w-xl leading-relaxed">
+              Conheça o Budzinho: o parceiro que já cultivou muita planta e acompanha você do início ao fim, trazendo apoio humano em cada ciclo.
+            </p>
+          </div>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            AI analyzes your grow in real-time and provides expert recommendations
-            tailored to your plants, stage, and environment.
+            Ele combina experiência prática com a inteligência do mybud para entregar insights
+            personalizados para suas plantas, fases e ambiente.
           </p>
         </div>
 
@@ -37,7 +56,7 @@ const InsightsSection: FC = () => {
           {/* Left - Insights */}
           <div>
             <h3 className="text-2xl font-bold text-black mb-6">
-              Smart Recommendations
+              Recomendações inteligentes
             </h3>
             <InsightCards limit={4} />
             
@@ -50,11 +69,11 @@ const InsightsSection: FC = () => {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-gray-900 mb-1">
-                    Context-Aware Insights
+                    Insights com contexto
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Insights adapt to your plant stage, grow week, environment metrics,
-                    and recent activities. It's like having a master grower watching 24/7.
+                    As orientações consideram a fase da planta, semana do cultivo, métricas do ambiente
+                    e atividades recentes. É como ter um mestre grower acompanhando 24/7.
                   </p>
                 </div>
               </div>
@@ -72,44 +91,44 @@ const InsightsSection: FC = () => {
           {/* Feature 1 */}
           <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-2xl">🎯</span>
+              <Target className="w-6 h-6 text-emerald-600" aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">Stage-Specific</h4>
+            <h4 className="font-semibold text-black mb-2">Por estágio</h4>
             <p className="text-sm text-gray-600">
-              Different advice for vegetating vs flowering plants
+              Orientações diferentes para plantas em vegetativo ou floração
             </p>
           </div>
 
           {/* Feature 2 */}
           <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-2xl">📊</span>
+              <BarChart3 className="w-6 h-6 text-blue-600" aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">Metric Tracking</h4>
+            <h4 className="font-semibold text-black mb-2">Monitoramento de métricas</h4>
             <p className="text-sm text-gray-600">
-              Alerts when temperature, humidity, VPD are out of range
+              Alertas quando temperatura, umidade ou VPD saem da faixa ideal
             </p>
           </div>
 
           {/* Feature 3 */}
           <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-2xl">🔬</span>
+              <Microscope className="w-6 h-6 text-purple-600" aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">Problem Detection</h4>
+            <h4 className="font-semibold text-black mb-2">Detecção de problemas</h4>
             <p className="text-sm text-gray-600">
-              AI spots patterns that indicate nutrient issues or stress
+              Identifica padrões que indicam estresse ou falta de nutrientes
             </p>
           </div>
 
           {/* Feature 4 */}
           <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-2xl">📚</span>
+              <BookOpenCheck className="w-6 h-6 text-amber-600" aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">Educational</h4>
+            <h4 className="font-semibold text-black mb-2">Aprendizado contínuo</h4>
             <p className="text-sm text-gray-600">
-              Learn why metrics matter and best practices for each stage
+              Entenda por que as métricas importam e as melhores práticas de cada fase
             </p>
           </div>
         </div>
@@ -117,69 +136,69 @@ const InsightsSection: FC = () => {
         {/* How It Works */}
         <div className="mt-20 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200">
           <h3 className="text-3xl font-bold text-black mb-8 text-center">
-            How AI Coaching Works
+            Como o mybud orienta você
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-8">
             {/* Step 1 */}
-            <div className="text-center">
+            <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">📝</span>
+                <NotebookPen className="w-8 h-8 text-emerald-600" aria-hidden="true" />
               </div>
               <div className="mb-3">
                 <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-600 text-white rounded-full font-bold text-sm mb-2">
                   1
                 </span>
               </div>
-              <h4 className="font-semibold text-black mb-2">You Track Activities</h4>
+              <h4 className="font-semibold text-black mb-2">Você registra as atividades</h4>
               <p className="text-sm text-gray-600">
-                Log watering, metrics, observations using voice or manual entry
+                Registre regas, métricas e observações por voz ou manualmente
               </p>
             </div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center md:px-2">
               <svg className="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
 
             {/* Step 2 */}
-            <div className="text-center">
+            <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🤖</span>
+                <Bot className="w-8 h-8 text-blue-600" aria-hidden="true" />
               </div>
               <div className="mb-3">
                 <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold text-sm mb-2">
                   2
                 </span>
               </div>
-              <h4 className="font-semibold text-black mb-2">AI Analyzes</h4>
+              <h4 className="font-semibold text-black mb-2">O motor analisa</h4>
               <p className="text-sm text-gray-600">
-                Engine checks stage, metrics, patterns against 1000+ expert rules
+                O motor avalia estágio, métricas e padrões com base em 1000+ regras de especialistas
               </p>
             </div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center md:px-2">
               <svg className="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
 
             {/* Step 3 */}
-            <div className="text-center">
+            <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">💡</span>
+                <Lightbulb className="w-8 h-8 text-purple-600" aria-hidden="true" />
               </div>
               <div className="mb-3">
                 <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-600 text-white rounded-full font-bold text-sm mb-2">
                   3
                 </span>
               </div>
-              <h4 className="font-semibold text-black mb-2">Get Recommendations</h4>
+              <h4 className="font-semibold text-black mb-2">Receba recomendações</h4>
               <p className="text-sm text-gray-600">
-                Receive timely, actionable insights specific to your grow
+                Receba insights práticos e no momento certo para o seu cultivo
               </p>
             </div>
           </div>
@@ -191,35 +210,35 @@ const InsightsSection: FC = () => {
             <div className="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">
               1000+
             </div>
-            <p className="text-gray-600">Expert Rules</p>
+            <p className="text-gray-600">Regras de especialistas</p>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
               19
             </div>
-            <p className="text-gray-600">Tracked Metrics</p>
+            <p className="text-gray-600">Métricas acompanhadas</p>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">
               9
             </div>
-            <p className="text-gray-600">Growth Stages</p>
+            <p className="text-gray-600">Fases de crescimento</p>
           </div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-amber-600 mb-2">
               24/7
             </div>
-            <p className="text-gray-600">Monitoring</p>
+            <p className="text-gray-600">Monitoramento</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-600 mb-6">
-            Stop guessing. Start growing with <strong className="text-emerald-600">AI-powered confidence</strong>
+            Pare de adivinhar. Cultive com <strong className="text-emerald-600">a confiança inteligente do mybud</strong>
           </p>
           <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Get Your AI Coach
+            Ativar orientações inteligentes
           </button>
         </div>
       </div>

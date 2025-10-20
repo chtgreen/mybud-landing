@@ -1,4 +1,4 @@
-# 🎨 MyBud Design System 2025
+# 🎨 mybud Design System 2025
 
 **Essência:** natureza + tecnologia + comunidade  
 **Valores:** confiança, calma, proximidade — longe do "verde clichê de dispensário"
@@ -241,10 +241,10 @@
 ## 📦 Arquivos de Referência
 
 - **CSS Principal:** `src/react-app/styles.css`
-- **Design Files:** `/home/krolow/Downloads/04 - MyBud - Arquivos Finalizados/`
+- **Design Files:** `/home/krolow/Downloads/04 - mybud - Arquivos Finalizados/`
 
 ---
 
 **Última atualização:** Outubro 2025  
-**Versão:** 2.0 - MyBud Design System
+**Versão:** 2.0 - mybud Design System
 

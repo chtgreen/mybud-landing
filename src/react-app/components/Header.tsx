@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
       <div className={containerClasses}>
         <div className="flex items-center justify-between gap-4 relative">
           {/* Logo */}
-          <a href="#" className="flex items-center" aria-label="MyBud home">
+          <a href="#" className="flex items-center" aria-label="mybud home">
             <img
               src={isHeroContext ? '/mybud-logo-white.svg' : '/mybud-logo-green.svg'}
               alt="mybud logo"

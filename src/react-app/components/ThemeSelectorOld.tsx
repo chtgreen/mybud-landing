@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Palette } from './icons';
 
 interface ThemeSelectorProps {
   onThemeChange?: (theme: string) => void;
@@ -50,9 +51,9 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   };
 
   const titles = {
-    pt: '🎨 Testar Cores',
-    en: '🎨 Test Colors',
-    es: '🎨 Probar Colores'
+    pt: 'Testar Cores',
+    en: 'Test Colors',
+    es: 'Probar Colores'
   };
 
   useEffect(() => {
@@ -117,7 +118,10 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           textAlign: 'center',
         }}
       >
-        {titles[currentLanguage as keyof typeof titles]}
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', justifyContent: 'center' }}>
+          <Palette className="w-4 h-4" aria-hidden="true" />
+          {titles[currentLanguage as keyof typeof titles]}
+        </span>
       </div>
       
       <button

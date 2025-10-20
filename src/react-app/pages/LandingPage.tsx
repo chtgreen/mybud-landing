@@ -60,7 +60,7 @@ const LandingPage = () => {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <p className="text-gray-600">Carregando...</p>
         </div>
       </div>
     );
@@ -71,11 +71,11 @@ const LandingPage = () => {
       <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
       <Hero onCTAClick={handleCTAClick} /> {/* Section 1: Hero organic */}
-      <VoiceNotesSection /> {/* Section 2: Voice Notes - Killer Feature */}
-      <ProblemSection /> {/* Section 3: O problema com phone mockups */}
+      <ProblemSection /> {/* Section 2: O problema sem distracoes */}
+      <VoiceNotesSection /> {/* Section 3: Voice Notes - Killer Feature */}
       <PlantTimelineSection /> {/* Section 4: Plant Journey Timeline */}
       <AppShowcase background="white" /> {/* Section 5: Como funciona */}
-      <InsightsSection /> {/* Section 6: AI Insights & Coaching */}
+      <InsightsSection /> {/* Section 6: Inteligência do app */}
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
       <DemoSection background="white" onJoinBeta={handleBetaClick} /> {/* Section 8: Demo */}
       <BetaSignup background="gray" /> {/* Section 9: Entre no beta */}

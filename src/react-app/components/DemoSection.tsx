@@ -59,7 +59,7 @@ const DemoSection: FC<DemoSectionProps> = ({ background = 'white', onJoinBeta })
               {/* Demo Text Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/60 to-transparent">
                 <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
-                  Demo completa do My Bud
+                  Demo completa do mybud
                 </h3>
                 <p className="text-white/90 text-sm md:text-base">
                   15 minutos de puro conteúdo

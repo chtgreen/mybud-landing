@@ -1,8 +1,8 @@
-# MyBud Mobile App - Complete Feature Research for Landing Page
+# mybud Mobile App - Complete Feature Research for Landing Page
 
 ## 🎯 Executive Summary
 
-This document contains a comprehensive analysis of the MyBud mobile app features that MUST be showcased on the landing page to make it less abstract and more compelling with real value propositions.
+This document contains a comprehensive analysis of the mybud mobile app features that MUST be showcased on the landing page to make it less abstract and more compelling with real value propositions.
 
 **Source:** Deep research of `/projects/MyGrow/mybud/apps/mobile/`
 
@@ -45,7 +45,7 @@ Creates: Watering activity for Blue Dream plant, 500ml volume
 - **Video/GIF:** Someone holding phone, speaking "I watered my plants"
 - **Demo Section:** Interactive voice recording simulation
 - **Screenshot:** Voice note interface with AI classification results
-- **Testimonial:** "I used to forget to log everything. Now I just talk to MyBud!"
+- **Testimonial:** "I used to forget to log everything. Now I just talk to mybud!"
 
 ---
 
@@ -118,7 +118,7 @@ Creates: Watering activity for Blue Dream plant, 500ml volume
 **Landing Page Implementation:**
 - **Insight Cards Section:** Show real examples with icons
 - **Screenshot:** Insights panel from app
-- **Comparison:** "Traditional growers vs MyBud users" (with insights)
+- **Comparison:** "Traditional growers vs mybud users" (with insights)
 - **Interactive Demo:** Input a scenario, see insights
 - **Stat:** "1000+ expert tips adapted to your grow"
 
@@ -158,7 +158,7 @@ Creates: Watering activity for Blue Dream plant, 500ml volume
 - **Interactive Filter:** Click to see examples
 - **Screenshot:** Activity feed with diverse entries
 - **Tagline:** "From seed to harvest - every detail tracked"
-- **Comparison Chart:** "What spreadsheets miss vs What MyBud tracks"
+- **Comparison Chart:** "What spreadsheets miss vs What mybud tracks"
 
 ---
 
@@ -474,7 +474,7 @@ AI: [Knows plant stage, current products]
 **Landing Page Implementation:**
 - **Timeline Screenshot:** Colorful activity feed
 - **Feature:** "Your complete grow story in one place"
-- **Comparison:** "Notebook chaos vs MyBud timeline"
+- **Comparison:** "Notebook chaos vs mybud timeline"
 
 ---
 
@@ -569,7 +569,7 @@ AI: [Knows plant stage, current products]
 - User testimonials with faces
 - Growth statistics
 - Success stories
-- "Grown with MyBud" badge
+- "Grown with mybud" badge
 
 ### Section 10: How It Works (NEW)
 **Why:** Reduces friction
@@ -713,9 +713,9 @@ AI: [Knows plant stage, current products]
 
 ## 📊 COMPARISON TABLES
 
-### MyBud vs Traditional Methods:
+### mybud vs Traditional Methods:
 
-| Feature | Notebook | Spreadsheet | MyBud |
+| Feature | Notebook | Spreadsheet | mybud |
 |---------|----------|-------------|--------|
 | Voice Input | ❌ | ❌ | ✅ |
 | AI Recommendations | ❌ | ❌ | ✅ |
@@ -800,7 +800,7 @@ AI: [Knows plant stage, current products]
 ## ✅ IMPLEMENTATION CHECKLIST
 
 ### Phase 1: Content (Week 1-2)
-- [ ] Take 15+ screenshots from MyBud app
+- [ ] Take 15+ screenshots from mybud app
 - [ ] Record voice note demo video
 - [ ] Gather before/after plant photos
 - [ ] Write new section copy

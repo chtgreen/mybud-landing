@@ -1,4 +1,4 @@
-# MyBud Landing Page Improvements - Real Content & Images
+# mybud Landing Page Improvements - Real Content & Images
 
 ## 🎯 CTO Feedback: Make it Less Abstract, More Real
 
@@ -44,7 +44,7 @@ The landing page is too "dry" with abstract concepts and missing:
 **Landing Page Element:**
 - Screenshot of voice recording interface
 - Video/GIF of someone using voice notes
-- Quote: "Just speak - MyBud understands 'I watered the plants today'"
+- Quote: "Just speak - mybud understands 'I watered the plants today'"
 
 ### 3. **Insights & Coaching System** ⭐ HIGH PRIORITY
 **What it is:** Smart recommendations based on:
@@ -130,7 +130,7 @@ Create an "Everything Tracked" section with icons for each activity type
    - Diverse representation
 
 2. **Grower Using App**
-   - Close-up of hands holding phone with MyBud app visible
+   - Close-up of hands holding phone with mybud app visible
    - Natural plant in background (slightly out of focus)
    - Checking off tasks or taking notes
    - Good lighting, professional quality
@@ -197,7 +197,7 @@ clean and accessible, inspirational home grower aesthetic, high quality product 
 grow room background blurred, scientific photography style, high definition"
 ```
 
-### CATEGORY 3: App UI Screenshots (Real from MyBud App) 📱
+### CATEGORY 3: App UI Screenshots (Real from mybud App) 📱
 
 #### Screenshots to Capture:
 1. **Dashboard/Home Screen**
@@ -253,7 +253,7 @@ grow room background blurred, scientific photography style, high definition"
    - Beautiful finished buds
    - Professional macro photography
    - Trichome close-ups
-   - "Grown with MyBud" context
+   - "Grown with mybud" context
 
 2. **Growth Comparison**
    - Side-by-side before/after
@@ -319,7 +319,7 @@ vegetating plant, side by side, professional grow room, clear progress visualiza
 ## 🚀 Quick Wins (Do These First)
 
 ### 1. Replace Placeholder Screenshots (30 min)
-Go to MyBud app and capture:
+Go to mybud app and capture:
 - `/Screenshot_1760407521.png` is used 4 times - need 3 more unique screenshots
 - Timeline view for Card 1
 - Voice note interface for Card 2
@@ -373,7 +373,7 @@ Go to MyBud app and capture:
 2. Animated GIFs of key features
 3. Customer testimonial videos
 4. Before/after grow comparisons
-5. Team photo (MyBud founders/team)
+5. Team photo (mybud founders/team)
 
 ---
 
@@ -404,7 +404,7 @@ After implementing these changes, the landing page should have:
 4. **Community Size:** Real numbers of users and plants tracked
 
 ### Comparison Section:
-**"Why MyBud vs Spreadsheets/Notebooks"**
+**"Why mybud vs Spreadsheets/Notebooks"**
 - Side-by-side comparison
 - Time saved visualization
 - Error reduction stats
@@ -419,7 +419,7 @@ Since cannabis imagery can be restricted, consider these approaches:
 2. **Cannabis-Specific:** Leafly, High Times for licensed imagery
 3. **Generate with AI:** Midjourney, DALL-E, Stable Diffusion
 4. **Commission Photos:** Hire photographer in legal region
-5. **Use Customer Content:** With permission from MyBud users
+5. **Use Customer Content:** With permission from mybud users
 
 ---
 

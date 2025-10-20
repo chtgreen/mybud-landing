@@ -1,16 +1,16 @@
 {
   "b2c": {
     "hero": {
-      "title1": "MyBud.",
+      "title1": "mybud.",
       "title2": "Tú cuidas las plantas.",
       "title3": "Nosotros cuidamos el resto.",
       "subtitle": "Transforma voz, fotos y videos en registros automáticos de tu cultivo. Timeline por planta, etapas con contador de días y recordatorios que funcionan. De la semilla a la cosecha, sin perder nada.",
-      "primaryCta": "Quiero mi Kit - BUD + acceso Premium",
+      "primaryCta": "Quiero mi kit mybud + acceso Premium",
       "secondaryCta": "Ver la demo",
-      "trustElement": "Cada Founder Kit da derecho a entrada anticipada en MyBud + hasta 6 meses Premium gratis + artículos exclusivos que no se venderán después. Stock limitado, se acabó, se acabó.",
+      "trustElement": "Cada Founder Kit garantiza acceso anticipado a mybud + un kit con gorra, camiseta, 2 boquillas y stickers. Stock limitado: cuando se acabe, se acabó.",
       "counter": "Solo 72 Founder Kits restantes",
       "badges": "Privacidad primero • Datos anónimos • iOS & Android (próximamente)",
-      "alertBar": "Únete a los primeros cultivadores: MyBud aún está en beta, pero quienes entran ahora tienen prioridad, voz activa en las mejoras y acceso premium garantizado.",
+      "alertBar": "Únete a los primeros cultivadores: mybud aún está en beta, pero quienes entran ahora tienen prioridad, voz activa en las mejoras y acceso premium garantizado.",
       "phone": {
         "plants": "Plantas",
         "subtitle": "Seguir desarrollo",
@@ -34,7 +34,7 @@
       },
       "voice": {
         "title": "Del balde al invernadero",
-        "description": "Si tu cultivo está en un armario o en el sistema más avanzado, MyBud se adapta. Te ayudamos a sacar lo mejor de lo que ya tienes."
+        "description": "Si tu cultivo está en un armario o en el sistema más avanzado, mybud se adapta. Te ayudamos a sacar lo mejor de lo que ya tienes."
       },
       "alerts": {
         "title": "Días de vida y etapas siempre visibles",
@@ -46,33 +46,25 @@
       }
     },
     "appShowcase": {
-      "title": "Ve MyBud en acción",
-      "subtitle": "Haz clic en las funcionalidades para ver cómo MyBud simplifica cada etapa de tu cultivo",
-      "dashboard": {
-        "title": "Tareas recurrentes con recordatorio",
-        "desc": "Configura tareas que se repiten automáticamente y recibe recordatorios en el momento correcto. Nunca más olvides el riego o nutrición."
+      "title": "Tu cultivo en tres movimientos",
+      "subtitle": "Toca cada paso para ver cómo mybud te mantiene organizado sin sumar trabajo.",
+      "step1": {
+        "title": "Registra en segundos",
+        "desc": "Voz, foto o nota rápida se guardan en la planta correcta automáticamente."
       },
-      "voice": {
-        "title": "Registro de voz, texto, foto o video",
-        "desc": "Registra a tu manera: habla, escribe, fotografía o filma. Todo se organiza automáticamente en el historial de la planta."
+      "step2": {
+        "title": "Ve el panorama completo",
+        "desc": "La timeline por etapas con conteo de días muestra lo que pasó y lo que viene."
       },
-      "qr": {
-        "title": "QR Code por planta",
-        "desc": "Apunta la cámara y la app reconoce tu planta al instante. Sin confusión, todo organizado."
-      },
-      "alerts": {
-        "title": "Historial completo de la planta",
-        "desc": "Ve todo el viaje de tu planta en una timeline organizada. Cada registro, foto y video en el lugar correcto."
-      },
-      "journal": {
-        "title": "Timeline organizada de tu cultivo",
-        "desc": "Visualiza todo el progreso de tu cultivo en una línea de tiempo clara y organizada. De la siembra a la cosecha."
+      "step3": {
+        "title": "Sigue el ritmo sin esfuerzo",
+        "desc": "Recordatorios inteligentes y accesos QR mantienen el cuidado diario ligero y a tiempo."
       }
     },
     "identityTrust": {
       "title1": "Hecho por quienes cultivan.",
       "title2": "",
-      "description": "MyBud nació de la frustración de olvidar el último riego, perder el día del cambio a flora o confundir genéticas. Es un diario inteligente que entiende tu rutina — con ligereza, privacidad y respeto a tu libertad de cultivar.",
+      "description": "mybud nació de la frustración de olvidar el último riego, perder el día del cambio a flora o confundir genéticas. Es un diario inteligente que entiende tu rutina — con ligereza, privacidad y respeto a tu libertad de cultivar.",
       "private": {
         "title": "Integración inteligente",
         "desc": "Conecta con sensores, sistemas hidropónicos y dispositivos IoT para automatización completa."
@@ -87,31 +79,46 @@
       }
     },
     "testimonials": {
-      "title": "Amado por los cultivadores",
+      "title": "Quem já testou, recomenda.",
       "subtitle": "No solo tomes nuestra palabra. Ve lo que dicen los primeros testers.",
       "1": {
-        "text": "\"Puse una nota por voz diciendo 'regar planta 2 con té de compost' y se convirtió en tarea. Muy bueno.\"",
-        "author": "@cutlvar",
-        "location": "Madrid"
+        "text": "\"Dije 'regar planta 2 con FPJ' y se convirtió en tarea. Brutal.\"",
+        "author": "@Hugo",
+        "location": "BA",
+        "media": {
+          "label": "Registro por voz",
+          "headline": "Regar planta 2 con FPJ",
+          "meta": "Creado automáticamente"
+        }
       },
       "2": {
-        "text": "\"Ahora sé exactamente cuántos días de flora tiene cada planta. ¡Por fin!\"",
-        "author": "marina",
-        "location": "Barcelona"
+        "text": "\"Ahora sé exactamente cuántos días de floración tiene cada planta.\"",
+        "author": "Manu",
+        "location": "SP",
+        "media": {
+          "label": "Timeline de floración",
+          "headline": "Floración • Día 32",
+          "meta": "Planta: Aurora OG"
+        }
       },
       "3": {
-        "text": "\"Con el sticker en el video puedo recordar cuál planta es cuál. Y quedó genial en Insta.\"",
-        "author": "carlos",
-        "location": "Valencia"
+        "text": "\"Con el sticker ya no confundo las plantas. Y queda increíble en Insta.\"",
+        "author": "Vinícius",
+        "location": "PR",
+        "media": {
+          "label": "Sticker mybud",
+          "headline": "QR #07 listo para publicar",
+          "meta": "Compartido en Instagram"
+        }
       }
     },
     "betaSignup": {
       "title": "Forma parte de los primeros 100 y recibe lo que nadie más tendrá.",
-      "subtitle": "Estamos construyendo MyBud junto con la comunidad — probando todo en tiempo real, con transparencia total. Es DIY, hecho en público, a nuestra manera.",
+      "subtitle": "Estamos construyendo mybud junto con la comunidad — probando todo en tiempo real, con transparencia total. Es DIY, hecho en público, a nuestra manera.",
       "benefits": {
         "title": "Quien apoya ahora recibe:",
         "premium": "6 meses premium en la app",
-        "kit": "Kit con camiseta, stickers y QR Codes personalizados con tu logo",
+        "kit": "Kit con gorra, camiseta, 2 boquillas y stickers mybud",
         "access": "Acceso al Close Friends en Instagram y al Discord exclusivo de desarrollo",
         "priority": "Prioridad en las pruebas y nuevas funcionalidades"
       },
@@ -124,7 +131,7 @@
       "emailPlaceholder": "Tu mejor email",
       "button": "Quiero probar la app",
       "privacy": "Solo buenos consejos. Nada de spam. Respetamos tu privacidad.",
-      "successMessage": "¡Gracias! Estás en la lista beta. 🌱",
+      "successMessage": "¡Gracias! Estás en la lista beta.",
       "errorMessage": "Algo salió mal. Inténtalo de nuevo."
     },
     "betaModal": {
@@ -137,10 +144,10 @@
         "chip": "Acceso prioritario",
         "title": "Asegura tu Kit + Acceso Premium",
         "description": "Apoya el desarrollo y recibe tu Founder Kit con beneficios reales:",
-        "price": "R$ 300",
+        "price": "R$ 290",
         "benefits": {
           "premium": "6 meses de acceso Premium",
-          "physicalKit": "Kit físico exclusivo (camiseta, pipa, póster)",
+          "physicalKit": "Kit físico exclusivo (gorra, camiseta, 2 boquillas y stickers)",
           "immediateAccess": "Acceso inmediato cuando lancemos la app",
           "priorityFeedback": "Prioridad y grupo privado de feedback"
         },
@@ -163,21 +170,21 @@
       }
     },
     "paymentModal": {
-      "title": "Estás entrando al grupo de fundadores de MyBud.",
+      "title": "Estás entrando al grupo de fundadores de mybud.",
       "subtitle": "La app está siendo hecha en público, con quienes cultivan de verdad.",
-      "diyStatement": "Esta app está siendo construida en público, lado a lado con cultivadores reales. Es un proyecto DIY — y al apoyar ahora, te conviertes en parte del equipo que está moldeando el futuro de MyBud.",
-      "price": "Si apoyas ahora con 70€, recibes:",
+      "diyStatement": "Esta app está siendo construida en público, lado a lado con cultivadores reales. Es un proyecto DIY — y al apoyar ahora, te conviertes en parte del equipo que está moldeando el futuro de mybud.",
+      "price": "Apoya ahora con R$ 290 y recibes:",
       "benefits": {
-        "earlyAccess": "Acceso anticipado a la app MyBud",
+        "earlyAccess": "Acceso anticipado a la app mybud",
         "premium": "6 meses de acceso premium",
-        "kit": "Kit físico con camiseta, stickers y QR Codes personalizados con tu logo",
+        "kit": "Kit físico con gorra, camiseta, 2 boquillas y stickers mybud",
         "community": "Acceso a nuestro Close Friends en Instagram + servidor privado de Discord",
         "priority": "Prioridad en probar nuevas funcionalidades y moldear el roadmap",
         "behindScenes": "Acceso tras bambalinas a nuestro proceso de desarrollo (DIY + en público)"
       },
       "qrCodesInfo": "Recibirás QR Codes exclusivos para identificar tus plantas — con tu propio logo impreso en el centro. Esto nunca se volverá a ofrecer. Solo los primeros 100 seguidores tendrán esta versión personalizada.",
       "discordAccess": "También tendrás acceso a nuestro Close Friends en Instagram y un servidor privado de Discord con el equipo de desarrollo. Ahí es donde compartimos contenido tras bambalinas, probamos nuevas funcionalidades y recopilamos feedback real de cultivadores.",
-      "launch": "🚀 El lanzamiento oficial está planeado para noviembre de 2025. Pero los seguidores comenzarán a probar funcionalidades en las próximas semanas.",
+      "launch": "El lanzamiento oficial está planeado para noviembre de 2025. Pero los seguidores comenzarán a probar funcionalidades en las próximas semanas.",
       "paymentTitle": "Cómo apoyar:",
       "paymentMethod": "PayPal: payments@mybud.app",
       "paymentInstruction": "Envía la confirmación del pago a:",
@@ -187,7 +194,7 @@
     },
     "comingSoon": {
       "title": "Próximamente en tus tiendas favoritas",
-      "subtitle": "Sé el primero en saber cuándo MyBud llegue a las tiendas de apps",
+      "subtitle": "Sé el primero en saber cuándo mybud llegue a las tiendas de apps",
       "ctaText": "Únete al beta ahora para acceso anticipado antes del lanzamiento oficial",
       "iosText": "Notificar en App Store",
       "androidText": "Notificar en Google Play"
@@ -219,7 +226,7 @@
       "privacy": "Política de privacidad",
       "terms": "Términos de servicio",
       "contact": "Contacto",
-      "copyright": "© 2024 MyBud. Todos los derechos reservados."
+      "copyright": "© 2024 mybud. Todos los derechos reservados."
     },
     "header": {
       "languageSelector": "Idioma",
@@ -253,7 +260,7 @@
       "cta": "Agendar presentación"
     },
     "themeSelector": {
-      "title": "🎨 Probar Colores",
+      "title": "Probar Colores",
       "subtitle": "Elige tu onda",
       "emerald": "Original",
       "purple": "Verde Intenso",
@@ -338,7 +345,7 @@
     },
     "sponsorship": {
       "title": "El marketing del cannabis está bloqueado, lo desbloqueamos con datos reales.",
-      "subtitle": "Restricción de anuncios, métricas superficiales y campañas que no forman parte de la rutina. MyBud coloca tu marca en el momento exacto del cultivo, en la app que el cultivador abre cada día, y te entrega datos accionables sobre el uso real de tus productos.",
+      "subtitle": "Restricción de anuncios, métricas superficiales y campañas que no forman parte de la rutina. mybud coloca tu marca en el momento exacto del cultivo, en la app que el cultivador abre cada día, y te entrega datos accionables sobre el uso real de tus productos.",
       "cta": "Agendar conversación",
       "brandSticker": "Sticker de marca",
       "sampleTask": "Aplicar nutrientes - Fase vegetativa"
@@ -378,7 +385,7 @@
       "namePlaceholder": "Nombre",
       "button": "Agendar conversación",
       "privacy": "O pide el media kit: comercial@mybud.app",
-      "successMessage": "¡Recibido! Te contactaremos pronto. 🚀",
+      "successMessage": "¡Recibido! Te contactaremos pronto.",
       "errorMessage": "Algo salió mal. Inténtalo nuevamente."
     },
     "modal": {

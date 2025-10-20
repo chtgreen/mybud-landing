@@ -32,48 +32,48 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 			case 'dashboard':
 				return (
 					<ConceptualFrame 
-						title="Tarefas recorrentes com lembrete" 
-						subtitle="Configure tarefas que se repetem automaticamente"
+						title="Registre em segundos" 
+						subtitle="Faça anotações sem atrito, do jeito que preferir"
 						bullets={[
-							'Regue as plantas às 8h',
-							'Nutrição NPK - Semana 4',
-							'Checagem geral - 3x/semana'
+							'Toque e grave uma nota de voz',
+							'Foto com sticker automático',
+							'Nota rápida salva na planta certa'
 						]}
 					/>
 				);
 			case 'voice':
 				return (
 					<ConceptualFrame 
-						title="Registro de voz, texto, foto ou vídeo" 
-						subtitle="Registre do seu jeito: fale, escreva, fotografe"
+						title="Veja o plano completo" 
+						subtitle="Entenda o cultivo em uma timeline organizada"
 						bullets={[
-							'"Planta 2 está amarelando"',
-							'Foto: Primeira flor aparecendo',
-							'Vídeo: Desenvolvimento semana 6'
+							'Fase: Vegetativo — dia 28',
+							'Próxima etapa: flora em 6 dias',
+							'Histórico: rega, poda, nutrientes'
 						]}
 					/>
 				);
 			case 'alerts':
 				return (
 					<ConceptualFrame 
-						title="Acompanhamento detalhado por planta" 
-						subtitle="Monitore o desenvolvimento individual"
+						title="Não perca o timing" 
+						subtitle="Receba lembretes no momento certo e acessos rápidos"
 						bullets={[
-							'Planta A: 45 dias de vida',
-							'Planta B: 12 dias de floração',
-							'Próxima rega: em 2 dias'
+							'Lembrete amanhã: flush leve',
+							'Alerta de fotoperíodo',
+							'QR #004 abre o histórico na hora'
 						]}
 					/>
 				);
 			case 'qr':
 				return (
 					<ConceptualFrame 
-						title="QR Code por planta" 
-						subtitle="Aponte a câmera e reconheça sua planta"
+						title="Não perca o timing" 
+						subtitle="Receba lembretes no momento certo e acessos rápidos"
 						bullets={[
-							'QR #001: Sour Diesel Auto',
-							'QR #002: White Widow Fem',
-							'Acesso direto ao histórico'
+							'Lembrete amanhã: flush leve',
+							'Alerta de fotoperíodo',
+							'QR #004 abre o histórico na hora'
 						]}
 					/>
 				);
@@ -114,7 +114,7 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 						bullets={[
 							'Seu hardware, nossa interface',
 							'Leituras em tempo real',
-							'Integrações Tuya/Sonoff'
+							'Integrações IoT prontas'
 						]}
 					/>
 				);
@@ -195,36 +195,60 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 
 	const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
 
-	const features = [
-		{ 
-			id: 'dashboard' as const, 
-			titleKey: isB2BContext ? 'appShowcase.dashboard.title' : 'appShowcase.step1.title', 
-			descKey: isB2BContext ? 'appShowcase.dashboard.desc' : 'appShowcase.step1.desc',
-			icon: 'M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25V9H3V5.25zM3 10.5h8.25V21H5.25A2.25 2.25 0 013 18.75V10.5zM12.75 10.5H21v8.25A2.25 2.25 0 0118.75 21h-6V10.5z',
-			step: '1'
-		},
-		{ 
-			id: 'voice' as const, 
-			titleKey: isB2BContext ? 'appShowcase.voice.title' : 'appShowcase.step2.title', 
-			descKey: isB2BContext ? 'appShowcase.voice.desc' : 'appShowcase.step2.desc',
-			icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25M9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25M16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
-			step: '2'
-		},
-		{ 
-			id: 'qr' as const, 
-			titleKey: isB2BContext ? 'appShowcase.qr.title' : 'appShowcase.step3.title', 
-			descKey: isB2BContext ? 'appShowcase.qr.desc' : 'appShowcase.step3.desc',
-			icon: 'M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.874 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.442 1.509 1.333 1.509 2.316V18',
-			step: '3'
-		},
-		{ 
-			id: 'alerts' as const, 
-			titleKey: isB2BContext ? 'appShowcase.alerts.title' : 'appShowcase.step4.title', 
-			descKey: isB2BContext ? 'appShowcase.alerts.desc' : 'appShowcase.step4.desc',
-			icon: 'M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z',
-			step: '4'
-		},
-	];
+	const features = isB2BContext
+		? [
+				{ 
+					id: 'dashboard' as const, 
+					titleKey: 'appShowcase.dashboard.title', 
+					descKey: 'appShowcase.dashboard.desc',
+					icon: 'M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25V9H3V5.25zM3 10.5h8.25V21H5.25A2.25 2.25 0 013 18.75V10.5zM12.75 10.5H21v8.25A2.25 2.25 0 0118.75 21h-6V10.5z',
+					step: '1'
+				},
+				{ 
+					id: 'voice' as const, 
+					titleKey: 'appShowcase.voice.title', 
+					descKey: 'appShowcase.voice.desc',
+					icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25M9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25M16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
+					step: '2'
+				},
+				{ 
+					id: 'qr' as const, 
+					titleKey: 'appShowcase.qr.title', 
+					descKey: 'appShowcase.qr.desc',
+					icon: 'M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.874 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.442 1.509 1.333 1.509 2.316V18',
+					step: '3'
+				},
+				{ 
+					id: 'alerts' as const, 
+					titleKey: 'appShowcase.alerts.title', 
+					descKey: 'appShowcase.alerts.desc',
+					icon: 'M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z',
+					step: '4'
+				},
+		  ]
+		: [
+				{ 
+					id: 'dashboard' as const, 
+					titleKey: 'appShowcase.step1.title', 
+					descKey: 'appShowcase.step1.desc',
+					icon: 'M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25V9H3V5.25zM3 10.5h8.25V21H5.25A2.25 2.25 0 013 18.75V10.5zM12.75 10.5H21v8.25A2.25 2.25 0 0118.75 21h-6V10.5z',
+					step: '1'
+				},
+				{ 
+					id: 'voice' as const, 
+					titleKey: 'appShowcase.step2.title', 
+					descKey: 'appShowcase.step2.desc',
+					icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25M9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25M16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
+					step: '2'
+				},
+				{ 
+					id: 'alerts' as const, 
+					titleKey: 'appShowcase.step3.title', 
+					descKey: 'appShowcase.step3.desc',
+					icon: 'M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z',
+					step: '3'
+				},
+		  ];
 
 	return (
 		<section className={`py-24 ${bgClass} organic-background`}>

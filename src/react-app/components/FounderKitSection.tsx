@@ -35,12 +35,12 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-bold mb-1">
-                    Kit BUD
+                    Kit mybud
                   </h3>
                   <p className="text-emerald-100">Founder Edition</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">R$ 299</div>
+                  <div className="text-3xl font-bold">R$ 290</div>
                   <p className="text-sm text-emerald-100">Pagamento único</p>
                 </div>
               </div>
@@ -48,43 +48,31 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
 
             {/* Kit Benefits */}
             <div className="p-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">O que está incluído:</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">O que vem no kit:</h4>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">6 meses Premium</strong> no app My Bud</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">Boné exclusivo</strong> mybud (edição limitada)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Camisa exclusiva</strong> My Bud (edição limitada)</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">Camiseta oficial</strong> mybud (edição limitada)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Pipeira premium</strong> de alta qualidade</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">2 piteiras</strong> colecionáveis mybud</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Cartaz</strong> com arte canábica exclusiva</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Acesso antecipado</strong> ao app antes do lançamento</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Founder Badge</strong> no perfil do app</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">Adesivos</strong> mybud para o grow</span>
                 </li>
               </ul>
 

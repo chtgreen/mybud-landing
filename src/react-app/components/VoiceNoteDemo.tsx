@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react';
+import { Droplet, Mic, Sprout } from './icons';
 
 export const VoiceNoteDemo: FC = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -63,20 +64,7 @@ export const VoiceNoteDemo: FC = () => {
                 : 'bg-emerald-600 hover:bg-emerald-700 hover:scale-105'
             }`}
           >
-            {/* Microphone Icon */}
-            <svg 
-              className="w-12 h-12 md:w-14 md:h-14 text-white" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" 
-              />
-            </svg>
+            <Mic className="w-12 h-12 md:w-14 md:h-14 text-white" aria-hidden="true" />
           </button>
         </div>
 
@@ -85,21 +73,22 @@ export const VoiceNoteDemo: FC = () => {
           {!isRecording && !isProcessing && !hasRecorded && (
             <div className="space-y-2">
               <p className="text-lg md:text-xl font-semibold text-emerald-900">
-                Hold to Record
+                Segure para gravar
               </p>
               <p className="text-sm md:text-base text-emerald-700">
-                Try saying: "I watered my plants with 500ml"
+                Experimente dizer: "Reguei minhas plantas com 500 ml"
               </p>
             </div>
           )}
           
           {isRecording && (
             <div className="space-y-2 animate-pulse">
-              <p className="text-lg md:text-xl font-semibold text-red-600">
-                🎤 Recording...
+              <p className="text-lg md:text-xl font-semibold text-red-600 inline-flex items-center gap-2">
+                <Mic className="w-5 h-5" aria-hidden="true" />
+                Gravando...
               </p>
               <p className="text-sm md:text-base text-gray-600">
-                Release to stop
+                Solte para parar
               </p>
             </div>
           )}
@@ -111,10 +100,10 @@ export const VoiceNoteDemo: FC = () => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                AI Processing...
+                Processando...
               </p>
               <p className="text-sm text-gray-600">
-                Transcribing and classifying
+                Transcrevendo e organizando
               </p>
             </div>
           )}
@@ -125,15 +114,20 @@ export const VoiceNoteDemo: FC = () => {
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Activity Created!
+                Atividade criada!
               </p>
               <div className="bg-white rounded-xl p-4 shadow-lg max-w-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">💧</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                    <Droplet className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                  </div>
                   <div className="flex-1 text-left">
-                    <p className="font-semibold text-gray-900">Watered</p>
-                    <p className="text-sm text-emerald-600">🌿 All plants</p>
-                    <p className="text-sm text-gray-600 mt-1">500ml • Just now</p>
+                    <p className="font-semibold text-gray-900">Rega</p>
+                    <p className="text-sm text-emerald-600 flex items-center gap-1">
+                      <Sprout className="w-4 h-4" aria-hidden="true" />
+                      Todas as plantas
+                    </p>
+                    <p className="text-sm text-gray-600 mt-1">500 ml • Agora mesmo</p>
                   </div>
                 </div>
               </div>
@@ -145,13 +139,13 @@ export const VoiceNoteDemo: FC = () => {
         {!isRecording && !isProcessing && !hasRecorded && (
           <div className="flex flex-wrap justify-center gap-2 mt-4">
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              No typing needed
+              Sem digitar nada
             </span>
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              AI understands context
+              Entende o contexto
             </span>
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              Instant activity creation
+              Cria atividades na hora
             </span>
           </div>
         )}
@@ -161,4 +155,3 @@ export const VoiceNoteDemo: FC = () => {
 };
 
 export default VoiceNoteDemo;
-

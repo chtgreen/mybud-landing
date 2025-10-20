@@ -158,12 +158,12 @@ export const getLanguageName = (lang: Language): string => {
   return names[lang];
 };
 
-// Get language flag emoji
+// Get language abbreviation for flag-less display
 export const getLanguageFlag = (lang: Language): string => {
   const flags = {
-    pt: '🇧🇷',
-    en: '🇺🇸',
-    es: '🇪🇸'
+    pt: 'PT',
+    en: 'EN',
+    es: 'ES'
   };
   return flags[lang];
 };

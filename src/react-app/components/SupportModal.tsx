@@ -1,6 +1,7 @@
 import { useEffect, type FC } from 'react';
 import posthog from 'posthog-js';
 import { t } from '../lib/i18n';
+import { Rocket } from './icons';
 
 interface SupportModalProps {
   open: boolean;
@@ -133,7 +134,8 @@ const SupportModal: FC<SupportModalProps> = ({ open, onClose }) => {
         </div>
 
         <div className="text-center space-y-4 mb-6">
-          <p className="text-gray-800 font-medium">
+          <p className="text-gray-800 font-medium flex items-center justify-center gap-2">
+            <Rocket className="w-5 h-5 text-emerald-600" aria-hidden="true" />
             {t('paymentModal.launch')}
           </p>
           

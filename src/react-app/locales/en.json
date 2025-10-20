@@ -1,16 +1,16 @@
 {
   "b2c": {
     "hero": {
-      "title1": "MyBud.",
+      "title1": "mybud.",
       "title2": "You handle the plants.",
       "title3": "We'll handle the rest.",
       "subtitle": "Transform voice, photos and videos into automatic records of your grow. Timeline per plant, stages with day counter and reminders that work. From seed to harvest, without missing a thing.",
-      "primaryCta": "I want my Kit - BUD + Premium access",
+      "primaryCta": "I want my mybud kit + Premium access",
       "secondaryCta": "Watch the demo",
-      "trustElement": "Each Founder Kit grants early access to MyBud + up to 6 months free Premium + exclusive items that won't be sold later. Limited stock, once it's gone, it's gone.",
+      "trustElement": "Each Founder Kit grants early access to mybud + a kit with cap, t-shirt, 2 tips and stickers. Limited stock: once it's gone, it's gone.",
       "counter": "Only 72 Founder Kits remaining",
       "badges": "Privacy first • Anonymous data • iOS & Android (coming soon)",
-      "alertBar": "Join the first growers: MyBud is still in beta, but those who join now have priority, active voice in improvements and guaranteed premium access.",
+      "alertBar": "Join the first growers: mybud is still in beta, but those who join now have priority, active voice in improvements and guaranteed premium access.",
       "phone": {
         "plants": "Plants",
         "subtitle": "Track development",
@@ -34,7 +34,7 @@
       },
       "voice": {
         "title": "From bucket to greenhouse",
-        "description": "Whether your grow is in a closet or the most advanced system, MyBud adapts. We help you get the best from what you already have."
+        "description": "Whether your grow is in a closet or the most advanced system, mybud adapts. We help you get the best from what you already have."
       },
       "alerts": {
         "title": "Life days and stages always visible",
@@ -46,33 +46,25 @@
       }
     },
     "appShowcase": {
-      "title": "See MyBud in action",
-      "subtitle": "Click on the features to see how MyBud simplifies every stage of your grow",
-      "dashboard": {
-        "title": "Recurring tasks with reminders",
-        "desc": "Set up tasks that repeat automatically and get reminders at the right time. Never forget watering or nutrition again."
+      "title": "Your grow in three moves",
+      "subtitle": "Tap each step to see how mybud keeps you organized without adding work.",
+      "step1": {
+        "title": "Log in seconds",
+        "desc": "Voice, photo or quick note tied to the right plant automatically."
       },
-      "voice": {
-        "title": "Voice, text, photo or video recording",
-        "desc": "Record your way: speak, write, photograph or film. Everything gets organized automatically in the plant's history."
+      "step2": {
+        "title": "See the full picture",
+        "desc": "A stage-based timeline with day counts shows what happened and what's next."
       },
-      "qr": {
-        "title": "QR Code per plant",
-        "desc": "Point the camera and the app recognizes your plant instantly. No confusion, everything organized."
-      },
-      "alerts": {
-        "title": "Complete plant history",
-        "desc": "See your plant's entire journey in an organized timeline. Every record, photo and video in the right place."
-      },
-      "journal": {
-        "title": "Organized grow timeline",
-        "desc": "Visualize all your grow progress in a clear and organized timeline. From planting to harvest."
+      "step3": {
+        "title": "Stay on track effortlessly",
+        "desc": "Smart reminders and QR shortcuts keep daily care light and on time."
       }
     },
     "identityTrust": {
       "title1": "Made by those who grow.",
       "title2": "",
-      "description": "MyBud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
+      "description": "mybud was born from the frustration of forgetting the last watering, missing the flip to flower day or confusing genetics. It's a smart diary that understands your routine — with lightness, privacy and respect for your freedom to grow.",
       "private": {
         "title": "Smart integration",
         "desc": "Connects with sensors, hydroponic systems and IoT devices for complete automation."
@@ -87,31 +79,46 @@
       }
     },
     "testimonials": {
-      "title": "Loved by growers",
+      "title": "Quem já testou, recomenda.",
       "subtitle": "Don't just take our word for it. See what the first testers are saying.",
       "1": {
-        "text": "\"I added a voice note saying 'water plant 2 with compost tea' and it became a task. Really good.\"",
-        "author": "@cutlvar",
-        "location": "São Paulo"
+        "text": "\"I said 'water plant 2 with FPJ' and it became a task. Legendary.\"",
+        "author": "@Hugo",
+        "location": "BA",
+        "media": {
+          "label": "Voice note log",
+          "headline": "Water plant 2 with FPJ",
+          "meta": "Created automatically"
+        }
       },
       "2": {
-        "text": "\"Now I know exactly how many flower days each plant has. Finally!\"",
-        "author": "marina",
-        "location": "Rio de Janeiro"
+        "text": "\"Now I know exactly how many days of flower each plant has.\"",
+        "author": "Manu",
+        "location": "SP",
+        "media": {
+          "label": "Flower timeline",
+          "headline": "Flowering • Day 32",
+          "meta": "Plant: Aurora OG"
+        }
       },
       "3": {
-        "text": "\"With the sticker on the video I can remember which plant is which. And it looked awesome on Insta.\"",
-        "author": "carlos",
-        "location": "Belo Horizonte"
+        "text": "\"With the sticker I don't mix up the plants anymore. And it looks awesome on Insta.\"",
+        "author": "Vinícius",
+        "location": "PR",
+        "media": {
+          "label": "mybud sticker",
+          "headline": "QR #07 ready to post",
+          "meta": "Shared to Instagram"
+        }
       }
     },
     "betaSignup": {
       "title": "Be part of the first 100 and get what no one else will have.",
-      "subtitle": "We're building MyBud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
+      "subtitle": "We're building mybud together with the community — testing everything in real time, with total transparency. It's DIY, made in public, our way.",
       "benefits": {
         "title": "Those who support now get:",
         "premium": "6 months premium in the app",
-        "kit": "Kit with t-shirt, stickers and QR Codes personalized with your logo",
+        "kit": "Kit with cap, t-shirt, 2 tips and mybud stickers",
         "access": "Access to Close Friends on Instagram and exclusive development Discord",
         "priority": "Priority in testing and new features"
       },
@@ -124,7 +131,7 @@
       "emailPlaceholder": "Your best email",
       "button": "I want to test the app",
       "privacy": "Only good tips. No spam. We respect your privacy.",
-      "successMessage": "Thank you! You're on the beta list. 🌱",
+      "successMessage": "Thank you! You're on the beta list.",
       "errorMessage": "Something went wrong. Please try again."
     },
     "betaModal": {
@@ -137,10 +144,10 @@
         "chip": "Priority Access",
         "title": "Secure your Kit + Premium Access",
         "description": "Support development and receive your Founder Kit with real benefits:",
-        "price": "R$ 300",
+        "price": "R$ 290",
         "benefits": {
           "premium": "6 months of Premium access",
-          "physicalKit": "Exclusive physical kit (t-shirt, pipe, poster)",
+          "physicalKit": "Exclusive physical kit (cap, t-shirt, 2 tips and stickers)",
           "immediateAccess": "Immediate access when the app launches",
           "priorityFeedback": "Priority and private feedback group"
         },
@@ -163,21 +170,21 @@
       }
     },
     "paymentModal": {
-      "title": "You're entering the MyBud founders group.",
+      "title": "You're entering the mybud founders group.",
       "subtitle": "The app is being made in public, with those who really grow.",
-      "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of MyBud.",
-      "price": "If you support now with $75 USD, you get:",
+      "diyStatement": "This app is being built in public, side-by-side with real growers. It's a DIY project — and by supporting now, you become part of the team helping shape the future of mybud.",
+      "price": "Support now with R$ 290 and receive:",
       "benefits": {
-        "earlyAccess": "Early access to the MyBud app",
+        "earlyAccess": "Early access to the mybud app",
         "premium": "6 months of premium access",
-        "kit": "Physical kit with a t-shirt, stickers, and personalized QR Codes with your logo",
+        "kit": "Physical kit with a cap, t-shirt, 2 tips and mybud stickers",
         "community": "Access to our Close Friends Instagram + private Discord server",
         "priority": "Priority in testing new features and shaping the roadmap",
         "behindScenes": "Behind-the-scenes access to our dev process (DIY + in public)"
       },
       "qrCodesInfo": "You'll receive exclusive QR Codes to identify your plants — with your own logo printed in the center. This will never be offered again. Only the first 100 supporters will have this personalized version.",
       "discordAccess": "You'll also get access to our Close Friends on Instagram and a private Discord server with the dev team. That's where we share behind-the-scenes content, test new features, and collect real feedback from growers.",
-      "launch": "🚀 The official launch is planned for November 2025. But supporters will start testing features in the coming weeks.",
+      "launch": "The official launch is planned for November 2025. But supporters will start testing features in the coming weeks.",
       "paymentTitle": "How to support:",
       "paymentMethod": "PayPal: payments@mybud.app",
       "paymentInstruction": "Send payment confirmation to:",
@@ -187,7 +194,7 @@
     },
     "comingSoon": {
       "title": "Coming soon to your favorite stores",
-      "subtitle": "Be the first to know when MyBud arrives in app stores",
+      "subtitle": "Be the first to know when mybud arrives in app stores",
       "ctaText": "Join the beta now for early access before the official launch",
       "iosText": "Notify on App Store",
       "androidText": "Notify on Google Play"
@@ -219,7 +226,7 @@
       "privacy": "Privacy policy",
       "terms": "Terms of service",
       "contact": "Contact",
-      "copyright": "© 2024 MyBud. All rights reserved."
+      "copyright": "© 2024 mybud. All rights reserved."
     },
     "header": {
       "languageSelector": "Language",
@@ -253,7 +260,7 @@
       "cta": "Schedule presentation"
     },
     "themeSelector": {
-      "title": "🎨 Test Colors",
+      "title": "Test Colors",
       "subtitle": "Pick your vibe",
       "emerald": "Original",
       "purple": "Intense Green",
@@ -338,7 +345,7 @@
     },
     "sponsorship": {
       "title": "Cannabis marketing is locked down, we unlock it with real data.",
-      "subtitle": "Ad restrictions, shallow metrics and campaigns that never become routine. MyBud puts your brand at the exact moment of the grow, inside the app the grower opens every day, and delivers actionable data on the real use of your products.",
+      "subtitle": "Ad restrictions, shallow metrics and campaigns that never become routine. mybud puts your brand at the exact moment of the grow, inside the app the grower opens every day, and delivers actionable data on the real use of your products.",
       "cta": "Schedule a call",
       "brandSticker": "Brand sticker",
       "sampleTask": "Apply nutrients — Veg stage"
@@ -379,7 +386,7 @@
       "namePlaceholder": "Name",
       "button": "Schedule a call",
       "privacy": "Or request the media kit: comercial@mybud.app",
-      "successMessage": "Received! We will get back shortly. 🚀",
+      "successMessage": "Received! We will get back shortly.",
       "errorMessage": "Something went wrong. Please try again."
     },
     "modal": {

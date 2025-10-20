@@ -24,7 +24,7 @@
   --font-size-xs: 0.75rem; /* 12px - increased from 10px */
 
   /* ===================================
-     MYBUD 2025 COLOR PALETTE
+    mybud 2025 COLOR PALETTE
      Essência: natureza + tecnologia + comunidade
      =================================== */
   
@@ -53,7 +53,7 @@
   --soft-yellow: #fbbf24;
   --night-gray: #1e293b;
 
-  /* Semantic colors - Updated to MyBud 2025 */
+  /* Semantic colors - Updated to mybud 2025 */
   --primary: var(--verde-bud);
   --primary-dark: var(--deep-teal);
   --primary-light: var(--verde-claro);
@@ -465,7 +465,7 @@ body {
 }
 
 /* ===================================
-   MYBUD 2025 TYPOGRAPHY SYSTEM
+  mybud 2025 TYPOGRAPHY SYSTEM
    =================================== */
 
 /* Display Typography - Schabo Condensed para impacto */
@@ -586,7 +586,7 @@ body {
 }
 
 /* ===================================
-   MYBUD 2025 CTA BUTTONS
+  mybud 2025 CTA BUTTONS
    Flat 2D design com rosa-vivo para emoção e conversão
    =================================== */
 
@@ -668,7 +668,7 @@ body {
 }
 
 /* ===================================
-   MYBUD 2025 BACKGROUNDS & SECTIONS
+  mybud 2025 BACKGROUNDS & SECTIONS
    Com foco em respirabilidade e hierarquia
    =================================== */
 
@@ -738,7 +738,7 @@ body {
 }
 
 /* ===================================
-   MYBUD 2025 BADGES & INDICATORS
+  mybud 2025 BADGES & INDICATORS
    Com cores de acento semânticas
    =================================== */
 

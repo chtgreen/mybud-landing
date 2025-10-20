@@ -1,8 +1,10 @@
 import type { FC } from 'react';
+import type { LucideIcon } from './icons';
+import { AlertTriangle, CheckCircle2, Lightbulb, Sprout } from './icons';
 
 interface Insight {
   type: 'warning' | 'info' | 'success' | 'error';
-  icon: string;
+  icon: LucideIcon;
   message: string;
   action?: string;
 }
@@ -10,26 +12,26 @@ interface Insight {
 const insights: Insight[] = [
   { 
     type: "warning", 
-    icon: "⚠️", 
-    message: "Temperature above 32°C - increase ventilation for optimal growth",
-    action: "Adjust climate"
+    icon: AlertTriangle, 
+    message: "Temperatura acima de 32°C — aumente a ventilação para manter o vigor",
+    action: "Ajustar clima"
   },
   { 
     type: "info", 
-    icon: "💡", 
-    message: "Week 6 flowering - perfect time to check trichome development",
-    action: "Track trichomes"
+    icon: Lightbulb, 
+    message: "Semana 6 de floração — momento perfeito para checar o desenvolvimento dos tricomas",
+    action: "Registrar tricomas"
   },
   { 
     type: "success", 
-    icon: "✅", 
-    message: "VPD in optimal range (0.8-1.2) - excellent growing conditions",
+    icon: CheckCircle2, 
+    message: "VPD na faixa ideal (0,8-1,2) — condições excelentes de cultivo",
   },
   { 
     type: "info", 
-    icon: "🌱", 
-    message: "Your vegetating plants are thriving! Consider LST training for better structure",
-    action: "Learn more"
+    icon: Sprout, 
+    message: "Suas plantas no vegetativo estão voando! Considere LST para melhorar a estrutura",
+    action: "Ver como fazer"
   },
 ];
 
@@ -38,25 +40,29 @@ const insightStyles = {
     border: "border-orange-400",
     bg: "bg-orange-50",
     text: "text-orange-900",
-    badge: "bg-orange-100 text-orange-700"
+    badge: "bg-orange-100 text-orange-700",
+    icon: "text-orange-500"
   },
   info: {
     border: "border-blue-400",
     bg: "bg-blue-50",
     text: "text-blue-900",
-    badge: "bg-blue-100 text-blue-700"
+    badge: "bg-blue-100 text-blue-700",
+    icon: "text-blue-500"
   },
   success: {
     border: "border-green-400",
     bg: "bg-green-50",
     text: "text-green-900",
-    badge: "bg-green-100 text-green-700"
+    badge: "bg-green-100 text-green-700",
+    icon: "text-green-500"
   },
   error: {
     border: "border-red-400",
     bg: "bg-red-50",
     text: "text-red-900",
-    badge: "bg-red-100 text-red-700"
+    badge: "bg-red-100 text-red-700",
+    icon: "text-red-500"
   }
 };
 
@@ -72,15 +78,17 @@ export const InsightCards: FC<InsightCardsProps> = ({ className = '', limit }) =
     <div className={`space-y-4 ${className}`}>
       {displayInsights.map((insight, i) => {
         const styles = insightStyles[insight.type];
-        
+        const Icon = insight.icon;
+
         return (
           <div 
             key={i} 
             className={`${styles.bg} ${styles.border} border-l-4 rounded-r-xl p-4 md:p-5 flex items-start gap-3 md:gap-4 hover:shadow-md transition-all duration-300 hover:translate-x-1 group cursor-pointer`}
           >
-            <span className="text-2xl md:text-3xl flex-shrink-0 group-hover:scale-110 transition-transform">
-              {insight.icon}
-            </span>
+            <Icon
+              className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 group-hover:scale-110 transition-transform ${styles.icon}`}
+              aria-hidden="true"
+            />
             <div className="flex-1 min-w-0">
               <p className={`${styles.text} text-sm md:text-base leading-relaxed`}>
                 {insight.message}
@@ -99,4 +107,3 @@ export const InsightCards: FC<InsightCardsProps> = ({ className = '', limit }) =
 };
 
 export default InsightCards;
-

@@ -46,7 +46,7 @@ const HeroSalesChart: FC<HeroSalesChartProps> = ({ variant = 'dark' }) => {
         {/* Intent badge */}
         <div className={`inline-flex items-center space-x-2 ${badgeBase} px-3 py-1 rounded-full text-xs font-medium mb-4`}> 
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>Grow with MyBud</span>
+          <span>Grow with mybud</span>
         </div>
 
         {/* Abstract growth canvas */}

@@ -2,6 +2,7 @@ import { useState, type FC } from 'react';
 import posthog from 'posthog-js';
 import { t, isB2B as isB2BContext } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Globe2 } from './icons';
 
 const Footer: FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -45,7 +46,7 @@ const Footer: FC = () => {
               <div className="flex items-center mb-6">
                 <img
                   src="/mybud-logo-green.svg"
-                  alt="MyBud Logo"
+                  alt="mybud Logo"
                   className="h-16 w-auto"
                   style={{
                     filter: 'invert(41%) sepia(89%) saturate(1891%) hue-rotate(313deg) brightness(95%) contrast(92%)'
@@ -199,7 +200,10 @@ const Footer: FC = () => {
             className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-[#eb4c80] transition-colors"
           >
             <span className="font-bold">by cht.green</span>
-            <span className="text-sm">🇧🇷</span>
+            <span className="inline-flex items-center gap-1 text-[11px]">
+              <Globe2 className="w-4 h-4" aria-hidden="true" />
+              Brasil
+            </span>
           </a>
         </div>
       </div>

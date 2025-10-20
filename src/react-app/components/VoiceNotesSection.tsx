@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { VoiceNoteDemo } from './VoiceNoteDemo';
+import { Bolt, Bot, Mic, Timer } from './icons';
 
 const VoiceNotesSection: FC = () => {
   return (
@@ -18,19 +19,19 @@ const VoiceNotesSection: FC = () => {
             <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="text-sm font-medium text-emerald-700">Unique Feature</span>
+            <span className="text-sm font-medium text-emerald-700">Funcionalidade exclusiva</span>
           </div>
 
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
-            Just Speak,<br />
-            <span className="text-emerald-600">We Track Everything</span>
+            Só fale,<br />
+            <span className="text-emerald-600">a gente registra tudo</span>
           </h2>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            The only grow journal with AI-powered voice recognition. 
-            No typing, no forms — just talk naturally.
+            O diário de cultivo que entende sua voz. Nada de digitar, nada de formulário — 
+            apenas fale naturalmente e deixe o mybud organizar.
           </p>
         </div>
 
@@ -44,83 +45,83 @@ const VoiceNotesSection: FC = () => {
           <div className="order-1 lg:order-2 space-y-8">
             <div className="space-y-6">
               {/* Feature 1 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">🎤</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-2">
-                    Natural Language Understanding
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Say "I watered Blue Dream with 500ml" and AI automatically creates
-                    the activity with all details. No forms, no dropdowns.
-                  </p>
-                </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Mic className="w-6 h-6 text-emerald-600" aria-hidden="true" />
               </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">
+                    Entende linguagem natural
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                    Diga “Reguei a Blue Dream com 500 ml” e o mybud cria a atividade com todos os detalhes.
+                    Sem formulários, sem listas intermináveis.
+                </p>
+              </div>
+            </div>
 
-              {/* Feature 2 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">🤖</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-2">
-                    Smart Activity Classification
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    AI recognizes 25+ activity types from your speech: watering, training,
-                    transplanting, noting issues — all automatically categorized.
-                  </p>
-                </div>
+            {/* Feature 2 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Bot className="w-6 h-6 text-blue-600" aria-hidden="true" />
               </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">
+                    Classificação automática de atividades
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                    Reconhece mais de 25 tipos de tarefas pela sua fala: rega, treinamento,
+                    transplante, observações — tudo categorizado automaticamente.
+                </p>
+              </div>
+            </div>
 
-              {/* Feature 3 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-2">
-                    Context-Aware
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Knows your plants, grows, and recent activities. AI fills in the details
-                    automatically, making logging instant and effortless.
-                  </p>
-                </div>
+            {/* Feature 3 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                <Bolt className="w-6 h-6 text-purple-600" aria-hidden="true" />
               </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">
+                    Contexto inteligente
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                    Sabe quais são suas plantas e o que aconteceu recentemente. O mybud preenche os detalhes
+                    automaticamente, deixando tudo instantâneo.
+                </p>
+              </div>
+            </div>
 
-              {/* Feature 4 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">⏱️</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-2">
-                    Save 10+ Minutes Per Day
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    What used to take 5 minutes of typing now takes 10 seconds of speaking.
-                    More time growing, less time logging.
-                  </p>
-                </div>
+            {/* Feature 4 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                <Timer className="w-6 h-6 text-amber-600" aria-hidden="true" />
               </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">
+                    Economize +10 minutos por dia
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                    O que levava 5 minutos digitando agora leva 10 segundos falando.
+                    Mais tempo cultivando, menos tempo anotando.
+                </p>
+              </div>
+            </div>
             </div>
 
             {/* Keywords */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
               <p className="text-sm font-semibold text-gray-700 mb-3">
-                AI understands keywords like:
+                Reconhece palavras-chave como:
               </p>
               <div className="flex flex-wrap gap-2">
-                {['watered', 'fed', 'transplanted', 'topped', 'defoliated', 'harvested', 'pH', 'temperature', 'flowering', 'yellowing', 'pests'].map((keyword) => (
+                {['reguei', 'fertilizei', 'transplantei', 'tutei', 'desfolhei', 'colhi', 'pH', 'temperatura', 'floração', 'amarelecimento', 'pragas'].map((keyword) => (
                   <span key={keyword} className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                     {keyword}
                   </span>
                 ))}
                 <span className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-200">
-                  +100 more
+                  +100 outras
                 </span>
               </div>
             </div>
@@ -130,10 +131,10 @@ const VoiceNotesSection: FC = () => {
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
           <p className="text-lg text-gray-600 mb-6">
-            Join growers who've saved <strong className="text-emerald-600">hours of manual logging</strong>
+            Junte-se a growers que já economizaram <strong className="text-emerald-600">horas de registro manual</strong>
           </p>
           <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Try Voice Recording Beta
+            Testar gravação por voz (beta)
           </button>
         </div>
       </div>

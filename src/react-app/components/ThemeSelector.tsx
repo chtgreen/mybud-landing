@@ -1,6 +1,7 @@
 import { useState, useEffect, type FC } from 'react';
 import { t } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Palette } from './icons';
 
 interface ThemeSelectorProps {
   onThemeChange?: (theme: string) => void;
@@ -86,7 +87,10 @@ const ThemeSelector: FC<ThemeSelectorProps> = ({ onThemeChange }) => {
         }}
         id="theme-title"
       >
-        🎨 {t('themeSelector.title', currentLanguage)}
+        <span className="inline-flex items-center gap-1 justify-center">
+          <Palette className="w-4 h-4" aria-hidden="true" />
+          {t('themeSelector.title', currentLanguage)}
+        </span>
       </div>
         
       <button

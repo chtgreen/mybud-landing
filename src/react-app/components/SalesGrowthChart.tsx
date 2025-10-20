@@ -2,29 +2,29 @@ import { useState, useEffect, type FC } from 'react';
 
 interface DataPoint {
   month: string;
-  withoutMyBud: number;
-  withMyBud: number;
+  withoutmybud: number;
+  withmybud: number;
 }
 
 const SalesGrowthChart: FC = () => {
   const [isAnimated, setIsAnimated] = useState(false);
 
   const data: DataPoint[] = [
-    { month: 'Jan', withoutMyBud: 20, withMyBud: 25 },
-    { month: 'Fev', withoutMyBud: 22, withMyBud: 35 },
-    { month: 'Mar', withoutMyBud: 18, withMyBud: 45 },
-    { month: 'Abr', withoutMyBud: 25, withMyBud: 60 },
-    { month: 'Mai', withoutMyBud: 23, withMyBud: 75 },
-    { month: 'Jun', withoutMyBud: 27, withMyBud: 85 },
-    { month: 'Jul', withoutMyBud: 24, withMyBud: 95 },
-    { month: 'Ago', withoutMyBud: 26, withMyBud: 110 },
-    { month: 'Set', withoutMyBud: 29, withMyBud: 125 },
-    { month: 'Out', withoutMyBud: 31, withMyBud: 140 },
-    { month: 'Nov', withoutMyBud: 28, withMyBud: 155 },
-    { month: 'Dez', withoutMyBud: 33, withMyBud: 170 }
+    { month: 'Jan', withoutmybud: 20, withmybud: 25 },
+    { month: 'Fev', withoutmybud: 22, withmybud: 35 },
+    { month: 'Mar', withoutmybud: 18, withmybud: 45 },
+    { month: 'Abr', withoutmybud: 25, withmybud: 60 },
+    { month: 'Mai', withoutmybud: 23, withmybud: 75 },
+    { month: 'Jun', withoutmybud: 27, withmybud: 85 },
+    { month: 'Jul', withoutmybud: 24, withmybud: 95 },
+    { month: 'Ago', withoutmybud: 26, withmybud: 110 },
+    { month: 'Set', withoutmybud: 29, withmybud: 125 },
+    { month: 'Out', withoutmybud: 31, withmybud: 140 },
+    { month: 'Nov', withoutmybud: 28, withmybud: 155 },
+    { month: 'Dez', withoutmybud: 33, withmybud: 170 }
   ];
 
-  const maxValue = Math.max(...data.map(d => Math.max(d.withoutMyBud, d.withMyBud)));
+  const maxValue = Math.max(...data.map(d => Math.max(d.withoutmybud, d.withmybud)));
 
   useEffect(() => {
     const timer = setTimeout(() => setIsAnimated(true), 500);
@@ -44,7 +44,7 @@ const SalesGrowthChart: FC = () => {
           Impacto Real nas Vendas
         </h3>
         <p className="text-slate-600">
-          Como marcas crescem com o My Bud
+          Como marcas crescem com o mybud
         </p>
       </div>
 
@@ -65,23 +65,23 @@ const SalesGrowthChart: FC = () => {
             <div key={dataPoint.month} className="flex-1 flex flex-col items-center">
               {/* Bars container */}
               <div className="relative w-full max-w-16 flex justify-center space-x-1 mb-2">
-                {/* Without MyBud bar */}
+                {/* Without mybud bar */}
                 <div className="w-5 bg-slate-200 rounded-t-sm relative overflow-hidden">
                   <div 
                     className="absolute bottom-0 w-full bg-slate-400 rounded-t-sm transition-all duration-1000 ease-out"
                     style={{
-                      height: `${getHeightPercentage(dataPoint.withoutMyBud)}%`,
+                      height: `${getHeightPercentage(dataPoint.withoutmybud)}%`,
                       transitionDelay: `${index * 100}ms`
                     }}
                   />
                 </div>
                 
-                {/* With MyBud bar */}
+                {/* With mybud bar */}
                 <div className="w-5 bg-emerald-100 rounded-t-sm relative overflow-hidden">
                   <div 
                     className="absolute bottom-0 w-full bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-sm transition-all duration-1000 ease-out"
                     style={{
-                      height: `${getHeightPercentage(dataPoint.withMyBud)}%`,
+                      height: `${getHeightPercentage(dataPoint.withmybud)}%`,
                       transitionDelay: `${index * 100 + 200}ms`
                     }}
                   />
@@ -111,11 +111,11 @@ const SalesGrowthChart: FC = () => {
       <div className="flex justify-center space-x-8 mt-6">
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 bg-slate-400 rounded"></div>
-          <span className="text-sm text-slate-600">Sem My Bud</span>
+          <span className="text-sm text-slate-600">Sem mybud</span>
         </div>
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded"></div>
-          <span className="text-sm text-slate-600">Com My Bud</span>
+          <span className="text-sm text-slate-600">Com mybud</span>
         </div>
       </div>
 

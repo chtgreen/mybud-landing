@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import posthog from 'posthog-js';
 import { t } from '../lib/i18n';
+import { Globe2 } from './icons';
 
 const Footer: FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -153,7 +154,10 @@ const Footer: FC = () => {
             className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-emerald-600 transition-colors"
           >
             <span className="font-bold">by cht.green</span>
-            <span className="text-sm">🇧🇷</span>
+            <span className="inline-flex items-center gap-1 text-[11px]">
+              <Globe2 className="w-4 h-4" aria-hidden="true" />
+              Brasil
+            </span>
           </a>
         </div>
       </div>

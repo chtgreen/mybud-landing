@@ -1,5 +1,65 @@
 import type { FC } from 'react';
 import { PlantTimeline } from './PlantTimeline';
+import {
+  SproutIcon,
+  BeanIcon,
+  LeafIcon,
+  FlowerIcon,
+  ScissorsIcon,
+  CheckIcon,
+  type StageIconComponent,
+} from './icons/LucideStageIcons';
+
+type ProgressStatus = 'completed' | 'current' | 'upcoming';
+
+interface ProgressEntry {
+  icon: StageIconComponent;
+  title: string;
+  meta: string;
+  status: ProgressStatus;
+  iconClass: string;
+  metaClass: string;
+  connectorClass: string;
+}
+
+const progressEntries: ProgressEntry[] = [
+  {
+    icon: BeanIcon,
+    title: 'Germinação → Enraizando',
+    meta: 'Concluído em 10 dias',
+    status: 'completed',
+    iconClass: 'border-amber-200/90 bg-amber-50 text-amber-600',
+    metaClass: 'text-amber-700/80',
+    connectorClass: 'from-amber-200/80 via-emerald-200/80 to-emerald-200/70',
+  },
+  {
+    icon: LeafIcon,
+    title: 'Vegetativo',
+    meta: 'Concluído em 35 dias (5 semanas)',
+    status: 'completed',
+    iconClass: 'border-emerald-200/90 bg-emerald-50 text-emerald-600',
+    metaClass: 'text-emerald-700/80',
+    connectorClass: 'from-emerald-200/80 via-purple-200/80 to-purple-200/70',
+  },
+  {
+    icon: FlowerIcon,
+    title: 'Floração',
+    meta: 'Atual • 42 dias (6 semanas)',
+    status: 'current',
+    iconClass: 'border-purple-200 bg-purple-50 text-purple-600',
+    metaClass: 'text-purple-600',
+    connectorClass: 'from-purple-200/70 via-blue-200/70 to-blue-200/60',
+  },
+  {
+    icon: ScissorsIcon,
+    title: 'Colheita → Secagem → Cura',
+    meta: 'Estimativa: faltam 2-3 semanas',
+    status: 'upcoming',
+    iconClass: 'border-blue-200/80 bg-blue-50 text-blue-600',
+    metaClass: 'text-blue-600/80',
+    connectorClass: 'from-blue-200/60 via-slate-200/60 to-slate-200/40',
+  },
+];
 
 const PlantTimelineSection: FC = () => {
   return (
@@ -26,21 +86,23 @@ const PlantTimelineSection: FC = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-6">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200">
-            <span className="text-2xl">🌱</span>
-            <span className="text-sm font-medium text-purple-700">Complete Journey</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200/70 shadow-sm">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-purple-200/60 text-purple-600">
+              <SproutIcon className="h-4 w-4" />
+            </span>
+            <span className="text-sm font-medium text-purple-700">Jornada completa</span>
           </div>
 
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
-            From Seed to Harvest,<br />
-            <span className="text-emerald-600">Every Stage Tracked</span>
+            Da semente à colheita,<br />
+            <span className="text-emerald-600">cada etapa monitorada</span>
           </h2>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Track your plant's complete lifecycle with our visual timeline.
-            Never lose track of where you are in the journey.
+            Acompanhe todo o ciclo da planta com uma timeline visual.
+            Nunca mais se perca em que fase está o cultivo.
           </p>
         </div>
 
@@ -59,11 +121,11 @@ const PlantTimelineSection: FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-black mb-3">
-              Automatic Time Tracking
+              Contagem de tempo automática
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Days and weeks calculated automatically for each stage. 
-              Know exactly how long your plant has been vegetating or flowering.
+              Dias e semanas calculados para cada estágio. 
+              Saiba exatamente há quanto tempo a planta está vegetativa ou florindo.
             </p>
           </div>
 
@@ -75,11 +137,11 @@ const PlantTimelineSection: FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-black mb-3">
-              Stage Milestones
+              Marcos do cultivo
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Track important transitions: when you topped, when flowering started,
-              when trichomes turned amber. Your complete grow story.
+              Acompanhe transições importantes: quando fez topping, quando a floração começou,
+              quando os tricomas ficaram âmbar. A história completa do seu cultivo.
             </p>
           </div>
 
@@ -91,11 +153,11 @@ const PlantTimelineSection: FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-black mb-3">
-              Stage-Specific Insights
+              Insights por estágio
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Get recommendations tailored to your current stage. 
-              AI knows what to track and what matters most right now.
+              Receba recomendações alinhadas ao estágio atual. 
+              O mybud destaca o que acompanhar e o que realmente importa agora.
             </p>
           </div>
         </div>
@@ -105,36 +167,36 @@ const PlantTimelineSection: FC = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-bold text-black mb-4">
-                See Your Progress
+                Veja sua evolução
               </h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Visual timeline shows exactly where you are in the grow cycle.
-                With automatic day/week counting, you'll always know:
+                A timeline visual mostra exatamente em que ponto do ciclo você está.
+                Com contagem automática de dias e semanas, você sempre sabe:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">How long in current stage (days/weeks)</span>
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
+                    <CheckIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-gray-700">Há quanto tempo está no estágio atual (dias/semanas)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Total days from germination</span>
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
+                    <CheckIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-gray-700">Total de dias desde a germinação</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Estimated time to harvest</span>
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
+                    <CheckIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-gray-700">Tempo estimado até a colheita</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Historical stage data for future grows</span>
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
+                    <CheckIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-gray-700">Histórico de estágios para cultivos futuros</span>
                 </li>
               </ul>
             </div>
@@ -143,60 +205,66 @@ const PlantTimelineSection: FC = () => {
               {/* Stage Progress Example */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between pb-4 border-b border-gray-200">
-                  <h4 className="font-semibold text-gray-900">Blue Dream - Flowering</h4>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium">
-                    Week 6
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-200 bg-purple-50 text-purple-600 shadow-sm">
+                      <FlowerIcon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Blue Dream</h4>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-600">
+                        Floração
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium border border-purple-200/70 shadow-sm">
+                    Semana 6
                   </span>
                 </div>
                 
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Germinating → Rooting</p>
-                      <p className="text-xs text-gray-500">Completed in 10 days</p>
-                    </div>
-                  </div>
+                <div className="space-y-5">
+                  {progressEntries.map((entry, index) => {
+                    const showConnector = index < progressEntries.length - 1;
+                    const titleClass =
+                      entry.status === 'current'
+                        ? 'text-purple-700'
+                        : entry.status === 'upcoming'
+                          ? 'text-gray-600'
+                          : 'text-gray-900';
 
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Vegetating</p>
-                      <p className="text-xs text-gray-500">Completed in 35 days (5 weeks)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Flowering</p>
-                      <p className="text-xs text-purple-600">Currently at 42 days (6 weeks)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 opacity-50">
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-500">Harvest → Drying → Curing</p>
-                      <p className="text-xs text-gray-400">Est. 2-3 weeks remaining</p>
-                    </div>
-                  </div>
+                    return (
+                      <div key={entry.title} className="flex gap-4">
+                        <div className="flex flex-col items-center">
+                          <div
+                            className={`relative flex h-12 w-12 items-center justify-center rounded-xl border backdrop-blur-sm ${entry.iconClass} ${
+                              entry.status === 'upcoming' ? 'opacity-75 border-dashed' : ''
+                            } ${
+                              entry.status === 'current'
+                                ? 'ring-2 ring-purple-200/80 shadow-[0_12px_28px_-12px_rgba(147,51,234,0.45)]'
+                                : ''
+                            }`}
+                          >
+                            <entry.icon className="h-6 w-6" />
+                            {entry.status === 'completed' && (
+                              <span className="absolute -bottom-1 -right-1 inline-flex h-5 w-5 items-center justify-center rounded-full border border-white bg-emerald-500 text-white text-[10px] shadow-sm">
+                                <CheckIcon className="w-3 h-3" aria-hidden="true" />
+                              </span>
+                            )}
+                          </div>
+                          {showConnector && (
+                            <div
+                              className={`mt-3 h-10 w-[2px] bg-gradient-to-b ${entry.connectorClass} ${
+                                entry.status === 'upcoming' ? 'opacity-45' : 'opacity-80'
+                              }`}
+                            />
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <p className={`text-sm font-semibold ${titleClass}`}>{entry.title}</p>
+                          <p className={`mt-1 text-xs ${entry.metaClass}`}>{entry.meta}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

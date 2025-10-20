@@ -13,17 +13,20 @@ const Testimonials: FC<TestimonialsProps> = ({ background = 'gray', growerCount 
     {
       textKey: 'testimonials.1.text',
       authorKey: 'testimonials.1.author',
-      locationKey: 'testimonials.1.location'
+      locationKey: 'testimonials.1.location',
+      avatarInitial: 'H',
     },
     {
       textKey: 'testimonials.2.text',
       authorKey: 'testimonials.2.author',
-      locationKey: 'testimonials.2.location'
+      locationKey: 'testimonials.2.location',
+      avatarInitial: 'M',
     },
     {
       textKey: 'testimonials.3.text',
       authorKey: 'testimonials.3.author',
-      locationKey: 'testimonials.3.location'
+      locationKey: 'testimonials.3.location',
+      avatarInitial: 'V',
     }
   ];
 
@@ -50,13 +53,19 @@ const Testimonials: FC<TestimonialsProps> = ({ background = 'gray', growerCount 
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, idx) => (
-            <div key={idx} className="card">
-              <p className="text-sm leading-relaxed mb-4 text-zinc-600">
+            <div
+              key={idx}
+              className="bg-white rounded-3xl border border-gray-100 shadow-sm shadow-gray-200/40 p-6 flex flex-col gap-4 h-full"
+            >
+              <p className="text-sm leading-relaxed text-zinc-600 flex-1">
                 {t(testimonial.textKey)}
               </p>
+
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full mr-3 bg-emerald-100"></div>
-                <div>
+                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-semibold flex items-center justify-center">
+                  {testimonial.avatarInitial}
+                </div>
+                <div className="ml-3">
                   <div className="font-medium text-sm text-zinc-800">
                     {t(testimonial.authorKey)}
                   </div>

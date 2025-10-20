@@ -18,6 +18,7 @@
     "@supabase/supabase-js": "^2.45.0",
     "@types/react-router-dom": "^5.3.3",
     "hono": "4.8.2",
+    "lucide-react": "^0.473.0",
     "posthog-js": "^1.118.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
