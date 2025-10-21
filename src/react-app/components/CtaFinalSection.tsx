@@ -25,7 +25,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#D5C0FD] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#D5C0FD] relative overflow-visible">
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
         <div className="text-center">
           {/* Title */}
@@ -68,6 +68,15 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
             </svg>
             <span>{t('ctaFinal.microcopy').replace('{count}', remainingKits.toString())}</span>
           </div>
+        </div>
+
+        {/* Budzinho just chilling at the bottom - floating/fixed position */}
+        <div className="absolute bottom-0 right-4 md:right-8 transform translate-y-1/2 pointer-events-none">
+          <img 
+            src="/MyBud - Budzinho Colorido 3.png" 
+            alt="Budzinho relaxando"
+            className="w-32 h-32 md:w-40 md:h-40 opacity-100"
+          />
         </div>
       </div>
     </section>

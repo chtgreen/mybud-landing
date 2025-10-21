@@ -85,48 +85,48 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 			case 'dashboard':
 				return (
 					<ConceptualFrame 
-						title={t('appShowcase.dashboard.title')} 
-						subtitle={t('appShowcase.dashboard.desc')}
+						title={t('howItWorks.step1.title')} 
+						subtitle={t('howItWorks.step1.desc')}
 						bullets={[
-							'Catálogo vivo no app',
-							'Genéticas atualizadas',
-							'Sua marca dentro do cultivo'
+							'Protocolo vira cronograma',
+							'Tarefas na hora certa',
+							'Dados agregados e anônimos'
 						]}
 					/>
 				);
 			case 'voice':
 				return (
 					<ConceptualFrame 
-						title={t('appShowcase.voice.title')} 
-						subtitle={t('appShowcase.voice.desc')}
+						title={t('howItWorks.step2.title')} 
+						subtitle={t('howItWorks.step2.desc')}
 						bullets={[
-							'Apareça na hora da irrigação',
-							'Tarefas por fase ou problema',
-							'Do rótulo (QR) para o uso'
-						]}
-					/>
-				);
-			case 'alerts':
-				return (
-					<ConceptualFrame 
-						title={t('appShowcase.alerts.title')} 
-						subtitle={t('appShowcase.alerts.desc')}
-						bullets={[
-							'Seu hardware, nossa interface',
-							'Leituras em tempo real',
-							'Integrações IoT prontas'
+							'Marca em tarefas e registros',
+							'Stickers para redes sociais',
+							'Prova social genuína'
 						]}
 					/>
 				);
 			case 'qr':
 				return (
 					<ConceptualFrame 
-						title={t('appShowcase.qr.title')} 
-						subtitle={t('appShowcase.qr.desc')}
+						title={t('howItWorks.step3.title')} 
+						subtitle={t('howItWorks.step3.desc')}
 						bullets={[
-							'Revenda com utilidade real',
-							'Onboarding + pós-venda',
-							'Foco em conversão, não banner'
+							'Acompanhe uso em tempo real',
+							'Rastreio por cupons/UTMs',
+							'Relatórios de ROI'
+						]}
+					/>
+				);
+			case 'alerts':
+				return (
+					<ConceptualFrame 
+						title={t('howItWorks.step4.title')} 
+						subtitle={t('howItWorks.step4.desc')}
+						bullets={[
+							'QR codes em embalagens',
+							'Integração IoT',
+							'Dados em tempo real'
 						]}
 					/>
 				);
@@ -199,29 +199,29 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 		? [
 				{ 
 					id: 'dashboard' as const, 
-					titleKey: 'appShowcase.dashboard.title', 
-					descKey: 'appShowcase.dashboard.desc',
+					titleKey: 'howItWorks.step1.title', 
+					descKey: 'howItWorks.step1.desc',
 					icon: 'M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25V9H3V5.25zM3 10.5h8.25V21H5.25A2.25 2.25 0 013 18.75V10.5zM12.75 10.5H21v8.25A2.25 2.25 0 0118.75 21h-6V10.5z',
 					step: '1'
 				},
 				{ 
 					id: 'voice' as const, 
-					titleKey: 'appShowcase.voice.title', 
-					descKey: 'appShowcase.voice.desc',
+					titleKey: 'howItWorks.step2.title', 
+					descKey: 'howItWorks.step2.desc',
 					icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25M9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25M16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
 					step: '2'
 				},
 				{ 
 					id: 'qr' as const, 
-					titleKey: 'appShowcase.qr.title', 
-					descKey: 'appShowcase.qr.desc',
+					titleKey: 'howItWorks.step3.title', 
+					descKey: 'howItWorks.step3.desc',
 					icon: 'M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.874 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.442 1.509 1.333 1.509 2.316V18',
 					step: '3'
 				},
 				{ 
 					id: 'alerts' as const, 
-					titleKey: 'appShowcase.alerts.title', 
-					descKey: 'appShowcase.alerts.desc',
+					titleKey: 'howItWorks.step4.title', 
+					descKey: 'howItWorks.step4.desc',
 					icon: 'M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z',
 					step: '4'
 				},
@@ -253,14 +253,14 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 	return (
 		<section className={`py-24 ${bgClass} organic-background`}>
 			<div className="container mx-auto px-6 max-w-6xl">
-				<div className="text-center mb-16">
-					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-						{t('appShowcase.title')}
-					</h2>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-						{t('appShowcase.subtitle')}
-					</p>
-				</div>
+			<div className="text-center mb-16">
+				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+					{t(isB2BContext ? 'howItWorks.title' : 'appShowcase.title')}
+				</h2>
+				<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					{t(isB2BContext ? 'howItWorks.subtitle' : 'appShowcase.subtitle')}
+				</p>
+			</div>
 
 				<div className="flex flex-col lg:flex-row items-center gap-16">
 					{/* Conceptual iPhone Demo */}

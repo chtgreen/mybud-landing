@@ -69,11 +69,13 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
   const navItems = isB2B
     ? [
         { id: 'features', label: t('header.nav.features') },
-        { id: 'beta', label: t('header.nav.beta') }
+        { id: 'beta', label: t('header.nav.beta') },
+        { id: 'contact', label: t('header.nav.contact') }
       ]
     : [
         { id: 'features', label: t('header.nav.features') },
         { id: 'beta', label: t('header.nav.beta') },
+        { id: 'associations', label: t('header.nav.associations') },
         { id: 'kit', label: t('header.nav.kit') }
       ];
 

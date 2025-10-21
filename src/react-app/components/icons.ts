@@ -16,6 +16,7 @@ export {
   Globe2,
   Lightbulb,
   Lock,
+  Mail,
   Mic,
   Microscope,
   NotebookPen,

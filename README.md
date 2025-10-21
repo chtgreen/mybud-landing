@@ -91,10 +91,18 @@ npx wrangler tail
 
 ## Environment Variables
 
-Copy `.env.example` to `.env` and fill in:
+Configure these in your `.env` file (local) or `wrangler.json` (production):
 
+### Analytics
+- `VITE_GA_MEASUREMENT_ID` – Google Analytics 4 Measurement ID (format: G-XXXXXXXXXX)
 - `VITE_POSTHOG_KEY` – PostHog project key
 - `VITE_POSTHOG_HOST` – PostHog instance URL (defaults to `https://app.posthog.com`)
+
+### Database
 - `VITE_SUPABASE_URL` – Supabase project URL
 - `VITE_SUPABASE_ANON_KEY` – Supabase public anon key
+
+### Payments
 - `VITE_STRIPE_PAYMENT_LINK` – Stripe payment link used for early access checkout
+
+See [ANALYTICS_SETUP.md](./ANALYTICS_SETUP.md) for detailed analytics configuration and usage instructions.

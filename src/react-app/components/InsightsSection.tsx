@@ -38,9 +38,9 @@ const InsightsSection: FC = () => {
           {/* Subtitle */}
           <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6">
             <img
-              src="/budzinho-contorno-verde-4.svg"
+              src="/MyBud - Budzinho Colorido 2.png"
               alt="Ilustração do Budzinho, seu parceiro de cultivo"
-              className="w-20 h-20 md:w-24 md:h-24 drop-shadow-[0_12px_24px_rgba(40,134,100,0.25)]"
+              className="w-20 h-20 md:w-24 md:h-24 drop-shadow-[0_12px_24px_rgba(40,134,100,0.25)] rounded-full object-cover"
             />
             <p className="text-lg md:text-xl text-gray-700 max-w-xl leading-relaxed">
               Conheça o Budzinho: o parceiro que já cultivou muita planta e acompanha você do início ao fim, trazendo apoio humano em cada ciclo.

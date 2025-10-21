@@ -25,9 +25,11 @@ const FAQ: FC<FAQProps> = ({ background = 'gray' }) => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             {t('faq.title')}
           </h2>
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-zinc-600)' }}>
-            {t('faq.subtitle')}
-          </p>
+          {t('faq.subtitle') !== 'faq.subtitle' && t('faq.subtitle') && (
+            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-zinc-600)' }}>
+              {t('faq.subtitle')}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 gap-4">

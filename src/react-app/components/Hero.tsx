@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
-import { useState } from 'react';
-import { t, isB2B } from '../lib/i18n';
-import HeroBridge from './HeroBridge';
+import { useState, useEffect, Fragment } from 'react';
+import { t, isB2B, tArray } from '../lib/i18n';
+import DashboardWidget from './DashboardWidget';
 
 
 interface HeroProps {
@@ -20,15 +20,42 @@ export const HeroContainer: FC<{ theme: 'emerald' | 'white'; children: ReactNode
 };
 
 const IPhoneMockup: FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Check if video mode is enabled via query parameter
+  const searchParams = new URLSearchParams(window.location.search);
+  const showVideo = searchParams.get('video') === 'true';
+  
+  // Screenshots array - add more screenshots here as needed
+  const screenshots = [
+    '/Screenshot_1760407521.png',
+    // Add more screenshot paths here when available
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % screenshots.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+  };
 
   const handlePlayClick = () => {
     setIsLoading(true);
   };
 
+  // Auto-advance carousel every 3 seconds if there are multiple screenshots
+  useEffect(() => {
+    if (!showVideo && screenshots.length > 1) {
+      const interval = setInterval(nextSlide, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [showVideo, screenshots.length]);
+
   return (
     <div className="relative w-full max-w-[180px] sm:max-w-[220px] lg:max-w-[280px] xl:max-w-xs mx-auto">
-      {/* iPhone Frame for Video - More Vertical */}
+      {/* iPhone Frame for Screenshots - More Vertical */}
       <div 
         className="iphone-frame relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl"
         style={{
@@ -38,42 +65,105 @@ const IPhoneMockup: FC = () => {
         {/* Dynamic Island */}
         <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-20 h-5 bg-black rounded-full z-20"></div>
 
-        {/* Video Container - More Vertical Aspect */}
+        {/* Video/Screenshot Container - More Vertical Aspect */}
         <div className="relative bg-black w-full aspect-[9/19.5] overflow-hidden rounded-[2rem] shadow-inner">
           
-          {!isLoading ? (
-            /* Play Button State */
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
-              <div className="relative">
-                {/* Play button circle */}
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300 border border-white/20">
-                  {/* Play icon */}
-                  <svg 
-                    className="w-6 h-6 text-white ml-1" 
-                    viewBox="0 0 24 24" 
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+          {showVideo ? (
+            /* Video Player Mode - Activated with ?video=true */
+            <>
+              {!isLoading ? (
+                /* Play Button State */
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
+                  <div className="relative">
+                    {/* Play button circle */}
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300 border border-white/20">
+                      {/* Play icon */}
+                      <svg 
+                        className="w-6 h-6 text-white ml-1" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor"
+                      >
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                    
+                    {/* Pulsing rings around play button */}
+                    <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
+                    <div className="absolute inset-0 rounded-full border-2 border-white/10 animate-ping" style={{ animationDelay: '500ms' }}></div>
+                  </div>
                 </div>
-                
-                {/* Pulsing rings around play button */}
-                <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
-                <div className="absolute inset-0 rounded-full border-2 border-white/10 animate-ping" style={{ animationDelay: '500ms' }}></div>
-              </div>
-            </div>
+              ) : (
+                /* Loading Spinner State */
+                <div className="absolute inset-0 bg-black flex flex-col items-center justify-center gap-4">
+                  {/* Pulsing rings */}
+                  <div className="relative">
+                    <span className="absolute inset-0 rounded-full border-2 border-emerald-500/30 animate-ping"></span>
+                    <span className="absolute inset-0 rounded-full border-2 border-emerald-500/20 animate-ping" style={{ animationDelay: '200ms' }}></span>
+                    <div className="w-14 h-14 rounded-full border-4 border-emerald-500 border-t-transparent animate-spin"></div>
+                  </div>
+                  <div className="text-xs font-medium text-emerald-100/90 tracking-wide">
+                    {t('common.preparing') || 'Preparando o vídeo...'}
+                  </div>
+                </div>
+              )}
+            </>
           ) : (
-            /* Loading Spinner State */
-            <div className="absolute inset-0 bg-black flex flex-col items-center justify-center gap-4">
-              {/* Pulsing rings */}
-              <div className="relative">
-                <span className="absolute inset-0 rounded-full border-2 border-emerald-500/30 animate-ping"></span>
-                <span className="absolute inset-0 rounded-full border-2 border-emerald-500/20 animate-ping" style={{ animationDelay: '200ms' }}></span>
-                <div className="w-14 h-14 rounded-full border-4 border-emerald-500 border-t-transparent animate-spin"></div>
-              </div>
-              <div className="text-xs font-medium text-emerald-100/90 tracking-wide">
-                {t('common.preparing') || 'Preparando o vídeo...'}
-              </div>
+            /* Screenshot Carousel Mode - Default */
+            <div className="relative w-full h-full">
+              {screenshots.map((screenshot, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-500 ${
+                    index === currentSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <img
+                    src={screenshot}
+                    alt={`App screenshot ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+
+              {/* Navigation arrows - only show if multiple screenshots */}
+              {screenshots.length > 1 && (
+                <>
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+                    aria-label="Previous screenshot"
+                  >
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+                    aria-label="Next screenshot"
+                  >
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+
+                  {/* Dots indicator */}
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-10">
+                    {screenshots.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                          index === currentSlide 
+                            ? 'bg-emerald-400 w-4' 
+                            : 'bg-white/40 hover:bg-white/60'
+                        }`}
+                        aria-label={`Go to screenshot ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
@@ -150,9 +240,27 @@ const scrollToFeatures = () => {
   }
 };
 
+const scrollToB2BForm = () => {
+  const form = document.getElementById('b2b-lead-form');
+  if (form) {
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 const Hero: FC<HeroProps> = ({ onCTAClick }) => {
   // Detect if we're in B2B context
   const isB2BContext = isB2B();
+  const heroTitleLines = ['title1', 'title2', 'title3']
+    .map((key) => {
+      const text = t(`hero.${key}`);
+      return {
+        key,
+        text,
+        isFallback: text === `hero.${key}`,
+      };
+    })
+    .filter(({ text, isFallback }) => text && !isFallback);
+  const b2bHighlights = isB2BContext ? tArray('hero.graphHighlights') : [];
 
   return (
     <section className={`min-h-screen max-h-[1200px] relative ${isB2BContext ? 'bg-white hero-b2b' : 'hero-organic'} flex items-center`}>
@@ -185,9 +293,14 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                   fontStretch: 'condensed'
                 }}
               >
-                <span>{t('hero.title1')}</span><br />
-                <span>{t('hero.title2')}</span><br />
-                <span className="hero-title-3">{t('hero.title3')}</span>
+                {heroTitleLines.map(({ key, text }, index) => (
+                  <Fragment key={key}>
+                    <span className={index === heroTitleLines.length - 1 ? 'hero-title-3' : undefined}>
+                      {text}
+                    </span>
+                    {index !== heroTitleLines.length - 1 && <br />}
+                  </Fragment>
+                ))}
               </h1>
               <p 
                 className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 hero-animate-3 ${isB2BContext ? 'text-gray-700' : 'text-emerald-100'}`}
@@ -196,10 +309,21 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 {t('hero.subtitle')}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-4">
+              {isB2BContext && b2bHighlights.length > 0 && (
+                <ul className="hero-animate-4 mb-8 space-y-2 text-left max-w-xl mx-auto lg:mx-0">
+                  {b2bHighlights.map((highlight, index) => (
+                    <li key={`${highlight}-${index}`} className="flex items-start gap-3 text-sm text-gray-700">
+                      <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--verde-bud)]" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-5">
                 <button
                   className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors border-0"
-                  onClick={onCTAClick}
+                  onClick={isB2BContext ? scrollToB2BForm : onCTAClick}
                 >
                   <span>{t('hero.primaryCta')}</span>
                 </button>
@@ -221,7 +345,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
                         }
-                        onClick={scrollToFeatures}
+                        onClick={isB2BContext ? onCTAClick : scrollToFeatures}
                       >
                         <span>{t('hero.secondaryCta')}</span>
                       </button>
@@ -232,7 +356,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
 
               {/* Trust Element / Microcopy */}
               <p 
-                className={`text-sm mb-4 hero-animate-5 ${isB2BContext ? 'text-gray-600' : 'text-emerald-100'}`}
+                className={`text-sm mb-4 ${isB2BContext ? 'hero-animate-6 text-gray-600' : 'hero-animate-5 text-emerald-100'}`}
                 style={!isB2BContext ? { textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.trustElement')}
@@ -288,7 +412,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 </div>
               )}
               
-              {isB2BContext ? <HeroBridge /> : <IPhoneMockup />}
+              {isB2BContext ? <DashboardWidget variant="hero" /> : <IPhoneMockup />}
             </div>
           </div>
         </div>

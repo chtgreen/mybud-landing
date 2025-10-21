@@ -8,20 +8,54 @@ interface StatsProps {
 const Stats: FC<StatsProps> = ({ background = 'gray' }) => {
   const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
 
-  const items = [
-    { value: t('stats.growers'), label: t('stats.growersLabel') },
-    { value: t('stats.countries'), label: t('stats.countriesLabel') },
-    { value: t('stats.repurchase'), label: t('stats.repurchaseLabel') },
-  ];
+  // Check if we're using new metrics structure
+  const useNewMetrics = t('metrics.title') !== 'metrics.title';
+  
+  const rawItems = useNewMetrics
+    ? [
+        { value: t('metrics.stats.repurchase.value'), label: t('metrics.stats.repurchase.label') },
+        { value: t('metrics.stats.standardization.value'), label: t('metrics.stats.standardization.label') },
+        { value: t('metrics.stats.activeGrowers.value'), label: t('metrics.stats.activeGrowers.label') },
+      ]
+    : [
+        { value: t('stats.growers'), label: t('stats.growersLabel') },
+        { value: t('stats.countries'), label: t('stats.countriesLabel') },
+        { value: t('stats.repurchase'), label: t('stats.repurchaseLabel') },
+      ];
+
+  const title = useNewMetrics ? t('metrics.title') : t('stats.title');
+  const description = useNewMetrics ? t('metrics.description') : t('stats.description');
+  const note = useNewMetrics ? t('metrics.note') : t('stats.note');
+
+  const placeholderKeys = new Set([
+    'metrics.stats.repurchase.value',
+    'metrics.stats.standardization.value',
+    'metrics.stats.activeGrowers.value',
+    'stats.growers',
+    'stats.countries',
+    'stats.repurchase',
+  ]);
+
+  const items = rawItems.filter((item) => {
+    const value = (item.value || '').toString().trim();
+    if (!value) return false;
+    if (placeholderKeys.has(value)) return false;
+    if (/x/i.test(value)) return false;
+    return true;
+  });
+
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
     <section className={`py-16 ${bgClass} organic-background`}>
       <div className="container mx-auto px-6 max-w-6xl">
-        {t('stats.title') !== 'stats.title' && (
+        {title !== 'stats.title' && title !== 'metrics.title' && (
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 text-zinc-800">{t('stats.title')}</h2>
-            {t('stats.description') !== 'stats.description' && (
-              <p className="text-lg leading-relaxed max-w-2xl mx-auto text-zinc-600">{t('stats.description')}</p>
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 text-zinc-800">{title}</h2>
+            {description && description !== 'stats.description' && description !== 'metrics.description' && (
+              <p className="text-lg leading-relaxed max-w-2xl mx-auto text-zinc-600">{description}</p>
             )}
           </div>
         )}
@@ -33,8 +67,8 @@ const Stats: FC<StatsProps> = ({ background = 'gray' }) => {
             </div>
           ))}
         </div>
-        {t('stats.note') !== 'stats.note' && (
-          <p className="text-xs text-gray-500 text-center mt-6">{t('stats.note')}</p>
+        {note && note !== 'stats.note' && note !== 'metrics.note' && (
+          <p className="text-xs text-gray-500 text-center mt-6">{note}</p>
         )}
       </div>
     </section>

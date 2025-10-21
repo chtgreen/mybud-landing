@@ -88,7 +88,7 @@ const GrowerStorySection: FC<GrowerStorySectionProps> = ({ onCTAClick }) => {
             <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#E6E7E8] via-white to-[#D5C0FD]/60 p-8 shadow-[0_35px_60px_-30px_rgba(0,0,0,0.35)]">
               <div className="rounded-[24px] border border-white/60 bg-white/80 p-6 backdrop-blur-sm">
                 <img
-                  src="/mybud - Budzinho Colorido 2.png"
+                  src="/MyBud - Budzinho Colorido 2.png"
                   alt="Budzinho anotando o diário de cultivo"
                   className="mx-auto h-48 w-auto object-contain"
                 />

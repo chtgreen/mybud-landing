@@ -1818,3 +1818,40 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+/* Custom Scrollbar Styles - Mobile-like widget scrolling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+.scrollbar-thumb-emerald-500\/30::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+}
+
+.scrollbar-thumb-emerald-500\/50::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}

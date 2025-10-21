@@ -1,5 +1,6 @@
 import { useState, type FC } from 'react';
 import { Droplet, Mic, Sprout } from './icons';
+import { t } from '../lib/i18n';
 
 export const VoiceNoteDemo: FC = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -73,10 +74,10 @@ export const VoiceNoteDemo: FC = () => {
           {!isRecording && !isProcessing && !hasRecorded && (
             <div className="space-y-2">
               <p className="text-lg md:text-xl font-semibold text-emerald-900">
-                Segure para gravar
+                {t('b2c.voiceNoteDemo.holdToRecord')}
               </p>
               <p className="text-sm md:text-base text-emerald-700">
-                Experimente dizer: "Reguei minhas plantas com 500 ml"
+                {t('b2c.voiceNoteDemo.tryExample')}
               </p>
             </div>
           )}
@@ -85,10 +86,10 @@ export const VoiceNoteDemo: FC = () => {
             <div className="space-y-2 animate-pulse">
               <p className="text-lg md:text-xl font-semibold text-red-600 inline-flex items-center gap-2">
                 <Mic className="w-5 h-5" aria-hidden="true" />
-                Gravando...
+                {t('b2c.voiceNoteDemo.recording')}
               </p>
               <p className="text-sm md:text-base text-gray-600">
-                Solte para parar
+                {t('b2c.voiceNoteDemo.releaseToStop')}
               </p>
             </div>
           )}
@@ -100,10 +101,10 @@ export const VoiceNoteDemo: FC = () => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Processando...
+                {t('b2c.voiceNoteDemo.processing')}
               </p>
               <p className="text-sm text-gray-600">
-                Transcrevendo e organizando
+                {t('b2c.voiceNoteDemo.transcribing')}
               </p>
             </div>
           )}
@@ -114,7 +115,7 @@ export const VoiceNoteDemo: FC = () => {
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Atividade criada!
+                {t('b2c.voiceNoteDemo.created')}
               </p>
               <div className="bg-white rounded-xl p-4 shadow-lg max-w-sm">
                 <div className="flex items-start gap-3">
@@ -122,12 +123,12 @@ export const VoiceNoteDemo: FC = () => {
                     <Droplet className="w-5 h-5 text-emerald-600" aria-hidden="true" />
                   </div>
                   <div className="flex-1 text-left">
-                    <p className="font-semibold text-gray-900">Rega</p>
+                    <p className="font-semibold text-gray-900">{t('b2c.voiceNoteDemo.activity.watering')}</p>
                     <p className="text-sm text-emerald-600 flex items-center gap-1">
                       <Sprout className="w-4 h-4" aria-hidden="true" />
-                      Todas as plantas
+                      {t('b2c.voiceNoteDemo.activity.allPlants')}
                     </p>
-                    <p className="text-sm text-gray-600 mt-1">500 ml • Agora mesmo</p>
+                    <p className="text-sm text-gray-600 mt-1">500 ml • {t('b2c.voiceNoteDemo.activity.justNow')}</p>
                   </div>
                 </div>
               </div>
@@ -139,13 +140,13 @@ export const VoiceNoteDemo: FC = () => {
         {!isRecording && !isProcessing && !hasRecorded && (
           <div className="flex flex-wrap justify-center gap-2 mt-4">
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              Sem digitar nada
+              {t('b2c.voiceNoteDemo.features.noTyping')}
             </span>
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              Entende o contexto
+              {t('b2c.voiceNoteDemo.features.context')}
             </span>
             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs md:text-sm rounded-full">
-              Cria atividades na hora
+              {t('b2c.voiceNoteDemo.features.instant')}
             </span>
           </div>
         )}

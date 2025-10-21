@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
 import Header from '../components/Header';
+import SEO from '../components/SEO';
 // import ThemeSelector from '../components/ThemeSelector';
 import Hero from '../components/Hero';
 import VoiceNotesSection from '../components/VoiceNotesSection';
@@ -12,7 +13,6 @@ import AppShowcase from '../components/AppShowcase';
 import InsightsSection from '../components/InsightsSection';
 import IdentityTrust from '../components/IdentityTrust';
 import DemoSection from '../components/DemoSection';
-import BetaSignup from '../components/BetaSignup';
 import Testimonials from '../components/Testimonials';
 import FounderKitSection from '../components/FounderKitSection';
 import Associations from '../components/Associations';
@@ -20,7 +20,6 @@ import CtaFinalSection from '../components/CtaFinalSection';
 import Footer from '../components/Footer';
 import SupportModal from '../components/SupportModal';
 import BetaModal from '../components/BetaModal';
-import { setCurrentNamespace } from '../lib/i18n';
 
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
@@ -28,12 +27,14 @@ const LandingPage = () => {
   const { isLoading, changeLanguage } = useLanguage();
   const remainingKits = 72; // This could be fetched from an API
   
+  // Check if video mode is enabled via query parameter
+  const searchParams = new URLSearchParams(window.location.search);
+  const showVideo = searchParams.get('video') === 'true';
+  
   // Apply scroll-responsive background enhancements
   useScrollEnhancement();
 
-  useEffect(() => {
-    setCurrentNamespace('b2c');
-  }, []);
+  // Namespace is now automatically managed by LanguageProvider based on URL
 
   const handleCTAClick = () => {
     posthog.capture('hero_cta_clicked');
@@ -68,6 +69,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-emerald-50">
+      <SEO pageType="b2c" />
       <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
       <Hero onCTAClick={handleCTAClick} /> {/* Section 1: Hero organic */}
@@ -77,9 +79,8 @@ const LandingPage = () => {
       <AppShowcase background="white" /> {/* Section 5: Como funciona */}
       <InsightsSection /> {/* Section 6: Inteligência do app */}
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
-      <DemoSection background="white" onJoinBeta={handleBetaClick} /> {/* Section 8: Demo */}
-      <BetaSignup background="gray" /> {/* Section 9: Entre no beta */}
-      <Testimonials background="white" growerCount={50} /> {/* Section 10: Prova social */}
+      {showVideo && <DemoSection background="white" onJoinBeta={handleBetaClick} />} {/* Section 8: Demo - Shown when ?video=true */}
+      <Testimonials background="white" growerCount={50} /> {/* Section 9: Prova social */}
       <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} /> {/* Section 11: Founder Kit */}
       <Associations background="white" /> {/* Section 12: Associações */}
       <CtaFinalSection onKitClick={handleCTAClick} onDemoClick={handleDemoClick} remainingKits={remainingKits} /> {/* Section 13: CTA Final */}

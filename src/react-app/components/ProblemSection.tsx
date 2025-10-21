@@ -4,45 +4,17 @@ import { t } from '../lib/i18n';
 const ProblemSection: FC = () => {
   return (
     <section className="relative py-20 md:py-32 bg-[#E6E7E8] overflow-hidden">
-      {/* Organic Background Elements - Grafismos proprietários do Budzinho */}
+      {/* Background Elements with Budzinho */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Bolhas orgânicas sutis */}
         <div className="absolute top-10 right-20 w-[300px] h-[300px] bg-[#288664]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-[#288664]/5 rounded-full blur-3xl" />
         
-        {/* Grafismo Orgânico 1 - Elemento do Budzinho (canto superior esquerdo) */}
+        {/* Budzinho 1 - Top right */}
         <img 
-          src="/elemento-1.svg" 
+          src="/MyBud - Budzinho Colorido 1.png" 
           alt=""
-          className="absolute -top-16 -left-16 w-64 h-64 opacity-[0.04] transform -rotate-12"
-        />
-        
-        {/* Contorno Verde do Budzinho - translúcido (canto superior direito) */}
-        <img 
-          src="/budzinho-contorno-verde-4.svg" 
-          alt=""
-          className="absolute top-20 -right-12 w-48 h-48 opacity-[0.05]"
-        />
-        
-        {/* Elemento Orgânico 5 - meio da página esquerda */}
-        <img 
-          src="/elemento-5.svg" 
-          alt=""
-          className="absolute top-1/3 -left-20 w-56 h-56 opacity-[0.04] transform rotate-45"
-        />
-        
-        {/* Elemento Orgânico 12 - inferior direita */}
-        <img 
-          src="/elemento-12.svg" 
-          alt=""
-          className="absolute bottom-32 -right-16 w-72 h-72 opacity-[0.04] transform rotate-12"
-        />
-        
-        {/* Contorno Verde 5 - meio-baixo esquerda */}
-        <img 
-          src="/budzinho-contorno-verde-5.svg" 
-          alt=""
-          className="absolute bottom-20 left-10 w-40 h-40 opacity-[0.06] transform -rotate-6"
+          className="absolute top-10 right-10 w-28 h-28 md:w-36 md:h-36 opacity-15 transform rotate-12 hover:opacity-25 transition-opacity duration-300"
         />
       </div>
 

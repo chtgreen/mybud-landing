@@ -1,8 +1,13 @@
 import type { FC } from 'react';
 import { VoiceNoteDemo } from './VoiceNoteDemo';
 import { Bolt, Bot, Mic, Timer } from './icons';
+import { t, getLoadedTranslations } from '../lib/i18n';
 
 const VoiceNotesSection: FC = () => {
+  // Get array from translations (t() only returns strings)
+  const translations = getLoadedTranslations();
+  const keywords = (translations.b2c as any)?.voiceNotes?.keywords?.words || [];
+  
   return (
     <section className="relative py-20 md:py-32 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 overflow-hidden">
       {/* Background Elements */}
@@ -19,19 +24,18 @@ const VoiceNotesSection: FC = () => {
             <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="text-sm font-medium text-emerald-700">Funcionalidade exclusiva</span>
+            <span className="text-sm font-medium text-emerald-700">{t('b2c.voiceNotes.badge')}</span>
           </div>
 
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
-            Só fale,<br />
-            <span className="text-emerald-600">a gente registra tudo</span>
+            {t('b2c.voiceNotes.title1')}<br />
+            <span className="text-emerald-600">{t('b2c.voiceNotes.title2')}</span>
           </h2>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            O diário de cultivo que entende sua voz. Nada de digitar, nada de formulário — 
-            apenas fale naturalmente e deixe o mybud organizar.
+            {t('b2c.voiceNotes.subtitle')}
           </p>
         </div>
 
@@ -51,11 +55,10 @@ const VoiceNotesSection: FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-black mb-2">
-                    Entende linguagem natural
+                    {t('b2c.voiceNotes.features.natural.title')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                    Diga “Reguei a Blue Dream com 500 ml” e o mybud cria a atividade com todos os detalhes.
-                    Sem formulários, sem listas intermináveis.
+                    {t('b2c.voiceNotes.features.natural.description')}
                 </p>
               </div>
             </div>
@@ -67,11 +70,10 @@ const VoiceNotesSection: FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-black mb-2">
-                    Classificação automática de atividades
+                    {t('b2c.voiceNotes.features.classification.title')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                    Reconhece mais de 25 tipos de tarefas pela sua fala: rega, treinamento,
-                    transplante, observações — tudo categorizado automaticamente.
+                    {t('b2c.voiceNotes.features.classification.description')}
                 </p>
               </div>
             </div>
@@ -83,11 +85,10 @@ const VoiceNotesSection: FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-black mb-2">
-                    Contexto inteligente
+                    {t('b2c.voiceNotes.features.context.title')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                    Sabe quais são suas plantas e o que aconteceu recentemente. O mybud preenche os detalhes
-                    automaticamente, deixando tudo instantâneo.
+                    {t('b2c.voiceNotes.features.context.description')}
                 </p>
               </div>
             </div>
@@ -99,11 +100,10 @@ const VoiceNotesSection: FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-black mb-2">
-                    Economize +10 minutos por dia
+                    {t('b2c.voiceNotes.features.timeSaver.title')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                    O que levava 5 minutos digitando agora leva 10 segundos falando.
-                    Mais tempo cultivando, menos tempo anotando.
+                    {t('b2c.voiceNotes.features.timeSaver.description')}
                 </p>
               </div>
             </div>
@@ -112,16 +112,16 @@ const VoiceNotesSection: FC = () => {
             {/* Keywords */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
               <p className="text-sm font-semibold text-gray-700 mb-3">
-                Reconhece palavras-chave como:
+                {t('b2c.voiceNotes.keywords.title')}
               </p>
               <div className="flex flex-wrap gap-2">
-                {['reguei', 'fertilizei', 'transplantei', 'tutei', 'desfolhei', 'colhi', 'pH', 'temperatura', 'floração', 'amarelecimento', 'pragas'].map((keyword) => (
+                {Array.isArray(keywords) && keywords.map((keyword: string) => (
                   <span key={keyword} className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                     {keyword}
                   </span>
                 ))}
                 <span className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-200">
-                  +100 outras
+                  {t('b2c.voiceNotes.keywords.more')}
                 </span>
               </div>
             </div>
@@ -130,11 +130,9 @@ const VoiceNotesSection: FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
-          <p className="text-lg text-gray-600 mb-6">
-            Junte-se a growers que já economizaram <strong className="text-emerald-600">horas de registro manual</strong>
-          </p>
+          <p className="text-lg text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: t('b2c.voiceNotes.cta.text') }} />
           <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Testar gravação por voz (beta)
+            {t('b2c.voiceNotes.cta.button')}
           </button>
         </div>
       </div>

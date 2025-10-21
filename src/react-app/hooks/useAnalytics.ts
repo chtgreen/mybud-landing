@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import posthog from 'posthog-js';
+import ReactGA from 'react-ga4';
 
 interface AnalyticsConfig {
   sectionName: string;
@@ -19,10 +20,23 @@ export const useAnalytics = (config: AnalyticsConfig) => {
   
   const trackEvent = useCallback(
     (eventName: string, properties: AnalyticsEventProperties = {}) => {
+      const eventData = {
+        section: config.sectionName,
+        timestamp: Date.now(),
+        ...properties
+      };
+
+      // Track in PostHog
       if (typeof posthog !== 'undefined') {
-        posthog.capture(eventName, {
-          section: config.sectionName,
-          timestamp: Date.now(),
+        posthog.capture(eventName, eventData);
+      }
+
+      // Track in Google Analytics
+      if (import.meta.env.VITE_GA_MEASUREMENT_ID) {
+        ReactGA.event(eventName, {
+          event_category: config.sectionName,
+          event_label: properties.label as string || undefined,
+          value: properties.value as number || undefined,
           ...properties
         });
       }

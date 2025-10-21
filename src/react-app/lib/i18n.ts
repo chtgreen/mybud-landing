@@ -1,4 +1,4 @@
-type TranslationLeaf = string | TranslationTree;
+type TranslationLeaf = string | string[] | TranslationTree;
 export interface TranslationTree {
   [key: string]: TranslationLeaf;
 }
@@ -49,12 +49,25 @@ let currentNamespace: ContentNamespace = 'b2c';
 let currentLanguage: Language = DEFAULT_LANGUAGE;
 let loadedTranslations: TranslationTree = {};
 
-// Load translations for a specific language
+// Cache for loaded translations to avoid reloading when navigating between pages
+const translationsCache: Map<Language, TranslationTree> = new Map();
+
+// Load translations for a specific language with caching
 const loadTranslations = async (lang: Language): Promise<TranslationTree> => {
+  // Return from cache if already loaded
+  if (translationsCache.has(lang)) {
+    return translationsCache.get(lang)!;
+  }
+  
   try {
     const response = await import(`../locales/${lang}.json`);
     const data = (response.default || response) as unknown;
-    return isTranslationTree(data) ? (data as TranslationTree) : {};
+    const translations = isTranslationTree(data) ? (data as TranslationTree) : {};
+    
+    // Store in cache for future use
+    translationsCache.set(lang, translations);
+    
+    return translations;
   } catch (err) {
     console.warn(
       `Failed to load translations for ${lang}, falling back to ${DEFAULT_LANGUAGE}`,
@@ -77,6 +90,11 @@ export const detectBrowserLanguage = (): Language => {
 
 // Get current language
 export const getCurrentLanguage = (): Language => currentLanguage;
+
+// Check if translations are cached for a language
+export const hasTranslationsInCache = (lang: Language): boolean => {
+  return translationsCache.has(lang);
+};
 
 // Get/Set namespace
 export const getCurrentNamespace = (): ContentNamespace => currentNamespace;
@@ -134,18 +152,75 @@ export const t = (key: string, lang?: Language): string => {
     : undefined;
   const namespacedValue = resolveTranslation(namespaceTree, keys);
   if (typeof namespacedValue === 'string') return namespacedValue;
+  if (Array.isArray(namespacedValue)) {
+    console.warn(
+      `Translation array requested with t(): ${key}, language: ${targetLang}, namespace: ${currentNamespace}. ` +
+      'Use tArray() instead.'
+    );
+    return key;
+  }
 
   const b2cTree = isTranslationTree(loadedTranslations.b2c)
     ? (loadedTranslations.b2c as TranslationTree)
     : undefined;
   const b2cValue = resolveTranslation(b2cTree, keys);
   if (typeof b2cValue === 'string') return b2cValue;
+  if (Array.isArray(b2cValue)) {
+    console.warn(
+      `Translation array requested with t(): ${key}, language: ${targetLang}, namespace: ${currentNamespace}. ` +
+      'Use tArray() instead.'
+    );
+    return key;
+  }
 
   const fallbackValue = resolveTranslation(loadedTranslations, keys);
   if (typeof fallbackValue === 'string') return fallbackValue;
+  if (Array.isArray(fallbackValue)) {
+    console.warn(
+      `Translation array requested with t(): ${key}, language: ${targetLang}, namespace: ${currentNamespace}. ` +
+      'Use tArray() instead.'
+    );
+    return key;
+  }
 
   console.warn(`Translation not found for key: ${key}, language: ${targetLang}, namespace: ${currentNamespace}`);
   return key;
+};
+
+const resolveArray = (key: string): string[] | undefined => {
+  const keys = key.split('.');
+
+  const namespaceTree = isTranslationTree(loadedTranslations[currentNamespace])
+    ? (loadedTranslations[currentNamespace] as TranslationTree)
+    : undefined;
+  const namespacedValue = resolveTranslation(namespaceTree, keys);
+  if (Array.isArray(namespacedValue)) return namespacedValue;
+
+  const b2cTree = isTranslationTree(loadedTranslations.b2c)
+    ? (loadedTranslations.b2c as TranslationTree)
+    : undefined;
+  const b2cValue = resolveTranslation(b2cTree, keys);
+  if (Array.isArray(b2cValue)) return b2cValue;
+
+  const fallbackValue = resolveTranslation(loadedTranslations, keys);
+  if (Array.isArray(fallbackValue)) return fallbackValue;
+
+  return undefined;
+};
+
+export const tArray = (key: string, lang?: Language): string[] => {
+  const targetLang = lang || currentLanguage;
+
+  if (targetLang !== currentLanguage && Object.keys(loadedTranslations).length === 0) {
+    console.warn(`Translations for ${targetLang} not loaded, using empty array fallback: ${key}`);
+    return [];
+  }
+
+  const value = resolveArray(key);
+  if (Array.isArray(value)) return value;
+
+  console.warn(`Translation array not found for key: ${key}, language: ${targetLang}, namespace: ${currentNamespace}`);
+  return [];
 };
 
 // Get language name for display

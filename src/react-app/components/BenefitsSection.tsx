@@ -81,7 +81,7 @@ const BenefitsSection: FC = () => {
       <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-end px-6 lg:px-10">
         <div className="relative flex max-w-sm items-end gap-4">
           <img
-            src="/mybud - Budzinho Colorido 1.png"
+            src="/MyBud - Budzinho Colorido 1.png"
             alt="Mascote Budzinho sorrindo"
             className="h-32 w-32 object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)]"
           />

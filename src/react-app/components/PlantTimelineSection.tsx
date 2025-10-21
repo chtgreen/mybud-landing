@@ -69,16 +69,11 @@ const PlantTimelineSection: FC = () => {
         <div className="absolute top-10 left-20 w-[300px] h-[300px] bg-purple-400/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-[400px] h-[400px] bg-emerald-400/5 rounded-full blur-3xl" />
         
-        {/* Decorative plant graphics */}
+        {/* Budzinho 2 in the garden - middle of page */}
         <img 
-          src="/elemento-5.svg" 
-          alt=""
-          className="absolute top-20 right-10 w-48 h-48 opacity-[0.03] transform rotate-12"
-        />
-        <img 
-          src="/budzinho-contorno-verde-4.svg" 
-          alt=""
-          className="absolute bottom-20 left-10 w-56 h-56 opacity-[0.04] transform -rotate-12"
+          src="/MyBud - Budzinho Colorido 2.png" 
+          alt="Budzinho no jardim"
+          className="absolute bottom-10 left-10 w-32 h-32 md:w-40 md:h-40 opacity-20 transform -rotate-6 hover:opacity-30 transition-opacity duration-300"
         />
       </div>
 
