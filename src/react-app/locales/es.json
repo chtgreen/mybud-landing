@@ -136,7 +136,7 @@
           "desc": "Mantente actualizado y al día con protocolos y regulaciones a través de sistemas automatizados y alertas inteligentes."
         }
       },
-      "cta": "Agendar presentación de Mybud",
+      "cta": "Saber más",
       "testimonial": {
         "text": "",
         "author": "",
@@ -158,6 +158,7 @@
         "premium": "Meses adicionales de Premium garantizados en el lanzamiento.",
         "support": "Canal directo con el equipo y prioridad en las mejoras que sugieras."
       },
+      "namePlaceholder": "Tu nombre completo",
       "emailPlaceholder": "Tu mejor email",
       "instagramPlaceholder": "@tu_instagram (VIP - opcional)",
       "button": "Quiero asegurar mi lugar",
@@ -190,12 +191,14 @@
         "title": "¿Prefieres esperar?",
         "description": "Únete a la lista y recibe novedades y acceso anticipado cuando abramos el beta.",
         "form": {
+          "nameLabel": "Nombre completo",
+          "namePlaceholder": "Tu nombre",
           "label": "Email",
           "placeholder": "Tu mejor email",
           "cta": "Recibir actualizaciones",
           "loading": "Enviando...",
           "microcopy": "Nada de spam. Privacidad garantizada.",
-          "success": "¡Listo! Confirma tu email para asegurar tu lugar.",
+          "success": "Listo. Te enviaremos las próximas novedades por correo.",
           "error": "Algo salió mal. Inténtalo de nuevo."
         }
       }

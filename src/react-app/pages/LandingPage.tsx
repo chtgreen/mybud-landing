@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -24,7 +25,8 @@ import BetaModal from '../components/BetaModal';
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
   const [betaModalOpen, setBetaModalOpen] = useState(false);
-  const { isLoading, changeLanguage } = useLanguage();
+  const { isLoading, changeLanguage, currentLanguage } = useLanguage();
+  const navigate = useNavigate();
   const remainingKits = 72; // This could be fetched from an API
   
   // Check if video mode is enabled via query parameter
@@ -55,6 +57,10 @@ const LandingPage = () => {
     }
   };
 
+  const handleAssociationsClick = () => {
+    navigate(`/${currentLanguage}/b2b#associations`);
+  };
+
   // Show loading while language is being initialized
   if (isLoading) {
     return (
@@ -72,18 +78,23 @@ const LandingPage = () => {
       <SEO pageType="b2c" />
       <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
-      <Hero onCTAClick={handleCTAClick} /> {/* Section 1: Hero organic */}
+      <Hero onCTAClick={handleCTAClick} showSecondaryCta={showVideo} /> {/* Section 1: Hero organic */}
       <ProblemSection /> {/* Section 2: O problema sem distracoes */}
-      <VoiceNotesSection /> {/* Section 3: Voice Notes - Killer Feature */}
+      <VoiceNotesSection onCTAClick={handleCTAClick} /> {/* Section 3: Voice Notes - Killer Feature */}
       <PlantTimelineSection /> {/* Section 4: Plant Journey Timeline */}
       <AppShowcase background="white" /> {/* Section 5: Como funciona */}
-      <InsightsSection /> {/* Section 6: Inteligência do app */}
+      <InsightsSection onActivate={handleCTAClick} /> {/* Section 6: Inteligência do app */}
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
       {showVideo && <DemoSection background="white" onJoinBeta={handleBetaClick} />} {/* Section 8: Demo - Shown when ?video=true */}
       <Testimonials background="white" growerCount={50} /> {/* Section 9: Prova social */}
       <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} /> {/* Section 11: Founder Kit */}
-      <Associations background="white" /> {/* Section 12: Associações */}
-      <CtaFinalSection onKitClick={handleCTAClick} onDemoClick={handleDemoClick} remainingKits={remainingKits} /> {/* Section 13: CTA Final */}
+      <Associations background="white" onCTAClick={handleAssociationsClick} /> {/* Section 12: Associações */}
+      <CtaFinalSection
+        onKitClick={handleCTAClick}
+        onSecondaryClick={handleDemoClick}
+        remainingKits={remainingKits}
+        showSecondaryCta={showVideo}
+      /> {/* Section 13: CTA Final */}
       <Footer />
       <SupportModal
         open={paymentOpen}

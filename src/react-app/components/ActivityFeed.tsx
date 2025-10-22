@@ -94,10 +94,21 @@ const activities: Activity[] = [
 interface ActivityFeedProps {
   className?: string;
   limit?: number;
+  onViewAll?: () => void;
 }
 
-export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit }) => {
+export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onViewAll }) => {
   const displayActivities = limit ? activities.slice(0, limit) : activities;
+
+  const handleViewAllClick = () => {
+    if (onViewAll) {
+      onViewAll();
+      return;
+    }
+
+    const betaSection = document.getElementById('beta');
+    betaSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   
   return (
     <div className={`bg-white rounded-2xl shadow-xl p-6 md:p-8 ${className}`}>
@@ -169,7 +180,10 @@ export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit }) =
 
       {/* View All Link */}
       <div className="mt-6 text-center">
-        <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline">
+        <button
+          onClick={handleViewAllClick}
+          className="text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline"
+        >
           Ver todas as atividades →
         </button>
       </div>

@@ -136,7 +136,7 @@
           "desc": "Stay up to date with protocols and regulations through automated systems and intelligent alerts."
         }
       },
-      "cta": "Schedule Mybud presentation",
+      "cta": "Learn more",
       "testimonial": {
         "text": "",
         "author": "",
@@ -158,6 +158,7 @@
         "premium": "Additional Premium months guaranteed at launch.",
         "support": "Direct channel with the team and priority on improvements you suggest."
       },
+      "namePlaceholder": "Your full name",
       "emailPlaceholder": "Your best email",
       "instagramPlaceholder": "@your_instagram (VIP - optional)",
       "button": "I want to secure my spot",
@@ -190,12 +191,14 @@
         "title": "Prefer to wait?",
         "description": "Join the list and get news and early access when we open the beta.",
         "form": {
+          "nameLabel": "Full name",
+          "namePlaceholder": "Your name",
           "label": "Email",
           "placeholder": "Your best email",
           "cta": "Get updates",
           "loading": "Sending...",
           "microcopy": "No spam. Privacy guaranteed.",
-          "success": "Done! Confirm your email to secure your spot.",
+          "success": "All set! We'll send the next updates straight to your inbox.",
           "error": "Something went wrong. Try again."
         }
       }

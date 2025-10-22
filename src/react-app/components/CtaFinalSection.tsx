@@ -3,24 +3,26 @@ import { t } from '../lib/i18n';
 
 interface CtaFinalSectionProps {
   onKitClick: () => void;
-  onDemoClick?: () => void;
+  onSecondaryClick?: () => void;
   remainingKits?: number;
+  showSecondaryCta?: boolean;
 }
 
 const CtaFinalSection: FC<CtaFinalSectionProps> = ({ 
   onKitClick, 
-  onDemoClick,
-  remainingKits = 72
+  onSecondaryClick,
+  remainingKits = 72,
+  showSecondaryCta = true
 }) => {
-  const handleDemoClick = () => {
-    if (onDemoClick) {
-      onDemoClick();
-    } else {
-      // Scroll to demo section
-      const demoSection = document.getElementById('demo');
-      if (demoSection) {
-        demoSection.scrollIntoView({ behavior: 'smooth' });
-      }
+  const handleSecondaryClick = () => {
+    if (onSecondaryClick) {
+      onSecondaryClick();
+      return;
+    }
+
+    const demoSection = document.getElementById('demo');
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -50,15 +52,17 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
               </svg>
             </button>
 
-            <button
-              onClick={handleDemoClick}
-              className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-medium bg-white text-[#7c3aed] hover:bg-gray-50 transition-colors"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              <span>{t('ctaFinal.secondaryCta')}</span>
-            </button>
+            {showSecondaryCta && t('ctaFinal.secondaryCta') !== 'ctaFinal.secondaryCta' && (
+              <button
+                onClick={handleSecondaryClick}
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-medium bg-white text-[#7c3aed] hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span>{t('ctaFinal.secondaryCta')}</span>
+              </button>
+            )}
           </div>
 
           {/* Scarcity Microcopy */}

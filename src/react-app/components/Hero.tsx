@@ -6,6 +6,7 @@ import DashboardWidget from './DashboardWidget';
 
 interface HeroProps {
   onCTAClick: () => void;
+  showSecondaryCta?: boolean;
   // Remove onGrowthProgress prop since we don't need header updates anymore
 }
 
@@ -247,7 +248,7 @@ const scrollToB2BForm = () => {
   }
 };
 
-const Hero: FC<HeroProps> = ({ onCTAClick }) => {
+const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true }) => {
   // Detect if we're in B2B context
   const isB2BContext = isB2B();
   const heroTitleLines = ['title1', 'title2', 'title3']
@@ -277,7 +278,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 </div>
               )}
               <h1 
-                className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 uppercase ${isB2BContext ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
+                className={`mt-16 md:mt-0 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 uppercase ${isB2BContext ? 'text-gray-900 hero-animate-2' : 'text-white hero-animate-2'}`}
                 style={!isB2BContext ? { 
                   textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
                   fontFamily: '"Schabo Condensed", "Bebas Neue", "Impact", sans-serif',
@@ -327,7 +328,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 >
                   <span>{t('hero.primaryCta')}</span>
                 </button>
-                {t('hero.secondaryCta') !== 'hero.secondaryCta' && (
+                {showSecondaryCta && t('hero.secondaryCta') !== 'hero.secondaryCta' && (
                   <>
                     {t('hero.secondaryCta').includes('media kit') ? (
                       <a

@@ -8,6 +8,7 @@ interface BetaSignupProps {
 }
 
 const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [instagram, setInstagram] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,7 +17,9 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    if (!trimmedName || !trimmedEmail) return;
 
     setIsSubmitting(true);
 
@@ -25,7 +28,8 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
         .from('beta_signups')
         .insert([
           {
-            email: email.trim(),
+            full_name: trimmedName,
+            email: trimmedEmail,
             instagram: instagram.trim() || null,
             created_at: new Date().toISOString(),
           }
@@ -36,7 +40,8 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
       // Track successful signup
       if (typeof posthog !== 'undefined') {
         posthog.capture('newsletter_signup_completed', {
-          email,
+          full_name: trimmedName,
+          email: trimmedEmail,
           has_instagram: !!instagram,
           source: 'beta_section'
         });
@@ -44,6 +49,7 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
       // Show success message
       alert(t('betaSignup.successMessage'));
+      setName('');
       setEmail('');
       setInstagram('');
     } catch (error) {
@@ -139,6 +145,15 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
         {/* Form */}
         <form onSubmit={submit} className="max-w-lg mx-auto space-y-4">
+          <input
+            type="text"
+            placeholder={t('betaSignup.namePlaceholder')}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            required
+            autoComplete="name"
+          />
           <input
             type="email"
             placeholder={t('betaSignup.emailPlaceholder')}

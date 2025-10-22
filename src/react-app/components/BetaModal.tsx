@@ -1,4 +1,5 @@
-import { useState, useEffect, type FC } from 'react';
+import { useState, useEffect, useRef, type FC } from 'react';
+import { createPortal } from 'react-dom';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
@@ -21,9 +22,12 @@ const priorityBenefits = [
 ] as const;
 
 const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<SubmissionStatus>('idle');
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -40,20 +44,51 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
 
   useEffect(() => {
     if (!open) {
+      setFullName('');
       setEmail('');
       setStatus('idle');
       setIsSubmitting(false);
     }
   }, [open]);
 
-  if (!open) {
+  useEffect(() => {
+    if (!open || typeof document === 'undefined') return;
+
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    if (!fullName) {
+      nameInputRef.current?.focus({ preventScroll: true });
+    } else {
+      emailInputRef.current?.focus({ preventScroll: true });
+    }
+  }, [open, fullName]);
+
+  const portalTarget = typeof document !== 'undefined' ? document.body : null;
+
+  if (!open || !portalTarget) {
     return null;
   }
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const trimmedName = fullName.trim();
     const trimmedEmail = email.trim();
-    if (!trimmedEmail) return;
+    if (!trimmedName || !trimmedEmail) return;
 
     setIsSubmitting(true);
     setStatus('idle');
@@ -61,6 +96,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
     try {
       const { error } = await supabase.from('beta_signups').insert([
         {
+          full_name: trimmedName,
           email: trimmedEmail,
           instagram: '',
           created_at: new Date().toISOString()
@@ -71,6 +107,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
 
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_completed', {
+          full_name: trimmedName,
           email: trimmedEmail,
           source: 'beta_modal',
           channel: 'modal_free_access'
@@ -78,6 +115,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
       }
 
       setStatus('success');
+      setFullName('');
       setEmail('');
     } catch (error) {
       console.error('Error:', error);
@@ -112,12 +150,18 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
     }
   };
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9999] p-4"
       onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="beta-modal-title"
     >
-      <div className="relative bg-white rounded-[24px] border border-[#E6E7E8] shadow-[0_32px_60px_rgba(15,61,34,0.15)] max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div
+        className="relative bg-white rounded-[24px] border border-[#E6E7E8] shadow-[0_32px_60px_rgba(15,61,34,0.15)] max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        onClick={(event) => event.stopPropagation()}
+      >
         <button
           type="button"
           onClick={onClose}
@@ -155,7 +199,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                   {t('betaModal.priority.chip')}
                 </span>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-900">
+                  <h2 id="beta-modal-title" className="text-2xl font-semibold text-gray-900">
                     {t('betaModal.priority.title')}
                   </h2>
                   <p className="text-sm text-gray-600 mt-2">
@@ -219,6 +263,25 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
               </div>
 
               <form onSubmit={submit} className="space-y-4">
+                <label htmlFor="beta-modal-name" className="sr-only">
+                  {t('betaModal.free.form.nameLabel')}
+                </label>
+                <input
+                  id="beta-modal-name"
+                  type="text"
+                  required
+                  value={fullName}
+                  ref={nameInputRef}
+                  onChange={(event) => {
+                    if (status !== 'idle') {
+                      setStatus('idle');
+                    }
+                    setFullName(event.target.value);
+                  }}
+                  autoComplete="name"
+                  placeholder={t('betaModal.free.form.namePlaceholder')}
+                  className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
+                />
                 <label htmlFor="beta-modal-email" className="sr-only">
                   {t('betaModal.free.form.label')}
                 </label>
@@ -227,12 +290,14 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                   type="email"
                   required
                   value={email}
+                  ref={emailInputRef}
                   onChange={(event) => {
                     if (status !== 'idle') {
                       setStatus('idle');
                     }
                     setEmail(event.target.value);
                   }}
+                  autoComplete="email"
                   placeholder={t('betaModal.free.form.placeholder')}
                   className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
                 />
@@ -263,7 +328,8 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    portalTarget
   );
 };
 

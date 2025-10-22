@@ -12,18 +12,28 @@
 -- Tabela: beta_signups (para cadastros B2C - newsletter/beta access)
 CREATE TABLE IF NOT EXISTS public.beta_signups (
     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    email text NOT NULL,
+    full_name text,
+    email text,
     instagram text,
+    country text,
+    city text,
+    primary_goal text,
+    cannabis_experience text,
+    obstacles text,
     created_at timestamp with time zone DEFAULT now() NOT NULL,
-    updated_at timestamp with time zone DEFAULT now() NOT NULL
+    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    CONSTRAINT beta_signups_name_or_instagram_chk CHECK (
+        (full_name IS NOT NULL AND btrim(full_name) <> '')
+        OR (instagram IS NOT NULL AND btrim(instagram) <> '')
+    )
 );
 
 -- Tabela: b2b_leads (para leads B2B - formulário de contato comercial)
 CREATE TABLE IF NOT EXISTS public.b2b_leads (
     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    name text NOT NULL,
-    email text NOT NULL,
-    company text NOT NULL,
+    name text,
+    email text,
+    company text,
     message text,
     source text DEFAULT 'landing' NOT NULL,
     created_at timestamp with time zone DEFAULT now() NOT NULL,
@@ -119,10 +129,10 @@ CREATE TRIGGER update_b2b_leads_updated_at
 -- ============================================================================
 
 -- Teste em beta_signups
-INSERT INTO public.beta_signups (email, instagram)
+INSERT INTO public.beta_signups (full_name, email, instagram, country, city, primary_goal, cannabis_experience, obstacles)
 VALUES 
-    ('teste1@mybud.app', '@mybud_test'),
-    ('teste2@mybud.app', NULL)
+    ('Grower Teste', 'teste1@mybud.app', '@mybud_test', 'Brasil', 'São Paulo', 'Explorar novas genéticas', 'Intermediário', 'Falta de acesso a conteúdo confiável'),
+    (NULL, NULL, '@grower_only', 'Brasil', NULL, 'Aprender com a comunidade', 'Iniciante', NULL)
 ON CONFLICT DO NOTHING;
 
 -- Teste em b2b_leads
@@ -182,6 +192,5 @@ SELECT 'b2b_leads' as tabela, COUNT(*) as total FROM public.b2b_leads;
 -- Agora você pode testar os formulários na aplicação.
 
 -- Para testar manualmente via SQL:
--- INSERT INTO public.beta_signups (email, instagram) VALUES ('seu@email.com', '@seu_insta');
+-- INSERT INTO public.beta_signups (full_name, email, instagram) VALUES ('Seu Nome', 'seu@email.com', '@seu_insta');
 -- INSERT INTO public.b2b_leads (name, email, company, message) VALUES ('Seu Nome', 'seu@email.com', 'Sua Empresa', 'Teste');
-

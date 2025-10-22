@@ -8,7 +8,11 @@ function CopyEditorGate() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const show = params.get('edit') === '1';
-  if (!show) return null;
+  const enableCopyEditor =
+    import.meta.env.DEV ||
+    import.meta.env.VITE_ENABLE_COPY_EDITOR === '1' ||
+    import.meta.env.VITE_ENABLE_COPY_EDITOR === 'true';
+  if (!enableCopyEditor || !show) return null;
   return <CopyEditor />;
 }
 

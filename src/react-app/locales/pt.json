@@ -136,7 +136,7 @@
           "desc": "Mantenha-se atualizado e em dia com protocolos e regulamentações através de sistemas automatizados e alertas inteligentes."
         }
       },
-      "cta": "Agendar apresentação do Mybud",
+      "cta": "Saber mais",
       "testimonial": {
         "text": "",
         "author": "",
@@ -158,6 +158,7 @@
         "premium": "Meses adicionais de Premium garantidos no lançamento.",
         "support": "Canal direto com o time e prioridade nas melhorias que você sugerir."
       },
+      "namePlaceholder": "Seu nome completo",
       "emailPlaceholder": "Seu melhor e-mail",
       "instagramPlaceholder": "@seu_instagram (VIP - opcional)",
       "button": "Quero garantir minha vaga",
@@ -190,12 +191,14 @@
         "title": "Quer só entrar na lista?",
         "description": "Deixa seu e-mail e eu te aviso quando liberar beta novo, conteúdo e convite pra testar.",
         "form": {
+          "nameLabel": "Nome completo",
+          "namePlaceholder": "Seu nome",
           "label": "E-mail",
           "placeholder": "Seu melhor e-mail",
           "cta": "Me avisa das novidades",
           "loading": "Enviando...",
           "microcopy": "Zero spam, só updates que valem.",
-          "success": "Boa! Confere seu e-mail pra confirmar presença.",
+          "success": "Pronto! Você vai receber as próximas novidades por e-mail.",
           "error": "Ih, deu ruim aqui. Tenta de novo?"
         }
       }

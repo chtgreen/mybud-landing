@@ -11,7 +11,21 @@ import {
   Target,
 } from './icons';
 
-const InsightsSection: FC = () => {
+interface InsightsSectionProps {
+  onActivate?: () => void;
+}
+
+const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
+  const handleActivateClick = () => {
+    if (onActivate) {
+      onActivate();
+      return;
+    }
+
+    const betaSection = document.getElementById('beta');
+    betaSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <section className="relative py-20 md:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
@@ -82,7 +96,7 @@ const InsightsSection: FC = () => {
 
           {/* Right - Activity Feed */}
           <div>
-            <ActivityFeed limit={5} />
+            <ActivityFeed limit={5} onViewAll={handleActivateClick} />
           </div>
         </div>
 
@@ -237,7 +251,10 @@ const InsightsSection: FC = () => {
           <p className="text-lg text-gray-600 mb-6">
             Pare de adivinhar. Cultive com <strong className="text-emerald-600">a confiança inteligente do mybud</strong>
           </p>
-          <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button
+            onClick={handleActivateClick}
+            className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
             Ativar orientações inteligentes
           </button>
         </div>

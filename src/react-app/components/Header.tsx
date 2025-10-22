@@ -124,12 +124,14 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
       : 'bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none'
   ].join(' ');
 
+  const logoHref = isB2B ? `/${currentLanguage}/b2b` : `/${currentLanguage}`;
+
   return (
     <header className={headerClasses}>
       <div className={containerClasses}>
         <div className="flex items-center justify-between gap-4 relative">
           {/* Logo */}
-          <a href="#" className="flex items-center" aria-label="mybud home">
+          <a href={logoHref} className="flex items-center" aria-label="mybud home">
             <img
               src={isHeroContext ? '/mybud-logo-white.svg' : '/mybud-logo-green.svg'}
               alt="mybud logo"

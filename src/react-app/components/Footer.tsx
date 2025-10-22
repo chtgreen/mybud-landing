@@ -57,25 +57,25 @@ const Footer: FC = () => {
               </p>
             </div>
             
-            {/* Social Icons Only */}
+            {/* Social Links */}
             <div className="flex space-x-3">
               <a
-                href="#"
+                href="https://www.instagram.com/mybud.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="mybud on Instagram"
                 className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-instagram text-lg"></i>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/mybud-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="mybud on LinkedIn"
                 className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
               >
-                <i className="fab fa-discord text-lg"></i>
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
-              >
-                <i className="fab fa-reddit-alien text-lg"></i>
+                <i className="fab fa-linkedin-in text-lg"></i>
               </a>
             </div>
           </div>
@@ -133,21 +133,21 @@ const Footer: FC = () => {
         <div className="border-t border-gray-100 mt-8 pt-6">
           <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
             <a
-              href="#"
+              href="/privacy.html"
               className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.privacy')}
             </a>
             <span className="text-gray-300">•</span>
             <a
-              href="#"
+              href="/terms.html"
               className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.terms')}
             </a>
             <span className="text-gray-300">•</span>
             <a
-              href="#"
+              href="/eula.html"
               className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.eula')}

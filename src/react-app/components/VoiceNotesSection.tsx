@@ -3,10 +3,24 @@ import { VoiceNoteDemo } from './VoiceNoteDemo';
 import { Bolt, Bot, Mic, Timer } from './icons';
 import { t, getLoadedTranslations } from '../lib/i18n';
 
-const VoiceNotesSection: FC = () => {
+interface VoiceNotesSectionProps {
+  onCTAClick?: () => void;
+}
+
+const VoiceNotesSection: FC<VoiceNotesSectionProps> = ({ onCTAClick }) => {
   // Get array from translations (t() only returns strings)
   const translations = getLoadedTranslations();
   const keywords = (translations.b2c as any)?.voiceNotes?.keywords?.words || [];
+
+  const handleCtaClick = () => {
+    if (onCTAClick) {
+      onCTAClick();
+      return;
+    }
+
+    const betaSection = document.getElementById('beta');
+    betaSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   
   return (
     <section className="relative py-20 md:py-32 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 overflow-hidden">
@@ -131,7 +145,10 @@ const VoiceNotesSection: FC = () => {
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
           <p className="text-lg text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: t('b2c.voiceNotes.cta.text') }} />
-          <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button
+            onClick={handleCtaClick}
+            className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
             {t('b2c.voiceNotes.cta.button')}
           </button>
         </div>
