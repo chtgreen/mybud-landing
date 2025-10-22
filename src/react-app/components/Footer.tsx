@@ -61,19 +61,19 @@ const Footer: FC = () => {
             <div className="flex space-x-3">
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-instagram text-lg"></i>
               </a>
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-discord text-lg"></i>
               </a>
               <a
                 href="#"
-                className="w-8 h-8 text-gray-400 hover:text-[#eb4c80] transition-colors flex items-center justify-center"
+                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
               >
                 <i className="fab fa-reddit-alien text-lg"></i>
               </a>
@@ -134,28 +134,28 @@ const Footer: FC = () => {
           <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
+              className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.privacy')}
             </a>
             <span className="text-gray-300">•</span>
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
+              className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.terms')}
             </a>
             <span className="text-gray-300">•</span>
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
+              className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.eula')}
             </a>
             <span className="text-gray-300">•</span>
             <a
               href="mailto:contato@mybud.app"
-              className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors"
+              className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
             >
               {t('footer.contact')}
             </a>
@@ -163,14 +163,14 @@ const Footer: FC = () => {
             {isB2B ? (
               <a
                 href={`/${currentLanguage}`}
-                className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors font-medium"
+                className="text-sm text-gray-500 hover:text-[#288664] transition-colors font-medium"
               >
                 B2C
               </a>
             ) : (
               <a
                 href={`/${currentLanguage}/b2b`}
-                className="text-sm text-gray-500 hover:text-[#eb4c80] transition-colors font-medium"
+                className="text-sm text-gray-500 hover:text-[#288664] transition-colors font-medium"
               >
                 B2B
               </a>
@@ -196,7 +196,7 @@ const Footer: FC = () => {
             href="https://cht.green"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-[#eb4c80] transition-colors"
+            className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-[#288664] transition-colors"
           >
             <span className="font-bold">by cht.green</span>
             <span className="inline-flex items-center gap-1 text-base">

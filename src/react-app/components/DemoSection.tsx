@@ -87,7 +87,7 @@ const DemoSection: FC<DemoSectionProps> = ({ background = 'white', onJoinBeta })
         {/* CTA After Watching */}
         {videoWatched && (
           <div className="mt-8 text-center animate-fadeInUp">
-            <div className="bg-[#F9C9DE]/30 border-2 border-[#eb4c80]/50 rounded-xl p-6 inline-block">
+            <div className="bg-[#D5C0FD]/30 border-2 border-[#7c3aed]/40 rounded-xl p-6 inline-block">
               <p className="text-lg font-semibold text-gray-900 mb-4">
                 {t('demo.afterWatching')}
               </p>
@@ -124,4 +124,3 @@ const DemoSection: FC<DemoSectionProps> = ({ background = 'white', onJoinBeta })
 };
 
 export default DemoSection;
-

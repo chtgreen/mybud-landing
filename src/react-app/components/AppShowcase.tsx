@@ -275,7 +275,7 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 								key={feature.id}
 								className={`cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 ${
 									activeFeature === feature.id 
-										? 'border-[#eb4c80] bg-[#F9C9DE]/20' 
+										? 'border-[#7c3aed] bg-[#D5C0FD]/20' 
 										: 'border-gray-200 bg-white hover:border-[#D5C0FD] hover:bg-[#D5C0FD]/10'
 								}`}
 								onClick={() => setActiveFeature(feature.id)}
@@ -284,7 +284,7 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 									<div
 										className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
 											activeFeature === feature.id 
-												? 'bg-[#eb4c80]' 
+												? 'bg-[#7c3aed]' 
 												: 'bg-[#D5C0FD]/50'
 										}`}
 									>
@@ -304,7 +304,7 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 									</div>
 									<div>
 										<h3 className={`text-lg font-semibold mb-2 ${
-											activeFeature === feature.id ? 'text-[#eb4c80]' : 'text-gray-800'
+											activeFeature === feature.id ? 'text-[#7c3aed]' : 'text-gray-800'
 										}`}> 
 											{t(feature.titleKey)}
 										</h3>

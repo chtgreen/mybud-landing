@@ -84,9 +84,9 @@ const activities: Activity[] = [
     entityIcon: Sprout,
     details: "Dia 1 da fase de floração",
     time: "Há 2 dias", 
-    borderColor: "border-l-pink-500",
+    borderColor: "border-l-amber-500",
     entityBg: "bg-emerald-100 text-emerald-700",
-    iconClass: "text-pink-500",
+    iconClass: "text-amber-500",
     entityIconClass: "text-emerald-700"
   },
 ];

@@ -117,6 +117,13 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
     isHeroContext ? 'border-white/40 bg-transparent text-white hover:bg-white/10' : 'border-gray-200 bg-white text-gray-700 hover:bg-gray-100'
   ].join(' ');
 
+  const ctaButtonClass = [
+    'inline-flex items-center justify-center whitespace-nowrap rounded-full px-4 md:px-5 py-1.5 text-sm md:text-base font-semibold transition-colors',
+    isHeroContext
+      ? 'bg-transparent border border-white/70 text-white hover:bg-white/15 hover:text-white shadow-[0_6px_18px_rgba(12,83,49,0.25)]'
+      : 'bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none'
+  ].join(' ');
+
   return (
     <header className={headerClasses}>
       <div className={containerClasses}>
@@ -149,7 +156,7 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
             <button
               type="button"
               onClick={handleCtaClick}
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-4 md:px-5 py-1.5 text-sm md:text-base font-semibold text-white bg-[#EB4C80] hover:bg-[#288664] transition-colors shadow-[0_10px_24px_rgba(235,76,128,0.35)]"
+              className={ctaButtonClass}
             >
               {t('header.cta')}
             </button>

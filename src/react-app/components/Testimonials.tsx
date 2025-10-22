@@ -42,7 +42,7 @@ const Testimonials: FC<TestimonialsProps> = ({ background = 'gray', growerCount 
           </p>
           {/* Counter */}
           {t('testimonials.counter') && (
-            <div className="inline-flex items-center gap-2 bg-[#F9C9DE] text-[#be185d] px-4 py-2 rounded-full text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
               </svg>

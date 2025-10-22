@@ -367,8 +367,8 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 <div className="space-y-3 hero-animate-6">
                   {/* Counter */}
                   {t('hero.counter') && (
-                    <div className="inline-flex items-center gap-2 badge-community px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bg-white/85 text-[#288664] border border-white/50 shadow-[0_12px_30px_rgba(12,83,49,0.15)] backdrop-blur-sm">
+                      <svg className="w-4 h-4 text-[#288664]" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                       </svg>
                       <span>{t('hero.counter')}</span>
@@ -389,7 +389,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
             </div>
 
             <div className="lg:w-1/2 relative app-animate flex items-center justify-center">
-              {/* Grafismo lilás vívido e orgânico atrás do celular */}
+              {/* Grafismo suave orgânico atrás do celular */}
               {!isB2BContext && (
                 <div 
                   className="absolute opacity-90 -z-10"
@@ -404,7 +404,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick }) => {
                 >
                   <svg className="w-full h-full" viewBox="0 0 349.643 341.112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
                     <path 
-                      fill="#D5C0FD" 
+                      fill="#ECFDF5" 
                       fillRule="nonzero" 
                       d="M 239.4375 170.554688 C 253.699219 157.519531 264.015625 140.238281 268.355469 120.699219 C 270.953125 109.007812 263.703125 97.394531 252.078125 94.492188 C 234.640625 90.136719 206.53125 87.234375 174.820312 87.234375 C 143.113281 87.234375 115.003906 90.136719 97.5625 94.492188 C 85.941406 97.394531 78.691406 109.007812 81.285156 120.699219 C 85.625 140.238281 95.945312 157.519531 110.203125 170.554688 C 95.945312 183.59375 85.625 200.871094 81.285156 220.410156 C 78.691406 232.105469 85.941406 243.714844 97.5625 246.617188 C 115.003906 250.976562 143.113281 253.878906 174.820312 253.878906 C 206.53125 253.878906 234.640625 250.976562 252.078125 246.617188 C 263.703125 243.714844 270.953125 232.105469 268.355469 220.410156 C 264.015625 200.871094 253.699219 183.59375 239.4375 170.554688"
                     />
