@@ -101,3 +101,4 @@ ORDER BY tablename, cmd;
 --    ON public.beta_signups FOR DELETE TO authenticated USING (true);
 -- ============================================================================
 
+

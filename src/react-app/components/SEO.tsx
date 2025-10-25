@@ -40,19 +40,19 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
   // SEO content for B2B page
   const b2bSEO: Record<Language, SEOConfig> = {
     pt: {
-      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Dados & Prova Social',
-      description: 'Transforme growers em embaixadores. Dados reais de uso, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
-      keywords: 'cannabis b2b, marketing cannabis, dados cultivo, prova social cannabis, parcerias cannabis, insumos cannabis, equipamentos grow, associações canábicas',
+      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Insights de Uso & Prova Social',
+      description: 'Transforme growers em embaixadores. Insights reais de como usam seus produtos, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
+      keywords: 'cannabis b2b, marketing cannabis, uso produtos cultivo, prova social cannabis, parcerias cannabis, insumos cannabis, equipamentos grow, associações canábicas',
     },
     en: {
-      title: 'mybud B2B - Validate Your Brand in Real Growing | Data & Social Proof',
-      description: 'Turn growers into brand ambassadors. Real usage data, authentic social proof, and adoption metrics for nutrient brands, equipment manufacturers, and cannabis associations.',
-      keywords: 'cannabis b2b, cannabis marketing, grow data, cannabis social proof, cannabis partnerships, grow equipment, cannabis associations',
+      title: 'mybud B2B - Validate Your Brand in Real Growing | Usage Insights & Social Proof',
+      description: 'Turn growers into brand ambassadors. Real insights on how they use your products, authentic social proof, and adoption metrics for nutrient brands, equipment manufacturers, and cannabis associations.',
+      keywords: 'cannabis b2b, cannabis marketing, product usage insights, cannabis social proof, cannabis partnerships, grow equipment, cannabis associations',
     },
     es: {
-      title: 'mybud B2B - Valida Tu Marca en Cultivo Real | Datos & Prueba Social',
-      description: 'Convierte cultivadores en embajadores. Datos reales de uso, prueba social auténtica y métricas de adopción para marcas de insumos, equipos y asociaciones cannábicas.',
-      keywords: 'cannabis b2b, marketing cannabis, datos cultivo, prueba social cannabis, alianzas cannabis, insumos cannabis, equipos grow, asociaciones cannábicas',
+      title: 'mybud B2B - Valida Tu Marca en Cultivo Real | Insights de Uso & Prueba Social',
+      description: 'Convierte cultivadores en embajadores. Insights reales de cómo usan tus productos, prueba social auténtica y métricas de adopción para marcas de insumos, equipos y asociaciones cannábicas.',
+      keywords: 'cannabis b2b, marketing cannabis, uso productos cultivo, prueba social cannabis, alianzas cannabis, insumos cannabis, equipos grow, asociaciones cannábicas',
     },
   };
 

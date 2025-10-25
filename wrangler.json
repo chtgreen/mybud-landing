@@ -20,7 +20,9 @@
     "VITE_SUPABASE_URL": "https://xtgypohwmdpavazjmhcz.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0Z3lwb2h3bWRwYXZhemptaGN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4MjE2NDYsImV4cCI6MjA1MzM5NzY0Nn0.HvCwgdobsSWFuXgs3Mj4dgPKBOKNrsTleSyHYf-K5cE",
     "VITE_STRIPE_PAYMENT_LINK": "",
-    "VITE_GA_MEASUREMENT_ID": "G-M1N4DR4ZZ6"
+    "VITE_GA_MEASUREMENT_ID": "G-CM13QM5GHG",
+    "VITE_KIT_REMINDER": "47",
+    "VITE_KIT_PRICE": "249"
   },
   "routes": [
     {

@@ -28,11 +28,11 @@ const seoContent = {
       keywords: 'cultivo cannabis, diário de cultivo, grow app, app cannabis, registro por voz, timeline de plantas, lembretes cultivo, mybud'
     },
     b2b: {
-      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Dados & Prova Social',
-      description: 'Transforme growers em embaixadores. Dados reais de uso, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
+      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Insights de Uso & Prova Social',
+      description: 'Transforme growers em embaixadores. Insights reais de como usam seus produtos, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
       url: 'https://lp.mybud.app/pt/b2b',
       locale: 'pt_BR',
-      keywords: 'marketing cannabis, B2B cannabis, dados cultivo, prova social, embaixadores marca, insumos cannabis'
+      keywords: 'marketing cannabis, B2B cannabis, uso produtos cultivo, prova social, embaixadores marca, insumos cannabis'
     }
   },
   en: {
@@ -44,11 +44,11 @@ const seoContent = {
       keywords: 'cannabis cultivation, grow diary, grow app, cannabis app, voice recording, plant timeline, grow reminders, mybud'
     },
     b2b: {
-      title: 'mybud B2B - Validate Your Brand in Real Cultivation | Data & Social Proof',
-      description: 'Turn growers into ambassadors. Real usage data, authentic social proof and adoption metrics for brands, manufacturers and cannabis associations.',
+      title: 'mybud B2B - Validate Your Brand in Real Cultivation | Usage Insights & Social Proof',
+      description: 'Turn growers into ambassadors. Real insights on how they use your products, authentic social proof and adoption metrics for brands, manufacturers and cannabis associations.',
       url: 'https://lp.mybud.app/en/b2b',
       locale: 'en_US',
-      keywords: 'cannabis marketing, B2B cannabis, cultivation data, social proof, brand ambassadors, cannabis supplies'
+      keywords: 'cannabis marketing, B2B cannabis, product usage insights, social proof, brand ambassadors, cannabis supplies'
     }
   },
   es: {
@@ -60,11 +60,11 @@ const seoContent = {
       keywords: 'cultivo cannabis, diario cultivo, app grow, app cannabis, grabación voz, timeline plantas, recordatorios cultivo, mybud'
     },
     b2b: {
-      title: 'mybud B2B - Valida Tu Marca en el Cultivo Real | Datos y Prueba Social',
-      description: 'Convierte cultivadores en embajadores. Datos reales de uso, prueba social auténtica y métricas de adopción para marcas, fabricantes y asociaciones cannábicas.',
+      title: 'mybud B2B - Valida Tu Marca en el Cultivo Real | Insights de Uso y Prueba Social',
+      description: 'Convierte cultivadores en embajadores. Insights reales de cómo usan tus productos, prueba social auténtica y métricas de adopción para marcas, fabricantes y asociaciones cannábicas.',
       url: 'https://lp.mybud.app/es/b2b',
       locale: 'es_ES',
-      keywords: 'marketing cannabis, B2B cannabis, datos cultivo, prueba social, embajadores marca, insumos cannabis'
+      keywords: 'marketing cannabis, B2B cannabis, uso productos cultivo, prueba social, embajadores marca, insumos cannabis'
     }
   }
 };
@@ -75,7 +75,7 @@ const seoContent = {
  */
 function replaceEnvVars(html) {
   // Get env vars from wrangler.json or process.env
-  const GA_ID = process.env.VITE_GA_MEASUREMENT_ID || 'G-M1N4DR4ZZ6';
+  const GA_ID = process.env.VITE_GA_MEASUREMENT_ID || 'G-CM13QM5GHG';
   
   // Replace %VITE_GA_MEASUREMENT_ID% with actual value
   html = html.replace(/%VITE_GA_MEASUREMENT_ID%/g, GA_ID);

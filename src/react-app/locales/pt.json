@@ -8,7 +8,7 @@
       "primaryCta": "Quero meu kit Mybud + acesso Premium",
       "secondaryCta": "Assistir à demo curta (2 min)",
       "trustElement": "Cada Founder Kit garante acesso antecipado ao Mybud + kit com boné, camiseta, 2 piteiras e adesivos. Estoque limitado: acabou, acabou.",
-      "counter": "Só 72 Founder Kits restantes",
+      "counter": "Só {count} Founder Kits restantes",
       "badges": "Privacidade primeiro • Dados anônimos • iOS & Android (em breve)",
       "alertBar": "Junte-se aos primeiros growers: o Mybud ainda está em beta, mas quem entra agora tem prioridade, voz ativa nas melhorias e acesso premium garantido.",
       "phone": {
@@ -173,19 +173,19 @@
         "eta": "Lançamento previsto: dezembro"
       },
       "priority": {
-        "chip": "Acesso Prioritário",
-        "title": "Chega junto com o Founder Kit",
-        "description": "Hey, aqui é o Vinicius, fundador do Mybud. Estamos a todo vapor construindo o app pra quem cultiva cannabis e queremos você no time desde já. Garante o Founder Kit e leva:",
-        "price": "R$ 290",
+        "chip": "Pré-venda • Acesso Prioritário",
+        "title": "Reserve seu Founder Kit agora",
+        "description": "Hey, aqui é o Vinicius, fundador do Mybud. Estamos a todo vapor construindo o app pra quem cultiva cannabis e queremos você no time desde já. Reserve seu Founder Kit e garanta:",
+        "price": "R$ {price}",
         "benefits": {
           "premium": "6 meses de Premium liberados no lançamento",
           "physicalKit": "Kit físico raiz (boné, camiseta, 2 piteiras e adesivos)",
           "immediateAccess": "Acesso liberado assim que o app estiver no ar",
           "priorityFeedback": "Lugar no grupo fechado pra cocriar com a gente"
         },
-        "cta": "Quero meu Founder Kit",
-        "counter": "Restam 72 kits neste lote.",
-        "microcopy": "Acabou o lote, acabou a chance."
+        "cta": "Reservar meu kit",
+        "counter": "Restam {count} kits neste lote de pré-venda.",
+        "microcopy": "Pré-venda limitada. Acabou o lote, acabou a chance."
       },
       "free": {
         "title": "Quer só entrar na lista?",
@@ -244,18 +244,20 @@
       "counter": "Lote atual: só {count} disponíveis",
       "microcopy": "Cada kit dá direito a entrada antecipada, até 6 meses Premium grátis e itens exclusivos.",
       "cta": "Quero meu kit Mybud + acesso Premium",
-      "kit": {
-        "bud": {
-          "name": "Kit Mybud",
-          "price": "R$ 290",
-          "benefits": [
-            "Boné exclusivo Mybud",
-            "Camiseta oficial Mybud",
-            "2 piteiras colecionáveis Mybud",
-            "Adesivos Mybud"
-          ]
-        }
-      }
+      "kitName": "Kit mybud",
+      "founderEdition": "Founder Edition",
+      "oneTimePayment": "Pagamento único",
+      "whatsIncluded": "O que vem no kit:",
+      "items": {
+        "cap": "Boné exclusivo",
+        "capDetail": "mybud (edição limitada)",
+        "shirt": "Camiseta oficial",
+        "shirtDetail": "mybud (edição limitada)",
+        "tips": "2 piteiras",
+        "tipsDetail": "colecionáveis mybud"
+      },
+      "limitedEdition": "Edição limitada:",
+      "kitsRemaining": "kits restantes"
     },
     "ctaFinal": {
       "title": "Chega de perder rega, fase e colheita.",
@@ -289,7 +291,6 @@
       },
       "privacy": "Política de Privacidade",
       "terms": "Termos de Uso",
-      "eula": "EULA",
       "contact": "Contato",
       "legalNotice": "O Mybud é uma ferramenta de organização e registro. Respeite a legislação local.",
       "copyright": "© 2024 Mybud. Todos os direitos reservados."
@@ -302,7 +303,9 @@
         "associations": "Associações",
         "kit": "Kit Founder"
       },
-      "cta": "Garanta seu KIT"
+      "cta": "Garanta seu KIT",
+      "switchToB2B": "Para empresas",
+      "switchToB2C": "Para você"
     },
     "themeSelector": {
       "title": "Testar Cores",
@@ -415,13 +418,122 @@
           "description": "Com base no estágio atual, o Mybud estima quando você vai colher. Planeje secagem, cura e armazenamento com antecedência."
         }
       }
+    },
+    "insights": {
+      "badge": "Inteligência do mybud",
+      "title": "Seu parceiro",
+      "titleHighlight": "de cultivo pessoal",
+      "altImage": "Ilustração do Budzinho, seu parceiro de cultivo",
+      "subtitle": "Conheça o Budzinho: o parceiro que já cultivou muita planta e acompanha você do início ao fim, trazendo apoio humano em cada ciclo.",
+      "description": "Ele combina experiência prática com a inteligência do mybud para entregar insights personalizados para suas plantas, fases e ambiente.",
+      "smartRecommendations": "Recomendações inteligentes",
+      "contextInsights": "Insights com contexto",
+      "contextDescription": "As orientações consideram a fase da planta, semana do cultivo, métricas do ambiente e atividades recentes. É como ter um mestre grower acompanhando 24/7.",
+      "features": {
+        "byStage": {
+          "title": "Por estágio",
+          "description": "Orientações diferentes para plantas em vegetativo ou floração"
+        },
+        "monitoring": {
+          "title": "Monitoramento de métricas",
+          "description": "Alertas quando temperatura, umidade ou VPD saem da faixa ideal"
+        },
+        "detection": {
+          "title": "Detecção de problemas",
+          "description": "Identifica padrões que indicam estresse ou falta de nutrientes"
+        },
+        "learning": {
+          "title": "Aprendizado contínuo",
+          "description": "Entenda por que as métricas importam e as melhores práticas de cada fase"
+        }
+      },
+      "howItWorks": "Como o mybud orienta você",
+      "steps": {
+        "step1": {
+          "title": "Você registra as atividades",
+          "description": "Registre regas, métricas e observações por voz ou manualmente"
+        },
+        "step2": {
+          "title": "O motor analisa",
+          "description": "O motor avalia estágio, métricas e padrões com base em 1000+ regras de especialistas"
+        },
+        "step3": {
+          "title": "Receba recomendações",
+          "description": "Receba insights práticos e no momento certo para o seu cultivo"
+        }
+      },
+      "stats": {
+        "expertRules": "Regras de especialistas",
+        "metrics": "Métricas acompanhadas",
+        "stages": "Fases de crescimento",
+        "monitoring": "Monitoramento"
+      },
+      "ctaText": "Pare de adivinhar. Cultive com",
+      "ctaHighlight": "a confiança inteligente do mybud",
+      "ctaButton": "Ativar orientações inteligentes"
+    },
+    "activityFeed": {
+      "title": "Atividades recentes",
+      "liveBadge": "Atualizando ao vivo",
+      "viewAll": "Ver todas as atividades",
+      "activities": {
+        "watering": {
+          "title": "Rega",
+          "entity": "Blue Dream",
+          "details": "500 ml • pH 6,5",
+          "time": "Há 2 horas"
+        },
+        "metric": {
+          "title": "Temperatura: 26°C",
+          "entity": "Estufa interna",
+          "details": "Umidade: 60% • VPD: 1,1",
+          "time": "Há 5 horas"
+        },
+        "training": {
+          "title": "Treinamento LST",
+          "entity": "Gorilla Glue",
+          "details": "Semana 3 em vegetativo",
+          "time": "Há 1 dia"
+        },
+        "note": {
+          "title": "Nova anotação",
+          "entity": "Todas as plantas",
+          "details": "Plantas saudáveis, cor excelente",
+          "time": "Há 1 dia"
+        },
+        "stage": {
+          "title": "Início da floração",
+          "entity": "OG Kush",
+          "details": "Dia 1 da fase de floração",
+          "time": "Há 2 dias"
+        }
+      }
+    },
+    "insightCards": {
+      "insights": {
+        "highTemp": {
+          "message": "Temperatura acima de 32°C — aumente a ventilação para manter o vigor",
+          "action": "Ajustar clima"
+        },
+        "week6": {
+          "message": "Semana 6 de floração — momento perfeito para checar o desenvolvimento dos tricomas",
+          "action": "Registrar tricomas"
+        },
+        "vpd": {
+          "message": "VPD na faixa ideal (0,8-1,2) — condições excelentes de cultivo"
+        },
+        "lst": {
+          "message": "Suas plantas no vegetativo estão voando! Considere LST para melhorar a estrutura",
+          "action": "Ver como fazer"
+        }
+      }
     }
   },
   "b2b": {
     "seo": {
-      "title": "Mybud B2B — Dados que validam produtos e impulsionam vendas.",
-      "description": "Do cultivo diário às decisões estratégicas: o Mybud coloca sua marca na rotina do grower e entrega métricas acionáveis para insumos, equipamentos e associações.",
-      "ogImageAlt": "Interface do Mybud mostrando dados de uso real e sugestões de produto."
+      "title": "Mybud B2B — Insights de uso que validam produtos e impulsionam vendas.",
+      "description": "Do cultivo diário às decisões estratégicas: o Mybud coloca sua marca na rotina do grower e mostra como cultivadores usam seus produtos através de métricas acionáveis.",
+      "ogImageAlt": "Interface do Mybud mostrando insights de uso real e recomendações de produto."
     },
     "header": {
       "languageSelector": "Idioma",
@@ -430,18 +542,20 @@
         "beta": "Parcerias",
         "contact": "Contato"
       },
-      "cta": "Agendar conversa"
+      "cta": "Agendar conversa",
+      "switchToB2B": "Para empresas",
+      "switchToB2C": "Para você"
     },
     "hero": {
       "overline": "Parcerias fundadoras Mybud",
-      "title1": "Dados que validam produtos e impulsionam vendas.",
+      "title1": "Insights de uso que validam produtos e impulsionam vendas.",
       "title2": "",
       "title3": "",
-      "subtitle": "Do cultivo diário às decisões estratégicas, o My Bud transforma a rotina do grower em métricas acionáveis, fortalecendo marcas de insumos, fabricantes de equipamentos e associações canábicas.",
+      "subtitle": "Do cultivo diário às decisões estratégicas, o My Bud mostra como growers usam seus produtos e transforma a rotina deles em métricas de performance acionáveis, fortalecendo marcas de insumos, fabricantes de equipamentos e associações canábicas.",
       "graphHighlights": [
         "Conteúdo relevante na rotina real",
         "Reconhecimento e prova de uso",
-        "Decisões baseadas em dados",
+        "Decisões baseadas em uso real",
         "Crescimento comprovado em vendas",
         "Parcerias sólidas de longo prazo"
       ],
@@ -478,7 +592,7 @@
     },
     "problem": {
       "title": "O marketing e a gestão na cannabis estão travados.",
-      "description": "Anúncios restritos, métricas superficiais e relatórios manuais impedem marcas de crescer com segurança. O Mybud muda esse jogo — posiciona sua marca dentro da rotina de quem cultiva e entrega dados reais, éticos e rastreáveis para a indústria, equipamentos e associações.",
+      "description": "Anúncios restritos, métricas superficiais e relatórios manuais impedem marcas de crescer com segurança. O Mybud muda esse jogo — posiciona sua marca dentro da rotina de quem cultiva e mostra como cultivadores realmente usam seus produtos através de insights reais, éticos e rastreáveis.",
       "cta": "Agende uma conversa.",
       "widget": {
         "title": "Indicadores do Hub",
@@ -507,8 +621,8 @@
       "title": "Simples, direto e eficiente.",
       "subtitle": "Sua marca dentro do cultivo real.",
       "step1": {
-        "title": "Dados que importam",
-        "desc": "Seu protocolo ou tabela vira cronograma interativo no app. O grower recebe tarefas; você acompanha adesão, abandono e recompra."
+        "title": "Rastreie o uso real",
+        "desc": "Seu protocolo ou tabela vira cronograma interativo no app. O grower recebe tarefas; você acompanha como usam seus produtos através de métricas de adesão, adoção e recompra."
       },
       "step2": {
         "title": "Uso visível e útil",
@@ -524,8 +638,8 @@
       }
     },
     "socialProof": {
-      "title": "Mais que dados: prova social.",
-      "description": "Valide seus protocolos em cultivos coletivos ou patrocine growers influenciadores estratégicos. Com dados e evidências reais, você cria cases sólidos, comprova resultados e fortalece seu portfólio comercial.",
+      "title": "Mais que métricas: prova social.",
+      "description": "Valide seus protocolos em cultivos coletivos ou patrocine growers influenciadores estratégicos. Rastreando como growers usam seus produtos, você cria cases sólidos, comprova resultados e fortalece seu portfólio comercial.",
       "features": {
         "validation": {
           "title": "Conteúdo relevante na rotina real",
@@ -544,7 +658,7 @@
     },
     "partnershipTypes": {
       "title": "O Mybud conecta toda a cadeia do cultivo.",
-      "subtitle": "Ativamos cada elo com dados, evidências e inteligência acionável.",
+      "subtitle": "Ativamos cada elo com insights de uso, evidências e inteligência acionável.",
       "seeds": {
         "title": "Sementes & breeders",
         "description": "Catálogo vivo no app, atualizado em tempo real pelos growers."
@@ -555,7 +669,7 @@
       },
       "equipment": {
         "title": "Equipamentos",
-        "description": "LEDs, tendas e ventiladores aparecem no setup com dados de uso registrado."
+        "description": "LEDs, tendas e ventiladores aparecem no setup com uso documentado e rastreamento de performance do produto."
       },
       "devices": {
         "title": "Dispositivos inteligentes",
@@ -571,7 +685,7 @@
       }
     },
     "associationsSection": {
-      "title": "Gestão eficiente e dados padronizados para associações canábicas.",
+      "title": "Gestão eficiente e relatórios padronizados para associações canábicas.",
       "subtitle": "Simplifique o manejo, padronize relatórios e gere rastreabilidade em tempo real — tudo dentro do Mybud.",
       "description": "Do cultivo individual ao coletivo, garantimos evidências agronômicas e clínicas alinhadas ao compliance.",
       "features": {
@@ -581,7 +695,7 @@
         },
         "reports": {
           "title": "Relatórios automatizados",
-          "desc": "Dados médicos e agronômicos em poucos cliques, sempre prontos para auditoria."
+          "desc": "Relatórios médicos e agronômicos em poucos cliques, sempre prontos para auditoria."
         },
         "traceability": {
           "title": "Rastreabilidade e compliance",
@@ -604,8 +718,8 @@
       "cta": "Agendar conversa e receber diagnóstico para associações."
     },
     "metrics": {
-      "title": "Métricas que contam.",
-      "description": "Estamos construindo cases com parceiros fundadores. Os primeiros resultados já mostram o potencial:",
+      "title": "Métricas de uso que contam.",
+      "description": "Estamos construindo cases com parceiros fundadores mostrando como growers usam seus produtos. Os primeiros resultados já mostram o potencial:",
       "stats": {
         "repurchase": {
           "value": "+XX%",
@@ -627,8 +741,8 @@
       "subtitle": "Se a pergunta não estiver aqui, conte pra gente no formulário.",
       "visible": {
         "q1": {
-          "q": "Que dados recebo?",
-          "a": "Adesão, abandono, recompra, relatórios médicos e provas visuais."
+          "q": "Que insights de uso recebo?",
+          "a": "Taxas de adoção do produto, padrões de uso, comportamento de recompra, relatórios de performance e evidências visuais de como growers usam seus produtos."
         },
         "q2": {
           "q": "Como a marca aparece?",
@@ -650,7 +764,7 @@
     },
     "finalCta": {
       "title": "Pronto para validar sua marca no cultivo real?",
-      "subtitle": "Seja parceiro fundador e transforme dados em resultados comprovados.",
+      "subtitle": "Seja parceiro fundador e veja como growers usam seus produtos para gerar resultados comprovados.",
       "description": "Preencha os dados e retornamos com um diagnóstico inicial em até 1 dia útil.",
       "form": {
         "namePlaceholder": "Nome",
@@ -693,7 +807,6 @@
       "links": {
         "privacy": "Política de Privacidade",
         "terms": "Termos de Uso",
-        "eula": "EULA",
         "contact": "Contato",
         "b2c": "Página para growers"
       },

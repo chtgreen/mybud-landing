@@ -141,3 +141,4 @@ Depois de executar este script:
 **Dificuldade:** 🟢 Fácil (copiar e colar)  
 **Resultado:** ✅ Database 100% funcional
 
+

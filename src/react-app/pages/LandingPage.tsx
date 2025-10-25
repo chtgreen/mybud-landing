@@ -27,7 +27,8 @@ const LandingPage = () => {
   const [betaModalOpen, setBetaModalOpen] = useState(false);
   const { isLoading, changeLanguage, currentLanguage } = useLanguage();
   const navigate = useNavigate();
-  const remainingKits = 72; // This could be fetched from an API
+  const remainingKits = Number(import.meta.env.VITE_KIT_REMINDER) || 47;
+  const kitPrice = Number(import.meta.env.VITE_KIT_PRICE) || 249;
   
   // Check if video mode is enabled via query parameter
   const searchParams = new URLSearchParams(window.location.search);
@@ -78,7 +79,7 @@ const LandingPage = () => {
       <SEO pageType="b2c" />
       <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
-      <Hero onCTAClick={handleCTAClick} showSecondaryCta={showVideo} /> {/* Section 1: Hero organic */}
+      <Hero onCTAClick={handleCTAClick} showSecondaryCta={showVideo} remainingKits={remainingKits} /> {/* Section 1: Hero organic */}
       <ProblemSection /> {/* Section 2: O problema sem distracoes */}
       <VoiceNotesSection onCTAClick={handleCTAClick} /> {/* Section 3: Voice Notes - Killer Feature */}
       <PlantTimelineSection /> {/* Section 4: Plant Journey Timeline */}
@@ -87,7 +88,7 @@ const LandingPage = () => {
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
       {showVideo && <DemoSection background="white" onJoinBeta={handleBetaClick} />} {/* Section 8: Demo - Shown when ?video=true */}
       <Testimonials background="white" growerCount={50} /> {/* Section 9: Prova social */}
-      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} /> {/* Section 11: Founder Kit */}
+      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} kitPrice={kitPrice} /> {/* Section 11: Founder Kit */}
       <Associations background="white" onCTAClick={handleAssociationsClick} /> {/* Section 12: Associações */}
       <CtaFinalSection
         onKitClick={handleCTAClick}
@@ -103,6 +104,8 @@ const LandingPage = () => {
       <BetaModal
         open={betaModalOpen}
         onClose={() => setBetaModalOpen(false)}
+        remainingKits={remainingKits}
+        kitPrice={kitPrice}
       />
     </div>
   );

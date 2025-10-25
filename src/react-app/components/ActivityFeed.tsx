@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import type { LucideIcon } from './icons';
+import { t } from '../lib/i18n';
 import {
   Droplet,
   Flower2,
@@ -23,15 +24,15 @@ interface Activity {
   entityIconClass?: string;
 }
 
-const activities: Activity[] = [
+const getActivities = (): Activity[] => [
   { 
     type: "watering", 
     icon: Droplet, 
-    title: "Rega", 
-    entity: "Blue Dream",
+    title: t('activityFeed.activities.watering.title'), 
+    entity: t('activityFeed.activities.watering.entity'),
     entityIcon: Sprout,
-    details: "500 ml • pH 6,5",
-    time: "Há 2 horas", 
+    details: t('activityFeed.activities.watering.details'),
+    time: t('activityFeed.activities.watering.time'), 
     borderColor: "border-l-emerald-500",
     entityBg: "bg-emerald-100 text-emerald-700",
     iconClass: "text-emerald-600",
@@ -40,11 +41,11 @@ const activities: Activity[] = [
   { 
     type: "metric", 
     icon: Thermometer, 
-    title: "Temperatura: 26°C", 
-    entity: "Estufa interna",
+    title: t('activityFeed.activities.metric.title'), 
+    entity: t('activityFeed.activities.metric.entity'),
     entityIcon: Flower2,
-    details: "Umidade: 60% • VPD: 1,1",
-    time: "Há 5 horas", 
+    details: t('activityFeed.activities.metric.details'),
+    time: t('activityFeed.activities.metric.time'), 
     borderColor: "border-l-blue-500",
     entityBg: "bg-blue-100 text-blue-700",
     iconClass: "text-blue-600",
@@ -53,11 +54,11 @@ const activities: Activity[] = [
   { 
     type: "training", 
     icon: Scissors, 
-    title: "Treinamento LST", 
-    entity: "Gorilla Glue",
+    title: t('activityFeed.activities.training.title'), 
+    entity: t('activityFeed.activities.training.entity'),
     entityIcon: Sprout,
-    details: "Semana 3 em vegetativo",
-    time: "Há 1 dia", 
+    details: t('activityFeed.activities.training.details'),
+    time: t('activityFeed.activities.training.time'), 
     borderColor: "border-l-purple-500",
     entityBg: "bg-emerald-100 text-emerald-700",
     iconClass: "text-purple-600",
@@ -66,11 +67,11 @@ const activities: Activity[] = [
   { 
     type: "note", 
     icon: NotebookPen, 
-    title: "Nova anotação", 
-    entity: "Todas as plantas",
+    title: t('activityFeed.activities.note.title'), 
+    entity: t('activityFeed.activities.note.entity'),
     entityIcon: Sprout,
-    details: "Plantas saudáveis, cor excelente",
-    time: "Há 1 dia", 
+    details: t('activityFeed.activities.note.details'),
+    time: t('activityFeed.activities.note.time'), 
     borderColor: "border-l-gray-400",
     entityBg: "bg-gray-100 text-gray-700",
     iconClass: "text-gray-600",
@@ -79,11 +80,11 @@ const activities: Activity[] = [
   { 
     type: "stage", 
     icon: Flower2, 
-    title: "Início da floração", 
-    entity: "OG Kush",
+    title: t('activityFeed.activities.stage.title'), 
+    entity: t('activityFeed.activities.stage.entity'),
     entityIcon: Sprout,
-    details: "Dia 1 da fase de floração",
-    time: "Há 2 dias", 
+    details: t('activityFeed.activities.stage.details'),
+    time: t('activityFeed.activities.stage.time'), 
     borderColor: "border-l-amber-500",
     entityBg: "bg-emerald-100 text-emerald-700",
     iconClass: "text-amber-500",
@@ -98,6 +99,7 @@ interface ActivityFeedProps {
 }
 
 export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onViewAll }) => {
+  const activities = getActivities();
   const displayActivities = limit ? activities.slice(0, limit) : activities;
 
   const handleViewAllClick = () => {
@@ -115,10 +117,10 @@ export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onV
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h3 className="font-bold text-xl md:text-2xl text-gray-900">
-          Atividades recentes
+          {t('activityFeed.title')}
         </h3>
         <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full font-medium">
-          Atualizando ao vivo
+          {t('activityFeed.liveBadge')}
         </span>
       </div>
 
@@ -184,7 +186,7 @@ export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onV
           onClick={handleViewAllClick}
           className="text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline"
         >
-          Ver todas as atividades →
+          {t('activityFeed.viewAll')} →
         </button>
       </div>
     </div>

@@ -125,6 +125,8 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
   ].join(' ');
 
   const logoHref = isB2B ? `/${currentLanguage}/b2b` : `/${currentLanguage}`;
+  const switchPageHref = isB2B ? `/${currentLanguage}` : `/${currentLanguage}/b2b`;
+  const switchPageLabel = isB2B ? t('header.switchToB2C') : t('header.switchToB2B');
 
   return (
     <header className={headerClasses}>
@@ -151,6 +153,17 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
                 {item.label}
               </button>
             ))}
+            
+            {/* Page Switch Link */}
+            <a
+              href={switchPageHref}
+              className={`${navButtonClass} inline-flex items-center gap-1`}
+            >
+              {switchPageLabel}
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </nav>
 
           {/* Action area */}
@@ -223,6 +236,18 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
                     {item.label}
                   </button>
                 ))}
+                
+                {/* Mobile Page Switch Link */}
+                <a
+                  href={switchPageHref}
+                  className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-[#288664] hover:bg-gray-100 transition-colors inline-flex items-center justify-between"
+                >
+                  {switchPageLabel}
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+                
                 <div className="mt-3 border-t border-gray-200 pt-3">
                   <button
                     type="button"

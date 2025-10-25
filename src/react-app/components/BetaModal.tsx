@@ -7,12 +7,14 @@ import { t } from '../lib/i18n';
 interface BetaModalProps {
   open: boolean;
   onClose: () => void;
+  remainingKits?: number;
+  kitPrice?: number;
 }
 
 type SubmissionStatus = 'idle' | 'success' | 'error';
 
 const SHOP_URL =
-  'https://store.mybud.app/?utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
+  'https://store.mybud.app/products/founder-kit-mybud-o-app-que-cresce-com-voce?variant=48038522585330&utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
 
 const priorityBenefits = [
   'betaModal.priority.benefits.premium',
@@ -21,7 +23,7 @@ const priorityBenefits = [
   'betaModal.priority.benefits.priorityFeedback'
 ] as const;
 
-const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
+const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitPrice = 249 }) => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -207,7 +209,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                   </p>
                 </div>
                 <div className="text-3xl font-semibold text-gray-900">
-                  {t('betaModal.priority.price')}
+                  {t('betaModal.priority.price').replace('{price}', kitPrice.toString())}
                 </div>
                 <ul className="space-y-3 text-sm text-gray-700">
                   {priorityBenefits.map((benefitKey) => (
@@ -244,7 +246,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose }) => {
                   {t('betaModal.priority.cta')}
                 </button>
                 <div className="text-xs text-gray-600">
-                  <div>{t('betaModal.priority.counter')}</div>
+                  <div>{t('betaModal.priority.counter').replace('{count}', remainingKits.toString())}</div>
                   <div className="text-gray-500 mt-1">
                     {t('betaModal.priority.microcopy')}
                   </div>

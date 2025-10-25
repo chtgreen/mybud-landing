@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { PlantTimeline } from './PlantTimeline';
 import { SproutIcon } from './icons/LucideStageIcons';
+import { t } from '../lib/i18n';
 
 const PlantTimelineSection: FC = () => {
   return (
@@ -26,19 +27,18 @@ const PlantTimelineSection: FC = () => {
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-purple-200/60 text-purple-600">
               <SproutIcon className="h-4 w-4" />
             </span>
-            <span className="text-sm font-medium text-purple-700">Jornada completa</span>
+            <span className="text-sm font-medium text-purple-700">{t('plantTimeline.badge')}</span>
           </div>
 
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
-            Da semente à colheita,<br />
-            <span className="text-emerald-600">cada etapa monitorada</span>
+            {t('plantTimeline.title1')}<br />
+            <span className="text-emerald-600">{t('plantTimeline.title2')}</span>
           </h2>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Acompanhe todo o ciclo da planta com uma timeline visual.
-            Nunca mais se perca em que fase está o cultivo.
+            {t('plantTimeline.subtitle')}
           </p>
         </div>
 
@@ -73,11 +73,10 @@ const PlantTimelineSection: FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-black mb-3">
-              Marcos do cultivo
+              {t('plantTimeline.features.visual.title')}
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Acompanhe transições importantes: quando fez topping, quando a floração começou,
-              quando os tricomas ficaram âmbar. A história completa do seu cultivo.
+              {t('plantTimeline.features.visual.description')}
             </p>
           </div>
 
@@ -89,11 +88,10 @@ const PlantTimelineSection: FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-black mb-3">
-              Insights por estágio
+              {t('plantTimeline.features.predict.title')}
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Receba recomendações alinhadas ao estágio atual. 
-              O mybud destaca o que acompanhar e o que realmente importa agora.
+              {t('plantTimeline.features.predict.description')}
             </p>
           </div>
         </div>

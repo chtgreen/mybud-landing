@@ -20,3 +20,4 @@ FROM pg_tables
 WHERE schemaname = 'public' 
 AND tablename IN ('beta_signups', 'b2b_leads');
 
+

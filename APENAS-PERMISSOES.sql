@@ -39,3 +39,4 @@ SELECT tablename, policyname
 FROM pg_policies 
 WHERE tablename IN ('beta_signups', 'b2b_leads');
 
+

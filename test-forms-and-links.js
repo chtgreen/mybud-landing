@@ -152,14 +152,14 @@ async function runTests() {
   // ==========================================
   section('3. SHOP LINK TESTS');
   
-  const shopUrl = 'https://store.mybud.app/?utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
+  const shopUrl = 'https://store.mybud.app/products/founder-kit-mybud-o-app-que-cresce-com-voce?variant=48038522585330&utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
   
-  checkFileContent(betaModalPath, shopUrl, 'Shop URL with UTM parameters');
+  checkFileContent(betaModalPath, 'store.mybud.app/products/founder-kit-mybud-o-app-que-cresce-com-voce', 'Shop URL points to founder kit product');
   checkFileContent(betaModalPath, 'window.open(SHOP_URL, \'_blank\', \'noopener,noreferrer\')', 'Secure window.open');
   checkFileContent(betaModalPath, 'priority_access_clicked', 'PostHog tracking before redirect');
   
   info('Testing shop URL accessibility...');
-  await testURL('https://store.mybud.app/', 'Shopify store accessibility');
+  await testURL('https://store.mybud.app/products/founder-kit-mybud-o-app-que-cresce-com-voce?variant=48038522585330', 'Shopify founder kit product page');
 
   // ==========================================
   // 4. APP STORE LINKS

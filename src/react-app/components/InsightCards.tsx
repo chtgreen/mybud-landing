@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import type { LucideIcon } from './icons';
+import { t } from '../lib/i18n';
 import { AlertTriangle, CheckCircle2, Lightbulb, Sprout } from './icons';
 
 interface Insight {
@@ -9,29 +10,29 @@ interface Insight {
   action?: string;
 }
 
-const insights: Insight[] = [
+const getInsights = (): Insight[] => [
   { 
     type: "warning", 
     icon: AlertTriangle, 
-    message: "Temperatura acima de 32°C — aumente a ventilação para manter o vigor",
-    action: "Ajustar clima"
+    message: t('insightCards.insights.highTemp.message'),
+    action: t('insightCards.insights.highTemp.action')
   },
   { 
     type: "info", 
     icon: Lightbulb, 
-    message: "Semana 6 de floração — momento perfeito para checar o desenvolvimento dos tricomas",
-    action: "Registrar tricomas"
+    message: t('insightCards.insights.week6.message'),
+    action: t('insightCards.insights.week6.action')
   },
   { 
     type: "success", 
     icon: CheckCircle2, 
-    message: "VPD na faixa ideal (0,8-1,2) — condições excelentes de cultivo",
+    message: t('insightCards.insights.vpd.message'),
   },
   { 
     type: "info", 
     icon: Sprout, 
-    message: "Suas plantas no vegetativo estão voando! Considere LST para melhorar a estrutura",
-    action: "Ver como fazer"
+    message: t('insightCards.insights.lst.message'),
+    action: t('insightCards.insights.lst.action')
   },
 ];
 
@@ -72,6 +73,7 @@ interface InsightCardsProps {
 }
 
 export const InsightCards: FC<InsightCardsProps> = ({ className = '', limit }) => {
+  const insights = getInsights();
   const displayInsights = limit ? insights.slice(0, limit) : insights;
   
   return (

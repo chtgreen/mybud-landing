@@ -5,12 +5,14 @@ interface FounderKitSectionProps {
   background?: 'white' | 'gray';
   onCTAClick: () => void;
   remainingKits?: number;
+  kitPrice?: number;
 }
 
 const FounderKitSection: FC<FounderKitSectionProps> = ({ 
   background = 'white', 
   onCTAClick,
-  remainingKits = 72 
+  remainingKits = 72,
+  kitPrice = 249
 }) => {
   const bgClass = background === 'gray' ? 'bg-gray-50' : 'bg-white';
 
@@ -35,44 +37,38 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-bold mb-1">
-                    Kit mybud
+                    {t('founderKit.kitName')}
                   </h3>
-                  <p className="text-emerald-100">Founder Edition</p>
+                  <p className="text-emerald-100">{t('founderKit.founderEdition')}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">R$ 290</div>
-                  <p className="text-sm text-emerald-100">Pagamento único</p>
+                  <div className="text-3xl font-bold">R$ {kitPrice}</div>
+                  <p className="text-sm text-emerald-100">{t('founderKit.oneTimePayment')}</p>
                 </div>
               </div>
             </div>
 
             {/* Kit Benefits */}
             <div className="p-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">O que vem no kit:</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('founderKit.whatsIncluded')}</h4>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Boné exclusivo</strong> mybud (edição limitada)</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">{t('founderKit.items.cap')}</strong> {t('founderKit.items.capDetail')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Camiseta oficial</strong> mybud (edição limitada)</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">{t('founderKit.items.shirt')}</strong> {t('founderKit.items.shirtDetail')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">2 piteiras</strong> colecionáveis mybud</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#288664] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700"><strong className="text-gray-900">Adesivos</strong> mybud para o grow</span>
+                  <span className="text-gray-700"><strong className="text-gray-900">{t('founderKit.items.tips')}</strong> {t('founderKit.items.tipsDetail')}</span>
                 </li>
               </ul>
 
@@ -97,7 +93,7 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
           {/* Limited Availability Notice */}
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-600">
-              <span className="font-semibold text-gray-900">Edição limitada:</span> {remainingKits} kits restantes
+              <span className="font-semibold text-gray-900">{t('founderKit.limitedEdition')}</span> {remainingKits} {t('founderKit.kitsRemaining')}
             </p>
           </div>
         </div>
