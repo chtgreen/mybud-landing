@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Language, isB2B as isB2BContext, t } from '../lib/i18n';
-import { useLanguage } from '../contexts/LanguageContext';
+import React, { useState, useEffect } from "react";
+import { Language, isB2B as isB2BContext, t } from "../lib/i18n";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface HeaderProps {
   onLanguageChange: (lang: Language) => void;
@@ -8,13 +8,17 @@ interface HeaderProps {
   onCTAClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onCTAClick }) => {
+const Header: React.FC<HeaderProps> = ({
+  onLanguageChange,
+  isB2B: isB2BProp,
+  onCTAClick,
+}) => {
   const [useWhiteLogo, setUseWhiteLogo] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLanguage } = useLanguage();
 
   // Detect if we're in B2B context
-  const isB2B = typeof isB2BProp === 'boolean' ? isB2BProp : isB2BContext();
+  const isB2B = typeof isB2BProp === "boolean" ? isB2BProp : isB2BContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +36,10 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
       setUseWhiteLogo(false);
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isB2B]);
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -45,22 +49,23 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const handleNavClick = (targetId: string) => (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    closeMenu();
-  };
+  const handleNavClick =
+    (targetId: string) => (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      closeMenu();
+    };
 
   const handleCtaClick = () => {
     if (onCTAClick) {
       onCTAClick();
     } else {
-      const kitSection = document.getElementById('kit');
+      const kitSection = document.getElementById("kit");
       if (kitSection) {
-        kitSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        kitSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
     closeMenu();
@@ -68,74 +73,89 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
 
   const navItems = isB2B
     ? [
-        { id: 'features', label: t('header.nav.features') },
-        { id: 'beta', label: t('header.nav.beta') },
-        { id: 'contact', label: t('header.nav.contact') }
-      ]
+      { id: "features", label: t("header.nav.features") },
+      { id: "beta", label: t("header.nav.beta") },
+    ]
     : [
-        { id: 'features', label: t('header.nav.features') },
-        { id: 'beta', label: t('header.nav.beta') },
-        { id: 'associations', label: t('header.nav.associations') },
-        { id: 'kit', label: t('header.nav.kit') }
-      ];
+      { id: "features", label: t("header.nav.features") },
+      { id: "kit", label: t("header.nav.kit") },
+    ];
 
   const isHeroContext = !isB2B && useWhiteLogo && !isMenuOpen;
 
   const headerClasses = [
-    'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out',
-    isHeroContext ? 'bg-transparent' : 'bg-white/95 backdrop-blur-[12px] shadow-md'
-  ].join(' ');
+    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
+    isHeroContext
+      ? "bg-transparent"
+      : "bg-white/95 backdrop-blur-[12px] shadow-md",
+  ].join(" ");
 
   const containerClasses = [
-    'container mx-auto px-4 md:px-6 w-full',
-    isHeroContext ? 'py-2.5 md:py-3.5' : 'py-2 md:py-3'
-  ].join(' ');
+    "container mx-auto px-4 md:px-6 w-full",
+    isHeroContext ? "py-2.5 md:py-3.5" : "py-2 md:py-3",
+  ].join(" ");
 
   const navButtonClass = [
-    'text-sm font-semibold transition-colors',
-    isHeroContext ? 'text-white hover:text-white/80' : 'text-[#288664] hover:text-[#0f5132]'
-  ].join(' ');
+    "text-sm font-semibold transition-colors",
+    isHeroContext
+      ? "text-white hover:text-white/80"
+      : "text-[#288664] hover:text-[#0f5132]",
+  ].join(" ");
 
   const desktopLanguageWrapperClass = isHeroContext
-    ? 'rounded-full px-3 py-1.5 border transition-all hidden sm:block bg-transparent border-transparent'
-    : 'language-selector rounded-full px-3 py-1.5 border transition-all hidden sm:block bg-white border-gray-300';
+    ? "rounded-full px-3 py-1.5 border transition-all hidden sm:block bg-transparent border-transparent"
+    : "language-selector rounded-full px-3 py-1.5 border transition-all hidden sm:block bg-white border-gray-300";
 
   const desktopSelectClass = [
-    'bg-transparent border-none focus:ring-0 text-sm font-medium cursor-pointer text-black'
-  ].join(' ');
+    "bg-transparent border-none focus:ring-0 text-sm font-medium cursor-pointer text-black",
+  ].join(" ");
 
   const mobileLanguageWrapperClass = isHeroContext
-    ? 'rounded-full px-3 py-1.5 border transition-all sm:hidden bg-transparent border-transparent'
-    : 'language-selector rounded-full px-3 py-1.5 border transition-all sm:hidden bg-white border-gray-300';
+    ? "rounded-full px-3 py-1.5 border transition-all sm:hidden bg-transparent border-transparent"
+    : "language-selector rounded-full px-3 py-1.5 border transition-all sm:hidden bg-white border-gray-300";
 
   const mobileSelectClass = [
-    'bg-transparent border-none focus:ring-0 text-sm font-medium cursor-pointer text-black'
-  ].join(' ');
+    "bg-transparent border-none focus:ring-0 text-sm font-medium cursor-pointer text-black",
+  ].join(" ");
 
   const mobileToggleButtonClass = [
-    'md:hidden inline-flex items-center justify-center rounded-full border p-2 transition-colors',
-    isHeroContext ? 'border-white/40 bg-transparent text-white hover:bg-white/10' : 'border-gray-200 bg-white text-gray-700 hover:bg-gray-100'
-  ].join(' ');
+    "md:hidden inline-flex items-center justify-center rounded-full border p-2 transition-colors",
+    isHeroContext
+      ? "border-white/40 bg-transparent text-white hover:bg-white/10"
+      : "border-gray-200 bg-white text-gray-700 hover:bg-gray-100",
+  ].join(" ");
 
   const ctaButtonClass = [
-    'inline-flex items-center justify-center whitespace-nowrap rounded-full px-4 md:px-5 py-1.5 text-sm md:text-base font-semibold transition-colors',
+    "inline-flex items-center justify-center whitespace-nowrap rounded-full px-4 md:px-5 py-1.5 text-sm md:text-base font-semibold transition-colors",
     isHeroContext
-      ? 'bg-transparent border border-white/70 text-white hover:bg-white/15 hover:text-white shadow-[0_6px_18px_rgba(12,83,49,0.25)]'
-      : 'bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none'
-  ].join(' ');
+      ? "bg-transparent border border-white/70 text-white hover:bg-white/15 hover:text-white shadow-[0_6px_18px_rgba(12,83,49,0.25)]"
+      : "bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none",
+  ].join(" ");
 
   const logoHref = isB2B ? `/${currentLanguage}/b2b` : `/${currentLanguage}`;
-  const switchPageHref = isB2B ? `/${currentLanguage}` : `/${currentLanguage}/b2b`;
-  const switchPageLabel = isB2B ? t('header.switchToB2C') : t('header.switchToB2B');
+  const switchPageHref = isB2B
+    ? `/${currentLanguage}`
+    : `/${currentLanguage}/b2b`;
+  const switchPageLabel = isB2B
+    ? t("header.switchToB2C")
+    : t("header.switchToB2B");
 
   return (
     <header className={headerClasses}>
       <div className={containerClasses}>
         <div className="flex items-center justify-between gap-4 relative">
           {/* Logo */}
-          <a href={logoHref} className="flex items-center" aria-label="mybud home">
+          <a
+            href={logoHref}
+            className="flex items-center"
+            aria-label="mybud home"
+          >
             <img
-              src={isHeroContext ? '/mybud-logo-white.svg' : '/mybud-logo-green.svg'}
+              src={
+                isHeroContext
+                  ? "/mybud-logo-white.svg"
+                  : "/mybud-logo-green.svg"
+              }
               alt="mybud logo"
               className="h-8 md:h-12 lg:h-14 w-auto transition-opacity duration-300"
             />
@@ -153,15 +173,25 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
                 {item.label}
               </button>
             ))}
-            
+
             {/* Page Switch Link */}
             <a
               href={switchPageHref}
               className={`${navButtonClass} inline-flex items-center gap-1`}
             >
               {switchPageLabel}
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </a>
           </nav>
@@ -173,7 +203,7 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
               onClick={handleCtaClick}
               className={ctaButtonClass}
             >
-              {t('header.cta')}
+              {t("header.cta")}
             </button>
 
             <div className={desktopLanguageWrapperClass}>
@@ -211,12 +241,32 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
               aria-label="Toggle navigation"
             >
               {isMenuOpen ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -236,25 +286,35 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange, isB2B: isB2BProp, onC
                     {item.label}
                   </button>
                 ))}
-                
+
                 {/* Mobile Page Switch Link */}
                 <a
                   href={switchPageHref}
                   className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-[#288664] hover:bg-gray-100 transition-colors inline-flex items-center justify-between"
                 >
                   {switchPageLabel}
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
-                
+
                 <div className="mt-3 border-t border-gray-200 pt-3">
                   <button
                     type="button"
                     onClick={handleCtaClick}
                     className="w-full inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-semibold text-white bg-[#EB4C80] hover:bg-[#288664] transition-colors shadow-sm"
                   >
-                    {t('header.cta')}
+                    {t("header.cta")}
                   </button>
                 </div>
               </nav>

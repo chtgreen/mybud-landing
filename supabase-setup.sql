@@ -195,3 +195,4 @@ SELECT 'b2b_leads' as tabela, COUNT(*) as total FROM public.b2b_leads;
 -- INSERT INTO public.beta_signups (full_name, email, instagram) VALUES ('Seu Nome', 'seu@email.com', '@seu_insta');
 -- INSERT INTO public.b2b_leads (name, email, company, message) VALUES ('Seu Nome', 'seu@email.com', 'Sua Empresa', 'Teste');
 
+

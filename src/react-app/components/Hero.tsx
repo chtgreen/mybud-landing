@@ -23,11 +23,9 @@ export const HeroContainer: FC<{ theme: 'emerald' | 'white'; children: ReactNode
 
 const IPhoneMockup: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
   
-  // Check if video mode is enabled via query parameter
-  const searchParams = new URLSearchParams(window.location.search);
-  const showVideo = searchParams.get('video') === 'true';
+  // Show video by default now
+  const showVideo = true;
   
   // Screenshots array - add more screenshots here as needed
   const screenshots = [
@@ -41,10 +39,6 @@ const IPhoneMockup: FC = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length);
-  };
-
-  const handlePlayClick = () => {
-    setIsLoading(true);
   };
 
   // Auto-advance carousel every 3 seconds if there are multiple screenshots
@@ -67,48 +61,27 @@ const IPhoneMockup: FC = () => {
         {/* Dynamic Island */}
         <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-20 h-5 bg-black rounded-full z-20"></div>
 
-        {/* Video/Screenshot Container - More Vertical Aspect */}
-        <div className="relative bg-black w-full aspect-[9/19.5] overflow-hidden rounded-[2rem] shadow-inner">
+        {/* Video/Screenshot Container - 9:20 Aspect Ratio to match video */}
+        <div className="relative bg-black w-full aspect-[9/20] overflow-hidden rounded-[2rem] shadow-inner">
           
           {showVideo ? (
-            /* Video Player Mode - Activated with ?video=true */
-            <>
-              {!isLoading ? (
-                /* Play Button State */
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center cursor-pointer group" onClick={handlePlayClick}>
-                  <div className="relative">
-                    {/* Play button circle */}
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300 border border-white/20">
-                      {/* Play icon */}
-                      <svg 
-                        className="w-6 h-6 text-white ml-1" 
-                        viewBox="0 0 24 24" 
-                        fill="currentColor"
-                      >
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    
-                    {/* Pulsing rings around play button */}
-                    <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
-                    <div className="absolute inset-0 rounded-full border-2 border-white/10 animate-ping" style={{ animationDelay: '500ms' }}></div>
-                  </div>
-                </div>
-              ) : (
-                /* Loading Spinner State */
-                <div className="absolute inset-0 bg-black flex flex-col items-center justify-center gap-4">
-                  {/* Pulsing rings */}
-                  <div className="relative">
-                    <span className="absolute inset-0 rounded-full border-2 border-emerald-500/30 animate-ping"></span>
-                    <span className="absolute inset-0 rounded-full border-2 border-emerald-500/20 animate-ping" style={{ animationDelay: '200ms' }}></span>
-                    <div className="w-14 h-14 rounded-full border-4 border-emerald-500 border-t-transparent animate-spin"></div>
-                  </div>
-                  <div className="text-xs font-medium text-emerald-100/90 tracking-wide">
-                    {t('common.preparing') || 'Preparando o vídeo...'}
-                  </div>
-                </div>
-              )}
-            </>
+            /* Video Player Mode - Now default */
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/demo.webm" type="video/webm" />
+              <source src="/demo.mp4" type="video/mp4" />
+              {/* Fallback for browsers that don't support video */}
+              <img
+                src="/Screenshot_1760407521.png"
+                alt="App demo"
+                className="w-full h-full object-cover"
+              />
+            </video>
           ) : (
             /* Screenshot Carousel Mode - Default */
             <div className="relative w-full h-full">
