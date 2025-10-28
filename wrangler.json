@@ -22,11 +22,13 @@
     "VITE_STRIPE_PAYMENT_LINK": "",
     "VITE_GA_MEASUREMENT_ID": "G-CM13QM5GHG",
     "VITE_KIT_REMINDER": "47",
-    "VITE_KIT_PRICE": "249"
+    "VITE_KIT_PRICE": "249",
+    "VITE_DEMO_VIDEO_WEBM": "https://github.com/chtgreen/mybud-landing/releases/download/v1.0.0-videos/demo.webm",
+    "VITE_DEMO_VIDEO_MP4": "https://github.com/chtgreen/mybud-landing/releases/download/v1.0.0-videos/demo.mp4"
   },
   "routes": [
     {
-      "pattern": "lp.mybud.app",
+      "pattern": "mybud.app",
       "custom_domain": true
     }
   ]

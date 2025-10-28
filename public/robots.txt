@@ -8,7 +8,7 @@ Allow: /
 # Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://lp.mybud.app/sitemap.xml
+Sitemap: https://mybud.app/sitemap.xml
 
 # Crawl-delay for being nice to servers (optional)
 Crawl-delay: 1

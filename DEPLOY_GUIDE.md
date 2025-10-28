@@ -44,6 +44,27 @@ Cada página tem:
 
 ## 📦 Como Fazer o Deploy
 
+### ⚠️ IMPORTANTE: Demo Videos (MUST READ FIRST!)
+Os vídeos de demonstração são **muito grandes para Cloudflare Workers** (limite de 25MB):
+- `demo.webm`: 77.5 MB ❌ (excede limite)
+- `demo.mp4`: 6.3 MB ✅
+
+**SOLUÇÃO**: Hospedar vídeos no Cloudflare R2 (CDN externo)
+
+📖 **Leia ANTES de fazer deploy**: [VIDEO_CDN_SETUP.md](./VIDEO_CDN_SETUP.md)
+
+**Resumo rápido**:
+1. Upload dos vídeos para Cloudflare R2 (storage)
+2. Configure domínio público (ex: `assets.mybud.app`)
+3. Atualize URLs em `wrangler.json`:
+   ```json
+   "VITE_DEMO_VIDEO_WEBM": "https://assets.mybud.app/demo.webm",
+   "VITE_DEMO_VIDEO_MP4": "https://assets.mybud.app/demo.mp4"
+   ```
+4. Deploy normalmente
+
+💰 **Custo**: $0/month (R2 free tier + sem taxa de bandwidth)
+
 ### Opção 1: Deploy Rápido (Recomendado)
 ```bash
 ./deploy.sh
@@ -51,7 +72,7 @@ Cada página tem:
 
 ### Opção 2: Deploy Manual
 ```bash
-# 1. Build
+# 1. Build (incluirá os vídeos do public/)
 npm run build
 
 # 2. Deploy para Cloudflare Workers

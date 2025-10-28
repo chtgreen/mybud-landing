@@ -13,6 +13,12 @@ dist-ssr
 *.local
 .env
 
+# Demo videos - too large for Workers, host on R2/CDN
+public/demo.mp4
+public/demo.webm
+dist/client/demo.mp4
+dist/client/demo.webm
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

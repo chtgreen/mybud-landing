@@ -23,6 +23,7 @@ export const HeroContainer: FC<{ theme: 'emerald' | 'white'; children: ReactNode
 
 const IPhoneMockup: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [videoAspectRatio, setVideoAspectRatio] = useState<string>('9/20'); // Default to 9:20
   
   // Show video by default now
   const showVideo = true;
@@ -39,6 +40,16 @@ const IPhoneMockup: FC = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+  };
+
+  // Handle video metadata loaded to get actual aspect ratio
+  const handleVideoLoaded = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    if (video.videoWidth && video.videoHeight) {
+      const ratio = `${video.videoWidth}/${video.videoHeight}`;
+      setVideoAspectRatio(ratio);
+      console.log(`Video aspect ratio detected: ${video.videoWidth}x${video.videoHeight} (${ratio})`);
+    }
   };
 
   // Auto-advance carousel every 3 seconds if there are multiple screenshots
@@ -61,8 +72,11 @@ const IPhoneMockup: FC = () => {
         {/* Dynamic Island */}
         <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-20 h-5 bg-black rounded-full z-20"></div>
 
-        {/* Video/Screenshot Container - 9:20 Aspect Ratio to match video */}
-        <div className="relative bg-black w-full aspect-[9/20] overflow-hidden rounded-[2rem] shadow-inner">
+        {/* Video/Screenshot Container - Uses video's natural aspect ratio */}
+        <div 
+          className="relative bg-black w-full overflow-hidden rounded-[2rem] shadow-inner"
+          style={{ aspectRatio: videoAspectRatio }}
+        >
           
           {showVideo ? (
             /* Video Player Mode - Now default */
@@ -72,9 +86,10 @@ const IPhoneMockup: FC = () => {
               loop
               muted
               playsInline
+              onLoadedMetadata={handleVideoLoaded}
             >
-              <source src="/demo.webm" type="video/webm" />
-              <source src="/demo.mp4" type="video/mp4" />
+              <source src={import.meta.env.VITE_DEMO_VIDEO_WEBM || '/demo.webm'} type="video/webm" />
+              <source src={import.meta.env.VITE_DEMO_VIDEO_MP4 || '/demo.mp4'} type="video/mp4" />
               {/* Fallback for browsers that don't support video */}
               <img
                 src="/Screenshot_1760407521.png"
@@ -225,6 +240,8 @@ const scrollToB2BForm = () => {
 const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKits = 47 }) => {
   // Detect if we're in B2B context
   const isB2BContext = isB2B();
+  const [showFullscreenVideo, setShowFullscreenVideo] = useState(false);
+  
   const heroTitleLines = ['title1', 'title2', 'title3']
     .map((key) => {
       const text = t(`hero.${key}`);
@@ -237,10 +254,44 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
     .filter(({ text, isFallback }) => text && !isFallback);
   const b2bHighlights = isB2BContext ? tArray('hero.graphHighlights') : [];
 
+  const openFullscreenVideo = () => {
+    setShowFullscreenVideo(true);
+  };
+
+  const closeFullscreenVideo = () => {
+    setShowFullscreenVideo(false);
+  };
+
+  // Prevent body scroll when fullscreen video is open
+  useEffect(() => {
+    if (showFullscreenVideo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showFullscreenVideo]);
+
+  // Close modal when screen is resized to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (showFullscreenVideo && window.innerWidth >= 1024) {
+        closeFullscreenVideo();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [showFullscreenVideo]);
+
   return (
-    <section className={`min-h-screen max-h-[1200px] relative ${isB2BContext ? 'bg-white hero-b2b' : 'hero-organic'} flex items-center`}>
-      {!isB2BContext && <OrganicBackground />}
-      {isB2BContext && <B2BBackground />}
+    <>
+      <section className={`min-h-screen max-h-[1200px] relative ${isB2BContext ? 'bg-white hero-b2b' : 'hero-organic'} ${isB2BContext ? 'pt-24 sm:pt-0' : ''} flex ${isB2BContext ? 'items-start sm:items-center' : 'items-center'}`}>
+        {!isB2BContext && <OrganicBackground />}
+        {isB2BContext && <B2BBackground />}
       
       <div className="py-12 md:py-16 lg:py-20 xl:py-24 relative z-10 min-h-[80vh] lg:min-h-[70vh] xl:min-h-[65vh] flex items-center w-full">
         <div className="container mx-auto px-6 max-w-7xl w-full">
@@ -327,6 +378,18 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                     )}
                   </>
                 )}
+                {/* Watch Demo button - only show on mobile for B2C */}
+                {!isB2BContext && (
+                  <button
+                    className="lg:hidden inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-medium bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors border border-white/30"
+                    onClick={openFullscreenVideo}
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+                    </svg>
+                    <span>{t('hero.watchDemo')}</span>
+                  </button>
+                )}
               </div>
 
               {/* Trust Element / Microcopy */}
@@ -392,7 +455,44 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
           </div>
         </div>
       </div>
-    </section>
+      </section>
+
+      {/* Fullscreen Video Modal - only for B2C mobile - Outside section for true fullscreen */}
+      {showFullscreenVideo && !isB2BContext && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+          onClick={closeFullscreenVideo}
+          style={{ margin: 0, padding: 0 }}
+        >
+          <button
+            className="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white transition-colors"
+            onClick={closeFullscreenVideo}
+            aria-label="Close video"
+          >
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div 
+            className="relative w-full h-full bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              className="w-full h-full object-contain"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            >
+              <source src={import.meta.env.VITE_DEMO_VIDEO_WEBM || '/demo.webm'} type="video/webm" />
+              <source src={import.meta.env.VITE_DEMO_VIDEO_MP4 || '/demo.mp4'} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

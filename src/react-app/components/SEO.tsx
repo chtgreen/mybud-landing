@@ -9,7 +9,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({ pageType }) => {
   const { currentLanguage } = useLanguage();
 
-  const baseUrl = 'https://lp.mybud.app';
+  const baseUrl = 'https://mybud.app';
   const currentUrl = pageType === 'b2b' ? `${baseUrl}/b2b` : baseUrl;
 
   type SEOConfig = {

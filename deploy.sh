@@ -14,6 +14,34 @@ if ! command -v wrangler &> /dev/null; then
     npm install -g wrangler
 fi
 
+# Check if video CDN URLs are configured
+echo "🎬 Checking video CDN configuration..."
+if ! grep -q '"VITE_DEMO_VIDEO_WEBM": "http' wrangler.json; then
+    echo "⚠️  WARNING: Video CDN URLs not configured in wrangler.json"
+    echo ""
+    echo "   Videos must be hosted on Cloudflare R2 or external CDN"
+    echo "   (Cloudflare Workers has 25MB limit per asset)"
+    echo ""
+    echo "   📖 See VIDEO_CDN_SETUP.md for setup instructions"
+    echo ""
+    echo "   Quick steps:"
+    echo "   1. Upload videos to Cloudflare R2"
+    echo "   2. Set VITE_DEMO_VIDEO_WEBM in wrangler.json"
+    echo "   3. Set VITE_DEMO_VIDEO_MP4 in wrangler.json"
+    echo ""
+    read -p "Continue deployment without video CDN? (y/N): " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "❌ Deployment cancelled"
+        echo "   Run: cat VIDEO_CDN_SETUP.md for full guide"
+        exit 1
+    fi
+    echo "⚠️  Deploying without video URLs (videos may not work)"
+else
+    echo "✅ Video CDN configured!"
+fi
+echo ""
+
 # Build the project
 echo "📦 Building project..."
 npm run build
