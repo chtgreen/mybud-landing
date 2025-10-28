@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
+import { trackCTAClick } from '../lib/analytics';
 
 interface FounderKitSectionProps {
   background?: 'white' | 'gray';
@@ -15,6 +16,26 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
   kitPrice = 249
 }) => {
   const bgClass = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+
+  // Track revenue-generating CTA click
+  const handleKitPurchaseCTA = () => {
+    trackCTAClick({
+      ctaName: 'Purchase Founder Kit',
+      ctaLocation: 'Founder Kit Section',
+      ctaType: 'button',
+      ctaText: t('founderKit.cta'),
+      customProperties: {
+        value: kitPrice,
+        currency: 'BRL',
+        remainingKits: remainingKits,
+        conversion_type: 'purchase_intent',
+        product: 'Founder Kit',
+        revenue_event: true,
+        kit_price: kitPrice
+      }
+    });
+    onCTAClick();
+  };
 
   return (
     <section id="kit" className={`py-16 md:py-24 ${bgClass}`}>
@@ -74,7 +95,7 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
 
               {/* CTA Button */}
               <button
-                onClick={onCTAClick}
+                onClick={handleKitPurchaseCTA}
                 className="cta-button w-full inline-flex items-center justify-center"
               >
                 <span>{t('founderKit.cta')}</span>

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
+import { trackFormSubmission, trackCTAClick, identifyUser } from '../lib/analytics';
 
 interface BetaModalProps {
   open: boolean;
@@ -107,6 +108,23 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
       if (error) throw error;
 
+      // Track successful form submission with dual tracking
+      trackFormSubmission('Beta Waitlist Signup', {
+        full_name: trimmedName,
+        email: trimmedEmail,
+        source: 'beta_modal',
+        channel: 'modal_free_access',
+        conversion_type: 'beta_signup'
+      }, true);
+
+      // Identify user for future tracking
+      identifyUser(trimmedEmail, {
+        name: trimmedName,
+        signup_source: 'beta_modal',
+        signup_type: 'free_waitlist'
+      });
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_completed', {
           full_name: trimmedName,
@@ -123,6 +141,14 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
       console.error('Error:', error);
       setStatus('error');
 
+      // Track failed form submission
+      trackFormSubmission('Beta Waitlist Signup', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        source: 'beta_modal',
+        channel: 'modal_free_access'
+      }, false);
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_error', {
           error: error instanceof Error ? error.message : 'Unknown error',
@@ -136,6 +162,28 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
   };
 
   const handlePurchaseClick = () => {
+    // Track priority access purchase click with dual tracking (REVENUE EVENT)
+    trackCTAClick({
+      ctaName: 'Priority Access Purchase',
+      ctaLocation: 'Beta Modal - Priority Side',
+      ctaType: 'button',
+      ctaText: t('betaModal.priority.cta'),
+      destinationUrl: SHOP_URL,
+      customProperties: {
+        source: 'beta_modal',
+        choice: 'paid_priority',
+        destination: 'shopify',
+        value: kitPrice,
+        currency: 'BRL',
+        conversion_type: 'purchase_click',
+        revenue_event: true,
+        product: 'Founder Kit',
+        kit_price: kitPrice,
+        remainingKits: remainingKits
+      }
+    });
+    
+    // Legacy PostHog tracking (can be removed later)
     if (typeof posthog !== 'undefined') {
       posthog.capture('priority_access_clicked', {
         source: 'beta_modal',
@@ -143,6 +191,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
         destination: 'shopify'
       });
     }
+    
     window.open(SHOP_URL, '_blank', 'noopener,noreferrer');
   };
 

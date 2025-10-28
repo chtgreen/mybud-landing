@@ -7,6 +7,7 @@ import ReactGA from 'react-ga4';
 import './index.css';
 import './styles.css';
 import App from './App.tsx';
+import { initWebVitals, initErrorTracking } from './lib/performance';
 
 // Initialize PostHog
 posthog.init(import.meta.env.VITE_POSTHOG_KEY as string, {
@@ -20,6 +21,12 @@ if (GA_MEASUREMENT_ID) {
   // Track initial pageview
   ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 }
+
+// Initialize Core Web Vitals monitoring
+initWebVitals();
+
+// Initialize error tracking
+initErrorTracking();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

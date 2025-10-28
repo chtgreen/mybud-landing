@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { useState, useEffect, Fragment } from 'react';
 import { t, isB2B, tArray } from '../lib/i18n';
 import DashboardWidget from './DashboardWidget';
+import { trackCTAClick, trackVideoInteraction, trackButtonClick } from '../lib/analytics';
 
 
 interface HeroProps {
@@ -87,6 +88,9 @@ const IPhoneMockup: FC = () => {
               muted
               playsInline
               onLoadedMetadata={handleVideoLoaded}
+              onPlay={() => trackVideoInteraction('play', 'Hero Demo Video - iPhone Mockup')}
+              onPause={() => trackVideoInteraction('pause', 'Hero Demo Video - iPhone Mockup')}
+              onEnded={() => trackVideoInteraction('complete', 'Hero Demo Video - iPhone Mockup', 100)}
             >
               <source src={import.meta.env.VITE_DEMO_VIDEO_WEBM || '/demo.webm'} type="video/webm" />
               <source src={import.meta.env.VITE_DEMO_VIDEO_MP4 || '/demo.mp4'} type="video/mp4" />
@@ -287,6 +291,59 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
     return () => window.removeEventListener('resize', handleResize);
   }, [showFullscreenVideo]);
 
+  // Analytics-wrapped handlers
+  const handlePrimaryCTA = () => {
+    trackCTAClick({
+      ctaName: isB2BContext ? 'B2B Contact Form' : 'Join Beta',
+      ctaLocation: 'Hero Section',
+      ctaType: 'button',
+      ctaText: t('hero.primaryCta'),
+      customProperties: {
+        pageType: isB2BContext ? 'b2b' : 'b2c',
+        remainingKits: remainingKits,
+        position: 'primary'
+      }
+    });
+    
+    if (isB2BContext) {
+      scrollToB2BForm();
+    } else {
+      onCTAClick();
+    }
+  };
+
+  const handleSecondaryCTA = () => {
+    const ctaText = t('hero.secondaryCta');
+    
+    trackCTAClick({
+      ctaName: isB2BContext ? 'B2B Secondary CTA' : 'Learn More',
+      ctaLocation: 'Hero Section',
+      ctaType: ctaText.includes('media kit') ? 'link' : 'button',
+      ctaText: ctaText,
+      customProperties: {
+        pageType: isB2BContext ? 'b2b' : 'b2c',
+        position: 'secondary',
+        isMediaKit: ctaText.includes('media kit')
+      }
+    });
+    
+    if (!ctaText.includes('media kit')) {
+      if (isB2BContext) {
+        onCTAClick();
+      } else {
+        scrollToFeatures();
+      }
+    }
+  };
+
+  const handleWatchDemo = () => {
+    trackButtonClick('Watch Demo', 'Hero Section - Mobile', {
+      action: 'open_fullscreen_video',
+      device: 'mobile'
+    });
+    openFullscreenVideo();
+  };
+
   return (
     <>
       <section className={`min-h-screen max-h-[1200px] relative ${isB2BContext ? 'bg-white hero-b2b' : 'hero-organic'} ${isB2BContext ? 'pt-24 sm:pt-0' : ''} flex ${isB2BContext ? 'items-start sm:items-center' : 'items-center'}`}>
@@ -349,7 +406,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-5">
                 <button
                   className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors border-0"
-                  onClick={isB2BContext ? scrollToB2BForm : onCTAClick}
+                  onClick={handlePrimaryCTA}
                 >
                   <span>{t('hero.primaryCta')}</span>
                 </button>
@@ -362,6 +419,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
                         }
+                        onClick={handleSecondaryCTA}
                       >
                         <span>{t('hero.secondaryCta')}</span>
                       </a>
@@ -371,7 +429,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
                         }
-                        onClick={isB2BContext ? onCTAClick : scrollToFeatures}
+                        onClick={handleSecondaryCTA}
                       >
                         <span>{t('hero.secondaryCta')}</span>
                       </button>
@@ -382,7 +440,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                 {!isB2BContext && (
                   <button
                     className="lg:hidden inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-medium bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors border border-white/30"
-                    onClick={openFullscreenVideo}
+                    onClick={handleWatchDemo}
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
@@ -485,6 +543,9 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
               muted
               playsInline
               controls
+              onPlay={() => trackVideoInteraction('play', 'Hero Demo Video - Fullscreen')}
+              onPause={() => trackVideoInteraction('pause', 'Hero Demo Video - Fullscreen')}
+              onEnded={() => trackVideoInteraction('complete', 'Hero Demo Video - Fullscreen', 100)}
             >
               <source src={import.meta.env.VITE_DEMO_VIDEO_WEBM || '/demo.webm'} type="video/webm" />
               <source src={import.meta.env.VITE_DEMO_VIDEO_MP4 || '/demo.mp4'} type="video/mp4" />

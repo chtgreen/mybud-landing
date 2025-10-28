@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { VoiceNoteDemo } from './VoiceNoteDemo';
 import { Bolt, Bot, Mic, Timer } from './icons';
 import { t, getLoadedTranslations } from '../lib/i18n';
+import { trackButtonClick } from '../lib/analytics';
 
 interface VoiceNotesSectionProps {
   onCTAClick?: () => void;
@@ -13,6 +14,12 @@ const VoiceNotesSection: FC<VoiceNotesSectionProps> = ({ onCTAClick }) => {
   const keywords = (translations.b2c as any)?.voiceNotes?.keywords?.words || [];
 
   const handleCtaClick = () => {
+    // Track Voice Notes CTA click
+    trackButtonClick('Voice Notes CTA', 'Voice Notes Section', {
+      featureSection: 'voice_notes',
+      ctaPosition: 'bottom_section'
+    });
+    
     if (onCTAClick) {
       onCTAClick();
       return;

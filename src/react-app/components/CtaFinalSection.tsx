@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
+import { trackButtonClick } from '../lib/analytics';
 
 interface CtaFinalSectionProps {
   onKitClick: () => void;
@@ -14,7 +15,23 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
   remainingKits = 72,
   showSecondaryCta = true
 }) => {
+  const handlePrimaryCTA = () => {
+    // Track Final CTA primary button click
+    trackButtonClick('Join Beta - Final CTA', 'Final CTA Section', {
+      ctaPosition: 'final_section',
+      remainingKits: remainingKits,
+      action: 'purchase_intent'
+    });
+    onKitClick();
+  };
+
   const handleSecondaryClick = () => {
+    // Track Final CTA secondary button click
+    trackButtonClick('Watch Demo - Final CTA', 'Final CTA Section', {
+      ctaPosition: 'final_section',
+      action: 'scroll_to_demo'
+    });
+    
     if (onSecondaryClick) {
       onSecondaryClick();
       return;
@@ -43,7 +60,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <button
-              onClick={onKitClick}
+              onClick={handlePrimaryCTA}
               className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors"
             >
               <span>{t('ctaFinal.primaryCta')}</span>

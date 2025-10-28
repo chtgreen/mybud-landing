@@ -3,6 +3,7 @@ import posthog from 'posthog-js';
 import { t } from '../lib/i18n';
 import { supabase } from '../lib/supabaseClient';
 import { BarChart3, Mail } from './icons';
+import { trackFormSubmission, identifyUser, trackButtonClick } from '../lib/analytics';
 
 interface B2BLeadFormProps {
   background?: 'white' | 'gray';
@@ -27,6 +28,11 @@ const initialState: LeadPayload = {
 const emailFallback = () => {
   const contactEmail = t('finalCta.email');
   if (contactEmail && contactEmail !== 'finalCta.email') {
+    // Track email fallback click
+    trackButtonClick('Email Fallback', 'B2B Lead Form', {
+      action: 'mailto_click',
+      email: contactEmail
+    });
     window.location.href = `mailto:${contactEmail}`;
   }
 };
@@ -72,6 +78,26 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
 
       if (error) throw error;
 
+      // Track successful B2B lead submission with dual tracking (HIGH-VALUE CONVERSION)
+      trackFormSubmission('B2B Lead Form', {
+        email,
+        company,
+        name,
+        has_message: Boolean(message),
+        source: 'landing_final_cta',
+        conversion_type: 'b2b_lead',
+        form_type: 'b2b_partnership'
+      }, true);
+
+      // Identify B2B lead for future tracking
+      identifyUser(email, {
+        name,
+        company,
+        lead_type: 'b2b',
+        lead_source: 'landing_page_form'
+      });
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('b2b_lead_submitted', {
           email,
@@ -87,6 +113,15 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
       console.error('Failed to submit B2B lead', error);
       alert(t('finalCta.errorMessage'));
 
+      // Track failed B2B lead submission
+      trackFormSubmission('B2B Lead Form', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        source: 'landing_final_cta',
+        attempted_company: form.company,
+        form_type: 'b2b_partnership'
+      }, false);
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('b2b_lead_error', {
           error: error instanceof Error ? error.message : 'Unknown error',
