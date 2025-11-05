@@ -1,7 +1,8 @@
 /**
  * Pre-rendering script for mybud landing pages
  * Generates static HTML files for better SEO and faster initial load
- * Now supports multiple languages: PT, EN, ES
+ * Languages: PT, EN, ES
+ * Pages: Grower (B2C), Collective, Industry
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
@@ -20,51 +21,72 @@ let baseHtml = readFileSync(indexHtmlPath, 'utf-8');
 // SEO content by language and page type
 const seoContent = {
   pt: {
-    b2c: {
+    grower: {
       title: 'mybud – Diário Inteligente de Cultivo de Cannabis | Organize seu Grow',
       description: 'O app definitivo para growers: registre por voz, acompanhe timeline por planta, receba lembretes inteligentes e nunca mais perca rega ou colheita. Beta gratuito disponível.',
-      url: 'https://mybud.app/pt',
+      url: 'https://mybud.app/pt/grower',
       locale: 'pt_BR',
       keywords: 'cultivo cannabis, diário de cultivo, grow app, app cannabis, registro por voz, timeline de plantas, lembretes cultivo, mybud'
     },
-    b2b: {
-      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Insights de Uso & Prova Social',
-      description: 'Transforme growers em embaixadores. Insights reais de como usam seus produtos, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
-      url: 'https://mybud.app/pt/b2b',
+    collective: {
+      title: 'MyBud Collective — O padrão que vai profissionalizar o cultivo coletivo',
+      description: 'Transforme seu cultivo em dados, relatórios e credibilidade. O MyBud Collective traz rastreabilidade, transparência e confiança para associações e clubes canábicos no Brasil.',
+      url: 'https://mybud.app/pt/collective',
       locale: 'pt_BR',
-      keywords: 'marketing cannabis, B2B cannabis, uso produtos cultivo, prova social, embaixadores marca, insumos cannabis'
+      keywords: 'cultivo coletivo, associação cannabis, rastreabilidade cannabis, gestão cultivo, clube canábico, mybud collective'
+    },
+    industry: {
+      title: 'MyBud Industry — Onde marcas, breeders e fabricantes se conectam ao cultivo de forma ética',
+      description: 'No MyBud, sua marca aparece no momento certo e com propósito, o primeiro canal legítimo e ético entre indústria e cultivo.',
+      url: 'https://mybud.app/pt/industry',
+      locale: 'pt_BR',
+      keywords: 'marketing cannabis, B2B cannabis, marcas cannabis, fabricantes insumos, integração marca, mybud industry'
     }
   },
   en: {
-    b2c: {
+    grower: {
       title: 'mybud – Smart Cannabis Growing Diary | Organize Your Grow',
       description: 'The ultimate app for growers: voice notes, plant timeline tracking, smart reminders. Never miss watering or harvest again. Free beta available.',
-      url: 'https://mybud.app/en',
+      url: 'https://mybud.app/en/grower',
       locale: 'en_US',
       keywords: 'cannabis cultivation, grow diary, grow app, cannabis app, voice recording, plant timeline, grow reminders, mybud'
     },
-    b2b: {
-      title: 'mybud B2B - Validate Your Brand in Real Cultivation | Usage Insights & Social Proof',
-      description: 'Turn growers into ambassadors. Real insights on how they use your products, authentic social proof and adoption metrics for brands, manufacturers and cannabis associations.',
-      url: 'https://mybud.app/en/b2b',
+    collective: {
+      title: 'Mybud Collective — Organize and standardize collective cultivation',
+      description: 'From clone to extraction: standardize processes, manage teams, and maintain compliance with complete traceability. A system scaled to your grow.',
+      url: 'https://mybud.app/en/collective',
       locale: 'en_US',
-      keywords: 'cannabis marketing, B2B cannabis, product usage insights, social proof, brand ambassadors, cannabis supplies'
+      keywords: 'collective cultivation, cannabis association, cannabis traceability, grow management, cannabis club, mybud collective'
+    },
+    industry: {
+      title: 'MyBud Industry — Where brands, breeders, and manufacturers connect ethically with cultivation',
+      description: 'In MyBud, your brand appears at the right time with purpose, the first legitimate and ethical channel between industry and cultivation.',
+      url: 'https://mybud.app/en/industry',
+      locale: 'en_US',
+      keywords: 'cannabis marketing, B2B cannabis, cannabis brands, manufacturers, brand integration, mybud industry'
     }
   },
   es: {
-    b2c: {
+    grower: {
       title: 'mybud – Diario Inteligente de Cultivo de Cannabis | Organiza tu Grow',
       description: 'La app definitiva para cultivadores: grabación por voz, línea de tiempo por planta, recordatorios inteligentes. No pierdas más riegos ni cosechas. Beta gratis disponible.',
-      url: 'https://mybud.app/es',
+      url: 'https://mybud.app/es/grower',
       locale: 'es_ES',
       keywords: 'cultivo cannabis, diario cultivo, app grow, app cannabis, grabación voz, timeline plantas, recordatorios cultivo, mybud'
     },
-    b2b: {
-      title: 'mybud B2B - Valida Tu Marca en el Cultivo Real | Insights de Uso y Prueba Social',
-      description: 'Convierte cultivadores en embajadores. Insights reales de cómo usan tus productos, prueba social auténtica y métricas de adopción para marcas, fabricantes y asociaciones cannábicas.',
-      url: 'https://mybud.app/es/b2b',
+    collective: {
+      title: 'Mybud Collective — Organiza y estandariza el cultivo colectivo',
+      description: 'Del clon a la extracción: estandariza procesos, gestiona equipos y mantén conformidad con trazabilidad completa. Un sistema a la medida de tu cultivo.',
+      url: 'https://mybud.app/es/collective',
       locale: 'es_ES',
-      keywords: 'marketing cannabis, B2B cannabis, uso productos cultivo, prueba social, embajadores marca, insumos cannabis'
+      keywords: 'cultivo colectivo, asociación cannabis, trazabilidad cannabis, gestión cultivo, club cannábico, mybud collective'
+    },
+    industry: {
+      title: 'MyBud Industry — Donde marcas, breeders y fabricantes se conectan al cultivo de forma ética',
+      description: 'En MyBud, tu marca aparece en el momento exacto y con propósito, el primer canal legítimo y ético entre industria y cultivo.',
+      url: 'https://mybud.app/es/industry',
+      locale: 'es_ES',
+      keywords: 'marketing cannabis, B2B cannabis, marcas cannabis, fabricantes, integración marca, mybud industry'
     }
   }
 };
@@ -163,66 +185,53 @@ console.log('🚀 Starting pre-rendering process...\n');
 
 // Generate pages for all languages
 const languages = ['pt', 'en', 'es'];
+const pageTypes = ['grower', 'collective', 'industry'];
 let generatedCount = 0;
 
-// Generate root redirect page (Portuguese default)
-let rootHtml = injectSEO(baseHtml, seoContent.pt.b2c);
+// Generate root redirect page (Portuguese grower default)
+let rootHtml = injectSEO(baseHtml, seoContent.pt.grower);
 rootHtml = replaceEnvVars(rootHtml);
 writeFileSync(indexHtmlPath, rootHtml, 'utf-8');
-console.log('✅ Root index.html (redirects to /pt)');
+console.log('✅ Root index.html (redirects to /pt/grower)');
 generatedCount++;
 
-// Generate B2C pages for each language
+// Generate pages for each language and page type
 for (const lang of languages) {
-  const langDir = join(distPath, lang);
-  
+  for (const pageType of pageTypes) {
+    const pageDir = join(distPath, lang, pageType);
+    
+    try {
+      mkdirSync(pageDir, { recursive: true });
+    } catch (err) {
+      // Directory might already exist
+    }
+    
+    let pageHtml = injectSEO(baseHtml, seoContent[lang][pageType]);
+    pageHtml = replaceEnvVars(pageHtml);
+    const pagePath = join(pageDir, 'index.html');
+    writeFileSync(pagePath, pageHtml, 'utf-8');
+    console.log(`✅ ${pageType} page: /${lang}/${pageType}/index.html`);
+    generatedCount++;
+  }
+}
+
+// Generate redirect pages for language-less URLs
+for (const pageType of pageTypes) {
+  const redirectDir = join(distPath, pageType);
   try {
-    mkdirSync(langDir, { recursive: true });
+    mkdirSync(redirectDir, { recursive: true });
   } catch (err) {
     // Directory might already exist
   }
-  
-  let b2cHtml = injectSEO(baseHtml, seoContent[lang].b2c);
-  b2cHtml = replaceEnvVars(b2cHtml);
-  const b2cPath = join(langDir, 'index.html');
-  writeFileSync(b2cPath, b2cHtml, 'utf-8');
-  console.log(`✅ B2C page: /${lang}/index.html`);
+  let redirectHtml = injectSEO(baseHtml, seoContent.pt[pageType]);
+  redirectHtml = replaceEnvVars(redirectHtml);
+  const redirectPath = join(redirectDir, 'index.html');
+  writeFileSync(redirectPath, redirectHtml, 'utf-8');
+  console.log(`✅ /${pageType}/index.html (redirects to /pt/${pageType})`);
   generatedCount++;
 }
-
-// Generate B2B pages for each language
-for (const lang of languages) {
-  const b2bDir = join(distPath, lang, 'b2b');
-  
-  try {
-    mkdirSync(b2bDir, { recursive: true });
-  } catch (err) {
-    // Directory might already exist
-  }
-  
-  let b2bHtml = injectSEO(baseHtml, seoContent[lang].b2b);
-  b2bHtml = replaceEnvVars(b2bHtml);
-  const b2bPath = join(b2bDir, 'index.html');
-  writeFileSync(b2bPath, b2bHtml, 'utf-8');
-  console.log(`✅ B2B page: /${lang}/b2b/index.html`);
-  generatedCount++;
-}
-
-// Also create /b2b redirect (Portuguese default)
-const b2bRootDir = join(distPath, 'b2b');
-try {
-  mkdirSync(b2bRootDir, { recursive: true });
-} catch (err) {
-  // Directory might already exist
-}
-let b2bRootHtml = injectSEO(baseHtml, seoContent.pt.b2b);
-b2bRootHtml = replaceEnvVars(b2bRootHtml);
-const b2bRootPath = join(b2bRootDir, 'index.html');
-writeFileSync(b2bRootPath, b2bRootHtml, 'utf-8');
-console.log('✅ /b2b/index.html (redirects to /pt/b2b)');
-generatedCount++;
 
 console.log(`\n🎉 Pre-rendering complete! Generated ${generatedCount} static HTML files for SEO.`);
 console.log('📊 Languages: PT, EN, ES');
-console.log('📄 Pages: B2C + B2B per language\n');
+console.log('📄 Pages: Grower, Collective, Industry per language\n');
 

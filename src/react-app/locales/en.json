@@ -425,7 +425,10 @@
           "title": "Harvest prediction",
           "description": "Based on the current stage, Mybud estimates when you'll harvest. Plan drying, curing and storage in advance."
         }
-      }
+      },
+      "learnMore": "Learn More About",
+      "hide": "Hide",
+      "timelineFeatures": "Timeline Features"
     },
     "insights": {
       "badge": "Mybud intelligence",
@@ -435,6 +438,9 @@
       "subtitle": "Meet Budzinho: the partner who has grown many plants and accompanies you from start to finish, bringing human support in every cycle.",
       "description": "He combines practical experience with mybud intelligence to deliver personalized insights for your plants, phases and environment.",
       "smartRecommendations": "Smart recommendations",
+      "aiPowered": "AI Powered",
+      "seeAllRecommendations": "See All Smart Recommendations →",
+      "viewAllActivities": "View All Recent Activities →",
       "contextInsights": "Contextual insights",
       "contextDescription": "Guidance considers plant phase, cultivation week, environmental metrics and recent activities. It's like having a master grower watching 24/7.",
       "features": {
@@ -929,7 +935,6 @@
       "title2": "to your cultivation.",
       "subtitle": "Organize and standardize collective cultivation — from clone to extraction — with team management, complete traceability, and automated reports.",
       "description": "Mybud Collective is the platform for associations, cannabis clubs, farms, and medium-scale commercial grows that need standardization without losing touch with the cultivation floor.",
-      "microcopy": "System developed with real associations to ensure compliance, traceability, and data autonomy.",
       "primaryCta": "Schedule demo",
       "secondaryCta": "Join the pilot",
       "trustElement": "System developed with real associations to ensure compliance, traceability, and data autonomy.",

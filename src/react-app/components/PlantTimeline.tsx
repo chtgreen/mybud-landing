@@ -237,7 +237,7 @@ export const PlantTimeline: FC<PlantTimelineProps> = ({ className = '', compact 
 
           <div
             ref={scrollRef}
-            className="flex items-center gap-2 md:gap-2.5 overflow-x-auto pb-6 scrollbar-hide"
+            className="flex items-center gap-2 md:gap-2.5 overflow-x-auto pb-6 scrollbar-hide scroll-smooth"
           >
             {stages.map((stage, index) => {
               const isUpcoming = stage.status === 'upcoming';
@@ -245,7 +245,11 @@ export const PlantTimeline: FC<PlantTimelineProps> = ({ className = '', compact 
               const nextStage = stages[index + 1];
 
               return (
-                <div key={stage.nameKey} className="flex items-center flex-shrink-0 group">
+                <div 
+                  key={stage.nameKey} 
+                  className="flex items-center flex-shrink-0 group animate-in fade-in slide-in-from-bottom-4 duration-500"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div
                     className={`flex flex-col items-center text-center gap-2 ${cardWidth} transition-transform duration-300 group-hover:-translate-y-1`}
                   >
@@ -302,7 +306,12 @@ export const PlantTimeline: FC<PlantTimelineProps> = ({ className = '', compact 
                     <div
                       className={`mx-2.5 h-1 w-8 sm:w-12 rounded-full bg-gradient-to-r ${stage.connectorClass} ${
                         isUpcoming ? 'opacity-40' : 'opacity-80'
-                      }`}
+                      } transition-all duration-500`}
+                      style={{ 
+                        animation: 'grow-line 0.8s ease-out forwards',
+                        animationDelay: `${index * 100 + 200}ms`,
+                        transformOrigin: 'left'
+                      }}
                     />
                   )}
                 </div>

@@ -71,50 +71,67 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-20">
-          {/* Left - Insights Preview */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto mb-20">
+          {/* Left - Insights Preview com sombra elevada */}
+          <div className="bg-white rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.15)] transition-shadow duration-300 p-8 border border-emerald-100/50 relative flex flex-col h-full">
+            {/* Budzinho acenando no canto */}
+            <div className="absolute -top-6 -right-6 w-16 h-16">
+              <img 
+                src="/MyBud - Budzinho Colorido 2.png" 
+                alt="Budzinho acenando"
+                className="w-full h-full object-contain drop-shadow-lg animate-bounce"
+                style={{ 
+                  animation: 'wave 2s ease-in-out infinite',
+                  transformOrigin: 'bottom right'
+                }}
+              />
+            </div>
+            
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-black">
                 {t('insights.smartRecommendations')}
               </h3>
-              <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full">
-                AI Powered
+              <span className="px-3 py-1 bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200">
+                {t('insights.aiPowered')}
               </span>
             </div>
             
             {/* Show only 2 insights */}
-            <InsightCards limit={2} />
+            <div className="flex-1">
+              <InsightCards limit={2} />
+            </div>
             
             {/* See More Button */}
             <button
               onClick={() => setShowInsightsModal(true)}
               className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-emerald-50 to-blue-50 hover:from-emerald-100 hover:to-blue-100 text-emerald-700 font-semibold rounded-xl transition-all duration-300 hover:shadow-md border border-emerald-200"
             >
-              See All Smart Recommendations →
+              {t('insights.seeAllRecommendations')}
             </button>
           </div>
 
-          {/* Right - Activity Feed Preview */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+          {/* Right - Activity Feed Preview com sombra elevada */}
+          <div className="bg-white rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.15)] transition-shadow duration-300 p-8 border border-blue-100/50 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-black">
                 {t('activityFeed.title')}
               </h3>
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+              <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-blue-50 text-blue-700 text-xs font-bold rounded-full border border-blue-200">
                 {t('activityFeed.liveBadge')}
               </span>
             </div>
             
             {/* Show only 3 activities */}
-            <ActivityFeed limit={3} compact={true} />
+            <div className="flex-1">
+              <ActivityFeed limit={3} compact={true} />
+            </div>
             
             {/* See More Button */}
             <button
               onClick={() => setShowActivitiesModal(true)}
               className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 text-blue-700 font-semibold rounded-xl transition-all duration-300 hover:shadow-md border border-blue-200"
             >
-              View All Recent Activities →
+              {t('insights.viewAllActivities')}
             </button>
           </div>
         </div>
@@ -153,48 +170,48 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           <ActivityFeed onViewAll={handleActivateClick} />
         </ExpandableModal>
 
-        {/* Features Grid */}
+        {/* Features Grid - Cards mais elevados com contraste */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
           {/* Feature 1 */}
-          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
-              <Target className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
+          <div className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(40,134,100,0.15)] border border-emerald-100 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Target className="w-7 h-7 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">{t('insights.features.byStage.title')}</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-bold text-black mb-2">{t('insights.features.byStage.title')}</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
               {t('insights.features.byStage.description')}
             </p>
           </div>
 
           {/* Feature 2 */}
-          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
-              <BarChart3 className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
+          <div className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(40,134,100,0.15)] border border-emerald-100 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <BarChart3 className="w-7 h-7 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">{t('insights.features.monitoring.title')}</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-bold text-black mb-2">{t('insights.features.monitoring.title')}</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
               {t('insights.features.monitoring.description')}
             </p>
           </div>
 
           {/* Feature 3 */}
-          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
-              <Microscope className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
+          <div className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(40,134,100,0.15)] border border-emerald-100 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Microscope className="w-7 h-7 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">{t('insights.features.detection.title')}</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-bold text-black mb-2">{t('insights.features.detection.title')}</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
               {t('insights.features.detection.description')}
             </p>
           </div>
 
           {/* Feature 4 */}
-          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
-              <BookOpenCheck className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
+          <div className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(40,134,100,0.15)] border border-emerald-100 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <BookOpenCheck className="w-7 h-7 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
-            <h4 className="font-semibold text-black mb-2">{t('insights.features.learning.title')}</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-bold text-black mb-2">{t('insights.features.learning.title')}</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
               {t('insights.features.learning.description')}
             </p>
           </div>
@@ -299,14 +316,14 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* CTA - Verde escuro primário */}
         <div className="mt-16 text-center">
-          <p className="text-lg text-gray-600 mb-6">
-            {t('insights.ctaText')} <strong className="text-emerald-600">{t('insights.ctaHighlight')}</strong>
+          <p className="text-xl text-gray-700 mb-6 font-medium">
+            {t('insights.ctaText')} <strong className="text-emerald-700">{t('insights.ctaHighlight')}</strong>
           </p>
           <button
             onClick={handleActivateClick}
-            className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="px-10 py-5 bg-emerald-700 hover:bg-emerald-800 text-white text-lg font-bold rounded-xl shadow-[0_8px_30px_rgba(5,150,105,0.3)] hover:shadow-[0_12px_40px_rgba(5,150,105,0.4)] transition-all duration-300 hover:scale-105"
           >
             {t('insights.ctaButton')}
           </button>

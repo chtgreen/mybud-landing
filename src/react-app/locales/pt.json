@@ -426,7 +426,10 @@
           "title": "Previsão de colheita",
           "description": "Com base no estágio atual, o Mybud estima quando você vai colher. Planeje secagem, cura e armazenamento com antecedência."
         }
-      }
+      },
+      "learnMore": "Saiba mais sobre",
+      "hide": "Ocultar",
+      "timelineFeatures": "Funcionalidades da Timeline"
     },
     "insights": {
       "badge": "Inteligência do mybud",
@@ -436,6 +439,9 @@
       "subtitle": "Conheça o Budzinho: o parceiro que já cultivou muita planta e acompanha você do início ao fim, trazendo apoio humano em cada ciclo.",
       "description": "Ele combina experiência prática com a inteligência do mybud para entregar insights personalizados para suas plantas, fases e ambiente.",
       "smartRecommendations": "Recomendações inteligentes",
+      "aiPowered": "AI Powered",
+      "seeAllRecommendations": "Ver todas as recomendações →",
+      "viewAllActivities": "Ver todas as atividades →",
       "contextInsights": "Insights com contexto",
       "contextDescription": "As orientações consideram a fase da planta, semana do cultivo, métricas do ambiente e atividades recentes. É como ter um mestre grower acompanhando 24/7.",
       "features": {
@@ -930,7 +936,6 @@
       "title2": "profissionalizar o cultivo coletivo.",
       "subtitle": "Controle, rastreabilidade e agilidade para associações que querem operar com segurança e credibilidade.",
       "description": "Um sistema que transforma o cultivo coletivo em dados e confiança.",
-      "microcopy": "Sistema desenvolvido com associações reais para garantir conformidade, rastreabilidade e autonomia de dados.",
       "primaryCta": "Quero rodar o piloto",
       "secondaryCta": "Ver como funciona",
       "trustElement": "Sistema desenvolvido com associações brasileiras para garantir conformidade e rastreabilidade."

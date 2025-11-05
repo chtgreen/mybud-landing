@@ -397,7 +397,10 @@
           "title": "Predicción de cosecha",
           "description": "Con base en la etapa actual, Mybud estima cuándo vas a cosechar. Planifica secado, curado y almacenamiento con anticipación."
         }
-      }
+      },
+      "learnMore": "Saber más sobre",
+      "hide": "Ocultar",
+      "timelineFeatures": "Funcionalidades del Timeline"
     },
     "insights": {
       "badge": "Inteligencia de mybud",
@@ -407,6 +410,9 @@
       "subtitle": "Conoce a Budzinho: el compañero que ya cultivó muchas plantas y te acompaña desde el inicio hasta el final, brindando apoyo humano en cada ciclo.",
       "description": "Combina experiencia práctica con la inteligencia de mybud para entregar insights personalizados para tus plantas, fases y ambiente.",
       "smartRecommendations": "Recomendaciones inteligentes",
+      "aiPowered": "AI Powered",
+      "seeAllRecommendations": "Ver todas las recomendaciones →",
+      "viewAllActivities": "Ver todas las actividades →",
       "contextInsights": "Insights con contexto",
       "contextDescription": "Las orientaciones consideran la fase de la planta, semana del cultivo, métricas del ambiente y actividades recientes. Es como tener un maestro grower acompañando 24/7.",
       "features": {
@@ -870,7 +876,6 @@
       "title2": "de tu cultivo.",
       "subtitle": "Organiza y estandariza el cultivo colectivo — del clon a la extracción — con gestión de equipos, trazabilidad completa e informes automáticos.",
       "description": "Mybud Collective es la plataforma para asociaciones, clubes cannábicos, granjas y cultivos comerciales de mediana escala que necesitan estandarización sin perder cercanía con el cultivo.",
-      "microcopy": "Sistema desarrollado con asociaciones reales para garantizar conformidad, trazabilidad y autonomía de datos.",
       "primaryCta": "Agendar demostración",
       "secondaryCta": "Participar del piloto",
       "trustElement": "Sistema desarrollado con asociaciones reales para garantizar conformidad, trazabilidad y autonomía de datos.",

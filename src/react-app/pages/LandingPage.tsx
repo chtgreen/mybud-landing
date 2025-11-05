@@ -8,7 +8,6 @@ import SEO from '../components/SEO';
 // import ThemeSelector from '../components/ThemeSelector';
 import Hero from '../components/Hero';
 import VoiceNotesSection from '../components/VoiceNotesSection';
-import ProblemSection from '../components/ProblemSection';
 import PlantTimelineSection from '../components/PlantTimelineSection';
 // import AppShowcase from '../components/AppShowcase';
 import InsightsSection from '../components/InsightsSection';
@@ -93,8 +92,7 @@ const LandingPage = () => {
       <Header onLanguageChange={changeLanguage} onCTAClick={handleCTAClick} />
       {/* <ThemeSelector onThemeChange={(theme) => console.log('Theme changed to:', theme)} /> */}
       <Hero onCTAClick={handleCTAClick} showSecondaryCta={showVideo} remainingKits={remainingKits} /> {/* Section 1: Hero organic */}
-      <ProblemSection /> {/* Section 2: O problema sem distracoes */}
-      <VoiceNotesSection onCTAClick={handleCTAClick} /> {/* Section 3: Voice Notes - Killer Feature */}
+      <VoiceNotesSection onCTAClick={handleCTAClick} /> {/* Section 2: Voice Notes - Killer Feature */}
       <PlantTimelineSection /> {/* Section 4: Plant Journey Timeline */}
       {/* <AppShowcase background="white" /> */} {/* Section 5: Como funciona - REMOVED */}
       <InsightsSection onActivate={handleCTAClick} /> {/* Section 6: Inteligência do app */}

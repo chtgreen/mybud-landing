@@ -46,10 +46,6 @@ const HeroCollective: FC<HeroCollectiveProps> = ({ onCTAClick }) => {
               {t('collective.hero.description')}
             </p>
 
-            <p className="text-sm md:text-base text-zinc-500 max-w-2xl mx-auto italic">
-              {t('collective.hero.microcopy')}
-            </p>
-
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button

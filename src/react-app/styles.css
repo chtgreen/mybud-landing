@@ -1236,6 +1236,13 @@ body {
   }
 }
 
+/* Ultra-wide screens - larger iPhone frame for better readability */
+@media (min-width: 1920px) {
+  .iphone-frame {
+    max-width: 500px !important;
+  }
+}
+
 .organic-bubble:nth-child(2n) {
   animation-delay: -2s;
   animation-duration: 12s;
@@ -1854,4 +1861,57 @@ body {
 
 .scrollbar-track-transparent::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* ===================================
+   ANIMAÇÕES CUSTOMIZADAS DO BRIEF 2025
+   =================================== */
+
+/* Animação de acenar (wave) para Budzinho */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+/* Animação shimmer para barra de progresso */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animação de crescimento da linha (grow-line) */
+@keyframes grow-line {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Classes utilitárias de animação */
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Suporte para bg-gradient-radial no Tailwind */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
 }

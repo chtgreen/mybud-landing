@@ -62,7 +62,7 @@ const IPhoneMockup: FC = () => {
   }, [showVideo, screenshots.length]);
 
   return (
-    <div className="relative w-full max-w-[180px] sm:max-w-[220px] lg:max-w-[280px] xl:max-w-xs mx-auto">
+    <div className="relative w-full max-w-[240px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[340px] xl:max-w-[400px] 2xl:max-w-[460px] mx-auto">
       {/* iPhone Frame for Screenshots - More Vertical */}
       <div 
         className="iphone-frame relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl"
@@ -415,12 +415,18 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
               )}
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-6">
+                {/* Botão Principal - Baixar Agora (Rosa MyBud) */}
                 <button
-                  className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors border-0"
+                  className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-bold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-0"
                   onClick={handlePrimaryCTA}
                 >
-                  <span>{t('hero.primaryCta')}</span>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span>Baixar Agora</span>
                 </button>
+                
+                {/* Botão Secundário - Criar conta / Testar o app */}
                 {showSecondaryCta && t('hero.secondaryCta') !== 'hero.secondaryCta' && (
                   <>
                     {t('hero.secondaryCta').includes('media kit') ? (
@@ -428,7 +434,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                         href="mailto:comercial@mybud.app"
                         className={isB2BContext ? 
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
-                          "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
+                          "inline-flex items-center justify-center rounded-xl px-6 py-4 text-lg font-medium bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 border border-white/30"
                         }
                         onClick={handleSecondaryCTA}
                       >
@@ -438,7 +444,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                       <button
                         className={isB2BContext ? 
                           "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium bg-white border border-gray-300 text-gray-800 hover:text-gray-900 transition-colors" :
-                          "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium text-white/90 hover:text-white/100 transition-colors border border-white/30/0"
+                          "inline-flex items-center justify-center rounded-xl px-6 py-4 text-lg font-medium bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 border border-white/30"
                         }
                         onClick={handleSecondaryCTA}
                       >
@@ -496,27 +502,41 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
             </div>
 
             <div className="lg:w-1/2 relative app-animate flex items-center justify-center">
-              {/* Grafismo suave orgânico atrás do celular */}
+              {/* Brilho animado sutil atrás do celular - não Las Vegas! */}
               {!isB2BContext && (
-                <div 
-                  className="absolute opacity-90 -z-10"
-                  style={{
-                    left: '-30%',
-                    top: '50%',
-                    width: '170%',
-                    height: '170%',
-                    transform: 'translateY(-50%) scaleX(1.3) rotate(-15deg)',
-                    transformOrigin: 'center'
-                  }}
-                >
-                  <svg className="w-full h-full" viewBox="0 0 349.643 341.112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                    <path 
-                      fill="#ECFDF5" 
-                      fillRule="nonzero" 
-                      d="M 239.4375 170.554688 C 253.699219 157.519531 264.015625 140.238281 268.355469 120.699219 C 270.953125 109.007812 263.703125 97.394531 252.078125 94.492188 C 234.640625 90.136719 206.53125 87.234375 174.820312 87.234375 C 143.113281 87.234375 115.003906 90.136719 97.5625 94.492188 C 85.941406 97.394531 78.691406 109.007812 81.285156 120.699219 C 85.625 140.238281 95.945312 157.519531 110.203125 170.554688 C 95.945312 183.59375 85.625 200.871094 81.285156 220.410156 C 78.691406 232.105469 85.941406 243.714844 97.5625 246.617188 C 115.003906 250.976562 143.113281 253.878906 174.820312 253.878906 C 206.53125 253.878906 234.640625 250.976562 252.078125 246.617188 C 263.703125 243.714844 270.953125 232.105469 268.355469 220.410156 C 264.015625 200.871094 253.699219 183.59375 239.4375 170.554688"
-                    />
-                  </svg>
-                </div>
+                <>
+                  {/* Glow suave pulsante */}
+                  <div 
+                    className="absolute inset-0 -z-10 animate-pulse"
+                    style={{
+                      animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                      opacity: 0.4
+                    }}
+                  >
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-emerald-300/30 via-emerald-200/10 to-transparent rounded-full blur-3xl" />
+                  </div>
+                  
+                  {/* Grafismo suave orgânico atrás do celular */}
+                  <div 
+                    className="absolute opacity-90 -z-20"
+                    style={{
+                      left: '-30%',
+                      top: '50%',
+                      width: '180%',
+                      height: '180%',
+                      transform: 'translateY(-50%) scaleX(1.0) rotate(-15deg)',
+                      transformOrigin: 'center'
+                    }}
+                  >
+                    <svg className="w-full h-full" viewBox="0 0 349.643 341.112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                      <path 
+                        fill="#ECFDF5" 
+                        fillRule="nonzero" 
+                        d="M 239.4375 170.554688 C 253.699219 157.519531 264.015625 140.238281 268.355469 120.699219 C 270.953125 109.007812 263.703125 97.394531 252.078125 94.492188 C 234.640625 90.136719 206.53125 87.234375 174.820312 87.234375 C 143.113281 87.234375 115.003906 90.136719 97.5625 94.492188 C 85.941406 97.394531 78.691406 109.007812 81.285156 120.699219 C 85.625 140.238281 95.945312 157.519531 110.203125 170.554688 C 95.945312 183.59375 85.625 200.871094 81.285156 220.410156 C 78.691406 232.105469 85.941406 243.714844 97.5625 246.617188 C 115.003906 250.976562 143.113281 253.878906 174.820312 253.878906 C 206.53125 253.878906 234.640625 250.976562 252.078125 246.617188 C 263.703125 243.714844 270.953125 232.105469 268.355469 220.410156 C 264.015625 200.871094 253.699219 183.59375 239.4375 170.554688"
+                      />
+                    </svg>
+                  </div>
+                </>
               )}
               
               {isB2BContext ? <DashboardWidget variant="hero" /> : <IPhoneMockup />}

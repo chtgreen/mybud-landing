@@ -50,7 +50,7 @@ const PlantTimelineSection: FC = () => {
             onClick={() => setShowFeatures(!showFeatures)}
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-50 to-emerald-50 hover:from-purple-100 hover:to-emerald-100 text-purple-700 font-semibold rounded-xl transition-all duration-300 hover:shadow-md border border-purple-200"
           >
-            {showFeatures ? 'Hide' : 'Learn More About'} Timeline Features
+            {showFeatures ? t('plantTimeline.hide') : t('plantTimeline.learnMore')} {t('plantTimeline.timelineFeatures')}
             {showFeatures ? (
               <ChevronUp className="w-5 h-5" />
             ) : (
@@ -70,11 +70,10 @@ const PlantTimelineSection: FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-black mb-3">
-                Contagem de tempo automática
+                {t('plantTimeline.features.automatic.title')}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Dias e semanas calculados para cada estágio. 
-                Saiba exatamente há quanto tempo a planta está vegetativa ou florindo.
+                {t('plantTimeline.features.automatic.description')}
               </p>
             </div>
 
