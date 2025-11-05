@@ -160,7 +160,9 @@
       "instagramPlaceholder": "@your_instagram (VIP - optional)",
       "button": "I want to secure my spot",
       "privacy": "No spam: just beta updates and useful tips.",
-      "successMessage": "Thanks! You're on the beta VIP list.",
+      "successTitle": "Done! ✨",
+      "successMessage": "You'll receive the next updates by email.",
+      "successSubtext": "Zero spam, only updates that matter.",
       "errorMessage": "Oops! We couldn't send it. Try again."
     },
     "betaModal": {
@@ -187,6 +189,7 @@
       "free": {
         "title": "Prefer to wait?",
         "description": "Join the list and get news and early access when we open the beta.",
+        "successTitle": "You're on the list! ✨",
         "form": {
           "nameLabel": "Full name",
           "namePlaceholder": "Your name",
@@ -848,6 +851,7 @@
       "form": {
         "namePlaceholder": "Name",
         "emailPlaceholder": "Corporate email",
+        "phonePlaceholder": "Phone / WhatsApp",
         "companyPlaceholder": "Company",
         "modelPlaceholder": "Model of interest"
       },
@@ -935,6 +939,33 @@
         "Complete traceability",
         "Simplified compliance"
       ]
+    },
+    "problem": {
+      "title": "Cannabis associations, clubs, and small facilities still rely on manual management.",
+      "description": "Disconnected spreadsheets, manual reports, and incomplete traceability prevent collectives, clubs, and small facilities from growing with legal security. Mybud changes this scenario — digitizes the entire operation, ensures complete traceability, and transforms each cycle into auditable data and professional reports.",
+      "cta": "Schedule a conversation.",
+      "widget": {
+        "title": "Hub Indicators",
+        "chip": "Updated daily",
+        "stats": [
+          {
+            "value": "89%",
+            "label": "Average protocol adherence"
+          },
+          {
+            "value": "47",
+            "label": "Cycles recorded this month"
+          },
+          {
+            "value": "124",
+            "label": "Plants tracked"
+          },
+          {
+            "value": "92%",
+            "label": "Document compliance"
+          }
+        ]
+      }
     },
     "benefits": {
       "title": "Standardization without losing the human touch.",
@@ -1099,6 +1130,9 @@
     "featuresMap": {
       "title": "The Brain of Collective Cultivation",
       "subtitle": "MyBud centralizes everything: traceability, control, agility and data intelligence — in one system.",
+      "impactLabel": "Real Impact",
+      "bottomMessage": "Everything integrated in one system.",
+      "bottomSubtext": "No spreadsheets, no improvisation, no human errors.",
       "pillars": {
         "traceability": {
           "number": "1",
@@ -1246,6 +1280,7 @@
       "form": {
         "namePlaceholder": "Full name",
         "emailPlaceholder": "Corporate email",
+        "phonePlaceholder": "Phone / WhatsApp",
         "companyPlaceholder": "Company"
       },
       "primaryButton": "Schedule conversation",

@@ -33,9 +33,22 @@ CREATE TABLE IF NOT EXISTS public.b2b_leads (
     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
     name text,
     email text,
+    phone text,
     company text,
     message text,
     source text DEFAULT 'landing' NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    updated_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+-- Tabela: collective_leads (para leads de coletivos - formulário de cultivo coletivo)
+CREATE TABLE IF NOT EXISTS public.collective_leads (
+    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    organization_name text NOT NULL,
+    whatsapp text NOT NULL,
+    email text NOT NULL,
+    plant_count text NOT NULL,
+    source text DEFAULT 'collective_landing' NOT NULL,
     created_at timestamp with time zone DEFAULT now() NOT NULL,
     updated_at timestamp with time zone DEFAULT now() NOT NULL
 );
@@ -50,9 +63,16 @@ CREATE INDEX IF NOT EXISTS idx_beta_signups_created_at ON public.beta_signups(cr
 
 -- Índices para b2b_leads
 CREATE INDEX IF NOT EXISTS idx_b2b_leads_email ON public.b2b_leads(email);
+CREATE INDEX IF NOT EXISTS idx_b2b_leads_phone ON public.b2b_leads(phone);
 CREATE INDEX IF NOT EXISTS idx_b2b_leads_company ON public.b2b_leads(company);
 CREATE INDEX IF NOT EXISTS idx_b2b_leads_created_at ON public.b2b_leads(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_b2b_leads_source ON public.b2b_leads(source);
+
+-- Índices para collective_leads
+CREATE INDEX IF NOT EXISTS idx_collective_leads_email ON public.collective_leads(email);
+CREATE INDEX IF NOT EXISTS idx_collective_leads_organization ON public.collective_leads(organization_name);
+CREATE INDEX IF NOT EXISTS idx_collective_leads_created_at ON public.collective_leads(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_collective_leads_source ON public.collective_leads(source);
 
 -- ============================================================================
 -- 3. HABILITAR ROW LEVEL SECURITY (RLS)
@@ -60,6 +80,7 @@ CREATE INDEX IF NOT EXISTS idx_b2b_leads_source ON public.b2b_leads(source);
 
 ALTER TABLE public.beta_signups ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.b2b_leads ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.collective_leads ENABLE ROW LEVEL SECURITY;
 
 -- ============================================================================
 -- 4. CRIAR POLÍTICAS RLS (permitir acesso anônimo)
@@ -97,6 +118,22 @@ FOR SELECT
 TO authenticated
 USING (true);
 
+-- Política: Permitir INSERT anônimo em collective_leads
+DROP POLICY IF EXISTS "Allow anonymous inserts on collective_leads" ON public.collective_leads;
+CREATE POLICY "Allow anonymous inserts on collective_leads"
+ON public.collective_leads
+FOR INSERT
+TO anon
+WITH CHECK (true);
+
+-- Política: Permitir SELECT para usuários autenticados em collective_leads
+DROP POLICY IF EXISTS "Allow authenticated read on collective_leads" ON public.collective_leads;
+CREATE POLICY "Allow authenticated read on collective_leads"
+ON public.collective_leads
+FOR SELECT
+TO authenticated
+USING (true);
+
 -- ============================================================================
 -- 5. CRIAR FUNÇÃO DE ATUALIZAÇÃO AUTOMÁTICA (updated_at)
 -- ============================================================================
@@ -124,6 +161,13 @@ CREATE TRIGGER update_b2b_leads_updated_at
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 
+-- Trigger para collective_leads
+DROP TRIGGER IF EXISTS update_collective_leads_updated_at ON public.collective_leads;
+CREATE TRIGGER update_collective_leads_updated_at
+    BEFORE UPDATE ON public.collective_leads
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
 -- ============================================================================
 -- 6. INSERIR DADOS DE TESTE (OPCIONAL - pode comentar se não quiser)
 -- ============================================================================
@@ -136,10 +180,17 @@ VALUES
 ON CONFLICT DO NOTHING;
 
 -- Teste em b2b_leads
-INSERT INTO public.b2b_leads (name, email, company, message, source)
+INSERT INTO public.b2b_leads (name, email, phone, company, message, source)
 VALUES 
-    ('João Teste', 'joao@example.com', 'Empresa Teste LTDA', 'Mensagem de teste', 'landing'),
-    ('Maria Teste', 'maria@example.com', 'Outro Teste SA', NULL, 'landing')
+    ('João Teste', 'joao@example.com', '+55 11 98765-4321', 'Empresa Teste LTDA', 'Mensagem de teste', 'landing'),
+    ('Maria Teste', 'maria@example.com', '+55 21 99999-8888', 'Outro Teste SA', NULL, 'landing')
+ON CONFLICT DO NOTHING;
+
+-- Teste em collective_leads
+INSERT INTO public.collective_leads (organization_name, whatsapp, email, plant_count, source)
+VALUES 
+    ('Coletivo Teste', '+55 11 98765-4321', 'coletivo@teste.com', '50-100', 'collective_landing'),
+    ('Associação Exemplo', '+55 21 99999-8888', 'associacao@exemplo.org', '100-200', 'collective_landing')
 ON CONFLICT DO NOTHING;
 
 -- ============================================================================
@@ -152,7 +203,7 @@ SELECT
     tablename,
     tableowner
 FROM pg_tables
-WHERE tablename IN ('beta_signups', 'b2b_leads')
+WHERE tablename IN ('beta_signups', 'b2b_leads', 'collective_leads')
 ORDER BY tablename;
 
 -- Verificar políticas RLS criadas
@@ -166,7 +217,7 @@ SELECT
     qual,
     with_check
 FROM pg_policies
-WHERE tablename IN ('beta_signups', 'b2b_leads')
+WHERE tablename IN ('beta_signups', 'b2b_leads', 'collective_leads')
 ORDER BY tablename, policyname;
 
 -- Verificar índices criados
@@ -176,13 +227,15 @@ SELECT
     indexname,
     indexdef
 FROM pg_indexes
-WHERE tablename IN ('beta_signups', 'b2b_leads')
+WHERE tablename IN ('beta_signups', 'b2b_leads', 'collective_leads')
 ORDER BY tablename, indexname;
 
 -- Contar registros (incluindo dados de teste)
 SELECT 'beta_signups' as tabela, COUNT(*) as total FROM public.beta_signups
 UNION ALL
-SELECT 'b2b_leads' as tabela, COUNT(*) as total FROM public.b2b_leads;
+SELECT 'b2b_leads' as tabela, COUNT(*) as total FROM public.b2b_leads
+UNION ALL
+SELECT 'collective_leads' as tabela, COUNT(*) as total FROM public.collective_leads;
 
 -- ============================================================================
 -- ✅ SETUP COMPLETO!
@@ -193,6 +246,9 @@ SELECT 'b2b_leads' as tabela, COUNT(*) as total FROM public.b2b_leads;
 
 -- Para testar manualmente via SQL:
 -- INSERT INTO public.beta_signups (full_name, email, instagram) VALUES ('Seu Nome', 'seu@email.com', '@seu_insta');
--- INSERT INTO public.b2b_leads (name, email, company, message) VALUES ('Seu Nome', 'seu@email.com', 'Sua Empresa', 'Teste');
+-- INSERT INTO public.b2b_leads (name, email, phone, company, message) VALUES ('Seu Nome', 'seu@email.com', '+55 11 99999-9999', 'Sua Empresa', 'Teste');
+-- INSERT INTO public.collective_leads (organization_name, whatsapp, email, plant_count) VALUES ('Meu Coletivo', '+55 11 99999-9999', 'contato@coletivo.com', '50-100');
+
+
 
 

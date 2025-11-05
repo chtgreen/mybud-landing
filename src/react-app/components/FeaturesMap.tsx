@@ -200,7 +200,7 @@ const FeaturesMap: FC<FeaturesMapProps> = ({ background = 'white' }) => {
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-zinc-900 mb-2">
-                              Impacto Real
+                              {t('collective.featuresMap.impactLabel')}
                             </h4>
                             <p className="text-zinc-600 leading-relaxed text-sm">
                               {t(`collective.featuresMap.pillars.${pillar}.impact`)}
@@ -221,8 +221,8 @@ const FeaturesMap: FC<FeaturesMapProps> = ({ background = 'white' }) => {
           <div className="inline-flex items-center gap-3 bg-white rounded-full px-8 py-4 shadow-sm border border-zinc-200">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <p className="text-zinc-700">
-              <strong className="font-semibold">Tudo integrado em um único sistema.</strong>
-              <span className="text-zinc-500 ml-2">Sem planilhas, sem improviso, sem falhas humanas.</span>
+              <strong className="font-semibold">{t('collective.featuresMap.bottomMessage')}</strong>
+              <span className="text-zinc-500 ml-2">{t('collective.featuresMap.bottomSubtext')}</span>
             </p>
           </div>
         </div>

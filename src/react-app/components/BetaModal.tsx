@@ -29,6 +29,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<SubmissionStatus>('idle');
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
@@ -74,8 +75,15 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
   useEffect(() => {
     if (!open) return;
-    // Focus on name field when modal opens, but don't auto-focus email
-    nameInputRef.current?.focus({ preventScroll: true });
+    
+    // Check if user has already submitted
+    const submitted = localStorage.getItem('mybud_beta_modal_submitted');
+    if (submitted === 'true') {
+      setHasSubmitted(true);
+    } else {
+      // Focus on name field when modal opens, but don't auto-focus email if not submitted
+      nameInputRef.current?.focus({ preventScroll: true });
+    }
   }, [open]);
 
   const portalTarget = typeof document !== 'undefined' ? document.body : null;
@@ -131,6 +139,9 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
         });
       }
 
+      // Save to localStorage to prevent duplicate submissions
+      localStorage.setItem('mybud_beta_modal_submitted', 'true');
+      setHasSubmitted(true);
       setStatus('success');
       setName('');
       setEmail('');
@@ -301,77 +312,91 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
             </div>
 
             <div className="border border-[#E6E7E8] rounded-3xl p-6 md:p-8 flex flex-col gap-6">
-              <div className="space-y-3">
-                <h3 className="text-2xl font-semibold text-gray-900">
-                  {t('betaModal.free.title')}
-                </h3>
-                <p className="text-sm text-gray-600">
-                  {t('betaModal.free.description')}
-                </p>
-              </div>
-
-              <form onSubmit={submit} className="space-y-4">
-                <label htmlFor="beta-modal-name" className="sr-only">
-                  {t('betaModal.free.form.nameLabel')}
-                </label>
-                <input
-                  id="beta-modal-name"
-                  type="text"
-                  required
-                  value={name}
-                  ref={nameInputRef}
-                  onChange={(event) => {
-                    if (status !== 'idle') {
-                      setStatus('idle');
-                    }
-                    setName(event.target.value);
-                  }}
-                  autoComplete="name"
-                  placeholder={t('betaModal.free.form.namePlaceholder')}
-                  className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
-                />
-                <label htmlFor="beta-modal-email" className="sr-only">
-                  {t('betaModal.free.form.label')}
-                </label>
-                <input
-                  id="beta-modal-email"
-                  type="email"
-                  required
-                  value={email}
-                  ref={emailInputRef}
-                  onChange={(event) => {
-                    if (status !== 'idle') {
-                      setStatus('idle');
-                    }
-                    setEmail(event.target.value);
-                  }}
-                  autoComplete="email"
-                  placeholder={t('betaModal.free.form.placeholder')}
-                  className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center rounded-full border border-[#E6E7E8] bg-white text-[#288664] font-semibold text-sm py-3 transition-colors hover:bg-[#288664]/5 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting
-                    ? t('betaModal.free.form.loading')
-                    : t('betaModal.free.form.cta')}
-                </button>
-                <p className="text-xs text-gray-500">
-                  {t('betaModal.free.form.microcopy')}
-                </p>
-                {status === 'success' && (
-                  <p className="text-xs font-medium text-[#288664]">
+              {hasSubmitted ? (
+                <div className="space-y-4 text-center py-4">
+                  <svg className="w-16 h-16 text-[#288664] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {t('betaModal.free.successTitle')}
+                  </h3>
+                  <p className="text-sm text-gray-600">
                     {t('betaModal.free.form.success')}
                   </p>
-                )}
-                {status === 'error' && (
-                  <p className="text-xs font-medium text-red-500">
-                    {t('betaModal.free.form.error')}
+                  <p className="text-xs text-gray-500">
+                    {t('betaModal.free.form.microcopy')}
                   </p>
-                )}
-              </form>
+                </div>
+              ) : (
+                <>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-semibold text-gray-900">
+                      {t('betaModal.free.title')}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {t('betaModal.free.description')}
+                    </p>
+                  </div>
+
+                  <form onSubmit={submit} className="space-y-4">
+                    <label htmlFor="beta-modal-name" className="sr-only">
+                      {t('betaModal.free.form.nameLabel')}
+                    </label>
+                    <input
+                      id="beta-modal-name"
+                      type="text"
+                      required
+                      value={name}
+                      ref={nameInputRef}
+                      onChange={(event) => {
+                        if (status !== 'idle') {
+                          setStatus('idle');
+                        }
+                        setName(event.target.value);
+                      }}
+                      autoComplete="name"
+                      placeholder={t('betaModal.free.form.namePlaceholder')}
+                      className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
+                    />
+                    <label htmlFor="beta-modal-email" className="sr-only">
+                      {t('betaModal.free.form.label')}
+                    </label>
+                    <input
+                      id="beta-modal-email"
+                      type="email"
+                      required
+                      value={email}
+                      ref={emailInputRef}
+                      onChange={(event) => {
+                        if (status !== 'idle') {
+                          setStatus('idle');
+                        }
+                        setEmail(event.target.value);
+                      }}
+                      autoComplete="email"
+                      placeholder={t('betaModal.free.form.placeholder')}
+                      className="w-full rounded-full border border-[#E6E7E8] bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#288664] focus:outline-none focus:ring-2 focus:ring-[#288664]/30 transition"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center rounded-full border border-[#E6E7E8] bg-white text-[#288664] font-semibold text-sm py-3 transition-colors hover:bg-[#288664]/5 disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting
+                        ? t('betaModal.free.form.loading')
+                        : t('betaModal.free.form.cta')}
+                    </button>
+                    <p className="text-xs text-gray-500">
+                      {t('betaModal.free.form.microcopy')}
+                    </p>
+                    {status === 'error' && (
+                      <p className="text-xs font-medium text-red-500">
+                        {t('betaModal.free.form.error')}
+                      </p>
+                    )}
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>

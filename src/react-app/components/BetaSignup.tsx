@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { useState, useEffect, type FC } from 'react';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
@@ -13,8 +13,17 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
   const [email, setEmail] = useState('');
   const [instagram, setInstagram] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
+
+  // Check if user has already submitted
+  useEffect(() => {
+    const submitted = localStorage.getItem('mybud_beta_signup_submitted');
+    if (submitted === 'true') {
+      setHasSubmitted(true);
+    }
+  }, []);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,8 +75,11 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
         });
       }
 
-      // Show success message
-      alert(t('betaSignup.successMessage'));
+      // Save to localStorage to prevent duplicate submissions
+      localStorage.setItem('mybud_beta_signup_submitted', 'true');
+      setHasSubmitted(true);
+      
+      // Clear form
       setName('');
       setEmail('');
       setInstagram('');
@@ -171,46 +183,65 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
           </div>
         </div>
 
-        {/* Form */}
-        <form onSubmit={submit} className="max-w-lg mx-auto space-y-4">
-          <input
-            type="text"
-            placeholder={t('betaSignup.namePlaceholder')}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            required
-            autoComplete="name"
-          />
-          <input
-            type="email"
-            placeholder={t('betaSignup.emailPlaceholder')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            required
-          />
+        {/* Form or Success Message */}
+        {hasSubmitted ? (
+          <div className="max-w-lg mx-auto text-center">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-500 rounded-2xl p-8 shadow-lg">
+              <svg className="w-16 h-16 text-emerald-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                {t('betaSignup.successTitle')}
+              </h3>
+              <p className="text-lg text-gray-700 mb-4">
+                {t('betaSignup.successMessage')}
+              </p>
+              <p className="text-sm text-gray-600">
+                {t('betaSignup.successSubtext')}
+              </p>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="max-w-lg mx-auto space-y-4">
+            <input
+              type="text"
+              placeholder={t('betaSignup.namePlaceholder')}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              required
+              autoComplete="name"
+            />
+            <input
+              type="email"
+              placeholder={t('betaSignup.emailPlaceholder')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              required
+            />
 
-          <input
-            type="text"
-            placeholder={t('betaSignup.instagramPlaceholder')}
-            value={instagram}
-            onChange={(e) => setInstagram(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-          />
+            <input
+              type="text"
+              placeholder={t('betaSignup.instagramPlaceholder')}
+              value={instagram}
+              onChange={(e) => setInstagram(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            />
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full btn-primary py-3 px-6 disabled:opacity-50"
-          >
-            {isSubmitting ? 'Enviando...' : t('betaSignup.button')}
-          </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full btn-primary py-3 px-6 disabled:opacity-50"
+            >
+              {isSubmitting ? 'Enviando...' : t('betaSignup.button')}
+            </button>
 
-          <p className="text-xs text-gray-500 text-center">
-            {t('betaSignup.privacy')}
-          </p>
-        </form>
+            <p className="text-xs text-gray-500 text-center">
+              {t('betaSignup.privacy')}
+            </p>
+          </form>
+        )}
       </div>
     </section>
   );

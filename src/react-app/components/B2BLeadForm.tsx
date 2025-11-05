@@ -1,4 +1,4 @@
-import { useState, type FC, type ChangeEvent } from 'react';
+import { useState, useEffect, type FC, type ChangeEvent } from 'react';
 import posthog from 'posthog-js';
 import { t } from '../lib/i18n';
 import { supabase } from '../lib/supabaseClient';
@@ -12,6 +12,7 @@ interface B2BLeadFormProps {
 interface LeadPayload {
   name: string;
   email: string;
+  phone: string;
   company: string;
   message: string;
 }
@@ -21,6 +22,7 @@ const TABLE_NAME = 'b2b_leads';
 const initialState: LeadPayload = {
   name: '',
   email: '',
+  phone: '',
   company: '',
   message: '',
 };
@@ -40,11 +42,25 @@ const emailFallback = () => {
 const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
   const [form, setForm] = useState<LeadPayload>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [validationError, setValidationError] = useState('');
 
   const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
 
+  // Check if user has already submitted
+  useEffect(() => {
+    const submitted = localStorage.getItem('mybud_b2b_lead_submitted');
+    if (submitted === 'true') {
+      setHasSubmitted(true);
+    }
+  }, []);
+
   const handleChange = (field: keyof LeadPayload) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [field]: event.target.value }));
+    // Clear validation error when user starts typing
+    if (validationError) {
+      setValidationError('');
+    }
   };
 
   const submit = async (event: React.FormEvent) => {
@@ -52,15 +68,17 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
 
     const name = form.name.trim();
     const email = form.email.trim();
+    const phone = form.phone.trim();
     const company = form.company.trim();
     const message = form.message.trim();
 
-    if (!name || !email || !company) {
-      alert(t('finalCta.errorMessage'));
+    if (!name || !email || !phone || !company) {
+      setValidationError(t('finalCta.errorMessage'));
       return;
     }
 
     setIsSubmitting(true);
+    setValidationError('');
 
     try {
       const { error } = await supabase
@@ -69,6 +87,7 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
           {
             name,
             email,
+            phone,
             company,
             message: message || null,
             source: 'landing',
@@ -81,6 +100,7 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
       // Track successful B2B lead submission with dual tracking (HIGH-VALUE CONVERSION)
       trackFormSubmission('B2B Lead Form', {
         email,
+        phone,
         company,
         name,
         has_message: Boolean(message),
@@ -92,6 +112,7 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
       // Identify B2B lead for future tracking
       identifyUser(email, {
         name,
+        phone,
         company,
         lead_type: 'b2b',
         lead_source: 'landing_page_form'
@@ -101,17 +122,20 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
       if (typeof posthog !== 'undefined') {
         posthog.capture('b2b_lead_submitted', {
           email,
+          phone,
           company,
           has_message: Boolean(message),
           source: 'landing_final_cta',
         });
       }
 
-      alert(t('finalCta.successMessage'));
+      // Save to localStorage to prevent duplicate submissions
+      localStorage.setItem('mybud_b2b_lead_submitted', 'true');
+      setHasSubmitted(true);
       setForm(initialState);
     } catch (error) {
       console.error('Failed to submit B2B lead', error);
-      alert(t('finalCta.errorMessage'));
+      setValidationError(t('finalCta.errorMessage'));
 
       // Track failed B2B lead submission
       trackFormSubmission('B2B Lead Form', {
@@ -152,7 +176,25 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
           </p>
         </div>
 
-        <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        {hasSubmitted ? (
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-500 rounded-2xl p-8 md:p-12 shadow-xl text-center">
+              <svg className="w-20 h-20 text-emerald-600 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                {t('finalCta.successTitle') !== 'finalCta.successTitle' ? t('finalCta.successTitle') : 'Obrigado pelo seu interesse!'}
+              </h3>
+              <p className="text-lg text-gray-700 mb-3">
+                {t('finalCta.successMessage')}
+              </p>
+              <p className="text-base text-gray-600">
+                {t('finalCta.successSubtext') !== 'finalCta.successSubtext' ? t('finalCta.successSubtext') : 'Nossa equipe entrará em contato em breve para discutir como podemos ajudar seu negócio.'}
+              </p>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
           <div className="grid md:grid-cols-2 gap-5">
             <div className="flex flex-col">
               <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-name">
@@ -184,19 +226,35 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
             </div>
           </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-company">
-              {t('finalCta.form.companyPlaceholder')}
-            </label>
-            <input
-              id="b2b-company"
-              type="text"
-              value={form.company}
-              onChange={handleChange('company')}
-              placeholder={t('finalCta.form.companyPlaceholder')}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              required
-            />
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-phone">
+                {t('finalCta.form.phonePlaceholder')}
+              </label>
+              <input
+                id="b2b-phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange('phone')}
+                placeholder={t('finalCta.form.phonePlaceholder')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-company">
+                {t('finalCta.form.companyPlaceholder')}
+              </label>
+              <input
+                id="b2b-company"
+                type="text"
+                value={form.company}
+                onChange={handleChange('company')}
+                placeholder={t('finalCta.form.companyPlaceholder')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
           </div>
 
           <div className="flex flex-col">
@@ -212,6 +270,12 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
             />
           </div>
+
+          {validationError && (
+            <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+              {validationError}
+            </div>
+          )}
 
           <button
             type="submit"
@@ -240,6 +304,7 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
             </button>
           </div>
         </form>
+        )}
       </div>
     </section>
   );

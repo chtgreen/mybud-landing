@@ -160,7 +160,9 @@
       "instagramPlaceholder": "@seu_instagram (VIP - opcional)",
       "button": "Quero garantir minha vaga",
       "privacy": "Nada de spam: só atualizações do beta e dicas úteis.",
-      "successMessage": "Valeu! Você está na lista VIP do beta.",
+      "successTitle": "Pronto! ✨",
+      "successMessage": "Você vai receber as próximas novidades por e-mail.",
+      "successSubtext": "Zero spam, só updates que valem.",
       "errorMessage": "Ops! Não conseguimos enviar. Tente novamente."
     },
     "betaModal": {
@@ -187,6 +189,7 @@
       "free": {
         "title": "Quer só entrar na lista?",
         "description": "Deixa seu e-mail e eu te aviso quando liberar beta novo, conteúdo e convite pra testar.",
+        "successTitle": "Você está na lista! ✨",
         "form": {
           "nameLabel": "Nome completo",
           "namePlaceholder": "Seu nome",
@@ -849,6 +852,7 @@
       "form": {
         "namePlaceholder": "Nome",
         "emailPlaceholder": "E-mail corporativo",
+        "phonePlaceholder": "Telefone / WhatsApp",
         "companyPlaceholder": "Empresa",
         "modelPlaceholder": "Modelo de interesse"
       },
@@ -1005,6 +1009,9 @@
     "featuresMap": {
       "title": "O Cérebro do Cultivo Coletivo",
       "subtitle": "O MyBud centraliza tudo: rastreabilidade, controle, agilidade e inteligência de dados — em um só sistema.",
+      "impactLabel": "Impacto Real",
+      "bottomMessage": "Tudo integrado em um único sistema.",
+      "bottomSubtext": "Sem planilhas, sem improviso, sem falhas humanas.",
       "pillars": {
         "traceability": {
           "number": "1",
