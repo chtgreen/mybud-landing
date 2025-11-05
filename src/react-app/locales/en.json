@@ -1059,7 +1059,9 @@
       "primaryButton": "Schedule demo",
       "secondaryButton": "Join the pilot",
       "email": "comercial@mybud.app",
-      "successMessage": "Received! Someone from the Mybud team will contact you within 1 business day.",
+      "successTitle": "Received! ✨",
+      "successMessage": "Someone from the MyBud team will contact you within 1 business day.",
+      "successSubtext": "We'll understand your operation and show you how MyBud can help.",
       "errorMessage": "Something went wrong. Try again or write to comercial@mybud.app"
     },
     "faq": {
@@ -1274,6 +1276,7 @@
     "finalCta": {
       "title": "Be part of the new standard of presence in cultivation.",
       "text": "MyBud is the first ecosystem that connects brands, breeders, and equipment manufacturers ethically, usefully, and traceably. Here, marketing becomes legitimate, useful, ethical, and present again.",
+      "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
       "community": "Join the first brands shaping the future of cannabis cultivation.",
       "primaryCta": "I want to integrate my brand to MyBud",
       "secondaryCta": "I want to know more",
@@ -1285,7 +1288,9 @@
       },
       "primaryButton": "Schedule conversation",
       "secondaryOption": "Prefer to talk directly?",
-      "email": "comercial@mybud.app"
+      "email": "comercial@mybud.app",
+      "successMessage": "Got it! Someone from the Mybud team will reach out within one business day.",
+      "errorMessage": "Something went wrong. Try again or email comercial@mybud.app"
     },
     "modal": {
       "fields": {

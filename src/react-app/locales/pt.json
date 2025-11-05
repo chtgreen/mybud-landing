@@ -1226,7 +1226,9 @@
       "primaryButton": "Agendar demonstração",
       "secondaryButton": "Participar do piloto",
       "email": "comercial@mybud.app",
-      "successMessage": "Recebido! Em até 1 dia útil alguém do time Mybud entra em contato.",
+      "successTitle": "Recebido! ✨",
+      "successMessage": "Em até 1 dia útil alguém do time MyBud entra em contato.",
+      "successSubtext": "Vamos entender sua operação e mostrar como o MyBud pode ajudar.",
       "errorMessage": "Algo deu errado. Tente novamente ou escreva para comercial@mybud.app"
     },
     "oldFinalCta": {
@@ -1371,17 +1373,21 @@
     "finalCta": {
       "title": "Faça parte do novo padrão de presença no cultivo.",
       "text": "O MyBud é o primeiro ecossistema que conecta marcas, breeders e fabricantes de equipamentos de forma ética, útil e rastreável. Aqui, o marketing volta a ser legítimo, útil, ético e presente.",
+      "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
       "community": "Entre as primeiras marcas a moldar o futuro do cultivo canábico no Brasil.",
       "primaryCta": "Quero integrar minha marca ao MyBud",
       "secondaryCta": "Quero saber mais",
       "form": {
         "namePlaceholder": "Nome completo",
         "emailPlaceholder": "E-mail corporativo",
+        "phonePlaceholder": "Telefone / WhatsApp",
         "companyPlaceholder": "Empresa"
       },
       "primaryButton": "Agendar conversa",
       "secondaryOption": "Prefere falar direto?",
-      "email": "comercial@mybud.app"
+      "email": "comercial@mybud.app",
+      "successMessage": "Recebido! Em até 1 dia útil alguém do time Mybud entra em contato.",
+      "errorMessage": "Algo deu errado. Tente novamente ou escreva para comercial@mybud.app"
     },
     "modal": {
       "fields": {

@@ -1,4 +1,4 @@
-import { useState, type FC, type ChangeEvent } from 'react';
+import { useState, useEffect, type FC, type ChangeEvent } from 'react';
 import posthog from 'posthog-js';
 import { t } from '../lib/i18n';
 import { supabase } from '../lib/supabaseClient';
@@ -37,8 +37,17 @@ const emailFallback = () => {
 const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' }) => {
   const [form, setForm] = useState<CollectiveLeadPayload>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const bgClass = background === 'white' ? 'bg-white' : 'bg-gray-50';
+
+  // Check if user has already submitted
+  useEffect(() => {
+    const submitted = localStorage.getItem('mybud_collective_lead_submitted');
+    if (submitted === 'true') {
+      setHasSubmitted(true);
+    }
+  }, []);
 
   const handleChange = (field: keyof CollectiveLeadPayload) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [field]: event.target.value }));
@@ -106,7 +115,9 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
         });
       }
 
-      alert('Recebido! Em até 1 dia útil alguém do time Mybud entra em contato.');
+      // Save to localStorage to prevent duplicate submissions
+      localStorage.setItem('mybud_collective_lead_submitted', 'true');
+      setHasSubmitted(true);
       setForm(initialState);
     } catch (error) {
       console.error('Failed to submit collective lead', error);
@@ -145,7 +156,25 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
           </p>
         </div>
 
-        <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        {hasSubmitted ? (
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-500 rounded-2xl p-8 md:p-12 shadow-xl text-center">
+              <svg className="w-20 h-20 text-emerald-600 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                {t('collective.finalCta.successTitle')}
+              </h3>
+              <p className="text-lg text-gray-700 mb-3">
+                {t('collective.finalCta.successMessage')}
+              </p>
+              <p className="text-base text-gray-600">
+                {t('collective.finalCta.successSubtext')}
+              </p>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
           <div className="flex flex-col">
             <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-org-name">
               {t('collective.finalCta.formFields.organizationName')}
@@ -233,6 +262,7 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
             </button>
           </div>
         </form>
+        )}
       </div>
     </section>
   );
