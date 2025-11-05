@@ -9,7 +9,8 @@ import {
   detectBrowserLanguage,
   subscribeI18n,
   hasTranslationsInCache,
-  setCurrentNamespace
+  setCurrentNamespace,
+  ContentNamespace
 } from '../lib/i18n';
 
 interface LanguageContextType {
@@ -28,15 +29,19 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
   
-  // Detect if we're in B2B or B2C context from URL BEFORE any state initialization
-  const isB2BPage = location.pathname.includes('/b2b');
+  // Detect page context from URL BEFORE any state initialization
+  const detectNamespace = (pathname: string): ContentNamespace => {
+    if (pathname.includes('/industry')) {
+      return 'industry';
+    } else if (pathname.includes('/collective') || pathname.includes('/b2b') || pathname.includes('/enterprise')) {
+      return 'collective';
+    } else {
+      return 'b2c'; // default for /grower and other routes
+    }
+  };
   
   // Set namespace immediately based on URL path
-  if (isB2BPage) {
-    setCurrentNamespace('b2b');
-  } else {
-    setCurrentNamespace('b2c');
-  }
+  setCurrentNamespace(detectNamespace(location.pathname));
   
   // Determine target language before any state initialization
   let targetLanguage: Language = DEFAULT_LANGUAGE;
@@ -100,10 +105,19 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     initializeLanguage();
   }, [lang, navigate]);
 
-  // Update namespace when pathname changes (B2B <-> B2C navigation)
+  // Update namespace when pathname changes (between different page types)
   useEffect(() => {
-    const isB2BPath = location.pathname.includes('/b2b');
-    setCurrentNamespace(isB2BPath ? 'b2b' : 'b2c');
+    const detectNamespace = (pathname: string): ContentNamespace => {
+      if (pathname.includes('/industry')) {
+        return 'industry';
+      } else if (pathname.includes('/collective') || pathname.includes('/b2b') || pathname.includes('/enterprise')) {
+        return 'collective';
+      } else {
+        return 'b2c'; // default for /grower and other routes
+      }
+    };
+    
+    setCurrentNamespace(detectNamespace(location.pathname));
     
     // Force rerender to update translations with new namespace
     setI18nTick(t => t + 1);

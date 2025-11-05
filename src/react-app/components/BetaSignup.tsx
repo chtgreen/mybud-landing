@@ -2,6 +2,7 @@ import { useState, type FC } from 'react';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
 import { t } from '../lib/i18n';
+import { trackFormSubmission, identifyUser } from '../lib/analytics';
 
 interface BetaSignupProps {
   background?: 'white' | 'gray';
@@ -28,7 +29,7 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
         .from('beta_signups')
         .insert([
           {
-            full_name: trimmedName,
+            name: trimmedName,
             email: trimmedEmail,
             instagram: instagram.trim() || null,
             created_at: new Date().toISOString(),
@@ -37,10 +38,28 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
       if (error) throw error;
 
-      // Track successful signup
+      // Track successful beta signup with dual tracking (HIGH-VALUE CONVERSION)
+      trackFormSubmission('Beta Signup Form', {
+        email: trimmedEmail,
+        name: trimmedName,
+        has_instagram: !!instagram,
+        source: 'beta_section',
+        conversion_type: 'beta_signup',
+        form_type: 'newsletter_beta'
+      }, true);
+
+      // Identify beta user for future tracking
+      identifyUser(trimmedEmail, {
+        name: trimmedName,
+        instagram: instagram.trim() || undefined,
+        lead_type: 'beta_tester',
+        lead_source: 'beta_signup_form'
+      });
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('newsletter_signup_completed', {
-          full_name: trimmedName,
+          name: trimmedName,
           email: trimmedEmail,
           has_instagram: !!instagram,
           source: 'beta_section'
@@ -56,6 +75,15 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
       console.error('Error:', error);
       alert(t('betaSignup.errorMessage'));
 
+      // Track failed beta signup submission
+      trackFormSubmission('Beta Signup Form', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        source: 'beta_section',
+        attempted_email: email.trim(),
+        form_type: 'newsletter_beta'
+      }, false);
+
+      // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('newsletter_signup_error', {
           error: error instanceof Error ? error.message : 'Unknown error',

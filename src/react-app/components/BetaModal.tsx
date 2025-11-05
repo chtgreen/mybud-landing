@@ -25,7 +25,7 @@ const priorityBenefits = [
 ] as const;
 
 const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitPrice = 249 }) => {
-  const [fullName, setFullName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<SubmissionStatus>('idle');
@@ -47,7 +47,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
   useEffect(() => {
     if (!open) {
-      setFullName('');
+      setName('');
       setEmail('');
       setStatus('idle');
       setIsSubmitting(false);
@@ -74,12 +74,9 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
   useEffect(() => {
     if (!open) return;
-    if (!fullName) {
-      nameInputRef.current?.focus({ preventScroll: true });
-    } else {
-      emailInputRef.current?.focus({ preventScroll: true });
-    }
-  }, [open, fullName]);
+    // Focus on name field when modal opens, but don't auto-focus email
+    nameInputRef.current?.focus({ preventScroll: true });
+  }, [open]);
 
   const portalTarget = typeof document !== 'undefined' ? document.body : null;
 
@@ -89,7 +86,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const trimmedName = fullName.trim();
+    const trimmedName = name.trim();
     const trimmedEmail = email.trim();
     if (!trimmedName || !trimmedEmail) return;
 
@@ -99,7 +96,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
     try {
       const { error } = await supabase.from('beta_signups').insert([
         {
-          full_name: trimmedName,
+          name: trimmedName,
           email: trimmedEmail,
           instagram: '',
           created_at: new Date().toISOString()
@@ -110,7 +107,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
       // Track successful form submission with dual tracking
       trackFormSubmission('Beta Waitlist Signup', {
-        full_name: trimmedName,
+        name: trimmedName,
         email: trimmedEmail,
         source: 'beta_modal',
         channel: 'modal_free_access',
@@ -127,7 +124,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
       // Legacy PostHog tracking (can be removed later)
       if (typeof posthog !== 'undefined') {
         posthog.capture('free_waitlist_signup_completed', {
-          full_name: trimmedName,
+          name: trimmedName,
           email: trimmedEmail,
           source: 'beta_modal',
           channel: 'modal_free_access'
@@ -135,7 +132,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
       }
 
       setStatus('success');
-      setFullName('');
+      setName('');
       setEmail('');
     } catch (error) {
       console.error('Error:', error);
@@ -321,13 +318,13 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
                   id="beta-modal-name"
                   type="text"
                   required
-                  value={fullName}
+                  value={name}
                   ref={nameInputRef}
                   onChange={(event) => {
                     if (status !== 'idle') {
                       setStatus('idle');
                     }
-                    setFullName(event.target.value);
+                    setName(event.target.value);
                   }}
                   autoComplete="name"
                   placeholder={t('betaModal.free.form.namePlaceholder')}

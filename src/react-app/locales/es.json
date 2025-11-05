@@ -111,39 +111,6 @@
       "cta": "Ver la demo ahora",
       "afterWatching": "¿Te gustó? Entra al beta gratuito"
     },
-    "associationsSection": {
-      "title": "¿Eres una asociación o tienes un cultivo colectivo?",
-      "subtitle": "Mybud es software que acompaña el tamaño de tu escala.",
-      "description": "Desarrollamos soluciones específicas para asociaciones cannábicas y pequeñas facilidades que necesitan gestión profesional sin complejidad innecesaria.",
-      "features": {
-        "management": {
-          "title": "Gestión facilitada",
-          "desc": "Organiza miembros, áreas de cultivo o procesos en una plataforma simple e intuitiva. Control total sin complicación."
-        },
-        "reports": {
-          "title": "Reportes",
-          "desc": "Informes automáticos para cumplimiento, auditoría y gestión. Datos organizados y siempre actualizados para toma de decisiones."
-        },
-        "traceability": {
-          "title": "Identificación y trazabilidad",
-          "desc": "De la planta a la extracción, mantén trazabilidad completa con códigos únicos e historial detallado de cada etapa."
-        },
-        "integration": {
-          "title": "Integración con socios",
-          "desc": "Acceso directo a insumos, dispositivos y cronogramas validados."
-        },
-        "intelligence": {
-          "title": "Cumplimiento simplificado",
-          "desc": "Mantente actualizado y al día con protocolos y regulaciones a través de sistemas automatizados y alertas inteligentes."
-        }
-      },
-      "cta": "Saber más",
-      "testimonial": {
-        "text": "",
-        "author": "",
-        "role": ""
-      }
-    },
     "betaSignup": {
       "title": "Asegura tu lugar en Mybud antes de que abra",
       "subtitle": "Prueba la app completa, envía feedback directo al equipo y desbloquea beneficios exclusivos para fundadores.",
@@ -277,6 +244,7 @@
     "footer": {
       "brand": "Mybud",
       "tagline": "Tu compañero digital de cultivo.",
+      "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica.",
       "faqTitle": "FAQ",
       "faq1": {
         "question": "¿La app ya está en las tiendas?",
@@ -288,9 +256,14 @@
       },
       "faq3": {
         "question": "¿Cuánto costará después?",
-        "answer": "Premium = R$ 30/mes. Quien entre al beta gana meses gratis."
+        "answer": "Premium = R$ 39,90/mes. Quien entre al beta gana meses gratis."
       },
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Uso",
       "contact": "Contacto",
+      "growers": "Cultivadores",
+      "collective": "Colectivos",
+      "industry": "Industria",
       "legalNotice": "Mybud es una herramienta de organización y registro. Respeta la legislación local.",
       "copyright": "© 2024 Mybud. Todos los derechos reservados."
     },
@@ -300,11 +273,16 @@
         "features": "Funcionalidades",
         "beta": "Beta",
         "associations": "Asociaciones",
-        "kit": "Kit Fundador"
+        "kit": "Kit Fundador",
+        "contact": "Contacto"
       },
       "cta": "Asegura tu KIT",
       "switchToB2B": "Para empresas",
-      "switchToB2C": "Para ti"
+      "switchToB2C": "Para ti",
+      "switchToGrower": "Para Cultivadores",
+      "switchToCollective": "Para Colectivos",
+      "switchToIndustry": "Para Industria",
+      "switchToEnterprise": "Para empresas"
     },
     "themeSelector": {
       "title": "Probar Colores",
@@ -543,14 +521,18 @@
       },
       "cta": "Agendar conversación",
       "switchToB2B": "Para empresas",
-      "switchToB2C": "Para ti"
+      "switchToB2C": "Para ti",
+      "switchToGrower": "Para Cultivadores",
+      "switchToCollective": "Para Colectivos",
+      "switchToIndustry": "Para Industria",
+      "switchToEnterprise": "Para empresas"
     },
     "hero": {
       "overline": "Alianzas fundadoras Mybud",
-      "title1": "Insights de uso que validan productos y potencian las ventas.",
-      "title2": "",
+      "title1": "Tu marca aparece",
+      "title2": "en el momento exacto.",
       "title3": "",
-      "subtitle": "Del cultivo diario a las decisiones estratégicas, My Bud muestra cómo growers usan tus productos y convierte su rutina en métricas de rendimiento accionables que fortalecen marcas de insumos, fabricantes de equipos y asociaciones canábicas.",
+      "subtitle": "Tu producto surge exactamente cuando el grower lo necesita — en el riego, en la detección de plagas, en el momento de nutrición. Insights de uso real, datos 100% anónimos.",
       "graphHighlights": [
         "Contenido relevante en la rutina real",
         "Reconocimiento y prueba de uso",
@@ -587,7 +569,7 @@
       },
       "primaryCta": "Saber más",
       "secondaryCta": "Agendar conversación",
-      "trustElement": "Panel privado para alianzas fundadoras."
+      "trustElement": "Datos anónimos y agregados. Sabe CÓMO usan tus productos, no QUIÉN."
     },
     "problem": {
       "title": "El marketing y la gestión del cannabis están trabados.",
@@ -617,43 +599,123 @@
       }
     },
     "howItWorks": {
-      "title": "Simple, directo y eficiente.",
-      "subtitle": "Tu marca dentro del cultivo real.",
+      "title": "Tu producto aparece en el momento exacto.",
+      "subtitle": "Contexto de uso real, datos 100% anónimos.",
       "step1": {
-        "title": "Rastrea el uso real",
-        "desc": "Tu protocolo o tabla se convierte en un cronograma interactivo. El grower recibe tareas; tú acompañas cómo usan tus productos a través de métricas de adhesión, adopción y recompra."
+        "title": "¿Hora de regar? Tu producto aparece",
+        "desc": "Grower abre la app para regar → cronograma muestra tu CalMag. ¿Hora de nutrición? Tu fertilizante surge en el momento exacto. Todo integrado a la rutina real."
       },
       "step2": {
-        "title": "Uso visible y útil",
-        "desc": "Tu marca aparece en registros, tareas y stickers en fotos y videos, generando prueba social autorizada."
+        "title": "¿Detectó plaga? Tu solución aparece",
+        "desc": "Grower registra problema de hongos → app sugiere tu producto. Tu marca se posiciona exactamente cuando el cultivador necesita ayuda."
       },
       "step3": {
-        "title": "Influencers estratégicos",
-        "desc": "Rastrea cupones y códigos de uso real de growers públicos y mide el impacto en el embudo comercial."
+        "title": "Datos de uso reales y anónimos",
+        "desc": "Métricas de adhesión, recompra y satisfacción — sin exponer identidades. Sabes cómo cultivan, pero no quiénes son. Privacidad por diseño."
       },
       "step4": {
-        "title": "Integraciones opcionales",
-        "desc": "Códigos QR, empaques conectados e IoT llevan al cliente directo al cronograma de tu producto en la app."
+        "title": "QR code → cronograma en la app",
+        "desc": "Empaques conectados llevan clientes directo al protocolo de uso de tu producto. Conveniencia que se convierte en recompra."
+      }
+    },
+    "smartFeeding": {
+      "badge": "Inteligencia contextual",
+      "title": "Las tablas en PDF son cosa de los años 90.",
+      "subtitle": "Tu protocolo se convierte en inteligencia viva en la app.",
+      "comparison": {
+        "old": {
+          "title": "Tabla estática en PDF",
+          "problems": [
+            "Misma dosis para todos los clientes",
+            "Grower la imprime, olvida o pierde",
+            "Sin adaptación a fase o medio de cultivo",
+            "Cero trazabilidad de uso real",
+            "¿Recompra? Solo si el grower recuerda"
+          ]
+        },
+        "new": {
+          "title": "Nutrición contextual en MyBud",
+          "benefits": [
+            "En cada riego, dosis exacta aparece automáticamente",
+            "Adaptada a la fase del ciclo (veg/flora)",
+            "Personalizada por medio: suelo, coco, hidro",
+            "Sugerencia basada en promedio y condiciones",
+            "Notificación de recompra en el momento exacto"
+          ]
+        }
+      },
+      "example": {
+        "title": "Ejemplo real:",
+        "scenario": "Grower cultiva en suelo, semana 3 de flora",
+        "action": "Abre la app para regar",
+        "result": "Aparece: \"CalMag 2ml/L + Bloom 3ml/L\" — dosis exacta para suelo en flora."
+      },
+      "value": {
+        "title": "¿Por qué esto importa?",
+        "points": [
+          {
+            "icon": "target",
+            "text": "Tu producto aparece en el contexto exacto — no es el grower quien busca, eres tú quien surge cuando lo necesita"
+          },
+          {
+            "icon": "refresh",
+            "text": "Uso real rastreado — sabes cuántos siguieron el protocolo, en qué fase, y cuándo recomprarán"
+          },
+          {
+            "icon": "trending",
+            "text": "Adhesión aumenta — cronograma inteligente genera confianza y facilita seguir tus recomendaciones"
+          }
+        ]
       }
     },
     "socialProof": {
-      "title": "Más que métricas: prueba social.",
-      "description": "Valida tus protocolos en cultivos colectivos o patrocina growers influencers estratégicos. Rastreando cómo growers usan tus productos, creas casos sólidos, compruebas resultados y fortaleces tu portafolio comercial.",
+      "title": "Datos reales, privacidad garantizada.",
+      "description": "Métricas de uso real sin exponer identidades individuales. Datos agregados y anónimos muestran cómo cultivadores usan tus productos — adhesión, frecuencia, recompra — manteniendo la privacidad de cada grower.",
       "features": {
         "validation": {
-          "title": "Contenido relevante en la rutina real",
-          "desc": "Diarios auditables, medios aprobados y contexto vivo por lote."
+          "title": "Contexto de uso en el momento exacto",
+          "desc": "Tu producto aparece cuando el grower lo necesita: riego, plagas, nutrición. Presencia en el momento decisivo de compra."
         },
         "influencers": {
-          "title": "Influencers estratégicos",
-          "desc": "Sigue cupones, códigos y recompra en growers verificados."
+          "title": "Datos agregados y anónimos",
+          "desc": "Métricas de adhesión, recompra y satisfacción sin exponer identidad de los cultivadores."
         },
         "cases": {
-          "title": "Casos comerciales rápidos",
-          "desc": "Combina datos + storytelling para acelerar ventas y alianzas."
+          "title": "Insights accionables",
+          "desc": "Sabe cómo usan tus productos, ajusta estrategias, mejora formulaciones — con privacidad garantizada."
         }
       },
-      "cta": "Agendar conversación y recibir diagnóstico inicial."
+      "cta": "Agendar conversación y comenzar."
+    },
+    "partnershipModels": {
+      "title": "Dos modelos. Una plataforma. Tu crecimiento.",
+      "subtitle": "Elige el modelo que mejor se adapte a tu estrategia de mercado.",
+      "subscription": {
+        "badge": "Modelo Suscripción",
+        "title": "Integración rápida, insights inmediatos",
+        "description": "Tu marca integrada en Mybud con visibilidad garantizada en la rutina de los cultivadores.",
+        "features": [
+          "Configuración en días, no meses",
+          "Tu protocolo se convierte en cronograma en la app",
+          "Métricas de uso y recompra en tiempo real",
+          "Tu marca en tareas, stickers y registros",
+          "Dashboard con insights accionables"
+        ],
+        "cta": "Comenzar integración"
+      },
+      "whiteLabel": {
+        "badge": "White Label",
+        "title": "Tu marca. Tus datos. Tus reglas.",
+        "description": "Versión completa de Mybud bajo tu marca con control total y soluciones personalizadas.",
+        "features": [
+          "App con tu marca e identidad visual",
+          "100% de datos bajo tu control",
+          "Funcionalidades personalizadas para tu negocio",
+          "Integraciones con tus sistemas (ERP, CRM, IoT)",
+          "Soporte y desarrollo dedicado"
+        ],
+        "cta": "Agendar conversación estratégica"
+      }
     },
     "partnershipTypes": {
       "title": "Mybud conecta toda la cadena de cultivo.",
@@ -673,48 +735,7 @@
       "devices": {
         "title": "Dispositivos inteligentes",
         "description": "Integración con Tuya, Sonoff y otros sistemas IoT. Transformamos la telemetría en inteligencia de cultivo."
-      },
-      "associations": {
-        "title": "Asociaciones",
-        "description": "Trazabilidad y reportes médicos estandarizados en un solo panel."
-      },
-      "professionals": {
-        "title": "Profesionales",
-        "description": "Mentores crean protocolos en Mybud, siguen a sus mentorados en tiempo real y actúan cuando surgen dudas o desvíos."
       }
-    },
-    "associationsSection": {
-      "title": "Gestión eficiente y reportes estandarizados para asociaciones canábicas.",
-      "subtitle": "Simplifica el manejo, estandariza reportes y genera trazabilidad en tiempo real — todo dentro de Mybud.",
-      "description": "Del cultivo individual al colectivo, garantizamos evidencia agronómica y clínica alineada al compliance.",
-      "features": {
-        "management": {
-          "title": "Gestión de cultivos y equipos",
-          "desc": "Cada cultivo con responsables, tareas, protocolos y alertas de SLA."
-        },
-        "reports": {
-          "title": "Reportes automatizados",
-          "desc": "Reportes médicos y agronómicos en pocos clics, siempre listos para auditoría."
-        },
-        "traceability": {
-          "title": "Trazabilidad y compliance",
-          "desc": "Historial completo de cada planta, paciente y lote."
-        },
-        "integration": {
-          "title": "Integración con socios",
-          "desc": "Conecta fabricantes, clínicas y laboratorios sin fricción operativa."
-        },
-        "intelligence": {
-          "title": "Inteligencia aplicada",
-          "desc": "Insights para decisiones clínicas y productivas en tiempo real."
-        }
-      },
-      "testimonial": {
-        "text": "Con Mybud logramos estandarizar reportes y reducir 60% el tiempo de gestión por cultivo.",
-        "author": "Asociación Beta",
-        "role": "Caso piloto"
-      },
-      "cta": "Agendar conversación y recibir diagnóstico para asociaciones."
     },
     "metrics": {
       "title": "Métricas de uso que importan.",
@@ -762,15 +783,16 @@
       }
     },
     "finalCta": {
-      "title": "¿Listo para validar tu marca en el cultivo real?",
-      "subtitle": "Sé socio fundador y ve cómo growers usan tus productos para generar resultados comprobados.",
-      "description": "Completa tus datos y te devolvemos un diagnóstico inicial en hasta 1 día hábil.",
+      "title": "¿Listo para traer tu marca a la app?",
+      "subtitle": "Sé socio fundador y transforma datos de uso real en crecimiento estratégico.",
+      "description": "Elige el modelo ideal para tu marca y comienza tu viaje con Mybud.",
       "form": {
         "namePlaceholder": "Nombre",
         "emailPlaceholder": "Correo corporativo",
-        "companyPlaceholder": "Empresa / Asociación"
+        "companyPlaceholder": "Empresa",
+        "modelPlaceholder": "Modelo de interés"
       },
-      "primaryButton": "Solicitar diagnóstico gratuito",
+      "primaryButton": "Agendar conversación",
       "secondaryOption": "¿Prefieres hablar directo?",
       "email": "comercial@mybud.app",
       "successMessage": "¡Recibido! Alguien del equipo Mybud te contactará en un día hábil.",
@@ -809,8 +831,544 @@
         "contact": "Contacto",
         "b2c": "Página para cultivadores"
       },
+      "growers": "Cultivadores",
+      "collective": "Colectivos",
+      "industry": "Industria",
       "stamp": "by CHT.green 🇧🇷",
-      "tagline": "Tu compañero digital de cultivo."
+      "tagline": "Tu compañero digital de cultivo.",
+      "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica."
+    }
+  },
+  "collective": {
+    "seo": {
+      "title": "Mybud Collective — Organiza y estandariza el cultivo colectivo",
+      "description": "Del clon a la extracción: estandariza procesos, gestiona equipos y mantén conformidad con trazabilidad completa. Un sistema a la medida de tu cultivo.",
+      "ogImageAlt": "Interfaz de Mybud Collective mostrando gestión de cultivos asociativos y estandarización de procesos."
+    },
+    "header": {
+      "languageSelector": "Idioma",
+      "nav": {
+        "features": "Funcionalidades",
+        "benefits": "Beneficios",
+        "contact": "Contacto"
+      },
+      "cta": "Agendar demo",
+      "switchToB2B": "Para empresas",
+      "switchToB2C": "Para ti",
+      "switchToGrower": "Para Cultivadores",
+      "switchToCollective": "Para Colectivos",
+      "switchToIndustry": "Para Industria",
+      "switchToEnterprise": "Para empresas"
+    },
+    "hero": {
+      "badge": "Mybud Collective",
+      "title1": "Un sistema a la medida",
+      "title2": "de tu cultivo.",
+      "subtitle": "Organiza y estandariza el cultivo colectivo — del clon a la extracción — con gestión de equipos, trazabilidad completa e informes automáticos.",
+      "description": "Mybud Collective es la plataforma para asociaciones, clubes cannábicos, granjas y cultivos comerciales de mediana escala que necesitan estandarización sin perder cercanía con el cultivo.",
+      "microcopy": "Sistema desarrollado con asociaciones reales para garantizar conformidad, trazabilidad y autonomía de datos.",
+      "primaryCta": "Agendar demostración",
+      "secondaryCta": "Participar del piloto",
+      "trustElement": "Sistema desarrollado con asociaciones reales para garantizar conformidad, trazabilidad y autonomía de datos.",
+      "badges": [
+        "Estandarización de procesos",
+        "Gestión multiusuario",
+        "Trazabilidad completa",
+        "Conformidad simplificada"
+      ]
+    },
+    "benefits": {
+      "title": "Estandarización sin perder lo humano.",
+      "subtitle": "Hablamos el lenguaje de quien entiende el piso del cultivo.",
+      "traceability": {
+        "title": "Trazabilidad completa",
+        "desc": "Del clon a la extracción: historial por planta, lote y batch. Todo rastreado, siempre auditable."
+      },
+      "standardization": {
+        "title": "Estandarización de procesos",
+        "desc": "SOPs personalizados, cronogramas automáticos y checklists que garantizan consistencia entre ciclos."
+      },
+      "multiuser": {
+        "title": "Gestión multiusuario",
+        "desc": "Perfiles para asociados, técnicos agrónomos y responsables con permisos específicos por área."
+      },
+      "dataControl": {
+        "title": "Datos bajo control",
+        "desc": "Exportación en cualquier momento. Autonomía total sobre tus datos e informes."
+      },
+      "privacy": {
+        "title": "Conformidad facilitada",
+        "desc": "Sistema preparado para privacidad con logs de auditoría e informes listos para organismos reguladores."
+      },
+      "integration": {
+        "title": "Integración futura",
+        "desc": "Sensores IoT, códigos QR por planta, APIs de laboratorios y sistemas de conformidad."
+      }
+    },
+    "features": {
+      "title": "Del cultivo a la gestión, todo integrado.",
+      "subtitle": "Mybud Collective es el puente entre el trabajo manual y la organización profesional.",
+      "management": {
+        "title": "Gestión de cultivos y equipos",
+        "desc": "Áreas de cultivo, responsables por ciclo, protocolos estandarizados y alertas automáticas."
+      },
+      "reports": {
+        "title": "Informes automáticos",
+        "desc": "Informes agronómicos, médicos y de conformidad generados automáticamente en cada ciclo."
+      },
+      "compliance": {
+        "title": "Trazabilidad y conformidad",
+        "desc": "Historial completo de cada planta y batch para auditorías internas y externas."
+      },
+      "partners": {
+        "title": "Integración con socios",
+        "desc": "Conecta proveedores de insumos, laboratorios de análisis y clínicas asociadas."
+      }
+    },
+    "proof": {
+      "title": "Construido con asociaciones reales.",
+      "subtitle": "Hecho por quienes entienden de cultivo colectivo y conformidad.",
+      "tech": {
+        "title": "Tecnología brasileña",
+        "desc": "Desarrollado en Brasil con privacidad por diseño y soporte en portugués."
+      },
+      "community": {
+        "title": "Co-creado con la comunidad",
+        "desc": "Feedback directo de asociaciones cannábicas y cultivos colectivos en operación."
+      },
+      "support": {
+        "title": "Implementación guiada",
+        "desc": "Piloto de implementación con entrenamiento del equipo y soporte dedicado en el onboarding."
+      }
+    },
+    "testimonial": {
+      "title": "Resultados que inspiran al sector.",
+      "text": "Con Mybud Collective, conseguimos estandarizar informes y reducir 60% del tiempo de gestión por cultivo.",
+      "author": "Asociación Piloto",
+      "role": "Cultivo colectivo • 50+ plantas"
+    },
+    "finalCta": {
+      "title": "Estandariza tu cultivo colectivo.",
+      "subtitle": "Agenda una demostración y ve cómo Mybud Collective puede organizar tu operación.",
+      "text": "Completa el formulario y agenda una conversación para entender cómo MyBud puede estandarizar tu cultivo.",
+      "description": "Completa el formulario y recibe una evaluación inicial personalizada en hasta 1 día hábil.",
+      "formTitle": "Agendar conversación",
+      "formFields": {
+        "organizationName": "Nombre de la asociación",
+        "whatsapp": "WhatsApp",
+        "plantCount": "¿Cuántas plantas/unidades gestionan hoy?",
+        "email": "Email"
+      },
+      "form": {
+        "namePlaceholder": "Nombre completo",
+        "emailPlaceholder": "Email de la asociación",
+        "organizationPlaceholder": "Nombre de la asociación / club",
+        "phonePlaceholder": "Teléfono (opcional)",
+        "messagePlaceholder": "Cuéntanos sobre tu cultivo y necesidades (opcional)"
+      },
+      "primaryButton": "Agendar demostración",
+      "secondaryButton": "Participar del piloto",
+      "email": "comercial@mybud.app",
+      "successMessage": "¡Recibido! Alguien del equipo Mybud se contactará contigo en hasta 1 día hábil.",
+      "errorMessage": "Algo salió mal. Intenta nuevamente o escribe a comercial@mybud.app"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "¿Dudas sobre Mybud Collective? Respondemos las principales aquí.",
+      "q1": {
+        "q": "¿Para cuántas plantas funciona el sistema?",
+        "a": "Mybud Collective es ideal para cultivos con 20+ plantas y múltiples cultivadores. Soportamos desde pequeñas asociaciones hasta facilities comerciales."
+      },
+      "q2": {
+        "q": "¿Cómo funciona el piloto de implementación?",
+        "a": "Hacemos onboarding guiado con entrenamiento del equipo, configuración personalizada y soporte dedicado en las primeras semanas."
+      },
+      "q3": {
+        "q": "¿Dónde se almacenan los datos?",
+        "a": "En servidores seguros con encriptación. Puedes exportar todos los datos en cualquier momento."
+      },
+      "q4": {
+        "q": "¿Puedo personalizar los informes?",
+        "a": "¡Sí! Trabajamos contigo para adaptar informes a las necesidades específicas de tu asociación."
+      },
+      "q5": {
+        "q": "¿Cuál es el valor del sistema?",
+        "a": "La inversión varía por número de plantas y funcionalidades. Agenda una conversación para recibir una propuesta personalizada con planes por rango de plantas."
+      }
+    },
+    "footer": {
+      "links": {
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Uso",
+        "contact": "Contacto",
+        "b2c": "Para cultivadores",
+        "b2b": "Para empresas"
+      },
+      "growers": "Cultivadores",
+      "collective": "Colectivos",
+      "industry": "Industria",
+      "stamp": "by CHT.green 🇧🇷",
+      "tagline": "Tu compañero digital de cultivo.",
+      "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica."
+    },
+    "whyItMatters": {
+      "title": "Sin estándar, no hay confianza.",
+      "text": "70% de las asociaciones aún operan en hojas de cálculo y grupos de WhatsApp. ¿El resultado? Falta de trazabilidad, fallas operacionales y pérdida de credibilidad en auditorías e informes clínicos.",
+      "keyphrase": "MyBud Collective resuelve esto."
+    },
+    "howItWorks": {
+      "title": "Ve cómo funciona en la práctica.",
+      "subtitle": "",
+      "cta": "Quiero probar el piloto gratuito",
+      "step1": {
+        "title": "Registra cultivos y plantas",
+        "description": "Cada planta obtiene un QR único y entra al sistema con toda la información."
+      },
+      "step2": {
+        "title": "Registra tareas con voz, foto o toque",
+        "description": "Los colaboradores registran actividades naturalmente — sin complicaciones, sin hojas de cálculo."
+      },
+      "step3": {
+        "title": "Acompaña evolución e informes automáticos",
+        "description": "Timeline completo por planta, informes médicos y agronómicos generados automáticamente."
+      },
+      "step4": {
+        "title": "Comparte datos con médicos y socios",
+        "description": "Informes listos para auditoría, dispensación y seguimiento clínico."
+      }
+    },
+    "featuresMap": {
+      "title": "El Cerebro del Cultivo Colectivo",
+      "subtitle": "MyBud centraliza todo: trazabilidad, control, agilidad e inteligencia de datos — en un solo sistema.",
+      "pillars": {
+        "traceability": {
+          "number": "1",
+          "title": "Trazabilidad y Estandarización",
+          "keywords": "trazabilidad • conformidad • historial completo",
+          "impact": "Estándar y transparencia para asociaciones, médicos y pacientes."
+        },
+        "control": {
+          "number": "2",
+          "title": "Control Operacional y Multi-Tareas",
+          "keywords": "control • eficiencia • organización",
+          "impact": "Elimina errores humanos y garantiza rutina predecible."
+        },
+        "agility": {
+          "number": "3",
+          "title": "Agilidad y Multi-Localidades",
+          "keywords": "agilidad • escalabilidad • multi-tareas",
+          "impact": "Escala sin perder control."
+        },
+        "intelligence": {
+          "number": "4",
+          "title": "Datos e Inteligencia Operacional",
+          "keywords": "datos reales • insights • desempeño",
+          "impact": "Cultivo basado en evidencia, no improvisación."
+        }
+      }
+    },
+    "pilot": {
+      "title": "Sé una de las primeras asociaciones en operar con el estándar nacional de trazabilidad.",
+      "benefit": "Cupos limitados para implementación prioritaria con acompañamiento dedicado del equipo y resultados validados en 60 días.",
+      "cta": "Asegurar mi cupo"
+    },
+    "plans": {
+      "title": "Del pequeño cultivo a la operación nacional.",
+      "subtitle": "MyBud crece junto con tu asociación. La versión piloto es gratuita — después, planes escalables según número de plantas y unidades.",
+      "core": {
+        "title": "MyBud Core",
+        "range": "Hasta 1.000 plantas",
+        "description": "Trazabilidad completa, multi-usuarios e informes automáticos."
+      },
+      "enterprise": {
+        "title": "MyBud Enterprise",
+        "range": "Por encima de 1.000 plantas",
+        "description": "Infraestructura dedicada, multi-localidades y soporte prioritario."
+      },
+      "cta": "Solicitar propuesta personalizada"
+    }
+  },
+  "industry": {
+    "seo": {
+      "title": "MyBud Industry — Donde marcas, breeders y fabricantes se conectan al cultivo de forma ética",
+      "description": "En MyBud, tu marca aparece en el momento exacto y con propósito, el primer canal legítimo y ético entre industria y cultivo.",
+      "ogImageAlt": "Interfaz de MyBud Industry mostrando integración de marcas en el cultivo."
+    },
+    "hero": {
+      "title": "Tu marca entra al cultivo: en el momento exacto, de la manera correcta.",
+      "subtitle": "En MyBud, el marketing no es anuncio, es presencia útil dentro del cultivo, en el momento exacto en que el grower necesita decidir qué usar. Seas fabricante, breeder o proveedor, MyBud conecta tu marca a la rutina real del cultivo con propósito y contexto.",
+      "cta": "Quiero conocer las formas de integración",
+      "secondaryCta": "Agendar conversación",
+      "trustElement": "Marcas, breeders y fabricantes ya están entrando al ecosistema MyBud para hablar con el público correcto, en el momento exacto.",
+      "dashboard": {
+        "title": "Panel de Socio",
+        "subtitle": "Insights del ecosistema en tiempo real",
+        "live": "En vivo",
+        "stats": {
+          "activeGrowers": "Cultivadores activos",
+          "thisMonth": "este mes",
+          "touchpoints": "Touchpoints",
+          "perMonth": "Por mes",
+          "engagement": "Engagement",
+          "openRate": "Tasa de apertura",
+          "avgRoi": "ROI promedio",
+          "partners": "Socios"
+        },
+        "opportunities": {
+          "title": "Oportunidades de conexión",
+          "veg": {
+            "stage": "Vegetativo",
+            "users": "438 cultivadores",
+            "action": "Nutrición foliar"
+          },
+          "flower": {
+            "stage": "Floración",
+            "users": "312 cultivadores",
+            "action": "Suplementos bloom"
+          },
+          "drying": {
+            "stage": "Secado",
+            "users": "89 cultivadores",
+            "action": "Control ambiental"
+          }
+        }
+      }
+    },
+    "problem": {
+      "title": "El marketing cannábico aún habla, pero nadie escucha.",
+      "text": "Las marcas están atrapadas en redes que bloquean, anuncios que caen y PDFs que nadie lee. Mientras tanto, quienes cultivan buscan soluciones reales y confían en quienes ayudan en el proceso, no en quienes interrumpen. El resultado es predecible: mucho ruido, poca conexión. MyBud invierte esta lógica.",
+      "truth": "La publicidad tradicional no alcanza al grower donde toma decisiones.",
+      "solution": "MyBud posiciona tu marca en el momento exacto de decisión, con contexto y confianza.",
+      "highlight": "MyBud conecta marcas al momento exacto del cultivo, con contexto y confianza."
+    },
+    "ways": {
+      "title": "Tres maneras de ser parte del cultivo real",
+      "subtitle": "Para marcas, breeders y fabricantes que quieren ser parte de la rutina de quien cultiva.",
+      "way1": {
+        "title": "Presencia técnica en las tareas",
+        "desc": "Tu producto aparece en acciones prácticas, como regar, controlar plagas, ajustar iluminación o monitorear ambiente. El grower encuentra tu marca exactamente cuando la necesita."
+      },
+      "way2": {
+        "title": "Protocolos y cronogramas de cultivo",
+        "desc": "Marcas y breeders transforman sus cronogramas en tareas vivas dentro de la app, sea de nutrición, iluminación o genética. El cultivador elige seguir el programa y el sistema ejecuta las tareas automáticamente con tu marca."
+      },
+      "way3": {
+        "title": "Growers Hub — vitrina viva de productos",
+        "desc": "Un área exclusiva dentro de MyBud donde growers descubren nuevos productos, equipos y genéticas, interactúan con las marcas y acceden a materiales técnicos, todo dentro de un ecosistema confiable y educativo."
+      },
+      "reinforcement": "MyBud conecta marcas con growers en el momento exacto de decisión, con contexto real, confianza y resultados medibles."
+    },
+    "impact": {
+      "title": "¿Qué cambia cuando tu marca aparece con propósito?",
+      "text": "Growers que reciben recomendaciones contextuales tienden a adoptar la marca y replicar buenas prácticas. Cada acción correcta se convierte en confianza. Cada uso registrado, un voto de confianza.",
+      "testimonial": {
+        "text": "Desde que entramos a MyBud, nuestros productos comenzaron a ser usados dentro de los cronogramas de cultivo y esto generó reconocimiento real entre los growers.",
+        "author": "Testimonio simbólico",
+        "role": "Asociación asociada piloto"
+      }
+    },
+    "legitimacy": {
+      "title": "Comunicación legítima, privacidad garantizada.",
+      "intro": "En MyBud, la comunicación es educativa y técnica, no publicitaria. Los datos son anónimos y agregados. Las marcas aparecen con propósito y contexto, respetando al paciente, al cultivador y la ley.",
+      "privacy": "Privacidad garantizada por diseño. MyBud nunca comparte datos personales o identidades de cultivadores.",
+      "mission": "Nuestra misión es conectar marcas con cultivadores a través de confianza, educación y respeto por el proceso de cultivo."
+    },
+    "ecosystem": {
+      "title": "MyBud conecta toda la cadena del cultivo",
+      "connection": "Growers, marcas, laboratorios, profesionales, asociaciones, breeders, clubes cannábicos y fabricantes — todos dentro del mismo ecosistema de trazabilidad, aprendizaje y confianza.",
+      "impact": "MyBud es más que una app: es la base tecnológica que sostiene el nuevo estándar de trazabilidad y confianza en la cadena cannábica."
+    },
+    "finalCta": {
+      "title": "Forma parte del nuevo estándar de presencia en el cultivo.",
+      "text": "MyBud es el primer ecosistema que conecta marcas, breeders y fabricantes de equipos de forma ética, útil y trazable. Aquí, el marketing vuelve a ser legítimo, útil, ético y presente.",
+      "community": "Entre las primeras marcas en moldear el futuro del cultivo cannábico.",
+      "primaryCta": "Quiero integrar mi marca a MyBud",
+      "secondaryCta": "Quiero saber más",
+      "form": {
+        "namePlaceholder": "Nombre completo",
+        "emailPlaceholder": "Email corporativo",
+        "companyPlaceholder": "Empresa"
+      },
+      "primaryButton": "Agendar conversación",
+      "secondaryOption": "¿Prefieres hablar directo?",
+      "email": "comercial@mybud.app"
+    },
+    "modal": {
+      "fields": {
+        "objective": "Objetivo de la asociación"
+      },
+      "subtitle": "Cuéntanos más sobre tu objetivo (opcional)"
+    },
+    "footer": {
+      "tagline": "MyBud es el primer ecosistema que integra marcas, breeders, growers y asociaciones en un mismo estándar de trazabilidad y utilidad real.",
+      "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica.",
+      "contact": "Contacto",
+      "growers": "Cultivadores",
+      "collective": "Colectivos",
+      "industry": "Industria"
+    }
+  },
+  "enterprise": {
+    "seo": {
+      "title": "Mybud Enterprise — Gestión profesional para asociaciones y cultivos grandes",
+      "description": "Control total del cultivo colectivo con trazabilidad completa, informes automáticos y datos 100% bajo tu propiedad. Una app a la medida de tu operación.",
+      "ogImageAlt": "Interfaz de Mybud Enterprise mostrando gestión de cultivos colectivos e informes automatizados."
+    },
+    "header": {
+      "languageSelector": "Idioma",
+      "nav": {
+        "features": "Funcionalidades",
+        "benefits": "Beneficios",
+        "contact": "Contacto"
+      },
+      "cta": "Agendar demo",
+      "switchToB2B": "Para empresas",
+      "switchToB2C": "Para ti",
+      "switchToGrower": "Para Cultivadores",
+      "switchToCollective": "Para Colectivos",
+      "switchToIndustry": "Para Industria",
+      "switchToEnterprise": "Para asociaciones"
+    },
+    "hero": {
+      "badge": "Mybud Enterprise",
+      "title1": "Una app a la medida",
+      "title2": "de tu operación.",
+      "subtitle": "Ten control total del cultivo colectivo — del clon a la cosecha — con informes automáticos, tareas estandarizadas y datos 100% bajo tu propiedad.",
+      "description": "Mybud Enterprise es una versión dedicada a asociaciones, clubes sociales y pequeñas instalaciones que necesitan gestionar decenas de plantas y múltiples cultivadores con seguridad y eficiencia.",
+      "primaryCta": "Agendar demostración",
+      "secondaryCta": "Solicitar diagnóstico gratuito",
+      "trustElement": "Cada cuenta se configura bajo dominio propio, garantizando que los datos pertenecen a la organización, no a la plataforma.",
+      "badges": [
+        "Trazabilidad completa",
+        "Gestión multiusuario",
+        "Datos bajo control",
+        "Privacidad garantizada"
+      ]
+    },
+    "benefits": {
+      "title": "Tus datos, tus reglas.",
+      "subtitle": "Nuestro rol es simplificar, no apropiarnos.",
+      "traceability": {
+        "title": "Trazabilidad completa",
+        "desc": "Historial por planta, lote y paciente. Del clon a la cosecha, todo documentado."
+      },
+      "standardization": {
+        "title": "Estandarización de procesos",
+        "desc": "Cronogramas personalizados, informes automáticos y auditorías internas simplificadas."
+      },
+      "multiuser": {
+        "title": "Gestión multiusuario",
+        "desc": "Perfiles de miembros, técnicos y médicos con permisos específicos."
+      },
+      "dataControl": {
+        "title": "Datos bajo control",
+        "desc": "Almacenamiento dedicado, exportación en cualquier momento. Tus datos, tus reglas."
+      },
+      "privacy": {
+        "title": "Privacidad total",
+        "desc": "Ningún dato compartido sin consentimiento. Privacidad por diseño."
+      },
+      "integration": {
+        "title": "Integración futura",
+        "desc": "Sensores ambientales, códigos QR, APIs de ERP y cumplimiento."
+      }
+    },
+    "features": {
+      "title": "Organiza, estandariza y crece con seguridad.",
+      "subtitle": "Mybud Enterprise es el puente entre el cultivo y la gestión.",
+      "management": {
+        "title": "Gestión de cultivos y equipos",
+        "desc": "Cada cultivo con responsables, tareas, protocolos y alertas de SLA. Control total sin complicación."
+      },
+      "reports": {
+        "title": "Informes automatizados",
+        "desc": "Informes médicos y agronómicos en pocos clics, siempre listos para auditoría."
+      },
+      "compliance": {
+        "title": "Trazabilidad y cumplimiento",
+        "desc": "Historial completo de cada planta, paciente y lote para mantener conformidad."
+      },
+      "partners": {
+        "title": "Integración con socios",
+        "desc": "Conecta fabricantes, clínicas y laboratorios sin fricción operativa."
+      }
+    },
+    "proof": {
+      "title": "Usado por asociaciones que buscan transparencia y eficiencia",
+      "subtitle": "Construido junto a cultivadores y asociaciones reales.",
+      "tech": {
+        "title": "Tecnología brasileña",
+        "desc": "Desarrollada con privacidad por diseño."
+      },
+      "community": {
+        "title": "Construido con la comunidad",
+        "desc": "Feedback directo de asociaciones y cultivos grandes reales."
+      },
+      "support": {
+        "title": "Soporte dedicado",
+        "desc": "Equipo brasileño, respuesta rápida y atención en portugués."
+      }
+    },
+    "testimonial": {
+      "text": "Con Mybud, conseguimos estandarizar informes y reducir 60% del tiempo de gestión por cultivo.",
+      "author": "Asociación Beta",
+      "role": "Caso piloto"
+    },
+    "finalCta": {
+      "title": "Haz tu asociación más eficiente.",
+      "subtitle": "Agenda una conversación y descubre cómo Mybud Enterprise puede adaptarse a tu operación.",
+      "description": "Completa los datos y te respondemos con una evaluación inicial en hasta 1 día hábil.",
+      "form": {
+        "namePlaceholder": "Nombre completo",
+        "emailPlaceholder": "Email corporativo",
+        "organizationPlaceholder": "Asociación / Organización",
+        "phonePlaceholder": "Teléfono (opcional)",
+        "messagePlaceholder": "Cuéntanos sobre tu operación (opcional)"
+      },
+      "primaryButton": "Solicitar diagnóstico gratuito",
+      "secondaryButton": "Agendar demo en vivo",
+      "email": "comercial@mybud.app",
+      "successMessage": "¡Recibido! Alguien del equipo Mybud se contactará contigo en hasta 1 día hábil.",
+      "errorMessage": "Algo salió mal. Intenta nuevamente o escribe a comercial@mybud.app"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Si tu pregunta no está aquí, cuéntanos en el formulario.",
+      "q1": {
+        "q": "¿Cuál es el tamaño mínimo de operación?",
+        "a": "Mybud Enterprise es ideal para asociaciones con 10+ plantas simultáneas y múltiples cultivadores. Para cultivos menores, recomendamos Mybud B2C."
+      },
+      "q2": {
+        "q": "¿Dónde se almacenan los datos?",
+        "a": "En servidores dedicados bajo tu dominio. Puedes exportar todo en cualquier momento."
+      },
+      "q3": {
+        "q": "¿Puedo personalizar informes?",
+        "a": "Sí, trabajamos junto a tu equipo para adaptar informes a necesidades específicas."
+      },
+      "q4": {
+        "q": "¿Tienen integración con ERP?",
+        "a": "Estamos desarrollando integraciones via API. Contáctanos para saber más."
+      },
+      "q5": {
+        "q": "¿Cuánto cuesta?",
+        "a": "El valor varía según el tamaño de la operación y necesidades. Agenda una conversación para recibir una propuesta personalizada."
+      }
+    },
+    "footer": {
+      "links": {
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Uso",
+        "contact": "Contacto",
+        "b2c": "Página para cultivadores",
+        "b2b": "Página para empresas"
+      },
+      "growers": "Cultivadores",
+      "collective": "Colectivos",
+      "industry": "Industria",
+      "stamp": "by CHT.green 🇧🇷",
+      "tagline": "Tu compañero digital de cultivo.",
+      "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica."
     }
   }
 }

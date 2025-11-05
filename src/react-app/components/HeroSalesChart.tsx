@@ -1,4 +1,5 @@
 import { useEffect, type FC } from 'react';
+import { t, tArray } from '../lib/i18n';
 
 interface HeroSalesChartProps {
   variant?: 'light' | 'dark';
@@ -13,6 +14,10 @@ const HeroSalesChart: FC<HeroSalesChartProps> = ({ variant = 'dark' }) => {
   }, []);
 
   const isLight = variant === 'light';
+  
+  // Get translated badges
+  const badgeText = t('hero.salesChart.badge');
+  const badges = tArray('hero.salesChart.badges');
 
   // Color tokens per variant
   const bgCard = isLight ? 'bg-white/70 border-gray-200' : 'bg-white/10 border-white/20';
@@ -46,7 +51,7 @@ const HeroSalesChart: FC<HeroSalesChartProps> = ({ variant = 'dark' }) => {
         {/* Intent badge */}
         <div className={`inline-flex items-center space-x-2 ${badgeBase} px-3 py-1 rounded-full text-xs font-medium mb-4`}> 
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>Grow with mybud</span>
+          <span>{badgeText}</span>
         </div>
 
         {/* Abstract growth canvas */}
@@ -112,19 +117,19 @@ const HeroSalesChart: FC<HeroSalesChartProps> = ({ variant = 'dark' }) => {
             ))}
           </svg>
 
-          {/* Intent badges near curve (no metrics) */}
+          {/* Intent badges near curve - now using translations */}
           <div className="pointer-events-none">
             <div className={`absolute -top-2 right-3 ${pillBase} px-3 py-1 rounded-full text-[11px] font-medium`} style={{ animation: 'shimmer 4s ease-in-out infinite' }}>
-              No cronograma do grower
+              {badges[0]}
             </div>
             <div className={`absolute top-12 -right-2 ${pillBase} px-3 py-1 rounded-full text-[11px] font-medium`} style={{ animation: 'shimmer 5s ease-in-out infinite', animationDelay: '0.6s' }}>
-              QR na embalagem
+              {badges[1]}
             </div>
             <div className={`absolute bottom-6 right-6 ${pillBase} px-3 py-1 rounded-full text-[11px] font-medium`} style={{ animation: 'shimmer 6s ease-in-out infinite', animationDelay: '1.2s' }}>
-              Dados de uso reais
+              {badges[2]}
             </div>
             <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 ${pillBase} px-3 py-1 rounded-full text-[11px] font-medium`} style={{ animation: 'shimmer 6.5s ease-in-out infinite', animationDelay: '1.8s' }}>
-              Vendas que crescem
+              {badges[3]}
             </div>
           </div>
         </div>

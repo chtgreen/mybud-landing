@@ -42,7 +42,7 @@ export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 export const DEFAULT_LANGUAGE: Language = 'pt';
 
 // Namespace for content contexts
-export type ContentNamespace = 'b2c' | 'b2b';
+export type ContentNamespace = 'b2c' | 'b2b' | 'industry' | 'collective' | 'enterprise';
 let currentNamespace: ContentNamespace = 'b2c';
 
 // Current language state
@@ -101,7 +101,8 @@ export const getCurrentNamespace = (): ContentNamespace => currentNamespace;
 export const setCurrentNamespace = (ns: ContentNamespace): void => {
   currentNamespace = ns;
 };
-export const isB2B = (): boolean => currentNamespace === 'b2b';
+export const isB2B = (): boolean => currentNamespace === 'b2b' || currentNamespace === 'industry';
+export const isIndustry = (): boolean => currentNamespace === 'industry';
 
 // Set current language and load translations
 export const setCurrentLanguage = async (lang: Language): Promise<void> => {
@@ -270,4 +271,10 @@ export const applyNamespaceEdits = (partial: TranslationTree) => {
   const currentTree = loadedTranslations[currentNamespace] as TranslationTree;
   loadedTranslations[currentNamespace] = deepMerge(currentTree, partial);
   notifyI18nUpdate();
+};
+
+// Get app base price from environment variable
+export const getAppBasePrice = (): string => {
+  const price = Number(import.meta.env.VITE_APP_BASE_PRICE) || 39.90;
+  return price.toFixed(2).replace('.', ',');
 };

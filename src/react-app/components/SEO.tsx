@@ -3,14 +3,20 @@ import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../lib/i18n';
 
 interface SEOProps {
-  pageType: 'b2c' | 'b2b';
+  pageType: 'b2c' | 'b2b' | 'industry' | 'collective' | 'enterprise';
 }
 
 const SEO: React.FC<SEOProps> = ({ pageType }) => {
   const { currentLanguage } = useLanguage();
 
   const baseUrl = 'https://mybud.app';
-  const currentUrl = pageType === 'b2b' ? `${baseUrl}/b2b` : baseUrl;
+  const currentUrl = pageType === 'b2b' || pageType === 'industry'
+    ? `${baseUrl}/industry` 
+    : pageType === 'collective'
+      ? `${baseUrl}/collective`
+      : pageType === 'enterprise'
+        ? `${baseUrl}/collective`
+        : `${baseUrl}/grower`;
 
   type SEOConfig = {
     title: string;
@@ -37,26 +43,70 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
     },
   };
 
-  // SEO content for B2B page
-  const b2bSEO: Record<Language, SEOConfig> = {
+  // SEO content for B2B/Industry page
+  const industrySEO: Record<Language, SEOConfig> = {
     pt: {
-      title: 'mybud B2B - Valide Sua Marca no Cultivo Real | Insights de Uso & Prova Social',
-      description: 'Transforme growers em embaixadores. Insights reais de como usam seus produtos, prova social autêntica e métricas de adesão para marcas de insumos, equipamentos e associações canábicas.',
-      keywords: 'cannabis b2b, marketing cannabis, uso produtos cultivo, prova social cannabis, parcerias cannabis, insumos cannabis, equipamentos grow, associações canábicas',
+      title: 'MyBud Industry — Onde marcas, breeders e fabricantes se conectam ao cultivo de forma ética',
+      description: 'No MyBud, sua marca aparece no momento certo e com propósito, o primeiro canal legítimo e ético entre indústria e cultivo.',
+      keywords: 'cannabis industry, marketing cannabis, breeders cannabis, fabricantes cannabis, marcas cannabis, integração cultivo, protocolo cultivo, growers hub',
     },
     en: {
-      title: 'mybud B2B - Validate Your Brand in Real Growing | Usage Insights & Social Proof',
-      description: 'Turn growers into brand ambassadors. Real insights on how they use your products, authentic social proof, and adoption metrics for nutrient brands, equipment manufacturers, and cannabis associations.',
-      keywords: 'cannabis b2b, cannabis marketing, product usage insights, cannabis social proof, cannabis partnerships, grow equipment, cannabis associations',
+      title: 'MyBud Industry — Where brands, breeders, and manufacturers connect ethically with cultivation',
+      description: 'In MyBud, your brand appears at the right time with purpose, the first legitimate and ethical channel between industry and cultivation.',
+      keywords: 'cannabis industry, cannabis marketing, cannabis breeders, cannabis manufacturers, cannabis brands, grow integration, cultivation protocol, growers hub',
     },
     es: {
-      title: 'mybud B2B - Valida Tu Marca en Cultivo Real | Insights de Uso & Prueba Social',
-      description: 'Convierte cultivadores en embajadores. Insights reales de cómo usan tus productos, prueba social auténtica y métricas de adopción para marcas de insumos, equipos y asociaciones cannábicas.',
-      keywords: 'cannabis b2b, marketing cannabis, uso productos cultivo, prueba social cannabis, alianzas cannabis, insumos cannabis, equipos grow, asociaciones cannábicas',
+      title: 'MyBud Industry — Donde marcas, breeders y fabricantes se conectan al cultivo de forma ética',
+      description: 'En MyBud, tu marca aparece en el momento exacto y con propósito, el primer canal legítimo y ético entre industria y cultivo.',
+      keywords: 'cannabis industry, marketing cannabis, breeders cannabis, fabricantes cannabis, marcas cannabis, integración cultivo, protocolo cultivo, growers hub',
     },
   };
 
-  const seo = pageType === 'b2c' ? b2cSEO[currentLanguage] : b2bSEO[currentLanguage];
+  // SEO content for Collective page
+  const collectiveSEO: Record<Language, SEOConfig> = {
+    pt: {
+      title: 'mybud Collective - Organize e Padronize o Cultivo Coletivo',
+      description: 'Do clone à extração: padronize processos, gerencie equipes e mantenha conformidade com rastreabilidade completa. O sistema do tamanho do seu cultivo. Ideal para associações canábicas, clubes e cultivos coletivos.',
+      keywords: 'cannabis collective, cultivo coletivo, associações canábicas, clubes cannabis, padronização cultivo, rastreabilidade cannabis, gestão coletiva, compliance cannabis, cultivo associativo',
+    },
+    en: {
+      title: 'mybud Collective - Organize and Standardize Collective Cultivation',
+      description: 'From clone to extraction: standardize processes, manage teams, and maintain compliance with complete traceability. A system scaled to your grow. Ideal for cannabis associations, clubs, and collective grows.',
+      keywords: 'cannabis collective, collective cultivation, cannabis associations, cannabis clubs, cultivation standardization, cannabis traceability, collective management, cannabis compliance, associative cultivation',
+    },
+    es: {
+      title: 'mybud Collective - Organiza y Estandariza el Cultivo Colectivo',
+      description: 'Del clon a la extracción: estandariza procesos, gestiona equipos y mantén conformidad con trazabilidad completa. Un sistema a la medida de tu cultivo. Ideal para asociaciones cannábicas, clubes y cultivos colectivos.',
+      keywords: 'cannabis collective, cultivo colectivo, asociaciones cannábicas, clubes cannabis, estandarización cultivo, trazabilidad cannabis, gestión colectiva, cumplimiento cannabis, cultivo asociativo',
+    },
+  };
+
+  // SEO content for Enterprise page
+  const enterpriseSEO: Record<Language, SEOConfig> = {
+    pt: {
+      title: 'mybud Enterprise - Gestão Profissional para Associações e Grandes Cultivos',
+      description: 'Controle total do cultivo coletivo com rastreabilidade completa, relatórios automáticos e dados 100% sob sua propriedade. Ideal para associações canábicas e pequenas facilities.',
+      keywords: 'cannabis enterprise, associações canábicas, gestão cultivo coletivo, rastreabilidade cannabis, relatórios automáticos cannabis, compliance cannabis, cultivo medicinal',
+    },
+    en: {
+      title: 'mybud Enterprise - Professional Management for Associations and Large Grows',
+      description: 'Full control of collective cultivation with complete traceability, automatic reports, and 100% data ownership. Ideal for cannabis associations and small facilities.',
+      keywords: 'cannabis enterprise, cannabis associations, collective grow management, cannabis traceability, automatic cannabis reports, cannabis compliance, medical cannabis',
+    },
+    es: {
+      title: 'mybud Enterprise - Gestión Profesional para Asociaciones y Cultivos Grandes',
+      description: 'Control total del cultivo colectivo con trazabilidad completa, informes automáticos y datos 100% bajo tu propiedad. Ideal para asociaciones cannábicas y pequeñas instalaciones.',
+      keywords: 'cannabis enterprise, asociaciones cannábicas, gestión cultivo colectivo, trazabilidad cannabis, informes automáticos cannabis, cumplimiento cannabis, cannabis medicinal',
+    },
+  };
+
+  const seo = pageType === 'b2c' 
+    ? b2cSEO[currentLanguage] 
+    : pageType === 'collective'
+      ? collectiveSEO[currentLanguage]
+      : pageType === 'enterprise'
+        ? enterpriseSEO[currentLanguage]
+        : industrySEO[currentLanguage];
 
   // Organization structured data
   const organizationSchema = {
@@ -73,7 +123,7 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
         : 'Smart cannabis growing journal with voice notes and visual timeline',
     sameAs: [
       'https://instagram.com/mybud.app',
-      'https://linkedin.com/company/mybud-app',
+      'https://www.linkedin.com/company/cht-green/',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -163,10 +213,10 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
           '@type': 'Answer',
           text:
             currentLanguage === 'pt'
-              ? 'A versão Premium custará R$ 30/mês. Beta testers ganham meses grátis.'
+              ? 'A versão Premium custará R$ 39,90/mês. Beta testers ganham meses grátis.'
               : currentLanguage === 'es'
-              ? 'La versión Premium costará R$ 30/mes. Los beta testers obtienen meses gratis.'
-              : 'Premium version will be R$ 30/month. Beta testers get free months.',
+              ? 'La versión Premium costará R$ 39,90/mes. Los beta testers obtienen meses gratis.'
+              : 'Premium version will be R$ 39.90/month. Beta testers get free months.',
         },
       },
     ],
@@ -202,9 +252,45 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
       <meta property="twitter:image" content={`${baseUrl}/mybud-og-image.png`} />
 
       {/* Alternate Languages */}
-      <link rel="alternate" hrefLang="pt" href={pageType === 'b2b' ? `${baseUrl}/b2b?lang=pt` : `${baseUrl}?lang=pt`} />
-      <link rel="alternate" hrefLang="en" href={pageType === 'b2b' ? `${baseUrl}/b2b?lang=en` : `${baseUrl}?lang=en`} />
-      <link rel="alternate" hrefLang="es" href={pageType === 'b2b' ? `${baseUrl}/b2b?lang=es` : `${baseUrl}?lang=es`} />
+      <link 
+        rel="alternate" 
+        hrefLang="pt" 
+        href={
+          pageType === 'b2b' || pageType === 'industry'
+            ? `${baseUrl}/industry?lang=pt` 
+            : pageType === 'collective'
+              ? `${baseUrl}/collective?lang=pt`
+              : pageType === 'enterprise'
+                ? `${baseUrl}/collective?lang=pt`
+                : `${baseUrl}/grower?lang=pt`
+        } 
+      />
+      <link 
+        rel="alternate" 
+        hrefLang="en"
+        href={
+          pageType === 'b2b' || pageType === 'industry'
+            ? `${baseUrl}/industry?lang=en` 
+            : pageType === 'collective'
+              ? `${baseUrl}/collective?lang=en`
+              : pageType === 'enterprise'
+                ? `${baseUrl}/collective?lang=en`
+                : `${baseUrl}/grower?lang=en`
+        }
+      />
+      <link 
+        rel="alternate" 
+        hrefLang="es"
+        href={
+          pageType === 'b2b' || pageType === 'industry'
+            ? `${baseUrl}/industry?lang=es` 
+            : pageType === 'collective'
+              ? `${baseUrl}/collective?lang=es`
+              : pageType === 'enterprise'
+                ? `${baseUrl}/collective?lang=es`
+                : `${baseUrl}/grower?lang=es`
+        }
+      />
       <link rel="alternate" hrefLang="x-default" href={currentUrl} />
 
       {/* Structured Data */}

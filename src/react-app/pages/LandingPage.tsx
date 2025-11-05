@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
+import { trackPageView, trackCTAClick } from '../lib/analytics';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
 // import ThemeSelector from '../components/ThemeSelector';
@@ -10,13 +10,12 @@ import Hero from '../components/Hero';
 import VoiceNotesSection from '../components/VoiceNotesSection';
 import ProblemSection from '../components/ProblemSection';
 import PlantTimelineSection from '../components/PlantTimelineSection';
-import AppShowcase from '../components/AppShowcase';
+// import AppShowcase from '../components/AppShowcase';
 import InsightsSection from '../components/InsightsSection';
 import IdentityTrust from '../components/IdentityTrust';
 import DemoSection from '../components/DemoSection';
 import Testimonials from '../components/Testimonials';
 import FounderKitSection from '../components/FounderKitSection';
-import Associations from '../components/Associations';
 import CtaFinalSection from '../components/CtaFinalSection';
 import Footer from '../components/Footer';
 import SupportModal from '../components/SupportModal';
@@ -25,8 +24,7 @@ import BetaModal from '../components/BetaModal';
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
   const [betaModalOpen, setBetaModalOpen] = useState(false);
-  const { isLoading, changeLanguage, currentLanguage } = useLanguage();
-  const navigate = useNavigate();
+  const { isLoading, changeLanguage } = useLanguage();
   const remainingKits = Number(import.meta.env.VITE_KIT_REMINDER) || 47;
   const kitPrice = Number(import.meta.env.VITE_KIT_PRICE) || 249;
   
@@ -37,9 +35,27 @@ const LandingPage = () => {
   // Apply scroll-responsive background enhancements
   useScrollEnhancement();
 
+  // Track page view with unified analytics
+  useEffect(() => {
+    trackPageView(window.location.pathname, 'MyBud - Consumer Landing Page');
+  }, []);
+
   // Namespace is now automatically managed by LanguageProvider based on URL
 
   const handleCTAClick = () => {
+    // Track CTA click with unified analytics (PostHog + GA4)
+    trackCTAClick({
+      ctaName: 'Join Beta',
+      ctaLocation: 'Hero Section',
+      ctaType: 'button',
+      ctaText: 'Join Beta Program',
+      customProperties: {
+        page_type: 'consumer',
+        remaining_kits: remainingKits
+      }
+    });
+
+    // Legacy tracking
     posthog.capture('hero_cta_clicked');
     setBetaModalOpen(true);
   };
@@ -58,9 +74,6 @@ const LandingPage = () => {
     }
   };
 
-  const handleAssociationsClick = () => {
-    navigate(`/${currentLanguage}/b2b#associations`);
-  };
 
   // Show loading while language is being initialized
   if (isLoading) {
@@ -83,13 +96,12 @@ const LandingPage = () => {
       <ProblemSection /> {/* Section 2: O problema sem distracoes */}
       <VoiceNotesSection onCTAClick={handleCTAClick} /> {/* Section 3: Voice Notes - Killer Feature */}
       <PlantTimelineSection /> {/* Section 4: Plant Journey Timeline */}
-      <AppShowcase background="white" /> {/* Section 5: Como funciona */}
+      {/* <AppShowcase background="white" /> */} {/* Section 5: Como funciona - REMOVED */}
       <InsightsSection onActivate={handleCTAClick} /> {/* Section 6: Inteligência do app */}
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
       {showVideo && <DemoSection background="white" onJoinBeta={handleBetaClick} />} {/* Section 8: Demo - Shown when ?video=true */}
       <Testimonials background="white" growerCount={50} /> {/* Section 9: Prova social */}
-      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} kitPrice={kitPrice} /> {/* Section 11: Founder Kit */}
-      <Associations background="white" onCTAClick={handleAssociationsClick} /> {/* Section 12: Associações */}
+      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} kitPrice={kitPrice} /> {/* Section 10: Founder Kit */}
       <CtaFinalSection
         onKitClick={handleCTAClick}
         onSecondaryClick={handleDemoClick}

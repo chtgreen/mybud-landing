@@ -5,26 +5,38 @@ import { useLanguage } from "../contexts/LanguageContext";
 interface HeaderProps {
   onLanguageChange: (lang: Language) => void;
   isB2B?: boolean;
+  isCollective?: boolean;
+  isEnterprise?: boolean;
+  isIndustry?: boolean;
+  isGrower?: boolean;
   onCTAClick?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
   isB2B: isB2BProp,
+  isCollective: isCollectiveProp,
+  isEnterprise: isEnterpriseProp,
+  isIndustry: isIndustryProp,
+  isGrower: isGrowerProp,
   onCTAClick,
 }) => {
   const [useWhiteLogo, setUseWhiteLogo] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLanguage } = useLanguage();
 
-  // Detect if we're in B2B context
+  // Detect context - map legacy props to new ones
   const isB2B = typeof isB2BProp === "boolean" ? isB2BProp : isB2BContext();
+  const isCollective = typeof isCollectiveProp === "boolean" ? isCollectiveProp : false;
+  const isEnterprise = typeof isEnterpriseProp === "boolean" ? isEnterpriseProp : false;
+  const isIndustry = typeof isIndustryProp === "boolean" ? isIndustryProp : (isB2B || isEnterprise);
+  const isGrower = typeof isGrowerProp === "boolean" ? isGrowerProp : (!isCollective && !isIndustry);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrolledPastHero = window.scrollY > window.innerHeight * 0.65;
 
-      if (isB2B) {
+      if (isIndustry || isCollective) {
         setUseWhiteLogo(false);
         return;
       }
@@ -32,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
       setUseWhiteLogo(!scrolledPastHero);
     };
 
-    if (isB2B) {
+    if (isIndustry || isCollective) {
       setUseWhiteLogo(false);
     }
 
@@ -40,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isB2B]);
+  }, [isIndustry, isCollective]);
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = e.target.value as Language;
@@ -71,17 +83,17 @@ const Header: React.FC<HeaderProps> = ({
     closeMenu();
   };
 
-  const navItems = isB2B
+  const navItems = isCollective || isIndustry
     ? [
       { id: "features", label: t("header.nav.features") },
-      { id: "beta", label: t("header.nav.beta") },
+      { id: "contact", label: t("header.nav.contact") },
     ]
     : [
       { id: "features", label: t("header.nav.features") },
       { id: "kit", label: t("header.nav.kit") },
     ];
 
-  const isHeroContext = !isB2B && useWhiteLogo && !isMenuOpen;
+  const isHeroContext = !isIndustry && !isCollective && useWhiteLogo && !isMenuOpen;
 
   const headerClasses = [
     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
@@ -132,13 +144,28 @@ const Header: React.FC<HeaderProps> = ({
       : "bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none",
   ].join(" ");
 
-  const logoHref = isB2B ? `/${currentLanguage}/b2b` : `/${currentLanguage}`;
-  const switchPageHref = isB2B
-    ? `/${currentLanguage}`
-    : `/${currentLanguage}/b2b`;
-  const switchPageLabel = isB2B
-    ? t("header.switchToB2C")
-    : t("header.switchToB2B");
+  const logoHref = isIndustry 
+    ? `/${currentLanguage}/industry` 
+    : isCollective 
+      ? `/${currentLanguage}/collective`
+      : `/${currentLanguage}/grower`;
+  
+  // Get page links for navigation
+  const getPageLinks = () => {
+    const links = [];
+    if (!isGrower) {
+      links.push({ href: `/${currentLanguage}/grower`, label: t("header.switchToGrower") || t("header.switchToB2C") || "Para Growers" });
+    }
+    if (!isCollective) {
+      links.push({ href: `/${currentLanguage}/collective`, label: t("header.switchToCollective") || "Associações" });
+    }
+    if (!isIndustry) {
+      links.push({ href: `/${currentLanguage}/industry`, label: t("header.switchToIndustry") || t("header.switchToEnterprise") || t("header.switchToB2B") || "Indústria" });
+    }
+    return links;
+  };
+  
+  const pageLinks = getPageLinks();
 
   return (
     <header className={headerClasses}>
@@ -163,6 +190,7 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+            {/* Internal section links */}
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -174,26 +202,34 @@ const Header: React.FC<HeaderProps> = ({
               </button>
             ))}
 
-            {/* Page Switch Link */}
-            <a
-              href={switchPageHref}
-              className={`${navButtonClass} inline-flex items-center gap-1`}
-            >
-              {switchPageLabel}
-              <svg
-                className="w-3.5 h-3.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Separator */}
+            {pageLinks.length > 0 && (
+              <div className={`w-px h-4 ${isHeroContext ? 'bg-white/30' : 'bg-gray-300'}`} />
+            )}
+
+            {/* Page navigation links */}
+            {pageLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`${navButtonClass} inline-flex items-center gap-1.5`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
+                {link.label}
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            ))}
           </nav>
 
           {/* Action area */}
@@ -276,6 +312,7 @@ const Header: React.FC<HeaderProps> = ({
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 mt-3 rounded-2xl bg-white/90 backdrop-blur-xl border border-gray-200 shadow-[0_12px_30px_rgba(0,0,0,0.12)] overflow-hidden">
               <nav className="flex flex-col px-4 py-4">
+                {/* Internal section links */}
                 {navItems.map((item) => (
                   <button
                     key={item.id}
@@ -287,26 +324,34 @@ const Header: React.FC<HeaderProps> = ({
                   </button>
                 ))}
 
-                {/* Mobile Page Switch Link */}
-                <a
-                  href={switchPageHref}
-                  className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-[#288664] hover:bg-gray-100 transition-colors inline-flex items-center justify-between"
-                >
-                  {switchPageLabel}
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                {/* Separator */}
+                {pageLinks.length > 0 && (
+                  <div className="my-2 border-t border-gray-200" />
+                )}
+
+                {/* Page navigation links */}
+                {pageLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-[#288664] hover:bg-gray-100 transition-colors inline-flex items-center justify-between"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
+                    {link.label}
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </a>
+                ))}
 
                 <div className="mt-3 border-t border-gray-200 pt-3">
                   <button

@@ -136,7 +136,7 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
   };
 
   return (
-    <section id="b2b-lead-form" className={`py-20 organic-background ${bgClass}`}>
+    <section id="contact" className={`py-20 organic-background ${bgClass}`}>
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

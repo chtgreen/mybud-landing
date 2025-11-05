@@ -96,9 +96,15 @@ interface ActivityFeedProps {
   className?: string;
   limit?: number;
   onViewAll?: () => void;
+  compact?: boolean; // New prop for inline display without wrapper
 }
 
-export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onViewAll }) => {
+export const ActivityFeed: FC<ActivityFeedProps> = ({ 
+  className = '', 
+  limit, 
+  onViewAll,
+  compact = false 
+}) => {
   const activities = getActivities();
   const displayActivities = limit ? activities.slice(0, limit) : activities;
 
@@ -112,6 +118,67 @@ export const ActivityFeed: FC<ActivityFeedProps> = ({ className = '', limit, onV
     betaSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   
+  // Compact mode - just the list without wrapper
+  if (compact) {
+    return (
+      <div className={`space-y-3 ${className}`}>
+        {displayActivities.map((activity, i) => {
+          const Icon = activity.icon;
+          const EntityIcon = activity.entityIcon;
+          
+          return (
+            <div 
+              key={i} 
+              className={`border-l-4 ${activity.borderColor} pl-4 py-3 hover:bg-gray-50 rounded-r-lg transition-colors duration-200 cursor-pointer group`}
+            >
+              <div className="flex items-start gap-3">
+                {/* Icon */}
+                <Icon
+                  className={`w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform ${activity.iconClass}`}
+                  aria-hidden="true"
+                />
+                
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  {/* Title */}
+                  <p className="font-medium text-gray-900 text-sm">
+                    {activity.title}
+                  </p>
+                  
+                  {/* Entity Badge */}
+                  {activity.entity && activity.entityBg && EntityIcon && (
+                    <div className="flex items-center gap-1 mt-1">
+                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 ${activity.entityBg} rounded-full text-xs font-medium`}>
+                        <EntityIcon
+                          className={`w-3 h-3 ${activity.entityIconClass ?? ''}`}
+                          aria-hidden="true"
+                        />
+                        <span>{activity.entity}</span>
+                      </span>
+                    </div>
+                  )}
+                  
+                  {/* Details */}
+                  {activity.details && (
+                    <p className="text-xs text-gray-600 mt-1">
+                      {activity.details}
+                    </p>
+                  )}
+                </div>
+                
+                {/* Time */}
+                <span className="text-xs text-gray-500 flex-shrink-0">
+                  {activity.time}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+  
+  // Full mode - with wrapper, header, and view all button
   return (
     <div className={`bg-white rounded-2xl shadow-xl p-6 md:p-8 ${className}`}>
       {/* Header */}

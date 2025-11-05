@@ -1,5 +1,5 @@
 import { useState, type FC } from 'react';
-import { t, isB2B } from '../lib/i18n';
+import { t, isB2B, tArray } from '../lib/i18n';
 
 interface IPhoneFeatureMockupProps {
 	featureType: 'dashboard' | 'voice' | 'alerts' | 'qr';
@@ -32,49 +32,33 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 			case 'dashboard':
 				return (
 					<ConceptualFrame 
-						title="Registre em segundos" 
-						subtitle="Faça anotações sem atrito, do jeito que preferir"
-						bullets={[
-							'Toque e grave uma nota de voz',
-							'Foto com sticker automático',
-							'Nota rápida salva na planta certa'
-						]}
+						title={t('appShowcase.carousel.screen1.title')}
+						subtitle={t('appShowcase.carousel.screen1.subtitle')}
+						bullets={tArray('appShowcase.carousel.screen1.bullets')}
 					/>
 				);
 			case 'voice':
 				return (
 					<ConceptualFrame 
-						title="Veja o plano completo" 
-						subtitle="Entenda o cultivo em uma timeline organizada"
-						bullets={[
-							'Fase: Vegetativo — dia 28',
-							'Próxima etapa: flora em 6 dias',
-							'Histórico: rega, poda, nutrientes'
-						]}
+						title={t('appShowcase.carousel.screen2.title')}
+						subtitle={t('appShowcase.carousel.screen2.subtitle')}
+						bullets={tArray('appShowcase.carousel.screen2.bullets')}
 					/>
 				);
 			case 'alerts':
 				return (
 					<ConceptualFrame 
-						title="Não perca o timing" 
-						subtitle="Receba lembretes no momento certo e acessos rápidos"
-						bullets={[
-							'Lembrete amanhã: flush leve',
-							'Alerta de fotoperíodo',
-							'QR #004 abre o histórico na hora'
-						]}
+						title={t('appShowcase.carousel.screen3.title')}
+						subtitle={t('appShowcase.carousel.screen3.subtitle')}
+						bullets={tArray('appShowcase.carousel.screen3.bullets')}
 					/>
 				);
 			case 'qr':
 				return (
 					<ConceptualFrame 
-						title="Não perca o timing" 
-						subtitle="Receba lembretes no momento certo e acessos rápidos"
-						bullets={[
-							'Lembrete amanhã: flush leve',
-							'Alerta de fotoperíodo',
-							'QR #004 abre o histórico na hora'
-						]}
+						title={t('appShowcase.carousel.screen3.title')}
+						subtitle={t('appShowcase.carousel.screen3.subtitle')}
+						bullets={tArray('appShowcase.carousel.screen3.bullets')}
 					/>
 				);
 		}
@@ -87,11 +71,7 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 					<ConceptualFrame 
 						title={t('howItWorks.step1.title')} 
 						subtitle={t('howItWorks.step1.desc')}
-						bullets={[
-							'Protocolo vira cronograma',
-							'Tarefas na hora certa',
-							'Dados agregados e anônimos'
-						]}
+						bullets={tArray('howItWorks.carousel.step1Bullets')}
 					/>
 				);
 			case 'voice':
@@ -99,11 +79,7 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 					<ConceptualFrame 
 						title={t('howItWorks.step2.title')} 
 						subtitle={t('howItWorks.step2.desc')}
-						bullets={[
-							'Marca em tarefas e registros',
-							'Stickers para redes sociais',
-							'Prova social genuína'
-						]}
+						bullets={tArray('howItWorks.carousel.step2Bullets')}
 					/>
 				);
 			case 'qr':
@@ -111,11 +87,7 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 					<ConceptualFrame 
 						title={t('howItWorks.step3.title')} 
 						subtitle={t('howItWorks.step3.desc')}
-						bullets={[
-							'Acompanhe uso em tempo real',
-							'Rastreio por cupons/UTMs',
-							'Relatórios de ROI'
-						]}
+						bullets={tArray('howItWorks.carousel.step3Bullets')}
 					/>
 				);
 			case 'alerts':
@@ -123,11 +95,7 @@ const IPhoneFeatureMockup: FC<IPhoneFeatureMockupProps> = ({ featureType, isB2B 
 					<ConceptualFrame 
 						title={t('howItWorks.step4.title')} 
 						subtitle={t('howItWorks.step4.desc')}
-						bullets={[
-							'QR codes em embalagens',
-							'Integração IoT',
-							'Dados em tempo real'
-						]}
+						bullets={tArray('howItWorks.carousel.step4Bullets')}
 					/>
 				);
 		}
@@ -251,7 +219,7 @@ const AppShowcase: FC<AppShowcaseProps> = ({ background = 'white' }) => {
 		  ];
 
 	return (
-		<section className={`py-24 ${bgClass} organic-background`}>
+		<section id="features" className={`py-24 ${bgClass} organic-background`}>
 			<div className="container mx-auto px-6 max-w-6xl">
 			<div className="text-center mb-16">
 				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">

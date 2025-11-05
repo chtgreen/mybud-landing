@@ -385,15 +385,26 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                   </Fragment>
                 ))}
               </h1>
+              
+              {/* Privacy Badge - B2B Only */}
+              {isB2BContext && (
+                <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 px-4 py-2 rounded-lg text-sm font-medium mb-6 border border-emerald-200 hero-animate-3 mx-auto lg:mx-0">
+                  <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <span>Dados 100% anônimos — Saiba COMO usam, não QUEM</span>
+                </div>
+              )}
+              
               <p 
-                className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 hero-animate-3 ${isB2BContext ? 'text-gray-700' : 'text-emerald-100'}`}
+                className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 ${isB2BContext ? 'hero-animate-4' : 'hero-animate-3'} ${isB2BContext ? 'text-gray-700' : 'text-emerald-100'}`}
                 style={!isB2BContext ? { textShadow: '0 1px 5px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.subtitle')}
               </p>
 
               {isB2BContext && b2bHighlights.length > 0 && (
-                <ul className="hero-animate-4 mb-8 space-y-2 text-left max-w-xl mx-auto lg:mx-0">
+                <ul className="hero-animate-5 mb-8 space-y-2 text-left max-w-xl mx-auto lg:mx-0">
                   {b2bHighlights.map((highlight, index) => (
                     <li key={`${highlight}-${index}`} className="flex items-start gap-3 text-sm text-gray-700">
                       <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--verde-bud)]" />
@@ -403,7 +414,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
                 </ul>
               )}
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-5">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 hero-animate-6">
                 <button
                   className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold bg-[#eb4c80] text-white hover:bg-[#d13a6a] transition-colors border-0"
                   onClick={handlePrimaryCTA}
@@ -452,7 +463,7 @@ const Hero: FC<HeroProps> = ({ onCTAClick, showSecondaryCta = true, remainingKit
 
               {/* Trust Element / Microcopy */}
               <p 
-                className={`text-sm mb-4 ${isB2BContext ? 'hero-animate-6 text-gray-600' : 'hero-animate-5 text-emerald-100'}`}
+                className={`text-sm mb-4 ${isB2BContext ? 'hero-animate-7 text-gray-600' : 'hero-animate-5 text-emerald-100'}`}
                 style={!isB2BContext ? { textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' } : {}}
               >
                 {t('hero.trustElement')}

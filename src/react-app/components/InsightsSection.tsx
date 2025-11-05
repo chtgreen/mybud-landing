@@ -1,6 +1,8 @@
 import type { FC } from 'react';
+import { useState } from 'react';
 import { InsightCards } from './InsightCards';
 import { ActivityFeed } from './ActivityFeed';
+import { ExpandableModal } from './ExpandableModal';
 import { t } from '../lib/i18n';
 import {
   BarChart3,
@@ -17,6 +19,9 @@ interface InsightsSectionProps {
 }
 
 const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
+  const [showInsightsModal, setShowInsightsModal] = useState(false);
+  const [showActivitiesModal, setShowActivitiesModal] = useState(false);
+
   const handleActivateClick = () => {
     if (onActivate) {
       onActivate();
@@ -66,45 +71,94 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto mb-20">
-          {/* Left - Insights */}
-          <div>
-            <h3 className="text-2xl font-bold text-black mb-6">
-              {t('insights.smartRecommendations')}
-            </h3>
-            <InsightCards limit={4} />
+        <div className="grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-20">
+          {/* Left - Insights Preview */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-black">
+                {t('insights.smartRecommendations')}
+              </h3>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full">
+                AI Powered
+              </span>
+            </div>
             
-            <div className="mt-6 p-6 bg-white rounded-xl border border-blue-100">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-semibold text-gray-900 mb-1">
-                    {t('insights.contextInsights')}
-                  </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {t('insights.contextDescription')}
-                  </p>
-                </div>
+            {/* Show only 2 insights */}
+            <InsightCards limit={2} />
+            
+            {/* See More Button */}
+            <button
+              onClick={() => setShowInsightsModal(true)}
+              className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-emerald-50 to-blue-50 hover:from-emerald-100 hover:to-blue-100 text-emerald-700 font-semibold rounded-xl transition-all duration-300 hover:shadow-md border border-emerald-200"
+            >
+              See All Smart Recommendations →
+            </button>
+          </div>
+
+          {/* Right - Activity Feed Preview */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-black">
+                {t('activityFeed.title')}
+              </h3>
+              <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                {t('activityFeed.liveBadge')}
+              </span>
+            </div>
+            
+            {/* Show only 3 activities */}
+            <ActivityFeed limit={3} compact={true} />
+            
+            {/* See More Button */}
+            <button
+              onClick={() => setShowActivitiesModal(true)}
+              className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 text-blue-700 font-semibold rounded-xl transition-all duration-300 hover:shadow-md border border-blue-200"
+            >
+              View All Recent Activities →
+            </button>
+          </div>
+        </div>
+
+        {/* Modals */}
+        <ExpandableModal
+          isOpen={showInsightsModal}
+          onClose={() => setShowInsightsModal(false)}
+          title={t('insights.smartRecommendations')}
+        >
+          <InsightCards />
+          <div className="mt-6 p-6 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl border border-emerald-200">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-gray-900 mb-1">
+                  {t('insights.contextInsights')}
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {t('insights.contextDescription')}
+                </p>
               </div>
             </div>
           </div>
+        </ExpandableModal>
 
-          {/* Right - Activity Feed */}
-          <div>
-            <ActivityFeed limit={5} onViewAll={handleActivateClick} />
-          </div>
-        </div>
+        <ExpandableModal
+          isOpen={showActivitiesModal}
+          onClose={() => setShowActivitiesModal(false)}
+          title={t('activityFeed.title')}
+        >
+          <ActivityFeed onViewAll={handleActivateClick} />
+        </ExpandableModal>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
           {/* Feature 1 */}
-          <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
-              <Target className="w-6 h-6 text-emerald-600" aria-hidden="true" />
+          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
+              <Target className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
             <h4 className="font-semibold text-black mb-2">{t('insights.features.byStage.title')}</h4>
             <p className="text-sm text-gray-600">
@@ -113,9 +167,9 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </div>
 
           {/* Feature 2 */}
-          <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-              <BarChart3 className="w-6 h-6 text-blue-600" aria-hidden="true" />
+          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
+              <BarChart3 className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
             <h4 className="font-semibold text-black mb-2">{t('insights.features.monitoring.title')}</h4>
             <p className="text-sm text-gray-600">
@@ -124,9 +178,9 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </div>
 
           {/* Feature 3 */}
-          <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-              <Microscope className="w-6 h-6 text-purple-600" aria-hidden="true" />
+          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
+              <Microscope className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
             <h4 className="font-semibold text-black mb-2">{t('insights.features.detection.title')}</h4>
             <p className="text-sm text-gray-600">
@@ -135,9 +189,9 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           </div>
 
           {/* Feature 4 */}
-          <div className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
-              <BookOpenCheck className="w-6 h-6 text-amber-600" aria-hidden="true" />
+          <div className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-50 transition-colors">
+              <BookOpenCheck className="w-6 h-6 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
             </div>
             <h4 className="font-semibold text-black mb-2">{t('insights.features.learning.title')}</h4>
             <p className="text-sm text-gray-600">
@@ -155,8 +209,8 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-8">
             {/* Step 1 */}
             <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <NotebookPen className="w-8 h-8 text-emerald-600" aria-hidden="true" />
+              <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <NotebookPen className="w-8 h-8 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div className="mb-3">
                 <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-600 text-white rounded-full font-bold text-sm mb-2">
@@ -178,11 +232,11 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
 
             {/* Step 2 */}
             <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Bot className="w-8 h-8 text-blue-600" aria-hidden="true" />
+              <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Bot className="w-8 h-8 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div className="mb-3">
-                <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold text-sm mb-2">
+                <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-600 text-white rounded-full font-bold text-sm mb-2">
                   2
                 </span>
               </div>
@@ -201,11 +255,11 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
 
             {/* Step 3 */}
             <div className="text-center md:flex-1 md:max-w-xs md:mx-auto">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Lightbulb className="w-8 h-8 text-purple-600" aria-hidden="true" />
+              <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Lightbulb className="w-8 h-8 text-emerald-600" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div className="mb-3">
-                <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-600 text-white rounded-full font-bold text-sm mb-2">
+                <span className="inline-flex items-center justify-center w-8 h-8 bg-emerald-600 text-white rounded-full font-bold text-sm mb-2">
                   3
                 </span>
               </div>
