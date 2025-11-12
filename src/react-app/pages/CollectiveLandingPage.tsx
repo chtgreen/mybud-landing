@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
+import { useUrlModalState } from '../hooks/useUrlModalState';
 import { trackPageView, trackCTAClick } from '../lib/analytics';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
@@ -23,7 +24,7 @@ const COLLECTIVE_CALENDAR_URL =
 
 export default function CollectiveLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen: betaModalOpen, close: closeBetaModal } = useUrlModalState('beta');
   useScrollEnhancement();
 
   useEffect(() => {
@@ -98,8 +99,8 @@ export default function CollectiveLandingPage() {
       <CollectiveLeadForm background="gray" />
       <Footer />
 
-      {showModal && (
-        <BetaModal open={showModal} onClose={() => setShowModal(false)} />
+      {betaModalOpen && (
+        <BetaModal open={betaModalOpen} onClose={closeBetaModal} />
       )}
     </div>
   );

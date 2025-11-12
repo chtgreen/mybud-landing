@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
+import { useUrlModalState } from '../hooks/useUrlModalState';
 import { trackPageView, trackCTAClick } from '../lib/analytics';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
@@ -22,7 +23,7 @@ import BetaModal from '../components/BetaModal';
 
 const LandingPage = () => {
   const [paymentOpen, setPaymentOpen] = useState(false);
-  const [betaModalOpen, setBetaModalOpen] = useState(false);
+  const { isOpen: betaModalOpen, open: openBetaModal, close: closeBetaModal } = useUrlModalState('beta');
   const { isLoading, changeLanguage } = useLanguage();
   const remainingKits = Number(import.meta.env.VITE_KIT_REMINDER) || 47;
   const kitPrice = Number(import.meta.env.VITE_KIT_PRICE) || 249;
@@ -56,7 +57,7 @@ const LandingPage = () => {
 
     // Legacy tracking
     posthog.capture('hero_cta_clicked');
-    setBetaModalOpen(true);
+    openBetaModal();
   };
 
   const handleDemoClick = () => {
@@ -113,7 +114,7 @@ const LandingPage = () => {
       />
       <BetaModal
         open={betaModalOpen}
-        onClose={() => setBetaModalOpen(false)}
+        onClose={closeBetaModal}
         remainingKits={remainingKits}
         kitPrice={kitPrice}
       />

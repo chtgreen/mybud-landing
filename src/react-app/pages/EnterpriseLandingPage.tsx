@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import BetaModal from '../components/BetaModal';
 import FAQ from '../components/FAQ';
 import B2BLeadForm from '../components/B2BLeadForm';
+import { useUrlModalState } from '../hooks/useUrlModalState';
 
 // Enterprise Calendar URL
 const ENTERPRISE_CALENDAR_URL =
@@ -17,7 +18,7 @@ const ENTERPRISE_CALENDAR_URL =
 
 export default function EnterpriseLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen: betaModalOpen, close: closeBetaModal } = useUrlModalState('beta');
   useScrollEnhancement();
 
   useEffect(() => {
@@ -256,8 +257,8 @@ export default function EnterpriseLandingPage() {
       <B2BLeadForm background="white" /> {/* Section: Lead Form */}
       <Footer />
 
-      {showModal && (
-        <BetaModal open={showModal} onClose={() => setShowModal(false)} />
+      {betaModalOpen && (
+        <BetaModal open={betaModalOpen} onClose={closeBetaModal} />
       )}
     </div>
   );

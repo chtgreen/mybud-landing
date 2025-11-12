@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
+import { useUrlModalState } from '../hooks/useUrlModalState';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
 
@@ -10,8 +11,8 @@ import FeaturesSection from '../components/FeaturesSection';
 import AppShowcase from '../components/AppShowcase';
 import Footer from '../components/Footer';
 
-import BetaModal from '../components/BetaModal';
 import Sponsorship from '../components/Sponsorship';
+import BetaModal from '../components/BetaModal';
 import Stats from '../components/Stats';
 import FAQ from '../components/FAQ';
 import SocialProof from '../components/SocialProof';
@@ -27,7 +28,7 @@ const B2B_CALENDAR_URL =
 
 export default function B2BLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen: betaModalOpen, close: closeBetaModal } = useUrlModalState('beta');
   useScrollEnhancement();
 
   useEffect(() => {
@@ -64,8 +65,8 @@ export default function B2BLandingPage() {
       <B2BLeadForm background="gray" /> {/* Section 10: gray - Formulário B2B */}
       <Footer />
 
-      {showModal && (
-        <BetaModal open={showModal} onClose={() => setShowModal(false)} />
+      {betaModalOpen && (
+        <BetaModal open={betaModalOpen} onClose={closeBetaModal} />
       )}
     </div>
   );
