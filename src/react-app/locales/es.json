@@ -235,7 +235,11 @@
       "subtitle": "Tu cultivo más organizado comienza ahora.",
       "primaryCta": "Quiero mi kit Mybud + acceso Premium",
       "secondaryCta": "Ver la demo corta (2 min)",
-      "microcopy": "Stock limitado. Solo {count} Founder Kits restantes."
+      "microcopy": "Stock limitado. Solo {count} Founder Kits restantes.",
+      "greeting": "🌱 ¡Ey! Estamos construyendo MyBud con mucho cariño.",
+      "question": "¿Quieres venir en este viaje con nosotros?",
+      "progressLabel": "Progreso del Lanzamiento",
+      "launchEta": "🚀 ¡Lanzamiento previsto para diciembre!"
     },
     "comingSoon": {
       "title": "¡Próximamente en tus tiendas favoritas!",
@@ -803,7 +807,7 @@
         "modelPlaceholder": "Modelo de interés"
       },
       "primaryButton": "Agendar conversación",
-      "secondaryOption": "¿Prefieres hablar directo?",
+      "secondaryOption": "¿Prefieres hablar directamente?",
       "email": "comercial@mybud.app",
       "successMessage": "¡Recibido! Alguien del equipo Mybud te contactará en un día hábil.",
       "errorMessage": "Algo salió mal. Intenta nuevamente o escribe a comercial@mybud.app"
@@ -884,7 +888,50 @@
         "Gestión multiusuario",
         "Trazabilidad completa",
         "Conformidad simplificada"
-      ]
+      ],
+      "dashboard": {
+        "title": "Panel de la Asociación",
+        "subtitle": "Gestión colectiva en tiempo real",
+        "live": "En vivo",
+        "metrics": {
+          "plants": {
+            "label": "Plantas activas",
+            "detail": "4 lotes activos"
+          },
+          "members": {
+            "label": "Asociados",
+            "detail": "3 técnicos"
+          },
+          "tasks": {
+            "label": "Tareas hoy",
+            "detail": "3 en progreso"
+          },
+          "compliance": {
+            "label": "Cumplimiento",
+            "detail": "Auditorías aprobadas"
+          }
+        },
+        "timeline": {
+          "title": "Actividades recientes",
+          "entries": {
+            "entry1": {
+              "user": "Ana Costa",
+              "action": "Registró riego - Área B",
+              "time": "Hace 10 min"
+            },
+            "entry2": {
+              "user": "Carlos Lima",
+              "action": "Actualizó protocolo de nutrición",
+              "time": "Hace 45 min"
+            },
+            "entry3": {
+              "user": "Paula Santos",
+              "action": "Generó informe semanal",
+              "time": "Hace 2 horas"
+            }
+          }
+        }
+      }
     },
     "problem": {
       "title": "Las asociaciones, clubes y pequeñas instalaciones cannábicas aún dependen de gestión manual.",
@@ -1233,7 +1280,7 @@
         "companyPlaceholder": "Empresa"
       },
       "primaryButton": "Agendar conversación",
-      "secondaryOption": "¿Prefieres hablar directo?",
+      "secondaryOption": "¿Prefieres hablar directamente?",
       "email": "comercial@mybud.app",
       "successMessage": "¡Recibido! Alguien del equipo Mybud te contactará en un día hábil.",
       "errorMessage": "Algo salió mal. Intenta nuevamente o escribe a comercial@mybud.app"

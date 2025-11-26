@@ -264,7 +264,11 @@
       "subtitle": "Your more organized grow starts now.",
       "primaryCta": "I want my Mybud kit + Premium access",
       "secondaryCta": "Watch the short demo (2 min)",
-      "microcopy": "Limited stock. Only {count} Founder Kits remaining."
+      "microcopy": "Limited stock. Only {count} Founder Kits remaining.",
+      "greeting": "🌱 Hey! We're building MyBud with lots of care.",
+      "question": "Want to join us on this journey?",
+      "progressLabel": "Launch Progress",
+      "launchEta": "🚀 Launch expected in December!"
     },
     "comingSoon": {
       "title": "Coming soon to your favorite stores!",
@@ -943,7 +947,50 @@
         "Multi-user management",
         "Complete traceability",
         "Simplified compliance"
-      ]
+      ],
+      "dashboard": {
+        "title": "Association Dashboard",
+        "subtitle": "Real-time collective management",
+        "live": "Live",
+        "metrics": {
+          "plants": {
+            "label": "Active plants",
+            "detail": "4 active batches"
+          },
+          "members": {
+            "label": "Members",
+            "detail": "3 technicians"
+          },
+          "tasks": {
+            "label": "Tasks today",
+            "detail": "3 in progress"
+          },
+          "compliance": {
+            "label": "Compliance",
+            "detail": "Audits cleared"
+          }
+        },
+        "timeline": {
+          "title": "Recent activity",
+          "entries": {
+            "entry1": {
+              "user": "Ana Costa",
+              "action": "Logged irrigation - Area B",
+              "time": "10 min ago"
+            },
+            "entry2": {
+              "user": "Carlos Lima",
+              "action": "Updated nutrition protocol",
+              "time": "45 min ago"
+            },
+            "entry3": {
+              "user": "Paula Santos",
+              "action": "Generated weekly report",
+              "time": "2 hours ago"
+            }
+          }
+        }
+      }
     },
     "problem": {
       "title": "Cannabis associations, clubs, and small facilities still rely on manual management.",

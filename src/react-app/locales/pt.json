@@ -264,7 +264,11 @@
       "subtitle": "Seu cultivo mais organizado começa agora.",
       "primaryCta": "Quero meu kit Mybud + acesso Premium",
       "secondaryCta": "Assistir à demo curta (2 min)",
-      "microcopy": "Estoque limitado. Só {count} Founder Kits restantes."
+      "microcopy": "Estoque limitado. Só {count} Founder Kits restantes.",
+      "greeting": "🌱 Ei! A gente tá construindo o MyBud com muito carinho.",
+      "question": "Quer vir nessa jornada com a gente?",
+      "progressLabel": "Progresso do Lançamento",
+      "launchEta": "🚀 Lançamento previsto para dezembro!"
     },
     "comingSoon": {
       "title": "Em breve nas suas lojas favoritas!",
@@ -938,7 +942,50 @@
       "description": "Um sistema que transforma o cultivo coletivo em dados e confiança.",
       "primaryCta": "Quero rodar o piloto",
       "secondaryCta": "Ver como funciona",
-      "trustElement": "Sistema desenvolvido com associações brasileiras para garantir conformidade e rastreabilidade."
+      "trustElement": "Sistema desenvolvido com associações brasileiras para garantir conformidade e rastreabilidade.",
+      "dashboard": {
+        "title": "Dashboard Associação",
+        "subtitle": "Gestão coletiva em tempo real",
+        "live": "Ao vivo",
+        "metrics": {
+          "plants": {
+            "label": "Plantas ativas",
+            "detail": "4 batches ativos"
+          },
+          "members": {
+            "label": "Associados",
+            "detail": "3 técnicos"
+          },
+          "tasks": {
+            "label": "Tarefas hoje",
+            "detail": "3 em andamento"
+          },
+          "compliance": {
+            "label": "Conformidade",
+            "detail": "Auditorias ok"
+          }
+        },
+        "timeline": {
+          "title": "Atividades recentes",
+          "entries": {
+            "entry1": {
+              "user": "Ana Costa",
+              "action": "Registrou irrigação - Área B",
+              "time": "Há 10 min"
+            },
+            "entry2": {
+              "user": "Carlos Lima",
+              "action": "Atualizou protocolo de nutrição",
+              "time": "Há 45 min"
+            },
+            "entry3": {
+              "user": "Paula Santos",
+              "action": "Gerou relatório semanal",
+              "time": "Há 2 horas"
+            }
+          }
+        }
+      }
     },
     "problem": {
       "title": "A gestão de associações canábicas ainda é manual demais.",

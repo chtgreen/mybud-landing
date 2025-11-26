@@ -70,10 +70,19 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
               <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-r-[20px] border-r-white"></div>
               
               <p className="text-lg md:text-xl text-gray-800 font-medium mb-3">
-                🌱 Ei! A gente tá construindo o <strong className="text-purple-600">MyBud</strong> com muito carinho.
+                {(() => {
+                  const greeting = t('ctaFinal.greeting');
+                  const parts = greeting.split('MyBud');
+                  return parts.map((part, index) => (
+                    <span key={index}>
+                      {part}
+                      {index < parts.length - 1 && <strong className="text-purple-600">MyBud</strong>}
+                    </span>
+                  ));
+                })()}
               </p>
               <p className="text-base md:text-lg text-gray-700">
-                Quer vir nessa jornada com a gente?
+                {t('ctaFinal.question')}
               </p>
             </div>
           </div>
@@ -83,7 +92,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
           {/* Barra de progresso 72% */}
           <div className="mb-8 max-w-md mx-auto">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-bold text-purple-900">Progresso do Lançamento</span>
+              <span className="text-sm font-bold text-purple-900">{t('ctaFinal.progressLabel')}</span>
               <span className="text-2xl font-bold text-purple-600">72%</span>
             </div>
             <div className="w-full h-4 bg-white/40 rounded-full overflow-hidden shadow-inner">
@@ -95,7 +104,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
               </div>
             </div>
-            <p className="text-xs text-purple-800 mt-2 font-medium">🚀 Lançamento previsto para dezembro!</p>
+            <p className="text-xs text-purple-800 mt-2 font-medium">{t('ctaFinal.launchEta')}</p>
           </div>
 
           {/* CTAs */}
