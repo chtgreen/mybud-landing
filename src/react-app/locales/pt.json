@@ -287,6 +287,10 @@
         "collective": "MyBud Collective",
         "industry": "MyBud Industry"
       },
+      "contact": "Contato",
+      "growers": "Growers",
+      "collective": "Coletivos",
+      "industry": "Indústria",
       "faqTitle": "FAQ",
       "faq1": {
         "question": "O app já está nas lojas?",
@@ -2173,6 +2177,9 @@
         "b2c": "Página para growers",
         "b2b": "Página para empresas"
       },
+      "contact": "Contato",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso",
       "growers": "Growers",
       "collective": "Coletivos",
       "industry": "Indústria",
