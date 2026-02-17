@@ -183,127 +183,127 @@ const B2BLeadForm: FC<B2BLeadFormProps> = ({ background = 'gray' }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                {t('finalCta.successTitle') !== 'finalCta.successTitle' ? t('finalCta.successTitle') : 'Obrigado pelo seu interesse!'}
+                {t('finalCta.successTitle')}
               </h3>
               <p className="text-lg text-gray-700 mb-3">
                 {t('finalCta.successMessage')}
               </p>
               <p className="text-base text-gray-600">
-                {t('finalCta.successSubtext') !== 'finalCta.successSubtext' ? t('finalCta.successSubtext') : 'Nossa equipe entrará em contato em breve para discutir como podemos ajudar seu negócio.'}
+                {t('finalCta.successSubtext')}
               </p>
             </div>
           </div>
         ) : (
           <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-          <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-name">
+                  {t('finalCta.form.namePlaceholder')}
+                </label>
+                <input
+                  id="b2b-name"
+                  type="text"
+                  value={form.name}
+                  onChange={handleChange('name')}
+                  placeholder={t('finalCta.form.namePlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-email">
+                  {t('finalCta.form.emailPlaceholder')}
+                </label>
+                <input
+                  id="b2b-email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange('email')}
+                  placeholder={t('finalCta.form.emailPlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-phone">
+                  {t('finalCta.form.phonePlaceholder')}
+                </label>
+                <input
+                  id="b2b-phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={handleChange('phone')}
+                  placeholder={t('finalCta.form.phonePlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-company">
+                  {t('finalCta.form.companyPlaceholder')}
+                </label>
+                <input
+                  id="b2b-company"
+                  type="text"
+                  value={form.company}
+                  onChange={handleChange('company')}
+                  placeholder={t('finalCta.form.companyPlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                />
+              </div>
+            </div>
+
             <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-name">
-                {t('finalCta.form.namePlaceholder')}
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-message">
+                {t('modal.fields.objective')}
               </label>
-              <input
-                id="b2b-name"
-                type="text"
-                value={form.name}
-                onChange={handleChange('name')}
-                placeholder={t('finalCta.form.namePlaceholder')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
+              <textarea
+                id="b2b-message"
+                value={form.message}
+                onChange={handleChange('message')}
+                placeholder={t('modal.subtitle')}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
               />
             </div>
-            <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-email">
-                {t('finalCta.form.emailPlaceholder')}
-              </label>
-              <input
-                id="b2b-email"
-                type="email"
-                value={form.email}
-                onChange={handleChange('email')}
-                placeholder={t('finalCta.form.emailPlaceholder')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
-              />
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-phone">
-                {t('finalCta.form.phonePlaceholder')}
-              </label>
-              <input
-                id="b2b-phone"
-                type="tel"
-                value={form.phone}
-                onChange={handleChange('phone')}
-                placeholder={t('finalCta.form.phonePlaceholder')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
-              />
-            </div>
-            <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-company">
-                {t('finalCta.form.companyPlaceholder')}
-              </label>
-              <input
-                id="b2b-company"
-                type="text"
-                value={form.company}
-                onChange={handleChange('company')}
-                placeholder={t('finalCta.form.companyPlaceholder')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="b2b-message">
-              {t('modal.fields.objective')}
-            </label>
-            <textarea
-              id="b2b-message"
-              value={form.message}
-              onChange={handleChange('message')}
-              placeholder={t('modal.subtitle')}
-              rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
-            />
-          </div>
-
-          {validationError && (
-            <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-              {validationError}
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full btn-primary py-3 px-6 text-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              'Enviando...'
-            ) : (
-              <>
-                <BarChart3 className="w-5 h-5" />
-                {t('finalCta.primaryButton')}
-              </>
+            {validationError && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                {validationError}
+              </div>
             )}
-          </button>
 
-          <div className="text-center text-sm text-gray-600">
-            <p>{t('finalCta.secondaryOption')}</p>
             <button
-              type="button"
-              onClick={emailFallback}
-              className="font-semibold text-emerald-700 hover:text-emerald-600 transition-colors inline-flex items-center gap-2"
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full btn-primary py-3 px-6 text-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              <Mail className="w-4 h-4" />
-              {t('finalCta.email')}
+              {isSubmitting ? (
+                t('finalCta.sending')
+              ) : (
+                <>
+                  <BarChart3 className="w-5 h-5" />
+                  {t('finalCta.primaryButton')}
+                </>
+              )}
             </button>
-          </div>
-        </form>
+
+            <div className="text-center text-sm text-gray-600">
+              <p>{t('finalCta.secondaryOption')}</p>
+              <button
+                type="button"
+                onClick={emailFallback}
+                className="font-semibold text-emerald-700 hover:text-emerald-600 transition-colors inline-flex items-center gap-2"
+              >
+                <Mail className="w-4 h-4" />
+                {t('finalCta.email')}
+              </button>
+            </div>
+          </form>
         )}
       </div>
     </section>

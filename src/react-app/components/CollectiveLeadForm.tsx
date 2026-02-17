@@ -62,7 +62,7 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
     const plant_count = form.plant_count.trim();
 
     if (!organization_name || !whatsapp || !email || !plant_count) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
+      alert(t('collective.finalCta.errors.allFieldsRequired'));
       return;
     }
 
@@ -121,7 +121,7 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
       setForm(initialState);
     } catch (error) {
       console.error('Failed to submit collective lead', error);
-      alert('Algo deu errado. Tente novamente ou escreva para comercial@mybud.app');
+      alert(t('collective.finalCta.errorMessage'));
 
       // Track failed submission
       trackFormSubmission('Collective Lead Form', {
@@ -175,93 +175,93 @@ const CollectiveLeadForm: FC<CollectiveLeadFormProps> = ({ background = 'white' 
           </div>
         ) : (
           <form onSubmit={submit} className="max-w-2xl mx-auto space-y-5 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-org-name">
-              {t('collective.finalCta.formFields.organizationName')}
-            </label>
-            <input
-              id="collective-org-name"
-              type="text"
-              value={form.organization_name}
-              onChange={handleChange('organization_name')}
-              placeholder={t('collective.finalCta.formFields.organizationName')}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              required
-            />
-          </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-org-name">
+                {t('collective.finalCta.formFields.organizationName')}
+              </label>
+              <input
+                id="collective-org-name"
+                type="text"
+                value={form.organization_name}
+                onChange={handleChange('organization_name')}
+                placeholder={t('collective.finalCta.formFields.organizationName')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-whatsapp">
-              {t('collective.finalCta.formFields.whatsapp')}
-            </label>
-            <input
-              id="collective-whatsapp"
-              type="tel"
-              value={form.whatsapp}
-              onChange={handleChange('whatsapp')}
-              placeholder={t('collective.finalCta.formFields.whatsapp')}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              required
-            />
-          </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-whatsapp">
+                {t('collective.finalCta.formFields.whatsapp')}
+              </label>
+              <input
+                id="collective-whatsapp"
+                type="tel"
+                value={form.whatsapp}
+                onChange={handleChange('whatsapp')}
+                placeholder={t('collective.finalCta.formFields.whatsapp')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-plant-count">
-              {t('collective.finalCta.formFields.plantCount')}
-            </label>
-            <input
-              id="collective-plant-count"
-              type="text"
-              value={form.plant_count}
-              onChange={handleChange('plant_count')}
-              placeholder={t('collective.finalCta.formFields.plantCount')}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              required
-            />
-          </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-plant-count">
+                {t('collective.finalCta.formFields.plantCount')}
+              </label>
+              <input
+                id="collective-plant-count"
+                type="text"
+                value={form.plant_count}
+                onChange={handleChange('plant_count')}
+                placeholder={t('collective.finalCta.formFields.plantCount')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-email">
-              {t('collective.finalCta.formFields.email')}
-            </label>
-            <input
-              id="collective-email"
-              type="email"
-              value={form.email}
-              onChange={handleChange('email')}
-              placeholder={t('collective.finalCta.formFields.email')}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              required
-            />
-          </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="collective-email">
+                {t('collective.finalCta.formFields.email')}
+              </label>
+              <input
+                id="collective-email"
+                type="email"
+                value={form.email}
+                onChange={handleChange('email')}
+                placeholder={t('collective.finalCta.formFields.email')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                required
+              />
+            </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full btn-primary py-3 px-6 text-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              'Enviando...'
-            ) : (
-              <>
-                <Rocket className="w-5 h-5" />
-                {t('collective.finalCta.formTitle')}
-              </>
-            )}
-          </button>
-
-          <div className="text-center text-sm text-gray-600">
-            <p>Prefere falar direto?</p>
             <button
-              type="button"
-              onClick={emailFallback}
-              className="font-semibold text-emerald-700 hover:text-emerald-600 transition-colors inline-flex items-center gap-2"
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full btn-primary py-3 px-6 text-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              <Mail className="w-4 h-4" />
-              comercial@mybud.app
+              {isSubmitting ? (
+                t('collective.finalCta.sending')
+              ) : (
+                <>
+                  <Rocket className="w-5 h-5" />
+                  {t('collective.finalCta.formTitle')}
+                </>
+              )}
             </button>
-          </div>
-        </form>
+
+            <div className="text-center text-sm text-gray-600">
+              <p>{t('collective.finalCta.contactLabel')}</p>
+              <button
+                type="button"
+                onClick={emailFallback}
+                className="font-semibold text-emerald-700 hover:text-emerald-600 transition-colors inline-flex items-center gap-2"
+              >
+                <Mail className="w-4 h-4" />
+                comercial@mybud.app
+              </button>
+            </div>
+          </form>
         )}
       </div>
     </section>

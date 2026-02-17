@@ -7,8 +7,11 @@ import { trackPageView, trackCTAClick } from '../lib/analytics';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
 import HeroCollective from '../components/HeroCollective';
-import Sponsorship from '../components/Sponsorship';
-import WhyItMatters from '../components/WhyItMatters';
+import PositioningSection from '../components/PositioningSection';
+import ContextSection from '../components/ContextSection';
+import ProblemsSection from '../components/ProblemsSection';
+import SolutionSection from '../components/SolutionSection';
+import InteractiveFeaturesSection from '../components/InteractiveFeaturesSection';
 import HowItWorksCollective from '../components/HowItWorksCollective';
 import FeaturesMap from '../components/FeaturesMap';
 import PilotSection from '../components/PilotSection';
@@ -68,13 +71,17 @@ export default function CollectiveLandingPage() {
       <SEO pageType="collective" />
       <Header onLanguageChange={changeLanguage} isCollective onCTAClick={handleCTAClick} />
 
-      <HeroCollective onCTAClick={handleCTAClick} /> {/* Section 1: Hero */}
-      <Sponsorship background="gray" translationKey="collective.problem" /> {/* Section 2: O problema - Gestão manual */}
-      <WhyItMatters /> {/* Section 3: Problema/Contexto */}
-      <HowItWorksCollective /> {/* Section 4: Como funciona (4 passos) */}
-      <FeaturesMap background="gray" /> {/* Section 5: Mapa de Features (4 pilares) */}
-      <PilotSection /> {/* Section 6: Piloto */}
-      <PlansSection /> {/* Section 7: Planos (Core vs Enterprise) */}
+      {/* SEO-Optimized Structure */}
+      <HeroCollective onCTAClick={handleCTAClick} /> {/* H1: Controle e rastreabilidade do cultivo medicinal coletivo */}
+      <PositioningSection background="gray" /> {/* Positioning: O MyBud é o sistema operacional */}
+      <ContextSection background="white" /> {/* H2: O cultivo medicinal entrou em uma nova fase */}
+      <ProblemsSection background="gray" /> {/* H2: Os principais gargalos do cultivo coletivo medicinal */}
+      <SolutionSection background="white" /> {/* H2: O MyBud estrutura o que a regulação exige */}
+      <FeaturesMap background="gray" /> {/* 4 pilares - O Cérebro do Cultivo Coletivo */}
+      <InteractiveFeaturesSection background="white" /> {/* Detailed Features (accordion) - Tudo vira histórico organizado */}
+      <HowItWorksCollective /> {/* Como usar (4 passos) - Veja como funciona na prática */}
+      <PilotSection /> {/* Piloto */}
+      <PlansSection /> {/* Planos */}
 
       {/* Section 7: Depoimento */}
       <section className="py-20 bg-white">

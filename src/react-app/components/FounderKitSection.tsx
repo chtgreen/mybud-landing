@@ -55,10 +55,9 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
 
         {/* Kit Card com textura papel */}
           <div className="max-w-2xl mx-auto relative">
-          {/* Selo Edição Limitada 2025 - Fora do card para não quebrar */}
           <div className="absolute -top-3 -right-3 z-20">
             <div className="bg-gradient-to-r from-[#eb4c80] to-[#d13a6a] text-white px-4 py-2 rounded-full text-xs font-bold shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-300 border-2 border-white whitespace-nowrap">
-              ⭐ EDIÇÃO LIMITADA 2025
+              ⭐ EDIÇÃO LIMITADA 2026
             </div>
           </div>
           

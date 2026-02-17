@@ -12,23 +12,23 @@ interface Step {
 const HowItWorksCollective: FC = () => {
   const steps: Step[] = [
     {
-      title: t('collective.howItWorks.step1.title'),
-      description: t('collective.howItWorks.step1.description'),
+      title: t('collective.howToUse.step1.title'),
+      description: t('collective.howToUse.step1.description'),
       icon: Sprout,
     },
     {
-      title: t('collective.howItWorks.step2.title'),
-      description: t('collective.howItWorks.step2.description'),
+      title: t('collective.howToUse.step2.title'),
+      description: t('collective.howToUse.step2.description'),
       icon: Mic,
     },
     {
-      title: t('collective.howItWorks.step3.title'),
-      description: t('collective.howItWorks.step3.description'),
+      title: t('collective.howToUse.step3.title'),
+      description: t('collective.howToUse.step3.description'),
       icon: BarChart3,
     },
     {
-      title: t('collective.howItWorks.step4.title'),
-      description: t('collective.howItWorks.step4.description'),
+      title: t('collective.howToUse.step4.title'),
+      description: t('collective.howToUse.step4.description'),
       icon: Users,
     },
   ];
@@ -39,7 +39,7 @@ const HowItWorksCollective: FC = () => {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900">
-            {t('collective.howItWorks.title')}
+            {t('collective.howToUse.title')}
           </h2>
         </div>
 
@@ -48,8 +48,8 @@ const HowItWorksCollective: FC = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="relative group"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
@@ -65,7 +65,7 @@ const HowItWorksCollective: FC = () => {
                       <Icon className="w-6 h-6 text-emerald-600" strokeWidth={1.5} />
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-semibold mb-3 text-zinc-900">
                     {step.title}
                   </h3>
@@ -73,21 +73,21 @@ const HowItWorksCollective: FC = () => {
                     {step.description}
                   </p>
                 </div>
-                
+
                 {/* Clean Arrow Connector */}
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                    <svg 
-                      className="w-6 h-6 text-gray-300" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="w-6 h-6 text-gray-300"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth="2" 
-                        d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
                       />
                     </svg>
                   </div>
@@ -99,8 +99,8 @@ const HowItWorksCollective: FC = () => {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <a href="#collective-lead-form" className="btn-primary text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">
-            {t('collective.howItWorks.cta')}
+          <a href="#contact" className="btn-primary text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all">
+            {t('collective.howToUse.cta')}
           </a>
         </div>
       </div>

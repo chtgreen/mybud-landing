@@ -170,7 +170,7 @@
       "close": "Close modal",
       "progress": {
         "label": "Development in progress — 78% complete",
-        "eta": "Official launch estimated: November 2025"
+        "eta": "Official launch estimated: February 2026"
       },
       "priority": {
         "chip": "Pre-Order • Priority Access",
@@ -269,7 +269,7 @@
       "greeting": "🌱 Hey! We're building MyBud with lots of care.",
       "question": "Want to join us on this journey?",
       "progressLabel": "Launch Progress",
-      "launchEta": "🚀 Launch expected in December!"
+      "launchEta": "🚀 Beta starting in Feb 2026!"
     },
     "comingSoon": {
       "title": "Coming soon to your favorite stores!",
@@ -869,7 +869,10 @@
       "primaryButton": "Schedule conversation",
       "secondaryOption": "Prefer to talk directly?",
       "email": "comercial@mybud.app",
-      "successMessage": "Got it! Someone from the Mybud team will reach out within one business day.",
+      "successTitle": "Got it!",
+      "successMessage": "Thanks for your interest!",
+      "successSubtext": "Someone from the Mybud team will reach out within one business day.",
+      "sending": "Sending...",
       "errorMessage": "Something went wrong. Try again or email comercial@mybud.app"
     },
     "modal": {
@@ -915,8 +918,8 @@
   },
   "collective": {
     "seo": {
-      "title": "Mybud Collective — Organize and standardize collective cultivation",
-      "description": "From clone to extraction: standardize processes, manage teams, and maintain compliance with complete traceability. A system scaled to your grow.",
+      "title": "MyBud Collectives — Traceability and control for medicinal collective cultivation",
+      "description": "Operating system for associations and clubs: plant & batch traceability, team control, reports and audits. Built to scale with compliance.",
       "ogImageAlt": "Mybud Collective interface showing associative cultivation management and process standardization."
     },
     "header": {
@@ -935,18 +938,18 @@
       "switchToEnterprise": "For businesses"
     },
     "hero": {
-      "badge": "Mybud Collective",
-      "title1": "A system scaled",
-      "title2": "to your cultivation.",
-      "subtitle": "Organize and standardize collective cultivation — from clone to extraction — with team management, complete traceability, and automated reports.",
-      "description": "Mybud Collective is the platform for associations, cannabis clubs, farms, and medium-scale commercial grows that need standardization without losing touch with the cultivation floor.",
+      "badge": "MyBud Collectives",
+      "title1": "Control and traceability",
+      "title2": "for collective medicinal cultivation",
+      "subtitle": "An operating system for associations and clubs: plants, batches, inputs, accountability and reports — one auditable history.",
+      "description": "MyBud centralizes the operation and the evidence of cultivation: who did what, when, and under which batch. Less spreadsheets, more control.",
       "primaryCta": "Schedule demo",
-      "secondaryCta": "Join the pilot",
-      "trustElement": "System developed with real associations to ensure compliance, traceability, and data autonomy.",
+      "secondaryCta": "Talk to the team",
+      "trustElement": "Built with real associations. Your data stays under your control. Ready for audits and traceability.",
       "badges": [
-        "Process standardization",
-        "Multi-user management",
-        "Complete traceability",
+        "Per-plant & batch traceability",
+        "Multi-user control",
+        "Reports & audits",
         "Simplified compliance"
       ],
       "dashboard": {
@@ -993,9 +996,176 @@
         }
       }
     },
+    "positioning": {
+      "title": "MyBud is the operating system for collective medicinal cultivation",
+      "description": "The central infrastructure where all critical information connects in one place.",
+      "details": "History, handling, inputs, batches, and analyses — organized by responsibility."
+    },
+    "context": {
+      "title": "Medicinal cultivation has entered a new phase",
+      "description": "With the advancement of medicinal cannabis regulation in Brazil, associations and collective operations now need operational control, continuous traceability, and production predictability.",
+      "highlight": "The challenge is not to cultivate. It is to prove, organize, and plan."
+    },
+    "problems": {
+      "title": "The main bottlenecks of medicinal collective cultivation",
+      "description": "",
+      "items": [
+        {
+          "title": "Lack of continuous and reliable traceability",
+          "description": "Without a structured system, it is impossible to track genetic origin, handling history, or link batches to lab analyses continuously."
+        },
+        {
+          "title": "Fragmented operation between spreadsheets, papers, and memory",
+          "description": "Information scattered across multiple sources does not generate the structured and auditable history that regulation requires."
+        },
+        {
+          "title": "Production disconnected from real therapeutic demand",
+          "description": "Without visibility of real patient demand, production becomes reactive, generating waste or product shortages."
+        }
+      ],
+      "footer": "Without a central control layer, any error becomes a systemic risk."
+    },
+    "solution": {
+      "title": "MyBud structures what regulation requires",
+      "description": "MyBud organizes the collective cultivation operation from a single, continuous, and verifiable history, prepared to meet sanitary requirements, inspection, and audit.",
+      "features": []
+    },
+    "moment": {
+      "title": "Medicinal cultivation regulation has advanced.",
+      "description": "Now, associations need real control, reliable history, and predictability — not loose notes.",
+      "keyphrase": "The challenge is not to cultivate.",
+      "keyphrase2": "It is to prove, organize, and plan."
+    },
+    "howItWorks": {
+      "title": "How MyBud structures collective cultivation",
+      "description": "Complete system that organizes all stages of medicinal cultivation in an auditable structure:",
+      "features": [
+        {
+          "title": "Documented genetic origin",
+          "description": "Complete record from seed packages, germination, mother plants to clones linked to origin."
+        },
+        {
+          "title": "Continuous history per plant and batch",
+          "description": "Detailed timeline with all activities, inputs applied, and responsible for each action."
+        },
+        {
+          "title": "Operational cultivation control",
+          "description": "Real-time visibility of how many plants are active, in what stage, and where they are located."
+        },
+        {
+          "title": "Spatial operation traceability",
+          "description": "Organization by areas, rooms, and grows with access control and permissions by profile."
+        },
+        {
+          "title": "Audit-ready reports",
+          "description": "Complete data export by plant, batch, cycle, or genetics in standard formats."
+        }
+      ]
+    },
+    "targetAudience": {
+      "title": "Who MyBud was made for",
+      "description": "Developed for organizations that need rigorous compliance:",
+      "audiences": [
+        {
+          "title": "Associations",
+          "description": "Operational control and traceability for ANVISA compliance."
+        },
+        {
+          "title": "Projects",
+          "description": "Scientific documentation and auditable history for research."
+        },
+        {
+          "title": "Operations",
+          "description": "Any cultivation that needs to prove traceability and control."
+        }
+      ]
+    },
+    "whatItsNot": {
+      "title": "What MyBud is not",
+      "description": "To avoid incorrect expectations, it is important to clarify what MyBud does not do:",
+      "items": [
+        {
+          "title": "It is not a note-taking app",
+          "description": "MyBud is a complete operational management system, not just a digital notepad."
+        },
+        {
+          "title": "It is not a personal grow diary",
+          "description": "It was designed for collective operations with multiple users, permissions, and regulatory requirements."
+        },
+        {
+          "title": "It does not replace legal authorizations",
+          "description": "MyBud is a management tool. It does not grant authorizations, licenses, or regulatory approvals."
+        }
+      ]
+    },
+    "featuresSummary": {
+      "title": "What MyBud does",
+      "subtitle": "MyBud functions as the operating system for collective cultivation, connecting genetics, production, and demand.",
+      "intro": "It allows:",
+      "categories": [
+        {
+          "title": "Documented genetic origin",
+          "items": [
+            "Seed packages",
+            "Germination",
+            "Mother plants",
+            "Clones linked to origin"
+          ]
+        },
+        {
+          "title": "Complete cultivation control",
+          "items": [
+            "How many plants are active, vegetating or flowering",
+            "Where each plant is",
+            "Timeline per plant"
+          ]
+        },
+        {
+          "title": "Inputs and handling control",
+          "items": [
+            "What was applied",
+            "When",
+            "On which plant or batch"
+          ]
+        },
+        {
+          "title": "Batches and production",
+          "items": [
+            "Harvests",
+            "Weights",
+            "Processing",
+            "History per batch"
+          ]
+        },
+        {
+          "title": "Cannabinoid, flavonoid, terpene profile and analyses",
+          "items": [
+            "Plants and batches by complete profile (THC, CBD, terpenes, flavonoids)",
+            "Import of lab and agronomic reports",
+            "Results associated with cultivation"
+          ]
+        },
+        {
+          "title": "Patients and demand",
+          "items": [
+            "How many patients demand CBD or THC",
+            "Cultivation planning based on real need",
+            "Production and harvest predictability"
+          ]
+        },
+        {
+          "title": "API-first and integrations",
+          "items": [
+            "API ready for consumption and integrations",
+            "Connection with labs, ERPs and external systems",
+            "Webhooks and custom automations"
+          ]
+        }
+      ]
+    },
     "problem": {
-      "title": "Cannabis associations, clubs, and small facilities still rely on manual management.",
-      "description": "Disconnected spreadsheets, manual reports, and incomplete traceability prevent collectives, clubs, and small facilities from growing with legal security. Mybud changes this scenario — digitizes the entire operation, ensures complete traceability, and transforms each cycle into auditable data and professional reports.",
+      "title": "No history, no compliance. No compliance, no scale.",
+      "description": "WhatsApp, scattered spreadsheets and manual reporting break traceability. MyBud turns daily operations into a continuous, auditable record: plants, batches, inputs, accountable people and evidence.",
       "cta": "Schedule a conversation.",
       "widget": {
         "title": "Hub Indicators",
@@ -1021,51 +1191,51 @@
       }
     },
     "benefits": {
-      "title": "Standardization without losing the human touch.",
-      "subtitle": "We speak the language of those who understand the cultivation floor.",
+      "title": "Standardize without losing touch with the grow floor.",
+      "subtitle": "Infrastructure, not a notes app: a single source of truth for operations.",
       "traceability": {
         "title": "Complete traceability",
-        "desc": "From clone to extraction: history per plant, batch, and lot. Everything tracked, always auditable."
+        "desc": "History per plant, batch and cycle. Origin → handling → harvest → processing."
       },
       "standardization": {
-        "title": "Process standardization",
-        "desc": "Custom SOPs, automated schedules, and checklists that ensure consistency between cycles."
+        "title": "Standardization (SOPs)",
+        "desc": "Protocols, checklists and repeatable routines to reduce variance across cycles and teams."
       },
       "multiuser": {
-        "title": "Multi-user management",
-        "desc": "Profiles for members, agronomic technicians, and area managers with specific permissions."
+        "title": "Team & permissions",
+        "desc": "Role-based profiles (tech, operator, manager) with accountability and action logs."
       },
       "dataControl": {
-        "title": "Data under control",
-        "desc": "Export anytime. Total autonomy over your data and reports."
+        "title": "Data under your control",
+        "desc": "Export anytime. Evidence organized and ready to share with stakeholders."
       },
       "privacy": {
-        "title": "Simplified compliance",
-        "desc": "Privacy-ready system with audit logs and reports ready for regulatory bodies."
+        "title": "Compliance & audits",
+        "desc": "Audit-ready structure with logs and reports for internal and external inspections."
       },
       "integration": {
-        "title": "Future integration",
-        "desc": "IoT sensors, per-plant QR codes, laboratory APIs, and compliance systems."
+        "title": "Geo + integrations (optional)",
+        "desc": "Area-level location records (georeferencing), per-plant QR, IoT sensors and lab connections."
       }
     },
     "features": {
-      "title": "From cultivation to management, everything integrated.",
-      "subtitle": "Mybud Collective is the bridge between manual work and professional organization.",
+      "title": "What regulation asks for — in one system.",
+      "subtitle": "MyBud turns day-to-day cultivation into structured, auditable evidence.",
       "management": {
-        "title": "Cultivation and team management",
-        "desc": "Growing areas, cycle managers, standardized protocols, and automatic alerts."
+        "title": "Operational control",
+        "desc": "Areas, plants, batches, stages, responsible people and tasks with automated alerts."
       },
       "reports": {
         "title": "Automated reports",
-        "desc": "Agronomic, medical, and compliance reports generated automatically each cycle."
+        "desc": "Cycle, batch and area reports — ready for management and audit."
       },
       "compliance": {
-        "title": "Traceability and compliance",
-        "desc": "Complete history of each plant and batch for internal and external audits."
+        "title": "Traceability & chain of custody",
+        "desc": "Every action links to plant/batch, date and responsible person — with evidence."
       },
       "partners": {
-        "title": "Partner integration",
-        "desc": "Connect input suppliers, testing labs, and partner clinics."
+        "title": "Partner connections",
+        "desc": "Designed to integrate labs, clinics and suppliers without operational friction."
       }
     },
     "proof": {
@@ -1091,10 +1261,8 @@
       "role": "Collective grow • 50+ plants"
     },
     "finalCta": {
-      "title": "Standardize your collective cultivation.",
-      "subtitle": "Schedule a demo and see how Mybud Collective can organize your operation.",
+      "title": "Be part of the associations building the future of collective cultivation.",
       "text": "Fill out the form and schedule a conversation to understand how MyBud can standardize your cultivation.",
-      "description": "Fill out the form and receive a personalized initial assessment within 1 business day.",
       "formTitle": "Schedule conversation",
       "formFields": {
         "organizationName": "Association name",
@@ -1102,6 +1270,23 @@
         "plantCount": "How many plants/units do you manage today?",
         "email": "Email"
       },
+      "primaryButton": "Schedule demo",
+      "secondaryButton": "Join the pilot",
+      "email": "comercial@mybud.app",
+      "successTitle": "Received! ✨",
+      "successMessage": "Within 1 business day someone from the MyBud team will contact you.",
+      "successSubtext": "We'll understand your operation and show how MyBud can help.",
+      "errorMessage": "Something went wrong. Try again or write to comercial@mybud.app",
+      "sending": "Sending...",
+      "contactLabel": "Prefer to talk directly?",
+      "errors": {
+        "allFieldsRequired": "Please fill in all required fields."
+      }
+    },
+    "oldFinalCta": {
+      "title": "Standardize your collective cultivation.",
+      "subtitle": "Schedule a demo and see how MyBud Collective can organize your operation.",
+      "description": "Fill out the form and receive a personalized initial diagnosis within 1 business day.",
       "form": {
         "namePlaceholder": "Full name",
         "emailPlaceholder": "Association email",
@@ -1112,14 +1297,12 @@
       "primaryButton": "Schedule demo",
       "secondaryButton": "Join the pilot",
       "email": "comercial@mybud.app",
-      "successTitle": "Received! ✨",
-      "successMessage": "Someone from the MyBud team will contact you within 1 business day.",
-      "successSubtext": "We'll understand your operation and show you how MyBud can help.",
+      "successMessage": "Received! Within 1 business day someone from the MyBud team will contact you.",
       "errorMessage": "Something went wrong. Try again or write to comercial@mybud.app"
     },
     "faq": {
-      "title": "Frequently asked questions",
-      "subtitle": "Questions about Mybud Collective? We answer the main ones here.",
+      "title": "FAQ",
+      "subtitle": "If you don't see your question here, send it in the form.",
       "q1": {
         "q": "How many plants does the system support?",
         "a": "Mybud Collective is ideal for grows with 20+ plants and multiple cultivators. We support from small associations to commercial facilities."
@@ -1158,71 +1341,498 @@
     },
     "whyItMatters": {
       "title": "Without standards, there's no trust.",
-      "text": "70% of associations still operate with spreadsheets and WhatsApp groups. The result? Lack of traceability, operational failures, and loss of credibility in audits and clinical reports.",
-      "keyphrase": "MyBud Collective solves this."
+      "text": "When everyone records in a different way, the history loses value. MyBud standardizes and keeps traceability continuous so data works for operations, clinical needs and audits.",
+      "keyphrase": "MyBud Collectives sets the standard."
     },
-    "howItWorks": {
+    "geneticOrigin": {
+      "badge": "🌱 Genetic Origin",
+      "title": "Origin of seeds, mothers, and clones",
+      "subtitle": "Nothing is born 'loose'. Every plant has a documented origin.",
+      "features": {
+        "seedPackages": {
+          "title": "Seed package registration",
+          "items": [
+            "Origin / supplier",
+            "Batch",
+            "Quantity",
+            "Germination tracking"
+          ]
+        },
+        "germination": {
+          "title": "Germination control",
+          "items": [
+            "What germinated",
+            "When it germinated",
+            "Success rate per batch"
+          ]
+        },
+        "mothers": {
+          "title": "Mother plant control",
+          "items": [
+            "How many cuts per mother",
+            "Usage history",
+            "Health and vigor"
+          ]
+        },
+        "clones": {
+          "title": "Clone tracking",
+          "items": [
+            "Clone linked to mother",
+            "Active quantity",
+            "Destination and location"
+          ]
+        }
+      }
+    },
+    "operationalControl": {
+      "badge": "🪴 Operational Control",
+      "title": "Complete control of plants and stages",
+      "subtitle": "You know how many plants exist, where they are, and in what stage — now.",
+      "features": {
+        "plantCount": {
+          "title": "How many plants are:",
+          "items": [
+            "Active",
+            "In vegetative",
+            "In flowering",
+            "Finished"
+          ]
+        },
+        "identification": {
+          "title": "Identification per plant",
+          "description": "Association to area, room, grow"
+        },
+        "timeline": {
+          "title": "Individual timeline",
+          "description": "Complete history per plant with all recorded events"
+        }
+      }
+    },
+    "inputsManagement": {
+      "badge": "🧪 Inputs and Handling",
+      "title": "Control of used inputs",
+      "subtitle": "Each plant carries the history of what was applied to it.",
+      "features": {
+        "registration": {
+          "title": "Input registration",
+          "items": [
+            "Nutrients",
+            "Substrates",
+            "Authorized defenses"
+          ]
+        },
+        "application": {
+          "title": "Application linked to:",
+          "items": [
+            "Plant or batch",
+            "Date",
+            "Responsible"
+          ]
+        },
+        "history": {
+          "title": "Complete history",
+          "description": "Complete handling history per cycle"
+        }
+      }
+    },
+    "cannabinoidProfile": {
+      "badge": "🧬 Cannabinoid Profile",
+      "title": "Control by cannabinoid profile",
+      "subtitle": "You know how many plants produce THC, how many produce CBD, and when.",
+      "features": {
+        "identification": {
+          "title": "Identification of plants and batches",
+          "items": [
+            "With THC predominance",
+            "With CBD predominance",
+            "Balanced profiles"
+          ]
+        },
+        "labAnalysis": {
+          "title": "Lab analyses",
+          "description": "Association of lab analyses to batches"
+        },
+        "history": {
+          "title": "Results history",
+          "description": "Results history per cycle"
+        }
+      }
+    },
+    "batchProduction": {
+      "badge": "📦 Batches and Production",
+      "title": "Batch and production control",
+      "subtitle": "Batch linked to genetics, handling, and analysis.",
+      "features": {
+        "grouping": {
+          "title": "Grouping by batch",
+          "description": "Plants grouped in traceable batches"
+        },
+        "registration": {
+          "title": "Production registration",
+          "items": [
+            "Harvest",
+            "Wet weight",
+            "Dry weight",
+            "Processing"
+          ]
+        },
+        "traceability": {
+          "title": "Complete traceability",
+          "description": "Batch linked to genetics, handling, and analysis"
+        }
+      }
+    },
+    "patientDemand": {
+      "badge": "👥 Patient Demand",
+      "title": "Production aligned with patient demand",
+      "subtitle": "Cultivation stops being reactive. It becomes predictable, planned, and sustainable.",
+      "highlight": "This is the differential that separates MyBud from any other solution.",
+      "features": {
+        "registration": {
+          "title": "Registration and tracking",
+          "description": "Number of patients and therapeutic profiles"
+        },
+        "association": {
+          "title": "Association of patients to:",
+          "items": [
+            "Therapeutic profile (CBD, THC, etc.)",
+            "Required dosage",
+            "Frequency of use"
+          ]
+        },
+        "visibility": {
+          "title": "Clear demand view",
+          "items": [
+            "How many patients demand CBD",
+            "How many demand THC",
+            "Monthly consumption projection"
+          ]
+        },
+        "planning": {
+          "title": "Planning based on real demand",
+          "description": "Cultivation planned based on real patient need"
+        }
+      }
+    },
+    "reportsAudit": {
+      "badge": "📄 Reports and Audit",
+      "title": "Reports ready for management and inspection",
+      "subtitle": "Structure prepared for audits.",
+      "features": {
+        "reports": {
+          "title": "Reports by:",
+          "items": [
+            "Plant",
+            "Batch",
+            "Cycle",
+            "Genetics"
+          ]
+        },
+        "export": {
+          "title": "Data export",
+          "description": "Complete export in standard formats"
+        },
+        "audit": {
+          "title": "Continuous history",
+          "description": "Continuous and organized history for audits"
+        }
+      }
+    },
+    "detailedFeatures": {
+      "title": "Everything becomes organized history",
+      "subtitle": "Click on each area to see details",
+      "showMore": "View all history items",
+      "bottomTextBold": "Per plant, per batch, per cycle, per genetic.",
+      "bottomTextNormal": "Exportable data and ready for audit.",
+      "features": [
+        {
+          "id": "geneticOrigin",
+          "icon": "seedling",
+          "title": "Documented genetic origin",
+          "summary": "Every plant has a proven origin.",
+          "details": {
+            "description": "Complete record from seeds to clones.",
+            "items": [
+              "Record of seeds, mothers, and clones",
+              "Origin, supplier, and batch",
+              "Germination tracking",
+              "Mother plant control",
+              "Complete clone tracking"
+            ]
+          }
+        },
+        {
+          "id": "inputsManagement",
+          "icon": "flask",
+          "title": "Complete handling history",
+          "summary": "Every decision leaves a trail.",
+          "details": {
+            "description": "Nothing depends on memory.",
+            "items": [
+              "Record of nutrients and defenses",
+              "Applications linked to plant or batch",
+              "Date and responsible for each action",
+              "Complete history per cycle"
+            ]
+          }
+        },
+        {
+          "id": "batchProduction",
+          "icon": "package",
+          "title": "Batches, production, and destination",
+          "summary": "From cultivation to processing.",
+          "details": {
+            "description": "Complete traceability to destination.",
+            "items": [
+              "Grouping by batch",
+              "Harvest record",
+              "Wet and dry weight",
+              "Processing",
+              "Batch linked to genetics and handling"
+            ]
+          }
+        },
+        {
+          "id": "reports",
+          "icon": "fileText",
+          "title": "Reports and audit",
+          "summary": "Data ready for management and inspection.",
+          "details": {
+            "description": "Structure prepared for audits and inspections.",
+            "items": [
+              "Reports by plant, batch, cycle, and genetics",
+              "Continuous and organized history",
+              "Data export in standard formats"
+            ]
+          }
+        },
+        {
+          "id": "cultivationControl",
+          "icon": "plant",
+          "title": "Operational cultivation control",
+          "summary": "You know exactly what exists in the operation.",
+          "details": {
+            "description": "Real-time control, no guesswork.",
+            "items": [
+              "Quantity of active plants",
+              "Stage of each plant",
+              "Association by area, room, and grow",
+              "Individual timeline per plant"
+            ]
+          }
+        },
+        {
+          "id": "geolocation",
+          "icon": "mapPin",
+          "title": "Operation geolocation",
+          "summary": "Traceability is also spatial.",
+          "details": {
+            "description": "Link of plants and batches to the unique physical point of operation.",
+            "items": [
+              "Geographic location of the operation",
+              "Link of plants and batches to physical point",
+              "Complete spatial traceability",
+              "Compliance with inspection requirements"
+            ]
+          }
+        },
+        {
+          "id": "cannabinoidProfile",
+          "icon": "molecule",
+          "title": "THC, CBD, and productive profile",
+          "summary": "Production aligned with therapeutic profile.",
+          "details": {
+            "description": "You know what you produce, how much you produce, and when.",
+            "items": [
+              "Identification by predominance (THC or CBD)",
+              "Association of lab analyses to batches",
+              "Results history per cycle"
+            ]
+          }
+        },
+        {
+          "id": "patientDemand",
+          "icon": "users",
+          "title": "Production aligned with demand",
+          "summary": "Cultivation stops being reactive.",
+          "details": {
+            "description": "More predictability and operational sustainability.",
+            "items": [
+              "Clear view of patient numbers",
+              "Association by therapeutic profile",
+              "Planning based on real demand"
+            ]
+          }
+        },
+        {
+          "id": "apiIntegrations",
+          "icon": "plug",
+          "title": "API-first and integrations",
+          "summary": "Ready to connect with external systems.",
+          "details": {
+            "description": "API-first architecture allows native integrations.",
+            "items": [
+              "Complete and documented REST API",
+              "Integration with labs",
+              "Connection with ERPs and CRMs",
+              "Webhooks for automations",
+              "Support for IoT sensors"
+            ]
+          }
+        }
+      ]
+    },
+    "finalPositioning": {
+      "title": "MyBud is not a note-taking app",
+      "subtitle": "MyBud is infrastructure. It is the operating system for collective medicinal cultivation — the central layer where the operation's truth lives.",
+      "cta": {
+        "primary": "Talk to specialist",
+        "secondary": "Evaluate system use in your operation"
+      }
+    },
+    "legalDisclaimer": {
+      "text": "MyBud is an organization and traceability tool. It does not replace legal authorizations or regulatory requirements."
+    },
+    "howToUse": {
       "title": "See how it works in practice.",
       "subtitle": "",
       "cta": "I want to test the free pilot",
+      "geolocation": {
+        "badge": "Spatial Traceability",
+        "title": "Operation Geolocation",
+        "subtitle": "Spatial traceability and location control",
+        "description": "Linking plants and batches to the unique physical point of operation.",
+        "label1": "Batch #A23",
+        "label2": "Mother #04"
+      },
       "step1": {
-        "title": "Register grows and plants",
+        "title": "Register cultivations and plants",
         "description": "Each plant gets a unique QR and enters the system with all information."
       },
       "step2": {
-        "title": "Record tasks with voice, photo or tap",
-        "description": "Collaborators record activities naturally — no complications, no spreadsheets."
+        "title": "Log tasks with voice, photo, or touch",
+        "description": "Collaborators log activities naturally — no complications, no spreadsheets."
       },
       "step3": {
-        "title": "Track progress and automatic reports",
+        "title": "Track evolution and automated reports",
         "description": "Complete timeline per plant, medical and agronomic reports generated automatically."
       },
       "step4": {
         "title": "Share data with doctors and partners",
-        "description": "Reports ready for audit, dispensing and clinical follow-up."
+        "description": "Reports ready for audit, dispensing, and clinical follow-up."
+      },
+      "roles": {
+        "title": "Control by user levels",
+        "subtitle": "Each profile sees and does only what they need.",
+        "items": [
+          {
+            "role": "Collaborator",
+            "access": "Sees their tasks, logs activities, accesses only their areas."
+          },
+          {
+            "role": "Agronomist Technician",
+            "access": "Adjusts protocols, reviews logs, approves handling changes."
+          },
+          {
+            "role": "Cultivation Manager",
+            "access": "Complete view of cultivation: plants, teams, reports, and compliance."
+          },
+          {
+            "role": "Administrator (Enterprise)",
+            "access": "Multiple locations, consolidated reports, management of the entire operation."
+          }
+        ]
+      },
+      "enterprise": {
+        "badge": "Enterprise",
+        "title": "Multiple locations, a single view",
+        "description": "In the Enterprise version, managers track not just one grow, but multiple locations simultaneously — with consolidated data, performance comparisons, and unified reports.",
+        "features": [
+          "Multi-location dashboard",
+          "Performance comparison between sites",
+          "Consolidated reports",
+          "Centralized team management",
+          "Protocol transfer between locations"
+        ]
+      }
+    },
+    "deploymentOptions": {
+      "title": "Two ways to grow with you.",
+      "subtitle": "Choose the model that best adapts to the size and needs of your operation.",
+      "saas": {
+        "badge": "Shared SaaS",
+        "title": "Start fast, grow safe",
+        "description": "Shared infrastructure optimized for associations and clubs seeking agility and cost-benefit.",
+        "features": [
+          "Setup in minutes",
+          "Automatic updates",
+          "Dedicated technical support",
+          "Daily automatic backup",
+          "Report customizations",
+          "Third-party integrations",
+          "Automatic scalability"
+        ],
+        "highlight": "Even in the SaaS plan, you have access to customizations, personalized reports, and integrations with labs and third-party systems.",
+        "cta": "Start now"
+      },
+      "enterprise": {
+        "badge": "Dedicated Enterprise",
+        "title": "Solution the size of your operation",
+        "description": "Dedicated and isolated infrastructure for operations requiring maximum control and privacy.",
+        "features": [
+          "Own domain and server",
+          "Isolated database",
+          "Private hosting (VPN/on-premise)",
+          "Custom policies",
+          "Guaranteed SLA",
+          "Custom compliance",
+          "24/7 priority support"
+        ],
+        "highlight": "Your data, your rules. Infrastructure molded according to your security and compliance needs.",
+        "cta": "Request diagnosis"
       }
     },
     "featuresMap": {
-      "title": "The Brain of Collective Cultivation",
-      "subtitle": "MyBud centralizes everything: traceability, control, agility and data intelligence — in one system.",
+      "title": "The brain of collective cultivation",
+      "subtitle": "MyBud is the source of truth: traceability, control and reports in one place.",
       "impactLabel": "Real Impact",
-      "bottomMessage": "Everything integrated in one system.",
-      "bottomSubtext": "No spreadsheets, no improvisation, no human errors.",
+      "bottomMessage": "One source of truth for the operation.",
+      "bottomSubtext": "Less improvisation. More control. Better audits.",
       "pillars": {
         "traceability": {
           "number": "1",
-          "title": "Traceability and Standardization",
-          "keywords": "traceability • compliance • complete history",
-          "impact": "Standards and transparency for associations, doctors and patients."
+          "title": "Traceability & standards",
+          "keywords": "origin • batch • history • audit",
+          "impact": "Continuous evidence for trust, ops and compliance."
         },
         "control": {
           "number": "2",
-          "title": "Operational Control and Multi-Tasks",
-          "keywords": "control • efficiency • organization",
-          "impact": "Eliminates human errors and ensures predictable routine."
+          "title": "Operational control",
+          "keywords": "areas • stages • tasks • accountability",
+          "impact": "Reduces human error and clarifies what, when and who."
         },
         "agility": {
           "number": "3",
-          "title": "Agility and Multi-Locations",
-          "keywords": "agility • scalability • multi-tasks",
-          "impact": "Scale without losing control."
+          "title": "Scalability",
+          "keywords": "multi-area • multi-user • multi-unit",
+          "impact": "Scale without losing history or control."
         },
         "intelligence": {
           "number": "4",
-          "title": "Data and Operational Intelligence",
-          "keywords": "real data • insights • performance",
-          "impact": "Evidence-based cultivation, not improvisation."
+          "title": "Data & reporting",
+          "keywords": "reports • exports • metrics",
+          "impact": "Decisions based on data, not memory."
         }
       }
     },
     "pilot": {
-      "title": "Be one of the first associations to operate with the national traceability standard.",
-      "benefit": "Limited spots for priority implementation with dedicated team support and validated results in 60 days.",
-      "cta": "Secure my spot"
+      "title": "Be among the first associations running on real traceability.",
+      "benefit": "Limited spots for priority implementation with guided onboarding.",
+      "cta": "Talk to us"
     },
     "plans": {
       "title": "From small grow to national operation.",
-      "subtitle": "MyBud grows with your association. The pilot version is free — then, scalable plans based on plant count and units.",
+      "subtitle": "Free pilot to validate. Then scalable plans by plant count and units.",
       "core": {
         "title": "MyBud Core",
         "range": "Up to 1,000 plants",
@@ -1233,7 +1843,7 @@
         "range": "Above 1,000 plants",
         "description": "Dedicated infrastructure, multi-locations and priority support."
       },
-      "cta": "Request custom proposal"
+      "cta": "Request proposal"
     }
   },
   "industry": {
@@ -1324,7 +1934,17 @@
     "ecosystem": {
       "title": "MyBud connects the entire cultivation chain",
       "connection": "Growers, brands, laboratories, professionals, associations, breeders, cannabis clubs, and manufacturers — all within the same ecosystem of traceability, learning, and trust.",
-      "impact": "MyBud is more than an app: it's the technological foundation that supports the new standard of traceability and trust in the cannabis chain."
+      "impact": "MyBud is more than an app: it's the technological foundation that supports the new standard of traceability and trust in the cannabis chain.",
+      "stakeholders": {
+        "growers": "Growers",
+        "brands": "Brands",
+        "labs": "Laboratories",
+        "professionals": "Professionals",
+        "associations": "Associations",
+        "breeders": "Breeders",
+        "clubs": "Clubs",
+        "manufacturers": "Manufacturers"
+      }
     },
     "finalCta": {
       "title": "Be part of the new standard of presence in cultivation.",
@@ -1342,7 +1962,10 @@
       "primaryButton": "Schedule conversation",
       "secondaryOption": "Prefer to talk directly?",
       "email": "comercial@mybud.app",
-      "successMessage": "Got it! Someone from the Mybud team will reach out within one business day.",
+      "successTitle": "Got it!",
+      "successMessage": "Thanks for your interest!",
+      "successSubtext": "Someone from the Mybud team will reach out within one business day.",
+      "sending": "Sending...",
       "errorMessage": "Something went wrong. Try again or email comercial@mybud.app"
     },
     "modal": {

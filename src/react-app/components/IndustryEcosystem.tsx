@@ -5,14 +5,14 @@ import { Sprout, Tag, TestTube, Stethoscope, Users, Dna, Building2, Factory } fr
 const IndustryEcosystem: FC = () => {
   // MyBud connects the entire cultivation ecosystem
   const stakeholders = [
-    { name: 'Growers', Icon: Sprout },
-    { name: 'Marcas', Icon: Tag },
-    { name: 'Laboratórios', Icon: TestTube },
-    { name: 'Profissionais', Icon: Stethoscope },
-    { name: 'Associações', Icon: Users },
-    { name: 'Breeders', Icon: Dna },
-    { name: 'Clubes', Icon: Building2 },
-    { name: 'Fabricantes', Icon: Factory },
+    { name: t('industry.ecosystem.stakeholders.growers'), Icon: Sprout },
+    { name: t('industry.ecosystem.stakeholders.brands'), Icon: Tag },
+    { name: t('industry.ecosystem.stakeholders.labs'), Icon: TestTube },
+    { name: t('industry.ecosystem.stakeholders.professionals'), Icon: Stethoscope },
+    { name: t('industry.ecosystem.stakeholders.associations'), Icon: Users },
+    { name: t('industry.ecosystem.stakeholders.breeders'), Icon: Dna },
+    { name: t('industry.ecosystem.stakeholders.clubs'), Icon: Building2 },
+    { name: t('industry.ecosystem.stakeholders.manufacturers'), Icon: Factory },
   ];
 
   return (
@@ -26,7 +26,7 @@ const IndustryEcosystem: FC = () => {
           <p className="text-lg text-zinc-600 mb-4 max-w-3xl mx-auto leading-relaxed">
             {t('industry.ecosystem.connection')}
           </p>
-          
+
           <p className="text-xl font-semibold text-emerald-700 mb-12 max-w-2xl mx-auto">
             {t('industry.ecosystem.impact')}
           </p>
@@ -48,7 +48,7 @@ const IndustryEcosystem: FC = () => {
                 const radius = 35;
                 const x = centerX + radius * Math.cos(rad);
                 const y = centerY + radius * Math.sin(rad);
-                
+
                 return (
                   <line
                     key={idx}
@@ -73,7 +73,7 @@ const IndustryEcosystem: FC = () => {
                 const x = radius * Math.cos(rad);
                 const y = radius * Math.sin(rad);
                 const { Icon } = item;
-                
+
                 return (
                   <div
                     key={idx}

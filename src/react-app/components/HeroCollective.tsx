@@ -84,54 +84,66 @@ const HeroCollective: FC<HeroCollectiveProps> = ({ onCTAClick }) => {
             <div className="relative max-w-4xl mx-auto">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent blur-3xl" />
-              
+
               {/* Dashboard Card */}
               <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 backdrop-blur-sm">
                 <div className="space-y-6">
                   {/* Header */}
                   <div className="flex items-center justify-between pb-4 border-b border-gray-200">
                     <div>
-                      <h3 className="text-lg font-semibold text-zinc-900">Dashboard Associação</h3>
-                      <p className="text-sm text-zinc-500">Gestão coletiva em tempo real</p>
+                      <h3 className="text-lg font-semibold text-zinc-900">{t('collective.hero.dashboard.title')}</h3>
+                      <p className="text-sm text-zinc-500">{t('collective.hero.dashboard.subtitle')}</p>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
                       <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-xs font-medium text-emerald-700">Ao vivo</span>
+                      <span className="text-xs font-medium text-emerald-700">{t('collective.hero.dashboard.live')}</span>
                     </div>
                   </div>
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="space-y-1">
-                      <p className="text-xs text-zinc-500">Plantas ativas</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.plants.label')}</p>
                       <p className="text-2xl font-bold text-zinc-900">52</p>
-                      <p className="text-xs text-emerald-600">4 batches ativos</p>
+                      <p className="text-xs text-emerald-600">{t('collective.hero.dashboard.metrics.plants.detail')}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-zinc-500">Associados</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.members.label')}</p>
                       <p className="text-2xl font-bold text-zinc-900">12</p>
-                      <p className="text-xs text-zinc-500">3 técnicos</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.members.detail')}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-zinc-500">Tarefas hoje</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.tasks.label')}</p>
                       <p className="text-2xl font-bold text-zinc-900">8</p>
-                      <p className="text-xs text-teal-600">3 em andamento</p>
+                      <p className="text-xs text-teal-600">{t('collective.hero.dashboard.metrics.tasks.detail')}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-zinc-500">Conformidade</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.compliance.label')}</p>
                       <p className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">98%</p>
-                      <p className="text-xs text-zinc-500">Auditorias ok</p>
+                      <p className="text-xs text-zinc-500">{t('collective.hero.dashboard.metrics.compliance.detail')}</p>
                     </div>
                   </div>
 
                   {/* Timeline Preview */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-zinc-700">Atividades recentes</h4>
+                    <h4 className="text-sm font-semibold text-zinc-700">{t('collective.hero.dashboard.timeline.title')}</h4>
                     <div className="space-y-2">
                       {[
-                        { user: 'Ana Costa', action: 'Registrou irrigação - Área B', time: 'Há 10 min' },
-                        { user: 'Carlos Lima', action: 'Atualizou protocolo de nutrição', time: 'Há 45 min' },
-                        { user: 'Paula Santos', action: 'Gerou relatório semanal', time: 'Há 2 horas' },
+                        {
+                          user: t('collective.hero.dashboard.timeline.entries.entry1.user'),
+                          action: t('collective.hero.dashboard.timeline.entries.entry1.action'),
+                          time: t('collective.hero.dashboard.timeline.entries.entry1.time')
+                        },
+                        {
+                          user: t('collective.hero.dashboard.timeline.entries.entry2.user'),
+                          action: t('collective.hero.dashboard.timeline.entries.entry2.action'),
+                          time: t('collective.hero.dashboard.timeline.entries.entry2.time')
+                        },
+                        {
+                          user: t('collective.hero.dashboard.timeline.entries.entry3.user'),
+                          action: t('collective.hero.dashboard.timeline.entries.entry3.action'),
+                          time: t('collective.hero.dashboard.timeline.entries.entry3.time')
+                        },
                       ].map((activity, index) => (
                         <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-100">
                           <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">

@@ -89,16 +89,15 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
         </div>
 
         <div className="text-center">
-          {/* Barra de progresso 72% */}
           <div className="mb-8 max-w-md mx-auto">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-bold text-purple-900">{t('ctaFinal.progressLabel')}</span>
-              <span className="text-2xl font-bold text-purple-600">72%</span>
+              <span className="text-2xl font-bold text-purple-600">95%</span>
             </div>
             <div className="w-full h-4 bg-white/40 rounded-full overflow-hidden shadow-inner">
               <div 
                 className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                style={{ width: '72%' }}
+                style={{ width: '95%' }}
               >
                 {/* Brilho animado na barra */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
