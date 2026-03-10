@@ -113,7 +113,6 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
       if (error) throw error;
 
-      // Track successful form submission with dual tracking
       trackFormSubmission('Beta Waitlist Signup', {
         name: trimmedName,
         email: trimmedEmail,
@@ -122,7 +121,6 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
         conversion_type: 'beta_signup'
       }, true);
 
-      // Identify user for future tracking
       identifyUser(trimmedEmail, {
         name: trimmedName,
         signup_source: 'beta_modal',

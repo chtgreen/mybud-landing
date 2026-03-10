@@ -47,7 +47,6 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
 
       if (error) throw error;
 
-      // Track successful beta signup with dual tracking (HIGH-VALUE CONVERSION)
       trackFormSubmission('Beta Signup Form', {
         email: trimmedEmail,
         name: trimmedName,
@@ -57,7 +56,6 @@ const BetaSignup: FC<BetaSignupProps> = ({ background = 'gray' }) => {
         form_type: 'newsletter_beta'
       }, true);
 
-      // Identify beta user for future tracking
       identifyUser(trimmedEmail, {
         name: trimmedName,
         instagram: instagram.trim() || undefined,
