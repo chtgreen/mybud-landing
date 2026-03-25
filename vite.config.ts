@@ -85,6 +85,7 @@ export default defineConfig({
     'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(wranglerVars.VITE_SUPABASE_URL || ''),
     'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(wranglerVars.VITE_SUPABASE_ANON_KEY || ''),
     'import.meta.env.VITE_STRIPE_PAYMENT_LINK': JSON.stringify(wranglerVars.VITE_STRIPE_PAYMENT_LINK || ''),
+    'import.meta.env.VITE_STRIPE_PAYMENT_LINK_BRL': JSON.stringify(wranglerVars.VITE_STRIPE_PAYMENT_LINK_BRL || ''),
     'import.meta.env.VITE_GA_MEASUREMENT_ID': JSON.stringify(wranglerVars.VITE_GA_MEASUREMENT_ID || ''),
     'import.meta.env.VITE_KIT_REMINDER': JSON.stringify(wranglerVars.VITE_KIT_REMINDER || '47'),
     'import.meta.env.VITE_KIT_PRICE': JSON.stringify(wranglerVars.VITE_KIT_PRICE || '249'),

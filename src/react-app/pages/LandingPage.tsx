@@ -26,7 +26,7 @@ const LandingPage = () => {
   const { isOpen: betaModalOpen, open: openBetaModal, close: closeBetaModal } = useUrlModalState('beta');
   const { isLoading, changeLanguage } = useLanguage();
   const remainingKits = Number(import.meta.env.VITE_KIT_REMINDER) || 47;
-  const kitPrice = Number(import.meta.env.VITE_KIT_PRICE) || 249;
+  const annualPriceUsd = Number(import.meta.env.VITE_KIT_PRICE) || 99;
   
   // Check if video mode is enabled via query parameter
   const searchParams = new URLSearchParams(window.location.search);
@@ -100,7 +100,7 @@ const LandingPage = () => {
       <IdentityTrust background="gray" /> {/* Section 7: Por trás do app */}
       {showVideo && <DemoSection background="white" onJoinBeta={handleBetaClick} />} {/* Section 8: Demo - Shown when ?video=true */}
       <Testimonials background="white" growerCount={50} /> {/* Section 9: Prova social */}
-      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} kitPrice={kitPrice} /> {/* Section 10: Founder Kit */}
+      <FounderKitSection background="gray" onCTAClick={handleCTAClick} remainingKits={remainingKits} />
       <CtaFinalSection
         onKitClick={handleCTAClick}
         onSecondaryClick={handleDemoClick}
@@ -116,7 +116,7 @@ const LandingPage = () => {
         open={betaModalOpen}
         onClose={closeBetaModal}
         remainingKits={remainingKits}
-        kitPrice={kitPrice}
+        kitPrice={annualPriceUsd}
       />
     </div>
   );

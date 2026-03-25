@@ -5,14 +5,14 @@
       "title2": "Você cuida das plantas,",
       "title3": "a gente cuida do resto.",
       "subtitle": "Fale, fotografe ou filme: o Mybud transforma tudo em um diário inteligente com timeline por planta, tarefas certeiras e lembretes que mantêm o grow na linha.",
-      "primaryCta": "Quero meu kit Mybud + acesso Premium",
+      "primaryCta": "Garantir acesso antecipado",
       "secondaryCta": "Assistir à demo curta (2 min)",
       "watchDemo": "Assistir Demo",
       "downloadNow": "Baixar Agora",
-      "trustElement": "Cada Founder Kit garante acesso antecipado ao Mybud + kit com boné, camiseta, 2 piteiras e adesivos. Estoque limitado: acabou, acabou.",
-      "counter": "Só {count} Founder Kits restantes",
-      "badges": "Privacidade primeiro • Dados anônimos • iOS & Android (em breve)",
-      "alertBar": "Junte-se aos primeiros growers: o Mybud ainda está em beta, mas quem entra agora tem prioridade, voz ativa nas melhorias e acesso premium garantido.",
+      "trustElement": "50 vagas para acesso antecipado. R$ 299/ano — acesso completo ao Premium. iOS disponível via TestFlight. Android em breve.",
+      "counter": "Só {count} vagas restantes",
+      "badges": "Privacidade primeiro • Dados anônimos • iOS via TestFlight • Android em breve",
+      "alertBar": "Acesso antecipado limitado a 50 vagas. O app está em desenvolvimento ativo — você entra como usuário fundador com suporte prioritário e voz no roadmap.",
       "phone": {
         "plants": "Plantas",
         "subtitle": "Acompanhe o desenvolvimento",
@@ -30,7 +30,7 @@
     "problem": {
       "title": "O problema que todo grower vive",
       "subtitle": "Nunca mais se perca no cultivo.",
-      "description": "No corre do cultivo, anotar e organizar tudo rouba tempo e custa colheita. O Mybud escuta sua voz, organiza por planta e entrega um plano visual para você saber exatamente o que rolou e qual é o próximo passo.",
+      "description": "Na rotina do cultivo, anotar e organizar tudo consome tempo e compromete a colheita. O Mybud escuta sua voz, organiza por planta e entrega um plano visual para você saber exatamente o que aconteceu e qual é o próximo passo.",
       "indicators": {
         "plantA": "Planta A: 45 dias de vida",
         "plantB": "Planta B: 12 dias de floração",
@@ -82,7 +82,7 @@
       },
       "step2": {
         "title": "Enxergue o plano inteiro",
-        "desc": "Timeline por estágio com contagem de dias, métricas e responsáveis mostra o que já rolou e o que chega em seguida."
+        "desc": "Timeline por estágio com contagem de dias, métricas e responsáveis mostra o que já aconteceu e o que vem em seguida."
       },
       "step3": {
         "title": "Execute no timing perfeito",
@@ -139,7 +139,7 @@
       "title": "Veja o app rodando antes de entrar.",
       "subtitle": "Aula rápida (15 min) mostrando registro por voz, timeline por planta, lembretes e checklists.",
       "cta": "Assistir à demo agora",
-      "afterWatching": "Curtiu? Entre no beta gratuito"
+      "afterWatching": "Pronto para começar? Garanta seu acesso"
     },
     "betaSignup": {
       "title": "Garanta sua vaga no Mybud antes de abrir",
@@ -161,46 +161,46 @@
       "instagramPlaceholder": "@seu_instagram (VIP - opcional)",
       "button": "Quero garantir minha vaga",
       "privacy": "Nada de spam: só atualizações do beta e dicas úteis.",
-      "successTitle": "Pronto! ✨",
-      "successMessage": "Você vai receber as próximas novidades por e-mail.",
-      "successSubtext": "Zero spam, só updates que valem.",
-      "errorMessage": "Ops! Não conseguimos enviar. Tente novamente."
+      "successTitle": "Pronto!",
+      "successMessage": "Você receberá as próximas novidades por e-mail.",
+      "successSubtext": "Sem spam. Apenas atualizações relevantes.",
+      "errorMessage": "Não foi possível enviar. Tente novamente."
     },
     "betaModal": {
       "close": "Fechar modal",
       "progress": {
-        "label": "Construção no gás — 78% pronto",
-        "eta": "Lançamento previsto: fev 2026"
+        "label": "Desenvolvimento ativo — acesso antecipado aberto",
+        "eta": "Lançamento público previsto: 2026"
       },
       "priority": {
-        "chip": "Pré-venda • Acesso Prioritário",
-        "title": "Reserve seu Founder Kit agora",
-        "description": "Hey, aqui é o Vinicius, fundador do Mybud. Estamos a todo vapor construindo o app pra quem cultiva cannabis e queremos você no time desde já. Reserve seu Founder Kit e garanta:",
-        "price": "R$ {price}",
+        "chip": "Acesso Antecipado • R$ 299/ano",
+        "title": "Acesse o Mybud Premium agora",
+        "description": "O Mybud já está funcionando com voz AI, timeline por planta, sensores IoT, calculadoras e mais. O app está em desenvolvimento ativo. Você entra sabendo que fará a diferença no desenvolvimento do app:",
+        "price": "R$ 299/ano",
         "benefits": {
-          "premium": "6 meses de Premium liberados no lançamento",
-          "physicalKit": "Kit físico raiz (boné, camiseta, 2 piteiras e adesivos)",
-          "immediateAccess": "Acesso liberado assim que o app estiver no ar",
-          "priorityFeedback": "Lugar no grupo fechado pra cocriar com a gente"
+          "premium": "Acesso completo a todas as funcionalidades Premium",
+          "physicalKit": "Suporte prioritário e canal direto com o time",
+          "immediateAccess": "Acesso imediato via TestFlight (iOS) — Android em breve",
+          "priorityFeedback": "Influência direta no roadmap do produto"
         },
-        "cta": "Reservar meu kit",
-        "counter": "Restam {count} kits neste lote de pré-venda.",
-        "microcopy": "Pré-venda limitada. Acabou o lote, acabou a chance."
+        "cta": "Assinar acesso antecipado",
+        "counter": "Restam {count} vagas neste lote de acesso antecipado.",
+        "microcopy": "50 vagas. Quando acabar, só na lista de espera."
       },
       "free": {
-        "title": "Quer só entrar na lista?",
-        "description": "Deixa seu e-mail e eu te aviso quando liberar beta novo, conteúdo e convite pra testar.",
-        "successTitle": "Você está na lista! ✨",
+        "title": "Prefere aguardar?",
+        "description": "Cadastre seu e-mail para receber novidades e acesso quando abrirmos novas vagas.",
+        "successTitle": "Você está na lista!",
         "form": {
           "nameLabel": "Nome completo",
           "namePlaceholder": "Seu nome",
           "label": "E-mail",
           "placeholder": "Seu melhor e-mail",
-          "cta": "Me avisa das novidades",
+          "cta": "Entrar na lista de espera",
           "loading": "Enviando...",
-          "microcopy": "Zero spam, só updates que valem.",
-          "success": "Pronto! Você vai receber as próximas novidades por e-mail.",
-          "error": "Ih, deu ruim aqui. Tenta de novo?"
+          "microcopy": "Sem spam. Apenas atualizações relevantes.",
+          "success": "Pronto. Você receberá as próximas novidades por e-mail.",
+          "error": "Não foi possível enviar. Tente novamente."
         }
       }
     },
@@ -209,7 +209,7 @@
       "subtitle": "Quem já usa o beta conta como o Mybud está salvando tempo e colheita.",
       "counter": "+{count} growers já testam o Mybud e pedem mais convites.",
       "1": {
-        "text": "\"Falei 'regar planta 2 com FPJ' e virou tarefa. Brabo.\"",
+        "text": "\"Falei 'regar planta 2 com FPJ' e virou tarefa. Impressionante.\"",
         "author": "@Hugo",
         "location": "BA",
         "media": {
@@ -229,7 +229,7 @@
         }
       },
       "3": {
-        "text": "\"Com o sticker eu não confundo mais as plantas. E fica massa no Insta.\"",
+        "text": "\"Com o sticker eu não confundo mais as plantas. E o resultado visual é excelente.\"",
         "author": "Vinícius",
         "location": "PR",
         "media": {
@@ -240,43 +240,59 @@
       }
     },
     "founderKit": {
-      "title": "Founder Kits: faça parte desde o começo.",
-      "subtitle": "Apoie o projeto e receba acesso antecipado + itens colecionáveis exclusivos.",
-      "counter": "Lote atual: só {count} disponíveis",
-      "microcopy": "Cada kit dá direito a entrada antecipada, até 6 meses Premium grátis e itens exclusivos.",
-      "cta": "Quero meu kit Mybud + acesso Premium",
-      "kitName": "Kit mybud",
-      "founderEdition": "Founder Edition",
-      "oneTimePayment": "Pagamento único",
-      "whatsIncluded": "O que vem no kit:",
+      "cardBadge": "50 vagas",
+      "title": "Acesso Antecipado: entre antes de todos.",
+      "subtitle": "Assine o Premium e use o app completo enquanto ele evolui. Sua opinião molda o produto.",
+      "counter": "Só {count} vagas restantes",
+      "microcopy": "O app está em desenvolvimento ativo. Você entra sabendo que fará a diferença no desenvolvimento do app.",
+      "cta": "Garantir acesso antecipado",
+      "kitName": "Mybud Premium",
+      "founderEdition": "Acesso Antecipado",
+      "oneTimePayment": "R$ 299/ano",
+      "priceSubtitle": "Cobrança anual",
+      "whatsIncluded": "O que está incluso:",
       "items": {
-        "cap": "Boné exclusivo",
-        "capDetail": "mybud (edição limitada)",
-        "shirt": "Camiseta oficial",
-        "shirtDetail": "mybud (edição limitada)",
-        "tips": "2 piteiras",
-        "tipsDetail": "colecionáveis mybud"
+        "cap": "Todas as funcionalidades Premium",
+        "capDetail": "Voz AI, timeline, sensores IoT, calculadoras",
+        "shirt": "Suporte prioritário",
+        "shirtDetail": "Canal direto com o time de desenvolvimento",
+        "tips": "Influência no roadmap",
+        "tipsDetail": "Suas sugestões têm prioridade"
       },
-      "limitedEdition": "Edição limitada:",
-      "kitsRemaining": "kits restantes"
+      "limitedEdition": "Vagas limitadas:",
+      "kitsRemaining": "vagas restantes"
     },
     "ctaFinal": {
       "title": "Chega de perder rega, fase e colheita.",
       "subtitle": "Seu cultivo mais organizado começa agora.",
-      "primaryCta": "Quero meu kit Mybud + acesso Premium",
+      "primaryCta": "Garantir acesso antecipado",
       "secondaryCta": "Assistir à demo curta (2 min)",
-      "microcopy": "Estoque limitado. Só {count} Founder Kits restantes.",
-      "greeting": "🌱 Ei! A gente tá construindo o MyBud com muito carinho.",
-      "question": "Quer vir nessa jornada com a gente?",
-      "progressLabel": "Progresso do Lançamento",
-      "launchEta": "🚀 Beta a partir de fev 2026!"
+      "microcopy": "50 vagas para acesso antecipado. R$ 299/ano.",
+      "greeting": "O Mybud já está funcionando. As vagas são limitadas.",
+      "question": "Entre como usuário fundador e ajude a moldar o produto.",
+      "progressLabel": "Status",
+      "launchEta": "Acesso antecipado aberto — lançamento público em 2026"
+    },
+    "welcome": {
+      "title": "Você está dentro!",
+      "subtitle": "Pagamento confirmado com sucesso.",
+      "message": "Em até 24 horas você receberá no seu e-mail o convite do TestFlight para baixar o Mybud no seu iPhone.",
+      "steps": {
+        "title": "Próximos passos:",
+        "step1": "Verifique seu e-mail (inclusive a caixa de spam)",
+        "step2": "Aceite o convite do TestFlight",
+        "step3": "Baixe o Mybud e comece a registrar seu cultivo"
+      },
+      "support": "Dúvidas? Fale com a gente: hello@mybud.app",
+      "backHome": "Voltar para o início"
     },
     "comingSoon": {
       "title": "Em breve nas suas lojas favoritas!",
       "subtitle": "Seja o primeiro a saber quando o Mybud vai chegar às lojas de apps.",
       "ctaText": "Entre no Beta agora para ter acesso antecipado antes do lançamento oficial!",
       "iosText": "App Store",
-      "androidText": "Google Play"
+      "androidText": "Google Play",
+      "androidComingSoon": "Em breve"
     },
     "footer": {
       "brand": "Mybud",
@@ -294,7 +310,7 @@
       "faqTitle": "FAQ",
       "faq1": {
         "question": "O app já está nas lojas?",
-        "answer": "Ainda não. Estamos em beta fechado. Quem entra agora garante até 6 meses Premium."
+        "answer": "Ainda não. Estamos em acesso antecipado fechado. Quem entra agora garante acesso Premium completo com condições de fundador."
       },
       "faq2": {
         "question": "Preciso mostrar meu grow?",
@@ -302,7 +318,7 @@
       },
       "faq3": {
         "question": "Quanto vai custar depois?",
-        "answer": "Premium = R$ 39,90/mês. Quem entra no beta ganha meses grátis."
+        "answer": "Premium = R$ 299/ano. Usuários fundadores mantêm condições especiais de renovação."
       },
       "privacy": "Política de Privacidade",
       "terms": "Termos de Uso",
@@ -314,10 +330,10 @@
       "nav": {
         "features": "Funcionalidades",
         "beta": "Beta",
-        "kit": "Kit Founder",
+        "kit": "Acesso",
         "contact": "Contato"
       },
-      "cta": "Garanta seu KIT",
+      "cta": "Acesso Antecipado",
       "switchToB2B": "Para empresas",
       "switchToB2C": "Para growers",
       "switchToGrower": "Para Growers",
@@ -444,9 +460,9 @@
       "badge": "Inteligência do mybud",
       "title": "Seu parceiro",
       "titleHighlight": "de cultivo pessoal",
-      "altImage": "Ilustração do Budzinho, seu parceiro de cultivo",
-      "subtitle": "Conheça o Budzinho: o parceiro que já cultivou muita planta e acompanha você do início ao fim, trazendo apoio humano em cada ciclo.",
-      "description": "Ele combina experiência prática com a inteligência do mybud para entregar insights personalizados para suas plantas, fases e ambiente.",
+      "altImage": "Motor de inteligência do Mybud",
+      "subtitle": "Um motor de inteligência que combina mais de 1000 regras agronômicas com os dados do seu cultivo para entregar orientações precisas do início ao fim de cada ciclo.",
+      "description": "Combina experiência agronômica com inteligência artificial para entregar insights personalizados para suas plantas, fases e ambiente.",
       "smartRecommendations": "Recomendações inteligentes",
       "aiPowered": "AI Powered",
       "seeAllRecommendations": "Ver todas as recomendações →",

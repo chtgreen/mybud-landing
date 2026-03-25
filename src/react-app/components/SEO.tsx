@@ -213,10 +213,10 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
           '@type': 'Answer',
           text:
             currentLanguage === 'pt'
-              ? 'A versão Premium custará R$ 39,90/mês. Beta testers ganham meses grátis.'
+              ? 'Premium = R$ 299/ano. Usuários fundadores mantêm condições especiais de renovação.'
               : currentLanguage === 'es'
-              ? 'La versión Premium costará R$ 39,90/mes. Los beta testers obtienen meses gratis.'
-              : 'Premium version will be R$ 39.90/month. Beta testers get free months.',
+              ? 'Premium = US$ 99/año. Los usuarios fundadores mantienen condiciones especiales de renovación.'
+              : 'Premium = US$99/year. Founding users keep special renewal rates.',
         },
       },
     ],

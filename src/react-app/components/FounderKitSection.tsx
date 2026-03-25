@@ -6,32 +6,29 @@ interface FounderKitSectionProps {
   background?: 'white' | 'gray';
   onCTAClick: () => void;
   remainingKits?: number;
-  kitPrice?: number;
 }
 
-const FounderKitSection: FC<FounderKitSectionProps> = ({ 
-  background = 'white', 
+const FounderKitSection: FC<FounderKitSectionProps> = ({
+  background = 'white',
   onCTAClick,
-  remainingKits = 72,
-  kitPrice = 249
+  remainingKits = 72
 }) => {
   const bgClass = background === 'gray' ? 'bg-gray-50' : 'bg-white';
 
   // Track revenue-generating CTA click
   const handleKitPurchaseCTA = () => {
     trackCTAClick({
-      ctaName: 'Purchase Founder Kit',
-      ctaLocation: 'Founder Kit Section',
+      ctaName: 'Early Access Purchase',
+      ctaLocation: 'Early Access Section',
       ctaType: 'button',
       ctaText: t('founderKit.cta'),
       customProperties: {
-        value: kitPrice,
-        currency: 'BRL',
+        value: 99,
+        currency: 'USD',
         remainingKits: remainingKits,
         conversion_type: 'purchase_intent',
-        product: 'Founder Kit',
-        revenue_event: true,
-        kit_price: kitPrice
+        product: 'early_access_annual',
+        revenue_event: true
       }
     });
     onCTAClick();
@@ -56,8 +53,8 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
         {/* Kit Card com textura papel */}
           <div className="max-w-2xl mx-auto relative">
           <div className="absolute -top-3 -right-3 z-20">
-            <div className="bg-gradient-to-r from-[#eb4c80] to-[#d13a6a] text-white px-4 py-2 rounded-full text-xs font-bold shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-300 border-2 border-white whitespace-nowrap">
-              ⭐ EDIÇÃO LIMITADA 2026
+            <div className="bg-gradient-to-r from-[#eb4c80] to-[#d13a6a] text-white px-4 py-2 rounded-full text-xs font-bold shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-300 border-2 border-white whitespace-nowrap uppercase tracking-wide">
+              {t('founderKit.cardBadge')}
             </div>
           </div>
           
@@ -78,8 +75,8 @@ const FounderKitSection: FC<FounderKitSectionProps> = ({
                   <p className="text-emerald-100 text-sm">{t('founderKit.founderEdition')}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-5xl font-bold">R$ {kitPrice}</div>
-                  <p className="text-xs text-emerald-100 uppercase tracking-wider">{t('founderKit.oneTimePayment')}</p>
+                  <div className="text-4xl md:text-5xl font-bold leading-tight">{t('founderKit.oneTimePayment')}</div>
+                  <p className="text-xs text-emerald-100 uppercase tracking-wider mt-1">{t('founderKit.priceSubtitle')}</p>
                 </div>
               </div>
             </div>

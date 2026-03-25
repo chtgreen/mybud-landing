@@ -57,11 +57,12 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
           
           {/* Subtitle */}
           <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6">
-            <img
-              src="/MyBud - Budzinho Colorido 2.png"
-              alt={t('insights.altImage')}
-              className="w-20 h-20 md:w-24 md:h-24 drop-shadow-[0_12px_24px_rgba(40,134,100,0.25)] rounded-full object-cover"
-            />
+            <div
+              className="flex h-20 w-20 md:h-24 md:w-24 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 shadow-[0_12px_24px_rgba(40,134,100,0.2)]"
+              aria-hidden="true"
+            >
+              <Bot className="h-10 w-10 md:h-12 md:w-12" />
+            </div>
             <p className="text-lg md:text-xl text-gray-700 max-w-xl leading-relaxed">
               {t('insights.subtitle')}
             </p>
@@ -74,19 +75,6 @@ const InsightsSection: FC<InsightsSectionProps> = ({ onActivate }) => {
         <div className="grid lg:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto mb-20">
           {/* Left - Insights Preview com sombra elevada */}
           <div className="bg-white rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.15)] transition-shadow duration-300 p-8 border border-emerald-100/50 relative flex flex-col h-full">
-            {/* Budzinho acenando no canto */}
-            <div className="absolute -top-6 -right-6 w-16 h-16">
-              <img 
-                src="/MyBud - Budzinho Colorido 2.png" 
-                alt="Budzinho acenando"
-                className="w-full h-full object-contain drop-shadow-lg animate-bounce"
-                style={{ 
-                  animation: 'wave 2s ease-in-out infinite',
-                  transformOrigin: 'bottom right'
-                }}
-              />
-            </div>
-            
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-black">
                 {t('insights.smartRecommendations')}

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, type FC } from 'react';
 import { createPortal } from 'react-dom';
 import posthog from 'posthog-js';
 import { supabase } from '../lib/supabaseClient';
-import { t } from '../lib/i18n';
+import { t, getCurrentLanguage } from '../lib/i18n';
 import { trackFormSubmission, trackCTAClick, identifyUser } from '../lib/analytics';
 
 interface BetaModalProps {
@@ -14,8 +14,20 @@ interface BetaModalProps {
 
 type SubmissionStatus = 'idle' | 'success' | 'error';
 
-const SHOP_URL =
-  'https://store.mybud.app/products/founder-kit-mybud-o-app-que-cresce-com-voce?variant=48038522585330&utm_source=lp&utm_medium=modal&utm_campaign=kit_bud';
+const stripeCheckoutUrlUsd =
+  typeof import.meta !== 'undefined' && import.meta.env?.VITE_STRIPE_PAYMENT_LINK
+    ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK).trim()
+    : '';
+
+const stripeCheckoutUrlBrl =
+  typeof import.meta !== 'undefined' && import.meta.env?.VITE_STRIPE_PAYMENT_LINK_BRL
+    ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK_BRL).trim()
+    : '';
+
+const getStripeCheckoutUrl = () =>
+  getCurrentLanguage() === 'pt' && stripeCheckoutUrlBrl
+    ? stripeCheckoutUrlBrl
+    : stripeCheckoutUrlUsd;
 
 const priorityBenefits = [
   'betaModal.priority.benefits.premium',
@@ -168,37 +180,40 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
   };
 
   const handlePurchaseClick = () => {
-    // Track priority access purchase click with dual tracking (REVENUE EVENT)
+    const checkoutUrl = getStripeCheckoutUrl();
+    const isBrl = getCurrentLanguage() === 'pt';
+    if (!checkoutUrl) {
+      console.warn('Stripe payment link is not configured');
+      return;
+    }
     trackCTAClick({
-      ctaName: 'Priority Access Purchase',
+      ctaName: 'Early Access Purchase',
       ctaLocation: 'Beta Modal - Priority Side',
       ctaType: 'button',
       ctaText: t('betaModal.priority.cta'),
-      destinationUrl: SHOP_URL,
+      destinationUrl: checkoutUrl,
       customProperties: {
         source: 'beta_modal',
         choice: 'paid_priority',
-        destination: 'shopify',
-        value: kitPrice,
-        currency: 'BRL',
+        destination: 'stripe',
+        value: isBrl ? 299 : 99,
+        currency: isBrl ? 'BRL' : 'USD',
         conversion_type: 'purchase_click',
         revenue_event: true,
-        product: 'Founder Kit',
-        kit_price: kitPrice,
+        product: 'early_access_annual',
         remainingKits: remainingKits
       }
     });
-    
-    // Legacy PostHog tracking (can be removed later)
+
     if (typeof posthog !== 'undefined') {
       posthog.capture('priority_access_clicked', {
         source: 'beta_modal',
         choice: 'paid_priority',
-        destination: 'shopify'
+        destination: 'stripe'
       });
     }
-    
-    window.open(SHOP_URL, '_blank', 'noopener,noreferrer');
+
+    window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -264,7 +279,12 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
                   </p>
                 </div>
                 <div className="text-3xl font-semibold text-gray-900">
-                  {t('betaModal.priority.price').replace('{price}', kitPrice.toString())}
+                  {(() => {
+                    const label = t('betaModal.priority.price');
+                    return label.includes('{price}')
+                      ? label.replace('{price}', kitPrice.toString())
+                      : label;
+                  })()}
                 </div>
                 <ul className="space-y-3 text-sm text-gray-700">
                   {priorityBenefits.map((benefitKey) => (
@@ -296,7 +316,8 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
                 <button
                   type="button"
                   onClick={handlePurchaseClick}
-                  className="w-full inline-flex items-center justify-center rounded-full bg-[#EB4C80] hover:bg-[#288664] text-white font-semibold text-sm py-3 transition-colors"
+                  disabled={!getStripeCheckoutUrl()}
+                  className="w-full inline-flex items-center justify-center rounded-full bg-[#EB4C80] hover:bg-[#288664] text-white font-semibold text-sm py-3 transition-colors disabled:opacity-50 disabled:pointer-events-none"
                 >
                   {t('betaModal.priority.cta')}
                 </button>

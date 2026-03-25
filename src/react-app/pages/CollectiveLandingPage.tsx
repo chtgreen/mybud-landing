@@ -83,25 +83,6 @@ export default function CollectiveLandingPage() {
       <PilotSection /> {/* Piloto */}
       <PlansSection /> {/* Planos */}
 
-      {/* Section 7: Depoimento */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
-              {t('collective.testimonial.title')}
-            </h2>
-          </div>
-          <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-12 border border-emerald-200">
-            <p className="text-2xl italic text-zinc-800 mb-6 text-center leading-relaxed">
-              "{t('collective.testimonial.text')}"
-            </p>
-            <p className="text-center text-zinc-600">
-              — <span className="font-medium">{t('collective.testimonial.author')}, {t('collective.testimonial.role')}</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Section 8: CTA Final / Lead Form */}
       <CollectiveLeadForm background="gray" />
       <Footer />

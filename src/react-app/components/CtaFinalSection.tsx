@@ -47,64 +47,21 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
     <section className="py-20 md:py-28 bg-gradient-to-br from-[#D5C0FD] via-[#E0D4FD] to-[#D5C0FD] relative overflow-visible">
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
         
-        {/* Budzinho Mascote Interativo com Balão de Fala */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-          {/* Budzinho acenando */}
-          <div className="relative">
-            <img 
-              src="/MyBud - Budzinho Colorido 3.png" 
-              alt="Budzinho mascote"
-              className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-bounce"
-              style={{
-                animation: 'bounce 2s ease-in-out infinite',
-              }}
-            />
-            {/* Efeito de brilho */}
-            <div className="absolute inset-0 bg-gradient-radial from-purple-300/30 to-transparent rounded-full blur-2xl"></div>
-          </div>
-          
-          {/* Balão de fala SVG animado */}
-          <div className="relative max-w-md">
-            <div className="bg-white rounded-3xl p-6 shadow-2xl relative animate-in fade-in slide-in-from-left duration-700">
-              {/* Triângulo do balão */}
-              <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-r-[20px] border-r-white"></div>
-              
-              <p className="text-lg md:text-xl text-gray-800 font-medium mb-3">
-                {(() => {
-                  const greeting = t('ctaFinal.greeting');
-                  const parts = greeting.split('MyBud');
-                  return parts.map((part, index) => (
-                    <span key={index}>
-                      {part}
-                      {index < parts.length - 1 && <strong className="text-purple-600">MyBud</strong>}
-                    </span>
-                  ));
-                })()}
-              </p>
-              <p className="text-base md:text-lg text-gray-700">
-                {t('ctaFinal.question')}
-              </p>
-            </div>
+        <div className="mb-12 max-w-2xl mx-auto text-center">
+          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-purple-100">
+            <p className="text-lg md:text-xl text-gray-800 font-medium mb-3">
+              {t('ctaFinal.greeting')}
+            </p>
+            <p className="text-base md:text-lg text-gray-700">
+              {t('ctaFinal.question')}
+            </p>
+            <p className="text-sm text-purple-800 mt-6 font-medium">
+              {t('ctaFinal.launchEta')}
+            </p>
           </div>
         </div>
 
         <div className="text-center">
-          <div className="mb-8 max-w-md mx-auto">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-bold text-purple-900">{t('ctaFinal.progressLabel')}</span>
-              <span className="text-2xl font-bold text-purple-600">95%</span>
-            </div>
-            <div className="w-full h-4 bg-white/40 rounded-full overflow-hidden shadow-inner">
-              <div 
-                className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                style={{ width: '95%' }}
-              >
-                {/* Brilho animado na barra */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
-              </div>
-            </div>
-            <p className="text-xs text-purple-800 mt-2 font-medium">{t('ctaFinal.launchEta')}</p>
-          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -112,7 +69,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
               onClick={handlePrimaryCTA}
               className="inline-flex items-center justify-center rounded-xl px-10 py-5 text-xl font-bold bg-gradient-to-r from-[#eb4c80] to-[#d13a6a] text-white hover:from-[#d13a6a] hover:to-[#b82959] transition-all duration-300 shadow-[0_8px_30px_rgba(235,76,128,0.4)] hover:shadow-[0_12px_40px_rgba(235,76,128,0.5)] hover:scale-105"
             >
-              <span>🎟️ {t('ctaFinal.primaryCta')}</span>
+              <span>{t('ctaFinal.primaryCta')}</span>
               <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -123,7 +80,7 @@ const CtaFinalSection: FC<CtaFinalSectionProps> = ({
                 onClick={handleSecondaryClick}
                 className="inline-flex items-center justify-center rounded-xl px-10 py-5 text-xl font-bold bg-white text-purple-700 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <span>🪴 {t('ctaFinal.secondaryCta')}</span>
+                <span>{t('ctaFinal.secondaryCta')}</span>
               </button>
             )}
           </div>

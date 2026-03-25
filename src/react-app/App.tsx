@@ -3,6 +3,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import LandingPage from './pages/LandingPage';
 import CollectiveLandingPage from './pages/CollectiveLandingPage';
 import IndustryLandingPage from './pages/IndustryLandingPage';
+import WelcomePage from './pages/WelcomePage';
 import CopyEditor from './components/CopyEditor';
 
 function CopyEditorGate() {
@@ -70,6 +71,20 @@ function App() {
         <Route 
           path="/industry" 
           element={<Navigate to="/pt/industry" replace />} 
+        />
+        
+        {/* Welcome page (post-payment) */}
+        <Route 
+          path="/:lang/welcome" 
+          element={
+            <LanguageProvider>
+              <WelcomePage />
+            </LanguageProvider>
+          } 
+        />
+        <Route 
+          path="/welcome" 
+          element={<Navigate to="/pt/welcome" replace />} 
         />
         
         {/* Legacy redirects */}

@@ -4,18 +4,9 @@ import { t } from '../lib/i18n';
 const ProblemSection: FC = () => {
   return (
     <section className="relative py-20 md:py-32 bg-[#E6E7E8] overflow-hidden">
-      {/* Background Elements with Budzinho */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Bolhas orgânicas sutis */}
         <div className="absolute top-10 right-20 w-[300px] h-[300px] bg-[#288664]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-[#288664]/5 rounded-full blur-3xl" />
-        
-        {/* Budzinho 1 - Top right */}
-        <img 
-          src="/MyBud - Budzinho Colorido 1.png" 
-          alt=""
-          className="absolute top-10 right-10 w-28 h-28 md:w-36 md:h-36 opacity-15 transform rotate-12 hover:opacity-25 transition-opacity duration-300"
-        />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">

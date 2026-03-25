@@ -177,20 +177,6 @@ const Associations: FC<AssociationsProps> = ({ background = 'gray', onCTAClick }
           </div>
         </div>
 
-        {/* Testimonial */}
-        {t('associationsSection.testimonial.text') && 
-         t('associationsSection.testimonial.text') !== 'associationsSection.testimonial.text' && 
-         t('associationsSection.testimonial.text').trim() !== '' && (
-          <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 mb-10 border border-emerald-200">
-            <p className="text-lg italic text-gray-800 mb-4 text-center">
-              "{t('associationsSection.testimonial.text')}"
-            </p>
-            <p className="text-sm text-gray-600 text-center">
-              — <span className="font-medium">{t('associationsSection.testimonial.author')}</span>, {t('associationsSection.testimonial.role')}
-            </p>
-          </div>
-        )}
-
         {/* CTA */}
         <div className="text-center">
           <button
