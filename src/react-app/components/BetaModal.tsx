@@ -19,12 +19,15 @@ const stripeCheckoutUrlUsd =
     ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK).trim()
     : '';
 
-const stripeCheckoutUrlBrl = 'https://buy.stripe.com/7sY3cv9Htcp352H8DF3Ru04';
+const stripeCheckoutUrlBrl =
+  typeof import.meta !== 'undefined' && import.meta.env?.VITE_STRIPE_PAYMENT_LINK_BRL
+    ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK_BRL).trim()
+    : 'https://buy.stripe.com/7sY3cv9Htcp352H8DF3Ru04'; // Internal fallback
 
-const getStripeCheckoutUrl = () =>
-  getCurrentLanguage() === 'pt' && stripeCheckoutUrlBrl
-    ? stripeCheckoutUrlBrl
-    : stripeCheckoutUrlUsd;
+const getStripeCheckoutUrl = () => {
+  const isBrl = getCurrentLanguage() === 'pt';
+  return isBrl ? stripeCheckoutUrlBrl : stripeCheckoutUrlUsd;
+};
 
 const priorityBenefits = [
   'betaModal.priority.benefits.premium',
