@@ -19,7 +19,7 @@ import PlansSection from '../components/PlansSection';
 import Footer from '../components/Footer';
 import BetaModal from '../components/BetaModal';
 import CollectiveLeadForm from '../components/CollectiveLeadForm';
-import { t } from '../lib/i18n';
+
 
 // Collective Calendar URL
 const COLLECTIVE_CALENDAR_URL =
