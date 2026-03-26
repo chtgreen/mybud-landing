@@ -19,10 +19,7 @@ const stripeCheckoutUrlUsd =
     ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK).trim()
     : '';
 
-const stripeCheckoutUrlBrl =
-  typeof import.meta !== 'undefined' && import.meta.env?.VITE_STRIPE_PAYMENT_LINK_BRL
-    ? String(import.meta.env.VITE_STRIPE_PAYMENT_LINK_BRL).trim()
-    : '';
+const stripeCheckoutUrlBrl = 'https://buy.stripe.com/7sY3cv9Htcp352H8DF3Ru04';
 
 const getStripeCheckoutUrl = () =>
   getCurrentLanguage() === 'pt' && stripeCheckoutUrlBrl
@@ -36,7 +33,7 @@ const priorityBenefits = [
   'betaModal.priority.benefits.priorityFeedback'
 ] as const;
 
-const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitPrice = 249 }) => {
+const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,7 +84,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
 
   useEffect(() => {
     if (!open) return;
-    
+
     // Check if user has already submitted
     const submitted = localStorage.getItem('mybud_beta_modal_submitted');
     if (submitted === 'true') {
@@ -196,7 +193,7 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
         source: 'beta_modal',
         choice: 'paid_priority',
         destination: 'stripe',
-        value: isBrl ? 299 : 99,
+        value: isBrl ? 190 : 99,
         currency: isBrl ? 'BRL' : 'USD',
         conversion_type: 'purchase_click',
         revenue_event: true,
@@ -278,12 +275,21 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
                     {t('betaModal.priority.description')}
                   </p>
                 </div>
-                <div className="text-3xl font-semibold text-gray-900">
+                <div className="text-3xl font-bold text-gray-900 flex items-baseline gap-2 flex-wrap">
                   {(() => {
-                    const label = t('betaModal.priority.price');
-                    return label.includes('{price}')
-                      ? label.replace('{price}', kitPrice.toString())
-                      : label;
+                    const priceText = t('betaModal.priority.price');
+                    if (priceText.includes('De') && priceText.includes('por')) {
+                      const match = priceText.match(/De (.*?) por (.*)/);
+                      if (match) {
+                        return (
+                          <>
+                            <span className="text-lg text-gray-400 line-through">De {match[1]}</span>
+                            <span className="text-emerald-600">por {match[2]}</span>
+                          </>
+                        );
+                      }
+                    }
+                    return priceText;
                   })()}
                 </div>
                 <ul className="space-y-3 text-sm text-gray-700">
@@ -329,8 +335,8 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
                 </div>
               </div>
             </div>
-
-            <div className="border border-[#E6E7E8] rounded-3xl p-6 md:p-8 flex flex-col gap-6">
+            {/* Waitlist (Secondary) */}
+            <div className="border border-[#E6E7E8] bg-gray-50/50 grayscale-[0.5] opacity-80 scale-95 rounded-3xl p-6 md:p-8 flex flex-col gap-6 transition-all hover:grayscale-0 hover:opacity-100">
               {hasSubmitted ? (
                 <div className="space-y-4 text-center py-4">
                   <svg className="w-16 h-16 text-[#288664] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -349,10 +355,10 @@ const BetaModal: FC<BetaModalProps> = ({ open, onClose, remainingKits = 47, kitP
               ) : (
                 <>
                   <div className="space-y-3">
-                    <h3 className="text-2xl font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-700">
                       {t('betaModal.free.title')}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs text-gray-500">
                       {t('betaModal.free.description')}
                     </p>
                   </div>

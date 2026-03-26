@@ -173,9 +173,9 @@
         "eta": "Public launch estimated: 2026"
       },
       "priority": {
-        "chip": "Early Access • US$99/year",
-        "title": "Get Mybud Premium now",
-        "description": "Mybud is already working with voice AI, plant timeline, IoT sensors, calculators and more. The app is in active development. You join knowing you'll make a real difference in shaping the product:",
+        "chip": "Early Access",
+        "title": "Join the Founders Circle",
+        "description": "Help shape the future of Mybud. Get full access today as a founding member and start tracking your grow.",
         "price": "US$99/year",
         "benefits": {
           "premium": "Full access to all Premium features",
@@ -183,13 +183,13 @@
           "immediateAccess": "Immediate access via TestFlight (iOS) — Android coming soon",
           "priorityFeedback": "Direct influence on the product roadmap"
         },
-        "cta": "Subscribe to early access",
+        "cta": "I want to be a founder",
         "counter": "Only {count} spots remaining in this early access batch.",
         "microcopy": "50 spots. When they're gone, waitlist only."
       },
       "free": {
-        "title": "Prefer to wait?",
-        "description": "Sign up to receive updates and access when we open new spots.",
+        "title": "Just wait",
+        "description": "I don't want founding benefits right now. Just notify me when the app launches publicly.",
         "successTitle": "You're on the list!",
         "form": {
           "nameLabel": "Full name",
@@ -253,7 +253,7 @@
       "whatsIncluded": "What's included:",
       "items": {
         "cap": "All Premium features",
-        "capDetail": "Voice AI, timeline, IoT sensors, calculators",
+        "capDetail": "Voice recording, timeline, IoT sensors, calculators",
         "shirt": "Priority support",
         "shirtDetail": "Direct channel with the development team",
         "tips": "Roadmap influence",
@@ -452,15 +452,15 @@
       "timelineFeatures": "Timeline Features"
     },
     "insights": {
-      "badge": "Mybud intelligence",
+      "badge": "Mybud technical engine",
       "title": "Your personal",
       "titleHighlight": "grow partner",
-      "altImage": "Mybud intelligence engine",
-      "subtitle": "An intelligence engine that combines over 1,000 agronomic rules with your cultivation data to deliver precise guidance from start to finish of every cycle.",
-      "description": "Combines agronomic expertise with artificial intelligence to deliver personalized insights for your plants, phases and environment.",
-      "smartRecommendations": "Smart recommendations",
-      "aiPowered": "AI Powered",
-      "seeAllRecommendations": "See All Smart Recommendations →",
+      "altImage": "Mybud expert rules engine",
+      "subtitle": "A technical engine that combines over 1,000 expert rules with your cultivation data to deliver precise guidance from start to finish of every cycle.",
+      "description": "Combines agronomic expertise with data processing to deliver personalized insights for your plants, phases and environment.",
+      "smartRecommendations": "Technical recommendations",
+      "aiPowered": "Expert Rules",
+      "seeAllRecommendations": "See All Recommendations →",
       "viewAllActivities": "View All Recent Activities →",
       "contextInsights": "Contextual insights",
       "contextDescription": "Guidance considers plant phase, cultivation week, environmental metrics and recent activities. It's like having a master grower watching 24/7.",
@@ -504,8 +504,8 @@
         "monitoring": "Monitoring"
       },
       "ctaText": "Stop guessing. Grow with",
-      "ctaHighlight": "mybud's smart confidence",
-      "ctaButton": "Activate smart guidance"
+      "ctaHighlight": "mybud's technical confidence",
+      "ctaButton": "Activate technical guidance"
     },
     "activityFeed": {
       "title": "Recent activities",

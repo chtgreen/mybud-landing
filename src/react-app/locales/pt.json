@@ -9,9 +9,9 @@
       "secondaryCta": "Assistir à demo curta (2 min)",
       "watchDemo": "Assistir Demo",
       "downloadNow": "Baixar Agora",
-      "trustElement": "50 vagas para acesso antecipado. R$ 299/ano — acesso completo ao Premium. iOS disponível via TestFlight. Android em breve.",
-      "counter": "Só {count} vagas restantes",
-      "badges": "Privacidade primeiro • Dados anônimos • iOS via TestFlight • Android em breve",
+      "trustElement": "Oferta Fundador: De R$ 299 por apenas R$ 190. Acesso Premium + Suporte Prioritário.",
+      "counter": "Restam apenas {count} convites para fundadores",
+      "badges": "Privacidade Total • Dados Ofuscados • iOS (TestFlight) • Android em Breve",
       "alertBar": "Acesso antecipado limitado a 50 vagas. O app está em desenvolvimento ativo — você entra como usuário fundador com suporte prioritário e voz no roadmap.",
       "phone": {
         "plants": "Plantas",
@@ -57,12 +57,12 @@
       "title": "Tudo que um grower precisa para cultivar no comando",
       "subtitle": "Mybud junta voz, tarefas inteligentes e um diário visual para você executar o grow com confiança, repetir o que deu certo e evoluir lote após lote.",
       "journal": {
-        "title": "Timeline que mostra o que cada planta viveu",
-        "description": "Dias por estágio, trocas de vaso e registros multimídia organizados para você replicar ou ajustar cada rodada."
+        "title": "A paz de nunca mais se perder no tempo",
+        "description": "Veja cada dia da vida das suas plantas em uma timeline visual inspirada nas melhores interfaces da Apple. Compare rodadas anteriores e repita o que funcionou."
       },
       "voice": {
-        "title": "Notas por voz viram registros completos",
-        "description": "Segure o mic, conte o que fez e deixe o Mybud salvar doses, tarefas e observações sem tocar no teclado."
+        "title": "Apenas fale. O Mybud é seu assistente pessoal.",
+        "description": "Segure o microfone e conte o que acabou de fazer. O Mybud entende fala natural e registra fertilizações, regas e observações na planta certa. Zero digitação."
       },
       "alerts": {
         "title": "Agenda de tarefas que não deixa nada passar",
@@ -173,23 +173,23 @@
         "eta": "Lançamento público previsto: 2026"
       },
       "priority": {
-        "chip": "Acesso Antecipado • R$ 299/ano",
-        "title": "Acesse o Mybud Premium agora",
-        "description": "O Mybud já está funcionando com voz AI, timeline por planta, sensores IoT, calculadoras e mais. O app está em desenvolvimento ativo. Você entra sabendo que fará a diferença no desenvolvimento do app:",
-        "price": "R$ 299/ano",
+        "chip": "Oferta Especial • R$ 190/ano",
+        "title": "Seu lugar no Círculo de Fundadores",
+        "description": "Venha fazer parte da construção do Mybud. Garanta acesso vitalício à condição de fundador e use o app completo hoje.",
+        "price": "De R$ 299 por apenas R$ 190/ano",
         "benefits": {
           "premium": "Acesso completo a todas as funcionalidades Premium",
           "physicalKit": "Suporte prioritário e canal direto com o time",
           "immediateAccess": "Acesso imediato via TestFlight (iOS) — Android em breve",
           "priorityFeedback": "Influência direta no roadmap do produto"
         },
-        "cta": "Assinar acesso antecipado",
+        "cta": "Quero ser um usuário fundador",
         "counter": "Restam {count} vagas neste lote de acesso antecipado.",
-        "microcopy": "50 vagas. Quando acabar, só na lista de espera."
+        "microcopy": "50 vagas limitadas. Quando acabar, o preço volta para R$ 299."
       },
       "free": {
-        "title": "Prefere aguardar?",
-        "description": "Cadastre seu e-mail para receber novidades e acesso quando abrirmos novas vagas.",
+        "title": "Apenas aguardar",
+        "description": "Não quero os benefícios de fundador agora. Apenas me avise quando o app for lançado oficialmente.",
         "successTitle": "Você está na lista!",
         "form": {
           "nameLabel": "Nome completo",
@@ -241,19 +241,19 @@
     },
     "founderKit": {
       "cardBadge": "50 vagas",
-      "title": "Acesso Antecipado: entre antes de todos.",
-      "subtitle": "Assine o Premium e use o app completo enquanto ele evolui. Sua opinião molda o produto.",
-      "counter": "Só {count} vagas restantes",
+      "title": "Torne-se um Membro Fundador agora.",
+      "subtitle": "Junte-se ao grupo seleto que está moldando o futuro da cannabis digital. Condição exclusiva e vitalícia.",
+      "counter": "Apenas {count} das 100 vagas originais",
       "microcopy": "O app está em desenvolvimento ativo. Você entra sabendo que fará a diferença no desenvolvimento do app.",
       "cta": "Garantir acesso antecipado",
       "kitName": "Mybud Premium",
       "founderEdition": "Acesso Antecipado",
-      "oneTimePayment": "R$ 299/ano",
+      "oneTimePayment": "R$ 190/ano",
       "priceSubtitle": "Cobrança anual",
       "whatsIncluded": "O que está incluso:",
       "items": {
         "cap": "Todas as funcionalidades Premium",
-        "capDetail": "Voz AI, timeline, sensores IoT, calculadoras",
+        "capDetail": "Registro por voz, timeline, sensores IoT, calculadoras",
         "shirt": "Suporte prioritário",
         "shirtDetail": "Canal direto com o time de desenvolvimento",
         "tips": "Influência no roadmap",
@@ -267,7 +267,7 @@
       "subtitle": "Seu cultivo mais organizado começa agora.",
       "primaryCta": "Garantir acesso antecipado",
       "secondaryCta": "Assistir à demo curta (2 min)",
-      "microcopy": "50 vagas para acesso antecipado. R$ 299/ano.",
+      "microcopy": "50 vagas para acesso antecipado. De R$ 299 por R$ 190/ano.",
       "greeting": "O Mybud já está funcionando. As vagas são limitadas.",
       "question": "Entre como usuário fundador e ajude a moldar o produto.",
       "progressLabel": "Status",
@@ -318,7 +318,7 @@
       },
       "faq3": {
         "question": "Quanto vai custar depois?",
-        "answer": "Premium = R$ 299/ano. Usuários fundadores mantêm condições especiais de renovação."
+        "answer": "Premium = R$ 190/ano (oferta especial de lançamento). Usuários fundadores mantêm condições especiais de renovação."
       },
       "privacy": "Política de Privacidade",
       "terms": "Termos de Uso",
@@ -460,11 +460,11 @@
       "badge": "Inteligência do mybud",
       "title": "Seu parceiro",
       "titleHighlight": "de cultivo pessoal",
-      "altImage": "Motor de inteligência do Mybud",
-      "subtitle": "Um motor de inteligência que combina mais de 1000 regras agronômicas com os dados do seu cultivo para entregar orientações precisas do início ao fim de cada ciclo.",
-      "description": "Combina experiência agronômica com inteligência artificial para entregar insights personalizados para suas plantas, fases e ambiente.",
-      "smartRecommendations": "Recomendações inteligentes",
-      "aiPowered": "AI Powered",
+      "altImage": "Motor de regras agronômicas do Mybud",
+      "subtitle": "Um motor técnico que combina mais de 1000 regras de especialistas com os dados do seu cultivo para entregar orientações precisas do início ao fim de cada ciclo.",
+      "description": "Combina experiência agronômica com processamento de dados para entregar insights personalizados para suas plantas, fases e ambiente.",
+      "smartRecommendations": "Recomendações técnicas",
+      "aiPowered": "Expert Rules",
       "seeAllRecommendations": "Ver todas as recomendações →",
       "viewAllActivities": "Ver todas as atividades →",
       "contextInsights": "Insights com contexto",
@@ -509,8 +509,8 @@
         "monitoring": "Monitoramento"
       },
       "ctaText": "Pare de adivinhar. Cultive com",
-      "ctaHighlight": "a confiança inteligente do mybud",
-      "ctaButton": "Ativar orientações inteligentes"
+      "ctaHighlight": "a confiança técnica do mybud",
+      "ctaButton": "Ativar orientações técnicas"
     },
     "activityFeed": {
       "title": "Atividades recentes",

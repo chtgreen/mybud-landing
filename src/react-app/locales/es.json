@@ -4,7 +4,7 @@
       "title1": "Mybud.",
       "title2": "Tú cuidas las plantas,",
       "title3": "nosotros cuidamos el resto.",
-      "subtitle": "Habla, fotografía o filma: Mybud transforma todo en un diario inteligente con timeline por planta, tareas precisas y recordatorios que mantienen tu cultivo en línea.",
+      "subtitle": "Habla, fotografía o filma: Mybud transforma todo en un diario inteligente con línea de tiempo por planta, tareas precisas y recordatorios que mantienen tu cultivo en línea.",
       "primaryCta": "Obtener acceso anticipado",
       "secondaryCta": "Ver la demo corta (2 min)",
       "watchDemo": "Ver Demo",
@@ -62,7 +62,7 @@
       },
       "voice": {
         "title": "Notas por voz se convierten en registros completos",
-        "description": "Mantén el micrófono, cuenta lo que hiciste y deja que Mybud guarde dosis, tareas y observaciones sin tocar el teclado."
+        "description": "Mantén el micrófono, cuenta lo que hiciste y deja que Mybud guarde dosis, tareas y observaciones sin tocar el teclado. Nuestro motor entiende el lenguaje natural."
       },
       "alerts": {
         "title": "Agenda de tareas que no deja nada pasar",
@@ -146,7 +146,7 @@
       "priority": {
         "chip": "Acceso anticipado • US$ 99/año",
         "title": "Obtén Mybud Premium ahora",
-        "description": "Mybud ya funciona con voz IA, timeline por planta, sensores IoT, calculadoras y más. La app está en desarrollo activo. Entras sabiendo que harás la diferencia en el desarrollo de la app:",
+        "description": "Mybud ya funciona con registro por voz, línea de tiempo por planta, sensores IoT, calculadoras y más. La app está en desarrollo activo. Entras sabiendo que harás la diferencia en el desarrollo de la app:",
         "price": "US$ 99/año",
         "benefits": {
           "premium": "Acceso completo a todas las funciones Premium",
@@ -224,7 +224,7 @@
       "whatsIncluded": "Qué incluye:",
       "items": {
         "cap": "Todas las funciones Premium",
-        "capDetail": "Voz IA, timeline, sensores IoT, calculadoras",
+        "capDetail": "Registro por voz, línea de tiempo, sensores IoT, calculadoras",
         "shirt": "Soporte prioritario",
         "shirtDetail": "Canal directo con el equipo de desarrollo",
         "tips": "Influencia en el roadmap",

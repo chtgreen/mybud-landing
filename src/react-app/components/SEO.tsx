@@ -11,7 +11,7 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
 
   const baseUrl = 'https://mybud.app';
   const currentUrl = pageType === 'b2b' || pageType === 'industry'
-    ? `${baseUrl}/industry` 
+    ? `${baseUrl}/industry`
     : pageType === 'collective'
       ? `${baseUrl}/collective`
       : pageType === 'enterprise'
@@ -100,8 +100,8 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
     },
   };
 
-  const seo = pageType === 'b2c' 
-    ? b2cSEO[currentLanguage] 
+  const seo = pageType === 'b2c'
+    ? b2cSEO[currentLanguage]
     : pageType === 'collective'
       ? collectiveSEO[currentLanguage]
       : pageType === 'enterprise'
@@ -119,8 +119,8 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
       currentLanguage === 'pt'
         ? 'Diário inteligente de cultivo de cannabis com registro por voz e timeline visual'
         : currentLanguage === 'es'
-        ? 'Diario inteligente de cultivo de cannabis con registro por voz y línea de tiempo visual'
-        : 'Smart cannabis growing journal with voice notes and visual timeline',
+          ? 'Diario inteligente de cultivo de cannabis con registro por voz y línea de tiempo visual'
+          : 'Smart cannabis growing journal with voice notes and visual timeline',
     sameAs: [
       'https://instagram.com/mybud.app',
       'https://www.linkedin.com/company/cht-green/',
@@ -148,8 +148,8 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
         currentLanguage === 'pt'
           ? 'Beta gratuito com acesso antecipado'
           : currentLanguage === 'es'
-          ? 'Beta gratuito con acceso anticipado'
-          : 'Free beta with early access',
+            ? 'Beta gratuito con acceso anticipado'
+            : 'Free beta with early access',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -171,16 +171,16 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
           currentLanguage === 'pt'
             ? 'O app já está disponível nas lojas?'
             : currentLanguage === 'es'
-            ? '¿La app ya está disponible en las tiendas?'
-            : 'Is the app available in stores?',
+              ? '¿La app ya está disponible en las tiendas?'
+              : 'Is the app available in stores?',
         acceptedAnswer: {
           '@type': 'Answer',
           text:
             currentLanguage === 'pt'
               ? 'Ainda não. Estamos em beta fechado. Quem entra agora garante até 6 meses Premium gratuitamente.'
               : currentLanguage === 'es'
-              ? 'Aún no. Estamos en beta cerrado. Quien entra ahora obtiene hasta 6 meses Premium gratis.'
-              : 'Not yet. We are in closed beta. Early users get up to 6 months Premium free.',
+                ? 'Aún no. Estamos en beta cerrado. Quien entra ahora obtiene hasta 6 meses Premium gratis.'
+                : 'Not yet. We are in closed beta. Early users get up to 6 months Premium free.',
         },
       },
       {
@@ -189,16 +189,16 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
           currentLanguage === 'pt'
             ? 'Meus dados são privados?'
             : currentLanguage === 'es'
-            ? '¿Mis datos son privados?'
-            : 'Are my data private?',
+              ? '¿Mis datos son privados?'
+              : 'Are my data private?',
         acceptedAnswer: {
           '@type': 'Answer',
           text:
             currentLanguage === 'pt'
               ? 'Sim. Você controla tudo. Os dados são criptografados e anônimos.'
               : currentLanguage === 'es'
-              ? 'Sí. Tú controlas todo. Los datos están encriptados y son anónimos.'
-              : 'Yes. You control everything. Data is encrypted and anonymous.',
+                ? 'Sí. Tú controlas todo. Los datos están encriptados y son anónimos.'
+                : 'Yes. You control everything. Data is encrypted and anonymous.',
         },
       },
       {
@@ -207,16 +207,16 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
           currentLanguage === 'pt'
             ? 'Quanto vai custar depois do beta?'
             : currentLanguage === 'es'
-            ? '¿Cuánto costará después del beta?'
-            : 'How much will it cost after beta?',
+              ? '¿Cuánto costará después del beta?'
+              : 'How much will it cost after beta?',
         acceptedAnswer: {
           '@type': 'Answer',
           text:
             currentLanguage === 'pt'
-              ? 'Premium = R$ 299/ano. Usuários fundadores mantêm condições especiais de renovação.'
+              ? 'Premium = R$ 190/ano (oferta especial de lançamento). Usuários fundadores mantêm condições especiais de renovação.'
               : currentLanguage === 'es'
-              ? 'Premium = US$ 99/año. Los usuarios fundadores mantienen condiciones especiales de renovación.'
-              : 'Premium = US$99/year. Founding users keep special renewal rates.',
+                ? 'Premium = US$ 99/año. Los usuarios fundadores mantienen condiciones especiales de renovación.'
+                : 'Premium = US$99/year. Founding users keep special renewal rates.',
         },
       },
     ],
@@ -252,25 +252,25 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
       <meta property="twitter:image" content={`${baseUrl}/mybud-og-image.png`} />
 
       {/* Alternate Languages */}
-      <link 
-        rel="alternate" 
-        hrefLang="pt" 
+      <link
+        rel="alternate"
+        hrefLang="pt"
         href={
           pageType === 'b2b' || pageType === 'industry'
-            ? `${baseUrl}/industry?lang=pt` 
+            ? `${baseUrl}/industry?lang=pt`
             : pageType === 'collective'
               ? `${baseUrl}/collective?lang=pt`
               : pageType === 'enterprise'
                 ? `${baseUrl}/collective?lang=pt`
                 : `${baseUrl}/grower?lang=pt`
-        } 
+        }
       />
-      <link 
-        rel="alternate" 
+      <link
+        rel="alternate"
         hrefLang="en"
         href={
           pageType === 'b2b' || pageType === 'industry'
-            ? `${baseUrl}/industry?lang=en` 
+            ? `${baseUrl}/industry?lang=en`
             : pageType === 'collective'
               ? `${baseUrl}/collective?lang=en`
               : pageType === 'enterprise'
@@ -278,12 +278,12 @@ const SEO: React.FC<SEOProps> = ({ pageType }) => {
                 : `${baseUrl}/grower?lang=en`
         }
       />
-      <link 
-        rel="alternate" 
+      <link
+        rel="alternate"
         hrefLang="es"
         href={
           pageType === 'b2b' || pageType === 'industry'
-            ? `${baseUrl}/industry?lang=es` 
+            ? `${baseUrl}/industry?lang=es`
             : pageType === 'collective'
               ? `${baseUrl}/collective?lang=es`
               : pageType === 'enterprise'
