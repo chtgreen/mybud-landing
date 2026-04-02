@@ -205,9 +205,6 @@
       }
     },
     "testimonials": {
-      "title": "Those who tested it, recommend it.",
-      "subtitle": "Those already using the beta tell how Mybud is saving time and harvest.",
-      "counter": "+{count} growers are already testing Mybud and asking for more invites.",
       "1": {
         "text": "\"I said 'water plant 2 with FPJ' and it became a task. Impressive.\"",
         "author": "@Hugo",
@@ -237,7 +234,10 @@
           "headline": "QR #07 ready for posting",
           "meta": "Exported to Instagram"
         }
-      }
+      },
+      "title": "Those who tested it, recommend it.",
+      "subtitle": "Those already using the beta tell how Mybud is saving time and harvest.",
+      "counter": "+{count} growers are already testing Mybud and asking for more invites."
     },
     "founderKit": {
       "cardBadge": "50 spots",
@@ -800,7 +800,7 @@
           "App with your brand and visual identity",
           "100% data under your control",
           "Custom features for your business",
-          "Integrations with your systems (ERP, CRM, IoT)",
+          "Integrations with your data dashboards (BI and IoT)",
           "Dedicated support and development"
         ],
         "cta": "Schedule strategic conversation"
@@ -1690,7 +1690,7 @@
             "items": [
               "Complete and documented REST API",
               "Integration with labs",
-              "Connection with ERPs and CRMs",
+              "Connection with ERPs and BI Dashboards",
               "Webhooks for automations",
               "Support for IoT sensors"
             ]
@@ -1864,111 +1864,191 @@
   },
   "industry": {
     "seo": {
-      "title": "MyBud Industry — Where brands, breeders, and manufacturers connect ethically with cultivation",
-      "description": "In MyBud, your brand appears at the right time with purpose, the first legitimate and ethical channel between industry and cultivation.",
-      "ogImageAlt": "MyBud Industry interface showing brand integration in cultivation."
+      "title": "MyBud for Brands — Your product inside the grow, not outside it",
+      "description": "In MyBud, your product appears inside the grower's routine. Not as an ad. As part of the process.",
+      "ogImageAlt": "MyBud interface showing a brand product inside a cultivation task."
     },
     "hero": {
-      "title": "Your brand enters cultivation: at the right time, the right way.",
-      "subtitle": "In MyBud, marketing isn't advertising, it's useful presence within cultivation, at the exact moment growers need to decide what to use. Whether you're a manufacturer, breeder, or supplier, MyBud connects your brand to the real cultivation routine with purpose and context.",
-      "cta": "I want to know integration options",
-      "secondaryCta": "Schedule a conversation",
-      "trustElement": "Brands, breeders, and manufacturers are already entering the MyBud ecosystem to speak to the right audience, at the exact moment.",
-      "dashboard": {
-        "title": "Partner Dashboard",
-        "subtitle": "Real-time ecosystem insights",
-        "live": "Live",
-        "stats": {
-          "activeGrowers": "Active growers",
-          "thisMonth": "this month",
-          "touchpoints": "Touchpoints",
-          "perMonth": "Per month",
-          "engagement": "Engagement",
-          "openRate": "Open rate",
-          "avgRoi": "Average ROI",
-          "partners": "Partners"
+      "badge": "B2B SaaS for Brands",
+      "title": "You don't know how your product is used.",
+      "subtitle": "Exact dosage, feeding tables, or organic soil preparation. In MyBud, your physical product becomes the grower's digital schedule.",
+      "cta": "See your brand in MyBud",
+      "secondaryCta": "Speak to an Expert",
+      "visual": {
+        "left": "Growing without guidance",
+        "right": "MyBud with task + product"
+      }
+    },
+    "reframe": {
+      "title": "You don't need more visibility.\nYou need to be used.",
+      "bullet1": "Growers don't follow manuals",
+      "bullet2": "Products are used incorrectly",
+      "bullet3": "Brands don't see real usage",
+      "punchline": "If your product isn't inside the routine, it's outside the result."
+    },
+    "presence": {
+      "title": "Where your product lives inside MyBud",
+      "tasks": {
+        "title": "Inside Tasks",
+        "example": "\"Apply MyBud Fert — 2ml/L\"",
+        "point1": "Triggered by stage",
+        "point2": "Contextual timing",
+        "point3": "Action-based"
+      },
+      "timeline": {
+        "title": "Inside Timeline",
+        "example": "Day 14 → MyBud Fert applied",
+        "point1": "Visible history",
+        "point2": "Repeated usage patterns"
+      },
+      "activityLog": {
+        "title": "Inside Activity Log",
+        "example": "User logs feeding with your product",
+        "point1": "Structured data",
+        "point2": "Linked to plant + stage"
+      },
+      "recommendations": {
+        "title": "Inside Recommendations",
+        "example": "\"You should apply MyBud Fert today\"",
+        "point1": "Based on grow state",
+        "point2": "Not generic suggestions"
+      },
+      "punchline": "Not before the grow.\nNot after the grow.\nInside the grow."
+    },
+    "experience": {
+      "title": "We don't push products. We guide growers.",
+      "principle1": "No ads",
+      "principle2": "No banners",
+      "principle3": "No spam",
+      "principle4": "Only contextual actions",
+      "effect1": "Higher trust",
+      "effect2": "Better execution",
+      "effect3": "More consistent results"
+    },
+    "data": {
+      "title": "What you finally get access to",
+      "point1": "When your product is used",
+      "point2": "How much is used",
+      "point3": "In which stage",
+      "point4": "Frequency of usage",
+      "future": "Correlation with outcomes",
+      "punchline": "From guesswork → to real usage data"
+    },
+    "sales": {
+      "title": "Usage → data → repetition",
+      "step1": "Product used correctly",
+      "step2": "Better grow results",
+      "step3": "User repeats usage",
+      "step4": "Brand becomes default choice"
+    },
+    "proUnlock": {
+      "title": "Your product can unlock a better grow",
+      "mechanic": "Buy product → unlock MyBud Pro",
+      "effect1": "Incentivizes purchase",
+      "effect2": "Adds value to product",
+      "effect3": "Creates differentiation"
+    },
+    "demo": {
+      "title": "See it in action",
+      "cta": "See your brand inside MyBud",
+      "tasksHint": "your product appears in context, triggered by plant stage",
+      "timelineHint": "every use is tracked — visible history builds brand trust",
+      "activityHint": "structured data — linked to plant, stage, and dosage",
+      "recommendationsHint": "recommendations based on real grow state — not generic ads",
+      "mock": {
+        "tasks": {
+          "todayTasks": "today's tasks",
+          "wateringNutrients": "watering + nutrients",
+          "vegWeek3": "Blue Dream — veg week 3",
+          "phCheck": "ph check",
+          "optimalRange": "6.3 — optimal range",
+          "foliarSpray": "foliar spray",
+          "tomorrow": "scheduled — tomorrow 7am"
         },
-        "opportunities": {
-          "title": "Connection opportunities",
-          "veg": {
-            "stage": "Vegetative",
-            "users": "438 growers",
-            "action": "Foliar nutrition"
-          },
-          "flower": {
-            "stage": "Flowering",
-            "users": "312 growers",
-            "action": "Bloom supplements"
-          },
-          "drying": {
-            "stage": "Drying",
-            "users": "89 growers",
-            "action": "Environmental control"
-          }
+        "timeline": {
+          "title": "plant timeline",
+          "today": "today",
+          "daysAgo3": "3 days ago",
+          "weekAgo1": "1 week ago",
+          "weeksAgo2": "2 weeks ago",
+          "day21": "day 21",
+          "day18": "day 18",
+          "day14": "day 14",
+          "day7": "day 7",
+          "firstFeed": "first nutrient feed",
+          "stageChange": "stage change → vegetative"
+        },
+        "activity": {
+          "title": "log activity",
+          "watering": "watering",
+          "volume": "volume",
+          "productsApplied": "products applied",
+          "biofertilizer": "biofertilizer — organic",
+          "addProduct": "+ add product"
+        },
+        "recommendations": {
+          "title": "smart recommendations",
+          "applyToday": "you should apply {brand} today",
+          "basedOnStage": "based on growth stage (veg week 3) and last feeding 3 days ago",
+          "suggested": "suggested",
+          "info": "info",
+          "warning": "warning",
+          "ecLow": "EC is slightly low for this stage",
+          "ecTarget": "target: 1.4–1.8 EC in vegetative",
+          "increaseCalMag": "increase CalMag in flowering",
+          "calciumBoost": "transition to flowering requires calcium boost"
+        },
+        "hub": {
+          "title": "Brand Profile",
+          "followers": "Followers",
+          "importPlan": "Import Feeding Schedule",
+          "featured": "Featured Products",
+          "bio": "Trusted nutrients for maximum yield"
+        },
+        "calculator": {
+          "title": "Dosage Calculator",
+          "reservoir": "Reservoir Size",
+          "calculate": "Calculate Dosage",
+          "applyButton": "Apply to Today's Task"
+        },
+        "stickers": {
+          "title": "Branded Stickers",
+          "dragAndDrop": "Drag & Drop Stickers",
+          "communityText": "Growers share their progress using your official stickers."
+        },
+        "descriptions": {
+          "tasks": "Your product appears exactly when they need it. No guessing.",
+          "timeline": "Build trust. We show the exact history of your nutrients.",
+          "activity": "Detailed data capture: know exactly the pH, EC and volume used.",
+          "recommendations": "Smart nudges driving users to apply your product right now.",
+          "hub": "Your dedicated profile. Let growers import your exact feeding chart.",
+          "calculator": "We digitize your PDF feeding tables into an interactive tool.",
+          "stickers": "Let growers champion your brand by putting your stickers on their photos."
+        }
+      },
+      "deliverables": {
+        "title": "What exactly do you get?",
+        "subtitle": "Stop guessing. Start embedding your brand as an operating system.",
+        "pillar1": {
+          "title": "1. Bypass Meta & Google Bans",
+          "desc": "A direct channel immune to shadowbans. Your product appears directly in the user's daily push notifications exactly when they need to apply it."
+        },
+        "pillar2": {
+          "title": "2. Embeddable Dynamic Calculator",
+          "desc": "We digitize your static PDF feeding charts into an interactive calculator. It lives natively inside MyBud and we give you a link to embed it directly into your own website."
+        },
+        "pillar3": {
+          "title": "3. Real-World Usage Analytics",
+          "desc": "Discover how anonymous growers are actually using your products day-to-day. Get real-world data on efficacy, usage frequency, and see if the market is actually following your instructions."
         }
       }
     },
-    "problem": {
-      "title": "Cannabis marketing still speaks, but nobody listens.",
-      "text": "Brands are trapped in networks that block, ads that fall, and PDFs nobody reads. Meanwhile, those who cultivate seek real solutions and trust those who help in the process, not those who interrupt. The result is predictable: lots of noise, little connection. MyBud reverses this logic.",
-      "truth": "Traditional advertising doesn't reach growers where they make decisions.",
-      "solution": "MyBud places your brand at the exact moment of decision, with context and trust.",
-      "highlight": "MyBud connects brands to the right moment in cultivation, with context and trust."
-    },
-    "ways": {
-      "title": "Three ways to be part of real cultivation",
-      "subtitle": "For brands, breeders, and manufacturers who want to be part of the grower's routine.",
-      "way1": {
-        "title": "Technical presence in tasks",
-        "desc": "Your product appears in practical actions, like watering, controlling pests, adjusting lighting, or monitoring environment. Growers find your brand exactly when they need it."
-      },
-      "way2": {
-        "title": "Cultivation protocols and schedules",
-        "desc": "Brands and breeders transform their schedules into live tasks within the app, whether nutrition, lighting, or genetics. The cultivator chooses to follow the program and the system automatically executes tasks with your brand."
-      },
-      "way3": {
-        "title": "Growers Hub — live product showcase",
-        "desc": "An exclusive area within MyBud where growers discover new products, equipment, and genetics, interact with brands, and access technical materials, all within a reliable and educational ecosystem."
-      },
-      "reinforcement": "MyBud connects brands to growers at the exact moment of decision, with real context, trust, and measurable results."
-    },
-    "impact": {
-      "title": "What changes when your brand appears with purpose?",
-      "text": "Growers who receive contextual recommendations tend to adopt the brand and replicate good practices. Every right action becomes trust. Every registered use, a vote of confidence.",
-      "testimonial": {
-        "text": "Since we entered MyBud, our products started being used within cultivation schedules and this generated real recognition among growers.",
-        "author": "Symbolic testimonial",
-        "role": "Partner pilot association"
-      }
-    },
-    "legitimacy": {
-      "title": "Legitimate communication, guaranteed privacy.",
-      "intro": "In MyBud, communication is educational and technical, not advertising. Data is anonymous and aggregated. Brands appear with purpose and context, respecting patients, cultivators, and the law.",
-      "privacy": "Privacy guaranteed by design. MyBud never shares personal data or grower identities.",
-      "mission": "Our mission is to connect brands with growers through trust, education, and respect for the cultivation process."
-    },
-    "ecosystem": {
-      "title": "MyBud connects the entire cultivation chain",
-      "connection": "Growers, brands, laboratories, professionals, associations, breeders, cannabis clubs, and manufacturers — all within the same ecosystem of traceability, learning, and trust.",
-      "impact": "MyBud is more than an app: it's the technological foundation that supports the new standard of traceability and trust in the cannabis chain.",
-      "stakeholders": {
-        "growers": "Growers",
-        "brands": "Brands",
-        "labs": "Laboratories",
-        "professionals": "Professionals",
-        "associations": "Associations",
-        "breeders": "Breeders",
-        "clubs": "Clubs",
-        "manufacturers": "Manufacturers"
-      }
-    },
     "finalCta": {
-      "title": "Be part of the new standard of presence in cultivation.",
-      "text": "MyBud is the first ecosystem that connects brands, breeders, and equipment manufacturers ethically, usefully, and traceably. Here, marketing becomes legitimate, useful, ethical, and present again.",
+      "text": "If you want to understand how your product is actually used,\nthis is where it happens.",
+      "primaryCta": "Watch demo",
+      "secondaryCta": "Talk to us",
       "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
       "community": "Join the first brands shaping the future of cannabis cultivation.",
-      "primaryCta": "I want to integrate my brand to MyBud",
-      "secondaryCta": "I want to know more",
       "form": {
         "namePlaceholder": "Full name",
         "emailPlaceholder": "Corporate email",
@@ -1991,7 +2071,7 @@
       "subtitle": "Tell us more about your objective (optional)"
     },
     "footer": {
-      "tagline": "MyBud is the first ecosystem that integrates brands, breeders, growers, and associations in the same standard of traceability and real utility.",
+      "tagline": "MyBud is where brands become part of the grower's routine.",
       "unifier": "MyBud grows with you — from individual cultivation to the cannabis industry.",
       "contact": "Contact",
       "growers": "Growers",

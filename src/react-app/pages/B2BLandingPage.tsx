@@ -19,6 +19,8 @@ import SocialProof from '../components/SocialProof';
 import Associations from '../components/Associations';
 import B2CLink from '../components/B2CLink';
 import B2BLeadForm from '../components/B2BLeadForm';
+import IndustryDeliverables from '../components/IndustryDeliverables';
+import IndustryDemo from '../components/IndustryDemo';
 
 // B2B content is selected via namespace in i18n
 
@@ -59,6 +61,8 @@ export default function B2BLandingPage() {
       <SocialProof background="gray" onCTAClick={handleCTAClick} /> {/* Section 4: gray - Mais que dados: prova social */}
       <FeaturesSection background="white" /> {/* Section 5: white - Tipos de parcerias (5 types) */}
       <Associations background="gray" onCTAClick={handleCTAClick} /> {/* Section 6: gray - Associações Canábicas (NEW) */}
+      <IndustryDeliverables /> {/* Section 7: The tangible deliverables */}
+      <IndustryDemo onCTAClick={handleCTAClick} /> {/* Section Demo: Demo Experience for Brands */}
       <B2CLink background="white" /> {/* Section 7: white - Link to B2C page */}
       <Stats background="gray" /> {/* Section 8: gray - Métricas que contam */}
       <FAQ background="white" /> {/* Section 9: white - FAQ com novas perguntas */}

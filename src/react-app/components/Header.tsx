@@ -83,15 +83,20 @@ const Header: React.FC<HeaderProps> = ({
     closeMenu();
   };
 
-  const navItems = isCollective || isIndustry
+  const navItems = isIndustry
     ? [
-      { id: "features", label: t("header.nav.features") },
+      { id: "demo", label: t("header.nav.features") },
       { id: "contact", label: t("header.nav.contact") },
     ]
-    : [
-      { id: "features", label: t("header.nav.features") },
-      { id: "kit", label: t("header.nav.kit") },
-    ];
+    : isCollective
+      ? [
+        { id: "features", label: t("header.nav.features") },
+        { id: "contact", label: t("header.nav.contact") },
+      ]
+      : [
+        { id: "features", label: t("header.nav.features") },
+        { id: "kit", label: t("header.nav.kit") },
+      ];
 
   const isHeroContext = !isIndustry && !isCollective && useWhiteLogo && !isMenuOpen;
 
@@ -144,12 +149,12 @@ const Header: React.FC<HeaderProps> = ({
       : "bg-transparent border border-[#288664] text-[#288664] hover:bg-[#288664] hover:text-white shadow-none",
   ].join(" ");
 
-  const logoHref = isIndustry 
-    ? `/${currentLanguage}/industry` 
-    : isCollective 
+  const logoHref = isIndustry
+    ? `/${currentLanguage}/industry`
+    : isCollective
       ? `/${currentLanguage}/collective`
       : `/${currentLanguage}/grower`;
-  
+
   // Get page links for navigation
   const getPageLinks = () => {
     const links = [];
@@ -164,7 +169,7 @@ const Header: React.FC<HeaderProps> = ({
     }
     return links;
   };
-  
+
   const pageLinks = getPageLinks();
 
   return (

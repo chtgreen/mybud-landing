@@ -176,9 +176,6 @@
       }
     },
     "testimonials": {
-      "title": "Quienes lo probaron, lo recomiendan.",
-      "subtitle": "Quienes ya usan el beta cuentan cómo Mybud está ahorrando tiempo y cosecha.",
-      "counter": "+{count} cultivadores ya prueban Mybud y piden más invitaciones.",
       "1": {
         "text": "\"Dije 'regar planta 2 con FPJ' y se convirtió en tarea. Impresionante.\"",
         "author": "@Hugo",
@@ -208,7 +205,10 @@
           "headline": "QR #07 listo para publicar",
           "meta": "Exportado a Instagram"
         }
-      }
+      },
+      "title": "Quienes lo probaron, lo recomiendan.",
+      "subtitle": "Quienes ya usan el beta cuentan cómo Mybud está ahorrando tiempo y cosecha.",
+      "counter": "+{count} cultivadores ya prueban Mybud y piden más invitaciones."
     },
     "founderKit": {
       "cardBadge": "50 plazas",
@@ -1355,111 +1355,104 @@
   },
   "industry": {
     "seo": {
-      "title": "MyBud Industry — Donde marcas, breeders y fabricantes se conectan al cultivo de forma ética",
-      "description": "En MyBud, tu marca aparece en el momento exacto y con propósito, el primer canal legítimo y ético entre industria y cultivo.",
-      "ogImageAlt": "Interfaz de MyBud Industry mostrando integración de marcas en el cultivo."
+      "title": "MyBud para Marcas — Tu producto dentro del cultivo, no fuera de él",
+      "description": "En MyBud, tu producto aparece dentro de la rutina del cultivador. No como anuncio. Como parte del proceso.",
+      "ogImageAlt": "Interfaz de MyBud mostrando un producto de marca dentro de una tarea de cultivo."
     },
     "hero": {
-      "title": "Tu marca entra al cultivo: en el momento exacto, de la manera correcta.",
-      "subtitle": "En MyBud, el marketing no es anuncio, es presencia útil dentro del cultivo, en el momento exacto en que el grower necesita decidir qué usar. Seas fabricante, breeder o proveedor, MyBud conecta tu marca a la rutina real del cultivo con propósito y contexto.",
-      "cta": "Quiero conocer las formas de integración",
-      "secondaryCta": "Agendar conversación",
-      "trustElement": "Marcas, breeders y fabricantes ya están entrando al ecosistema MyBud para hablar con el público correcto, en el momento exacto.",
-      "dashboard": {
-        "title": "Panel de Socio",
-        "subtitle": "Insights del ecosistema en tiempo real",
-        "live": "En vivo",
-        "stats": {
-          "activeGrowers": "Cultivadores activos",
-          "thisMonth": "este mes",
-          "touchpoints": "Touchpoints",
-          "perMonth": "Por mes",
-          "engagement": "Engagement",
-          "openRate": "Tasa de apertura",
-          "avgRoi": "ROI promedio",
-          "partners": "Socios"
-        },
-        "opportunities": {
-          "title": "Oportunidades de conexión",
-          "veg": {
-            "stage": "Vegetativo",
-            "users": "438 cultivadores",
-            "action": "Nutrición foliar"
-          },
-          "flower": {
-            "stage": "Floración",
-            "users": "312 cultivadores",
-            "action": "Suplementos bloom"
-          },
-          "drying": {
-            "stage": "Secado",
-            "users": "89 cultivadores",
-            "action": "Control ambiental"
-          }
-        }
+      "badge": "MyBud para Marcas",
+      "title": "Tu producto, dentro del cultivo.",
+      "subtitle": "No como catálogo. Como parte de la rutina del cultivador.",
+      "cta": "Ver demo en vivo",
+      "secondaryCta": "Integrar mi marca",
+      "visual": {
+        "left": "Cultivo sin orientación",
+        "right": "MyBud con tarea + producto"
       }
     },
-    "problem": {
-      "title": "El marketing cannábico aún habla, pero nadie escucha.",
-      "text": "Las marcas están atrapadas en redes que bloquean, anuncios que caen y PDFs que nadie lee. Mientras tanto, quienes cultivan buscan soluciones reales y confían en quienes ayudan en el proceso, no en quienes interrumpen. El resultado es predecible: mucho ruido, poca conexión. MyBud invierte esta lógica.",
-      "truth": "La publicidad tradicional no alcanza al grower donde toma decisiones.",
-      "solution": "MyBud posiciona tu marca en el momento exacto de decisión, con contexto y confianza.",
-      "highlight": "MyBud conecta marcas al momento exacto del cultivo, con contexto y confianza."
+    "reframe": {
+      "title": "No necesitas más visibilidad.\nNecesitas ser usado.",
+      "bullet1": "Los cultivadores no siguen manuales",
+      "bullet2": "Los productos se usan de forma incorrecta",
+      "bullet3": "Las marcas no ven el uso real",
+      "punchline": "Si tu producto no está dentro de la rutina, está fuera del resultado."
     },
-    "ways": {
-      "title": "Tres maneras de ser parte del cultivo real",
-      "subtitle": "Para marcas, breeders y fabricantes que quieren ser parte de la rutina de quien cultiva.",
-      "way1": {
-        "title": "Presencia técnica en las tareas",
-        "desc": "Tu producto aparece en acciones prácticas, como regar, controlar plagas, ajustar iluminación o monitorear ambiente. El grower encuentra tu marca exactamente cuando la necesita."
+    "presence": {
+      "title": "Donde tu producto vive dentro de MyBud",
+      "tasks": {
+        "title": "Dentro de las Tareas",
+        "example": "\"Aplicar MyBud Fert — 2ml/L\"",
+        "point1": "Activado por etapa",
+        "point2": "Timing contextual",
+        "point3": "Basado en acción"
       },
-      "way2": {
-        "title": "Protocolos y cronogramas de cultivo",
-        "desc": "Marcas y breeders transforman sus cronogramas en tareas vivas dentro de la app, sea de nutrición, iluminación o genética. El cultivador elige seguir el programa y el sistema ejecuta las tareas automáticamente con tu marca."
+      "timeline": {
+        "title": "Dentro de la Timeline",
+        "example": "Día 14 → MyBud Fert aplicado",
+        "point1": "Historial visible",
+        "point2": "Patrones de uso repetidos"
       },
-      "way3": {
-        "title": "Growers Hub — vitrina viva de productos",
-        "desc": "Un área exclusiva dentro de MyBud donde growers descubren nuevos productos, equipos y genéticas, interactúan con las marcas y acceden a materiales técnicos, todo dentro de un ecosistema confiable y educativo."
+      "activityLog": {
+        "title": "Dentro del Registro de Actividades",
+        "example": "Usuario registra alimentación con tu producto",
+        "point1": "Datos estructurados",
+        "point2": "Vinculado a planta + etapa"
       },
-      "reinforcement": "MyBud conecta marcas con growers en el momento exacto de decisión, con contexto real, confianza y resultados medibles."
+      "recommendations": {
+        "title": "Dentro de las Recomendaciones",
+        "example": "\"Deberías aplicar MyBud Fert hoy\"",
+        "point1": "Basado en el estado del cultivo",
+        "point2": "Sin sugerencias genéricas"
+      },
+      "punchline": "No antes del cultivo.\nNo después del cultivo.\nDentro del cultivo."
     },
-    "impact": {
-      "title": "¿Qué cambia cuando tu marca aparece con propósito?",
-      "text": "Growers que reciben recomendaciones contextuales tienden a adoptar la marca y replicar buenas prácticas. Cada acción correcta se convierte en confianza. Cada uso registrado, un voto de confianza.",
-      "testimonial": {
-        "text": "Desde que entramos a MyBud, nuestros productos comenzaron a ser usados dentro de los cronogramas de cultivo y esto generó reconocimiento real entre los growers.",
-        "author": "Testimonio simbólico",
-        "role": "Asociación asociada piloto"
-      }
+    "experience": {
+      "title": "No empujamos productos. Guiamos cultivadores.",
+      "principle1": "Sin anuncios",
+      "principle2": "Sin banners",
+      "principle3": "Sin spam",
+      "principle4": "Solo acciones contextuales",
+      "effect1": "Más confianza",
+      "effect2": "Mejor ejecución",
+      "effect3": "Resultados más consistentes"
     },
-    "legitimacy": {
-      "title": "Comunicación legítima, privacidad garantizada.",
-      "intro": "En MyBud, la comunicación es educativa y técnica, no publicitaria. Los datos son anónimos y agregados. Las marcas aparecen con propósito y contexto, respetando al paciente, al cultivador y la ley.",
-      "privacy": "Privacidad garantizada por diseño. MyBud nunca comparte datos personales o identidades de cultivadores.",
-      "mission": "Nuestra misión es conectar marcas con cultivadores a través de confianza, educación y respeto por el proceso de cultivo."
+    "data": {
+      "title": "Lo que finalmente descubres",
+      "point1": "Cuándo se usa tu producto",
+      "point2": "Cuánto se usa",
+      "point3": "En qué etapa",
+      "point4": "Frecuencia de uso",
+      "future": "Correlación con resultados",
+      "punchline": "De suposiciones → a datos reales de uso"
     },
-    "ecosystem": {
-      "title": "MyBud conecta toda la cadena del cultivo",
-      "connection": "Growers, marcas, laboratorios, profesionales, asociaciones, breeders, clubes cannábicos y fabricantes — todos dentro del mismo ecosistema de trazabilidad, aprendizaje y confianza.",
-      "impact": "MyBud es más que una app: es la base tecnológica que sostiene el nuevo estándar de trazabilidad y confianza en la cadena cannábica.",
-      "stakeholders": {
-        "growers": "Growers",
-        "brands": "Marcas",
-        "labs": "Laboratorios",
-        "professionals": "Profesionales",
-        "associations": "Asociaciones",
-        "breeders": "Breeders",
-        "clubs": "Clubes",
-        "manufacturers": "Fabricantes"
-      }
+    "sales": {
+      "title": "Uso → datos → repetición",
+      "step1": "Producto usado correctamente",
+      "step2": "Mejores resultados en el cultivo",
+      "step3": "El usuario repite el uso",
+      "step4": "La marca se vuelve la opción predeterminada"
+    },
+    "proUnlock": {
+      "title": "Tu producto puede desbloquear un mejor cultivo",
+      "mechanic": "Compra el producto → desbloquea MyBud Pro",
+      "effect1": "Incentiva la compra",
+      "effect2": "Agrega valor al producto",
+      "effect3": "Crea diferenciación"
+    },
+    "demo": {
+      "title": "Velo en acción",
+      "cta": "Ve tu marca dentro de MyBud",
+      "tasksHint": "tu producto aparece en contexto, activado por la etapa de la planta",
+      "timelineHint": "cada uso es rastreado — el historial visible construye confianza en la marca",
+      "activityHint": "datos estructurados — vinculados a planta, etapa y dosificación",
+      "recommendationsHint": "recomendaciones basadas en el estado real del cultivo — no anuncios genéricos"
     },
     "finalCta": {
-      "title": "Forma parte del nuevo estándar de presencia en el cultivo.",
-      "text": "MyBud es el primer ecosistema que conecta marcas, breeders y fabricantes de equipos de forma ética, útil y trazable. Aquí, el marketing vuelve a ser legítimo, útil, ético y presente.",
+      "text": "Si quieres entender cómo se usa realmente tu producto,\nes aquí donde sucede.",
+      "primaryCta": "Ver demo",
+      "secondaryCta": "Hablar con nosotros",
       "description": "Completa el formulario y retornaremos con una evaluación inicial en hasta 1 día hábil.",
       "community": "Entre las primeras marcas en moldear el futuro del cultivo cannábico.",
-      "primaryCta": "Quiero integrar mi marca a MyBud",
-      "secondaryCta": "Quiero saber más",
       "form": {
         "namePlaceholder": "Nombre completo",
         "emailPlaceholder": "Email corporativo",
@@ -1482,7 +1475,7 @@
       "subtitle": "Cuéntanos más sobre tu objetivo (opcional)"
     },
     "footer": {
-      "tagline": "MyBud es el primer ecosistema que integra marcas, breeders, growers y asociaciones en un mismo estándar de trazabilidad y utilidad real.",
+      "tagline": "MyBud es donde las marcas se vuelven parte de la rutina del cultivador.",
       "unifier": "MyBud crece contigo — del cultivo individual a la industria cannábica.",
       "contact": "Contacto",
       "growers": "Cultivadores",

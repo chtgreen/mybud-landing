@@ -11,6 +11,7 @@ export {
   Bot,
   Brain,
   Building2,
+  Calculator,
   Check,
   CheckCircle2,
   ChevronDown,
@@ -25,6 +26,7 @@ export {
   FlaskConical,
   Flower2,
   Globe2,
+  LayoutGrid,
   Leaf,
   Lightbulb,
   Lock,
@@ -44,6 +46,7 @@ export {
   Server,
   Shield,
   Sprout,
+  Store,
   Target,
   Thermometer,
   Timer,
@@ -52,6 +55,3 @@ export {
   Wrench,
   X,
 } from 'lucide-react';
-
-
-

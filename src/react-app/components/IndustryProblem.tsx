@@ -1,51 +1,64 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
-import { AlertCircle, TrendingUp, Lightbulb } from './icons';
+import { Bot, Database, Target } from './icons';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="max-w-4xl mx-auto">
-          {/* Main Content */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900">
-              {t('industry.problem.title')}
-            </h2>
-            <p className="text-lg md:text-xl text-zinc-600 leading-relaxed">
-              {t('industry.problem.text')}
-            </p>
+    <section className="py-20 md:py-28 bg-zinc-900 text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+        <div className="text-center space-y-6 mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            Pare de Vender Mídia. <span className="text-emerald-400">Torne-se a Regra.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto font-medium">
+            O seu cliente compra a sua garrafa de nutrientes e some da sua vista.<br />
+            Ele erra o PPM, entra em <em>overfert</em>, queima a raiz e queima a sua reputação nos fóruns e grupos de Whatsapp.<br />
+            Seu PDF de dosagens virou peso de papel. Nós vamos transformar ele no motor do cultivo.
+          </p>
+        </div>
+
+        {/* The Exact Mechanism Request from the CEO */}
+        <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              O que nós fazemos exatamente?
+            </h3>
           </div>
 
-          {/* Key Points Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            {/* Truth Card */}
-            <div className="card p-8 border border-zinc-200 bg-white hover:border-zinc-300 transition-colors">
-              <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 bg-zinc-100 rounded-xl">
-                <AlertCircle className="w-7 h-7 text-zinc-600" />
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-emerald-500/10 via-emerald-500/50 to-emerald-500/10 z-0" />
+
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-emerald-500/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500/10 transition-colors">
+                <Database className="w-8 h-8 text-emerald-400" />
               </div>
-              <p className="text-lg font-semibold text-zinc-800 text-center leading-relaxed">
-                {t('industry.problem.truth')}
+              <h4 className="text-xl font-bold text-white mb-3">1. Mapeamento</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Pegamos a sua tabela oficial (Vega, Flora, Engorde, Flush).
               </p>
             </div>
 
-            {/* Solution Card */}
-            <div className="card p-8 border border-emerald-200 bg-gradient-to-br from-emerald-50/50 to-white hover:border-emerald-300 transition-colors">
-              <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 bg-emerald-100/80 rounded-xl">
-                <TrendingUp className="w-7 h-7 text-emerald-700" />
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-amber-500/30 flex items-center justify-center mb-6 group-hover:bg-amber-500/10 transition-colors">
+                <Bot className="w-8 h-8 text-amber-400" />
               </div>
-              <p className="text-lg font-semibold text-emerald-800 text-center leading-relaxed">
-                {t('industry.problem.solution')}
+              <h4 className="text-xl font-bold text-white mb-3">2. Digitalização</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Embarcamos a matemática exata de pH, EC e Mililitragem no algoritmo.
               </p>
             </div>
-          </div>
 
-          {/* Bottom Highlight */}
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-emerald-50/50 to-white rounded-2xl border border-emerald-200/50">
-              <Lightbulb className="w-6 h-6 text-emerald-700" />
-              <p className="text-base font-semibold text-zinc-800">
-                {t('industry.problem.highlight')}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-blue-500/30 flex items-center justify-center mb-6 group-hover:bg-blue-500/10 transition-colors">
+                <Target className="w-8 h-8 text-blue-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">3. Execução Guiada</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                O app notifica o usuário ditando exatamente qual frasco abrir e quantos ml aplicar.
               </p>
             </div>
           </div>
@@ -56,4 +69,3 @@ const IndustryProblem: FC = () => {
 };
 
 export default IndustryProblem;
-

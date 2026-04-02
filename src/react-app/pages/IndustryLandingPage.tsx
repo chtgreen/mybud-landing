@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -6,14 +6,12 @@ import { trackPageView, trackCTAClick } from '../lib/analytics';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
-import B2BLeadForm from '../components/B2BLeadForm';
 import HeroIndustry from '../components/HeroIndustry';
 import IndustryProblem from '../components/IndustryProblem';
-import IndustryWays from '../components/IndustryWays';
-import IndustryImpact from '../components/IndustryImpact';
-import IndustryLegitimacy from '../components/IndustryLegitimacy';
 import IndustryEcosystem from '../components/IndustryEcosystem';
 import IndustryFinalCTA from '../components/IndustryFinalCTA';
+import IndustryDeliverables from '../components/IndustryDeliverables';
+import IndustryDemo from '../components/IndustryDemo';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -24,22 +22,18 @@ export default function IndustryLandingPage() {
   useScrollEnhancement();
 
   useEffect(() => {
-    // Track page view with unified analytics (PostHog + GA4)
-    trackPageView(window.location.pathname, 'MyBud - Industry Landing Page');
-
-    // Legacy PostHog tracking
+    trackPageView(window.location.pathname, 'MyBud - Brands Landing Page');
     posthog.capture('industry_page_view', {
       language: currentLanguage
     });
   }, [currentLanguage]);
 
   const handleCTAClick = () => {
-    // Track CTA click with unified analytics (PostHog + GA4)
     trackCTAClick({
       ctaName: 'Schedule Industry Demo',
       ctaLocation: 'Hero Section',
       ctaType: 'button',
-      ctaText: 'Agendar Conversa',
+      ctaText: 'Talk to us',
       destinationUrl: INDUSTRY_CALENDAR_URL,
       customProperties: {
         page_type: 'industry',
@@ -48,48 +42,59 @@ export default function IndustryLandingPage() {
       }
     });
 
-    // Legacy PostHog tracking
     posthog.capture('industry_cta_clicked', {
       button: 'primary_cta',
       location: 'hero',
       action: 'calendar_redirect'
     });
 
-    // Redirect to calendar booking
     window.open(INDUSTRY_CALENDAR_URL, '_blank');
   };
+
+  const handleDemoClick = useCallback(() => {
+    trackCTAClick({
+      ctaName: 'Watch Demo',
+      ctaLocation: 'Industry Page',
+      ctaType: 'button',
+      ctaText: 'See live demo',
+      destinationUrl: '#demo',
+      customProperties: {
+        page_type: 'industry',
+        action: 'scroll_to_demo',
+        language: currentLanguage
+      }
+    });
+
+    const demoSection = document.getElementById('demo');
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [currentLanguage]);
 
   return (
     <div className="min-h-screen bg-white">
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
 
-      {/* Section 1: Hero - emerald gradient background */}
-      <HeroIndustry onCTAClick={handleCTAClick} />
-      
-      {/* Section 2: Problem - white */}
-      <IndustryProblem />
-      
-      {/* Section 3: Three Ways - white */}
-      <IndustryWays />
-      
-      {/* Section 4: Impact - gray-50 */}
-      <IndustryImpact />
-      
-      {/* Section 5: Legitimacy - gray-50 */}
-      <IndustryLegitimacy />
-      
-      {/* Section 6: Ecosystem - white (circle network with 4 connections only) */}
-      <IndustryEcosystem />
-      
-      {/* Section 7: Final CTA - white (simple, no gradient) */}
-      <IndustryFinalCTA onCTAClick={handleCTAClick} />
+      {/* Section 1: Hero — dark, bold */}
+      <HeroIndustry onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
 
-      {/* Section 8: Lead Form - gray */}
-      <B2BLeadForm background="gray" />
+      {/* Section 2: THE DEMO (ABOVE THE FOLD / CENTERED) */}
+      <IndustryDemo onCTAClick={handleCTAClick} />
+
+      {/* Section 3: Lead / Pain Point Agitation & Mechanism (Mapeamento -> Digitalização) */}
+      <IndustryProblem />
+
+      {/* Section 4: The 3 Pillars / Deliverables */}
+      <IndustryDeliverables />
+
+      {/* Section 5: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      <IndustryEcosystem />
+
+      {/* Section 6: Final CTA — dark */}
+      <IndustryFinalCTA onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
 
       <Footer />
     </div>
   );
-} 
-
+}
