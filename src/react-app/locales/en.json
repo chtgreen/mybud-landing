@@ -1992,6 +1992,12 @@
         "secondaryCta": "Talk to the team",
         "fullAppCta": "See in the full app",
         "vegSemana3": "Veg Week 3"
+      },
+      "demo": {
+        "title": "Your brand in the routine",
+        "subtitle": "Inside the cultivation routine.\nAppear at the exact moment of management.",
+        "cta": "Test your brand now",
+        "secondaryCta": "Talk to the team"
       }
     },
     "data": {

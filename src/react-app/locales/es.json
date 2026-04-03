@@ -1472,6 +1472,14 @@
         "message": "Así es como {brand} aparece dentro del cultivo.",
         "subMessage": "Cada cultivador que use MyBud verá tu producto en el momento exacto de uso.",
         "primaryCta": "Ver {brand} funcionando completo",
+        "secondaryCta": "Hablar con el equipo",
+        "fullAppCta": "Ver en la app completa",
+        "vegSemana3": "Veg Semana 3"
+      },
+      "demo": {
+        "title": "Tu marca en la rutina",
+        "subtitle": "Dentro de la rutina del cultivo.\nAparece en el momento exacto del manejo.",
+        "cta": "Prueba tu marca ahora",
         "secondaryCta": "Hablar con el equipo"
       }
     },
@@ -1523,6 +1531,92 @@
       "timelineHint": "cada uso es rastreado — el historial visible construye confianza en la marca",
       "activityHint": "datos estructurados — vinculados a planta, etapa y dosificación",
       "recommendationsHint": "recomendaciones basadas en el estado real del cultivo — no anuncios genéricos",
+      "mock": {
+        "tasks": {
+          "todayTasks": "tareas de hoy",
+          "wateringNutrients": "riego + nutrientes",
+          "vegWeek3": "Blue Dream — veg sem 3",
+          "phCheck": "verificación de ph",
+          "optimalRange": "6.3 — zona óptima",
+          "foliarSpray": "aspersión foliar",
+          "tomorrow": "programado — mañana 7am"
+        },
+        "timeline": {
+          "title": "línea de tiempo de la planta",
+          "today": "hoy",
+          "daysAgo3": "hace 3 días",
+          "weekAgo1": "hace 1 semana",
+          "weeksAgo2": "hace 2 semanas",
+          "day21": "día 21",
+          "day18": "día 18",
+          "day14": "día 14",
+          "day7": "día 7",
+          "firstFeed": "primera alimentación",
+          "stageChange": "cambio de etapa → vegetativo"
+        },
+        "activity": {
+          "title": "registrar actividad",
+          "watering": "riego",
+          "volume": "volumen",
+          "productsApplied": "productos aplicados",
+          "biofertilizer": "biofertilizante — orgánico",
+          "addProduct": "+ agregar producto",
+          "newWatering": "Nuevo riego",
+          "product": "Producto"
+        },
+        "recommendations": {
+          "title": "recomendaciones inteligentes",
+          "applyToday": "deberías aplicar {brand} hoy",
+          "basedOnStage": "basado en la fase (veg sem 3) y la última alimentación hace 3 días",
+          "suggested": "sugerido",
+          "info": "info",
+          "warning": "aviso",
+          "ecLow": "EC está levemente bajo en esta fase",
+          "ecTarget": "objetivo: 1.4–1.8 EC en fase vegetativa",
+          "increaseCalMag": "aumentar CalMag en floración",
+          "calciumBoost": "la transición a floración exige refuerzo de calcio",
+          "expertTip": "Consejo del experto",
+          "suggestion": "Deberías aplicar {brand} hoy"
+        },
+        "hub": {
+          "title": "Perfil de la marca",
+          "followers": "Seguidores",
+          "importPlan": "Importar Tabla Nutricional",
+          "featured": "Productos destacados",
+          "bio": "Nutrientes confiables para máximo rendimiento",
+          "follow": "Seguir marca"
+        },
+        "calculator": {
+          "title": "Calculadora de dosis",
+          "reservoir": "Tamaño del tanque",
+          "calculate": "Calcular Dosis",
+          "applyButton": "Aplicar en Tarea de Hoy",
+          "tankSize": "Tamaño del tanque"
+        },
+        "stickers": {
+          "title": "Stickers de la marca",
+          "dragAndDrop": "Arrastrar & Soltar Stickers",
+          "communityText": "Growers comparten sus plantas usando sus stickers oficiales.",
+          "poweredBy": "powered by"
+        },
+        "descriptions": {
+          "tasks": "Tu producto aparece exactamente cuando la planta lo necesita. Sin adivinanzas.",
+          "timeline": "Transparencia total. Mostramos la evolución real usando tus nutrientes.",
+          "activity": "Captura de datos: descubre el pH, EC y volumen exacto utilizado.",
+          "recommendations": "Alertas inteligentes guiando al cultivador a usar tu producto ahora.",
+          "hub": "El panel de tu marca. Deja que los growers importen tu tabla de nutrición.",
+          "calculator": "Digitalizamos tu tabla PDF convirtiéndola en una herramienta interactiva.",
+          "stickers": "¡Deja que los cultivadores difundan tu marca colocando tus stickers en sus fotos!"
+        },
+        "liveBadge": "En vivo",
+        "vegStageWeek3": "Vegetativo — Semana 3",
+        "nextTasks": "Próximas tareas",
+        "checkSoilPh": "Chequear pH del suelo",
+        "completedAgo": "Completado hace {time}",
+        "dayNum": "Día {num}",
+        "vegFertilization": "Fertilización vegetativa",
+        "stickersComingSoon": "Stickers pronto"
+      },
       "deliverables": {
         "title": "Lo que recibe tu marca",
         "subtitle": "Tres entregas concretas. Sin integración técnica.",
