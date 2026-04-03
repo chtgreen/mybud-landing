@@ -4,67 +4,66 @@ import { Target, CheckCircle2 } from './icons';
 
 const IndustryEcosystem: FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-zinc-900/50 relative border-b border-zinc-800">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.015)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(16,185,129,0.015)_1.5px,transparent_1.5px)] bg-[size:50px_50px]" />
+    <section className="py-32 md:py-48 bg-zinc-950 relative border-b border-zinc-900/50">
+      {/* 2026 Background Glows */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-5xl relative z-10">
-        <div className="bg-zinc-900/50 rounded-[48px] p-8 md:p-16 border border-zinc-800 shadow-2xl relative overflow-hidden">
-          {/* Subtle decoration */}
-          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="bg-zinc-900/20 backdrop-blur-3xl rounded-[60px] p-10 md:p-20 border border-zinc-800/60 shadow-2xl relative overflow-hidden group">
+          {/* Subtle light effect that follows text */}
+          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none group-hover:bg-emerald-500/15 transition-all duration-1000" />
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-black uppercase tracking-widest border border-emerald-500/20">
-                🚀 {t('industry.ecosystem.badge')}
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div className="space-y-12">
+              <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-emerald-500/5 text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em] border border-emerald-500/15">
+                {t('industry.ecosystem.badge')}
               </div>
 
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
+              <div className="space-y-6">
+                <h2 className="text-5xl md:text-6xl font-black text-white leading-[0.95] tracking-tight lowercase">
                   {t('industry.ecosystem.title')}
                 </h2>
-                <p className="text-xl text-zinc-400 font-medium leading-relaxed">
+                <p className="text-xl text-zinc-500 font-bold leading-relaxed lowercase opacity-70">
                   {t('industry.ecosystem.subtitle')}
                 </p>
               </div>
 
-              <div className="space-y-6 pt-4">
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-zinc-950/50 border border-zinc-800">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-white mb-1">{t('industry.ecosystem.benefit1.title')}</h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed">{t('industry.ecosystem.benefit1.desc')}</p>
+              <div className="space-y-4 pt-6">
+                {[1, 2].map((num) => (
+                  <div key={num} className="flex items-start gap-6 p-6 rounded-3xl bg-zinc-950/40 border border-zinc-800/50 hover:bg-zinc-950/60 hover:border-emerald-500/20 transition-all duration-500 group/item">
+                    <CheckCircle2 className="w-6 h-6 text-emerald-500/40 group-hover/item:text-emerald-500 flex-shrink-0 mt-0.5 transition-colors" />
+                    <div>
+                      <h4 className="font-bold text-white mb-2 lowercase text-lg tracking-tight transition-colors">{t(`industry.ecosystem.benefit${num}.title`)}</h4>
+                      <p className="text-sm text-zinc-500 font-medium leading-relaxed lowercase opacity-80">{t(`industry.ecosystem.benefit${num}.desc`)}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-zinc-950/50 border border-zinc-800">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-white mb-1">{t('industry.ecosystem.benefit2.title')}</h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed">{t('industry.ecosystem.benefit2.desc')}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="absolute -inset-1 blur-2xl bg-gradient-to-tr from-emerald-500/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-              <div className="bg-zinc-950 rounded-[40px] p-10 shadow-2xl border border-zinc-800 relative z-10 flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-3xl bg-emerald-500 mb-8 flex items-center justify-center shadow-[0_10px_20px_rgba(16,185,129,0.3)]">
-                  <Target className="w-10 h-10 text-zinc-950" />
+            {/* Premium 2026 High-Tech Card */}
+            <div className="relative group/card animate-in fade-in zoom-in-95 duration-1000">
+              <div className="absolute -inset-4 blur-3xl bg-emerald-500/10 opacity-30 group-hover/card:opacity-60 transition-opacity duration-1000" />
+              <div className="bg-zinc-950 rounded-[50px] p-12 shadow-[0_40px_80px_rgba(0,0,0,0.6)] border border-white/5 relative z-10 flex flex-col items-center text-center hover:border-emerald-500/30 transition-all duration-700">
+                <div className="w-24 h-24 rounded-[32px] bg-emerald-500/10 mb-10 flex items-center justify-center border border-emerald-500/20 group-hover/card:bg-emerald-500 group-hover/card:text-zinc-950 transition-all duration-700">
+                  <Target className="w-10 h-10 transition-transform group-hover/card:scale-110" />
                 </div>
-                <h3 className="text-2xl font-black text-white mb-2 tracking-tight">
+
+                <h3 className="text-3xl font-black text-white mb-4 tracking-tight lowercase">
                   {t('industry.ecosystem.card.line1')}
                 </h3>
-                <div className="w-8 h-1 bg-zinc-800 my-4 rounded-full" />
-                <h3 className="text-2xl font-black text-emerald-400 mb-6 tracking-tight">
+                <div className="w-12 h-0.5 bg-zinc-800 my-4 rounded-full group-hover/card:w-20 group-hover/card:bg-emerald-500/50 transition-all duration-500" />
+                <h3 className="text-3xl font-black text-emerald-400 mb-8 tracking-tight lowercase">
                   {t('industry.ecosystem.card.line2')}
                 </h3>
-                <p className="text-sm text-zinc-500 mt-2 leading-relaxed font-medium">
+
+                <p className="text-sm text-zinc-500 leading-relaxed font-bold lowercase opacity-70 px-4">
                   {t('industry.ecosystem.card.desc')}
                 </p>
 
-                <div className="mt-10 pt-8 border-t border-zinc-900 w-full">
-                  <div className="flex justify-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                <div className="mt-16 pt-8 border-t border-zinc-900/50 w-full">
+                  <div className="flex justify-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                     <div className="w-2 h-2 rounded-full bg-zinc-800" />
                     <div className="w-2 h-2 rounded-full bg-zinc-800" />
                   </div>

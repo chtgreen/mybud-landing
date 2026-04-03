@@ -1,62 +1,91 @@
-import { type FC } from 'react';
+import { type FC, useEffect, useRef } from 'react';
 import { t } from '../lib/i18n';
+import { MoveRight } from 'lucide-react';
 
 interface HeroIndustryProps {
   onCTAClick: () => void;
 }
 
 const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
-  return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-zinc-900/90 border-b border-zinc-800/50">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(16,185,129,0.03)_1.5px,transparent_1.5px)] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/20 via-transparent to-zinc-900" />
-      <div className="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-[20%] -right-[10%] w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
+  const bgRef = useRef<HTMLDivElement>(null);
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-6 mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tighter text-white lowercase">
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!bgRef.current) return;
+      const scrolled = window.scrollY;
+      bgRef.current.style.transform = `translateY(${scrolled * 0.15}px)`;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#050505] border-b border-white/5">
+      {/* 2026 Ultra-Premium Background */}
+      <div ref={bgRef} className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Cinematic Mesh Gradients */}
+        <div className="absolute top-[-20%] right-[-10%] w-[1200px] h-[1200px] bg-emerald-600/10 rounded-full blur-[200px] animate-pulse duration-[10000ms]" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-emerald-400/5 rounded-full blur-[180px]" />
+
+        {/* Strategic Grid for depth */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+          style={{ backgroundImage: 'linear-gradient(#34d399 1px, transparent 1px), linear-gradient(90deg, #34d399 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+
+        {/* Dynamic Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)]" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 pt-20">
+        <div className="max-w-6xl mx-auto text-center">
+
+          {/* Subtle Label with Live Status */}
+          <div className="flex justify-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl group cursor-default">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                industrial protocol infrastructure
+              </span>
+            </div>
+          </div>
+
+          {/* Headline - Bold, Lowercase, High-Contrast */}
+          <div className="space-y-12 mb-24">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-[-0.05em] text-white lowercase animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-150">
               {t('industry.hero.title')}
             </h1>
-            <p className="text-base md:text-lg text-zinc-500 max-w-lg mx-auto leading-relaxed font-bold lowercase opacity-80">
+
+            <div className="flex justify-center animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent" />
+            </div>
+
+            <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
               {t('industry.hero.subtitle')}
             </p>
           </div>
 
-          {/* Actions */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+          {/* Cinematic Actions */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
             <button
-              type="button"
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-10 py-4 rounded-2xl text-lg font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-[0_15px_30px_rgba(16,185,129,0.3)] transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-14 py-5 rounded-full text-xl font-black bg-white text-black hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 flex items-center justify-center gap-4 group shadow-[0_20px_60px_rgba(255,255,255,0.1)]"
             >
-              Ver minha marca
+              ver minha marca
+              <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
-              type="button"
               onClick={onCTAClick}
-              className="w-full sm:w-auto px-10 py-4 rounded-2xl text-lg font-bold text-zinc-300 border border-zinc-700 hover:border-zinc-500 hover:text-white transition-all bg-zinc-900/40 backdrop-blur-xl flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-14 py-5 rounded-full text-xl font-bold text-white border border-white/20 bg-white/5 backdrop-blur-3xl hover:border-white/40 hover:bg-white/10 transition-all flex items-center justify-center gap-3 lowercase"
             >
-              Falar com o time
+              falar com o time
             </button>
           </div>
 
-          {/* Visual Trust Indicator */}
-          <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 max-w-3xl mx-auto mt-24 pt-10 border-t border-zinc-800/50">
-            <div className="text-center group">
-              <p className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] mb-1 opacity-70">Execution Engine</p>
-              <p className="text-sm font-bold text-zinc-500 lowercase">protocolo → tarefa</p>
-            </div>
-            <div className="text-center group">
-              <p className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] mb-1 opacity-70">Retention</p>
-              <p className="text-sm font-bold text-zinc-500 lowercase">marca no cultivo</p>
-            </div>
-            <div className="text-center group">
-              <p className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] mb-1 opacity-70">Data Ops</p>
-              <p className="text-sm font-bold text-zinc-500 lowercase">uso real</p>
-            </div>
+          {/* Premium Vertical Line */}
+          <div className="mt-32 flex justify-center animate-in fade-in duration-1000 delay-1000">
+            <div className="w-px h-24 bg-gradient-to-b from-emerald-500/60 via-emerald-500/10 to-transparent" />
           </div>
         </div>
       </div>

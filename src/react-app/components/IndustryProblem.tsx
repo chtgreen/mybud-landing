@@ -1,90 +1,132 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
+import { MoveRight } from 'lucide-react';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-20 md:py-28 bg-zinc-900 text-white relative border-y border-zinc-800">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(255,255,255,0.015)_1.5px,transparent_1.5px)] bg-[size:50px_50px]" />
+    <section className="py-32 md:py-56 bg-[#050505] text-white relative border-b border-white/5">
+      {/* Dynamic Cinematic Layering */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(16,185,129,0.06)_0%,transparent_40%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
-        {/* Impact Headline */}
-        <div className="text-center md:text-left max-w-3xl mb-20">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
+        {/* Modern Section Tag */}
+        <div className="flex justify-center md:justify-start mb-16 animate-in fade-in slide-in-from-left-4 duration-1200">
+          <div className="px-5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400 backdrop-blur-3xl">
+            problem • solution
+          </div>
+        </div>
+
+        {/* Cinematic Headline Layout - High Readability */}
+        <div className="text-center md:text-left max-w-6xl mb-40 group">
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white mb-16 tracking-[-0.04em] leading-[0.8] lowercase animate-in fade-in slide-in-from-bottom-12 duration-1000">
             {t('industry.problem.title')}
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <p className="text-lg text-zinc-400 font-medium leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-20 md:gap-32 animate-in fade-in slide-in-from-bottom-12 duration-1200 delay-300">
+            <p className="text-2xl text-zinc-200 font-bold leading-relaxed lowercase border-l-2 border-emerald-500/30 pl-10 shadow-[0_0_20px_rgba(255,255,255,0.02)]">
               {t('industry.problem.intro')}
             </p>
-            <p className="text-lg text-zinc-500 font-medium leading-relaxed">
+            <p className="text-2xl text-zinc-400 font-medium leading-relaxed lowercase opacity-80 backdrop-blur-sm">
               {t('industry.problem.narrative')}
             </p>
           </div>
         </div>
 
-        {/* Visual Transformation */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+        {/* 2026 Visual Metaphor Cards - Refined for Contrast */}
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch mb-48">
           {/* Legacy Side */}
-          <div className="bg-zinc-900/50 rounded-3xl p-8 border border-zinc-800 relative group overflow-hidden">
-            <div className="absolute top-0 right-0 p-3 bg-zinc-800 rounded-bl-2xl">
-              <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Legacy</span>
+          <div className="bg-zinc-900/10 backdrop-blur-3xl rounded-[60px] p-12 border border-white/[0.03] relative group flex flex-col justify-between hover:bg-zinc-900/20 transition-all duration-700">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+              <span className="text-[10px] font-black text-zinc-600 uppercase tracking-widest">legacy static workflow</span>
             </div>
-            <p className="text-zinc-500 font-mono text-sm mb-4">nutrition_table_v2.pdf</p>
-            <div className="space-y-3 opacity-40">
-              <div className="h-2 bg-zinc-700 rounded-full w-3/4" />
-              <div className="h-2 bg-zinc-700 rounded-full w-1/2" />
-              <div className="h-2 bg-zinc-700 rounded-full w-2/3" />
+
+            <div className="space-y-12 transition-transform duration-700 group-hover:translate-y-[-5px]">
+              <p className="text-zinc-500 font-mono text-lg border-b border-white/[0.05] pb-6">nutrition_table_v2.pdf</p>
+              <div className="space-y-4 opacity-[0.05]">
+                <div className="h-0.5 bg-white rounded-full w-full" />
+                <div className="h-0.5 bg-white rounded-full w-4/5" />
+                <div className="h-0.5 bg-white rounded-full w-5/6" />
+                <div className="h-0.5 bg-white rounded-full w-3/4" />
+              </div>
+              <p className="text-zinc-500 font-bold text-lg lowercase italic leading-relaxed pt-6">{t('industry.problem.pdfNote')}</p>
             </div>
-            <p className="mt-8 text-zinc-400 font-bold italic">{t('industry.problem.pdfNote')}</p>
+
+            <div className="mt-24 opacity-20">
+              <div className="w-full h-px bg-white/5" />
+            </div>
           </div>
 
-          {/* MyBud Side */}
-          <div className="bg-emerald-500/5 rounded-3xl p-8 border-2 border-emerald-500/30 relative group shadow-[0_20px_40px_rgba(16,185,129,0.1)]">
-            <div className="absolute top-0 right-0 p-3 bg-emerald-500/20 rounded-bl-2xl">
-              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Powered by MyBud</span>
+          {/* New Execution Card - Ultra Contrast "WOW" Side */}
+          <div className="bg-[#0c0c0c] rounded-[60px] p-12 border border-emerald-500/40 relative group shadow-[0_0_120px_rgba(16,185,129,0.08)] flex flex-col hover:border-emerald-500 transition-all duration-700 overflow-hidden">
+            {/* Mesh light effect */}
+            <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] bg-emerald-500/10 blur-[80px] group-hover:bg-emerald-500/20 transition-all duration-1000" />
+
+            <div className="flex items-center gap-3 mb-12 relative z-10">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,1)]" />
+              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">mybud active protocol engine</span>
             </div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-zinc-950">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+
+            <div className="flex flex-col gap-12 relative z-10 mb-20">
+              <div className="flex items-center gap-8">
+                <div className="w-20 h-20 rounded-[30px] bg-emerald-500 flex items-center justify-center text-zinc-950 group-hover:scale-110 transition-all duration-700 shadow-[0_20px_40px_rgba(16,185,129,0.3)]">
+                  <MoveRight className="w-10 h-10" />
+                </div>
+                <h4 className="text-4xl font-black text-white lowercase tracking-tight">{t('industry.problem.solution')}</h4>
               </div>
-              <h4 className="text-xl font-black text-white">{t('industry.problem.solution')}</h4>
+
+              <div className="space-y-6">
+                <div className="bg-white/[0.04] backdrop-blur-3xl rounded-3xl p-8 border border-white/5 flex justify-between items-center group-hover:bg-white/[0.08] group-hover:border-emerald-500/20 transition-all duration-500">
+                  <span className="text-xl font-black text-white lowercase tracking-wide">apply grow a</span>
+                  <span className="text-sm font-black text-emerald-400 border-2 border-emerald-500/40 px-6 py-2 rounded-full uppercase tracking-widest bg-emerald-500/5 shadow-[0_0_20px_rgba(16,185,129,0.1)]">2ml/L</span>
+                </div>
+                <div className="bg-white/1 backdrop-blur-sm rounded-3xl p-8 border border-white/5 opacity-40 group-hover:opacity-80 transition-opacity">
+                  <span className="text-lg font-bold text-zinc-400 lowercase italic">week 4 • vegetative transition</span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-4">
-              <div className="bg-zinc-900/80 rounded-xl p-4 border border-emerald-500/20 flex justify-between items-center">
-                <span className="text-sm font-bold text-emerald-400">Apply Grow A</span>
-                <span className="text-xs font-black text-white bg-emerald-500 px-2 py-0.5 rounded">2ml/L</span>
-              </div>
-              <div className="bg-zinc-900/80 rounded-xl p-4 border border-emerald-500/10 opacity-60">
-                <span className="text-sm font-bold text-zinc-400">Week 4 - Flush</span>
+
+            <div className="mt-auto pt-10 border-t border-white/5 relative z-10">
+              <div className="flex items-center gap-4">
+                <div className="flex h-1.5 w-1.5">
+                  <div className="animate-ping absolute h-1.5 w-1.5 rounded-full bg-emerald-400/50" />
+                  <div className="relative h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                </div>
+                <span className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.5em]">active infrastructure status</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="order-2 md:order-1 grid md:grid-cols-3 gap-16 pt-24 border-t border-zinc-800/80">
+        {/* Partner / Solid Proof Section (Wow Animation Placeholder) */}
+        <div className="flex flex-col items-center gap-16 mb-48 animate-in fade-in duration-1000 delay-500">
+          <p className="text-[10px] font-black text-zinc-700 uppercase tracking-[0.8em]">the standard for industrial scale</p>
+          <div className="flex flex-wrap justify-center gap-x-24 gap-y-12 opacity-30 grayscale hover:grayscale-0 transition-all hover:opacity-100 duration-1000">
+            {/* These are conceptual partner placeholders with 2026 tech aesthetics */}
+            <div className="text-4xl font-black text-white lowercase tracking-tighter opacity-70 hover:opacity-100 transition-opacity">Ceres Core</div>
+            <div className="text-4xl font-black text-white lowercase tracking-tighter opacity-70 hover:opacity-100 transition-opacity">Novagrow</div>
+            <div className="text-4xl font-black text-white lowercase tracking-tighter opacity-70 hover:opacity-100 transition-opacity">Apex Fert</div>
+            <div className="text-4xl font-black text-white lowercase tracking-tighter opacity-70 hover:opacity-100 transition-opacity">Soil Logic</div>
+          </div>
+        </div>
+
+        {/* Large Scale Transitions */}
+        <div className="grid md:grid-cols-3 gap-32 pt-40 border-t border-white/5">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="space-y-6">
-              <div className="flex items-center gap-5">
-                <div className="w-12 h-12 rounded-xl bg-zinc-950/50 border border-zinc-800 flex items-center justify-center">
-                  <span className="text-xl font-black text-emerald-500">0{i}</span>
-                </div>
-                <h3 className="text-xl font-black text-white tracking-tight">{t(`industry.howItWorks.step${i}Title`)}</h3>
+            <div key={i} className="group relative">
+              <div className="absolute top-[-140px] left-[-30px] text-[240px] font-black text-zinc-800/[0.05] select-none group-hover:text-emerald-500/[0.05] transition-all duration-1000 pointer-events-none">
+                {i}
               </div>
-              <p className="text-zinc-500 leading-relaxed font-bold text-sm">
-                {t(`industry.howItWorks.step${i}`)}
-              </p>
+              <div className="relative z-10 pt-16">
+                <h3 className="text-3xl font-black text-white tracking-tight lowercase mb-8 group-hover:translate-x-2 transition-transform duration-700">
+                  {t(`industry.howItWorks.step${i}Title`)}
+                </h3>
+                <p className="text-lg text-zinc-400 leading-relaxed font-bold lowercase group-hover:text-zinc-200 transition-colors">
+                  {t(`industry.howItWorks.step${i}`)}
+                </p>
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Frictionless Footer */}
-        <div className="mt-20 py-6 px-8 rounded-2xl bg-zinc-900/30 border border-zinc-800 text-center">
-          <p className="text-sm text-emerald-500/70 font-black uppercase tracking-[0.3em]">
-            {t('industry.howItWorks.noTech')}
-          </p>
         </div>
 
       </div>
