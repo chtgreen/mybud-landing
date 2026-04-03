@@ -1871,16 +1871,20 @@
     "hero": {
       "badge": "The app growers use to grow",
       "title": "Your brand inside the cultivation.\nAs a rule.",
-      "subtitle": "your protocol becomes routine.",
+      "subtitle": "Your protocol becomes real execution.",
       "cta": "See my brand",
       "secondaryCta": "Talk to the team",
       "words": {
-        "suggestion": "suggestion.",
-        "presence": "presence.",
-        "routine": "routine.",
-        "plan": "plan.",
-        "watering": "watering.",
-        "reference": "reference."
+        "suggestion": "suggestion",
+        "presence": "presence",
+        "routine": "routine",
+        "plan": "plan",
+        "belonging": "belonging",
+        "representation": "representation",
+        "instructions": "instructions",
+        "nutritionalPlan": "nutritional plan",
+        "usageSuggestion": "usage suggestion",
+        "dosage": "dosage"
       }
     },
     "reframe": {
@@ -1920,8 +1924,8 @@
       "punchline": "Your product appears at the exact moment of watering."
     },
     "problem": {
-      "title": "Stop selling media. Become the standard.",
-      "intro": "Your customer buys the bottle of nutrients and disappears from your sight.",
+      "title": "Today, your brand teaches.\nBut doesn't follow through.",
+      "intro": "The customer buys. And you lose visibility.\nMore consistent usage = more repurchase.",
       "pain1": "Gets dose wrong",
       "pain2": "Mixes incorrectly",
       "pain3": "Burns the plant",
@@ -2009,7 +2013,7 @@
       "subtitle": "License MyBud together with your product. The customer buys your fertilizer and gets app access.",
       "benefit1": {
         "title": "More repurchase",
-        "desc": "To keep app access, the grower can't switch brands."
+        "desc": "To keep the access, the grower continues to use your brand."
       },
       "benefit2": {
         "title": "More retention",

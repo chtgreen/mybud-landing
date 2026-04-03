@@ -1362,16 +1362,20 @@
     "hero": {
       "badge": "La app que los growers usan para cultivar",
       "title": "Tu marca dentro del cultivo.\nComo regla.",
-      "subtitle": "tu protocolo se convierte en rutina.",
+      "subtitle": "Tu protocolo se convierte em ejecución real.",
       "cta": "Ver mi marca",
       "secondaryCta": "Hablar con el equipo",
       "words": {
-        "suggestion": "sugerencia.",
-        "presence": "presencia.",
-        "routine": "rutina.",
-        "plan": "plan.",
-        "watering": "riego.",
-        "reference": "referencia."
+        "suggestion": "sugerencia",
+        "presence": "presencia",
+        "routine": "rutina",
+        "plan": "plan",
+        "belonging": "pertenencia",
+        "representation": "representación",
+        "instructions": "instrucciones",
+        "nutritionalPlan": "plan nutricional",
+        "usageSuggestion": "sugerencia de uso",
+        "dosage": "dosificación"
       }
     },
     "reframe": {

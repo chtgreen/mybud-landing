@@ -1,5 +1,5 @@
 import { useState, useEffect, type FC } from 'react';
-import { t } from '../lib/i18n';
+import { tObject } from '../lib/i18n';
 import { MoveRight } from 'lucide-react';
 
 interface HeroIndustryProps {
@@ -7,16 +7,26 @@ interface HeroIndustryProps {
 }
 
 const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
-  // Senior Marketing Words: Focusing on Authority, Habit, and the bottom line (Recompra)
-  const words = ['rega.', 'regra.', 'sugestão.', 'plano.', 'presença.', 'branding.', 'referência.', 'recompra.'];
+  const [words, setWords] = useState<string[]>([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(words[0]);
+  const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
+    const heroWords = tObject('industry.hero.words');
+    const wordList = Object.values(heroWords);
+    if (wordList.length > 0) {
+      setWords(wordList);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (words.length === 0) return;
+
     const handleType = () => {
-      const fullText = words[currentWordIndex];
+      const baseText = words[currentWordIndex];
+      const fullText = `${baseText}.`;
 
       if (isDeleting) {
         setDisplayText(fullText.substring(0, displayText.length - 1));
@@ -27,7 +37,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
       }
 
       if (!isDeleting && displayText === fullText) {
-        setTimeout(() => setIsDeleting(true), 2500); // Slightly longer pause on full words
+        setTimeout(() => setIsDeleting(true), 2500);
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
@@ -40,73 +50,73 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
   }, [displayText, isDeleting, currentWordIndex, words, typingSpeed]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-zinc-950 text-white border-b border-white/5">
-      {/* Cinematic 2026 Dark Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-950 text-white border-b border-white/5 font-primary">
+
+      {/* Cinematic Tech Backdrop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[1000px] h-[1000px] bg-emerald-600/10 rounded-full blur-[200px] opacity-40 animate-pulse" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] bg-emerald-400/5 rounded-full blur-[140px] opacity-20" />
-
-        {/* Subtle grid for a technical, software feel */}
-        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
-          style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,9,11,0.8)_100%)]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.03)_0%,transparent_70%)]" />
+        <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-emerald-600/5 rounded-full blur-[160px] opacity-20" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-10">
-        <div className="max-w-6xl mx-auto text-center">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col items-start text-left">
 
-          {/* Status Label */}
-          <div className="flex justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1200">
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl group cursor-default">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
-              </span>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 group-hover:text-zinc-300 transition-colors">
+          {/* Status Badge */}
+          <div className="mb-12 animate-in fade-in slide-in-from-left-4 duration-1200 transition-all">
+            <div className="flex items-center gap-3 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 backdrop-blur-xl group">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500">
                 execução dentro do cultivo
               </span>
             </div>
           </div>
 
-          {/* Headline - High-Impact Marketing Copy */}
-          <div className="space-y-10 mb-20 px-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-white lowercase animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-150">
-              sua marca dentro do cultivo.<br />
-              como <span className="relative inline-block text-white">
-                <span className="absolute inset-x-0 bottom-1 h-[30%] bg-emerald-500/30 -z-10 animate-in fade-in duration-1000" />
-                {displayText}
-                <span className="inline-block w-[2px] h-[0.9em] bg-emerald-500 ml-1 translate-y-[0.1em] animate-pulse" />
-              </span>
+          {/* Justified Headline - White with Minimal Glow */}
+          <div className="flex flex-col items-start justify-center mb-16 w-full">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-white lowercase flex flex-col items-start select-none w-full">
+              <div className="flex justify-between w-full md:w-auto md:gap-x-12 lg:gap-x-20">
+                <span>sua</span>
+                <span>marca</span>
+                <span>dentro</span>
+                <span>do</span>
+              </div>
+              <div className="flex items-center flex-wrap gap-x-4 md:gap-x-8">
+                <span>cultivo. como</span>
+                <div className="relative h-[1.1em] flex items-center justify-start min-w-[300px]">
+                  <span
+                    className="text-white drop-shadow-[0_0_20px_rgba(16,185,129,0.4)] animate-in fade-in duration-300"
+                  >
+                    {displayText}
+                  </span>
+                  <span className="w-1.5 h-[0.8em] bg-emerald-500 ml-1 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                </div>
+              </div>
             </h1>
-
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-500">
-              o MyBud garante que seu produto seja usado do jeito certo.<br />
-              todo dia. até a colheita. até a recompra.
-            </p>
           </div>
 
-          {/* Premium Actions */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-700">
+          {/* Action Buttons - Per Image Standard */}
+          <div className="flex flex-col md:flex-row items-center gap-6 animate-in fade-in slide-in-from-left-8 duration-1200 delay-500 w-full md:w-auto mb-20">
             <button
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-12 py-4 rounded-full text-lg font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 flex items-center justify-center gap-3 group shadow-[0_20px_60px_rgba(16,185,129,0.15)]"
+              className="w-full md:w-auto px-14 py-5 rounded-full text-xl font-black bg-white text-zinc-950 hover:bg-zinc-100 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
               ver minha marca
-              <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+              <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
               onClick={onCTAClick}
-              className="w-full sm:w-auto px-12 py-4 rounded-full text-lg font-bold text-white border border-white/20 bg-white/5 backdrop-blur-3xl hover:border-white/40 hover:bg-white/10 transition-all flex items-center justify-center gap-2 lowercase"
+              className="w-full md:w-auto px-14 py-5 rounded-full text-xl font-bold text-white border border-white/20 bg-white/5 backdrop-blur-3xl hover:bg-white/10 transition-all flex items-center justify-center gap-3 lowercase"
             >
               falar com o time
             </button>
           </div>
-
-          <div className="mt-24 flex justify-center animate-in fade-in duration-1000 delay-1000">
-            <div className="w-px h-16 bg-gradient-to-b from-emerald-500/40 via-emerald-500/10 to-transparent" />
-          </div>
         </div>
+      </div>
+
+      {/* Persistence Discovery Indicator */}
+      <div className="absolute bottom-12 inset-x-0 flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1200 delay-1000">
+        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500">discovery how</span>
+        <div className="w-px h-12 bg-gradient-to-b from-emerald-500 via-emerald-500/40 to-transparent animate-bounce" />
       </div>
     </section>
   );

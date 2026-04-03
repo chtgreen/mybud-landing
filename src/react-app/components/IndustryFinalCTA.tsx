@@ -26,7 +26,7 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
               a regra do cultivo.<br />
               <span className="text-emerald-500 italic">digitalizada.</span>
             </h2>
-            <p className="text-xl md:text-2xl text-zinc-500 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-80 backdrop-blur-sm">
+            <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 backdrop-blur-sm">
               sua marca não precisa de anúncios. precisa de execução consistente.
             </p>
           </div>
@@ -48,16 +48,11 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
             </button>
           </div>
 
-          {/* Solid Tech Footer Info */}
-          <div className="pt-32 flex flex-col items-center gap-6">
-            <div className="flex justify-center gap-3">
-              {[1, 2, 3].map(i => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-zinc-200" />
-              ))}
-            </div>
-            <p className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.5em] opacity-80">
-              mybud infrastructure
-            </p>
+          {/* Simple decoration */}
+          <div className="pt-32 flex justify-center gap-3">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-zinc-200" />
+            ))}
           </div>
         </div>
       </div>

@@ -395,7 +395,11 @@
           "temperatura",
           "floração",
           "amarelecimento",
-          "pragas"
+          "pragas",
+          "instruções",
+          "plano nutricional",
+          "sugestão de uso",
+          "dosagem"
         ],
         "more": "+100 outras"
       },
@@ -1907,16 +1911,20 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "Sua marca dentro do cultivo.\nComo regra.",
-      "subtitle": "seu protocolo vira rotina.",
+      "subtitle": "Seu protocolo vira execução real.",
       "cta": "Ver minha marca",
       "secondaryCta": "Falar com o time",
       "words": {
-        "suggestion": "sugestão.",
-        "presence": "presença.",
-        "routine": "rotina.",
-        "plan": "plano.",
-        "watering": "rega.",
-        "reference": "referência."
+        "suggestion": "sugestão",
+        "presence": "presença",
+        "routine": "rotina",
+        "plan": "plano",
+        "belonging": "pertencimento",
+        "representation": "representação",
+        "instructions": "instruções",
+        "nutritionalPlan": "plano nutricional",
+        "usageSuggestion": "sugestão de uso",
+        "dosage": "dosagem"
       }
     },
     "experience": {
@@ -2001,7 +2009,7 @@
     },
     "problem": {
       "title": "Hoje, sua marca ensina.\nMas não acompanha.",
-      "intro": "O cliente compra.\nE você perde visibilidade.\nUso mais consistente = mais recompra.",
+      "intro": "O cliente compra. E você perde visibilidade.\nUso mais consistente = mais recompra.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
       "pain3": "Culpa sua marca",

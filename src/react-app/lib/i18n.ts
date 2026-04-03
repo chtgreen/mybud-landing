@@ -58,15 +58,15 @@ const loadTranslations = async (lang: Language): Promise<TranslationTree> => {
   if (translationsCache.has(lang)) {
     return translationsCache.get(lang)!;
   }
-  
+
   try {
     const response = await import(`../locales/${lang}.json`);
     const data = (response.default || response) as unknown;
     const translations = isTranslationTree(data) ? (data as TranslationTree) : {};
-    
+
     // Store in cache for future use
     translationsCache.set(lang, translations);
-    
+
     return translations;
   } catch (err) {
     console.warn(
@@ -83,7 +83,7 @@ const loadTranslations = async (lang: Language): Promise<TranslationTree> => {
 // Detect browser language
 export const detectBrowserLanguage = (): Language => {
   if (typeof window === 'undefined') return DEFAULT_LANGUAGE;
-  
+
   const browserLang = navigator.language.split('-')[0] as Language;
   return SUPPORTED_LANGUAGES.includes(browserLang) ? browserLang : DEFAULT_LANGUAGE;
 };
@@ -108,7 +108,7 @@ export const isIndustry = (): boolean => currentNamespace === 'industry';
 export const setCurrentLanguage = async (lang: Language): Promise<void> => {
   currentLanguage = lang;
   loadedTranslations = await loadTranslations(lang);
-  
+
   if (typeof window !== 'undefined') {
     localStorage.setItem('selectedLanguage', lang);
     document.documentElement.lang = lang;
@@ -121,14 +121,14 @@ export const initializeLanguage = async (): Promise<Language> => {
     await setCurrentLanguage(DEFAULT_LANGUAGE);
     return DEFAULT_LANGUAGE;
   }
-  
+
   const savedLanguage = localStorage.getItem('selectedLanguage') as Language;
   const detectedLanguage = detectBrowserLanguage();
-  
-  const initialLanguage = savedLanguage && SUPPORTED_LANGUAGES.includes(savedLanguage) 
-    ? savedLanguage 
+
+  const initialLanguage = savedLanguage && SUPPORTED_LANGUAGES.includes(savedLanguage)
+    ? savedLanguage
     : detectedLanguage;
-  
+
   await setCurrentLanguage(initialLanguage);
   return initialLanguage;
 };
@@ -209,6 +209,27 @@ const resolveArray = (key: string): string[] | undefined => {
   return undefined;
 };
 
+const resolveObject = (key: string): Record<string, string> | undefined => {
+  const keys = key.split('.');
+
+  const namespaceTree = isTranslationTree(loadedTranslations[currentNamespace])
+    ? (loadedTranslations[currentNamespace] as TranslationTree)
+    : undefined;
+  const namespacedValue = resolveTranslation(namespaceTree, keys);
+  if (isTranslationTree(namespacedValue)) return namespacedValue as Record<string, string>;
+
+  const b2cTree = isTranslationTree(loadedTranslations.b2c)
+    ? (loadedTranslations.b2c as TranslationTree)
+    : undefined;
+  const b2cValue = resolveTranslation(b2cTree, keys);
+  if (isTranslationTree(b2cValue)) return b2cValue as Record<string, string>;
+
+  const fallbackValue = resolveTranslation(loadedTranslations, keys);
+  if (isTranslationTree(fallbackValue)) return fallbackValue as Record<string, string>;
+
+  return undefined;
+};
+
 export const tArray = (key: string, lang?: Language): string[] => {
   const targetLang = lang || currentLanguage;
 
@@ -224,11 +245,26 @@ export const tArray = (key: string, lang?: Language): string[] => {
   return [];
 };
 
+export const tObject = (key: string, lang?: Language): Record<string, string> => {
+  const targetLang = lang || currentLanguage;
+
+  if (targetLang !== currentLanguage && Object.keys(loadedTranslations).length === 0) {
+    console.warn(`Translations for ${targetLang} not loaded, using empty object fallback: ${key}`);
+    return {};
+  }
+
+  const value = resolveObject(key);
+  if (value && !Array.isArray(value)) return value;
+
+  console.warn(`Translation object not found for key: ${key}, language: ${targetLang}, namespace: ${currentNamespace}`);
+  return {};
+};
+
 // Get language name for display
 export const getLanguageName = (lang: Language): string => {
   const names = {
     pt: 'Português',
-    en: 'English', 
+    en: 'English',
     es: 'Español'
   };
   return names[lang];
