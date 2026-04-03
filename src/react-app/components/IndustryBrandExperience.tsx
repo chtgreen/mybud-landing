@@ -242,10 +242,10 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
   };
 
   return (
-    <section id="brand-experience" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
-      <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+    <section id="brand-experience" className="py-24 md:py-32 bg-zinc-900 overflow-hidden relative">
+      {/* Background patterns - lightened */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.02)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(16,185,129,0.02)_1.5px,transparent_1.5px)] bg-[size:40px_40px]" />
+      <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
 
@@ -253,25 +253,17 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
         {step === 'demo' && (
           <div className="flex flex-col items-center gap-16 w-full animate-in fade-in duration-1000">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-              <div className="order-2 lg:order-1 relative group">
-                <div className="absolute -inset-10 bg-emerald-500/10 blur-[100px] rounded-full opacity-60" />
+              <div className="order-2 lg:order-1 relative">
+                <div className="absolute -inset-10 bg-emerald-500/5 blur-[100px] rounded-full opacity-40" />
                 <PhoneFrame brandName="" view={demoView} />
-                <div className="absolute -right-8 top-1/4 bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl animate-pulse">
-                  <p className="text-[10px] font-black text-emerald-500 uppercase mb-1">
-                    {demoView === 'tasks' ? 'Tarefas Reais' : 'Cálculo Direto'}
-                  </p>
-                  <p className="text-xs font-bold text-white leading-tight">
-                    {demoView === 'tasks' ? 'Protocolo vira ação.' : 'Seu produto na dose certa.'}
-                  </p>
-                </div>
               </div>
 
               <div className="order-1 lg:order-2 space-y-8 text-center lg:text-left">
                 <div className="space-y-4">
-                  <h2 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter">
+                  <h2 className="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
                     {t('industry.experience.headline')}
                   </h2>
-                  <p className="text-xl text-zinc-400 font-medium leading-relaxed">
+                  <p className="text-lg text-zinc-400 font-bold leading-relaxed">
                     {t('industry.experience.sub')}
                   </p>
                 </div>
@@ -279,10 +271,10 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                 <div className="flex flex-col gap-4">
                   <button
                     onClick={() => setStep('form-brand')}
-                    className="w-full py-6 rounded-2xl bg-emerald-500 text-white font-black text-xl hover:bg-emerald-400 shadow-[0_20px_40px_rgba(16,185,129,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-4"
+                    className="w-full py-5 rounded-2xl bg-emerald-500 text-zinc-950 font-black text-lg hover:bg-emerald-400 shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3"
                   >
-                    {t('industry.experience.form.cta')}
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    Ver minha marca
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </button>

@@ -1906,9 +1906,9 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "Sua marca dentro do cultivo.\nNão como anúncio. Como regra.",
-      "subtitle": "Seu protocolo vira execução.\nNo momento certo. Na dose certa.",
-      "cta": "Testar minha marca",
+      "title": "Sua marca dentro do cultivo.\nComo regra.",
+      "subtitle": "Seu protocolo vira execução.",
+      "cta": "Ver minha marca",
       "secondaryCta": "Falar com o time",
       "visual": {
         "left": "Sem MyBud",
@@ -1936,8 +1936,8 @@
       }
     },
     "experience": {
-      "headline": "Dentro da rotina do cultivo",
-      "sub": "Sua marca aparece assim no momento exato do manejo.",
+      "headline": "Sua marca na rotina",
+      "sub": "Apareça no momento exato do manejo.",
       "form": {
         "headline": "Teste sua marca no MyBud",
         "step1Headline": "Qual o nome da sua marca?",
@@ -1974,7 +1974,7 @@
         "phMeta": "Meta: 6.0–6.5",
         "message": "Sua marca aparece assim dentro da rotina do cultivo.",
         "subMessage": "Cada grower que usar o MyBud vai ver seu produto no momento exato de uso.",
-        "primaryCta": "Quero isso para minha marca",
+        "primaryCta": "Quero isso",
         "secondaryCta": "Testar isso com meus produtos",
         "fullAppCta": "Ver no app completo"
       }

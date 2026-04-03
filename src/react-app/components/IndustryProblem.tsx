@@ -3,8 +3,8 @@ import { t } from '../lib/i18n';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-20 md:py-28 bg-zinc-950 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="py-20 md:py-28 bg-zinc-900 text-white relative border-y border-zinc-800">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(255,255,255,0.015)_1.5px,transparent_1.5px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
 
@@ -64,15 +64,16 @@ const IndustryProblem: FC = () => {
           </div>
         </div>
 
-        {/* 3 Step Workflow */}
-        <div className="grid md:grid-cols-3 gap-12 pt-16 border-t border-zinc-900">
+        <div className="order-2 md:order-1 grid md:grid-cols-3 gap-16 pt-24 border-t border-zinc-800/80">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="space-y-4">
-              <div className="flex items-center gap-4">
-                <span className="text-4xl font-black text-zinc-800">0{i}</span>
-                <h3 className="text-xl font-bold text-white tracking-tight">{t(`industry.howItWorks.step${i}Title`)}</h3>
+            <div key={i} className="space-y-6">
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 rounded-xl bg-zinc-950/50 border border-zinc-800 flex items-center justify-center">
+                  <span className="text-xl font-black text-emerald-500">0{i}</span>
+                </div>
+                <h3 className="text-xl font-black text-white tracking-tight">{t(`industry.howItWorks.step${i}Title`)}</h3>
               </div>
-              <p className="text-zinc-500 leading-relaxed font-medium">
+              <p className="text-zinc-500 leading-relaxed font-bold text-sm">
                 {t(`industry.howItWorks.step${i}`)}
               </p>
             </div>

@@ -4,8 +4,8 @@ import { Target, CheckCircle2 } from './icons';
 
 const IndustryEcosystem: FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="py-24 md:py-32 bg-zinc-900/50 relative border-b border-zinc-800">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.015)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(16,185,129,0.015)_1.5px,transparent_1.5px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
         <div className="bg-zinc-900/50 rounded-[48px] p-8 md:p-16 border border-zinc-800 shadow-2xl relative overflow-hidden">

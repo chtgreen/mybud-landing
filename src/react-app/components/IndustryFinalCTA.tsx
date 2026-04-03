@@ -1,15 +1,13 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
-import { Phone } from './icons';
 
 interface IndustryFinalCTAProps {
   onCTAClick: () => void;
   onDemoClick?: () => void;
 }
 
-const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick, onDemoClick }) => {
+const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
   return (
-    <section id="contact" className="py-32 md:py-48 bg-zinc-950 relative overflow-hidden">
+    <section id="contact" className="py-32 md:py-48 bg-zinc-900 relative">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -30,17 +28,16 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick, onDemoClick }
             <button
               type="button"
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full md:w-auto px-12 py-6 rounded-[24px] text-xl font-black border-2 border-emerald-500 bg-emerald-500 text-zinc-950 hover:bg-emerald-400 hover:border-emerald-400 shadow-[0_20px_60px_rgba(16,185,129,0.3)] transition-all hover:scale-105 active:scale-95"
+              className="w-full md:w-auto px-10 py-4 rounded-[20px] text-lg font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-[0_15px_30px_rgba(16,185,129,0.3)] transition-all hover:scale-105 active:scale-95"
             >
-              Testar minha marca
+              Ver minha marca
             </button>
             <button
               type="button"
               onClick={onCTAClick}
-              className="w-full md:w-auto px-12 py-6 rounded-[24px] text-xl font-bold text-white border-2 border-zinc-800 bg-zinc-900/50 backdrop-blur-xl hover:border-zinc-500 transition-all flex items-center justify-center gap-3"
+              className="w-full md:w-auto px-10 py-4 rounded-[20px] text-lg font-bold text-white border border-zinc-700 bg-zinc-900/40 backdrop-blur-xl hover:border-zinc-500 transition-all flex items-center justify-center gap-3"
             >
-              <Phone className="w-6 h-6" />
-              Agendar Demo
+              Falar com o time
             </button>
           </div>
 
