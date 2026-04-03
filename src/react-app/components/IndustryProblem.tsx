@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { t } from '../lib/i18n';
 import { Bot, Database, Target } from './icons';
 
 const IndustryProblem: FC = () => {

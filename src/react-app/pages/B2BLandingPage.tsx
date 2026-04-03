@@ -2,27 +2,10 @@ import { useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
-import { useUrlModalState } from '../hooks/useUrlModalState';
 import Header from '../components/Header';
 import SEO from '../components/SEO';
-
-import Hero from '../components/Hero';
-import FeaturesSection from '../components/FeaturesSection';
-import AppShowcase from '../components/AppShowcase';
 import Footer from '../components/Footer';
-
-import Sponsorship from '../components/Sponsorship';
-import BetaModal from '../components/BetaModal';
-import Stats from '../components/Stats';
-import FAQ from '../components/FAQ';
-import SocialProof from '../components/SocialProof';
-import Associations from '../components/Associations';
-import B2CLink from '../components/B2CLink';
-import B2BLeadForm from '../components/B2BLeadForm';
-import IndustryDeliverables from '../components/IndustryDeliverables';
-import IndustryDemo from '../components/IndustryDemo';
-
-// B2B content is selected via namespace in i18n
+import B2BFunnel from '../components/B2BFunnel';
 
 // Shared URL for scheduling B2B calls
 const B2B_CALENDAR_URL =
@@ -30,7 +13,6 @@ const B2B_CALENDAR_URL =
 
 export default function B2BLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
-  const { isOpen: betaModalOpen, close: closeBetaModal } = useUrlModalState('beta');
   useScrollEnhancement();
 
   useEffect(() => {
@@ -38,40 +20,35 @@ export default function B2BLandingPage() {
     posthog.capture('b2b_page_view', {
       language: currentLanguage
     });
+
+    // Add dark theme class to body so generic elements (like modals if needed) can adapt
+    document.body.classList.add('bg-[#050505]');
+    return () => {
+      document.body.classList.remove('bg-[#050505]');
+    };
   }, [currentLanguage]);
 
   const handleCTAClick = () => {
-    // Redirect to calendar booking instead of opening modal
+    // Redirect to calendar booking
     window.open(B2B_CALENDAR_URL, '_blank');
     posthog.capture('b2b_cta_clicked', {
       button: 'primary_cta',
-      location: 'hero',
+      location: 'funnel',
       action: 'calendar_redirect'
     });
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#050505]">
       <SEO pageType="b2b" />
       <Header onLanguageChange={changeLanguage} isB2B onCTAClick={handleCTAClick} />
 
-      <Hero onCTAClick={handleCTAClick} /> {/* Section 1: white - Hero with graph highlights */}
-      <Sponsorship background="gray" /> {/* Section 2: gray - O marketing e a gestão na cannabis estão travados */}
-      <AppShowcase background="white" /> {/* Section 3: white - Como funciona (4 steps) */}
-      <SocialProof background="gray" onCTAClick={handleCTAClick} /> {/* Section 4: gray - Mais que dados: prova social */}
-      <FeaturesSection background="white" /> {/* Section 5: white - Tipos de parcerias (5 types) */}
-      <Associations background="gray" onCTAClick={handleCTAClick} /> {/* Section 6: gray - Associações Canábicas (NEW) */}
-      <IndustryDeliverables /> {/* Section 7: The tangible deliverables */}
-      <IndustryDemo onCTAClick={handleCTAClick} /> {/* Section Demo: Demo Experience for Brands */}
-      <B2CLink background="white" /> {/* Section 7: white - Link to B2C page */}
-      <Stats background="gray" /> {/* Section 8: gray - Métricas que contam */}
-      <FAQ background="white" /> {/* Section 9: white - FAQ com novas perguntas */}
-      <B2BLeadForm background="gray" /> {/* Section 10: gray - Formulário B2B */}
-      <Footer />
+      <B2BFunnel
+        onDemoClick={handleCTAClick}
+        onTalkClick={handleCTAClick}
+      />
 
-      {betaModalOpen && (
-        <BetaModal open={betaModalOpen} onClose={closeBetaModal} />
-      )}
+      <Footer />
     </div>
   );
-} 
+}
