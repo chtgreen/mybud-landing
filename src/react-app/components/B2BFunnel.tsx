@@ -103,69 +103,64 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
 
                         <div className="mt-12 text-center">
                             <p className="text-zinc-400 font-medium text-lg sm:text-xl">
-                                Seu produto aparece no momento exato da rega, com dose e contexto.
+                                Seu produto aparece no momento exato da rega.
                             </p>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. REFRAME */}
+                {/* 3. ONDE SEU PRODUTO APARECE */}
+                <section className="py-24 sm:py-32 border-t border-zinc-900">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">Onde seu produto aparece</h2>
+                    <ul className="space-y-6 mb-12 text-xl sm:text-2xl text-zinc-200">
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> Na hora da rega</li>
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> Na rotina semanal</li>
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> No histórico do cultivo</li>
+                    </ul>
+                </section>
+
+                {/* 4. BLOCO DE DOR */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900">
                     <div className="bg-zinc-900/30 border border-zinc-800 rounded-[2rem] p-8 sm:p-12 relative overflow-hidden">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Não é visibilidade. <span className="text-[#eb4c80]">É uso.</span></h2>
-                        <p className="text-2xl sm:text-3xl font-medium text-zinc-300 mb-12">
-                            O problema não é vender. <br /> É o que acontece depois.
+                        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                            Pare de vender mídia. <span className="text-[#eb4c80]">Torne-se parte do cultivo.</span>
+                        </h2>
+
+                        <p className="text-xl text-zinc-400 mb-8 leading-relaxed max-w-xl">
+                            O cliente compra seu fertilizante e some.
                         </p>
 
-                        <p className="text-xl text-zinc-400 mb-6 font-semibold">O grower:</p>
                         <ul className="space-y-4 mb-10 text-lg sm:text-xl text-zinc-300 max-w-sm">
-                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> erra dose</li>
-                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> mistura errado</li>
-                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> queima planta</li>
-                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> culpa o fertilizante</li>
+                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> Erra dose</li>
+                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> Mistura errado</li>
+                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> Queima a planta</li>
+                            <li className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black"><span className="text-[#eb4c80]">×</span> Culpa sua marca</li>
                         </ul>
 
-                        <div className="inline-block px-5 py-3 rounded-xl border border-zinc-700 bg-zinc-900">
+                        <div className="inline-block px-5 py-3 rounded-xl border border-zinc-700 bg-zinc-900 mb-6">
                             <p className="text-white font-mono text-sm sm:text-base tracking-wide">
-                                👉 Você perde reputação sem nem saber por quê.
+                                👉 Seu PDF de dosagem não é seguido.
                             </p>
                         </div>
-                    </div>
-                </section>
 
-                {/* 4. SOLUÇÃO */}
-                <section className="py-24 sm:py-32 border-t border-zinc-900">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-white mb-10 leading-tight">
-                        Nós colocamos seu produto <br className="hidden sm:block" /> dentro da rotina do cultivo.
-                    </h2>
-
-                    <p className="text-2xl text-zinc-400 font-medium mb-8">Quando chega a hora da rega:</p>
-
-                    <ul className="space-y-6 mb-16 text-xl sm:text-2xl text-zinc-200">
-                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> o app mostra qual produto usar</li>
-                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> quanto usar (ml/L)</li>
-                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> em qual fase</li>
-                    </ul>
-
-                    <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 text-zinc-500 font-mono text-lg">
-                        <p>Sem PDF.</p>
-                        <p>Sem DM.</p>
-                        <p>Sem erro.</p>
+                        <p className="text-zinc-300 text-lg font-medium">
+                            Nós colocamos seu produto dentro da rotina real do grower.
+                        </p>
                     </div>
                 </section>
 
                 {/* 5. COMO FUNCIONA */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">Em 3 passos</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">Como funciona</h2>
 
                     <div className="grid sm:grid-cols-3 gap-6 mb-12">
                         <div className="bg-zinc-900/20 p-8 rounded-[2rem] border border-zinc-800/50">
                             <span className="text-[#eb4c80] font-mono text-2xl mb-4 block">1.</span>
-                            <p className="text-lg text-white">Você envia seus produtos e tabela</p>
+                            <p className="text-lg text-white">Você envia seus produtos</p>
                         </div>
                         <div className="bg-zinc-900/40 p-8 rounded-[2rem] border border-zinc-800">
                             <span className="text-[#eb4c80] font-mono text-2xl mb-4 block">2.</span>
-                            <p className="text-lg text-white">Nós configuramos no MyBud</p>
+                            <p className="text-lg text-white">Nós configuramos dose e fases</p>
                         </div>
                         <div className="bg-[#111] p-8 rounded-[2rem] border border-zinc-700 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                             <span className="text-[#eb4c80] font-mono text-2xl mb-4 block">3.</span>
@@ -182,15 +177,15 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
                     </div>
                 </section>
 
-                {/* 6. O QUE VOCÊ LEVA */}
+                {/* 6. O QUE VOCÊ RECEBE */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">O pacote inclui</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">O que você recebe</h2>
                     <ul className="space-y-6 text-xl sm:text-2xl text-zinc-300 bg-zinc-900/20 p-8 rounded-[2rem] border border-zinc-800">
                         <li className="flex items-start gap-4">
-                            <span className="text-[#eb4c80] font-bold mt-1">+</span> Seu fertilizante dentro do app <span className="text-zinc-500 text-lg ml-2 hidden sm:inline">(com dose e fase)</span>
+                            <span className="text-[#eb4c80] font-bold mt-1">+</span> Seu fertilizante dentro do app
                         </li>
                         <li className="flex items-start gap-4">
-                            <span className="text-[#eb4c80] font-bold mt-1">+</span> Configuração completa da rotina
+                            <span className="text-[#eb4c80] font-bold mt-1">+</span> Dose e fase configuradas
                         </li>
                         <li className="flex items-start gap-4">
                             <span className="text-[#eb4c80] font-bold mt-1">+</span> Conteúdo pronto <span className="text-zinc-500 text-lg ml-2 hidden sm:inline">(posts + vídeos + prints)</span>
@@ -201,18 +196,33 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
                     </ul>
                 </section>
 
-                {/* 7. DIFERENCIAL */}
+                {/* 7. PARE DE RESPONDER DMs */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                        Growshop vende. Instagram mostra. <br className="hidden sm:block" />
-                        <span className="text-[#eb4c80]">O MyBud entra na rotina.</span>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                        Pare de responder <span className="text-[#eb4c80]">"quantos ml/L?"</span>
                     </h2>
-                    <p className="text-2xl sm:text-3xl font-medium text-zinc-400">
-                        Você deixa de disputar atenção <br className="hidden sm:block" /> e passa a fazer parte do cultivo.
-                    </p>
+                    <p className="text-xl text-zinc-400 mb-8">O app mostra automaticamente:</p>
+                    <ul className="space-y-6 text-xl sm:text-2xl text-zinc-200">
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> quanto usar</li>
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> quando usar</li>
+                        <li className="flex items-center gap-4"><span className="text-emerald-500 font-bold">✓</span> em qual fase</li>
+                    </ul>
                 </section>
 
-                {/* 8. PREÇO & RISCO */}
+                {/* 8. ANALYTICS */}
+                <section className="py-24 sm:py-32 border-t border-zinc-900">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                        Veja como seu produto é usado
+                    </h2>
+                    <p className="text-xl text-zinc-400 mb-8">Descubra:</p>
+                    <ul className="space-y-6 text-xl sm:text-2xl text-zinc-200">
+                        <li className="flex items-center gap-4"><span className="text-[#eb4c80] font-bold">→</span> onde o grower erra</li>
+                        <li className="flex items-center gap-4"><span className="text-[#eb4c80] font-bold">→</span> quando ele aplica</li>
+                        <li className="flex items-center gap-4"><span className="text-[#eb4c80] font-bold">→</span> como evolui no ciclo</li>
+                    </ul>
+                </section>
+
+                {/* 9. PREÇO & RISCO */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900 relative">
                     <div className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 sm:p-12 max-w-2xl backdrop-blur-sm relative z-10 hover:border-zinc-700 transition-colors shadow-2xl">
                         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-[#eb4c80]/10 rounded-full blur-3xl pointer-events-none" />
@@ -225,7 +235,7 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
                             </div>
 
                             <div className="flex items-center gap-4 text-emerald-400">
-                                <span className="text-2xl">✓</span> Inclui implementação + primeiro mês ativo
+                                <span className="text-2xl">✓</span> Inclui setup + primeiro mês ativo
                             </div>
                             <div className="flex items-center gap-4 text-zinc-400">
                                 <span className="text-2xl opacity-50 text-zinc-600">↳</span> Após: R$399/mês
@@ -234,11 +244,11 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
 
                         <div className="bg-black/50 p-6 rounded-xl border border-zinc-800 mb-10">
                             <p className="text-zinc-300 text-lg sm:text-xl font-medium leading-relaxed font-mono">
-                                <span className="text-[#eb4c80]">"</span> Você entra, vê funcionando e decide continuar. <span className="text-[#eb4c80]">"</span>
+                                <span className="text-[#eb4c80]">"</span> Você entra, testa e decide continuar. <span className="text-[#eb4c80]">"</span>
                             </p>
                         </div>
 
-                        <div className="border-t border-zinc-800 pt-8 pt-6">
+                        <div className="border-t border-zinc-800 pt-8">
                             <p className="text-white font-bold text-xl mb-2 flex items-center gap-2">
                                 <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" /> Sem contrato.
                             </p>
@@ -247,7 +257,7 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
                     </div>
                 </section>
 
-                {/* ESCASSEZ & Fechamento */}
+                {/* 10. ESCASSEZ & FECHAMENTO */}
                 <section className="py-24 sm:py-32 border-t border-zinc-900 text-center sm:text-left">
                     <div className="mb-12">
                         <p className="text-[#eb4c80] font-bold text-base sm:text-lg mb-2 uppercase tracking-wider">
@@ -263,22 +273,22 @@ export default function B2BFunnel({ onDemoClick, onTalkClick }: B2BFunnelProps) 
                             onClick={onDemoClick}
                             className="w-full sm:w-auto bg-[#eb4c80] hover:bg-[#d13a6a] text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-[0_10px_30px_rgba(235,76,128,0.2)] flex items-center justify-center gap-3"
                         >
-                            Ver demo com minha marca <span className="text-xl">→</span>
+                            Ver minha marca no MyBud <span className="text-xl">→</span>
                         </button>
                         <span className="text-zinc-600 font-mono italic">ou</span>
                         <button
                             onClick={onTalkClick}
                             className="w-full sm:w-auto text-zinc-300 hover:text-white font-medium text-lg border-b border-zinc-700 hover:border-white pb-1 transition-colors flex items-center justify-center gap-2"
                         >
-                            Falar direto <span className="text-xl">→</span>
+                            Entrar como marca parceira <span className="text-xl">→</span>
                         </button>
                     </div>
                 </section>
 
-                {/* 9. BLOCO OPCIONAL (B2B - Expansão) */}
+                {/* 11. LICENCIAMENTO (bloco separado no final) */}
                 <section className="py-24 border-t border-zinc-900 mt-12 bg-zinc-900/10 rounded-[2rem] p-8 sm:p-12 border border-zinc-800">
                     <div className="mb-8">
-                        <p className="text-zinc-500 font-mono text-sm uppercase tracking-widest mb-4">Para marcas que querem escalar distribuição</p>
+                        <p className="text-zinc-500 font-mono text-sm uppercase tracking-widest mb-4">Para marcas que querem escalar</p>
                         <h2 className="text-3xl font-bold text-white mb-4">Licencie o MyBud junto com seu produto.</h2>
                     </div>
 

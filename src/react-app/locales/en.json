@@ -1869,13 +1869,13 @@
       "ogImageAlt": "MyBud interface showing a brand product inside a cultivation task."
     },
     "hero": {
-      "badge": "B2B SaaS for Brands",
-      "title": "You don't know how your product is used.",
-      "subtitle": "Exact dosage, feeding tables, or organic soil preparation. In MyBud, your physical product becomes the grower's digital schedule.",
-      "cta": "See your brand in MyBud",
-      "secondaryCta": "Speak to an Expert",
+      "badge": "Growth SaaS for Cultivation Brands",
+      "title": "Your fertilizer being used in a real grow.",
+      "subtitle": "Inside MyBud, your product becomes routine: dose, phase and application — right in the grower's hands.",
+      "cta": "See my brand in MyBud",
+      "secondaryCta": "Talk directly",
       "visual": {
-        "left": "Growing without guidance",
+        "left": "A grower using your product in MyBud would see this:",
         "right": "MyBud with task + product"
       }
     },
@@ -1887,33 +1887,50 @@
       "punchline": "If your product isn't inside the routine, it's outside the result."
     },
     "presence": {
-      "title": "Where your product lives inside MyBud",
+      "title": "Where your product appears",
       "tasks": {
-        "title": "Inside Tasks",
+        "title": "At watering time",
         "example": "\"Apply MyBud Fert — 2ml/L\"",
         "point1": "Triggered by stage",
         "point2": "Contextual timing",
         "point3": "Action-based"
       },
       "timeline": {
-        "title": "Inside Timeline",
+        "title": "In the weekly routine",
         "example": "Day 14 → MyBud Fert applied",
         "point1": "Visible history",
         "point2": "Repeated usage patterns"
       },
       "activityLog": {
-        "title": "Inside Activity Log",
+        "title": "In the grow history",
         "example": "User logs feeding with your product",
         "point1": "Structured data",
         "point2": "Linked to plant + stage"
       },
       "recommendations": {
-        "title": "Inside Recommendations",
+        "title": "In Recommendations",
         "example": "\"You should apply MyBud Fert today\"",
         "point1": "Based on grow state",
         "point2": "Not generic suggestions"
       },
-      "punchline": "Not before the grow.\nNot after the grow.\nInside the grow."
+      "punchline": "Your product appears at the exact moment of watering."
+    },
+    "problem": {
+      "title": "Stop selling media. Become part of the grow.",
+      "intro": "The customer buys your fertilizer and disappears.",
+      "pain1": "Gets the dose wrong",
+      "pain2": "Mixes incorrectly",
+      "pain3": "Burns the plant",
+      "pain4": "Blames your brand",
+      "pdfNote": "Your dosage PDF is not being followed.",
+      "solution": "We put your product inside the grower's real routine."
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": "You send your products",
+      "step2": "We configure dose and phases",
+      "step3": "Growers start using it day to day",
+      "noTech": "👉 No technical integration | 👉 No effort on your side"
     },
     "experience": {
       "title": "We don't push products. We guide growers.",
@@ -1948,8 +1965,26 @@
       "effect2": "Adds value to product",
       "effect3": "Creates differentiation"
     },
+    "ecosystem": {
+      "badge": "B2B Licensing & Retention",
+      "title": "For brands that want to scale",
+      "subtitle": "License MyBud together with your product. The customer buys your fertilizer and gets app access.",
+      "benefit1": {
+        "title": "More repurchase",
+        "desc": "To keep app access, the grower can't switch brands."
+      },
+      "benefit2": {
+        "title": "More retention",
+        "desc": "Your product stands out from competition by offering a digital tool at no extra cost."
+      },
+      "card": {
+        "line1": "The Brand Pays the License",
+        "line2": "The Customer Gets PRO",
+        "desc": "You buy B2B packages. The grower scans the bottle and gets premium intelligence in their hands."
+      }
+    },
     "demo": {
-      "title": "See it in action",
+      "title": "Your product appears at the exact moment of watering.",
       "cta": "See your brand inside MyBud",
       "tasksHint": "your product appears in context, triggered by plant stage",
       "timelineHint": "every use is tracked — visible history builds brand trust",
@@ -2027,26 +2062,26 @@
         }
       },
       "deliverables": {
-        "title": "What exactly do you get?",
-        "subtitle": "Stop guessing. Start embedding your brand as an operating system.",
+        "title": "What you receive",
+        "subtitle": "Stop guessing. Embed your brand as part of the grow.",
         "pillar1": {
-          "title": "1. Bypass Meta & Google Bans",
-          "desc": "A direct channel immune to shadowbans. Your product appears directly in the user's daily push notifications exactly when they need to apply it."
+          "title": "Stop answering 'how many ml/L?'",
+          "desc": "The app automatically shows how much to use, when to use it, and at which stage. Zero support DMs about dosage."
         },
         "pillar2": {
-          "title": "2. Embeddable Dynamic Calculator",
-          "desc": "We digitize your static PDF feeding charts into an interactive calculator. It lives natively inside MyBud and we give you a link to embed it directly into your own website."
+          "title": "See how your product is used",
+          "desc": "Find out where growers make mistakes, when they apply, and how they evolve in the cycle. Real usage data — no more guesswork."
         },
         "pillar3": {
-          "title": "3. Real-World Usage Analytics",
-          "desc": "Discover how anonymous growers are actually using your products day-to-day. Get real-world data on efficacy, usage frequency, and see if the market is actually following your instructions."
+          "title": "Your fertilizer inside the app",
+          "desc": "Dose and phase configured, ready content (posts + videos + screenshots) and positioning as an early partner brand."
         }
       }
     },
     "finalCta": {
-      "text": "If you want to understand how your product is actually used,\nthis is where it happens.",
-      "primaryCta": "Watch demo",
-      "secondaryCta": "Talk to us",
+      "text": "We are opening spots for a few brands in this model.\nWho joins now defines the standard inside the app.",
+      "primaryCta": "See my brand in MyBud",
+      "secondaryCta": "Join as a partner brand",
       "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
       "community": "Join the first brands shaping the future of cannabis cultivation.",
       "form": {

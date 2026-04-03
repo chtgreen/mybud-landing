@@ -1,5 +1,6 @@
 import type { FC } from 'react';
-import { Bot, Database, Target } from './icons';
+import { t } from '../lib/i18n';
+
 
 const IndustryProblem: FC = () => {
   return (
@@ -8,24 +9,41 @@ const IndustryProblem: FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-            Pare de Vender Mídia. <span className="text-emerald-400">Torne-se a Regra.</span>
+        <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            {t('industry.problem.title')}
           </h2>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto font-medium">
-            O seu cliente compra a sua garrafa de nutrientes e some da sua vista.<br />
-            Ele erra o PPM, entra em <em>overfert</em>, queima a raiz e queima a sua reputação nos fóruns e grupos de Whatsapp.<br />
-            Seu PDF de dosagens virou peso de papel. Nós vamos transformar ele no motor do cultivo.
+
+          <p className="text-lg md:text-xl text-zinc-400 mb-10 font-medium max-w-2xl">
+            {t('industry.problem.intro')}
+          </p>
+
+          {/* Pain bullets */}
+          <ul className="space-y-3 mb-10 max-w-sm">
+            {(['pain1', 'pain2', 'pain3', 'pain4'] as const).map((k) => (
+              <li key={k} className="flex items-center gap-4 bg-black/40 p-3 rounded-lg border border-black text-lg text-zinc-300">
+                <span className="text-red-400 font-bold">×</span>
+                {t(`industry.problem.${k}`)}
+              </li>
+            ))}
+          </ul>
+
+          <div className="inline-block px-5 py-3 rounded-xl border border-zinc-700 bg-zinc-900 mb-6">
+            <p className="text-white font-mono text-sm tracking-wide">
+              👉 {t('industry.problem.pdfNote')}
+            </p>
+          </div>
+
+          <p className="text-zinc-300 text-lg font-medium">
+            {t('industry.problem.solution')}
           </p>
         </div>
 
-        {/* The Exact Mechanism Request from the CEO */}
-        <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              O que nós fazemos exatamente?
-            </h3>
-          </div>
+        {/* How it works — 3 steps */}
+        <div className="mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center">
+            {t('industry.howItWorks.title')}
+          </h3>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Connecting line */}
@@ -33,31 +51,30 @@ const IndustryProblem: FC = () => {
 
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-emerald-500/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500/10 transition-colors">
-                <Database className="w-8 h-8 text-emerald-400" />
+                <span className="text-emerald-400 font-mono text-2xl font-bold">1.</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">1. Mapeamento</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Pegamos a sua tabela oficial (Vega, Flora, Engorde, Flush).
-              </p>
+              <p className="text-lg text-white">{t('industry.howItWorks.step1')}</p>
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-amber-500/30 flex items-center justify-center mb-6 group-hover:bg-amber-500/10 transition-colors">
-                <Bot className="w-8 h-8 text-amber-400" />
+                <span className="text-amber-400 font-mono text-2xl font-bold">2.</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">2. Digitalização</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Embarcamos a matemática exata de pH, EC e Mililitragem no algoritmo.
-              </p>
+              <p className="text-lg text-white">{t('industry.howItWorks.step2')}</p>
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-16 h-16 rounded-2xl bg-zinc-800 border-2 border-blue-500/30 flex items-center justify-center mb-6 group-hover:bg-blue-500/10 transition-colors">
-                <Target className="w-8 h-8 text-blue-400" />
+                <span className="text-blue-400 font-mono text-2xl font-bold">3.</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">3. Execução Guiada</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                O app notifica o usuário ditando exatamente qual frasco abrir e quantos ml aplicar.
+              <p className="text-lg text-white font-medium">{t('industry.howItWorks.step3')}</p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <div className="inline-block px-5 py-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
+              <p className="text-white font-mono text-sm tracking-wide">
+                {t('industry.howItWorks.noTech')}
               </p>
             </div>
           </div>

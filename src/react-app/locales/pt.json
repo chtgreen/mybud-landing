@@ -1906,12 +1906,12 @@
     },
     "hero": {
       "badge": "Growth SaaS para Marcas de Cultivo",
-      "title": "Você não sabe como seu produto é usado.",
-      "subtitle": "Dosagem exata, tabela de nutrição ou preparo de solo orgânico. No MyBud, o seu produto físico entra no cronograma digital do cultivador.",
-      "cta": "Ver a sua marca no MyBud",
-      "secondaryCta": "Falar com consultor",
+      "title": "Teu fertilizante sendo usado no cultivo real.",
+      "subtitle": "Dentro do MyBud, teu produto vira rotina: dose, fase e aplicação — direto na mão do grower.",
+      "cta": "Ver minha marca no MyBud",
+      "secondaryCta": "Falar direto",
       "visual": {
-        "left": "Cultivo sem orientação",
+        "left": "Um grower usando teu produto no MyBud veria isso:",
         "right": "MyBud com tarefa + produto"
       }
     },
@@ -1923,33 +1923,50 @@
       "punchline": "Se seu produto não está dentro da rotina, ele está fora do resultado."
     },
     "presence": {
-      "title": "Onde seu produto vive dentro do MyBud",
+      "title": "Onde seu produto aparece",
       "tasks": {
-        "title": "Dentro das Tarefas",
+        "title": "Na hora da rega",
         "example": "\"Aplicar MyBud Fert — 2ml/L\"",
         "point1": "Acionado por estágio",
         "point2": "Timing contextual",
         "point3": "Baseado em ação"
       },
       "timeline": {
-        "title": "Dentro da Timeline",
+        "title": "Na rotina semanal",
         "example": "Dia 14 → MyBud Fert aplicado",
         "point1": "Histórico visível",
         "point2": "Padrões de uso repetidos"
       },
       "activityLog": {
-        "title": "Dentro do Registro de Atividades",
+        "title": "No histórico do cultivo",
         "example": "Usuário registra alimentação com seu produto",
         "point1": "Dados estruturados",
         "point2": "Vinculado à planta + estágio"
       },
       "recommendations": {
-        "title": "Dentro das Recomendações",
+        "title": "Nas Recomendações",
         "example": "\"Você deveria aplicar MyBud Fert hoje\"",
         "point1": "Baseado no estado do cultivo",
         "point2": "Sem sugestões genéricas"
       },
-      "punchline": "Não antes do cultivo.\nNão depois do cultivo.\nDentro do cultivo."
+      "punchline": "Seu produto aparece no momento exato da rega."
+    },
+    "problem": {
+      "title": "Pare de vender mídia. Torne-se parte do cultivo.",
+      "intro": "O cliente compra seu fertilizante e some.",
+      "pain1": "Erra dose",
+      "pain2": "Mistura errado",
+      "pain3": "Queima a planta",
+      "pain4": "Culpa sua marca",
+      "pdfNote": "Seu PDF de dosagem não é seguido.",
+      "solution": "Nós colocamos seu produto dentro da rotina real do grower."
+    },
+    "howItWorks": {
+      "title": "Como funciona",
+      "step1": "Você envia seus produtos",
+      "step2": "Nós configuramos dose e fases",
+      "step3": "Growers começam a usar no dia a dia",
+      "noTech": "👉 Sem integração técnica | 👉 Sem esforço do seu lado"
     },
     "experience": {
       "title": "Não empurramos produtos. Guiamos cultivadores.",
@@ -1984,8 +2001,26 @@
       "effect2": "Agrega valor ao produto",
       "effect3": "Cria diferenciação"
     },
+    "ecosystem": {
+      "badge": "Licenciamento B2B e Retenção",
+      "title": "Para marcas que querem escalar",
+      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app.",
+      "benefit1": {
+        "title": "Mais recompra",
+        "desc": "Para não perder o acesso ao App, o cultivador não pode trocar de marca."
+      },
+      "benefit2": {
+        "title": "Mais retenção",
+        "desc": "Seu produto se destaca da concorrência oferecendo uma ferramenta digital sem custo extra."
+      },
+      "card": {
+        "line1": "A Marca Paga a Licença",
+        "line2": "O Cliente Leva o PRO",
+        "desc": "Você adquire pacotes B2B. O cultivador escaneia o frasco e tem a inteligência premium nas mãos."
+      }
+    },
     "demo": {
-      "title": "Veja em ação",
+      "title": "Seu produto aparece no momento exato da rega.",
       "cta": "Veja sua marca dentro do MyBud",
       "tasksHint": "seu produto aparece em contexto, acionado pelo estágio da planta",
       "timelineHint": "cada uso é rastreado — histórico visível constrói confiança na marca",
@@ -2063,26 +2098,26 @@
         }
       },
       "deliverables": {
-        "title": "O que você leva exatamente?",
-        "subtitle": "Pare de adivinhar. Integre sua marca como infraestrutura do cultivo.",
+        "title": "O que você recebe",
+        "subtitle": "Pare de adivinhar. Integre sua marca como parte do cultivo.",
         "pillar1": {
-          "title": "1. Fuga do Shadowban (Zero Meta/Google)",
-          "desc": "Chega de ter o Instagram derrubado por vender insumo. Posicione e venda o seu produto furando a bolha, exatamente no momento em que o cultivador entra na estufa."
+          "title": "Pare de responder 'quantos ml/L?'",
+          "desc": "O app mostra automaticamente quanto usar, quando usar e em qual fase. Zero DMs de suporte sobre dosagem."
         },
         "pillar2": {
-          "title": "2. Fim das DMs de 'Sãos quantos mL/L?'",
-          "desc": "Digitalizamos todas as suas semanas de Vega, Engorde e Flush num motor de cálculo embutido no celular do usuário. Zero erro humano para misturar a rega."
+          "title": "Veja como seu produto é usado",
+          "desc": "Descubra onde o grower erra, quando ele aplica e como evolui no ciclo. Dados reais de uso — sem achismo."
         },
         "pillar3": {
-          "title": "3. Analytics de Eficácia no Ciclo",
-          "desc": "Acesso root na jornada do grower. Saiba onde as plantas estão sofrendo lockout, se eles respeitam a semana de flush e veja os dados de rendimento causados pelo seu produto."
+          "title": "Seu fertilizante dentro do app",
+          "desc": "Dose e fase configuradas, conteúdo pronto (posts + vídeos + prints) e posicionamento como marca parceira inicial."
         }
       }
     },
     "finalCta": {
-      "text": "Se você quer entender como seu produto é realmente usado,\né aqui que isso acontece.",
-      "primaryCta": "Ver demo",
-      "secondaryCta": "Falar conosco",
+      "text": "Estamos abrindo poucas marcas neste modelo.\nQuem entra agora define o padrão dentro do app.",
+      "primaryCta": "Ver minha marca no MyBud",
+      "secondaryCta": "Entrar como marca parceira",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
       "community": "Entre as primeiras marcas a moldar o futuro do cultivo canábico no Brasil.",
       "form": {
