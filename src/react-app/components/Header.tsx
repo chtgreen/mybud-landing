@@ -157,6 +157,11 @@ const Header: React.FC<HeaderProps> = ({
                 Associações
               </a>
             )}
+            {!isIndustry && (
+              <a href={`/${currentLanguage}/industry`} className={navButtonClass}>
+                Indústria
+              </a>
+            )}
           </nav>
 
           {/* Actions */}
@@ -199,7 +204,8 @@ const Header: React.FC<HeaderProps> = ({
               ))}
               <div className={`h-px w-full ${isIndustry ? 'bg-zinc-800' : 'bg-zinc-100'}`} />
               {!isGrower && <a href={`/${currentLanguage}/grower`} className="text-lg font-black">{t("header.switchToGrower") || "Growers"}</a>}
-              {!isCollective && <a href={`/${currentLanguage}/collective`} className="text-lg font-black">Associações</a>}
+              {!isCollective && <a href={`/${currentLanguage}/collective`} className="text-lg font-black">{t("header.switchToCollective") || "Associações"}</a>}
+              {!isIndustry && <a href={`/${currentLanguage}/industry`} className="text-lg font-black">Indústria</a>}
               <div className="flex items-center gap-4 pt-2">
                 <span className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Idioma</span>
                 <select value={currentLanguage} onChange={handleLanguageChange} className={selectClass}>
