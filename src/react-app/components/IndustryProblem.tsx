@@ -14,7 +14,7 @@ const IndustryProblem: FC = () => {
         <div className="flex items-center gap-4 mb-20 animate-in fade-in duration-1000">
           <div className="w-2 h-2 rounded-full bg-emerald-500" />
           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
-            industrial infrastructure
+            execução dentro do cultivo
           </span>
         </div>
 
@@ -23,7 +23,7 @@ const IndustryProblem: FC = () => {
           <h2 className="text-5xl md:text-8xl font-black text-zinc-950 tracking-[-0.03em] leading-[0.9] lowercase animate-in fade-in slide-in-from-bottom-8 duration-1000">
             {t('industry.problem.title')}
           </h2>
-          <p className="text-2xl text-zinc-600 font-bold leading-relaxed lowercase max-w-lg mb-4 opacity-90 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
+          <p className="text-2xl text-zinc-950 font-black leading-relaxed lowercase max-w-lg mb-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
             {t('industry.problem.intro')}
           </p>
         </div>
@@ -87,14 +87,14 @@ const IndustryProblem: FC = () => {
             { id: 2, Icon: FileCode2, title: t('industry.howItWorks.step2Title'), desc: t('industry.howItWorks.step2') },
             { id: 3, Icon: Play, title: t('industry.howItWorks.step3Title'), desc: t('industry.howItWorks.step3') },
           ].map((step) => (
-            <div key={step.id} className="space-y-10 group">
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 rounded-[28px] bg-zinc-50 border border-zinc-100 flex items-center justify-center text-zinc-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-hover:border-emerald-500 transition-all duration-700">
-                  <step.Icon className="w-8 h-8 transition-transform group-hover:scale-110" />
+            <div key={step.id} className="space-y-12 group">
+              <div className="flex items-center gap-8">
+                <div className="w-24 h-24 rounded-[36px] bg-zinc-50 border border-zinc-100 flex items-center justify-center text-zinc-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-hover:border-emerald-500 transition-all duration-700">
+                  <step.Icon className="w-12 h-12 transition-transform group-hover:scale-110" />
                 </div>
-                <h3 className="text-3xl font-black text-zinc-950 tracking-tight lowercase">{step.title}</h3>
+                <h3 className="text-4xl font-black text-zinc-950 tracking-tighter lowercase">{step.title}</h3>
               </div>
-              <p className="text-xl text-zinc-500 font-bold leading-relaxed lowercase opacity-90 pl-2 group-hover:text-zinc-700 transition-colors">
+              <p className="text-2xl text-zinc-600 font-black leading-relaxed lowercase opacity-90 pl-2 group-hover:text-zinc-950 transition-colors">
                 {step.desc}
               </p>
             </div>

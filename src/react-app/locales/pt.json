@@ -1907,7 +1907,7 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "Sua marca dentro do cultivo.\nComo regra.",
-      "subtitle": "Seu protocolo vira execução.",
+      "subtitle": "seu protocolo vira rotina.",
       "cta": "Ver minha marca",
       "secondaryCta": "Falar com o time",
       "visual": {
@@ -1937,7 +1937,7 @@
     },
     "experience": {
       "headline": "Sua marca na rotina",
-      "sub": "Apareça no momento exato do manejo.",
+      "sub": "Dentro da rotina do cultivo.\nApareça no momento exato do manejo.",
       "form": {
         "headline": "Teste sua marca no MyBud",
         "step1Headline": "Qual o nome da sua marca?",
@@ -1946,7 +1946,7 @@
         "email": "Seu e-mail profissional",
         "contactName": "Seu nome",
         "logoUrl": "URL do logo (opcional)",
-        "cta": "Testar minha marca",
+        "cta": "Ver minha marca",
         "nextStep": "Próximo passo"
       },
       "loading": {
@@ -2017,7 +2017,7 @@
     },
     "problem": {
       "title": "Hoje, sua marca ensina.\nMas não acompanha.",
-      "intro": "O cliente compra o frasco e some da sua vista.",
+      "intro": "O cliente compra.\nE você perde visibilidade.\nUso mais consistente = mais recompra.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
       "pain3": "Culpa sua marca",
@@ -2062,10 +2062,10 @@
     "ecosystem": {
       "badge": "Licenciamento B2B e Retenção",
       "title": "Para marcas que querem escalar",
-      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app.",
+      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
       "benefit1": {
         "title": "Mais recompra",
-        "desc": "Para não perder o acesso ao App, o cultivador não pode trocar de marca."
+        "desc": "Para manter o acesso, o cultivador continua usando sua marca."
       },
       "benefit2": {
         "title": "Mais retenção",
@@ -2160,15 +2160,15 @@
         "subtitle": "Três entregas concretas. Sem integração técnica.",
         "pillar1": {
           "title": "Plano nutricional funcional",
-          "desc": "Você envia o PDF. Nós estruturamos em tarefas por fase, dose e momento. O grower executa seu protocolo sem precisar consultar nada."
+          "desc": "Seu PDF vira tarefas por fase, dose e momento. O grower executa seu protocolo sem precisar consultar nada."
         },
         "pillar2": {
-          "title": "Calculadora embedável",
-          "desc": "Calculadora da sua tabela — pronta para o seu site e dentro do app. O grower calcula a dose exata antes de preparar o tanque."
+          "title": "Calculadora de dosagem",
+          "desc": "Sua tabela PDF vira uma ferramenta interativa no app. O grower calcula a dose exata antes de preparar o tanque."
         },
         "pillar3": {
-          "title": "Produto certo no momento certo",
-          "desc": "Defensivo aparece no protocolo de IPM. Insumo de solo aparece no preparo. Foliar na hora certa. Não é push. É contexto."
+          "title": "Produto certo na hora certa",
+          "desc": "Seu produto aparece no momento exato do manejo. Defensivo no IPM, insumo no preparo, foliar na rega."
         }
       }
     },

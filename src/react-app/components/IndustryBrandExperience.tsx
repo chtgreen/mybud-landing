@@ -282,7 +282,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                     onClick={onCTAClick}
                     className="w-full py-4 text-zinc-500 font-bold hover:text-zinc-300 transition-colors"
                   >
-                    {t('industry.hero.secondaryCta')}
+                    Falar com o time
                   </button>
                 </div>
               </div>

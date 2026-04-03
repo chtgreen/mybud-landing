@@ -26,7 +26,6 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
     { id: 'recommendations', label: t('industry.presence.recommendations.title'), descKey: 'industry.demo.mock.descriptions.recommendations', Icon: Lightbulb },
     { id: 'hub', label: t('industry.demo.mock.hub.title'), descKey: 'industry.demo.mock.descriptions.hub', Icon: Store },
     { id: 'calculator', label: t('industry.demo.mock.calculator.title'), descKey: 'industry.demo.mock.descriptions.calculator', Icon: Calculator },
-    { id: 'stickers', label: t('industry.demo.mock.stickers.title'), descKey: 'industry.demo.mock.descriptions.stickers', Icon: Palette },
   ];
 
   const mockupProps = { brandName, brandLogo };
@@ -121,7 +120,7 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
               onClick={onCTAClick}
               className="px-12 py-5 rounded-2xl text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-[0_20px_40px_rgba(16,185,129,0.2)] transition-all hover:-translate-y-1"
             >
-              Começar minha integração
+              Falar com o time
             </button>
           </div>
         )}

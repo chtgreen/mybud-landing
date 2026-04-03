@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -52,25 +52,7 @@ export default function IndustryLandingPage() {
     window.open(INDUSTRY_CALENDAR_URL, '_blank');
   };
 
-  const handleDemoClick = useCallback(() => {
-    trackCTAClick({
-      ctaName: 'Watch Demo',
-      ctaLocation: 'Industry Page',
-      ctaType: 'button',
-      ctaText: 'See live demo',
-      destinationUrl: '#brand-experience',
-      customProperties: {
-        page_type: 'industry',
-        action: 'scroll_to_demo',
-        language: currentLanguage
-      }
-    });
 
-    const demoSection = document.getElementById('brand-experience');
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [currentLanguage]);
 
   return (
     <div className="min-h-screen bg-zinc-950">
@@ -83,7 +65,7 @@ export default function IndustryLandingPage() {
       */}
 
       {/* Section 1: Hero — simple, punchy, centered */}
-      <HeroIndustry onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
+      <HeroIndustry onCTAClick={handleCTAClick} />
 
       {/* Section 2: THE EXPERIENCE (STEP 0 - INTERACTIVE) 
           This is now the central interaction point.
@@ -103,7 +85,7 @@ export default function IndustryLandingPage() {
       <IndustryEcosystem />
 
       {/* Section 7: Final CTA — dark closing */}
-      <IndustryFinalCTA onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
+      <IndustryFinalCTA onCTAClick={handleCTAClick} />
 
       <Footer />
     </div>

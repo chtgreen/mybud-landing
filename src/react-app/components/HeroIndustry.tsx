@@ -32,7 +32,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
               </span>
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 group-hover:text-zinc-300 transition-colors">
-                standard protocol software
+                execução dentro do cultivo
               </span>
             </div>
           </div>
@@ -48,7 +48,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
             </div>
 
             <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-bold lowercase scale-110 opacity-90 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-500">
-              {t('industry.hero.subtitle')}
+              {/* REMOVED SUBTITLE LINE AS REQUESTED */}
             </p>
           </div>
 
@@ -56,7 +56,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-700">
             <button
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-14 py-5 rounded-full text-xl font-black bg-white text-zinc-950 hover:bg-emerald-400 hover:text-zinc-950 transition-all hover:scale-[1.05] active:scale-95 flex items-center justify-center gap-4 group shadow-[0_20px_60px_rgba(255,255,255,0.05)]"
+              className="w-full sm:w-auto px-14 py-5 rounded-full text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 flex items-center justify-center gap-4 group shadow-[0_20px_60px_rgba(16,185,129,0.15)]"
             >
               ver minha marca
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />

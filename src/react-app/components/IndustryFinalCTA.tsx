@@ -3,7 +3,6 @@ import { MoveRight } from 'lucide-react';
 
 interface IndustryFinalCTAProps {
   onCTAClick: () => void;
-  onDemoClick?: () => void;
 }
 
 const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
@@ -36,7 +35,7 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 pt-16">
             <button
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-black bg-zinc-950 text-white hover:bg-emerald-500 hover:text-zinc-950 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
+              className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
               ver minha marca
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
@@ -57,7 +56,7 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
               ))}
             </div>
             <p className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.5em] opacity-80">
-              mybud infrastructure • building the standard
+              mybud infrastructure
             </p>
           </div>
         </div>
