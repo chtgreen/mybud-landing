@@ -7,7 +7,8 @@ interface HeroIndustryProps {
 }
 
 const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
-  const words = ['regra.', 'protocolo.', 'plano.', 'dose exata.', 'ingrediente.'];
+  // Senior Marketing Words: Focusing on Authority, Habit, and the bottom line (Recompra)
+  const words = ['autoridade.', 'rotina.', 'regra.', 'recompra.', 'referência.'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState(words[0]);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -26,7 +27,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
       }
 
       if (!isDeleting && displayText === fullText) {
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 2500); // Slightly longer pause on full words
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
@@ -68,7 +69,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
             </div>
           </div>
 
-          {/* Headline - Standard Size, Refined Weight */}
+          {/* Headline - High-Impact Marketing Copy */}
           <div className="space-y-10 mb-20 px-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-white lowercase animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-150">
               sua marca dentro do cultivo.<br />
@@ -80,7 +81,8 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
             </h1>
 
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-500">
-              seu protocolo vira rotina.
+              o MyBud garante que seu produto seja usado do jeito certo.<br />
+              todo dia. até a colheita. até a recompra.
             </p>
           </div>
 
