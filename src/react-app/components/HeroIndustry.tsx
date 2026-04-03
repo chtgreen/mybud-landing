@@ -8,7 +8,7 @@ interface HeroIndustryProps {
 
 const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
   // Senior Marketing Words: Focusing on Authority, Habit, and the bottom line (Recompra)
-  const words = ['autoridade.', 'rotina.', 'regra.', 'recompra.', 'referência.'];
+  const words = ['sugestão.', 'presença.', 'rotina.', 'plano.', 'rega.', 'referência.'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState(words[0]);
   const [isDeleting, setIsDeleting] = useState(false);
