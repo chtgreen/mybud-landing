@@ -9,52 +9,43 @@ const IndustryDeliverables: FC = () => {
             title: t('industry.demo.deliverables.pillar1.title'),
             desc: t('industry.demo.deliverables.pillar1.desc'),
             Icon: Shield,
-            color: 'text-emerald-400',
-            bg: 'bg-emerald-500/10',
-            border: 'border-emerald-500/20'
         },
         {
             id: 'pillar2',
             title: t('industry.demo.deliverables.pillar2.title'),
             desc: t('industry.demo.deliverables.pillar2.desc'),
             Icon: Calculator,
-            color: 'text-emerald-400',
-            bg: 'bg-emerald-500/10',
-            border: 'border-emerald-500/20'
         },
         {
             id: 'pillar3',
             title: t('industry.demo.deliverables.pillar3.title'),
             desc: t('industry.demo.deliverables.pillar3.desc'),
             Icon: BarChart3,
-            color: 'text-emerald-400',
-            bg: 'bg-emerald-500/10',
-            border: 'border-emerald-500/20'
         }
     ];
 
     return (
-        <section className="py-24 md:py-32 bg-zinc-950">
-            <div className="container mx-auto px-6 max-w-5xl">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-tight">
+        <section className="py-32 md:py-48 bg-white text-zinc-950 border-b border-zinc-100">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="text-center mb-32">
+                    <h2 className="text-5xl md:text-8xl font-black text-zinc-950 mb-10 tracking-[-0.03em] leading-[0.9] lowercase">
                         {t('industry.demo.deliverables.title')}
                     </h2>
-                    <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-medium">
+                    <p className="text-2xl text-zinc-600 max-w-3xl mx-auto font-bold lowercase opacity-90 leading-relaxed">
                         {t('industry.demo.deliverables.subtitle')}
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-12">
                     {deliverables.map((item) => (
-                        <div key={item.id} className={`p-10 rounded-[32px] border ${item.border} bg-zinc-900/40 relative overflow-hidden group hover:bg-zinc-900/60 transition-all duration-300`}>
-                            <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-8 shadow-inner`}>
-                                <item.Icon className={`w-7 h-7 ${item.color}`} />
+                        <div key={item.id} className="p-12 rounded-[48px] border border-zinc-100 bg-zinc-50/50 group hover:shadow-xl hover:bg-white transition-all duration-700">
+                            <div className="w-16 h-16 rounded-[28px] bg-emerald-500 flex items-center justify-center mb-10 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                                <item.Icon className="w-8 h-8 text-zinc-950" />
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-4 tracking-tight">
+                            <h3 className="text-3xl font-black text-zinc-950 mb-6 tracking-tight lowercase">
                                 {item.title}
                             </h3>
-                            <p className="text-zinc-500 leading-relaxed font-medium">
+                            <p className="text-lg text-zinc-500 font-bold leading-relaxed lowercase opacity-90">
                                 {item.desc}
                             </p>
                         </div>
