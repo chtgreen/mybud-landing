@@ -7,11 +7,8 @@ import Header from '../components/Header';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import HeroIndustry from '../components/HeroIndustry';
-import IndustryProblem from '../components/IndustryProblem';
-import IndustryEcosystem from '../components/IndustryEcosystem';
-import IndustryFinalCTA from '../components/IndustryFinalCTA';
-import IndustryDeliverables from '../components/IndustryDeliverables';
-import IndustryDemo from '../components/IndustryDemo';
+import IndustryFunnel from '../components/IndustryFunnel';
+import IndustryBrandExperience from '../components/IndustryBrandExperience';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -57,7 +54,7 @@ export default function IndustryLandingPage() {
       ctaLocation: 'Industry Page',
       ctaType: 'button',
       ctaText: 'See live demo',
-      destinationUrl: '#demo',
+      destinationUrl: '#brand-experience',
       customProperties: {
         page_type: 'industry',
         action: 'scroll_to_demo',
@@ -65,34 +62,25 @@ export default function IndustryLandingPage() {
       }
     });
 
-    const demoSection = document.getElementById('demo');
+    const demoSection = document.getElementById('brand-experience');
     if (demoSection) {
       demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [currentLanguage]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-zinc-950">
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
 
-      {/* Section 1: Hero — dark, bold */}
+      {/* Hero Section */}
       <HeroIndustry onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
 
-      {/* Section 2: THE DEMO (ABOVE THE FOLD / CENTERED) */}
-      <IndustryDemo onCTAClick={handleCTAClick} />
+      {/* NEW: Interactive Value-First Funnel (Demo + Form + Result) */}
+      <IndustryBrandExperience onCTAClick={handleCTAClick} />
 
-      {/* Section 3: Lead / Pain Point Agitation & Mechanism (Mapeamento -> Digitalização) */}
-      <IndustryProblem />
-
-      {/* Section 4: The 3 Pillars / Deliverables */}
-      <IndustryDeliverables />
-
-      {/* Section 5: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
-      <IndustryEcosystem />
-
-      {/* Section 6: Final CTA — dark */}
-      <IndustryFinalCTA onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
+      {/* NEW: Streamlined High-Conversion Funnel Content */}
+      <IndustryFunnel onCTAClick={handleCTAClick} />
 
       <Footer />
     </div>

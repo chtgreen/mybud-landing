@@ -1869,14 +1869,34 @@
       "ogImageAlt": "MyBud interface showing a brand product inside a cultivation task."
     },
     "hero": {
-      "badge": "Growth SaaS for Cultivation Brands",
-      "title": "Your brand being used in a real grow.",
-      "subtitle": "Your fertilizers appear exactly when the user is going to water or prepare the tank. The right dose, at the right phase.",
-      "cta": "See my brand in MyBud",
-      "secondaryCta": "Talk directly",
+      "badge": "The app growers use to grow",
+      "title": "Your brand inside the grow.\nNot as an ad. As the rule.",
+      "subtitle": "Growers don't always follow your PDF. In MyBud, your brand becomes execution. Exact dose. Right moment.",
+      "cta": "Test my brand in MyBud",
+      "secondaryCta": "Talk to the team",
       "visual": {
         "left": "A grower using your product in MyBud would see this:",
         "right": "MyBud with task + product"
+      },
+      "scenario1": {
+        "context": "Building a soil mix",
+        "product": "Soil Amendment",
+        "detail": "Apply before transplant"
+      },
+      "scenario2": {
+        "context": "Taking a clone",
+        "product": "Root Booster",
+        "detail": "0.5ml/L · root stimulation"
+      },
+      "scenario3": {
+        "context": "Mixing the tank",
+        "product": "Grow A",
+        "detail": "2ml/L · Vegetative — Week 3"
+      },
+      "scenario4": {
+        "context": "IPM protocol",
+        "product": "Neem Spray",
+        "detail": "Foliar · weekly preventive"
       }
     },
     "reframe": {
@@ -1916,31 +1936,65 @@
       "punchline": "Your product appears at the exact moment of watering."
     },
     "problem": {
-      "title": "Stop selling media. Become part of the grow.",
-      "intro": "The customer buys your fertilizer and disappears.",
-      "pain1": "Gets the dose wrong",
+      "title": "Stop selling media. Become the standard.",
+      "intro": "Your customer buys the bottle of nutrients and disappears from your sight.",
+      "pain1": "Gets dose wrong",
       "pain2": "Mixes incorrectly",
       "pain3": "Burns the plant",
       "pain4": "Blames your brand",
-      "pdfNote": "Your dosage PDF is not being followed.",
-      "solution": "We put your product inside the grower's real routine."
+      "pdfNote": "Your dosage PDF became a paperweight.",
+      "solution": "We're going to turn it into the engine of the grow.",
+      "narrative": "They get the PPM wrong, go into overfert, burn the roots, and burn your reputation in forums and WhatsApp groups."
     },
     "howItWorks": {
-      "title": "How it works",
-      "step1": "You send your products",
-      "step2": "We configure dose and phases",
-      "step3": "Growers start using it day to day",
-      "noTech": "👉 No technical integration | 👉 No effort on your side"
+      "title": "What we do exactly",
+      "step1": "We take your official chart (Veg, Bloom, Boost, Flush).",
+      "step2": "We encode the exact math for pH, EC, and milliliters into the algorithm.",
+      "step3": "The app notifies the user: which bottle to open and how many ml to apply.",
+      "noTech": "👉 No technical integration | 👉 No effort on your side",
+      "step1Title": "Mapping",
+      "step2Title": "Digitization",
+      "step3Title": "Guided Execution"
     },
     "experience": {
-      "title": "We don't push products. We guide growers.",
-      "principle1": "No ads",
-      "principle2": "No banners",
-      "principle3": "No spam",
-      "principle4": "Only contextual actions",
-      "effect1": "Higher trust",
-      "effect2": "Better execution",
-      "effect3": "More consistent results"
+      "headline": "Test your brand in MyBud",
+      "sub": "Fill in 30 seconds. See the result immediately.",
+      "form": {
+        "headline": "See how your brand would appear inside the grow.",
+        "brandName": "Brand name",
+        "email": "Email",
+        "contactName": "Your name",
+        "logoUrl": "Logo URL (optional)",
+        "cta": "Generate my brand in MyBud"
+      },
+      "loading": {
+        "headline": "Generating your brand inside the grow…",
+        "step1": "Mapping nutritional protocol…",
+        "step2": "Configuring doses and phases…",
+        "step3": "Rendering in the app…"
+      },
+      "result": {
+        "appHeader": "Today",
+        "tasksSection": "Today's tasks",
+        "scheduleSection": "Brand schedule",
+        "week12": "Wk 1–2",
+        "week35": "Wk 3–5",
+        "week6": "Wk 6+",
+        "youAreHere": "you are here",
+        "productGrowA": "Grow A",
+        "productCalMag": "CalMag",
+        "productRoot": "Root Starter",
+        "productBloom": "Bloom",
+        "dose1": "2ml/L — Vegetative Wk 3",
+        "phTarget": "pH target: 6.2",
+        "dose2": "1ml/L — supplement",
+        "phCheck": "pH check",
+        "phMeta": "Target: 6.0–6.5",
+        "message": "This is how {brand} appears inside the grow.",
+        "subMessage": "Every grower using MyBud will see your product at the exact moment of use.",
+        "primaryCta": "See {brand} working fully",
+        "secondaryCta": "Talk to the team"
+      }
     },
     "data": {
       "title": "What you finally get access to",
@@ -1984,8 +2038,8 @@
       }
     },
     "demo": {
-      "title": "Your product appears at the exact moment of watering.",
-      "cta": "See your brand inside MyBud",
+      "title": "Your brand inside the grow routine",
+      "cta": "I want to see my brand in the app",
       "tasksHint": "your product appears in context, triggered by plant stage",
       "timelineHint": "every use is tracked — visible history builds brand trust",
       "activityHint": "structured data — linked to plant, stage, and dosage",
@@ -2062,19 +2116,19 @@
         }
       },
       "deliverables": {
-        "title": "What you receive",
-        "subtitle": "Stop guessing. Embed your brand as part of the grow.",
+        "title": "What your brand receives",
+        "subtitle": "Three concrete deliverables. No technical integration.",
         "pillar1": {
-          "title": "Stop answering 'how many ml/L?'",
-          "desc": "The app automatically shows how much to use, when to use it, and at which stage. Zero support DMs about dosage."
+          "title": "Functional nutrition plan",
+          "desc": "You send the PDF. We structure it into tasks by phase, dose, and moment. The grower executes your protocol without consulting anything."
         },
         "pillar2": {
-          "title": "See how your product is used",
-          "desc": "Find out where growers make mistakes, when they apply, and how they evolve in the cycle. Real usage data — no more guesswork."
+          "title": "Embeddable calculator",
+          "desc": "A calculator built from your chart — ready for your website and inside the app. The grower calculates the exact dose before mixing the tank."
         },
         "pillar3": {
-          "title": "Your fertilizer inside the app",
-          "desc": "Dose and phase configured, ready content (posts + videos + screenshots) and positioning as an early partner brand."
+          "title": "Right product at the right moment",
+          "desc": "Defensive shows up in the IPM protocol. Soil input appears at soil prep. Foliar at the right time. Not a push. Context."
         }
       }
     },
@@ -2112,6 +2166,100 @@
       "growers": "Growers",
       "collective": "Collectives",
       "industry": "Industry"
+    },
+    "funnel": {
+      "hero": {
+        "headline": "Your brand doesn't have to stop at the packaging.\nIt can guide the grow.",
+        "subheadline": "We turn your nutritional chart into a schedule inside the app, where the grower follows your brand at the right moment, with the right dose, throughout the entire cycle.",
+        "bullet1": "Your protocol becomes tasks in the grow",
+        "bullet2": "Your brand guides new growers from the start",
+        "bullet3": "Correct use drives more consistency and repurchase",
+        "cta": "I want my brand guiding grows",
+        "secondaryCta": "See how it works",
+        "mock": {
+          "taskName": "Apply Brand Grow A",
+          "taskDetail": "2ml/L — Today",
+          "taskPhase": "Vegetative — Week 3"
+        }
+      },
+      "problem": {
+        "headline": "Today, your brand teaches…\nbut doesn't follow through.",
+        "channels": "Your brand delivers protocols via PDF, charts, labels, and posts. But the grower lives in their routine.",
+        "pain1": "Don't know when to apply",
+        "pain2": "Don't follow the sequence",
+        "pain3": "Only use part of the line",
+        "punchline": "The problem isn't the product. It's that it's not there at the moment of use."
+      },
+      "transformation": {
+        "headline": "We turn protocols into execution.",
+        "beforeLabel": "Before",
+        "beforeContent": "\"2ml/L every 7 days\"",
+        "afterLabel": "After",
+        "afterContent": "Apply Brand Grow A today\n2ml/L — Week 3",
+        "body": "You send your chart (PDF, spreadsheet, etc). We turn it into:",
+        "item1": "Tasks by phase",
+        "item2": "Doses by moment",
+        "item3": "Usage sequence",
+        "item4": "Grow context",
+        "punchline": "Dosage becomes a task.\nChart becomes routine.\nProduct becomes action."
+      },
+      "newGrowers": {
+        "headline": "Your brand also guides those just starting out.",
+        "problem": "For new growers, the problem isn't a lack of product. It's not knowing where to start, which product to use first, how to follow a complete cycle.",
+        "bullet1": "Your brand becomes a guided plan",
+        "bullet2": "The grower starts with your line",
+        "bullet3": "Follows your protocol with clarity",
+        "punchline": "Your brand stops being an option. It becomes the reference.",
+        "mockPlan": "Recommended plan: Starter Program by [Brand]",
+        "mockCta": "Get started"
+      },
+      "appearance": {
+        "headline": "Your brand inside the grow routine",
+        "block1Title": "Task",
+        "block1Desc": "Product appears at the moment of action",
+        "block2Title": "Timeline",
+        "block2Desc": "Sequence within the cycle",
+        "block3Title": "Context",
+        "block3Desc": "Explanation of why to use it now",
+        "body": "The grower doesn't need to remember. The app delivers:",
+        "when": "When to use",
+        "how": "How much to use",
+        "why": "Why to use"
+      },
+      "sales": {
+        "headline": "Correct execution drives continuity",
+        "item1": "More consistency",
+        "item2": "More complete line usage",
+        "item3": "More repurchase",
+        "punchline": "Your product stops being a single application.\nAnd becomes a complete cycle."
+      },
+      "data": {
+        "headline": "You start understanding real usage",
+        "item1": "When your products come in",
+        "item2": "At which phase",
+        "item3": "How frequently",
+        "item4": "How the line is used",
+        "mockLabel1": "Growers using",
+        "mockLabel2": "Frequency",
+        "mockLabel3": "Phase"
+      },
+      "howItWorks": {
+        "headline": "Simple integration",
+        "step1": "You send your protocol",
+        "step2": "We structure it in the app",
+        "step3": "Your brand enters the grow",
+        "footer": "No technical integration. No product changes."
+      },
+      "positioning": {
+        "headline": "First brands set the standard",
+        "body": "Growers follow routines. The first brands inside the app become the reference, occupy space in the flow, and capture new users.",
+        "cta": "I want my brand inside MyBud"
+      },
+      "final": {
+        "headline": "Your brand can sell inputs.\nOr it can guide the grow.",
+        "sub": "In MyBud, your product accompanies the grower from start to finish.",
+        "cta": "I want my brand guiding grows"
+      }
     }
   },
   "enterprise": {

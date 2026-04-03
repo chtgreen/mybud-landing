@@ -1360,14 +1360,34 @@
       "ogImageAlt": "Interfaz de MyBud mostrando un producto de marca dentro de una tarea de cultivo."
     },
     "hero": {
-      "badge": "Growth SaaS para Marcas de Cultivo",
-      "title": "Tu marca siendo usada en el cultivo real.",
-      "subtitle": "Tus fertilizantes aparecen exactamente cuando el usuario va a regar o preparar el tanque. La dosis correcta, en la fase correcta.",
-      "cta": "Ver mi marca en MyBud",
-      "secondaryCta": "Hablar directo",
+      "badge": "La app que los cultivadores usan para cultivar",
+      "title": "Tu marca dentro del cultivo.\nNo como anuncio. Como regla.",
+      "subtitle": "El cultivador no siempre sigue tu PDF. En MyBud, tu marca se convierte en ejecución. Dosis exacta. Momento correcto.",
+      "cta": "Probar mi marca en MyBud",
+      "secondaryCta": "Hablar con el equipo",
       "visual": {
         "left": "Un cultivador usando tu producto en MyBud vería esto:",
         "right": "MyBud con tarea + producto"
+      },
+      "scenario1": {
+        "context": "Preparando el suelo",
+        "product": "Mezcla de Suelo",
+        "detail": "Aplicar antes del trasplante"
+      },
+      "scenario2": {
+        "context": "Tomando un esqueje",
+        "product": "Root Booster",
+        "detail": "0.5ml/L · estimular enraizamiento"
+      },
+      "scenario3": {
+        "context": "Preparando el tanque",
+        "product": "Grow A",
+        "detail": "2ml/L · Vegetativo — Semana 3"
+      },
+      "scenario4": {
+        "context": "Protocolo IPM",
+        "product": "Neem Spray",
+        "detail": "Foliar · preventivo semanal"
       }
     },
     "reframe": {
@@ -1407,31 +1427,65 @@
       "punchline": "Tu producto aparece en el momento exacto del riego."
     },
     "problem": {
-      "title": "Deja de vender medios. Convértete en parte del cultivo.",
-      "intro": "El cliente compra tu fertilizante y desaparece.",
+      "title": "Deja de vender medios. Conviértete en la norma.",
+      "intro": "Tu cliente compra la botella de nutrientes y desaparece de tu vista.",
       "pain1": "Se equivoca con la dosis",
       "pain2": "Mezcla incorrectamente",
       "pain3": "Quema la planta",
       "pain4": "Culpa a tu marca",
-      "pdfNote": "Tu PDF de dosificación no se está siguiendo.",
-      "solution": "Ponemos tu producto dentro de la rutina real del cultivador."
+      "pdfNote": "Tu PDF de dosificación se convirtió en un pisapapeles.",
+      "solution": "Lo vamos a convertir en el motor del cultivo.",
+      "narrative": "Se equivoca con el PPM, entra en overfert, quema la raíz y quema tu reputación en foros y grupos de WhatsApp."
     },
     "howItWorks": {
-      "title": "¿Cómo funciona?",
-      "step1": "Tú envías tus productos",
-      "step2": "Nosotros configuramos dosis y fases",
-      "step3": "Los cultivadores empiezan a usarlo en el día a día",
-      "noTech": "👉 Sin integración técnica | 👉 Sin esfuerzo de tu parte"
+      "title": "Lo que hacemos exactamente",
+      "step1": "Tomamos tu tabla oficial (Veg, Bloom, Engorde, Flush).",
+      "step2": "Incorporamos la matemática exacta de pH, EC y mililitros al algoritmo.",
+      "step3": "La app notifica al usuario: qué frasco abrir y cuántos ml aplicar.",
+      "noTech": "👉 Sin integración técnica | 👉 Sin esfuerzo de tu parte",
+      "step1Title": "Mapeo",
+      "step2Title": "Digitalización",
+      "step3Title": "Ejecución Guiada"
     },
     "experience": {
-      "title": "No empujamos productos. Guiamos cultivadores.",
-      "principle1": "Sin anuncios",
-      "principle2": "Sin banners",
-      "principle3": "Sin spam",
-      "principle4": "Solo acciones contextuales",
-      "effect1": "Más confianza",
-      "effect2": "Mejor ejecución",
-      "effect3": "Resultados más consistentes"
+      "headline": "Probar tu marca en MyBud",
+      "sub": "Completa en 30 segundos. Ve el resultado de inmediato.",
+      "form": {
+        "headline": "Ve cómo tu marca aparecería dentro del cultivo.",
+        "brandName": "Nombre de la marca",
+        "email": "Correo electrónico",
+        "contactName": "Tu nombre",
+        "logoUrl": "URL del logo (opcional)",
+        "cta": "Generar mi marca en MyBud"
+      },
+      "loading": {
+        "headline": "Generando tu marca dentro del cultivo…",
+        "step1": "Mapeando protocolo nutricional…",
+        "step2": "Configurando dosis y fases…",
+        "step3": "Renderizando en la app…"
+      },
+      "result": {
+        "appHeader": "Hoy",
+        "tasksSection": "Tareas de hoy",
+        "scheduleSection": "Cronograma de la marca",
+        "week12": "Sem 1–2",
+        "week35": "Sem 3–5",
+        "week6": "Sem 6+",
+        "youAreHere": "estás aquí",
+        "productGrowA": "Grow A",
+        "productCalMag": "CalMag",
+        "productRoot": "Root Starter",
+        "productBloom": "Bloom",
+        "dose1": "2ml/L — Vegetativo Sem 3",
+        "phTarget": "pH objetivo: 6.2",
+        "dose2": "1ml/L — suplemento",
+        "phCheck": "Verificación de pH",
+        "phMeta": "Meta: 6.0–6.5",
+        "message": "Así es como {brand} aparece dentro del cultivo.",
+        "subMessage": "Cada cultivador que use MyBud verá tu producto en el momento exacto de uso.",
+        "primaryCta": "Ver {brand} funcionando completo",
+        "secondaryCta": "Hablar con el equipo"
+      }
     },
     "data": {
       "title": "Lo que finalmente descubres",
@@ -1475,26 +1529,26 @@
       }
     },
     "demo": {
-      "title": "Tu producto aparece en el momento exacto del riego.",
-      "cta": "Ve tu marca dentro de MyBud",
+      "title": "Tu marca dentro de la rutina del cultivo",
+      "cta": "Quiero ver mi marca en la app",
       "tasksHint": "tu producto aparece en contexto, activado por la etapa de la planta",
       "timelineHint": "cada uso es rastreado — el historial visible construye confianza en la marca",
       "activityHint": "datos estructurados — vinculados a planta, etapa y dosificación",
       "recommendationsHint": "recomendaciones basadas en el estado real del cultivo — no anuncios genéricos",
       "deliverables": {
-        "title": "Lo que recibes",
-        "subtitle": "Deja de adivinar. Integra tu marca como parte del cultivo.",
+        "title": "Lo que recibe tu marca",
+        "subtitle": "Tres entregas concretas. Sin integración técnica.",
         "pillar1": {
-          "title": "Deja de responder '¿cuántos ml/L?'",
-          "desc": "La app muestra automáticamente cuánto usar, cuándo usarlo y en qué etapa. Cero DMs de soporte sobre dosificación."
+          "title": "Plan nutricional funcional",
+          "desc": "Envías el PDF. Nosotros lo estructuramos en tareas por fase, dosis y momento. El cultivador ejecuta tu protocolo sin consultar nada."
         },
         "pillar2": {
-          "title": "Ve cómo se usa tu producto",
-          "desc": "Descubre dónde el cultivador comete errores, cuándo aplica y cómo evoluciona en el ciclo. Datos reales de uso — sin suposiciones."
+          "title": "Calculadora embebible",
+          "desc": "Calculadora de tu tabla — lista para tu sitio web y dentro de la app. El cultivador calcula la dosis exacta antes de preparar el tanque."
         },
         "pillar3": {
-          "title": "Tu fertilizante dentro de la app",
-          "desc": "Dosis y fase configuradas, contenido listo (posts + videos + capturas) y posicionamiento como marca socia inicial."
+          "title": "Producto correcto en el momento correcto",
+          "desc": "El defensivo aparece en el protocolo IPM. El insumo de suelo aparece en la preparación. El foliar en el momento justo. No es push. Es contexto."
         }
       }
     },
@@ -1532,6 +1586,100 @@
       "growers": "Cultivadores",
       "collective": "Colectivos",
       "industry": "Industria"
+    },
+    "funnel": {
+      "hero": {
+        "headline": "Tu marca no tiene que quedarse en el empaque.\nPuede guiar el cultivo.",
+        "subheadline": "Convertimos tu tabla nutricional en un cronograma dentro de la app, donde el cultivador sigue tu marca en el momento justo, con la dosis correcta, durante todo el ciclo.",
+        "bullet1": "Tu protocolo se convierte en tareas en el cultivo",
+        "bullet2": "Tu marca acompaña a los nuevos cultivadores desde el inicio",
+        "bullet3": "El uso correcto genera más consistencia y recompra",
+        "cta": "Quiero mi marca guiando cultivos",
+        "secondaryCta": "Ver cómo funciona",
+        "mock": {
+          "taskName": "Aplicar Brand Grow A",
+          "taskDetail": "2ml/L — Hoy",
+          "taskPhase": "Vegetativo — Semana 3"
+        }
+      },
+      "problem": {
+        "headline": "Hoy, tu marca enseña…\npero no acompaña.",
+        "channels": "Tu marca entrega protocolos en PDF, tablas, etiquetas y publicaciones. Pero el cultivador vive en su rutina.",
+        "pain1": "No saben cuándo aplicar",
+        "pain2": "No siguen la secuencia",
+        "pain3": "Usan solo parte de la línea",
+        "punchline": "El problema no es el producto. Es que no está en el momento de uso."
+      },
+      "transformation": {
+        "headline": "Convertimos protocolos en ejecución.",
+        "beforeLabel": "Antes",
+        "beforeContent": "\"2ml/L cada 7 días\"",
+        "afterLabel": "Después",
+        "afterContent": "Aplicar Brand Grow A hoy\n2ml/L — Semana 3",
+        "body": "Envías tu tabla (PDF, planilla, etc). Nosotros la convertimos en:",
+        "item1": "Tareas por fase",
+        "item2": "Dosis por momento",
+        "item3": "Secuencia de uso",
+        "item4": "Contexto del cultivo",
+        "punchline": "La dosis se convierte en tarea.\nLa tabla se convierte en rutina.\nEl producto se convierte en acción."
+      },
+      "newGrowers": {
+        "headline": "Tu marca también guía a quienes están comenzando.",
+        "problem": "Para nuevos cultivadores, el problema no es la falta de producto. Es no saber por dónde empezar, qué producto usar primero, cómo seguir un ciclo completo.",
+        "bullet1": "Tu marca se convierte en un plan guiado",
+        "bullet2": "El cultivador empieza con tu línea",
+        "bullet3": "Sigue tu protocolo con claridad",
+        "punchline": "Tu marca deja de ser una opción. Se convierte en la referencia.",
+        "mockPlan": "Plan recomendado: Starter Program by [Brand]",
+        "mockCta": "Comenzar"
+      },
+      "appearance": {
+        "headline": "Tu marca dentro de la rutina del cultivo",
+        "block1Title": "Tarea",
+        "block1Desc": "El producto aparece en el momento de la acción",
+        "block2Title": "Timeline",
+        "block2Desc": "Secuencia dentro del ciclo",
+        "block3Title": "Contexto",
+        "block3Desc": "Explicación del porqué usar ahora",
+        "body": "El cultivador no necesita recordar. La app entrega:",
+        "when": "Cuándo usar",
+        "how": "Cuánto usar",
+        "why": "Por qué usar"
+      },
+      "sales": {
+        "headline": "La ejecución correcta genera continuidad",
+        "item1": "Más consistencia",
+        "item2": "Más uso completo de la línea",
+        "item3": "Más recompra",
+        "punchline": "Tu producto deja de ser una aplicación.\nY se convierte en un ciclo completo."
+      },
+      "data": {
+        "headline": "Empiezas a entender el uso real",
+        "item1": "Cuándo entran tus productos",
+        "item2": "En qué fase",
+        "item3": "Con qué frecuencia",
+        "item4": "Cómo se usa la línea",
+        "mockLabel1": "Cultivadores usando",
+        "mockLabel2": "Frecuencia",
+        "mockLabel3": "Fase"
+      },
+      "howItWorks": {
+        "headline": "Integración simple",
+        "step1": "Envías tu protocolo",
+        "step2": "Nosotros lo estructuramos en la app",
+        "step3": "Tu marca entra al cultivo",
+        "footer": "Sin integración técnica. Sin cambios en el producto."
+      },
+      "positioning": {
+        "headline": "Las primeras marcas definen el estándar",
+        "body": "Los cultivadores siguen rutinas. Las primeras marcas dentro de la app se convierten en referencia, ocupan espacio en el flujo y capturan nuevos usuarios.",
+        "cta": "Quiero mi marca dentro de MyBud"
+      },
+      "final": {
+        "headline": "Tu marca puede vender insumos.\nO puede guiar el cultivo.",
+        "sub": "En MyBud, tu producto acompaña al cultivador de principio a fin.",
+        "cta": "Quiero mi marca guiando cultivos"
+      }
     }
   },
   "enterprise": {
