@@ -2041,7 +2041,9 @@
         "desc": "You buy B2B packages. The grower scans the bottle and gets premium intelligence in their hands.",
         "licensingBadge": "B2B Licensing",
         "licensedBy": "licensed by mybud"
-      }
+      },
+      "licensingBadge": "B2B Licensing & Retention",
+      "licensedBy": "powered by mybud"
     },
     "demo": {
       "title": "Your brand inside the grow routine",
@@ -2079,7 +2081,9 @@
           "volume": "volume",
           "productsApplied": "products applied",
           "biofertilizer": "biofertilizer — organic",
-          "addProduct": "+ add product"
+          "addProduct": "+ add product",
+          "newWatering": "New Watering",
+          "product": "Product"
         },
         "recommendations": {
           "title": "smart recommendations",

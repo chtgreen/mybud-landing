@@ -1521,8 +1521,12 @@
       "card": {
         "line1": "La Marca Paga la Licencia",
         "line2": "El Cliente Se Lleva el PRO",
-        "desc": "Tú adquieres paquetes B2B. El cultivador escanea el frasco y tiene la inteligencia premium en sus manos."
-      }
+        "desc": "Tú adquieres paquetes B2B. El cultivador escanea el frasco y tiene la inteligencia premium en sus manos.",
+        "licensingBadge": "Licenciamiento B2B",
+        "licensedBy": "licensed by mybud"
+      },
+      "licensingBadge": "Licenciamiento B2B y Retención",
+      "licensedBy": "powered by mybud"
     },
     "demo": {
       "title": "Tu marca dentro de la rutina del cultivo",

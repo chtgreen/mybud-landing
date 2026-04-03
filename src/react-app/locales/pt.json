@@ -2079,8 +2079,12 @@
       "card": {
         "line1": "A Marca Paga a Licença",
         "line2": "O Cliente Leva o PRO",
-        "desc": "Você adquire pacotes B2B. O cultivador escaneia o frasco e tem a inteligência premium nas mãos."
-      }
+        "desc": "Você adquire pacotes B2B. O cultivador escaneia o frasco e tem a inteligência premium nas mãos.",
+        "licensingBadge": "Licenciamento B2B",
+        "licensedBy": "licensed by mybud"
+      },
+      "licensingBadge": "Licenciamento B2B e Retenção",
+      "licensedBy": "powered by mybud"
     },
     "demo": {
       "title": "Sua marca dentro da rotina do cultivo",
@@ -2118,7 +2122,9 @@
           "volume": "volume",
           "productsApplied": "produtos aplicados",
           "biofertilizer": "biofertilizante — orgânico",
-          "addProduct": "+ adicionar produto"
+          "addProduct": "+ adicionar produto",
+          "newWatering": "Nova Rega",
+          "product": "Produto"
         },
         "recommendations": {
           "title": "recomendações inteligentes",
