@@ -1870,21 +1870,23 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "Your brand inside the cultivation.\nAs a rule.",
+      "title": "Your brand inside the cultivation.",
       "subtitle": "Your protocol becomes real execution.",
       "cta": "See my brand",
       "secondaryCta": "Talk to the team",
+      "discoveryHow": "discovery how",
       "words": {
-        "suggestion": "suggestion",
-        "presence": "presence",
-        "routine": "routine",
-        "plan": "plan",
-        "belonging": "belonging",
-        "representation": "representation",
-        "instructions": "instructions",
-        "nutritionalPlan": "nutritional plan",
-        "usageSuggestion": "usage suggestion",
-        "dosage": "dosage"
+        "rule": "as a rule",
+        "suggestion": "as a suggestion",
+        "presence": "as a presence",
+        "routine": "as a routine",
+        "plan": "as a plan",
+        "belonging": "as a belonging",
+        "representation": "as a representation",
+        "instructions": "as instructions",
+        "nutritionalPlan": "as a nutritional plan",
+        "usageSuggestion": "as a usage suggestion",
+        "dosage": "as a dosage"
       }
     },
     "reframe": {
@@ -1932,7 +1934,11 @@
       "pain4": "Blames your brand",
       "pdfNote": "Your dosage PDF became a paperweight.",
       "solution": "We're going to turn it into the engine of the grow.",
-      "narrative": "They get the PPM wrong, go into overfert, burn the roots, and burn your reputation in forums and WhatsApp groups."
+      "narrative": "They get the PPM wrong, go into overfert, burn the roots, and burn your reputation in forums and WhatsApp groups.",
+      "badge": "execution inside the grow",
+      "legacyBadge": "old method (pdf/physical)",
+      "standardBadge": "mybud standard",
+      "applyProductA": "apply product a"
     },
     "howItWorks": {
       "title": "What we do exactly",
@@ -1953,7 +1959,9 @@
         "email": "Email",
         "contactName": "Your name",
         "logoUrl": "Logo URL (optional)",
-        "cta": "Generate my brand in MyBud"
+        "logoPlaceholder": "https://your-brand.com/logo.png",
+        "cta": "Generate my brand in MyBud",
+        "nextStep": "Next step"
       },
       "loading": {
         "headline": "Generating your brand inside the grow…",
@@ -1981,7 +1989,9 @@
         "message": "This is how {brand} appears inside the grow.",
         "subMessage": "Every grower using MyBud will see your product at the exact moment of use.",
         "primaryCta": "See {brand} working fully",
-        "secondaryCta": "Talk to the team"
+        "secondaryCta": "Talk to the team",
+        "fullAppCta": "See in the full app",
+        "vegSemana3": "Veg Week 3"
       }
     },
     "data": {
@@ -2022,7 +2032,9 @@
       "card": {
         "line1": "The Brand Pays the License",
         "line2": "The Customer Gets PRO",
-        "desc": "You buy B2B packages. The grower scans the bottle and gets premium intelligence in their hands."
+        "desc": "You buy B2B packages. The grower scans the bottle and gets premium intelligence in their hands.",
+        "licensingBadge": "B2B Licensing",
+        "licensedBy": "licensed by mybud"
       }
     },
     "demo": {
@@ -2080,18 +2092,21 @@
           "followers": "Followers",
           "importPlan": "Import Feeding Schedule",
           "featured": "Featured Products",
-          "bio": "Trusted nutrients for maximum yield"
+          "bio": "Trusted nutrients for maximum yield",
+          "follow": "Follow Brand"
         },
         "calculator": {
           "title": "Dosage Calculator",
           "reservoir": "Reservoir Size",
           "calculate": "Calculate Dosage",
-          "applyButton": "Apply to Today's Task"
+          "applyButton": "Apply to Today's Task",
+          "tankSize": "Tank Size"
         },
         "stickers": {
           "title": "Branded Stickers",
           "dragAndDrop": "Drag & Drop Stickers",
-          "communityText": "Growers share their progress using your official stickers."
+          "communityText": "Growers share their progress using your official stickers.",
+          "poweredBy": "Powered by"
         },
         "descriptions": {
           "tasks": "Your product appears exactly when they need it. No guessing.",
@@ -2101,7 +2116,19 @@
           "hub": "Your dedicated profile. Let growers import your exact feeding chart.",
           "calculator": "We digitize your PDF feeding tables into an interactive tool.",
           "stickers": "Let growers champion your brand by putting your stickers on their photos."
-        }
+        },
+        "liveBadge": "MyBud Live",
+        "vegStageWeek3": "Vegetative Stage — Week 3",
+        "nextTasks": "Next Tasks",
+        "checkSoilPh": "Check soil pH",
+        "completedAgo": "Completed {time} ago",
+        "dayNum": "Day {num}",
+        "vegFertilization": "Vegetative Fertilization",
+        "newWatering": "New Watering",
+        "expertTip": "Expert Tip",
+        "suggestion": "The flowering stage requires more potassium. We recommend increasing the dose of {brand} to 4ml/L starting next week.",
+        "stickersComingSoon": "Community stickers coming soon",
+        "poweredBy": "Powered by"
       },
       "deliverables": {
         "title": "What your brand receives",
@@ -2118,135 +2145,138 @@
           "title": "Right product at the right moment",
           "desc": "Defensive shows up in the IPM protocol. Soil input appears at soil prep. Foliar at the right time. Not a push. Context."
         }
-      }
-    },
-    "finalCta": {
-      "text": "We are opening spots for a few brands in this model.\nWho joins now defines the standard inside the app.",
-      "primaryCta": "See my brand in MyBud",
-      "secondaryCta": "Join as a partner brand",
-      "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
-      "community": "Join the first brands shaping the future of cannabis cultivation.",
-      "form": {
-        "namePlaceholder": "Full name",
-        "emailPlaceholder": "Corporate email",
-        "phonePlaceholder": "Phone / WhatsApp",
-        "companyPlaceholder": "Company"
       },
-      "primaryButton": "Schedule conversation",
-      "secondaryOption": "Prefer to talk directly?",
-      "email": "comercial@mybud.app",
-      "successTitle": "Got it!",
-      "successMessage": "Thanks for your interest!",
-      "successSubtext": "Someone from the Mybud team will reach out within one business day.",
-      "sending": "Sending...",
-      "errorMessage": "Something went wrong. Try again or email comercial@mybud.app"
-    },
-    "modal": {
-      "fields": {
-        "objective": "Partnership objective"
-      },
-      "subtitle": "Tell us more about your objective (optional)"
-    },
-    "footer": {
-      "tagline": "MyBud is where brands become part of the grower's routine.",
-      "unifier": "MyBud grows with you — from individual cultivation to the cannabis industry.",
-      "contact": "Contact",
-      "growers": "Growers",
-      "collective": "Collectives",
-      "industry": "Industry"
-    },
-    "funnel": {
-      "hero": {
-        "headline": "Your brand doesn't have to stop at the packaging.\nIt can guide the grow.",
-        "subheadline": "We turn your nutritional chart into a schedule inside the app, where the grower follows your brand at the right moment, with the right dose, throughout the entire cycle.",
-        "bullet1": "Your protocol becomes tasks in the grow",
-        "bullet2": "Your brand guides new growers from the start",
-        "bullet3": "Correct use drives more consistency and repurchase",
-        "cta": "I want my brand guiding grows",
-        "secondaryCta": "See how it works",
-        "mock": {
-          "taskName": "Apply Brand Grow A",
-          "taskDetail": "2ml/L — Today",
-          "taskPhase": "Vegetative — Week 3"
+      "finalCta": {
+        "text": "We are opening spots for a few brands in this model.\nWho joins now defines the standard inside the app.",
+        "headline": "the grow rule.\n{italic}",
+        "headlineItalic": "digitized.",
+        "punchline": "your brand doesn't need ads. it needs consistent execution.",
+        "primaryCta": "See my brand in MyBud",
+        "secondaryCta": "Join as a partner brand",
+        "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
+        "community": "Join the first brands shaping the future of cannabis cultivation.",
+        "form": {
+          "namePlaceholder": "Full name",
+          "emailPlaceholder": "Corporate email",
+          "phonePlaceholder": "Phone / WhatsApp",
+          "companyPlaceholder": "Company"
+        },
+        "primaryButton": "Schedule conversation",
+        "secondaryOption": "Prefer to talk directly?",
+        "email": "comercial@mybud.app",
+        "successTitle": "Got it!",
+        "successMessage": "Thanks for your interest!",
+        "successSubtext": "Someone from the Mybud team will reach out within one business day.",
+        "sending": "Sending...",
+        "errorMessage": "Something went wrong. Try again or email comercial@mybud.app",
+        "modal": {
+          "fields": {
+            "objective": "Partnership objective"
+          },
+          "subtitle": "Tell us more about your objective (optional)"
         }
       },
-      "problem": {
-        "headline": "Today, your brand teaches…\nbut doesn't follow through.",
-        "channels": "Your brand delivers protocols via PDF, charts, labels, and posts. But the grower lives in their routine.",
-        "pain1": "Don't know when to apply",
-        "pain2": "Don't follow the sequence",
-        "pain3": "Only use part of the line",
-        "punchline": "The problem isn't the product. It's that it's not there at the moment of use."
+      "footer": {
+        "tagline": "MyBud is where brands become part of the grower's routine.",
+        "unifier": "MyBud grows with you — from individual cultivation to the cannabis industry.",
+        "contact": "Contact",
+        "growers": "Growers",
+        "collective": "Collectives",
+        "industry": "Industry"
       },
-      "transformation": {
-        "headline": "We turn protocols into execution.",
-        "beforeLabel": "Before",
-        "beforeContent": "\"2ml/L every 7 days\"",
-        "afterLabel": "After",
-        "afterContent": "Apply Brand Grow A today\n2ml/L — Week 3",
-        "body": "You send your chart (PDF, spreadsheet, etc). We turn it into:",
-        "item1": "Tasks by phase",
-        "item2": "Doses by moment",
-        "item3": "Usage sequence",
-        "item4": "Grow context",
-        "punchline": "Dosage becomes a task.\nChart becomes routine.\nProduct becomes action."
-      },
-      "newGrowers": {
-        "headline": "Your brand also guides those just starting out.",
-        "problem": "For new growers, the problem isn't a lack of product. It's not knowing where to start, which product to use first, how to follow a complete cycle.",
-        "bullet1": "Your brand becomes a guided plan",
-        "bullet2": "The grower starts with your line",
-        "bullet3": "Follows your protocol with clarity",
-        "punchline": "Your brand stops being an option. It becomes the reference.",
-        "mockPlan": "Recommended plan: Starter Program by [Brand]",
-        "mockCta": "Get started"
-      },
-      "appearance": {
-        "headline": "Your brand inside the grow routine",
-        "block1Title": "Task",
-        "block1Desc": "Product appears at the moment of action",
-        "block2Title": "Timeline",
-        "block2Desc": "Sequence within the cycle",
-        "block3Title": "Context",
-        "block3Desc": "Explanation of why to use it now",
-        "body": "The grower doesn't need to remember. The app delivers:",
-        "when": "When to use",
-        "how": "How much to use",
-        "why": "Why to use"
-      },
-      "sales": {
-        "headline": "Correct execution drives continuity",
-        "item1": "More consistency",
-        "item2": "More complete line usage",
-        "item3": "More repurchase",
-        "punchline": "Your product stops being a single application.\nAnd becomes a complete cycle."
-      },
-      "data": {
-        "headline": "You start understanding real usage",
-        "item1": "When your products come in",
-        "item2": "At which phase",
-        "item3": "How frequently",
-        "item4": "How the line is used",
-        "mockLabel1": "Growers using",
-        "mockLabel2": "Frequency",
-        "mockLabel3": "Phase"
-      },
-      "howItWorks": {
-        "headline": "Simple integration",
-        "step1": "You send your protocol",
-        "step2": "We structure it in the app",
-        "step3": "Your brand enters the grow",
-        "footer": "No technical integration. No product changes."
-      },
-      "positioning": {
-        "headline": "First brands set the standard",
-        "body": "Growers follow routines. The first brands inside the app become the reference, occupy space in the flow, and capture new users.",
-        "cta": "I want my brand inside MyBud"
-      },
-      "final": {
-        "headline": "Your brand can sell inputs.\nOr it can guide the grow.",
-        "sub": "In MyBud, your product accompanies the grower from start to finish.",
-        "cta": "I want my brand guiding grows"
+      "funnel": {
+        "hero": {
+          "headline": "Your brand doesn't have to stop at the packaging.\nIt can guide the grow.",
+          "subheadline": "We turn your nutritional chart into a schedule inside the app, where the grower follows your brand at the right moment, with the right dose, throughout the entire cycle.",
+          "bullet1": "Your protocol becomes tasks in the grow",
+          "bullet2": "Your brand guides new growers from the start",
+          "bullet3": "Correct use drives more consistency and repurchase",
+          "cta": "I want my brand guiding grows",
+          "secondaryCta": "See how it works",
+          "mock": {
+            "taskName": "Apply Brand Grow A",
+            "taskDetail": "2ml/L — Today",
+            "taskPhase": "Vegetative — Week 3"
+          }
+        },
+        "problem": {
+          "headline": "Today, your brand teaches…\nbut doesn't follow through.",
+          "channels": "Your brand delivers protocols via PDF, charts, labels, and posts. But the grower lives in their routine.",
+          "pain1": "Don't know when to apply",
+          "pain2": "Don't follow the sequence",
+          "pain3": "Only use part of the line",
+          "punchline": "The problem isn't the product. It's that it's not there at the moment of use."
+        },
+        "transformation": {
+          "headline": "We turn protocols into execution.",
+          "beforeLabel": "Before",
+          "beforeContent": "\"2ml/L every 7 days\"",
+          "afterLabel": "After",
+          "afterContent": "Apply Brand Grow A today\n2ml/L — Week 3",
+          "body": "You send your chart (PDF, spreadsheet, etc). We turn it into:",
+          "item1": "Tasks by phase",
+          "item2": "Doses by moment",
+          "item3": "Usage sequence",
+          "item4": "Grow context",
+          "punchline": "Dosage becomes a task.\nChart becomes routine.\nProduct becomes action."
+        },
+        "newGrowers": {
+          "headline": "Your brand also guides those just starting out.",
+          "problem": "For new growers, the problem isn't a lack of product. It's not knowing where to start, which product to use first, how to follow a complete cycle.",
+          "bullet1": "Your brand becomes a guided plan",
+          "bullet2": "The grower starts with your line",
+          "bullet3": "Follows your protocol with clarity",
+          "punchline": "Your brand stops being an option. It becomes the reference.",
+          "mockPlan": "Recommended plan: Starter Program by [Brand]",
+          "mockCta": "Get started"
+        },
+        "appearance": {
+          "headline": "Your brand inside the grow routine",
+          "block1Title": "Task",
+          "block1Desc": "Product appears at the moment of action",
+          "block2Title": "Timeline",
+          "block2Desc": "Sequence within the cycle",
+          "block3Title": "Context",
+          "block3Desc": "Explanation of why to use it now",
+          "body": "The grower doesn't need to remember. The app delivers:",
+          "when": "When to use",
+          "how": "How much to use",
+          "why": "Why to use"
+        },
+        "sales": {
+          "headline": "Correct execution drives continuity",
+          "item1": "More consistency",
+          "item2": "More complete line usage",
+          "item3": "More repurchase",
+          "punchline": "Your product stops being a single application.\nAnd becomes a complete cycle."
+        },
+        "data": {
+          "headline": "You start understanding real usage",
+          "item1": "When your products come in",
+          "item2": "At which phase",
+          "item3": "How frequently",
+          "item4": "How the line is used",
+          "mockLabel1": "Growers using",
+          "mockLabel2": "Frequency",
+          "mockLabel3": "Phase"
+        },
+        "howItWorks": {
+          "headline": "Simple integration",
+          "step1": "You send your protocol",
+          "step2": "We structure it in the app",
+          "step3": "Your brand enters the grow",
+          "footer": "No technical integration. No product changes."
+        },
+        "positioning": {
+          "headline": "First brands set the standard",
+          "body": "Growers follow routines. The first brands inside the app become the reference, occupy space in the flow, and capture new users.",
+          "cta": "I want my brand inside MyBud"
+        },
+        "final": {
+          "headline": "Your brand can sell inputs.\nOr it can guide the grow.",
+          "sub": "In MyBud, your product accompanies the grower from start to finish.",
+          "cta": "I want my brand guiding grows"
+        }
       }
     }
   },

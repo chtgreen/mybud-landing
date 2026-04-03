@@ -1,4 +1,5 @@
-import type { FC } from 'react';
+import { Fragment, type FC } from 'react';
+import { t } from '../lib/i18n';
 import { MoveRight } from 'lucide-react';
 
 interface IndustryFinalCTAProps {
@@ -23,11 +24,20 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
 
           <div className="space-y-10">
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-zinc-950 leading-[0.9] tracking-[-0.04em] lowercase animate-in fade-in slide-in-from-bottom-12 duration-1200">
-              a regra do cultivo.<br />
-              <span className="text-emerald-500 italic">digitalizada.</span>
+              {t('industry.finalCta.headline').split('\n').map((line, i) => (
+                <Fragment key={i}>
+                  {line.includes('{italic}') ? (
+                    <>
+                      {line.replace('{italic}', '')}
+                      <span className="text-emerald-500 italic">{t('industry.finalCta.headlineItalic')}</span>
+                    </>
+                  ) : line}
+                  {i === 0 && <br />}
+                </Fragment>
+              ))}
             </h2>
             <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 backdrop-blur-sm">
-              sua marca não precisa de anúncios. precisa de execução consistente.
+              {t('industry.finalCta.punchline')}
             </p>
           </div>
 
@@ -37,14 +47,14 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
               onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
-              ver minha marca
+              {t('industry.hero.cta')}
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
               onClick={onCTAClick}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-bold text-zinc-950 border-2 border-zinc-100 bg-white hover:border-zinc-300 transition-all lowercase shadow-sm"
             >
-              falar com o time
+              {t('industry.hero.secondaryCta')}
             </button>
           </div>
 
@@ -61,3 +71,4 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
 };
 
 export default IndustryFinalCTA;
+

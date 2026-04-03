@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({
   ].join(" ");
 
   const ctaButtonClass = [
-    "px-6 py-2.5 rounded-full text-sm font-black transition-all hover:scale-105 active:scale-95",
+    "px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-black transition-all hover:scale-105 active:scale-95 whitespace-nowrap",
     isIndustry
       ? "bg-emerald-500 text-zinc-950 shadow-[0_10px_20px_rgba(16,185,129,0.2)]"
       : "bg-[#EB4C80] text-white shadow-lg",

@@ -14,7 +14,7 @@ const IndustryEcosystem: FC = () => {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
               <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">
-                B2B Licensing
+                {t('industry.ecosystem.licensingBadge')}
               </div>
 
               <div className="space-y-6">
@@ -62,7 +62,7 @@ const IndustryEcosystem: FC = () => {
                 </p>
 
                 <div className="mt-16 pt-8 border-t border-zinc-900/50 w-full flex justify-between items-center opacity-60">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">licensed by mybud</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">{t('industry.ecosystem.licensedBy')}</span>
                   <div className="w-2 h-2 rounded-full bg-emerald-500" />
                 </div>
               </div>
@@ -75,3 +75,4 @@ const IndustryEcosystem: FC = () => {
 };
 
 export default IndustryEcosystem;
+

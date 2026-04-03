@@ -1910,21 +1910,23 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "Sua marca dentro do cultivo.\nComo regra.",
+      "title": "Sua marca dentro do cultivo.",
       "subtitle": "Seu protocolo vira execução real.",
       "cta": "Ver minha marca",
       "secondaryCta": "Falar com o time",
+      "discoveryHow": "descubra como",
       "words": {
-        "suggestion": "sugestão",
-        "presence": "presença",
-        "routine": "rotina",
-        "plan": "plano",
-        "belonging": "pertencimento",
-        "representation": "representação",
-        "instructions": "instruções",
-        "nutritionalPlan": "plano nutricional",
-        "usageSuggestion": "sugestão de uso",
-        "dosage": "dosagem"
+        "rule": "como regra",
+        "suggestion": "como sugestão",
+        "presence": "como presença",
+        "routine": "como rotina",
+        "plan": "como plano",
+        "belonging": "como pertencimento",
+        "representation": "como representação",
+        "instructions": "como instruções",
+        "nutritionalPlan": "como plano nutricional",
+        "usageSuggestion": "como sugestão de uso",
+        "dosage": "como dosagem"
       }
     },
     "experience": {
@@ -1969,6 +1971,12 @@
         "primaryCta": "Quero isso",
         "secondaryCta": "Testar isso com meus produtos",
         "fullAppCta": "Ver no app completo"
+      },
+      "demo": {
+        "title": "Sua marca na rotina",
+        "subtitle": "Dentro da rotina do cultivo.\nApareça no momento exato do manejo.",
+        "cta": "Teste sua marca agora",
+        "secondaryCta": "Falar com o time"
       }
     },
     "reframe": {
@@ -2009,24 +2017,28 @@
     },
     "problem": {
       "title": "Hoje, sua marca ensina.\nMas não acompanha.",
-      "intro": "O cliente compra. E você perde visibilidade.\nUso mais consistente = mais recompra.",
+      "intro": "O cliente compra. E você perde a visibilidade.\nUso mais consistente = mais recompra.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
-      "pain3": "Culpa sua marca",
-      "pain4": "Abandona a linha",
-      "pdfNote": "Seu PDF virou peso de papel.",
-      "solution": "Nós transformamos tabela em execução.",
-      "narrative": "Overfert e erros de manejo queimam sua planta e sua reputação."
+      "pain3": "Queima a planta",
+      "pain4": "Culpa a sua marca",
+      "pdfNote": "Seu PDF de dosagem virou peso de papel.",
+      "solution": "Vamos transformá-lo no motor do grow.",
+      "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação em fóruns e grupos de WhatsApp.",
+      "badge": "execução dentro do grow",
+      "legacyBadge": "método antigo (pdf/físico)",
+      "standardBadge": "padrão mybud",
+      "applyProductA": "aplicar produto a"
     },
     "howItWorks": {
-      "title": "Como funciona",
-      "step1": "Mapeamos sua tabela oficial",
-      "step2": "Digitalizamos o algoritmo",
-      "step3": "Sua marca vira tarefa no app",
-      "noTech": "Sem integração técnica. Sem esforço do seu lado.",
+      "title": "O que fazemos exatamente",
+      "step1": "Pegamos sua tabela oficial (Veg, Bloom, Boost, Flush).",
+      "step2": "Codificamos a matemática exata de pH, EC e mililitros no algoritmo.",
+      "step3": "O app avisa o usuário: qual garrafa abrir e quantos ml aplicar.",
+      "noTech": "👉 Sem integração técnica | 👉 Sem esforço do seu lado",
       "step1Title": "Mapeamento",
       "step2Title": "Digitalização",
-      "step3Title": "Execução"
+      "step3Title": "Execução Guiada"
     },
     "data": {
       "title": "O que você finalmente descobre",
@@ -2117,25 +2129,30 @@
           "ecLow": "EC está levemente baixo nesta fase",
           "ecTarget": "alvo: 1.4–1.8 EC na fase vegetativa",
           "increaseCalMag": "aumentar CalMag na floração",
-          "calciumBoost": "a transição para floração exige reforço de cálcio"
+          "calciumBoost": "a transição para floração exige reforço de cálcio",
+          "expertTip": "Dica do especialista",
+          "suggestion": "Você deveria aplicar {brand} hoje"
         },
         "hub": {
           "title": "Perfil da marca",
           "followers": "Seguidores",
           "importPlan": "Importar Tabela Nutricional",
           "featured": "Produtos em destaque",
-          "bio": "Nutrientes confiáveis para rendimento máximo"
+          "bio": "Nutrientes confiáveis para rendimento máximo",
+          "follow": "Seguir marca"
         },
         "calculator": {
           "title": "Calculadora de dosagem",
           "reservoir": "Tamanho do tanque",
           "calculate": "Calcular Dosagem",
-          "applyButton": "Aplicar na Tarefa de Hoje"
+          "applyButton": "Aplicar na Tarefa de Hoje",
+          "tankSize": "Tamanho do tanque"
         },
         "stickers": {
           "title": "Stickers da marca",
           "dragAndDrop": "Arrastar & Soltar Stickers",
-          "communityText": "Growers compartilham suas plantas usando seus stickers oficiais."
+          "communityText": "Growers compartilham suas plantas usando seus stickers oficiais.",
+          "poweredBy": "powered by"
         },
         "descriptions": {
           "tasks": "Seu produto aparece exatamente quando a planta precisa. Sem achismos.",
@@ -2144,8 +2161,20 @@
           "recommendations": "Alertas inteligentes guiando o cultivador a usar seu produto agora.",
           "hub": "O painel da sua marca. Deixe os growers importarem sua tabela de nutrição.",
           "calculator": "Digitalizamos sua tabela PDF virando uma ferramenta interativa.",
-          "stickers": "Deixe os cultivadores divulgarem sua marca colocando seus stickers em suas fotos!"
-        }
+          "stickers": "Mostre que sua marca é a escolha oficial dos melhores cultivadores."
+        },
+        "liveBadge": "MyBud Live",
+        "vegStageWeek3": "Fase Vegetativa — Semana 3",
+        "nextTasks": "Próximas Tarefas",
+        "checkSoilPh": "Verificar pH do solo",
+        "completedAgo": "Concluído há {time}",
+        "dayNum": "Dia {num}",
+        "vegFertilization": "Fertilização Vegetativa",
+        "newWatering": "Nova Rega",
+        "expertTip": "Dica do Especialista",
+        "suggestion": "O estágio de floração exige mais potássio. Recomendamos aumentar a dose de {brand} para 4ml/L a partir da próxima semana.",
+        "stickersComingSoon": "Stickers de comunidade em breve",
+        "poweredBy": "Distribuído por"
       },
       "deliverables": {
         "title": "O que sua marca recebe",
@@ -2166,6 +2195,9 @@
     },
     "finalCta": {
       "text": "Estamos abrindo poucas marcas neste modelo.\nQuem entra agora define o padrão dentro do app.",
+      "headline": "a regra do cultivo.\n{italic}",
+      "headlineItalic": "digitalizada.",
+      "punchline": "sua marca não precisa de anúncios. precisa de execução consistente.",
       "primaryCta": "Ver minha marca no MyBud",
       "secondaryCta": "Entrar como marca parceira",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
@@ -2183,13 +2215,13 @@
       "successMessage": "Recebido!",
       "successSubtext": "Nossa equipe entrará em contato em breve para discutir como podemos ajudar seu negócio.",
       "sending": "Enviando...",
-      "errorMessage": "Algo deu errado. Tente novamente ou escreva para comercial@mybud.app"
-    },
-    "modal": {
-      "fields": {
-        "objective": "Objetivo da parceria"
-      },
-      "subtitle": "Conte-nos mais sobre seu objetivo (opcional)"
+      "errorMessage": "Algo deu errado. Tente novamente ou escreva para comercial@mybud.app",
+      "modal": {
+        "fields": {
+          "objective": "Objetivo da parceria"
+        },
+        "subtitle": "Conte-nos mais sobre seu objetivo (opcional)"
+      }
     },
     "footer": {
       "tagline": "MyBud é onde marcas se tornam parte da rotina do cultivador.",

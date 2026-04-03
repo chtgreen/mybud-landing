@@ -112,7 +112,7 @@ const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> =
                 </p>
                 <div className="flex items-center gap-3 px-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <p className="text-[11px] text-emerald-400 font-black uppercase tracking-widest">Veg Semana 3</p>
+                  <p className="text-[11px] text-emerald-400 font-black uppercase tracking-widest">{t('industry.experience.result.vegSemana3')}</p>
                 </div>
               </div>
             </div>
@@ -120,24 +120,24 @@ const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> =
             /* CALCULATOR VIEW */
             <div className="p-5 space-y-6">
               <div className="space-y-2">
-                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest">Calculadora</p>
-                <h4 className="text-lg font-black text-white leading-tight">Dosagem Exata</h4>
+                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest">{t('industry.demo.mock.calculator.title')}</p>
+                <h4 className="text-lg font-black text-white leading-tight">{t('industry.demo.mock.calculator.title')}</h4>
               </div>
 
               <div className="space-y-4">
                 <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800">
-                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">Tamanho do Tanque</p>
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">{t('industry.demo.mock.calculator.tankSize')}</p>
                   <div className="flex items-end gap-2">
                     <span className="text-3xl font-black text-emerald-500">10</span>
-                    <span className="text-lg font-bold text-zinc-400 mb-1">Litros</span>
+                    <span className="text-lg font-bold text-zinc-400 mb-1">L</span>
                   </div>
                 </div>
 
                 <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800">
-                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">Resultado</p>
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">{t('industry.experience.result.phCheck')}</p>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-zinc-300">{displayBrand} Grow A</span>
+                      <span className="text-xs font-bold text-zinc-300">{displayBrand} {t('industry.experience.result.productGrowA')}</span>
                       <span className="text-sm font-black text-emerald-400">20ml</span>
                     </div>
                     <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
@@ -148,7 +148,7 @@ const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> =
               </div>
 
               <button className="w-full py-4 rounded-2xl bg-emerald-500 text-zinc-950 font-black text-sm uppercase tracking-widest shadow-[0_8px_16px_rgba(16,185,129,0.3)]">
-                Aplicar Rega
+                {t('industry.demo.mock.activity.newWatering')}
               </button>
             </div>
           )}
@@ -277,10 +277,10 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
               <div className="order-1 lg:order-2 space-y-8 text-center lg:text-left">
                 <div className="space-y-4">
                   <h2 className="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
-                    {t('industry.experience.headline')}
+                    {t('industry.experience.demo.title')}
                   </h2>
                   <p className="text-lg text-zinc-400 font-bold leading-relaxed">
-                    {t('industry.experience.sub')}
+                    {t('industry.experience.demo.subtitle')}
                   </p>
                 </div>
 
@@ -289,7 +289,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                     onClick={() => setStep('form-brand')}
                     className="w-full py-5 rounded-2xl bg-emerald-500 text-zinc-950 font-black text-lg hover:bg-emerald-400 shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3"
                   >
-                    Ver minha marca
+                    {t('industry.experience.demo.cta')}
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -298,7 +298,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                     onClick={onCTAClick}
                     className="w-full py-4 text-zinc-500 font-bold hover:text-zinc-300 transition-colors"
                   >
-                    Falar com o time
+                    {t('industry.experience.demo.secondaryCta')}
                   </button>
                 </div>
               </div>
@@ -321,12 +321,12 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                 className="w-full px-6 py-5 bg-zinc-900 border-2 border-zinc-800 focus:border-emerald-500/50 rounded-2xl text-white text-lg font-medium placeholder-zinc-600 focus:outline-none transition-all"
               />
               <div className="space-y-2">
-                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-2">Opcional: URL do Logo</p>
+                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-2">{t('industry.experience.form.optionalLogo')}</p>
                 <input
                   type="url"
                   value={form.logoUrl}
                   onChange={handleChange('logoUrl')}
-                  placeholder="https://sua-marca.com/logo.png"
+                  placeholder={t('industry.experience.form.logoPlaceholder')}
                   className="w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800/50 focus:border-emerald-500/30 rounded-2xl text-white text-sm font-medium placeholder-zinc-700 focus:outline-none transition-all"
                 />
               </div>
@@ -402,7 +402,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
           <div className="flex flex-col items-center animate-in fade-in scale-95 duration-700">
             <div className="text-center mb-12 max-w-2xl px-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold mb-6">
-                ✨ {t('industry.experience.result.message')}
+                ✨ {t('industry.experience.result.message').replace('{brand}', form.brandName)}
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
                 {t('industry.experience.result.subMessage')}
@@ -419,7 +419,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                 onClick={() => window.open(CALENDAR_URL, '_blank')}
                 className="flex-1 py-5 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/25 transition-all hover:-translate-y-1 active:translate-y-0"
               >
-                {t('industry.experience.result.primaryCta')}
+                {t('industry.experience.result.primaryCta').replace('{brand}', form.brandName)}
               </button>
               <button
                 onClick={onCTAClick}
