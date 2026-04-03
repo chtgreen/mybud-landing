@@ -103,7 +103,9 @@ const Header: React.FC<HeaderProps> = ({
     "text-sm font-black transition-all hover:scale-105",
     isIndustry
       ? "text-zinc-400 hover:text-emerald-400"
-      : ("text-[#288664] hover:text-[#0f5132]"),
+      : isScrolled || isMenuOpen
+        ? "text-zinc-800 hover:text-[#288664]"
+        : "text-white/90 hover:text-white",
   ].join(" ");
 
   const ctaButtonClass = [
@@ -115,8 +117,18 @@ const Header: React.FC<HeaderProps> = ({
 
   const selectClass = [
     "bg-transparent border-none focus:ring-0 text-sm font-black cursor-pointer appearance-none",
-    isIndustry ? "text-zinc-400 hover:text-white" : "text-[#288664]",
+    isIndustry
+      ? "text-zinc-400 hover:text-white"
+      : isScrolled || isMenuOpen
+        ? "text-zinc-800 hover:text-[#288664]"
+        : "text-white/90 hover:text-white",
   ].join(" ");
+
+  const logoSrc = isIndustry
+    ? "/mybud-logo-white.svg"
+    : isScrolled || isMenuOpen
+      ? "/mybud-logo-green.svg"
+      : "/mybud-logo-white.svg";
 
   const logoHref = isIndustry
     ? `/${currentLanguage}/industry`
@@ -131,7 +143,7 @@ const Header: React.FC<HeaderProps> = ({
           {/* Logo */}
           <a href={logoHref} className="flex items-center group" aria-label="mybud home">
             <img
-              src={isIndustry ? "/mybud-logo-white.svg" : "/mybud-logo-green.svg"}
+              src={logoSrc}
               alt="mybud logo"
               className="h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-105"
             />
@@ -182,7 +194,7 @@ const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden p-2 rounded-xl transition-colors ${isIndustry ? 'text-white hover:bg-zinc-900' : 'text-zinc-900 hover:bg-zinc-100'}`}
+              className={`md:hidden p-2 rounded-xl transition-colors ${isIndustry ? 'text-white hover:bg-zinc-900' : isScrolled || isMenuOpen ? 'text-zinc-900 hover:bg-zinc-100' : 'text-white hover:bg-white/10'}`}
             >
               {isMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
