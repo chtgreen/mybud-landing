@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { useState, useEffect, type FC } from 'react';
 import { t } from '../lib/i18n';
 import { MoveRight } from 'lucide-react';
 
@@ -7,6 +7,37 @@ interface HeroIndustryProps {
 }
 
 const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
+  const words = ['regra.', 'protocolo.', 'plano.', 'dose exata.', 'ingrediente.'];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState(words[0]);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleType = () => {
+      const fullText = words[currentWordIndex];
+
+      if (isDeleting) {
+        setDisplayText(fullText.substring(0, displayText.length - 1));
+        setTypingSpeed(50);
+      } else {
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+        setTypingSpeed(150);
+      }
+
+      if (!isDeleting && displayText === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && displayText === '') {
+        setIsDeleting(false);
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        setTypingSpeed(200);
+      }
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, currentWordIndex, words, typingSpeed]);
+
   return (
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-zinc-950 text-white border-b border-white/5">
       {/* Cinematic 2026 Dark Background */}
@@ -40,7 +71,11 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
           {/* Headline - Bold, Lowercase */}
           <div className="space-y-12 mb-24">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-[-0.04em] text-white lowercase animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-150">
-              {t('industry.hero.title')}
+              sua marca dentro do cultivo.<br />
+              como <span className="text-emerald-500 relative">
+                {displayText}
+                <span className="absolute -right-1 top-0 bottom-0 w-1 bg-emerald-500 animate-pulse ml-1" />
+              </span>
             </h1>
 
             <div className="flex justify-center animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-300">
@@ -48,7 +83,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
             </div>
 
             <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-bold lowercase scale-110 opacity-90 animate-in fade-in slide-in-from-bottom-10 duration-1200 delay-500">
-              {/* REMOVED SUBTITLE LINE AS REQUESTED */}
+              seu protocolo vira rotina.
             </p>
           </div>
 
