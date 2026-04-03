@@ -1360,34 +1360,18 @@
       "ogImageAlt": "Interfaz de MyBud mostrando un producto de marca dentro de una tarea de cultivo."
     },
     "hero": {
-      "badge": "La app que los cultivadores usan para cultivar",
-      "title": "Tu marca dentro del cultivo.\nNo como anuncio. Como regla.",
-      "subtitle": "El cultivador no siempre sigue tu PDF. En MyBud, tu marca se convierte en ejecución. Dosis exacta. Momento correcto.",
-      "cta": "Probar mi marca en MyBud",
+      "badge": "La app que los growers usan para cultivar",
+      "title": "Tu marca dentro del cultivo.\nComo regla.",
+      "subtitle": "tu protocolo se convierte en rutina.",
+      "cta": "Ver mi marca",
       "secondaryCta": "Hablar con el equipo",
-      "visual": {
-        "left": "Un cultivador usando tu producto en MyBud vería esto:",
-        "right": "MyBud con tarea + producto"
-      },
-      "scenario1": {
-        "context": "Preparando el suelo",
-        "product": "Mezcla de Suelo",
-        "detail": "Aplicar antes del trasplante"
-      },
-      "scenario2": {
-        "context": "Tomando un esqueje",
-        "product": "Root Booster",
-        "detail": "0.5ml/L · estimular enraizamiento"
-      },
-      "scenario3": {
-        "context": "Preparando el tanque",
-        "product": "Grow A",
-        "detail": "2ml/L · Vegetativo — Semana 3"
-      },
-      "scenario4": {
-        "context": "Protocolo IPM",
-        "product": "Neem Spray",
-        "detail": "Foliar · preventivo semanal"
+      "words": {
+        "suggestion": "sugerencia.",
+        "presence": "presencia.",
+        "routine": "rutina.",
+        "plan": "plan.",
+        "watering": "riego.",
+        "reference": "referencia."
       }
     },
     "reframe": {

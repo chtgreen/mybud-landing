@@ -1910,29 +1910,13 @@
       "subtitle": "seu protocolo vira rotina.",
       "cta": "Ver minha marca",
       "secondaryCta": "Falar com o time",
-      "visual": {
-        "left": "Sem MyBud",
-        "right": "Dentro da rotina do cultivo"
-      },
-      "scenario1": {
-        "context": "Preparando o solo",
-        "product": "Solo Mix",
-        "detail": "Aplicar antes do transplante"
-      },
-      "scenario2": {
-        "context": "Tirando clone",
-        "product": "Root Booster",
-        "detail": "0.5ml/L · estimular enraizamento"
-      },
-      "scenario3": {
-        "context": "Preparando o tanque",
-        "product": "Grow A",
-        "detail": "2ml/L · Vegetativo — Semana 3"
-      },
-      "scenario4": {
-        "context": "Protocolo IPM",
-        "product": "Neem Spray",
-        "detail": "Foliar · preventivo semanal"
+      "words": {
+        "suggestion": "sugestão.",
+        "presence": "presença.",
+        "routine": "rotina.",
+        "plan": "plano.",
+        "watering": "rega.",
+        "reference": "referência."
       }
     },
     "experience": {

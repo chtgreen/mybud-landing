@@ -11,6 +11,7 @@ type DemoView = 'tasks' | 'calculator';
 interface FormData {
   brandName: string;
   email: string;
+  logoUrl: string;
 }
 
 interface IndustryBrandExperienceProps {
@@ -20,11 +21,12 @@ interface IndustryBrandExperienceProps {
 const initialForm: FormData = {
   brandName: '',
   email: '',
+  logoUrl: '',
 };
 
 // ── Phone frame mock screen ──────────────────────────────────────────────────
 
-const PhoneFrame: FC<{ brandName: string; view?: DemoView }> = ({ brandName, view = 'tasks' }) => {
+const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> = ({ brandName, logoUrl, view = 'tasks' }) => {
   const displayBrand = brandName || 'MyBud Fert';
 
   return (
@@ -57,9 +59,16 @@ const PhoneFrame: FC<{ brandName: string; view?: DemoView }> = ({ brandName, vie
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-1">
-                      <p className="text-[13px] font-extrabold text-white truncate">
-                        {displayBrand} {t('industry.experience.result.productGrowA')}
-                      </p>
+                      <div className="flex flex-col">
+                        {logoUrl && (
+                          <div className="mb-1 w-6 h-6 rounded bg-white/10 p-0.5 flex items-center justify-center overflow-hidden border border-white/5">
+                            <img src={logoUrl} alt={displayBrand} className="w-full h-full object-contain" />
+                          </div>
+                        )}
+                        <p className="text-[13px] font-extrabold text-white truncate">
+                          {displayBrand} {t('industry.experience.result.productGrowA')}
+                        </p>
+                      </div>
                       <span className="text-emerald-500 font-black text-sm">✓</span>
                     </div>
                     <p className="text-[11px] text-emerald-400 font-bold">
@@ -79,9 +88,16 @@ const PhoneFrame: FC<{ brandName: string; view?: DemoView }> = ({ brandName, vie
                 <div className="flex items-start gap-3">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-700 mt-1.5 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[12px] font-bold text-zinc-400 truncate">
-                      {displayBrand} {t('industry.experience.result.productCalMag')}
-                    </p>
+                    <div className="flex flex-col">
+                      {logoUrl && (
+                        <div className="mb-0.5 w-4 h-4 rounded bg-white/5 p-0.5 flex items-center justify-center overflow-hidden opacity-50">
+                          <img src={logoUrl} alt={displayBrand} className="w-full h-full object-contain" />
+                        </div>
+                      )}
+                      <p className="text-[12px] font-bold text-zinc-400 truncate">
+                        {displayBrand} {t('industry.experience.result.productCalMag')}
+                      </p>
+                    </div>
                     <p className="text-[11px] text-zinc-600 font-bold mt-1">
                       {t('industry.experience.result.dose2')}
                     </p>
@@ -144,12 +160,12 @@ const PhoneFrame: FC<{ brandName: string; view?: DemoView }> = ({ brandName, vie
 
 // ── Step components ──────────────────────────────────────────────────────────
 
-const StepWrapper: FC<{ children: React.ReactNode; showPhone?: boolean; brandName?: string; view?: DemoView }> = ({ children, showPhone, brandName, view }) => (
+const StepWrapper: FC<{ children: React.ReactNode; showPhone?: boolean; brandName?: string; logoUrl?: string; view?: DemoView }> = ({ children, showPhone, brandName, logoUrl, view }) => (
   <div className="flex flex-col items-center gap-12 w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
     {showPhone && (
       <div className="relative group">
         <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-        <PhoneFrame brandName={brandName || ''} view={view} />
+        <PhoneFrame brandName={brandName || ''} logoUrl={logoUrl} view={view} />
       </div>
     )}
     <div className="w-full max-w-sm">
@@ -292,7 +308,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
         {/* STEP 1: Brand Name */}
         {step === 'form-brand' && (
-          <StepWrapper showPhone brandName={form.brandName} view="tasks">
+          <StepWrapper showPhone brandName={form.brandName} logoUrl={form.logoUrl} view="tasks">
             <StepHeadline title={t('industry.experience.form.step1Headline')} />
             <form onSubmit={handleNextToEmail} className="space-y-4">
               <input
@@ -304,6 +320,16 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
                 required
                 className="w-full px-6 py-5 bg-zinc-900 border-2 border-zinc-800 focus:border-emerald-500/50 rounded-2xl text-white text-lg font-medium placeholder-zinc-600 focus:outline-none transition-all"
               />
+              <div className="space-y-2">
+                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-2">Opcional: URL do Logo</p>
+                <input
+                  type="url"
+                  value={form.logoUrl}
+                  onChange={handleChange('logoUrl')}
+                  placeholder="https://sua-marca.com/logo.png"
+                  className="w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800/50 focus:border-emerald-500/30 rounded-2xl text-white text-sm font-medium placeholder-zinc-700 focus:outline-none transition-all"
+                />
+              </div>
               <button
                 type="submit"
                 className="w-full py-5 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/10 transition-all flex items-center justify-center gap-2"
@@ -316,7 +342,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
         {/* STEP 2: Email */}
         {step === 'form-email' && (
-          <StepWrapper showPhone brandName={form.brandName} view="tasks">
+          <StepWrapper showPhone brandName={form.brandName} logoUrl={form.logoUrl} view="tasks">
             <StepHeadline title={t('industry.experience.form.step2Headline')} />
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -385,7 +411,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
             <div className="relative group mb-16">
               <div className="absolute -inset-10 bg-emerald-500/20 blur-[100px] rounded-full animate-pulse" />
-              <PhoneFrame brandName={form.brandName} view="tasks" />
+              <PhoneFrame brandName={form.brandName} logoUrl={form.logoUrl} view="tasks" />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">

@@ -1870,33 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "Your brand inside the grow.\nNot as an ad. As the rule.",
-      "subtitle": "Growers don't always follow your PDF. In MyBud, your brand becomes execution. Exact dose. Right moment.",
-      "cta": "Test my brand in MyBud",
+      "title": "Your brand inside the cultivation.\nAs a rule.",
+      "subtitle": "your protocol becomes routine.",
+      "cta": "See my brand",
       "secondaryCta": "Talk to the team",
-      "visual": {
-        "left": "A grower using your product in MyBud would see this:",
-        "right": "MyBud with task + product"
-      },
-      "scenario1": {
-        "context": "Building a soil mix",
-        "product": "Soil Amendment",
-        "detail": "Apply before transplant"
-      },
-      "scenario2": {
-        "context": "Taking a clone",
-        "product": "Root Booster",
-        "detail": "0.5ml/L · root stimulation"
-      },
-      "scenario3": {
-        "context": "Mixing the tank",
-        "product": "Grow A",
-        "detail": "2ml/L · Vegetative — Week 3"
-      },
-      "scenario4": {
-        "context": "IPM protocol",
-        "product": "Neem Spray",
-        "detail": "Foliar · weekly preventive"
+      "words": {
+        "suggestion": "suggestion.",
+        "presence": "presence.",
+        "routine": "routine.",
+        "plan": "plan.",
+        "watering": "watering.",
+        "reference": "reference."
       }
     },
     "reframe": {
