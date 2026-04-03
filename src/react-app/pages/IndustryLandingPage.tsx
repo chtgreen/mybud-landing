@@ -7,7 +7,11 @@ import Header from '../components/Header';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import HeroIndustry from '../components/HeroIndustry';
-import IndustryFunnel from '../components/IndustryFunnel';
+import IndustryProblem from '../components/IndustryProblem';
+import IndustryEcosystem from '../components/IndustryEcosystem';
+import IndustryFinalCTA from '../components/IndustryFinalCTA';
+import IndustryDeliverables from '../components/IndustryDeliverables';
+import IndustryDemo from '../components/IndustryDemo';
 import IndustryBrandExperience from '../components/IndustryBrandExperience';
 
 // Shared URL for scheduling Industry calls
@@ -73,14 +77,33 @@ export default function IndustryLandingPage() {
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
 
-      {/* Hero Section */}
+      {/* 
+          Restoring the original layout structure from the previous session,
+          but integrating the new 'Brand Experience' (Step 0) at the heart of it.
+      */}
+
+      {/* Section 1: Hero — simple, punchy, centered */}
       <HeroIndustry onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
 
-      {/* NEW: Interactive Value-First Funnel (Demo + Form + Result) */}
+      {/* Section 2: THE EXPERIENCE (STEP 0 - INTERACTIVE) 
+          This is now the central interaction point.
+      */}
       <IndustryBrandExperience onCTAClick={handleCTAClick} />
 
-      {/* NEW: Streamlined High-Conversion Funnel Content */}
-      <IndustryFunnel onCTAClick={handleCTAClick} />
+      {/* Section 3: Problem — why the brand needs this */}
+      <IndustryProblem />
+
+      {/* Section 4: Demo — here's exactly how it looks inside the app (Multi-tab) */}
+      <IndustryDemo onCTAClick={handleCTAClick} />
+
+      {/* Section 5: The 3 Pillars / Deliverables */}
+      <IndustryDeliverables />
+
+      {/* Section 6: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      <IndustryEcosystem />
+
+      {/* Section 7: Final CTA — dark closing */}
+      <IndustryFinalCTA onCTAClick={handleCTAClick} onDemoClick={handleDemoClick} />
 
       <Footer />
     </div>

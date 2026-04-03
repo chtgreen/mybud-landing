@@ -3,99 +3,85 @@ import { t } from '../lib/i18n';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-zinc-950 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="py-20 md:py-28 bg-zinc-950 text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
 
-        {/* Headline block */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
+        {/* Impact Headline */}
+        <div className="text-center md:text-left max-w-3xl mb-20">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
             {t('industry.problem.title')}
           </h2>
-          <p className="text-xl md:text-2xl text-zinc-400 mb-4 leading-relaxed">
-            {t('industry.problem.intro')}
-          </p>
-          <p className="text-lg text-zinc-500 leading-relaxed">
-            {t('industry.problem.narrative')}
-          </p>
-        </div>
-
-        {/* PDF → Engine transition */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-20">
-          <div className="px-5 py-3 rounded-xl bg-zinc-800 border border-zinc-700 text-zinc-400 font-mono text-sm">
-            📄 {t('industry.problem.pdfNote')}
-          </div>
-          <div className="text-zinc-600 text-2xl hidden sm:block">→</div>
-          <div className="px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold text-sm">
-            ⚡ {t('industry.problem.solution')}
+          <div className="grid md:grid-cols-2 gap-8">
+            <p className="text-lg text-zinc-400 font-medium leading-relaxed">
+              {t('industry.problem.intro')}
+            </p>
+            <p className="text-lg text-zinc-500 font-medium leading-relaxed">
+              {t('industry.problem.narrative')}
+            </p>
           </div>
         </div>
 
-        {/* 3 steps — looks like a real product */}
-        <div className="mb-4">
-          <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-8">
-            {t('industry.howItWorks.title')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-0 relative">
-          {/* Connector line desktop */}
-          <div className="hidden md:block absolute top-8 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-gradient-to-r from-zinc-700 via-emerald-500/40 to-zinc-700" />
-
-          {/* Step 1 — Mapeamento */}
-          <div className="relative group">
-            <div className="md:pr-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0 relative z-10 group-hover:border-zinc-500 transition-colors">
-                  <svg className="w-7 h-7 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <span className="text-xs font-bold text-zinc-600 uppercase tracking-widest">01</span>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">{t('industry.howItWorks.step1Title')}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{t('industry.howItWorks.step1')}</p>
+        {/* Visual Transformation */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+          {/* Legacy Side */}
+          <div className="bg-zinc-900/50 rounded-3xl p-8 border border-zinc-800 relative group overflow-hidden">
+            <div className="absolute top-0 right-0 p-3 bg-zinc-800 rounded-bl-2xl">
+              <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Legacy</span>
             </div>
-          </div>
-
-          {/* Step 2 — Digitalização */}
-          <div className="relative group mt-8 md:mt-0">
-            <div className="md:px-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-zinc-800 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 relative z-10 group-hover:border-emerald-500/60 transition-colors">
-                  <svg className="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <span className="text-xs font-bold text-zinc-600 uppercase tracking-widest">02</span>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">{t('industry.howItWorks.step2Title')}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{t('industry.howItWorks.step2')}</p>
+            <p className="text-zinc-500 font-mono text-sm mb-4">nutrition_table_v2.pdf</p>
+            <div className="space-y-3 opacity-40">
+              <div className="h-2 bg-zinc-700 rounded-full w-3/4" />
+              <div className="h-2 bg-zinc-700 rounded-full w-1/2" />
+              <div className="h-2 bg-zinc-700 rounded-full w-2/3" />
             </div>
+            <p className="mt-8 text-zinc-400 font-bold italic">{t('industry.problem.pdfNote')}</p>
           </div>
 
-          {/* Step 3 — Execução Guiada */}
-          <div className="relative group mt-8 md:mt-0">
-            <div className="md:pl-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 relative z-10 group-hover:bg-emerald-500/20 transition-colors">
-                  <svg className="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest">03</span>
+          {/* MyBud Side */}
+          <div className="bg-emerald-500/5 rounded-3xl p-8 border-2 border-emerald-500/30 relative group shadow-[0_20px_40px_rgba(16,185,129,0.1)]">
+            <div className="absolute top-0 right-0 p-3 bg-emerald-500/20 rounded-bl-2xl">
+              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Powered by MyBud</span>
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-zinc-950">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <h3 className="text-lg font-bold text-emerald-300 mb-2">{t('industry.howItWorks.step3Title')}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{t('industry.howItWorks.step3')}</p>
+              <h4 className="text-xl font-black text-white">{t('industry.problem.solution')}</h4>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-zinc-900/80 rounded-xl p-4 border border-emerald-500/20 flex justify-between items-center">
+                <span className="text-sm font-bold text-emerald-400">Apply Grow A</span>
+                <span className="text-xs font-black text-white bg-emerald-500 px-2 py-0.5 rounded">2ml/L</span>
+              </div>
+              <div className="bg-zinc-900/80 rounded-xl p-4 border border-emerald-500/10 opacity-60">
+                <span className="text-sm font-bold text-zinc-400">Week 4 - Flush</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Footer note */}
-        <div className="mt-12 pt-8 border-t border-zinc-800">
-          <p className="text-sm text-zinc-500 font-medium">
+        {/* 3 Step Workflow */}
+        <div className="grid md:grid-cols-3 gap-12 pt-16 border-t border-zinc-900">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="space-y-4">
+              <div className="flex items-center gap-4">
+                <span className="text-4xl font-black text-zinc-800">0{i}</span>
+                <h3 className="text-xl font-bold text-white tracking-tight">{t(`industry.howItWorks.step${i}Title`)}</h3>
+              </div>
+              <p className="text-zinc-500 leading-relaxed font-medium">
+                {t(`industry.howItWorks.step${i}`)}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Frictionless Footer */}
+        <div className="mt-20 py-6 px-8 rounded-2xl bg-zinc-900/30 border border-zinc-800 text-center">
+          <p className="text-sm text-emerald-500/70 font-black uppercase tracking-[0.3em]">
             {t('industry.howItWorks.noTech')}
           </p>
         </div>

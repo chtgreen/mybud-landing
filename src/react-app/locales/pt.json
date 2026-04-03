@@ -1907,8 +1907,8 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "Sua marca dentro do cultivo.\nNão como anúncio. Como regra.",
-      "subtitle": "O cultivador nem sempre segue seu PDF. E a execução varia de pessoa pra pessoa. No MyBud, sua marca vira execução. Dose exata. Momento certo.",
-      "cta": "Ver minha marca no MyBud",
+      "subtitle": "Seu protocolo vira execução.\nNo momento certo. Na dose certa.",
+      "cta": "Testar minha marca",
       "secondaryCta": "Falar com o time",
       "visual": {
         "left": "Sem MyBud",
@@ -1981,10 +1981,10 @@
     },
     "reframe": {
       "title": "Você não precisa de mais visibilidade.\nVocê precisa ser usado.",
-      "bullet1": "Cultivadores não seguem manuais",
-      "bullet2": "Produtos são usados de forma errada",
-      "bullet3": "Marcas não veem o uso real",
-      "punchline": "Se seu produto não está dentro da rotina, ele está fora do resultado."
+      "bullet1": "PDFs não cultivam",
+      "bullet2": "Tabelas são ignoradas",
+      "bullet3": "Doses são erradas",
+      "punchline": "Se seu produto não está na rotina, ele está fora do resultado."
     },
     "presence": {
       "title": "Onde seu produto aparece",
@@ -2016,25 +2016,25 @@
       "punchline": "Seu produto aparece no momento exato da rega."
     },
     "problem": {
-      "title": "Pare de vender mídia. Torne-se a regra.",
-      "intro": "O seu cliente compra a garrafa de nutrientes e some da sua vista.",
-      "pain1": "Erra dose",
+      "title": "Hoje, sua marca ensina.\nMas não acompanha.",
+      "intro": "O cliente compra o frasco e some da sua vista.",
+      "pain1": "Erra a dose",
       "pain2": "Mistura errado",
-      "pain3": "Queima a planta",
-      "pain4": "Culpa sua marca",
-      "pdfNote": "Seu PDF de dosagens virou peso de papel.",
-      "solution": "Nós vamos transformá-lo no motor do cultivo.",
-      "narrative": "Ele erra o PPM, entra em overfert, queima a raiz e queima a sua reputação nos fóruns e grupos de WhatsApp."
+      "pain3": "Culpa sua marca",
+      "pain4": "Abandona a linha",
+      "pdfNote": "Seu PDF virou peso de papel.",
+      "solution": "Nós transformamos tabela em execução.",
+      "narrative": "Overfert e erros de manejo queimam sua planta e sua reputação."
     },
     "howItWorks": {
-      "title": "O que nós fazemos exatamente",
-      "step1": "Pegamos a sua tabela oficial (Vega, Flora, Engorde, Flush).",
-      "step2": "Embarcamos a matemática exata de pH, EC e Mililitragem no algoritmo.",
-      "step3": "O app notifica o usuário: qual frasco abrir e quantos ml aplicar.",
-      "noTech": "👉 Sem integração técnica | 👉 Sem esforço do seu lado",
+      "title": "Como funciona",
+      "step1": "Mapeamos sua tabela oficial",
+      "step2": "Digitalizamos o algoritmo",
+      "step3": "Sua marca vira tarefa no app",
+      "noTech": "Sem integração técnica. Sem esforço do seu lado.",
       "step1Title": "Mapeamento",
       "step2Title": "Digitalização",
-      "step3Title": "Execução Guiada"
+      "step3Title": "Execução"
     },
     "data": {
       "title": "O que você finalmente descobre",
@@ -2210,11 +2210,11 @@
     "funnel": {
       "hero": {
         "headline": "Sua marca não precisa parar na embalagem.\nEla pode guiar o cultivo.",
-        "subheadline": "Transformamos sua tabela nutricional em um cronograma dentro do app, onde o grower acompanha sua marca no momento certo, com a dose certa, durante todo o ciclo.",
-        "bullet1": "Seu protocolo vira tarefas no cultivo",
-        "bullet2": "Sua marca acompanha novos growers desde o início",
-        "bullet3": "Uso correto gera mais continuidade e recompra",
-        "cta": "Quero minha marca guiando cultivos",
+        "subheadline": "Seu protocolo vira tarefas.\nSeu produto vira ação.",
+        "bullet1": "Protocolo vira execução",
+        "bullet2": "Timing perfeito",
+        "bullet3": "Dose exata",
+        "cta": "Testar minha marca",
         "secondaryCta": "Ver como funciona",
         "mock": {
           "taskName": "Aplicar Brand Grow A",
@@ -2223,7 +2223,7 @@
         }
       },
       "problem": {
-        "headline": "Hoje, sua marca ensina…\nmas não acompanha.",
+        "headline": "Hoje, sua marca ensina.\nMas não acompanha.",
         "channels": "Sua marca entrega protocolo em PDF, tabela, rótulo e posts. Mas o grower vive na rotina.",
         "pain1": "Não sabem quando aplicar",
         "pain2": "Não seguem a sequência",
@@ -2231,12 +2231,12 @@
         "punchline": "O problema não é o produto. É que ele não está no momento de uso."
       },
       "transformation": {
-        "headline": "Nós transformamos protocolo em execução.",
+        "headline": "Seu protocolo vira tarefas.\nSeu produto vira ação.",
         "beforeLabel": "Antes",
         "beforeContent": "\"2ml/L a cada 7 dias\"",
         "afterLabel": "Depois",
         "afterContent": "Aplicar Brand Grow A hoje\n2ml/L — Semana 3",
-        "body": "Você envia sua tabela (PDF, planilha, etc). Nós transformamos em:",
+        "body": "Você envia sua tabela. Nós transformamos em:",
         "item1": "Tarefas por fase",
         "item2": "Doses por momento",
         "item3": "Sequência de uso",
@@ -2245,7 +2245,7 @@
       },
       "newGrowers": {
         "headline": "Sua marca também passa a guiar quem está começando.",
-        "problem": "Para novos growers, o problema não é falta de produto. É não saber por onde começar, qual produto usar primeiro, como seguir um ciclo completo.",
+        "problem": "Para novos growers, o problema não é falta de produto. É não saber por onde começar.",
         "bullet1": "Sua marca vira um plano guiado",
         "bullet2": "O grower começa com sua linha",
         "bullet3": "Segue seu protocolo com clareza",
@@ -2274,11 +2274,11 @@
         "punchline": "Seu produto deixa de ser uma aplicação.\nE vira um ciclo completo."
       },
       "data": {
-        "headline": "Você passa a entender o uso real",
-        "item1": "Quando seus produtos entram",
-        "item2": "Em qual fase",
-        "item3": "Com que frequência",
-        "item4": "Como a linha é usada",
+        "headline": "Você começa a ver quando seu produto é usado.",
+        "item1": "Timing de uso",
+        "item2": "Fase do cultivo",
+        "item3": "Frequência real",
+        "item4": "Uso da linha",
         "mockLabel1": "Growers usando",
         "mockLabel2": "Frequência",
         "mockLabel3": "Fase"
@@ -2296,9 +2296,9 @@
         "cta": "Quero minha marca dentro do MyBud"
       },
       "final": {
-        "headline": "Sua marca pode vender insumo.\nOu pode guiar o cultivo.",
+        "headline": "Sua marca pode continuar vendendo produto.\nOu pode controlar como ele é usado.",
         "sub": "No MyBud, seu produto acompanha o grower do início ao fim.",
-        "cta": "Quero minha marca guiando cultivos"
+        "cta": "Teste sua marca agora"
       }
     }
   },

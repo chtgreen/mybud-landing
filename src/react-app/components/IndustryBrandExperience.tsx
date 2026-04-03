@@ -6,6 +6,7 @@ const CALENDAR_URL =
   'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ET0xwuXrN7fWcxlAbExovzk9knxYjbbu13DLw2MwBrgMnyi1HQ51BM50cp717q98-Tf9qdY0c';
 
 type Step = 'demo' | 'form-brand' | 'form-email' | 'loading' | 'result';
+type DemoView = 'tasks' | 'calculator';
 
 interface FormData {
   brandName: string;
@@ -23,112 +24,118 @@ const initialForm: FormData = {
 
 // ── Phone frame mock screen ──────────────────────────────────────────────────
 
-const PhoneFrame: FC<{ brandName: string }> = ({ brandName }) => {
+const PhoneFrame: FC<{ brandName: string; view?: DemoView }> = ({ brandName, view = 'tasks' }) => {
   const displayBrand = brandName || 'MyBud Fert';
 
   return (
-    <div className="w-[280px] h-[520px] rounded-[40px] border-[3px] border-zinc-700 bg-zinc-950 relative overflow-hidden shadow-[0_32px_64px_rgba(0,0,0,0.6)] flex-shrink-0 animate-in fade-in duration-700">
+    <div className="w-[280px] h-[540px] rounded-[48px] border-[6px] border-zinc-800 bg-zinc-950 relative overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] flex-shrink-0 animate-in fade-in zoom-in-95 duration-1000">
       {/* Notch */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-zinc-950 rounded-b-[18px] z-10 border-[3px] border-zinc-700 border-t-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[110px] h-[30px] bg-zinc-950 rounded-b-[20px] z-20 border-[2px] border-zinc-800 border-t-0" />
 
       {/* Screen content */}
-      <div className="absolute inset-0 bg-zinc-950 pt-9 overflow-y-auto scrollbar-none">
+      <div className="absolute inset-0 bg-zinc-950 flex flex-col pt-9">
         {/* App header */}
-        <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-900">
-          <span className="text-[15px] font-bold text-emerald-500">MyBud</span>
-          <span className="text-[11px] text-zinc-500 font-semibold">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-md sticky top-0 z-10">
+          <span className="text-[17px] font-black text-emerald-500 tracking-tight">MyBud</span>
+          <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
             {t('industry.experience.result.appHeader')}
           </span>
         </div>
 
-        {/* Tasks section */}
-        <div className="p-3.5 space-y-2">
-          <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mb-2 px-1">
-            {t('industry.experience.result.tasksSection')}
-          </p>
+        {/* Dynamic Content Area */}
+        <div className="flex-1 overflow-y-auto scrollbar-none pb-10">
+          {view === 'tasks' ? (
+            <div className="p-4 space-y-3">
+              <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3 px-1">
+                {t('industry.experience.result.tasksSection')}
+              </p>
 
-          {/* Task 1 — highlighted */}
-          <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-xl p-3 shadow-sm relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-8 h-8 bg-emerald-500/10 rounded-bl-full" />
-            <div className="flex items-start gap-2 relative z-10">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 mt-1 flex-shrink-0 animate-pulse" />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-0.5">
-                  <p className="text-[11px] font-bold text-emerald-50 truncate">
-                    {displayBrand} {t('industry.experience.result.productGrowA')}
-                  </p>
-                  <span className="text-emerald-500 font-bold text-xs">✓</span>
+              {/* Task 1 — highlighted */}
+              <div className="bg-emerald-500/10 border-2 border-emerald-500/30 rounded-2xl p-4 shadow-lg relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-12 h-12 bg-emerald-500/20 rounded-bl-full" />
+                <div className="flex items-start gap-3 relative z-10">
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-[13px] font-extrabold text-white truncate">
+                        {displayBrand} {t('industry.experience.result.productGrowA')}
+                      </p>
+                      <span className="text-emerald-500 font-black text-sm">✓</span>
+                    </div>
+                    <p className="text-[11px] text-emerald-400 font-bold">
+                      {t('industry.experience.result.dose1')}
+                    </p>
+                    <div className="mt-3 inline-block px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/30">
+                      <p className="text-[9px] text-emerald-300 font-black uppercase tracking-widest">
+                        {t('industry.experience.result.phTarget')}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-[10px] text-emerald-400/80 font-medium truncate">
-                  {t('industry.experience.result.dose1')}
+              </div>
+
+              {/* Task 2 */}
+              <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-4 opacity-50">
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-zinc-700 mt-1.5 flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[12px] font-bold text-zinc-400 truncate">
+                      {displayBrand} {t('industry.experience.result.productCalMag')}
+                    </p>
+                    <p className="text-[11px] text-zinc-600 font-bold mt-1">
+                      {t('industry.experience.result.dose2')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Schedule Preview */}
+              <div className="mt-6 pt-5 border-t border-zinc-900 space-y-3">
+                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest px-1">
+                  {t('industry.experience.result.scheduleSection')}
                 </p>
-                <p className="text-[9px] text-emerald-500/60 font-semibold mt-0.5 uppercase tracking-tighter">
-                  {t('industry.experience.result.phTarget')}
-                </p>
+                <div className="flex items-center gap-3 px-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <p className="text-[11px] text-emerald-400 font-black uppercase tracking-widest">Veg Semana 3</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Task 2 */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-3 opacity-60">
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 rounded-full bg-zinc-700 mt-1 flex-shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="text-[11px] font-semibold text-zinc-300 truncate">
-                  {displayBrand} {t('industry.experience.result.productCalMag')}
-                </p>
-                <p className="text-[10px] text-zinc-600 font-medium">
-                  {t('industry.experience.result.dose2')}
-                </p>
+          ) : (
+            /* CALCULATOR VIEW */
+            <div className="p-5 space-y-6">
+              <div className="space-y-2">
+                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest">Calculadora</p>
+                <h4 className="text-lg font-black text-white leading-tight">Dosagem Exata</h4>
               </div>
-            </div>
-          </div>
 
-          {/* Task 3 */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-3 opacity-60">
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 rounded-full bg-zinc-700 mt-1 flex-shrink-0" />
-              <div className="flex-1">
-                <p className="text-[11px] font-semibold text-zinc-300">
-                  {t('industry.experience.result.phCheck')}
-                </p>
-                <p className="text-[10px] text-zinc-600 font-medium">
-                  {t('industry.experience.result.phMeta')}
-                </p>
+              <div className="space-y-4">
+                <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800">
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">Tamanho do Tanque</p>
+                  <div className="flex items-end gap-2">
+                    <span className="text-3xl font-black text-emerald-500">10</span>
+                    <span className="text-lg font-bold text-zinc-400 mb-1">Litros</span>
+                  </div>
+                </div>
+
+                <div className="bg-zinc-900 rounded-2xl p-4 border border-zinc-800">
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase mb-3">Resultado</p>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-zinc-300">{displayBrand} Grow A</span>
+                      <span className="text-sm font-black text-emerald-400">20ml</span>
+                    </div>
+                    <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="w-3/4 h-full bg-emerald-500" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Schedule section */}
-        <div className="px-3.5 pb-4 space-y-2 border-t border-zinc-900 pt-3">
-          <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mb-2 px-1">
-            {t('industry.experience.result.scheduleSection')}
-          </p>
-
-          <div className="flex items-center gap-2 px-1">
-            <span className="text-[9px] font-bold text-zinc-600 w-10 flex-shrink-0">{t('industry.experience.result.week12')}</span>
-            <div className="flex-1 h-5 bg-zinc-900 rounded-lg border border-zinc-800 flex items-center px-2">
-              <p className="text-[9px] text-zinc-500 font-medium truncate">{displayBrand} {t('industry.experience.result.productRoot')}</p>
+              <button className="w-full py-4 rounded-2xl bg-emerald-500 text-zinc-950 font-black text-sm uppercase tracking-widest shadow-[0_8px_16px_rgba(16,185,129,0.3)]">
+                Aplicar Rega
+              </button>
             </div>
-          </div>
-
-          <div className="flex items-center gap-2 px-1">
-            <span className="text-[9px] font-bold text-emerald-500 w-10 flex-shrink-0">{t('industry.experience.result.week35')}</span>
-            <div className="flex-1 h-6 bg-emerald-950/20 border border-emerald-500/30 rounded-lg flex items-center px-2 gap-2">
-              <p className="text-[9px] text-emerald-400 font-bold flex-1 truncate">{displayBrand} {t('industry.experience.result.productGrowA')}</p>
-              <span className="text-[7px] font-black bg-emerald-500 text-zinc-900 px-1.5 rounded uppercase py-0.5 whitespace-nowrap">
-                {t('industry.experience.result.youAreHere')}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 px-1">
-            <span className="text-[9px] font-bold text-zinc-600 w-10 flex-shrink-0">{t('industry.experience.result.week6')}</span>
-            <div className="flex-1 h-5 bg-zinc-900 rounded-lg border border-zinc-800 flex items-center px-2">
-              <p className="text-[9px] text-zinc-500 font-medium truncate">{displayBrand} {t('industry.experience.result.productBloom')}</p>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
@@ -137,12 +144,12 @@ const PhoneFrame: FC<{ brandName: string }> = ({ brandName }) => {
 
 // ── Step components ──────────────────────────────────────────────────────────
 
-const StepWrapper: FC<{ children: React.ReactNode; showPhone?: boolean; brandName?: string }> = ({ children, showPhone, brandName }) => (
+const StepWrapper: FC<{ children: React.ReactNode; showPhone?: boolean; brandName?: string; view?: DemoView }> = ({ children, showPhone, brandName, view }) => (
   <div className="flex flex-col items-center gap-12 w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
     {showPhone && (
       <div className="relative group">
         <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-        <PhoneFrame brandName={brandName || ''} />
+        <PhoneFrame brandName={brandName || ''} view={view} />
       </div>
     )}
     <div className="w-full max-w-sm">
@@ -168,9 +175,19 @@ const StepHeadline: FC<{ title: string; subtitle?: string }> = ({ title, subtitl
 
 const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick }) => {
   const [step, setStep] = useState<Step>('demo');
+  const [demoView, setDemoView] = useState<DemoView>('tasks');
   const [form, setForm] = useState<FormData>(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [visibleLoadingSteps, setVisibleLoadingSteps] = useState(0);
+
+  useEffect(() => {
+    if (step === 'demo') {
+      const interval = setInterval(() => {
+        setDemoView(prev => prev === 'tasks' ? 'calculator' : 'tasks');
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [step]);
 
   // Handle input changes
   const handleChange = (field: keyof FormData) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -234,26 +251,56 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
         {/* STEP 0: Immediate Demo */}
         {step === 'demo' && (
-          <StepWrapper showPhone brandName="">
-            <StepHeadline
-              title={t('industry.experience.headline')}
-              subtitle={t('industry.experience.sub')}
-            />
-            <button
-              onClick={() => setStep('form-brand')}
-              className="w-full py-5 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3"
-            >
-              {t('industry.experience.form.cta')}
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </button>
-          </StepWrapper>
+          <div className="flex flex-col items-center gap-16 w-full animate-in fade-in duration-1000">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+              <div className="order-2 lg:order-1 relative group">
+                <div className="absolute -inset-10 bg-emerald-500/10 blur-[100px] rounded-full opacity-60" />
+                <PhoneFrame brandName="" view={demoView} />
+                <div className="absolute -right-8 top-1/4 bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl animate-pulse">
+                  <p className="text-[10px] font-black text-emerald-500 uppercase mb-1">
+                    {demoView === 'tasks' ? 'Tarefas Reais' : 'Cálculo Direto'}
+                  </p>
+                  <p className="text-xs font-bold text-white leading-tight">
+                    {demoView === 'tasks' ? 'Protocolo vira ação.' : 'Seu produto na dose certa.'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2 space-y-8 text-center lg:text-left">
+                <div className="space-y-4">
+                  <h2 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter">
+                    {t('industry.experience.headline')}
+                  </h2>
+                  <p className="text-xl text-zinc-400 font-medium leading-relaxed">
+                    {t('industry.experience.sub')}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <button
+                    onClick={() => setStep('form-brand')}
+                    className="w-full py-6 rounded-2xl bg-emerald-500 text-white font-black text-xl hover:bg-emerald-400 shadow-[0_20px_40px_rgba(16,185,129,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-4"
+                  >
+                    {t('industry.experience.form.cta')}
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={onCTAClick}
+                    className="w-full py-4 text-zinc-500 font-bold hover:text-zinc-300 transition-colors"
+                  >
+                    {t('industry.hero.secondaryCta')}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* STEP 1: Brand Name */}
         {step === 'form-brand' && (
-          <StepWrapper showPhone brandName={form.brandName}>
+          <StepWrapper showPhone brandName={form.brandName} view="tasks">
             <StepHeadline title={t('industry.experience.form.step1Headline')} />
             <form onSubmit={handleNextToEmail} className="space-y-4">
               <input
@@ -277,7 +324,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
         {/* STEP 2: Email */}
         {step === 'form-email' && (
-          <StepWrapper showPhone brandName={form.brandName}>
+          <StepWrapper showPhone brandName={form.brandName} view="tasks">
             <StepHeadline title={t('industry.experience.form.step2Headline')} />
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -346,7 +393,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
 
             <div className="relative group mb-16">
               <div className="absolute -inset-10 bg-emerald-500/20 blur-[100px] rounded-full animate-pulse" />
-              <PhoneFrame brandName={form.brandName} />
+              <PhoneFrame brandName={form.brandName} view="tasks" />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">

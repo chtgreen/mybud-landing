@@ -1,175 +1,80 @@
 import type { FC } from 'react';
-import { t, isB2B as isB2BContext } from '../lib/i18n';
+import { t } from '../lib/i18n';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: FC = () => {
   const { currentLanguage } = useLanguage();
-  
-  // Detect if we're in B2B context (unified condition)
-  const isB2B = isB2BContext();
-  
-  // Check if we're in collective context
-  const isCollective = window.location.pathname.includes('/collective');
+
+  // Detect if we're in industry context
+  const isIndustry = window.location.pathname.includes('/industry');
+  const isDark = isIndustry;
 
   return (
-    <footer className="bg-white py-12 border-t border-gray-100 relative overflow-hidden">
+    <footer className={`${isDark ? 'bg-zinc-950 text-white border-zinc-900' : 'bg-white text-zinc-900 border-gray-100'} py-20 border-t relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
-        <div className={`grid grid-cols-1 ${!isB2B && !isCollective ? 'lg:grid-cols-2' : ''} gap-12`}>
-          {/* Brand Info (Left) */}
-          <div>
-            {/* mybud Logo & Brand */}
-            <div className="mb-6">
-              <div className="flex items-center mb-6">
-                <img
-                  src="/mybud-logo-green.svg"
-                  alt="mybud Logo"
-                  className="h-16 w-auto"
-                  style={{
-                    filter: 'invert(41%) sepia(89%) saturate(1891%) hue-rotate(313deg) brightness(95%) contrast(92%)'
-                  }}
-                />
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Brand Info */}
+          <div className="space-y-8">
+            <div className="flex items-center">
+              <img
+                src={isDark ? "/mybud-logo-white.svg" : "/mybud-logo-green.svg"}
+                alt="mybud Logo"
+                className="h-12 w-auto"
+              />
+            </div>
+
+            <div className="max-w-sm space-y-4">
+              <p className={`${isDark ? 'text-zinc-400' : 'text-gray-600'} text-sm font-medium leading-relaxed`}>
                 {t('footer.tagline')}
               </p>
               {t('footer.unifier') && (
-                <p className="text-emerald-700 text-sm font-medium leading-relaxed">
+                <p className="text-emerald-500 text-sm font-black tracking-tight">
                   {t('footer.unifier')}
                 </p>
               )}
             </div>
-            
-            {/* Social Links */}
-            <div className="flex space-x-3">
-              <a
-                href="https://www.instagram.com/mybud.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="mybud on Instagram"
-                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
-              >
-                <i className="fab fa-instagram text-lg"></i>
+
+            {/* Socials */}
+            <div className="flex gap-4">
+              <a href="https://instagram.com/mybud.app" target="_blank" rel="noreferrer" className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${isDark ? 'bg-zinc-900 text-zinc-400 hover:bg-emerald-500 hover:text-zinc-950' : 'bg-gray-100 text-gray-500 hover:bg-emerald-500 hover:text-white'}`}>
+                <i className="fab fa-instagram text-lg" />
               </a>
-              <a
-                href="https://www.linkedin.com/company/cht-green/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="mybud on LinkedIn"
-                className="w-8 h-8 text-gray-400 hover:text-[#288664] transition-colors flex items-center justify-center"
-              >
-                <i className="fab fa-linkedin-in text-lg"></i>
+              <a href="https://linkedin.com/company/cht-green/" target="_blank" rel="noreferrer" className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${isDark ? 'bg-zinc-900 text-zinc-400 hover:bg-emerald-500 hover:text-zinc-950' : 'bg-gray-100 text-gray-500 hover:bg-emerald-500 hover:text-white'}`}>
+                <i className="fab fa-linkedin-in text-lg" />
               </a>
             </div>
           </div>
 
-          {/* FAQ Section (Right) - Only on B2C Grower page */}
-          {!isB2B && !isCollective && (
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-6">
-                {t('footer.faqTitle')}
-              </h3>
-              <div className="space-y-3">
-                {[
-                  { questionKey: 'footer.faq1.question', answerKey: 'footer.faq1.answer' },
-                  { questionKey: 'footer.faq2.question', answerKey: 'footer.faq2.answer' },
-                  { questionKey: 'footer.faq3.question', answerKey: 'footer.faq3.answer' }
-                ].map((faq, index) => {
-                  const question = t(faq.questionKey);
-                  const answer = t(faq.answerKey);
-                  
-                  return (
-                    <details
-                      key={index}
-                      className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow group"
-                    >
-                      <summary className="w-full text-left flex items-center justify-between cursor-pointer list-none">
-                        <span className="text-sm font-medium text-gray-800">
-                          {question}
-                        </span>
-                        <svg
-                          className="w-5 h-5 transform transition-transform text-gray-400 group-open:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                          />
-                        </svg>
-                      </summary>
-                      <div className="mt-3">
-                        <p className="text-gray-600 text-xs leading-relaxed">
-                          {answer}
-                        </p>
-                      </div>
-                    </details>
-                  );
-                })}
-              </div>
+          {/* Links Grid */}
+          <div className="grid grid-cols-2 gap-10">
+            <div className="space-y-6">
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-500">Explorar</h4>
+              <nav className="flex flex-col gap-4">
+                <a href={`/${currentLanguage}/grower`} className="text-sm font-bold hover:text-emerald-400 transition-colors">Growers</a>
+                <a href={`/${currentLanguage}/collective`} className="text-sm font-bold hover:text-emerald-400 transition-colors">Associações</a>
+                <a href={`/${currentLanguage}/industry`} className="text-sm font-bold hover:text-emerald-400 transition-colors">Indústria</a>
+              </nav>
             </div>
-          )}
-        </div>
-
-        {/* Legal Links - Centralized Row */}
-        <div className="border-t border-gray-100 mt-8 pt-6">
-          <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
-            <a
-              href="mailto:comercial@mybud.app"
-              className="text-sm text-gray-500 hover:text-[#288664] transition-colors"
-            >
-              {t('footer.contact')}
-            </a>
-            <span className="text-gray-300">•</span>
-            <a
-              href={`/${currentLanguage}/grower`}
-              className="text-sm text-gray-500 hover:text-[#288664] transition-colors font-medium"
-            >
-              {t('footer.growers') || 'Growers'}
-            </a>
-            <span className="text-gray-300">•</span>
-            <a
-              href={`/${currentLanguage}/collective`}
-              className="text-sm text-gray-500 hover:text-[#288664] transition-colors font-medium"
-            >
-              {t('footer.collective') || 'Collective'}
-            </a>
-            <span className="text-gray-300">•</span>
-            <a
-              href={`/${currentLanguage}/industry`}
-              className="text-sm text-gray-500 hover:text-[#288664] transition-colors font-medium"
-            >
-              {t('footer.industry') || 'Industry'}
-            </a>
+            <div className="space-y-6">
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-500">Legal</h4>
+              <nav className="flex flex-col gap-4">
+                <a href="mailto:comercial@mybud.app" className="text-sm font-bold hover:text-emerald-400 transition-colors">Contato</a>
+                <p className="text-[10px] text-zinc-500 font-medium italic max-w-[150px]">
+                  {t('footer.legalNotice')}
+                </p>
+              </nav>
+            </div>
           </div>
-
-          {/* Legal Notice */}
-          {!isB2B && t('footer.legalNotice') && (
-            <div className="text-center mb-4">
-              <p className="text-xs text-gray-500 italic">
-                {t('footer.legalNotice')}
-              </p>
-            </div>
-          )}
         </div>
 
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-gray-400 text-xs mb-2">
+        {/* Bottom Bar */}
+        <div className={`mt-20 pt-10 border-t ${isDark ? 'border-zinc-900' : 'border-gray-100'} flex flex-col md:flex-row justify-between items-center gap-6`}>
+          <p className="text-xs font-bold text-zinc-500">
             {t('footer.copyright')}
           </p>
-          <a
-            href="https://cht.green"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center space-x-1 text-xs text-gray-500 hover:text-[#288664] transition-colors"
-          >
-            <span className="font-bold">by cht.green</span>
-            <span className="inline-flex items-center gap-1 text-base">
-              🇧🇷
-            </span>
+          <a href="https://cht.green" target="_blank" rel="noreferrer" className="group flex items-center gap-2">
+            <span className="text-xs font-black text-zinc-500 group-hover:text-emerald-500 transition-colors">by cht.green</span>
+            <span className="text-lg grayscale group-hover:grayscale-0 transition-all">🇧🇷</span>
           </a>
         </div>
       </div>
