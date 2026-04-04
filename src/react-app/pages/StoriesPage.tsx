@@ -45,6 +45,9 @@ const SHAPES = [
     { id: 'shape-4', type: 'line', className: 'h-px w-full bg-white/20' },
     { id: 'shape-5', type: 'glass', className: 'bg-white/5 backdrop-blur-md rounded-2xl border border-white/10' },
     { id: 'shape-6', type: 'blob', className: 'bg-[#AAD268]/20 rounded-full blur-2xl' },
+    { id: 'shape-7', type: 'scanline', className: 'bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,.25)_50%),linear-gradient(90deg,rgba(255,0,0,.06),rgba(0,255,0,.02),rgba(0,0,255,.06))] bg-[length:100%_2px,3px_100%] absolute inset-0 pointer-events-none' },
+    { id: 'shape-8', type: 'noise', className: 'bg-[url("https://grainy-gradients.vercel.app/noise.svg")] opacity-20 absolute inset-0 pointer-events-none' },
+    { id: 'shape-9', type: 'outline-title', className: 'border-2 border-white/10 rounded-xl px-4 py-2 flex items-center justify-center' },
 ];
 
 interface StoryItem {
@@ -71,6 +74,43 @@ interface Preset {
 }
 
 const PRESETS: Preset[] = [
+    {
+        id: 'editorial-vogue',
+        name: 'Editorial Luxe',
+        theme: 'white',
+        title: 'CRAFTING\nELITE\nGENETICS',
+        content: 'Experience the new standard of cultivation. Where every detail matters.',
+        titleSize: 48, contentSize: 18, titlePos: { x: 0, y: -60 }, contentPos: { x: 0, y: 180 },
+        items: [
+            { id: 'ed-1', type: 'shape', className: 'border-l-2 border-zinc-950/20', size: 100, position: { x: -140, y: 180 } },
+            { id: 'ed-2', type: 'shape', className: 'bg-zinc-950/5 blur-3xl rounded-full', size: 300, position: { x: 100, y: -100 } }
+        ]
+    },
+    {
+        id: 'cyber-noise',
+        name: 'Digital Noise',
+        theme: 'black',
+        title: 'BETA ACCESS\nLIVE NOW',
+        content: 'Data-driven growth for the next generation of professional growers.',
+        titleSize: 52, contentSize: 16, titlePos: { x: 0, y: 0 }, contentPos: { x: 0, y: 120 },
+        items: [
+            { id: 'cy-1', type: 'shape', className: SHAPES[6].className, size: 640, position: { x: 0, y: 0 } },
+            { id: 'cy-2', type: 'shape', className: SHAPES[7].className, size: 640, position: { x: 0, y: 0 } },
+            { id: 'cy-3', type: 'shape', className: 'border border-emerald-500/30', size: 320, position: { x: 0, y: 50 } }
+        ]
+    },
+    {
+        id: 'organic-sand',
+        name: 'Organic Aura',
+        theme: '7527',
+        title: 'LIVING\nSOIL\nSCIENCE',
+        content: 'The most advanced biological tracking system ever built.',
+        titleSize: 56, contentSize: 20, titlePos: { x: 0, y: -100 }, contentPos: { x: 0, y: 180 },
+        items: [
+            { id: 'or-1', type: 'shape', className: SHAPES[5].className, size: 300, position: { x: -100, y: 300 } },
+            { id: 'or-2', type: 'shape', className: 'bg-emerald-900/10 blur-2xl rounded-full', size: 200, position: { x: 120, y: -200 } }
+        ]
+    },
     {
         id: 'industry-clinical',
         name: 'Clinical Pro',
