@@ -33,25 +33,25 @@ const HeroCollective: FC<HeroCollectiveProps> = ({ onCTAClick }) => {
 
           {/* Main Content */}
           <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-zinc-950 leading-[1.1] tracking-tight">
               <span className="block">{t('collective.hero.title1')}</span>
-              <span className="block text-emerald-600">{t('collective.hero.title2')}</span>
+              <span className="block text-[#288664] drop-shadow-sm">{t('collective.hero.title2')}</span>
             </h1>
 
-            <p className="text-lg md:text-xl font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl font-bold text-zinc-800 max-w-3xl mx-auto leading-relaxed">
               {t('collective.hero.subtitle')}
             </p>
 
-            <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto font-medium">
               {t('collective.hero.description')}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
               <button
                 type="button"
                 onClick={onCTAClick}
-                className="btn-primary text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-black bg-[#EB4C80] text-white shadow-[0_10px_30px_rgba(235,76,128,0.3)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
               >
                 <Rocket className="w-5 h-5" />
                 {t('collective.hero.primaryCta')}
@@ -64,7 +64,7 @@ const HeroCollective: FC<HeroCollectiveProps> = ({ onCTAClick }) => {
                     pilotSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="btn-secondary text-lg px-8 py-4 flex items-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-black text-[#288664] border-2 border-[#288664]/10 bg-white shadow-sm hover:bg-emerald-50/50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 {t('collective.hero.secondaryCta')}
@@ -86,8 +86,8 @@ const HeroCollective: FC<HeroCollectiveProps> = ({ onCTAClick }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent blur-3xl" />
 
               {/* Dashboard Card */}
-              <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 backdrop-blur-sm">
-                <div className="space-y-6">
+              <div className="relative bg-white/80 rounded-3xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-white p-8 backdrop-blur-xl">
+                <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center justify-between pb-4 border-b border-gray-200">
                     <div>
