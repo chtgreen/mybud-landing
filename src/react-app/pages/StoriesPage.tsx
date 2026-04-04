@@ -50,6 +50,15 @@ const SHAPES = [
     { id: 'shape-9', type: 'outline-title', className: 'border-2 border-white/10 rounded-xl px-4 py-2 flex items-center justify-center' },
 ];
 
+const BUDZINHOS = [
+    { id: 'bud-1', src: '/assets/budzinho/MyBud - Budzinho Contorno Verde 4.svg' },
+    { id: 'bud-2', src: '/assets/budzinho/MyBud - Budzinho Contorno Verde 5.svg' },
+    { id: 'bud-3', src: '/assets/budzinho/MyBud - Budzinho Contorno Verde 6.svg' },
+    { id: 'bud-4', src: '/assets/budzinho/MyBud - Budzinho Contorno Preto 7.svg' },
+    { id: 'bud-5', src: '/assets/budzinho/MyBud - Budzinho Contorno Preto 9.svg' },
+    { id: 'bud-6', src: '/assets/budzinho/MyBud - Budzinho Contorno Preto.svg' }
+];
+
 interface StoryItem {
     id: string;
     type: 'image' | 'shape';
@@ -196,6 +205,19 @@ const StoriesPage: React.FC = () => {
             className: shape.className,
             size: shape.id.includes('line') ? 300 : 120,
             color: null,
+            position: { x: 0, y: 0 }
+        };
+        setItems([...items, newItem]);
+        setSelectedItemId(newItem.id);
+    };
+
+    const addBudzinho = (src: string) => {
+        const newItem: StoryItem = {
+            id: Math.random().toString(36).substr(2, 9),
+            type: 'image',
+            src,
+            size: 150,
+            color: COLORS.emerald, // Default color for recoloring
             position: { x: 0, y: 0 }
         };
         setItems([...items, newItem]);
@@ -647,6 +669,24 @@ const StoriesPage: React.FC = () => {
                                             className="aspect-square bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-all flex items-center justify-center border border-white/5 hover:border-emerald-500/30 group overflow-hidden"
                                         >
                                             <div className={`${shape.className} w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all`}></div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-center justify-between">
+                                    <span className="text-[9px] uppercase font-black tracking-widest text-zinc-500">Budzinhos (Optional)</span>
+                                    <span className="text-[7px] bg-emerald-500/10 text-emerald-500 px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">Recolorable</span>
+                                </div>
+                                <div className="grid grid-cols-3 gap-3">
+                                    {BUDZINHOS.map((bud) => (
+                                        <button
+                                            key={bud.id}
+                                            onClick={() => addBudzinho(bud.src)}
+                                            className="aspect-square bg-white/5 hover:bg-white/10 rounded-xl p-3 transition-all flex items-center justify-center border border-white/5 hover:border-emerald-500/30 group"
+                                        >
+                                            <img src={bud.src} alt="Budzinho" className="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all pointer-events-none" style={{ filter: 'brightness(0) invert(1)' }} />
                                         </button>
                                     ))}
                                 </div>
