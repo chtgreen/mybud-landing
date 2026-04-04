@@ -326,7 +326,7 @@ const StoriesPage: React.FC = () => {
 
                         <div className="flex flex-col h-full relative p-10">
                             {/* Logo */}
-                            <div className="mb-12">
+                            <div className="mb-12 flex justify-center">
                                 <img src={currentTheme.logo} alt="MyBud Logo" className="h-8 w-auto object-contain" />
                             </div>
 
