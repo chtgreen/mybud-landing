@@ -80,9 +80,9 @@ const PRESETS: Preset[] = [
         theme: 'white',
         title: 'CRAFTING\nELITE\nGENETICS',
         content: 'Experience the new standard of cultivation. Where every detail matters.',
-        titleSize: 48, contentSize: 18, titlePos: { x: 0, y: -60 }, contentPos: { x: 0, y: 180 },
+        titleSize: 48, contentSize: 18, titlePos: { x: 0, y: -60 }, contentPos: { x: 0, y: 120 },
         items: [
-            { id: 'ed-1', type: 'shape', className: 'border-l-2 border-zinc-950/20', size: 100, position: { x: -140, y: 180 } },
+            { id: 'ed-1', type: 'shape', className: 'border-l-2 border-zinc-950/20', size: 100, position: { x: -140, y: 120 } },
             { id: 'ed-2', type: 'shape', className: 'bg-zinc-950/5 blur-3xl rounded-full', size: 300, position: { x: 100, y: -100 } }
         ]
     },
@@ -92,7 +92,7 @@ const PRESETS: Preset[] = [
         theme: 'black',
         title: 'BETA ACCESS\nLIVE NOW',
         content: 'Data-driven growth for the next generation of professional growers.',
-        titleSize: 52, contentSize: 16, titlePos: { x: 0, y: 0 }, contentPos: { x: 0, y: 120 },
+        titleSize: 52, contentSize: 16, titlePos: { x: 0, y: -40 }, contentPos: { x: 0, y: 80 },
         items: [
             { id: 'cy-1', type: 'shape', className: SHAPES[6].className, size: 640, position: { x: 0, y: 0 } },
             { id: 'cy-2', type: 'shape', className: SHAPES[7].className, size: 640, position: { x: 0, y: 0 } },
@@ -105,9 +105,9 @@ const PRESETS: Preset[] = [
         theme: '7527',
         title: 'LIVING\nSOIL\nSCIENCE',
         content: 'The most advanced biological tracking system ever built.',
-        titleSize: 56, contentSize: 20, titlePos: { x: 0, y: -100 }, contentPos: { x: 0, y: 180 },
+        titleSize: 56, contentSize: 20, titlePos: { x: 0, y: -100 }, contentPos: { x: 0, y: 140 },
         items: [
-            { id: 'or-1', type: 'shape', className: SHAPES[5].className, size: 300, position: { x: -100, y: 300 } },
+            { id: 'or-1', type: 'shape', className: SHAPES[5].className, size: 300, position: { x: -100, y: 200 } },
             { id: 'or-2', type: 'shape', className: 'bg-emerald-900/10 blur-2xl rounded-full', size: 200, position: { x: 120, y: -200 } }
         ]
     },
@@ -117,7 +117,7 @@ const PRESETS: Preset[] = [
         theme: 'black',
         title: 'PRECISION\nCANNABIS',
         content: 'Data-driven insights for professional brands. Elevate your prescription game.',
-        titleSize: 52, contentSize: 20, titlePos: { x: 0, y: -40 }, contentPos: { x: 0, y: 50 },
+        titleSize: 52, contentSize: 20, titlePos: { x: 0, y: -40 }, contentPos: { x: 0, y: 100 },
         items: [{ id: 'p1-1', type: 'shape', className: SHAPES[0].className, size: 280, position: { x: 0, y: 160 } }]
     },
     {
@@ -126,7 +126,7 @@ const PRESETS: Preset[] = [
         theme: '6167',
         title: 'ROOTED IN\nSCIENCE',
         content: 'Where biology meets technology. The most advanced grow tracker in Brazil.',
-        titleSize: 48, contentSize: 18, titlePos: { x: 0, y: -20 }, contentPos: { x: 0, y: 60 },
+        titleSize: 48, contentSize: 18, titlePos: { x: 0, y: -20 }, contentPos: { x: 0, y: 80 },
         items: [{ id: 'p2-1', type: 'shape', className: SHAPES[5].className, size: 160, position: { x: 0, y: 180 } }]
     },
     {
@@ -135,8 +135,8 @@ const PRESETS: Preset[] = [
         theme: '213',
         title: 'JOIN THE\nELITE 1%',
         content: 'Founders Edition 2025. Unlock exclusive features and shape the ecosystem.',
-        titleSize: 64, contentSize: 22, titlePos: { x: 0, y: 40 }, contentPos: { x: 0, y: 120 },
-        items: [{ id: 'p3-1', type: 'shape', className: SHAPES[2].className, size: 200, position: { x: 0, y: -120 } }]
+        titleSize: 64, contentSize: 22, titlePos: { x: 0, y: 20 }, contentPos: { x: 0, y: 120 },
+        items: [{ id: 'p3-1', type: 'shape', className: SHAPES[2].className, size: 200, position: { x: 0, y: -100 } }]
     },
 ];
 
