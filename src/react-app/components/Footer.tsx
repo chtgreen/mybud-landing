@@ -70,7 +70,7 @@ const Footer: FC = () => {
         {/* Bottom Bar */}
         <div className={`mt-20 pt-10 border-t ${isDark ? 'border-zinc-900' : 'border-gray-100'} flex flex-col md:flex-row justify-between items-center gap-6`}>
           <p className="text-xs font-bold text-zinc-500">
-            {t('footer.copyright')}
+            {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
           </p>
           <a href="https://cht.green" target="_blank" rel="noreferrer" className="group flex items-center gap-2">
             <span className="text-xs font-black text-zinc-500 group-hover:text-emerald-500 transition-colors">by cht.green</span>

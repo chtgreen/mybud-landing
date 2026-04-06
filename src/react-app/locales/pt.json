@@ -323,7 +323,7 @@
       "privacy": "Política de Privacidade",
       "terms": "Termos de Uso",
       "legalNotice": "O Mybud é uma ferramenta de organização e registro. Respeite a legislação local.",
-      "copyright": "© 2024 Mybud. Todos os direitos reservados."
+      "copyright": "© {year} Mybud. Todos os direitos reservados."
     },
     "header": {
       "languageSelector": "Idioma",

@@ -318,7 +318,7 @@
       "collective": "Collectives",
       "industry": "Industry",
       "legalNotice": "Mybud is an organization and recording tool. Respect local legislation.",
-      "copyright": "© 2024 Mybud. All rights reserved."
+      "copyright": "© {year} Mybud. All rights reserved."
     },
     "header": {
       "languageSelector": "Language",
