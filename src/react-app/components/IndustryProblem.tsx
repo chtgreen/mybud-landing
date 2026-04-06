@@ -80,6 +80,15 @@ const IndustryProblem: FC = () => {
                   <HelpCircle className="w-5 h-5 text-zinc-300" />
                   <p className="text-[10px] font-bold text-zinc-400 italic">"era 2ml ou 2.5ml?"</p>
                 </div>
+
+                {/* Additional Doubts Balloons */}
+                <div className="absolute -right-12 top-10 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[-8deg] max-w-[140px] opacity-70 scale-90">
+                  <p className="text-[9px] font-black text-zinc-950">quantos ML de em-5 foliar?</p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[5deg] max-w-[160px] opacity-60 scale-90">
+                  <p className="text-[9px] font-black text-zinc-950">o que usar para combater gnats?</p>
+                </div>
               </div>
 
               <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">Sua marca ensina, mas não está lá.</h4>
