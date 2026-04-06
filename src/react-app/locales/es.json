@@ -1361,21 +1361,17 @@
     },
     "hero": {
       "badge": "La app que los growers usan para cultivar",
-      "title": "Tu marca dentro del cultivo.\nComo regla.",
-      "subtitle": "Tu protocolo se convierte em ejecución real.",
-      "cta": "Ver mi marca",
-      "secondaryCta": "Hablar con el equipo",
+      "title": "tu marca se vuelve parte de la rutina",
+      "subtitle": "semana, dosis y pH aparecen automáticamente.",
+      "proof": "Qué botella abrir, cuántos ml aplicar y cuándo hacerlo.",
+      "cta": "Digitalizar mi protocolo ahora",
+      "secondaryCta": "Cómo funciona",
+      "discoveryHow": "descubre cómo",
       "words": {
-        "suggestion": "sugerencia",
-        "presence": "presencia",
-        "routine": "rutina",
-        "plan": "plan",
-        "belonging": "pertenencia",
-        "representation": "representación",
-        "instructions": "instrucciones",
-        "nutritionalPlan": "plan nutricional",
-        "usageSuggestion": "sugerencia de uso",
-        "dosage": "dosificación"
+        "knows": "se vuelve decisión en el manejo",
+        "bottle": "se vuelve precisión en el riego",
+        "dose": "se vuelve guía en el cultivo",
+        "rule": "se vuelve rutina en el resultado"
       }
     },
     "reframe": {
@@ -1386,7 +1382,7 @@
       "punchline": "Si tu producto no está dentro de la rutina, está fuera del resultado."
     },
     "presence": {
-      "title": "Dónde aparece tu producto",
+      "title": "Dónde aparece tu marca en el cultivo:",
       "tasks": {
         "title": "En el momento del riego",
         "example": "\"Aplicar MyBud Fert — 2ml/L\"",
@@ -1395,13 +1391,13 @@
         "point3": "Basado en acción"
       },
       "timeline": {
-        "title": "En la rutina semanal",
+        "title": "En la preparación del tanque",
         "example": "Día 14 → MyBud Fert aplicado",
         "point1": "Historial visible",
         "point2": "Patrones de uso repetidos"
       },
       "activityLog": {
-        "title": "En el historial del cultivo",
+        "title": "En el historial del grow",
         "example": "Usuario registra alimentación con tu producto",
         "point1": "Datos estructurados",
         "point2": "Vinculado a planta + etapa"
@@ -1508,25 +1504,58 @@
     },
     "ecosystem": {
       "badge": "Licenciamiento B2B y Retención",
+      "urgency": "Estamos abriendo 3 marcas para el lanzamiento de este mes.",
+      "exclusivity": "Las primeras entran con exclusividad por categoría.",
       "title": "Para marcas que quieren escalar",
-      "subtitle": "Licencia MyBud junto con tu producto. El cliente compra tu fertilizante y obtiene acceso a la app.",
+      "subtitle": "Licencie el MyBud junto con su producto. El cliente compra su marca y gana acceso a la app. Uso consistente = más recompra.",
+      "setupTitle": "Setup",
+      "setupPrice": "$ 250",
+      "recurrentTitle": "Mensual",
+      "recurrentPrice": "$ 59 / mes",
+      "recurrentDetail": "Incluye 10 activaciones PRO (30 días cada)",
+      "scaleLabel": "Escala",
+      "scaleDetail": "+10 activaciones → +$ 20",
       "benefit1": {
         "title": "Más recompra",
-        "desc": "Para no perder el acceso a la App, el cultivador no puede cambiar de marca."
+        "desc": "Para mantener el acceso, el cultivador continúa usando su marca."
       },
       "benefit2": {
         "title": "Más retención",
-        "desc": "Tu producto se destaca de la competencia ofreciendo una herramienta digital sin costo extra."
+        "desc": "Su producto se destaca de la competencia ofreciendo una herramienta digital sin costo extra."
       },
       "card": {
-        "line1": "La Marca Paga la Licencia",
-        "line2": "El Cliente Se Lleva el PRO",
-        "desc": "Tú adquieres paquetes B2B. El cultivador escanea el frasco y tiene la inteligencia premium en sus manos.",
+        "line1": "La marca paga la licencia",
+        "line2": "El cliente lleva el PRO",
+        "desc": "Su producto activa el MyBud. El cultivador escanea y tiene la inteligencia premium en las manos.",
         "licensingBadge": "Licenciamiento B2B",
         "licensedBy": "licensed by mybud"
       },
       "licensingBadge": "Licenciamiento B2B y Retención",
-      "licensedBy": "powered by mybud"
+      "licensedBy": "powered by mybud",
+      "secondaryFinalCta": "Hablar con el equipo"
+    },
+    "expansion": {
+      "title": "Funciona para cualquier tipo de producto",
+      "punchline": "No importa el producto.\nImporta el momento en que se usa.",
+      "subPunchline": "Si hay un momento de uso, hay espacio en MyBud.",
+      "items": {
+        "nutrition": {
+          "title": "Nutrición",
+          "desc": "Dosis, pH, semana → ejecución automática"
+        },
+        "ipm": {
+          "title": "Defensivos (IPM)",
+          "desc": "Aplicación preventiva → momento correcto"
+        },
+        "substrate": {
+          "title": "Suelo / sustrato",
+          "desc": "Preparación y corrección → instrucción al inicio"
+        },
+        "equipment": {
+          "title": "Equipamiento",
+          "desc": "Uso y operación → checklist y rutina"
+        }
+      }
     },
     "demo": {
       "title": "Tu marca dentro de la rutina del cultivo",
@@ -1639,10 +1668,13 @@
       }
     },
     "finalCta": {
-      "text": "Estamos abriendo pocas marcas en este modelo.\nQuien entra ahora define el estándar dentro de la app.",
+      "text": "Estamos abriendo pocas marcas para este lanzamiento de Abril.\nQuien entra ahora define el estándar de ejecución en el mercado.",
+      "headline": "tu cliente no tiene que pensar.\n{italic}",
+      "headlineItalic": "el app muestra qué hacer.",
+      "punchline": "tu marca se vuelve rutina en el cultivo. sin distracciones, solo ejecución.",
       "primaryCta": "Ver mi marca en MyBud",
       "secondaryCta": "Entrar como marca socia",
-      "description": "Completa el formulario y retornaremos con una evaluación inicial en hasta 1 día hábil.",
+      "description": "Complete el formulario y volveremos con una evaluación inicial en hasta 1 día hábil.",
       "community": "Entre las primeras marcas en moldear el futuro del cultivo cannábico.",
       "form": {
         "namePlaceholder": "Nombre completo",
@@ -1653,11 +1685,17 @@
       "primaryButton": "Agendar conversación",
       "secondaryOption": "¿Prefieres hablar directamente?",
       "email": "comercial@mybud.app",
-      "successTitle": "¡Gracias por tu interés!",
+      "successTitle": "¡Gracias por su interés!",
       "successMessage": "¡Recibido!",
       "successSubtext": "Nuestro equipo se pondrá en contacto pronto para discutir cómo podemos ayudar a su empresa.",
       "sending": "Enviando...",
-      "errorMessage": "Algo salió mal. Intenta nuevamente o escribe a comercial@mybud.app"
+      "errorMessage": "Algo salió mal. Intente nuevamente o escriba a comercial@mybud.app",
+      "modal": {
+        "fields": {
+          "objective": "Objetivo de la asociación"
+        },
+        "subtitle": "Cuéntenos más sobre su objetivo (opcional)"
+      }
     },
     "modal": {
       "fields": {

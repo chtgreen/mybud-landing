@@ -2044,12 +2044,12 @@
       "title": "For brands that want to scale",
       "subtitle": "License MyBud along with your product. The customer buys your brand and gets access to the app. Consistent usage = more repurchase.",
       "setupTitle": "Setup",
-      "setupPrice": "R$ 1,300",
+      "setupPrice": "$ 250",
       "recurrentTitle": "Monthly",
-      "recurrentPrice": "R$ 299 / month",
+      "recurrentPrice": "$ 59 / month",
       "recurrentDetail": "Includes 10 PRO activations (30 days each)",
       "scaleLabel": "Scale",
-      "scaleDetail": "+10 activations → +R$ 100",
+      "scaleDetail": "+10 activations → +$ 20",
       "benefit1": {
         "title": "More repurchase",
         "desc": "To keep the access, the grower continues to use your brand."
