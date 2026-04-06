@@ -1870,17 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your product becomes the decision inside the grow",
+      "title": "your brand inside the grow",
       "subtitle": "Week, dose, and pH appear automatically — at the exact moment of watering.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
       "cta": "See my brand in the app",
       "secondaryCta": "Enter the grow now",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "and they know how many ml to apply",
-        "bottle": "and they see which bottle to open",
-        "dose": "and they follow your protocol",
-        "rule": "and they get the best result"
+        "knows": "deciding the next watering",
+        "bottle": "defining the next dose",
+        "dose": "ensuring the real outcome",
+        "rule": "becoming the grow protocol"
       }
     },
     "reframe": {

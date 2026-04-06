@@ -1917,10 +1917,10 @@
       "secondaryCta": "Entrar no cultivo agora",
       "discoveryHow": "descubra como",
       "words": {
-        "knows": "e ele sabe quantos ml aplicar",
-        "bottle": "e ele vê qual garrafa abrir",
-        "dose": "e ele segue sua regra real",
-        "rule": "e ele colhe o melhor resultado"
+        "knows": "decidindo a próxima rega",
+        "bottle": "definindo a próxima dose",
+        "dose": "garantindo o resultado real",
+        "rule": "virando a regra do grow"
       }
     },
     "experience": {
