@@ -69,6 +69,10 @@ const IndustryEcosystem: FC = () => {
                 <div className="glass-morphism rounded-3xl p-8 bg-white/[0.03] border border-white/10 w-full mb-10 space-y-6">
                   <div className="flex justify-between items-center text-left">
                     <div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest mb-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        ativo em até 48h
+                      </div>
                       <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-1">{t('industry.ecosystem.setupTitle')}</p>
                       <p className="text-white font-black text-2xl">{t('industry.ecosystem.setupPrice')}</p>
                     </div>

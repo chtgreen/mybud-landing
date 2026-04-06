@@ -11,6 +11,7 @@ import IndustryProblem from '../components/IndustryProblem';
 import IndustryEcosystem from '../components/IndustryEcosystem';
 import IndustryFinalCTA from '../components/IndustryFinalCTA';
 import IndustryFreeTier from '../components/IndustryFreeTier';
+import IndustryFreeToPro from '../components/IndustryFreeToPro';
 import IndustryEntry from '../components/IndustryEntry';
 import IndustryExecution from '../components/IndustryExecution';
 import IndustryDemo from '../components/IndustryDemo';
@@ -91,6 +92,9 @@ export default function IndustryLandingPage() {
 
       {/* Section 7: FREE TIER -> "Onboarding Zero Suporte" */}
       <IndustryFreeTier />
+
+      {/* Section 7: FREE -> PRO Progress */}
+      <IndustryFreeToPro />
 
       {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
       <IndustryEcosystem />

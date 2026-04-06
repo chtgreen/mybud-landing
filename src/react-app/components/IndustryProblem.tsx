@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
-import { MoveRight } from 'lucide-react';
+import { MoveRight, XCircle, AlertCircle, HelpCircle, Droplet } from 'lucide-react';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-24 md:py-48 bg-white text-zinc-950 relative border-b border-zinc-100">
+    <section className="py-24 md:py-48 bg-white text-zinc-950 relative border-b border-zinc-100 overflow-hidden">
       {/* Structural Accents */}
       <div className="absolute top-0 inset-x-0 h-px bg-zinc-50" />
 
@@ -18,7 +18,7 @@ const IndustryProblem: FC = () => {
           </span>
         </div>
 
-        {/* Impact Headline - High Contrast, No Fluff */}
+        {/* Impact Headline */}
         <div className="grid lg:grid-cols-2 gap-24 items-end mb-40">
           <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-zinc-950 tracking-[-0.03em] leading-[0.95] md:leading-[0.9] lowercase animate-in fade-in slide-in-from-bottom-8 duration-1000 whitespace-pre-line">
             {t('industry.problem.title')}
@@ -28,54 +28,98 @@ const IndustryProblem: FC = () => {
           </p>
         </div>
 
-        {/* Binary Choice: Legacy vs. Standardized Execution */}
+        {/* The Pain: Binary Choice */}
         <div className="grid lg:grid-cols-2 gap-8 mb-48">
-          {/* Legacy side: The problem we solve */}
-          <div className="bg-zinc-50 rounded-[40px] md:rounded-[60px] p-10 md:p-16 border border-zinc-100 transition-all duration-700 flex flex-col justify-between group">
-            <div>
+
+          {/* Legacy side: THE MESS */}
+          <div className="bg-zinc-100 rounded-[40px] md:rounded-[60px] p-10 md:p-16 border border-zinc-200 transition-all duration-700 flex flex-col justify-between group relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(255,0,0,0.03)_0%,transparent_50%)]" />
+
+            <div className="relative z-10">
               <div className="flex items-center justify-between mb-12">
-                <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{t('industry.problem.legacyBadge')}</span>
-                <div className="w-2 h-2 rounded-full bg-zinc-200" />
+                <span className="text-[10px] font-black text-red-500 uppercase tracking-widest flex items-center gap-2">
+                  <XCircle className="w-3 h-3" />
+                  O GAP DA APLICAÇÃO
+                </span>
+                <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
               </div>
-              <div className="p-8 bg-zinc-100/50 border border-zinc-200/50 rounded-3xl opacity-40 blur-[0.5px] grayscale mb-10 transition-all duration-700">
-                <p className="text-zinc-400 font-mono text-sm mb-6 pb-2 border-b border-zinc-100 italic">nutrition_table_v2.pdf</p>
-                <div className="space-y-4">
-                  {[1, 2, 3].map((n) => (
-                    <div key={n} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-300" />
-                      <span className="text-sm font-bold text-zinc-300 lowercase line-through">{t(`industry.problem.legacyPain${n}`)}</span>
+
+              {/* Messy visuals: Problem representation */}
+              <div className="relative mb-12">
+                {/* Google Search Mock */}
+                <div className="absolute -left-4 -top-8 bg-white p-4 rounded-2xl shadow-xl border border-zinc-200 rotate-[-4deg] max-w-[240px] opacity-80">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 rounded-full bg-zinc-200" />
+                    <p className="text-[8px] font-bold text-zinc-400">google.com/search?q=qual+dosagem+vegetativo...</p>
+                  </div>
+                  <p className="text-xs font-black text-zinc-950">Qual a dosagem correta para semana 3?</p>
+                </div>
+
+                {/* Confusing Spreadsheet/PDF */}
+                <div className="bg-white p-8 rounded-[32px] border border-zinc-200 shadow-2xl relative z-10 opacity-60 grayscale blur-[0.5px]">
+                  <p className="text-[10px] font-mono text-zinc-400 mb-4 uppercase tracking-widest border-b border-zinc-100 pb-2 flex items-center gap-2">
+                    <AlertCircle className="w-2.5 h-2.5" />
+                    tabela_nutricional_final_v2_FINAL.pdf
+                  </p>
+                  <div className="space-y-4">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="flex gap-4 items-center">
+                        <div className="h-2 w-12 bg-zinc-100 rounded-full" />
+                        <div className="h-2 flex-1 bg-zinc-100 rounded-full" />
+                        <div className="h-2 w-8 bg-zinc-50 rounded-full" />
+                      </div>
+                    ))}
+                    <div className="pt-4 border-t border-zinc-100">
+                      <p className="text-[10px] font-bold text-zinc-300 italic">"se ph &gt; 6.5, abaixe 0.2... se umidade &lt; 40%, aumente..."</p>
                     </div>
-                  ))}
+                  </div>
+                </div>
+
+                {/* Human Error Floating Note */}
+                <div className="absolute -right-4 -bottom-4 bg-zinc-50 p-4 rounded-2xl shadow-lg border border-zinc-200 rotate-[3deg] flex items-center gap-3">
+                  <HelpCircle className="w-5 h-5 text-zinc-300" />
+                  <p className="text-[10px] font-bold text-zinc-400 italic">"era 2ml ou 2.5ml?"</p>
                 </div>
               </div>
+
+              <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">Sua marca ensina, mas não está lá.</h4>
+              <p className="text-zinc-500 font-bold lowercase leading-relaxed italic border-l-2 border-zinc-200 pl-8 opacity-80">
+                O maior erro acontece entre ler o rótulo e abrir a ferramenta.
+              </p>
             </div>
-            <p className="text-xl text-zinc-400 font-bold lowercase leading-relaxed italic border-l-2 border-zinc-200 pl-8 opacity-60">{t('industry.problem.pdfNote')}</p>
           </div>
 
-          {/* Evolution Side: Software Execution */}
+          {/* Solution Side: THE SYNC */}
           <div className="bg-zinc-950 rounded-[40px] md:rounded-[60px] p-10 md:p-16 relative overflow-hidden shadow-2xl transition-all duration-700 group">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] group-hover:bg-emerald-500/20 transition-all duration-1000" />
 
             <div className="flex items-center justify-between mb-16 relative z-10">
-              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">{t('industry.problem.standardBadge')}</span>
+              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center gap-2">
+                <Droplet className="w-3 h-3" />
+                DENTRO DO CULTIVO
+              </span>
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.8)]" />
             </div>
 
             <div className="space-y-12 relative z-10">
-              <div className="flex items-center gap-8">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-[28px] md:rounded-[32px] bg-emerald-500 flex items-center justify-center text-zinc-950 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-                  <MoveRight className="w-8 h-8 md:w-10 md:h-10" />
+              <div className="max-w-md">
+                <h4 className="text-3xl md:text-5xl font-black text-white lowercase leading-[0.95] mb-8">Agora o app diz o que fazer.</h4>
+                <div className="p-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl mb-8 group-hover:scale-105 transition-transform">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-zinc-950">
+                      <span className="font-black">✓</span>
+                    </div>
+                    <p className="text-white font-black text-xl lowercase">Seguir sua tabela</p>
+                  </div>
+                  <p className="text-emerald-500/60 font-black text-xs uppercase tracking-widest">Execução garantida todos os dias.</p>
                 </div>
-                <h4 className="text-2xl md:text-3xl font-black text-white lowercase tracking-tight">{t('industry.problem.solution')}</h4>
               </div>
 
-              <div className="space-y-4">
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="p-5 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-500 flex items-center gap-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-                    <span className="text-lg font-black text-white lowercase">{t(`industry.problem.standardBenefit${n}`)}</span>
-                  </div>
-                ))}
+              <div className="flex items-center gap-6 group/cta cursor-pointer">
+                <div className="w-14 h-14 rounded-full bg-white text-zinc-950 flex items-center justify-center group-hover/cta:scale-110 transition-all">
+                  <MoveRight className="w-6 h-6 group-hover/cta:translate-x-1 transition-transform" />
+                </div>
+                <span className="text-xl font-black text-white lowercase group-hover/cta:text-emerald-400 transition-colors">Digitalizar meu protocolo</span>
               </div>
             </div>
           </div>
@@ -87,4 +131,3 @@ const IndustryProblem: FC = () => {
 };
 
 export default IndustryProblem;
-

@@ -1910,11 +1910,10 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "sua marca dentro do cultivo",
-      "subtitle": "semana, dose e pH aparecem automaticamente.",
-      "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
-      "cta": "Digitalizar meu protocolo agora",
-      "secondaryCta": "Como funciona",
+      "title": "seu cliente abre o app e já sabe o que fazer",
+      "subtitle": "semana, dose e pH aparecem automaticamente no momento certo da aplicação.",
+      "cta": "ver minha marca no app",
+      "secondaryCta": "falar com o time",
       "discoveryHow": "descubra como",
       "words": {
         "execution": "vira execução no cultivo",
@@ -1927,8 +1926,8 @@
     },
     "dashboard": {
       "badge": "dados e insights",
-      "title": "decisões baseadas em uso real",
-      "subtitle": "Veja as ações reais. Saiba exatamente como, quando e quanto do seu produto está sendo aplicado no cultivo. Transparência total, 100% anônimo.",
+      "title": "seu cliente usa certo",
+      "subtitle": "Porque o app mostra o que fazer. Transparência total sobre como sua linha está de fato performando no campo.",
       "anonymousNote": "os dados são agregados de forma anônima para preservar a privacidade do grower.",
       "statGrowers": "growers ativos",
       "statAdhesion": "adesão ao plano",
@@ -2059,16 +2058,16 @@
       "step2": "2. Acessa o MyBud (link ou código)",
       "step3": "3. Já vê o que fazer",
       "noTech": "👉 sem QR complexo | 👉 sem integração | 👉 sem esforço",
-      "step1Title": "Use o produto",
-      "step2Title": "Entre no MyBud",
-      "step3Title": "Siga o cultivo",
-      "acceptedFiles": "Aceitamos PDF, Excel ou Imagem"
+      "step1Title": "Usa o produto",
+      "step2Title": "Entra no app",
+      "step3Title": "Segue o cultivo",
+      "acceptedFiles": "Pronto em até 48h (PDF, Excel ou Imagem)"
     },
     "freeTier": {
       "title": "Onboarding imediato. Zero suporte.",
       "description": "Seu cliente entra no app e já começa a usar — sem que você precise explicar nada. O MyBud já está em uso em beta fechado, automatizando o suporte básico.",
-      "evolution": "Melhor experiência. Menos custo.",
-      "evolutionDesc": "Com a ativação PRO, seu cliente segue seu protocolo técnico à risca, garantindo o resultado e a recompra.",
+      "evolution": "Pronto em até 48h.",
+      "evolutionDesc": "Digitalizamos sua tabela técnica em uma ferramenta de execução real. Seu cliente segue seu protocolo à risca.",
       "features": {
         "calculator": "Calculadora Ilimitada",
         "tankPrep": "Preparo de Tanque",
@@ -2104,12 +2103,12 @@
       "urgency": "Estamos abrindo 3 marcas para o lançamento deste mês.",
       "exclusivity": "As primeiras entram com exclusividade por categoria.",
       "title": "Para marcas que querem escalar",
-      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra sua marca e ganha acesso ao app. Uso consistente = mais recompra.",
+      "subtitle": "O cliente usa sua marca e entra automaticamente no app. Uso consistente = mais recompra. Ativo em até 48h.",
       "setupTitle": "Setup",
-      "setupPrice": "$ 250",
+      "setupPrice": "R$ 1.300",
       "recurrentTitle": "Mensal",
-      "recurrentPrice": "$ 59 / mês",
-      "recurrentDetail": "Inclui 10 ativações PRO (30 dias cada)",
+      "recurrentPrice": "R$ 299 / mês",
+      "recurrentDetail": "Inclui presença no app, protocolo executado e 10 ativações PRO mensais",
       "scaleLabel": "Escala",
       "scaleDetail": "+10 ativações → +$ 20",
       "benefit1": {
@@ -2133,8 +2132,8 @@
     },
     "expansion": {
       "title": "Funciona para qualquer tipo de produto",
-      "punchline": "Não importa o produto.\nImporta o momento em que ele é usado.",
-      "subPunchline": "Se tem momento de uso, tem espaço no MyBud.",
+      "punchline": "Não importa o produto.\nO que importa é quando ele é usado.",
+      "subPunchline": "Todos os dias do cultivo, sua marca presente na rotina.",
       "items": {
         "nutrition": {
           "title": "Nutrição",
@@ -2155,7 +2154,7 @@
       }
     },
     "demo": {
-      "title": "Sua marca dentro da rotina do cultivo",
+      "title": "sua marca em todos os dias do cultivo",
       "cta": "Quero ver minha marca no app",
       "tasksHint": "seu produto aparece em contexto, acionado pelo estágio da planta",
       "timelineHint": "cada uso é rastreado — histórico visível constrói confiança na marca",

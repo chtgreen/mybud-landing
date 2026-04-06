@@ -39,7 +39,7 @@ const IndustryExecution: FC = () => {
                         <div className="space-y-6">
                             <h2 className="text-5xl md:text-8xl font-black text-white tracking-[-0.05em] leading-[0.9] lowercase">
                                 seu protocolo <br />
-                                <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">vira execução.</span>
+                                <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">vira tarefa <br /> dentro do cultivo.</span>
                             </h2>
                             <p className="text-xl md:text-3xl text-zinc-400 font-bold leading-tight lowercase tracking-tight max-w-xl">
                                 sem tabelas confusas. o mybud traduz sua ciência em tarefas simples para o grower.
