@@ -1,4 +1,4 @@
-import { useState, useEffect, type FC, type ChangeEvent, type FormEvent } from 'react';
+import { useState, useEffect, useRef, type FC, type ChangeEvent, type FormEvent } from 'react';
 import { t } from '../lib/i18n';
 import { supabase } from '../lib/supabaseClient';
 
@@ -195,6 +195,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
   const [form, setForm] = useState<FormData>(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [visibleLoadingSteps, setVisibleLoadingSteps] = useState(0);
+  const logoInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (step === 'demo') {
@@ -208,6 +209,21 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
   // Handle input changes
   const handleChange = (field: keyof FormData) => (e: ChangeEvent<HTMLInputElement>) => {
     setForm(prev => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleLogoChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        alert('Logo too large. Max 2MB.');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setForm(prev => ({ ...prev, logoUrl: reader.result as string }));
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   // Step 1 -> Step 2
@@ -323,12 +339,34 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
               <div className="space-y-2">
                 <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-2">{t('industry.experience.form.optionalLogo')}</p>
                 <input
-                  type="url"
-                  value={form.logoUrl}
-                  onChange={handleChange('logoUrl')}
-                  placeholder={t('industry.experience.form.logoPlaceholder')}
-                  className="w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800/50 focus:border-emerald-500/30 rounded-2xl text-white text-sm font-medium placeholder-zinc-700 focus:outline-none transition-all"
+                  type="file"
+                  ref={logoInputRef}
+                  onChange={handleLogoChange}
+                  accept="image/*"
+                  className="hidden"
                 />
+                <button
+                  type="button"
+                  onClick={() => logoInputRef.current?.click()}
+                  className="w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800/50 hover:border-emerald-500/30 rounded-2xl text-left transition-all group/logo overflow-hidden relative"
+                >
+                  {form.logoUrl ? (
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded bg-white/10 p-1 flex items-center justify-center overflow-hidden">
+                        <img src={form.logoUrl} alt="Logo preview" className="w-full h-full object-contain" />
+                      </div>
+                      <span className="text-zinc-300 text-sm font-medium">{t('industry.experience.form.logoLoaded')}</span>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setForm(prev => ({ ...prev, logoUrl: '' })); }}
+                        className="ml-auto text-zinc-600 hover:text-red-400 text-xs font-black"
+                      >
+                        {t('industry.experience.form.removeLogo')}
+                      </button>
+                    </div>
+                  ) : (
+                    <span className="text-zinc-700 text-sm font-medium group-hover/logo:text-zinc-500">{t('industry.experience.form.logoPlaceholder')}</span>
+                  )}
+                </button>
               </div>
               <button
                 type="submit"

@@ -39,9 +39,13 @@ const IndustryProblem: FC = () => {
               </div>
               <div className="p-8 bg-white border border-zinc-200 rounded-3xl shadow-sm mb-10 group-hover:border-zinc-300 transition-colors">
                 <p className="text-zinc-400 font-mono text-sm mb-6 pb-2 border-b border-zinc-50">nutrition_table_v2.pdf</p>
-                <div className="space-y-4 opacity-[0.05]">
-                  <div className="h-1 bg-zinc-950 rounded-full w-full" />
-                  <div className="h-1 bg-zinc-950 rounded-full w-5/6" />
+                <div className="space-y-4">
+                  {[1, 2, 3].map((n) => (
+                    <div key={n} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400/50" />
+                      <span className="text-sm font-bold text-zinc-400 lowercase">{t(`industry.problem.legacyPain${n}`)}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -62,14 +66,16 @@ const IndustryProblem: FC = () => {
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-[28px] md:rounded-[32px] bg-emerald-500 flex items-center justify-center text-zinc-950 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
                   <MoveRight className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
-                <h4 className="text-2xl md:text-4xl font-black text-white lowercase tracking-tight">{t('industry.problem.solution')}</h4>
+                <h4 className="text-2xl md:text-3xl font-black text-white lowercase tracking-tight">{t('industry.problem.solution')}</h4>
               </div>
 
-              <div className="p-8 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[40px] hover:bg-white/10 transition-all duration-500">
-                <div className="flex justify-between items-center group/item text-white">
-                  <span className="text-xl md:text-2xl font-black lowercase">{t('industry.problem.applyProductA')}</span>
-                  <span className="text-xs font-black text-emerald-400 border-2 border-emerald-500/30 px-6 py-2 rounded-full tracking-widest bg-emerald-500/5 group-hover/item:border-emerald-500 transition-colors">2ml/L</span>
-                </div>
+              <div className="space-y-4">
+                {[1, 2, 3].map((n) => (
+                  <div key={n} className="p-5 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-500 flex items-center gap-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                    <span className="text-lg font-black text-white lowercase">{t(`industry.problem.standardBenefit${n}`)}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

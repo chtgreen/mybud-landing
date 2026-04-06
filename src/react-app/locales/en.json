@@ -1870,11 +1870,12 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "Your brand inside the cultivation.",
-      "subtitle": "Your protocol becomes real execution.",
-      "cta": "See my brand",
-      "secondaryCta": "Talk to the team",
-      "discoveryHow": "discovery how",
+      "title": "Your brand inside the real cultivation routine.",
+      "subtitle": "Not as an ad. As dose, task, and execution — at the exact moment.",
+      "proof": "We transform your PDF into actions inside the grow.",
+      "cta": "See my product in the app",
+      "secondaryCta": "I want my brand in the cultivation",
+      "discoveryHow": "discover how",
       "words": {
         "rule": "as a rule",
         "suggestion": "as a suggestion",
@@ -1936,8 +1937,14 @@
       "solution": "We're going to turn it into the engine of the grow.",
       "narrative": "They get the PPM wrong, go into overfert, burn the roots, and burn your reputation in forums and WhatsApp groups.",
       "badge": "execution inside the grow",
-      "legacyBadge": "old method (pdf/physical)",
-      "standardBadge": "mybud standard",
+      "legacyBadge": "Without MyBud (PDF)",
+      "standardBadge": "With MyBud (Execution)",
+      "legacyPain1": "Dosage error",
+      "legacyPain2": "PDF ignored",
+      "legacyPain3": "Repetitive support",
+      "standardBenefit1": "Automatic task",
+      "standardBenefit2": "Correct dose",
+      "standardBenefit3": "Guided execution",
       "applyProductA": "apply product a"
     },
     "howItWorks": {
@@ -1958,8 +1965,10 @@
         "brandName": "Brand name",
         "email": "Email",
         "contactName": "Your name",
-        "logoUrl": "Logo URL (optional)",
-        "logoPlaceholder": "https://your-brand.com/logo.png",
+        "optionalLogo": "Brand Logo (Optional)",
+        "logoPlaceholder": "Click to upload logo",
+        "logoLoaded": "Logo loaded",
+        "removeLogo": "Remove",
         "cta": "Generate my brand in MyBud",
         "nextStep": "Next step"
       },
@@ -1989,7 +1998,7 @@
         "message": "This is how {brand} appears inside the grow.",
         "subMessage": "Every grower using MyBud will see your product at the exact moment of use.",
         "primaryCta": "See {brand} working fully",
-        "secondaryCta": "Talk to the team",
+        "secondaryCta": "I want my brand in the cultivation",
         "fullAppCta": "See in the full app",
         "vegSemana3": "Veg Week 3"
       },
@@ -1997,7 +2006,7 @@
         "title": "Your brand in the routine",
         "subtitle": "Inside the cultivation routine.\nAppear at the exact moment of management.",
         "cta": "Test your brand now",
-        "secondaryCta": "Talk to the team"
+        "secondaryCta": "I want my brand in the cultivation"
       }
     },
     "data": {
@@ -2027,6 +2036,10 @@
       "badge": "B2B Licensing & Retention",
       "title": "For brands that want to scale",
       "subtitle": "License MyBud together with your product. The customer buys your fertilizer and gets app access.",
+      "setupTitle": "Initial Setup",
+      "setupPrice": "R$ 1.000 – R$ 2.500",
+      "recurrentTitle": "Monthly Recurring",
+      "recurrentPrice": "R$ 300 – R$ 500",
       "benefit1": {
         "title": "More repurchase",
         "desc": "To keep the access, the grower continues to use your brand."
@@ -2141,19 +2154,19 @@
         "poweredBy": "Powered by"
       },
       "deliverables": {
-        "title": "What your brand receives",
-        "subtitle": "Three concrete deliverables. No technical integration.",
+        "title": "How it Works",
+        "subtitle": "3 simple steps for your brand to enter the grow.",
         "pillar1": {
-          "title": "Functional nutrition plan",
-          "desc": "You send the PDF. We structure it into tasks by phase, dose, and moment. The grower executes your protocol without consulting anything."
+          "title": "1. Sending",
+          "desc": "You send your nutrition schedule (PDF or table)."
         },
         "pillar2": {
-          "title": "Embeddable calculator",
-          "desc": "A calculator built from your chart — ready for your website and inside the app. The grower calculates the exact dose before mixing the tank."
+          "title": "2. Digitalization",
+          "desc": "We transform your doses into in-app execution."
         },
         "pillar3": {
-          "title": "Right product at the right moment",
-          "desc": "Defensive shows up in the IPM protocol. Soil input appears at soil prep. Foliar at the right time. Not a push. Context."
+          "title": "3. Presence",
+          "desc": "Your product appears at the exact moment of management."
         }
       },
       "finalCta": {

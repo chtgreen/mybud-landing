@@ -145,25 +145,31 @@ const MockItemWrapper: FC<{ children: React.ReactNode; active?: boolean }> = ({ 
 const TasksMockup: FC<MockupProps> = ({ brandName }) => (
   <div className="space-y-4">
     <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">{t('industry.demo.mock.nextTasks')}</p>
+
     <MockItemWrapper active>
-      <div className="flex gap-4">
-        <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center text-zinc-950">
+      <div className="flex gap-4 items-center">
+        <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center text-zinc-950 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
           <Droplet className="w-6 h-6" />
         </div>
-        <div>
+        <div className="flex-1">
           <h4 className="text-white font-black">{t('industry.demo.mock.tasks.wateringNutrients')}</h4>
           <p className="text-xs font-bold text-emerald-400 mt-1">{brandName} — 2.5ml/L</p>
         </div>
+        <div className="w-6 h-6 rounded-full border-2 border-emerald-500/30" />
       </div>
     </MockItemWrapper>
+
     <MockItemWrapper>
-      <div className="flex gap-4 opacity-50">
+      <div className="flex gap-4 items-center opacity-90">
         <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-zinc-500">
-          <CheckCircle2 className="w-6 h-6" />
+          <CheckCircle2 className="w-6 h-6 text-emerald-500" />
         </div>
-        <div>
-          <h4 className="text-zinc-400 font-bold">{t('industry.demo.mock.checkSoilPh')}</h4>
-          <p className="text-xs text-zinc-600 mt-1">{t('industry.demo.mock.completedAgo').replace('{time}', '2h')}</p>
+        <div className="flex-1">
+          <h4 className="text-zinc-100 font-black lowercase">{t('industry.demo.mock.checkSoilPh')}</h4>
+          <p className="text-xs text-zinc-500 mt-1 lowercase">{t('industry.demo.mock.completedAgo').replace('{time}', '2 min')}</p>
+        </div>
+        <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
+          <CheckCircle2 className="w-4 h-4 text-zinc-950" />
         </div>
       </div>
     </MockItemWrapper>

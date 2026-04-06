@@ -1911,9 +1911,10 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "Sua marca dentro do cultivo.",
-      "subtitle": "Seu protocolo vira execução real.",
-      "cta": "Ver minha marca",
-      "secondaryCta": "Falar com o time",
+      "subtitle": "Não como anúncio. Como dose, tarefa e execução — no momento exato.",
+      "proof": "Transformamos seu PDF em ações dentro do grow.",
+      "cta": "Ver meu produto no app",
+      "secondaryCta": "Quero minha marca no cultivo",
       "discoveryHow": "descubra como",
       "words": {
         "rule": "como regra",
@@ -1939,7 +1940,10 @@
         "brandName": "Nome da marca",
         "email": "Seu e-mail profissional",
         "contactName": "Seu nome",
-        "logoUrl": "URL do logo (opcional)",
+        "optionalLogo": "Logo da Marca (Opcional)",
+        "logoPlaceholder": "Clique para subir o logo",
+        "logoLoaded": "Logo carregado",
+        "removeLogo": "Remover",
         "cta": "Ver minha marca",
         "nextStep": "Próximo passo"
       },
@@ -1977,7 +1981,7 @@
         "title": "Sua marca na rotina",
         "subtitle": "Dentro da rotina do cultivo.\nApareça no momento exato do manejo.",
         "cta": "Teste sua marca agora",
-        "secondaryCta": "Falar com o time"
+        "secondaryCta": "Quero minha marca no cultivo"
       }
     },
     "reframe": {
@@ -2027,8 +2031,14 @@
       "solution": "Vamos transformá-lo no motor do grow.",
       "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação em fóruns e grupos de WhatsApp.",
       "badge": "execução dentro do grow",
-      "legacyBadge": "método antigo (pdf/físico)",
-      "standardBadge": "padrão mybud",
+      "legacyBadge": "Sem MyBud (PDF)",
+      "standardBadge": "Com MyBud (Execução)",
+      "legacyPain1": "Erro de dosagem",
+      "legacyPain2": "PDF ignorado",
+      "legacyPain3": "Suporte repetitivo",
+      "standardBenefit1": "Tarefa automática",
+      "standardBenefit2": "Dose correta",
+      "standardBenefit3": "Execução guiada",
       "applyProductA": "aplicar produto a"
     },
     "howItWorks": {
@@ -2068,6 +2078,10 @@
       "badge": "Licenciamento B2B e Retenção",
       "title": "Para marcas que querem escalar",
       "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
+      "setupTitle": "Setup Inicial",
+      "setupPrice": "R$ 1.000 – R$ 2.500",
+      "recurrentTitle": "Recorrência Mensal",
+      "recurrentPrice": "R$ 300 – R$ 500",
       "benefit1": {
         "title": "Mais recompra",
         "desc": "Para manter o acesso, o cultivador continua usando sua marca."
@@ -2184,19 +2198,19 @@
         "poweredBy": "Distribuído por"
       },
       "deliverables": {
-        "title": "O que sua marca recebe",
-        "subtitle": "Três entregas concretas. Sem integração técnica.",
+        "title": "Como Funciona",
+        "subtitle": "3 passos para sua marca entrar no cultivo.",
         "pillar1": {
-          "title": "Plano nutricional funcional",
-          "desc": "Seu PDF vira tarefas por fase, dose e momento. O grower executa seu protocolo sem precisar consultar nada."
+          "title": "1. Envio",
+          "desc": "Você envia seu cronograma (PDF ou tabela)."
         },
         "pillar2": {
-          "title": "Calculadora de dosagem",
-          "desc": "Sua tabela PDF vira uma ferramenta interativa no app. O grower calcula a dose exata antes de preparar o tanque."
+          "title": "2. Transformação",
+          "desc": "A gente transforma em execução dentro do app."
         },
         "pillar3": {
-          "title": "Produto certo na hora certa",
-          "desc": "Seu produto aparece no momento exato do manejo. Defensivo no IPM, insumo no preparo, foliar na rega."
+          "title": "3. Presença",
+          "desc": "Seu produto aparece no momento certo do manejo."
         }
       }
     },

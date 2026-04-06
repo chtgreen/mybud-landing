@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import CollectiveLandingPage from './pages/CollectiveLandingPage';
 import IndustryLandingPage from './pages/IndustryLandingPage';
 import WelcomePage from './pages/WelcomePage';
+import StoriesPage from './pages/StoriesPage';
 import CopyEditor from './components/CopyEditor';
 
 function CopyEditorGate() {
@@ -30,63 +31,63 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Navigate to="/pt/grower" replace />} />
-        
+
         {/* Grower (B2C) routes */}
-        <Route 
-          path="/:lang/grower" 
+        <Route
+          path="/:lang/grower"
           element={
             <LanguageProvider>
               <LandingPage />
             </LanguageProvider>
-          } 
+          }
         />
-        <Route 
-          path="/grower" 
-          element={<Navigate to="/pt/grower" replace />} 
+        <Route
+          path="/grower"
+          element={<Navigate to="/pt/grower" replace />}
         />
-        
+
         {/* Collective routes */}
-        <Route 
-          path="/:lang/collective" 
+        <Route
+          path="/:lang/collective"
           element={
             <LanguageProvider>
               <CollectiveLandingPage />
             </LanguageProvider>
-          } 
+          }
         />
-        <Route 
-          path="/collective" 
-          element={<Navigate to="/pt/collective" replace />} 
+        <Route
+          path="/collective"
+          element={<Navigate to="/pt/collective" replace />}
         />
-        
+
         {/* Industry routes */}
-        <Route 
-          path="/:lang/industry" 
+        <Route
+          path="/:lang/industry"
           element={
             <LanguageProvider>
               <IndustryLandingPage />
             </LanguageProvider>
-          } 
+          }
         />
-        <Route 
-          path="/industry" 
-          element={<Navigate to="/pt/industry" replace />} 
+        <Route
+          path="/industry"
+          element={<Navigate to="/pt/industry" replace />}
         />
-        
+
         {/* Welcome page (post-payment) */}
-        <Route 
-          path="/:lang/welcome" 
+        <Route
+          path="/:lang/welcome"
           element={
             <LanguageProvider>
               <WelcomePage />
             </LanguageProvider>
-          } 
+          }
         />
-        <Route 
-          path="/welcome" 
-          element={<Navigate to="/pt/welcome" replace />} 
+        <Route
+          path="/welcome"
+          element={<Navigate to="/pt/welcome" replace />}
         />
-        
+
         {/* Legacy redirects */}
         <Route path="/b2c" element={<Navigate to="/pt/grower" replace />} />
         <Route path="/:lang/b2c" element={<DynamicRedirect to="/grower" />} />
@@ -94,13 +95,12 @@ function App() {
         <Route path="/:lang/b2b" element={<DynamicRedirect to="/collective" />} />
         <Route path="/enterprise" element={<Navigate to="/pt/collective" replace />} />
         <Route path="/:lang/enterprise" element={<DynamicRedirect to="/collective" />} />
-        
+
+        <Route path="/stories" element={<StoriesPage />} />
+
         {/* Catch old lang-only routes and redirect to grower */}
-        <Route 
-          path=":lang" 
-          element={<DynamicRedirect to="/grower" />} 
-        />
-        
+        <Route path="/:lang" element={<DynamicRedirect to="/grower" />} />
+
         <Route path="*" element={<Navigate to="/pt/grower" replace />} />
       </Routes>
       <CopyEditorGate />

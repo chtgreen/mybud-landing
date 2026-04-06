@@ -57,6 +57,23 @@ const IndustryEcosystem: FC = () => {
                   {t('industry.ecosystem.card.line2')}
                 </h3>
 
+                {/* New Pricing Anchor */}
+                <div className="glass-morphism rounded-3xl p-6 bg-white/[0.03] border border-white/10 w-full mb-10 space-y-4">
+                  <div className="flex justify-between items-center text-left">
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">{t('industry.ecosystem.setupTitle')}</p>
+                      <p className="text-white font-black text-lg">{t('industry.ecosystem.setupPrice')}</p>
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/5 w-full" />
+                  <div className="flex justify-between items-center text-left">
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">{t('industry.ecosystem.recurrentTitle')}</p>
+                      <p className="text-emerald-400 font-black text-lg">{t('industry.ecosystem.recurrentPrice')}</p>
+                    </div>
+                  </div>
+                </div>
+
                 <p className="text-sm text-zinc-200 leading-relaxed font-bold lowercase opacity-90 px-4">
                   {t('industry.ecosystem.card.desc')}
                 </p>
