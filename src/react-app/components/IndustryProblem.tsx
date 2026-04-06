@@ -4,7 +4,7 @@ import { MoveRight, XCircle, Droplet } from 'lucide-react';
 
 const IndustryProblem: FC = () => {
   return (
-    <section className="py-24 md:py-48 bg-white text-zinc-950 relative border-b border-zinc-100 overflow-hidden">
+    <section id="problem" className="py-24 md:py-48 bg-white text-zinc-950 relative border-b border-zinc-100 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
         {/* Label */}
@@ -39,6 +39,10 @@ const IndustryProblem: FC = () => {
                 <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">procura no google</p>
                 <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">olha a tabela</p>
                 <p className="text-3xl md:text-5xl font-black text-zinc-950 lowercase leading-tight">tenta lembrar a dose</p>
+                <div className="pt-6 space-y-2">
+                  <p className="text-xl md:text-2xl font-black text-zinc-400 lowercase leading-tight">{t('industry.problem.blameLabel')}</p>
+                  <p className="text-xl md:text-2xl font-black text-red-500 lowercase leading-tight">{t('industry.problem.blamePunch')}</p>
+                </div>
               </div>
 
               <div className="pt-12 border-t border-zinc-200">

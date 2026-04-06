@@ -29,6 +29,11 @@ const IndustryEcosystem: FC = () => {
                 <p className="text-xl text-zinc-200 font-bold leading-relaxed lowercase opacity-90 backdrop-blur-sm">
                   {t('industry.ecosystem.subtitle')}
                 </p>
+                <div className="inline-block px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
+                  <p className="text-emerald-400 font-black text-sm uppercase tracking-widest leading-none">
+                    {t('industry.ecosystem.consistency')}
+                  </p>
+                </div>
                 <p className="text-sm text-emerald-400 font-black uppercase tracking-[0.2em] animate-in fade-in duration-1000 delay-300">
                   {t('industry.ecosystem.exclusivity')}
                 </p>
