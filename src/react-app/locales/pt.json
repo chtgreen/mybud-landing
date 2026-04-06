@@ -1927,16 +1927,17 @@
     "dashboard": {
       "badge": "dados e insights",
       "title": "seu cliente usa certo",
+      "titleItalic": "de uso real.",
       "subtitle": "Porque o app mostra o que fazer. Transparência total sobre como sua linha está de fato performando no campo.",
-      "anonymousNote": "os dados são agregados de forma anônima para preservar a privacidade do grower.",
+      "anonymousNote": "todos os dados são processados de forma 100% anônima e agregada.",
       "statGrowers": "growers ativos",
       "statAdhesion": "adesão ao plano",
       "statReorder": "alerta de venda",
       "reorderMsg": "42% dos growers entrando em semana de pré-venda.",
-      "feature1Title": "antecipe a recompra",
-      "feature1Desc": "saiba quando o estoque está acabando e dispare ofertas de reposição no timing perfeito.",
-      "feature2Title": "validação de protocolo",
-      "feature2Desc": "veja quais dosagens performam melhor e ajuste seus cronogramas com dados de campo.",
+      "feature1Title": "aprenda como estao usando seus produtos.",
+      "feature1Desc": "saiba exatamente quando e quanto seu protocolo está sendo executado no campo.",
+      "feature2Title": "saiba como esta sendo usado.",
+      "feature2Desc": "entenda os padrões de aplicação da sua linha, 100% anonimamente.",
       "weekShort": "sem"
     },
     "experience": {

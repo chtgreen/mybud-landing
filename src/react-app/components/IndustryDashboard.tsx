@@ -101,7 +101,7 @@ const IndustryDashboard: FC = () => {
                         <div className="space-y-6">
                             <h2 className="text-5xl md:text-8xl font-black text-white tracking-[-0.05em] leading-[0.9] lowercase">
                                 {t('industry.dashboard.title')} <br />
-                                <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">de uso real.</span>
+                                <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">{t('industry.dashboard.titleItalic')}</span>
                             </h2>
                             <p className="text-xl md:text-3xl text-zinc-400 font-bold leading-tight lowercase tracking-tight max-w-xl">
                                 {t('industry.dashboard.subtitle')}
@@ -136,11 +136,8 @@ const IndustryDashboard: FC = () => {
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                     </svg>
                                 </div>
-                                100% anônimo e agregado
-                            </div>
-                            <p className="text-zinc-500 text-xs font-medium max-w-md">
                                 {t('industry.dashboard.anonymousNote')}
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
