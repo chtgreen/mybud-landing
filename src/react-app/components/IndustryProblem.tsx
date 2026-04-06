@@ -91,9 +91,9 @@ const IndustryProblem: FC = () => {
                 </div>
               </div>
 
-              <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">Sua marca ensina, mas não está lá.</h4>
+              <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">Sua marca acaba no rótulo. A execução acontece no MyBud.</h4>
               <p className="text-zinc-500 font-bold lowercase leading-relaxed italic border-l-2 border-zinc-200 pl-8 opacity-80">
-                O maior erro acontece entre ler o rótulo e abrir a ferramenta.
+                Entre a instrução e a ferramenta, o resultado se perde. O MyBud traz sua marca para o momento da rega.
               </p>
             </div>
           </div>
