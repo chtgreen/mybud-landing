@@ -2171,16 +2171,24 @@
       "cta": "Quero ver minha marca no app",
       "scenarios": {
         "watering": {
-          "title": "Rega e Nutrição",
-          "desc": "O grower precisa regar. O MyBud mostra a dose exata por litro, pH e PPM do seu produto."
+          "title": "Rega e Tanque",
+          "desc": "O grower precisa regar. O MyBud mostra a dose exata por litro, pH e PPM para o preparo do tanque na semana certa."
         },
         "soil": {
-          "title": "Receitas de Solo",
-          "desc": "Para criar o substrato perfeito, o app guia o uso dos seus insumos e aditivos."
+          "title": "Solo e Amendas",
+          "desc": "Para criar o substrato perfeito ou amendar o solo, o app guia o uso dos seus insumos e aditivos passo a passo."
         },
         "pests": {
           "title": "Manejo e Pragas",
-          "desc": "Problemas com Gnats ou pragas? O app entrega o plano de aplicação da sua linha."
+          "desc": "Problemas com Gnats, Mites ou pragas? O app entrega o plano de aplicação (ex: EM-5) da sua linha no timing exato."
+        },
+        "seeds": {
+          "title": "Seeds e Breeders",
+          "desc": "O cultivador registra a genética e o MyBud sincroniza o cronograma ideal da sua marca para aquela strain."
+        },
+        "equipment": {
+          "title": "Potes e Equipos",
+          "desc": "Instruções sobre tamanho de vasos, fotoperíodos e equipamentos vinculados ao ciclo de vida da planta."
         }
       },
       "mock": {

@@ -1,14 +1,14 @@
 import { useState, useEffect, type FC } from 'react';
 import { t } from '../lib/i18n';
-import { Target, Sprout, ShieldCheck, Droplet, CheckCircle2 } from 'lucide-react';
+import { Droplet, Sprout, ShieldCheck, Footprints, Settings } from 'lucide-react';
 
-type Scenario = 'watering' | 'soil' | 'pests';
+type Scenario = 'watering' | 'soil' | 'pests' | 'seeds' | 'equipment';
 
 interface IndustryDemoProps {
   onCTAClick?: () => void;
 }
 
-const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
+const IndustryDemo: FC<IndustryDemoProps> = () => {
   const [activeScenario, setActiveScenario] = useState<Scenario>('watering');
   const [brandName, setBrandName] = useState('MyBud Fert');
 
@@ -36,6 +36,18 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
       desc: t('industry.demo.scenarios.pests.desc'),
       Icon: ShieldCheck
     },
+    {
+      id: 'seeds',
+      label: t('industry.demo.scenarios.seeds.title'),
+      desc: t('industry.demo.scenarios.seeds.desc'),
+      Icon: Footprints
+    },
+    {
+      id: 'equipment',
+      label: t('industry.demo.scenarios.equipment.title'),
+      desc: t('industry.demo.scenarios.equipment.desc'),
+      Icon: Settings
+    },
   ];
 
   return (
@@ -62,24 +74,24 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
                 <button
                   key={scenario.id}
                   onClick={() => setActiveScenario(scenario.id)}
-                  className={`w-full text-left p-8 rounded-[40px] transition-all duration-700 border group block relative overflow-hidden ${isActive
+                  className={`w-full text-left p-6 md:p-8 rounded-[40px] transition-all duration-700 border group block relative overflow-hidden ${isActive
                     ? 'bg-white/[0.03] border-white/10 shadow-2xl scale-[1.02] z-10'
                     : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5 opacity-40 hover:opacity-80'
                     }`}
                 >
                   <div className="flex items-center gap-6 relative z-10">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-700 ${isActive
+                    <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-all duration-700 ${isActive
                       ? 'bg-emerald-500 text-zinc-950 shadow-[0_0_30px_rgba(16,185,129,0.4)] scale-110'
                       : 'bg-zinc-900 border border-white/5 text-zinc-600 group-hover:text-emerald-500/50'
                       }`}>
                       <scenario.Icon className="w-8 h-8" />
                     </div>
                     <div className="flex-1">
-                      <h3 className={`text-2xl font-black tracking-tight lowercase ${isActive ? 'text-white' : 'text-zinc-500'}`}>
+                      <h3 className={`text-xl md:text-2xl font-black tracking-tight lowercase ${isActive ? 'text-white' : 'text-zinc-500'}`}>
                         {scenario.label}
                       </h3>
                       {isActive && (
-                        <p className="text-lg font-bold text-zinc-500 mt-3 leading-tight animate-in fade-in slide-in-from-top-2 lowercase tracking-tight">
+                        <p className="text-base md:text-lg font-bold text-zinc-500 mt-2 leading-tight animate-in fade-in slide-in-from-top-2 lowercase tracking-tight">
                           {scenario.desc}
                         </p>
                       )}
@@ -91,9 +103,8 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
           </div>
 
           {/* Device Viewport */}
-          <div className="lg:col-span-7 flex justify-center">
+          <div className="lg:col-span-7 flex justify-center sticky top-32">
             <div className="w-full max-w-[420px] relative">
-              {/* Smartphone Frame */}
               <div className="relative bg-zinc-900 rounded-[64px] p-2.5 shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] ring-1 ring-white/10 border-4 border-zinc-800">
                 <div className="bg-black rounded-[54px] overflow-hidden h-[750px] w-full relative flex flex-col">
 
@@ -112,6 +123,8 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
                       {activeScenario === 'watering' && <WateringMockup brandName={brandName} />}
                       {activeScenario === 'soil' && <SoilMockup brandName={brandName} />}
                       {activeScenario === 'pests' && <PestMockup brandName={brandName} />}
+                      {activeScenario === 'seeds' && <SeedsMockup brandName={brandName} />}
+                      {activeScenario === 'equipment' && <EquipmentMockup brandName={brandName} />}
                     </div>
                   </div>
 
@@ -131,14 +144,14 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
 
 const WateringMockup: FC<{ brandName: string }> = ({ brandName }) => (
   <div className="space-y-8 text-left">
-    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Próxima Tarefa</h4>
+    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Preparo do Tanque</h4>
     <div className="p-6 rounded-[32px] bg-emerald-500/10 border border-emerald-500/20 group">
       <div className="flex items-start gap-4 mb-6">
         <div className="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center text-zinc-950 shadow-lg">
           <Droplet className="w-8 h-8 font-black" />
         </div>
         <div className="flex-1">
-          <p className="text-[10px] font-black text-emerald-500 uppercase tracking-widest mb-1">Rega técnica</p>
+          <p className="text-[10px] font-black text-emerald-500 uppercase tracking-widest mb-1">Nutrição Técnica</p>
           <h5 className="text-white text-2xl font-black lowercase">{brandName} — 2ml/L</h5>
         </div>
       </div>
@@ -189,29 +202,73 @@ const SoilMockup: FC<{ brandName: string }> = ({ brandName }) => (
 
 const PestMockup: FC<{ brandName: string }> = ({ brandName }) => (
   <div className="space-y-8 text-left">
-    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Manejo Ativo</h4>
+    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Protocolo de IPM</h4>
     <div className="p-6 rounded-[32px] bg-red-500/10 border border-red-500/20">
       <div className="flex items-center gap-4 mb-8">
         <div className="w-12 h-12 rounded-2xl bg-red-500 flex items-center justify-center text-zinc-950 shadow-lg">
           <ShieldCheck className="w-7 h-7" />
         </div>
         <div>
-          <h5 className="text-white text-xl font-black lowercase leading-tight">Alerta de Gnats</h5>
-          <p className="text-red-400 text-xs font-black uppercase tracking-widest">Protocolo sugerido</p>
+          <h5 className="text-white text-xl font-black lowercase leading-tight">Alerta de Pragas</h5>
+          <p className="text-red-400 text-xs font-black uppercase tracking-widest">Ação Necessária</p>
         </div>
       </div>
       <div className="space-y-6">
         <div className="flex gap-4">
-          <div className="w-6 h-6 rounded-full bg-zinc-950 border border-red-500/40 flex items-center justify-center flex-shrink-0 text-[10px] font-black text-red-500">1</div>
-          <p className="text-zinc-400 font-bold lowercase text-sm">Aplicar <span className="text-white">EM-5 {brandName}</span> — 5ml/L nas regas.</p>
+          <div className="w-6 h-6 rounded-full bg-zinc-950 border border-red-500/40 flex items-center justify-center flex-shrink-0 text-[10px] font-black text-red-500 text-center">1</div>
+          <p className="text-zinc-400 font-bold lowercase text-sm">Aplicar <span className="text-white">EM-5 {brandName}</span> — 5ml/L.</p>
         </div>
         <div className="flex gap-4">
-          <div className="w-6 h-6 rounded-full bg-zinc-950 border border-red-500/40 flex items-center justify-center flex-shrink-0 text-[10px] font-black text-red-500">2</div>
-          <p className="text-zinc-400 font-bold lowercase text-sm">Reduzir umidade do topo para evitar larvas.</p>
+          <div className="w-6 h-6 rounded-full bg-zinc-950 border border-red-500/40 flex items-center justify-center flex-shrink-0 text-[10px] font-black text-red-500 text-center">2</div>
+          <p className="text-zinc-400 font-bold lowercase text-sm">Remover folhas afetadas da parte baixa.</p>
         </div>
-        <div className="flex gap-4">
-          <div className="w-6 h-6 rounded-full bg-zinc-950 border border-red-500/40 flex items-center justify-center flex-shrink-0 text-[10px] font-black text-red-500">3</div>
-          <p className="text-zinc-400 font-bold lowercase text-sm">Acompanhar resultado em 48h no app.</p>
+      </div>
+    </div>
+  </div>
+);
+
+const SeedsMockup: FC<{ brandName: string }> = ({ brandName }) => (
+  <div className="space-y-8 text-left">
+    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Seeds & Breeders</h4>
+    <div className="p-6 rounded-[32px] bg-white/5 border border-white/10">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-emerald-500 border border-white/5">
+          <Footprints className="w-6 h-6" />
+        </div>
+        <h5 className="text-white text-xl font-black lowercase">Blue Dream — {brandName}</h5>
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <div className="p-4 bg-zinc-950 rounded-2xl">
+          <p className="text-[10px] text-zinc-600 font-black uppercase tracking-widest mb-1">Floração</p>
+          <p className="text-white font-black">65-70 dias</p>
+        </div>
+        <div className="p-4 bg-zinc-950 rounded-2xl">
+          <p className="text-[10px] text-zinc-600 font-black uppercase tracking-widest mb-1">Rendimento</p>
+          <p className="text-white font-black">Alto</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const EquipmentMockup: FC<{ brandName: string }> = ({ brandName }) => (
+  <div className="space-y-8 text-left">
+    <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Potes & Equipos</h4>
+    <div className="p-6 rounded-[32px] bg-white/5 border border-white/10">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-emerald-500 border border-white/5">
+          <Settings className="w-6 h-6" />
+        </div>
+        <h5 className="text-white text-xl font-black lowercase">Configuração de Manejo</h5>
+      </div>
+      <div className="space-y-6">
+        <div className="flex justify-between items-center bg-zinc-950 p-4 rounded-2xl">
+          <span className="text-zinc-400 font-bold text-sm">Vaso Air-Pot {brandName}</span>
+          <span className="text-white font-black">15L</span>
+        </div>
+        <div className="flex justify-between items-center bg-zinc-950 p-4 rounded-2xl">
+          <span className="text-zinc-400 font-bold text-sm">Potência da Luz</span>
+          <span className="text-emerald-500 font-black">80%</span>
         </div>
       </div>
     </div>

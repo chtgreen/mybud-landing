@@ -97,6 +97,14 @@ const IndustryProblem: FC = () => {
                 <div className="absolute left-4 -top-16 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[3deg] max-w-[150px] opacity-60 scale-90">
                   <p className="text-[9px] font-black text-zinc-950">qual a receita do solo?</p>
                 </div>
+
+                <div className="absolute right-0 -top-20 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[-5deg] max-w-[140px] opacity-50 scale-75">
+                  <p className="text-[9px] font-black text-zinc-950">qual genética escolher?</p>
+                </div>
+
+                <div className="absolute -right-20 bottom-10 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[8deg] max-w-[130px] opacity-40 scale-75">
+                  <p className="text-[9px] font-black text-zinc-950">qual vaso usar?</p>
+                </div>
               </div>
 
               <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">Sua marca acaba no rótulo. A execução acontece no MyBud.</h4>
