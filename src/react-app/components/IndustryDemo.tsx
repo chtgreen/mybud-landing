@@ -36,37 +36,42 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-8xl font-black text-white mb-8 tracking-[-0.05em] lowercase leading-[0.9]">
             {t('industry.demo.title')}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-12 gap-12 items-start">
           {/* Menu */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-5 space-y-3">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`w-full text-left p-6 rounded-3xl transition-all duration-300 border block ${isActive
-                    ? 'bg-zinc-900 border-zinc-700 shadow-2xl scale-[1.02]'
-                    : 'bg-transparent border-transparent hover:bg-zinc-900/40 hover:border-zinc-800 opacity-60'
+                  className={`w-full text-left p-6 rounded-[32px] transition-all duration-500 border group block relative overflow-hidden ${isActive
+                    ? 'bg-white/[0.03] border-white/10 shadow-2xl scale-[1.02] z-10'
+                    : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5 opacity-40 hover:opacity-80'
                     }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${isActive ? 'bg-emerald-500 text-zinc-950' : 'bg-zinc-800 text-zinc-500'
+                  {isActive && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent pointer-none" />
+                  )}
+                  <div className="flex items-center gap-5 relative z-10">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${isActive
+                      ? 'bg-emerald-500 text-zinc-950 shadow-[0_0_30px_rgba(16,185,129,0.4)] scale-110'
+                      : 'bg-zinc-900 border border-white/5 text-zinc-600 group-hover:text-emerald-500/50'
                       }`}>
                       <tab.Icon className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
-                      <h3 className={`text-lg font-black tracking-tight ${isActive ? 'text-white' : 'text-zinc-500'}`}>
+                      <h3 className={`text-xl font-black tracking-tight lowercase ${isActive ? 'text-white' : 'text-zinc-500'}`}>
                         {tab.label}
                       </h3>
                       {isActive && (
-                        <p className="text-sm font-medium text-emerald-500/80 mt-2 leading-relaxed animate-in fade-in slide-in-from-top-2">
+                        <p className="text-sm font-bold text-zinc-500 mt-2 leading-tight animate-in fade-in slide-in-from-top-2 lowercase tracking-tight">
                           {t(tab.descKey)}
                         </p>
                       )}
@@ -79,18 +84,25 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
 
           {/* Device */}
           <div className="md:col-span-7 flex justify-center sticky top-32">
-            <div className="w-full max-w-[360px] relative">
-              {/* iPhone Frame */}
-              <div className="relative bg-zinc-900 rounded-[3.5rem] p-4 shadow-2xl ring-1 ring-zinc-800">
-                <div className="bg-zinc-950 rounded-[2.8rem] overflow-hidden h-[720px] w-full relative flex flex-col border border-zinc-800">
+            <div className="w-full max-w-[320px] relative">
+              {/* iPhone 16 Pro Frame */}
+              <div className="relative bg-zinc-900 rounded-[60px] p-2.5 shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] ring-1 ring-white/10">
+                <div className="bg-black rounded-[50px] overflow-hidden h-[660px] w-full relative flex flex-col border border-white/5 ring-1 ring-black shadow-inner">
+
+                  {/* Dynamic Island */}
+                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20 border border-white/5 flex items-center justify-center gap-1.5 px-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <div className="flex-1 h-1 bg-white/5 rounded-full" />
+                  </div>
+
                   {/* App Header */}
-                  <div className="bg-emerald-600 px-6 pt-12 pb-6 text-white flex-shrink-0 relative">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-60">{t('industry.demo.mock.liveBadge')}</span>
-                      <div className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
+                  <div className="bg-emerald-600 px-7 pt-12 pb-7 text-white flex-shrink-0 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
+                    <div className="flex items-center justify-between mb-4 relative z-10">
+                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-200/60">{t('industry.demo.mock.liveBadge')}</span>
                     </div>
-                    <h4 className="text-xl font-black">{brandName} Lab</h4>
-                    <p className="text-sm font-bold text-emerald-100">{t('industry.demo.mock.vegStageWeek3')}</p>
+                    <h4 className="text-2xl font-black tracking-tighter lowercase leading-none relative z-10">{brandName} lab</h4>
+                    <p className="text-sm font-bold text-emerald-100/80 lowercase mt-1 relative z-10">{t('industry.demo.mock.vegStageWeek3')}</p>
                   </div>
 
                   {/* Scrollable Screen Content */}
@@ -137,7 +149,10 @@ interface MockupProps {
 }
 
 const MockItemWrapper: FC<{ children: React.ReactNode; active?: boolean }> = ({ children, active }) => (
-  <div className={`p-5 rounded-3xl border mb-4 transition-all ${active ? 'bg-emerald-500/10 border-emerald-500/30 shadow-lg' : 'bg-zinc-900/50 border-zinc-800'}`}>
+  <div className={`p-5 rounded-[28px] border transition-all duration-500 mb-4 ${active
+      ? 'bg-white/[0.03] border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] shadow-emerald-500/5'
+      : 'bg-zinc-900 border-zinc-800/50 opacity-60'
+    }`}>
     {children}
   </div>
 );
@@ -148,28 +163,28 @@ const TasksMockup: FC<MockupProps> = ({ brandName }) => (
 
     <MockItemWrapper active>
       <div className="flex gap-4 items-center">
-        <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center text-zinc-950 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-zinc-950 shadow-lg">
           <Droplet className="w-6 h-6" />
         </div>
         <div className="flex-1">
-          <h4 className="text-white font-black">{t('industry.demo.mock.tasks.wateringNutrients')}</h4>
-          <p className="text-xs font-bold text-emerald-400 mt-1">2.5ml/L — abrir {brandName}</p>
+          <h4 className="text-white font-black text-sm lowercase leading-tight">{t('industry.demo.mock.tasks.wateringNutrients')}</h4>
+          <p className="text-[10px] font-black text-emerald-500 mt-1 uppercase tracking-wider">2.5ml/L — {brandName}</p>
         </div>
-        <div className="w-6 h-6 rounded-full border-2 border-emerald-500/30" />
+        <div className="w-6 h-6 rounded-full border-2 border-emerald-500/20" />
       </div>
     </MockItemWrapper>
 
     <MockItemWrapper>
-      <div className="flex gap-4 items-center opacity-90">
-        <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-zinc-500">
-          <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+      <div className="flex gap-4 items-center opacity-40">
+        <div className="w-12 h-12 rounded-2xl bg-zinc-800 border border-white/5 flex items-center justify-center">
+          <CheckCircle2 className="w-6 h-6 text-zinc-600" />
         </div>
         <div className="flex-1">
-          <h4 className="text-zinc-100 font-black lowercase">{t('industry.demo.mock.checkSoilPh')}</h4>
-          <p className="text-xs text-zinc-500 mt-1 lowercase">{t('industry.demo.mock.completedAgo').replace('{time}', '2 min')}</p>
+          <h4 className="text-zinc-400 font-black text-sm lowercase leading-tight">{t('industry.demo.mock.checkSoilPh')}</h4>
+          <p className="text-[10px] text-zinc-600 mt-1 font-bold lowercase tracking-tight">{t('industry.demo.mock.completedAgo').replace('{time}', '2 min')}</p>
         </div>
-        <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
-          <CheckCircle2 className="w-4 h-4 text-zinc-950" />
+        <div className="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center border border-white/5">
+          <CheckCircle2 className="w-4 h-4 text-emerald-500/20" />
         </div>
       </div>
     </MockItemWrapper>
@@ -236,16 +251,17 @@ const RecommendationsMockup: FC<MockupProps> = ({ brandName }) => (
 );
 
 const BrandHubMockup: FC<MockupProps> = ({ brandName }) => (
-  <div className="space-y-6">
-    <div className="h-32 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-3xl relative">
-      <div className="absolute -bottom-8 left-6 w-16 h-16 bg-zinc-950 border-4 border-zinc-950 rounded-2xl flex items-center justify-center">
-        <span className="text-2xl font-black text-white">{brandName.charAt(0)}</span>
+  <div className="space-y-8">
+    <div className="h-40 bg-gradient-to-br from-emerald-600 via-teal-800 to-zinc-900 rounded-[32px] relative overflow-hidden group">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+      <div className="absolute -bottom-10 left-6 w-20 h-20 bg-black border-[6px] border-black rounded-[24px] flex items-center justify-center shadow-2xl">
+        <span className="text-3xl font-black text-emerald-500">{brandName.charAt(0)}</span>
       </div>
     </div>
-    <div className="pt-8 px-2">
-      <h4 className="text-2xl font-black text-white">{brandName}</h4>
-      <p className="text-sm text-zinc-500 font-medium mt-2">{t('industry.demo.mock.hub.bio')}</p>
-      <button className="w-full mt-8 py-4 bg-emerald-500 text-zinc-950 font-black rounded-2xl">{t('industry.demo.mock.hub.follow')}</button>
+    <div className="pt-6 px-4">
+      <h4 className="text-3xl font-black text-white tracking-tighter lowercase">{brandName}</h4>
+      <p className="text-sm text-zinc-500 font-bold mt-3 leading-relaxed tracking-tight lowercase">{t('industry.demo.mock.hub.bio')}</p>
+      <button className="w-full mt-10 py-5 bg-white text-black font-black rounded-3xl hover:bg-emerald-500 hover:text-black transition-all shadow-xl active:scale-95">{t('industry.demo.mock.hub.follow')}</button>
     </div>
   </div>
 );
