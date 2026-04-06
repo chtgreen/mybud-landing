@@ -1870,14 +1870,14 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "Your customer opens the app and already knows what to do.",
+      "title": "your customer opens the app",
       "subtitle": "Week, dose, and pH appear automatically. No PDF. No error.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
       "cta": "See my brand in the app",
       "secondaryCta": "Enter the grow now",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "and already knows what to do",
+        "knows": "and knows what to do",
         "bottle": "and sees which bottle to open",
         "dose": "and knows how many ml to apply",
         "rule": "and follows your rule"
