@@ -73,7 +73,7 @@ const HeroIndustry: FC<HeroIndustryProps> = () => {
 
           {/* High-Impact Headline */}
           <div className="flex flex-col items-start justify-center mb-12 md:mb-16 w-full">
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-black leading-[1.05] md:leading-[0.9] tracking-tighter text-white lowercase flex flex-col items-start select-none w-full whitespace-pre-line">
+            <h1 className="text-4xl md:text-7xl lg:text-7xl font-black leading-[1.05] md:leading-[0.9] tracking-tighter text-white lowercase flex flex-col items-start select-none w-full whitespace-pre-line">
               <div className="flex flex-col items-start gap-y-2 md:gap-y-4">
                 <span className="max-w-[12ch] md:max-w-none">{t('industry.hero.title')}</span>
                 <div className="relative h-[1.1em] flex items-center justify-start min-h-[1.1em]">
@@ -84,7 +84,7 @@ const HeroIndustry: FC<HeroIndustryProps> = () => {
                 </div>
               </div>
             </h1>
-            <p className="mt-8 text-xl md:text-3xl text-zinc-400 font-bold lowercase tracking-tight animate-in fade-in slide-in-from-left-8 duration-1000 delay-300 max-w-2xl leading-tight">
+            <p className="mt-8 text-base md:text-xl text-zinc-500 font-bold lowercase tracking-tight animate-in fade-in slide-in-from-left-8 duration-1000 delay-300 max-w-xl leading-relaxed opacity-80">
               {t('industry.hero.subtitle')}
             </p>
           </div>
