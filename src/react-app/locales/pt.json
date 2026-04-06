@@ -2064,6 +2064,18 @@
       "step3Title": "Segue o cultivo",
       "acceptedFiles": "Pronto em até 48h (PDF, Excel ou Imagem)"
     },
+    "progression": {
+      "title": "como seu produto domina o cultivo",
+      "entryTitle": "seu produto entra no cultivo no primeiro uso",
+      "entryPoint1": "o grower entra no app e seu produto já aparece no cronograma",
+      "entryPoint2": "ele segue as instruções sem precisar pensar ou interpretar",
+      "entryBadge": "foco em execução real",
+      "scaleTitle": "e vira escolha padrão do grower",
+      "scalePoint1": "ele usa do jeito certo e repete o uso ao longo do ciclo",
+      "scalePoint2": "fidelização natural: ele tende a continuar com a mesma marca para manter o resultado",
+      "scaleBadge": "recompra e escala",
+      "cta": "Como escala minha marca?"
+    },
     "freeTier": {
       "title": "Onboarding imediato. Sem esforço.",
       "description": "Seu cliente entra no app e já começa a usar. O MyBud automatiza as instruções básicas da sua marca, liberando seu time para o que realmente importa.",
