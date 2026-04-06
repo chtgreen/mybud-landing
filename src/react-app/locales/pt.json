@@ -2144,35 +2144,45 @@
       "secondaryFinalCta": "Falar com o time"
     },
     "expansion": {
-      "title": "Funciona para qualquer tipo de produto",
-      "punchline": "Não importa o produto.\nO que importa é quando ele é usado.",
-      "subPunchline": "Todos os dias do cultivo, sua marca presente na rotina.",
+      "title": "o ecossistema completo no bolso do grower",
+      "punchline": "sua marca não é um anúncio.\né a solução no manejo.",
+      "subPunchline": "concluímos a ponte entre indústria e cultivo, conectando nutrientes, equipamentos e protocolos de pragas diretamente à rotina.",
       "items": {
         "nutrition": {
-          "title": "Nutrição",
-          "desc": "Dose, pH, semana → execução automática"
+          "title": "nutrição e fertis",
+          "desc": "dosagem, pH e cronograma → execução automática na rega"
         },
         "ipm": {
-          "title": "Defensivos (IPM)",
-          "desc": "Aplicação preventiva → momento certo"
+          "title": "pragas e ipm",
+          "desc": "manejo preventivo contra gnats e pragas no timing exato"
         },
         "substrate": {
-          "title": "Solo / substrato",
-          "desc": "Preparo e correção → instrução no início"
+          "title": "solos e substratos",
+          "desc": "preparo de receitas e misturas guiadas passo a passo"
         },
         "equipment": {
-          "title": "Equipamentos",
-          "desc": "Uso e operação → checklist e rotina"
+          "title": "equipamentos e tech",
+          "desc": "operação de luzes e ventilação vinculada ao ciclo da planta"
         }
       }
     },
     "demo": {
       "title": "sua marca em todos os dias do cultivo",
       "cta": "Quero ver minha marca no app",
-      "tasksHint": "seu produto aparece em contexto, acionado pelo estágio da planta",
-      "timelineHint": "cada uso é rastreado — histórico visível constrói confiança na marca",
-      "activityHint": "dados estruturados — vinculados à planta, estágio e dosagem",
-      "recommendationsHint": "recomendações baseadas no estado real do cultivo — não anúncios genéricos",
+      "scenarios": {
+        "watering": {
+          "title": "Rega e Nutrição",
+          "desc": "O grower precisa regar. O MyBud mostra a dose exata por litro, pH e PPM do seu produto."
+        },
+        "soil": {
+          "title": "Receitas de Solo",
+          "desc": "Para criar o substrato perfeito, o app guia o uso dos seus insumos e aditivos."
+        },
+        "pests": {
+          "title": "Manejo e Pragas",
+          "desc": "Problemas com Gnats ou pragas? O app entrega o plano de aplicação da sua linha."
+        }
+      },
       "mock": {
         "tasks": {
           "todayTasks": "tarefas de hoje",
