@@ -1911,7 +1911,7 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "sua marca dentro do cultivo",
-      "subtitle": "seu cliente compra o produto. e depois? você perde o controle do uso. nós trazemos sua marca para dentro da rega.",
+      "subtitle": "seu cliente compra seu produto\ne usa errado",
       "cta": "Digitalizar meu protocolo agora",
       "secondaryCta": "Como funciona",
       "discoveryHow": "descubra como",
@@ -2034,7 +2034,7 @@
     "problem": {
       "badge": "a ponte entre marca e cultivo",
       "title": "sua marca ensina,\nmas não conecta os pontos do cultivo",
-      "intro": "O cultivador compra seu produto, mas ainda tem dúvidas sobre manejo de pragas, solo e equipamentos. O MyBud conecta todos os pontos à sua marca.",
+      "intro": "O cultivador compra seu produto, mas muitas vezes tem dúvidas de como usar eles, seja na hora da rega, no MIP, na preparação do solo. O MyBud conecta o seu produto a forma de usar.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
       "pain3": "Peca no manejo",
