@@ -1611,9 +1611,9 @@
       "secondaryFinalCta": "Hablar con el equipo"
     },
     "expansion": {
-      "title": "Funciona para cualquier tipo de producto",
-      "punchline": "No importa el producto.\nImporta el momento en que se usa.",
-      "subPunchline": "Si hay un momento de uso, hay espacio en MyBud.",
+      "title": "Expansión",
+      "punchline": "no importa el producto\nimporta cuando se usa",
+      "subPunchline": "todos los días del cultivo, tu marca presente:",
       "items": {
         "nutrition": {
           "title": "Nutrición",
