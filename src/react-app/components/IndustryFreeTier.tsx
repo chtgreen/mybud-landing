@@ -15,13 +15,19 @@ const IndustryFreeTier: FC = () => {
                             </span>
                         </div>
 
-                        <div className="space-y-8">
+                        <div className="space-y-12">
                             <h2 className="text-5xl md:text-7xl font-black text-zinc-950 leading-[0.95] tracking-tight lowercase">
                                 {t('industry.freeTier.title')}
                             </h2>
-                            <p className="text-2xl text-zinc-600 font-bold leading-relaxed lowercase opacity-90 max-w-xl">
-                                {t('industry.freeTier.description')}
-                            </p>
+                            <div className="space-y-4">
+                                <p className="text-2xl text-zinc-600 font-bold leading-relaxed lowercase opacity-90 max-w-xl">
+                                    {t('industry.freeTier.description')}
+                                </p>
+                                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-zinc-100 border border-zinc-200">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                    <span className="text-xs font-black text-zinc-500 uppercase tracking-widest">{t('industry.howItWorks.acceptedFiles')}</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="space-y-6 pt-6">
@@ -53,16 +59,14 @@ const IndustryFreeTier: FC = () => {
                                     { icon: 'Calculator', label: t('industry.freeTier.features.calculator'), active: true },
                                     { icon: 'Droplet', label: t('industry.freeTier.features.tankPrep'), active: true },
                                     { icon: 'Leaf', label: t('industry.freeTier.features.plantsLimit'), active: true },
-                                    { icon: 'Shield', label: t('industry.freeTier.features.brandProtocol'), active: false, badge: 'PRO' }
+                                    { icon: 'Shield', label: t('industry.freeTier.features.brandProtocol'), active: true }
                                 ].map((item, i) => (
-                                    <div key={i} className={`flex items-center justify-between p-6 rounded-3xl border transition-all duration-500 ${item.active ? 'bg-white border-zinc-200 shadow-sm' : 'bg-zinc-100/50 border-zinc-200 opacity-60'}`}>
+                                    <div key={i} className={`flex items-center justify-between p-7 rounded-3xl border transition-all duration-500 ${item.active ? 'bg-white border-zinc-200 shadow-sm hover:border-emerald-500/30' : 'bg-zinc-100/50 border-zinc-200 opacity-60'}`}>
                                         <div className="flex items-center gap-4">
                                             <div className={`w-1.5 h-1.5 rounded-full ${item.active ? 'bg-emerald-500' : 'bg-zinc-300'}`} />
                                             <span className={`text-lg font-black lowercase ${item.active ? 'text-zinc-950' : 'text-zinc-400'}`}>{item.label}</span>
                                         </div>
-                                        {item.badge && (
-                                            <span className="text-[9px] font-black bg-zinc-950 text-white px-3 py-1 rounded-full tracking-widest">{item.badge}</span>
-                                        )}
+
                                         {item.active && (
                                             <span className="text-emerald-500 font-black">grátis</span>
                                         )}

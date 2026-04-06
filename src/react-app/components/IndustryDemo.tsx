@@ -88,10 +88,10 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
 
           {/* Device */}
           <div className="md:col-span-7 flex justify-center sticky top-32">
-            <div className="w-full max-w-[320px] relative">
+            <div className="w-full max-w-[450px] relative">
               {/* iPhone 16 Pro Frame */}
               <div className="relative bg-zinc-900 rounded-[60px] p-2.5 shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] ring-1 ring-white/10">
-                <div className="bg-black rounded-[50px] overflow-hidden h-[660px] w-full relative flex flex-col border border-white/5 ring-1 ring-black shadow-inner">
+                <div className="bg-black rounded-[50px] overflow-hidden h-[700px] w-full relative flex flex-col border border-white/5 ring-1 ring-black shadow-inner">
 
                   {/* Dynamic Island */}
                   <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20 border border-white/5 flex items-center justify-center gap-1.5 px-3">
@@ -324,6 +324,4 @@ const StickersMockup: FC<MockupProps> = ({ brandName }) => (
   </div>
 );
 
-
 export default IndustryDemo;
-

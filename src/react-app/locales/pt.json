@@ -1928,7 +1928,7 @@
     "dashboard": {
       "badge": "dados e insights",
       "title": "decisões baseadas em uso real",
-      "subtitle": "saiba exatamente como, quando e quanto do seu produto está sendo usado. tudo 100% anônimo.",
+      "subtitle": "Veja as ações reais. Saiba exatamente como, quando e quanto do seu produto está sendo aplicado no cultivo. Transparência total, 100% anônimo.",
       "anonymousNote": "os dados são agregados de forma anônima para preservar a privacidade do grower.",
       "statGrowers": "growers ativos",
       "statAdhesion": "adesão ao plano",
@@ -2061,7 +2061,8 @@
       "noTech": "👉 sem QR complexo | 👉 sem integração | 👉 sem esforço",
       "step1Title": "Use o produto",
       "step2Title": "Entre no MyBud",
-      "step3Title": "Siga o cultivo"
+      "step3Title": "Siga o cultivo",
+      "acceptedFiles": "Aceitamos PDF, Excel ou Imagem"
     },
     "freeTier": {
       "title": "Onboarding imediato. Zero suporte.",
@@ -2072,7 +2073,7 @@
         "calculator": "Calculadora Ilimitada",
         "tankPrep": "Preparo de Tanque",
         "plantsLimit": "Até 3 plantas",
-        "brandProtocol": "Protocolo da Marca (PRO)"
+        "brandProtocol": "Seguir o seu cronograma/tabela de ferti-irrigacao"
       }
     },
     "data": {

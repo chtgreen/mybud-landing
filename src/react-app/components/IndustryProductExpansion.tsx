@@ -46,7 +46,7 @@ const IndustryProductExpansion: FC = () => {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {items.map((item) => (
                         <div key={item.key} className="p-12 rounded-[40px] bg-zinc-50 border border-zinc-100 hover:border-emerald-500/30 hover:bg-white hover:shadow-[0_20px_60px_rgba(16,185,129,0.05)] transition-all group relative overflow-hidden">
                             <div className="w-16 h-16 rounded-[24px] bg-white border border-zinc-100 flex items-center justify-center mb-10 shadow-sm group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-hover:shadow-[0_10px_20px_rgba(16,185,129,0.2)] transition-all duration-500 relative z-10">

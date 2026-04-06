@@ -67,7 +67,7 @@ const HeroIndustry: FC<HeroIndustryProps> = () => {
           <div className="flex items-center gap-4 mb-16 animate-in fade-in duration-1000">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.5)]" />
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500">
-              {t('industry.hero.discoveryHow')}
+              {t('industry.hero.badge')}
             </span>
           </div>
 
@@ -80,7 +80,7 @@ const HeroIndustry: FC<HeroIndustryProps> = () => {
                   <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]">
                     {displayText}
                   </span>
-                  <span className="w-1 md:w-1.5 h-[0.8em] bg-emerald-500 ml-1 md:ml-1.5 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                  <span className="w-1 md:w-1.5 h-[0.8em] bg-emerald-500 ml-1 md:ml-1.5 animate-blink shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                 </div>
               </div>
             </h1>
