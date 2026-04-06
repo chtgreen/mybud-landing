@@ -1938,7 +1938,13 @@
       "feature1Desc": "saiba exatamente quando e quanto seu protocolo está sendo executado no campo.",
       "feature2Title": "saiba como esta sendo usado.",
       "feature2Desc": "entenda os padrões de aplicação da sua linha, 100% anonimamente.",
-      "weekShort": "sem"
+      "weekShort": "sem",
+      "mock": {
+        "usageInsights": "insights de uso",
+        "brandInField": "sua marca no campo",
+        "live": "ao vivo",
+        "usageByStage": "uso por estágio"
+      }
     },
     "experience": {
       "headline": "Sua marca na rotina",
@@ -2029,7 +2035,15 @@
         "point1": "Baseado no estado do cultivo",
         "point2": "Sem sugestões genéricas"
       },
-      "punchline": "o que era tabela vira tarefa dentro do app. o grower não interpreta, ele executa."
+      "punchline": "o que era tabela vira tarefa dentro do app. o grower não interpreta, ele executa.",
+      "mock": {
+        "week3": "semana 3",
+        "wateringNutrients": "rega + nutrientes",
+        "growADose": "grow a — 2ml/l",
+        "checkPh": "verificar ph",
+        "targetPh": "meta: 6.2",
+        "executionPunchline": "o grower não interpreta. ele executa."
+      }
     },
     "problem": {
       "title": "sua marca ensina\nmas não controla como é usada",
@@ -2049,6 +2063,19 @@
       "legacyPain1": "Erro de dosagem",
       "legacyPain2": "PDF ignorado",
       "legacyPain3": "Suporte repetitivo",
+      "timeForWatering": "na hora da rega",
+      "searchGoogle": "procura no google",
+      "checkTable": "olha a tabela",
+      "rememberDose": "tenta lembrar a dose",
+      "brandStopsAtPackaging": "sua marca para na embalagem",
+      "executionHappensOutside": "a execução acontece fora dela",
+      "atMyBud": "no mybud",
+      "tableToTask": "o que era tabela\nvira tarefa\n{italic}",
+      "tableToTaskItalic": "dentro do app.",
+      "exactDose": "dose exata",
+      "rightWeek": "semana certa",
+      "errorFreeExecution": "execução sem erro",
+      "ctaDigitalize": "Digitalizar meu protocolo",
       "standardBenefit1": "Qual garrafa abrir",
       "standardBenefit2": "Quantos ml aplicar",
       "standardBenefit3": "Quando fazer",

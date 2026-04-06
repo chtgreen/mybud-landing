@@ -1365,7 +1365,7 @@
       "subtitle": "semana, dosis y pH aparecen automáticamente.",
       "proof": "Qué botella abrir, cuántos ml aplicar y cuándo hacerlo.",
       "cta": "hablar con el equipo",
-      "secondaryCta": "ver precios",
+      "secondaryCta": "¿cómo funciona?",
       "discoveryHow": "descubre cómo",
       "words": {
         "execution": "se vuelve ejecución en el cultivo",
@@ -1389,7 +1389,13 @@
       "feature1Desc": "sepa cuándo se está agotando el stock y dispare ofertas de reposición en el momento perfecto.",
       "feature2Title": "validación de protocolo",
       "feature2Desc": "vea qué dosis funcionan mejor y ajuste sus cronogramas con datos de campo.",
-      "weekShort": "sem"
+      "weekShort": "sem",
+      "mock": {
+        "usageInsights": "insights de uso",
+        "brandInField": "tu marca en el campo",
+        "live": "en vivo",
+        "usageByStage": "uso por etapa"
+      }
     },
     "reframe": {
       "title": "No necesitas más visibilidad.\nNecesitas ser usado.",
@@ -1425,7 +1431,15 @@
         "point1": "Basado en el estado del cultivo",
         "point2": "Sin sugerencias genéricas"
       },
-      "punchline": "Tu producto aparece en el momento exacto del riego."
+      "punchline": "Tu producto aparece en el momento exacto del riego.",
+      "mock": {
+        "week3": "semana 3",
+        "wateringNutrients": "riego + nutrientes",
+        "growADose": "grow a — 2ml/l",
+        "checkPh": "verificación de ph",
+        "targetPh": "meta: 6.2",
+        "executionPunchline": "el cultivador no interpreta.\nel ejecuta."
+      }
     },
     "problem": {
       "title": "Deja de vender medios. Conviértete en la norma.",
@@ -1434,6 +1448,21 @@
       "pain2": "Mezcla incorrectamente",
       "pain3": "Quema la planta",
       "pain4": "Culpa a tu marca",
+      "blameLabel": "cuando se usa mal",
+      "blamePunch": "culpan a tu marca",
+      "timeForWatering": "al momento del riego",
+      "searchGoogle": "busca en google",
+      "checkTable": "mira la tabla",
+      "rememberDose": "intenta recordar la dosis",
+      "brandStopsAtPackaging": "tu marca se detiene en el envase",
+      "executionHappensOutside": "la ejecución ocurre fuera de él",
+      "atMyBud": "en mybud",
+      "tableToTask": "lo que era tabla\nse vuelve tarea\n",
+      "tableToTaskItalic": "dentro de la app.",
+      "exactDose": "dosis exacta",
+      "rightWeek": "semana correcta",
+      "errorFreeExecution": "ejecución sin errores",
+      "ctaDigitalize": "Digitalizar mi protocolo",
       "pdfNote": "Tu PDF de dosificación se convirtió en un pisapapeles.",
       "solution": "Lo vamos a convertir en el motor del cultivo.",
       "narrative": "Se equivoca con el PPM, entra en overfert, quema la raíz y quema tu reputación en foros y grupos de WhatsApp."
@@ -1524,6 +1553,7 @@
       "badge": "Licenciamiento B2B y Retención",
       "urgency": "Estamos abriendo 3 marcas para el lanzamiento de este mes.",
       "exclusivity": "Las primeras entran con exclusividad por categoría.",
+      "consistency": "uso consistente = más recompra",
       "title": "Para marcas que quieren escalar",
       "subtitle": "Licencie el MyBud junto con su producto. El cliente compra su marca y gana acceso a la app. Uso consistente = más recompra.",
       "setupTitle": "Setup",

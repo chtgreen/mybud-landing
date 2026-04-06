@@ -47,7 +47,7 @@ const IndustryExecution: FC = () => {
                         <div className="absolute -inset-20 bg-emerald-500/5 blur-[120px] rounded-full animate-pulse" />
                         <div className="bg-zinc-900 border border-white/5 rounded-[48px] p-8 md:p-12 shadow-2xl relative z-10 transition-transform duration-700 hover:rotate-2 hover:scale-[1.02]">
                             <div className="flex items-center justify-between mb-12 border-b border-white/5 pb-8">
-                                <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest leading-none">semana 3</span>
+                                <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest leading-none">{t('industry.presence.mock.week3')}</span>
                                 <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                             </div>
 
@@ -58,8 +58,8 @@ const IndustryExecution: FC = () => {
                                         <span className="font-black">✓</span>
                                     </div>
                                     <div className="flex-1">
-                                        <h5 className="text-lg font-black text-white lowercase">rega + nutrientes</h5>
-                                        <p className="text-zinc-500 text-sm font-bold uppercase tracking-wider">grow a — 2ml/l</p>
+                                        <h5 className="text-lg font-black text-white lowercase">{t('industry.presence.mock.wateringNutrients')}</h5>
+                                        <p className="text-zinc-500 text-sm font-bold uppercase tracking-wider">{t('industry.presence.mock.growADose')}</p>
                                     </div>
                                 </div>
 
@@ -69,16 +69,16 @@ const IndustryExecution: FC = () => {
                                         <span className="font-black">✓</span>
                                     </div>
                                     <div className="flex-1">
-                                        <h5 className="text-lg font-black text-white lowercase">verificar ph</h5>
-                                        <p className="text-zinc-500 text-sm font-bold uppercase tracking-wider">meta: 6.2</p>
+                                        <h5 className="text-lg font-black text-white lowercase">{t('industry.presence.mock.checkPh')}</h5>
+                                        <p className="text-zinc-500 text-sm font-bold uppercase tracking-wider">{t('industry.presence.mock.targetPh')}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Status Float Label */}
-                        <div className="absolute -bottom-8 -right-8 bg-emerald-500 text-zinc-950 px-8 py-4 rounded-3xl font-black text-sm uppercase tracking-tighter shadow-2xl z-20">
-                            o grower não interpreta. ele executa.
+                        <div className="absolute -bottom-8 -right-8 bg-emerald-500 text-zinc-950 px-8 py-4 rounded-3xl font-black text-sm uppercase tracking-tighter shadow-2xl z-20 whitespace-pre-line">
+                            {t('industry.presence.mock.executionPunchline')}
                         </div>
                     </div>
                 </div>

@@ -1874,7 +1874,7 @@
       "subtitle": "week, dose, and pH appear automatically.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
       "cta": "talk to the team",
-      "secondaryCta": "see pricing",
+      "secondaryCta": "how it works?",
       "discoveryHow": "discover how",
       "words": {
         "execution": "turns guidance into action",
@@ -1898,7 +1898,13 @@
       "feature1Desc": "know when stock is running low and trigger replacement offers at the perfect timing.",
       "feature2Title": "protocol validation",
       "feature2Desc": "see which dosages perform best and adjust your schedules with field data.",
-      "weekShort": "week"
+      "weekShort": "week",
+      "mock": {
+        "usageInsights": "usage insights",
+        "brandInField": "your brand in the field",
+        "live": "live",
+        "usageByStage": "usage by stage"
+      }
     },
     "reframe": {
       "title": "You don't need more visibility.\nYou need to be used.",
@@ -1934,7 +1940,15 @@
         "point1": "Based on grow state",
         "point2": "Not generic suggestions"
       },
-      "punchline": "Your product appears at the exact moment of watering."
+      "punchline": "Your product appears at the exact moment of watering.",
+      "mock": {
+        "week3": "week 3",
+        "wateringNutrients": "watering + nutrients",
+        "growADose": "grow a — 2ml/l",
+        "checkPh": "verify ph",
+        "targetPh": "target: 6.2",
+        "executionPunchline": "the grower doesn't interpret.\nhe executes."
+      }
     },
     "problem": {
       "title": "Today, your brand teaches.\nBut doesn't follow through.",
@@ -1943,6 +1957,8 @@
       "pain2": "Mixes incorrectly",
       "pain3": "Burns the plant",
       "pain4": "Blames your brand",
+      "blameLabel": "when used incorrectly",
+      "blamePunch": "they blame your brand",
       "pdfNote": "Your dosage PDF became a paperweight.",
       "solution": "We're going to turn it into the engine of the grow.",
       "narrative": "They get the PPM wrong, go into overfert, burn the roots, and burn your reputation in forums and WhatsApp groups.",
@@ -1952,6 +1968,19 @@
       "legacyPain1": "Dosage error",
       "legacyPain2": "PDF ignored",
       "legacyPain3": "Repetitive support",
+      "timeForWatering": "at watering time",
+      "searchGoogle": "searches on google",
+      "checkTable": "looks at the table",
+      "rememberDose": "tries to remember the dose",
+      "brandStopsAtPackaging": "your brand stops at the packaging",
+      "executionHappensOutside": "execution happens outside of it",
+      "atMyBud": "at mybud",
+      "tableToTask": "what was a table\nbecomes a task\n",
+      "tableToTaskItalic": "inside the app.",
+      "exactDose": "exact dose",
+      "rightWeek": "correct week",
+      "errorFreeExecution": "error-free execution",
+      "ctaDigitalize": "Digitalize my protocol",
       "standardBenefit1": "Which bottle to open",
       "standardBenefit2": "How many ml to apply",
       "standardBenefit3": "When to do it",
@@ -2059,6 +2088,7 @@
       "badge": "B2B Licensing and Retention",
       "urgency": "We are opening 3 brands for this month's launch.",
       "exclusivity": "The first ones enter with category exclusivity.",
+      "consistency": "consistent usage = more repurchase",
       "title": "For brands that want to scale",
       "subtitle": "License MyBud along with your product. The customer buys your brand and gets access to the app. Consistent usage = more repurchase.",
       "setupTitle": "Setup",

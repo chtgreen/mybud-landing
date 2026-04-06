@@ -19,12 +19,12 @@ const IndustryDashboard: FC = () => {
                             {/* Dashboard Header */}
                             <div className="flex items-center justify-between mb-10 pb-6 border-b border-white/5">
                                 <div className="space-y-1">
-                                    <h3 className="text-xl font-bold tracking-tight text-white lowercase">insights de uso</h3>
-                                    <p className="text-xs text-zinc-500 font-bold uppercase tracking-wider">sua marca no campo</p>
+                                    <h3 className="text-xl font-bold tracking-tight text-white lowercase">{t('industry.dashboard.mock.usageInsights')}</h3>
+                                    <p className="text-xs text-zinc-500 font-bold uppercase tracking-wider">{t('industry.dashboard.mock.brandInField')}</p>
                                 </div>
                                 <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-[10px] font-black text-emerald-400 tracking-wider">ao vivo</span>
+                                    <span className="text-[10px] font-black text-emerald-400 tracking-wider">{t('industry.dashboard.mock.live')}</span>
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@ const IndustryDashboard: FC = () => {
                             {/* Graph Simulation */}
                             <div className="space-y-8">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest leading-none">uso por estágio</span>
+                                    <span className="text-[10px] font-black text-zinc-500 uppercase tracking-widest leading-none">{t('industry.dashboard.mock.usageByStage')}</span>
                                     <div className="flex gap-2">
                                         <div className="w-2 h-2 rounded-full bg-emerald-500" />
                                         <div className="w-2 h-2 rounded-full bg-emerald-500/20" />

@@ -31,14 +31,14 @@ const IndustryProblem: FC = () => {
               <div className="flex items-center justify-between mb-12">
                 <span className="text-[10px] font-black text-red-500 uppercase tracking-widest flex items-center gap-2">
                   <XCircle className="w-3 h-3" />
-                  na hora da rega
+                  {t('industry.problem.timeForWatering')}
                 </span>
               </div>
 
               <div className="space-y-6 mb-16">
-                <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">procura no google</p>
-                <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">olha a tabela</p>
-                <p className="text-3xl md:text-5xl font-black text-zinc-950 lowercase leading-tight">tenta lembrar a dose</p>
+                <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">{t('industry.problem.searchGoogle')}</p>
+                <p className="text-3xl md:text-5xl font-black text-zinc-400 lowercase leading-tight">{t('industry.problem.checkTable')}</p>
+                <p className="text-3xl md:text-5xl font-black text-zinc-950 lowercase leading-tight">{t('industry.problem.rememberDose')}</p>
                 <div className="pt-6 space-y-2">
                   <p className="text-xl md:text-2xl font-black text-zinc-400 lowercase leading-tight">{t('industry.problem.blameLabel')}</p>
                   <p className="text-xl md:text-2xl font-black text-red-500 lowercase leading-tight">{t('industry.problem.blamePunch')}</p>
@@ -46,9 +46,9 @@ const IndustryProblem: FC = () => {
               </div>
 
               <div className="pt-12 border-t border-zinc-200">
-                <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">sua marca para na embalagem</h4>
+                <h4 className="text-2xl font-black text-zinc-950 lowercase mb-4">{t('industry.problem.brandStopsAtPackaging')}</h4>
                 <p className="text-zinc-500 font-bold lowercase leading-relaxed italic opacity-80 decoration-red-500/30 line-through">
-                  a execução acontece fora dela
+                  {t('industry.problem.executionHappensOutside')}
                 </p>
               </div>
             </div>
@@ -61,23 +61,22 @@ const IndustryProblem: FC = () => {
             <div className="flex items-center justify-between mb-16 relative z-10">
               <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center gap-2">
                 <Droplet className="w-3 h-3" />
-                no mybud
+                {t('industry.problem.atMyBud')}
               </span>
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.8)]" />
             </div>
 
             <div className="space-y-12 relative z-10">
               <div className="max-w-md">
-                <h4 className="text-3xl md:text-5xl font-black text-white lowercase leading-[0.95] mb-12">
-                  o que era tabela <br />
-                  vira tarefa <br />
-                  <span className="text-emerald-500 italic">dentro do app.</span>
+                <h4 className="text-3xl md:text-5xl font-black text-white lowercase leading-[0.95] mb-12 whitespace-pre-line">
+                  {t('industry.problem.tableToTask').replace('{italic}', '')}
+                  <span className="text-emerald-500 italic">{t('industry.problem.tableToTaskItalic')}</span>
                 </h4>
 
                 <div className="space-y-6 mb-16">
-                  <p className="text-xl md:text-2xl text-white/60 font-black lowercase">dose exata</p>
-                  <p className="text-xl md:text-2xl text-white/60 font-black lowercase">semana certa</p>
-                  <p className="text-xl md:text-2xl text-emerald-400 font-black lowercase">execução sem erro</p>
+                  <p className="text-xl md:text-2xl text-white/60 font-black lowercase">{t('industry.problem.exactDose')}</p>
+                  <p className="text-xl md:text-2xl text-white/60 font-black lowercase">{t('industry.problem.rightWeek')}</p>
+                  <p className="text-xl md:text-2xl text-emerald-400 font-black lowercase">{t('industry.problem.errorFreeExecution')}</p>
                 </div>
 
                 <div
@@ -87,7 +86,9 @@ const IndustryProblem: FC = () => {
                   <div className="w-14 h-14 rounded-full bg-white text-zinc-950 flex items-center justify-center group-hover/cta:scale-110 transition-all">
                     <MoveRight className="w-6 h-6 group-hover/cta:translate-x-1 transition-transform" />
                   </div>
-                  <span className="text-xl font-black text-white lowercase group-hover/cta:text-emerald-400 transition-colors">Digitalizar meu protocolo</span>
+                  <span className="text-xl font-black text-white lowercase group-hover/cta:text-emerald-400 transition-colors">
+                    {t('industry.problem.ctaDigitalize')}
+                  </span>
                 </div>
               </div>
             </div>
