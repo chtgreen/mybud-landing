@@ -1998,18 +1998,18 @@
       "punchline": "Se seu produto não está na rotina, ele está fora do resultado."
     },
     "presence": {
-      "title": "Onde sua marca aparece no cultivo:",
+      "title": "sua marca aparece no momento de uso",
       "tasks": {
-        "title": "Na hora da rega",
-        "example": "\"Aplicar MyBud Fert — 2ml/L\"",
-        "point1": "Acionado por estágio",
+        "title": "semana certa",
+        "example": "dose exata",
+        "point1": "pH alvo",
         "point2": "Timing contextual",
         "point3": "Baseado em ação"
       },
       "timeline": {
-        "title": "No preparo do tanque",
-        "example": "Dia 14 → MyBud Fert aplicado",
-        "point1": "Histórico visível",
+        "title": "semana certa",
+        "example": "dose exata",
+        "point1": "pH alvo",
         "point2": "Padrões de uso repetidos"
       },
       "activityLog": {
@@ -2024,11 +2024,11 @@
         "point1": "Baseado no estado do cultivo",
         "point2": "Sem sugestões genéricas"
       },
-      "punchline": "Seu produto aparece no momento exato da rega."
+      "punchline": "o que era tabela vira tarefa dentro do app. o grower não interpreta, ele executa."
     },
     "problem": {
-      "title": "sua marca ensina\nmas não está na hora da aplicação",
-      "intro": "O cultivador compra seu produto, mas muitas vezes tem dúvidas de como usar eles, seja na hora da rega, no MIP, na preparação do solo. O MyBud conecta o seu produto a forma de usar.",
+      "title": "sua marca ensina\nmas não controla como é usada",
+      "intro": "na hora da rega, o grower:\n\nprocura no google\nolha a tabela\ntenta lembrar a dose\n\nsua marca para na embalagem\na execução acontece fora dela",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
       "pain3": "Queima a planta",
@@ -2049,14 +2049,14 @@
     },
     "howItWorks": {
       "title": "Como seu cliente entra",
-      "headline": "como sua marca entra na rotina do grow",
-      "step1": "1. Usa seu produto",
-      "step2": "2. Acessa o MyBud (link ou código)",
-      "step3": "3. Já vê o que fazer",
+      "headline": "sua marca entra direto no cultivo",
+      "step1": "o grower usa seu produto",
+      "step2": "abre o app",
+      "step3": "já sabe o que fazer",
       "noTech": "👉 sem QR complexo | 👉 sem integração | 👉 sem esforço",
-      "step1Title": "Usa o produto",
-      "step2Title": "Entra no app",
-      "step3Title": "Segue o cultivo",
+      "step1Title": "o grower usa seu produto",
+      "step2Title": "abre o app",
+      "step3Title": "já sabe o que fazer",
       "acceptedFiles": "Pronto em até 48h (PDF, Excel ou Imagem)"
     },
     "progression": {
@@ -2084,13 +2084,13 @@
       }
     },
     "data": {
-      "title": "O que você finalmente descobre",
-      "point1": "Quando seu produto é usado",
-      "point2": "Quanto é usado",
-      "point3": "Em qual estágio",
+      "title": "você vê como seu produto é usado de verdade",
+      "point1": "quando usam",
+      "point2": "quanto usam",
+      "point3": "como usam",
       "point4": "Frequência de uso",
       "future": "Correlação com resultados",
-      "punchline": "De achismo → para dados reais de uso"
+      "punchline": "dados reais. não suposição."
     },
     "sales": {
       "title": "Uso → dados → repetição",
@@ -2111,7 +2111,7 @@
       "urgency": "Estamos abrindo 3 marcas para o lançamento deste mês.",
       "exclusivity": "As primeiras entram com exclusividade por categoria.",
       "title": "Para marcas que querem escalar",
-      "subtitle": "O cliente usa sua marca e entra automaticamente no app. Uso consistente = mais recompra. Ativo em até 48h.",
+      "subtitle": "O cliente usa sua marca e entra automaticamente no app. uso consistente = mais recompra. Ativo em até 48h.",
       "setupTitle": "Setup",
       "setupPrice": "R$ 1.300",
       "recurrentTitle": "Mensal",
@@ -2139,7 +2139,7 @@
       "secondaryFinalCta": "Falar com o time"
     },
     "expansion": {
-      "title": "Funciona para qualquer tipo de produto",
+      "title": "sua marca não é um anúncio\né o que o grower usa",
       "punchline": "Não importa o produto.\nO que importa é quando ele é usado.",
       "subPunchline": "Todos os dias do cultivo, sua marca presente na rotina.",
       "items": {
@@ -2277,10 +2277,10 @@
       }
     },
     "finalCta": {
-      "text": "Estamos abrindo poucas marcas para este lançamento de Abril.\nQuem entra agora define o padrão de execução no mercado.",
+      "text": "seu cliente não precisa pensar\nele só executa — com sua marca",
       "headline": "a regra do cultivo.\n{italic}",
       "headlineItalic": "digitalizada.",
-      "punchline": "sua marca não precisa de anúncios. precisa de execução consistente.",
+      "punchline": "seu cliente não precisa pensar\nele só executa — com sua marca",
       "primaryCta": "Ver minha marca",
       "secondaryCta": "Entrar como marca parceira",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",

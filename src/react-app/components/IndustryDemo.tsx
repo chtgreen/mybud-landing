@@ -167,7 +167,7 @@ const MockItemWrapper: FC<{ children: React.ReactNode; active?: boolean }> = ({ 
   </div>
 );
 
-const TasksMockup: FC<MockupProps> = ({ brandName }) => (
+const TasksMockup: FC<MockupProps> = () => (
   <div className="space-y-4">
     <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">{t('industry.demo.mock.nextTasks')}</p>
 

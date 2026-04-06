@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef } from 'react';
 import Draggable from 'react-draggable';
 import { toPng } from 'html-to-image';
 import { Download, Minus, Plus, RefreshCcw, Image as ImageIcon, X, ArrowLeftRight, Eye, EyeOff, Trash2, Layout, Check, AlignCenter, AlignJustify, Sparkles, Wand2 } from 'lucide-react';
@@ -264,7 +264,7 @@ const StoriesPage: React.FC = () => {
     const currentTheme = THEMES[theme];
 
     // Snapping logic with visual feedback
-    const handleDrag = (e: any, data: any, width: number, height: number, elementId: string) => {
+    const handleDrag = (_e: any, data: any, _width: number, _height: number, _elementId: string) => {
         const parent = data.node.parentElement;
         if (!parent) return;
 
@@ -356,9 +356,9 @@ const StoriesPage: React.FC = () => {
                                 {showTitle && (
                                     <Draggable
                                         position={titlePos}
-                                        onDrag={(e, data) => {
+                                        onDrag={(_e, data) => {
                                             setTitlePos({ x: data.x, y: data.y });
-                                            handleDrag(e, data, titleWidth, titleSize, 'title');
+                                            handleDrag(_e, data, titleWidth, titleSize, 'title');
                                         }}
                                         onStop={handleStop}
                                     >
@@ -385,9 +385,9 @@ const StoriesPage: React.FC = () => {
                                 {showContent && (
                                     <Draggable
                                         position={contentPos}
-                                        onDrag={(e, data) => {
+                                        onDrag={(_e, data) => {
                                             setContentPos({ x: data.x, y: data.y });
-                                            handleDrag(e, data, contentWidth, contentSize * 2, 'content');
+                                            handleDrag(_e, data, contentWidth, contentSize * 2, 'content');
                                         }}
                                         onStop={handleStop}
                                     >
@@ -416,9 +416,9 @@ const StoriesPage: React.FC = () => {
                                     <Draggable
                                         key={item.id}
                                         position={item.position}
-                                        onDrag={(e, data) => {
-                                            handleDrag(e, data, item.size, item.size, item.id);
+                                        onDrag={(_e, data) => {
                                             setItems(prev => prev.map(i => i.id === item.id ? { ...i, position: { x: data.x, y: data.y } } : i));
+                                            handleDrag(_e, data, item.size, item.size, item.id);
                                         }}
                                         onStop={handleStop}
                                         onStart={() => setSelectedItemId(item.id)}

@@ -60,9 +60,6 @@ const IndustryProductExpansion: FC = () => {
                             <h4 className="text-2xl font-black text-zinc-950 mb-3 lowercase tracking-tight relative z-10">
                                 {t(`industry.expansion.items.${item.key}.title`)}
                             </h4>
-                            <p className="text-zinc-500 font-bold lowercase leading-relaxed text-sm relative z-10">
-                                {t(`industry.expansion.items.${item.key}.desc`)}
-                            </p>
 
                             {/* Connectivity indicator */}
                             <div className="mt-8 flex items-center gap-2 text-emerald-500/40 font-black text-[8px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">

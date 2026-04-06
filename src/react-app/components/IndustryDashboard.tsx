@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
-import { BarChart3, Users, Clock, ShoppingCart } from 'lucide-react';
+import { BarChart3, Users, ShoppingCart } from 'lucide-react';
 
 const IndustryDashboard: FC = () => {
     return (
@@ -93,44 +93,29 @@ const IndustryDashboard: FC = () => {
 
                     {/* Right: Copy */}
                     <div className="space-y-12">
-                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
-                            {t('industry.dashboard.badge')}
-                        </div>
-
                         <div className="space-y-6">
                             <h2 className="text-5xl md:text-8xl font-black text-white tracking-[-0.05em] leading-[0.9] lowercase">
-                                {t('industry.dashboard.title')} <br />
-                                <span className="text-emerald-500 italic drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">{t('industry.dashboard.titleItalic')}</span>
+                                {t('industry.data.title')}
                             </h2>
-                            <p className="text-xl md:text-3xl text-zinc-400 font-bold leading-tight lowercase tracking-tight max-w-xl">
-                                {t('industry.dashboard.subtitle')}
-                            </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
                             <div className="space-y-4">
-                                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center">
-                                    <Clock className="w-5 h-5 text-emerald-500" />
-                                </div>
-                                <h4 className="text-xl font-black text-white lowercase tracking-tight">{t('industry.dashboard.feature1Title')}</h4>
-                                <p className="text-zinc-500 font-bold lowercase leading-relaxed text-sm">
-                                    {t('industry.dashboard.feature1Desc')}
-                                </p>
+                                <h4 className="text-xl md:text-2xl font-black text-white lowercase tracking-tight">{t('industry.data.point1')}</h4>
                             </div>
                             <div className="space-y-4">
-                                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center">
-                                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                                </div>
-                                <h4 className="text-xl font-black text-white lowercase tracking-tight">{t('industry.dashboard.feature2Title')}</h4>
-                                <p className="text-zinc-500 font-bold lowercase leading-relaxed text-sm">
-                                    {t('industry.dashboard.feature2Desc')}
-                                </p>
+                                <h4 className="text-xl md:text-2xl font-black text-white lowercase tracking-tight">{t('industry.data.point2')}</h4>
+                            </div>
+                            <div className="space-y-4">
+                                <h4 className="text-xl md:text-2xl font-black text-white lowercase tracking-tight">{t('industry.data.point3')}</h4>
                             </div>
                         </div>
 
                         <div className="pt-8 flex flex-col gap-4">
-                            <div className="flex items-center gap-3 text-zinc-600 text-xs font-bold uppercase tracking-widest">
+                            <p className="text-2xl md:text-4xl text-emerald-500 font-black lowercase tracking-tighter">
+                                {t('industry.data.punchline')}
+                            </p>
+                            <div className="flex items-center gap-3 text-zinc-600 text-xs font-bold uppercase tracking-widest mt-8">
                                 <div className="p-1 rounded bg-zinc-900/50 border border-white/5">
                                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -146,12 +131,5 @@ const IndustryDashboard: FC = () => {
     );
 };
 
-// Simple inline Check icon since we didn't import it
-const CheckCircle2: FC<{ className?: string }> = ({ className }) => (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-    </svg>
-);
 
 export default IndustryDashboard;

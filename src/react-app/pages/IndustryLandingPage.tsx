@@ -21,8 +21,6 @@ import IndustryDashboard from '../components/IndustryDashboard';
 import ContactModal from '../components/ContactModal';
 
 // Shared URL for scheduling Industry calls
-const INDUSTRY_CALENDAR_URL =
-  'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ET0xwuXrN7fWcxlAbExovzk9knxYjbbu13DLw2MwBrgMnyi1HQ51BM50cp717q98-Tf9qdY0c';
 
 export default function IndustryLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
@@ -69,41 +67,34 @@ export default function IndustryLandingPage() {
         language={currentLanguage}
       />
 
-      {/* Section 1: Hero — simple, punchy, centered */}
+      {/* Section 1: Hero — simple, punchy, centered (UNTOUCHED) */}
       <HeroIndustry />
 
-      {/* Section 2: Problem — why the brand needs this */}
+      {/* Block 1: Problem + Google + Gap — MERGED (Updated) */}
       <IndustryProblem />
 
-      {/* Section 3: ENTRY BLOCK (NEW) — Use -> Enter -> Follow */}
+      {/* Block 2: Entry + Onboarding — MERGED (Updated) */}
       <IndustryEntry />
 
-      {/* Section 4: Demo — here's exactly how it looks inside the app (Multi-tab) */}
-      <IndustryDemo onCTAClick={handleCTAClick} />
-
-      {/* Section 5: Execution (NEW) — Your protocol becomes execution */}
+      {/* Block 3: Moment of use + Real Execution — MERGED (Updated) */}
       <IndustryExecution />
 
-      {/* Section 5.5: Dashboard (NEW) — Live anonymous insights */}
-      <IndustryDashboard />
-
-      {/* Section 6: Portfolio Expansion (NEW) — Nutrition, IPM, Equipment... */}
+      {/* Block 4: Features — CUT / REDUCED (Updated) */}
       <IndustryProductExpansion />
 
-      {/* Section 7: FREE TIER -> "Onboarding Zero Suporte" */}
-      <IndustryFreeTier />
+      {/* Block 5: Data — SHORTENED (Updated) */}
+      <IndustryDashboard />
 
-      {/* Section 7: FREE -> PRO Progress */}
+      {/* Block 6: Domina o cultivo — MAINTAINED */}
       <IndustryFreeToPro />
 
-      {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      {/* Block 7: Pricing — MAINTAINED */}
       <IndustryEcosystem />
 
-      {/* Section 8: THE EXPERIENCE (STEP 0 - INTERACTIVE) */}
-      <IndustryBrandExperience onCTAClick={handleCTAClick} />
-
-      {/* Section 9: Final CTA — dark closing */}
-      <IndustryFinalCTA onCTAClick={handleCTAClick} />
+      {/* Block 8: Final CTA — SHORTENED (Updated) */}
+      <div id="final-cta">
+        <IndustryFinalCTA onCTAClick={handleCTAClick} />
+      </div>
 
       <Footer />
     </div>
