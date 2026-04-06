@@ -2279,36 +2279,6 @@
           "desc": "Your product appears at the exact moment of management."
         }
       },
-      "finalCta": {
-        "text": "We are opening few brands for this April launch.\nThose who enter now set the execution standard in the market.",
-        "headline": "the rule of cultivation.\n{italic}",
-        "headlineItalic": "digitized.",
-        "punchline": "your brand doesn't need ads. it needs consistent execution.",
-        "primaryCta": "activate my brand",
-        "secondaryCta": "see pricing",
-        "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
-        "community": "Join the first brands shaping the future of cannabis cultivation.",
-        "form": {
-          "namePlaceholder": "Full name",
-          "emailPlaceholder": "Corporate email",
-          "phonePlaceholder": "Phone / WhatsApp",
-          "companyPlaceholder": "Company"
-        },
-        "primaryButton": "Schedule conversation",
-        "secondaryOption": "Prefer to talk directly?",
-        "email": "comercial@mybud.app",
-        "successTitle": "Got it!",
-        "successMessage": "Thanks for your interest!",
-        "successSubtext": "Someone from the Mybud team will reach out within one business day.",
-        "sending": "Sending...",
-        "errorMessage": "Something went wrong. Try again or email comercial@mybud.app",
-        "modal": {
-          "fields": {
-            "objective": "Partnership objective"
-          },
-          "subtitle": "Tell us more about your objective (optional)"
-        }
-      },
       "footer": {
         "tagline": "MyBud is where brands become part of the grower's routine.",
         "unifier": "MyBud grows with you — from individual cultivation to the cannabis industry.",
@@ -2410,6 +2380,37 @@
           "sub": "In MyBud, your product accompanies the grower from start to finish.",
           "cta": "I want my brand guiding grows"
         }
+      }
+    },
+    "finalCta": {
+      "text": "We are opening few brands for this April launch.\nThose who enter now set the execution standard in the market.",
+      "headline": "the rule of cultivation.\n{italic}",
+      "headlineItalic": "digitized.",
+      "punchline": "your brand doesn't need ads. it needs consistent execution.",
+      "primaryCta": "activate my brand",
+      "secondaryCta": "see pricing",
+      "formTitle": "test with my brand",
+      "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
+      "community": "Join the first brands shaping the future of cannabis cultivation.",
+      "form": {
+        "namePlaceholder": "Full name",
+        "emailPlaceholder": "Corporate email",
+        "phonePlaceholder": "Phone / WhatsApp",
+        "companyPlaceholder": "Company"
+      },
+      "primaryButton": "Schedule conversation",
+      "secondaryOption": "Prefer to talk directly?",
+      "email": "comercial@mybud.app",
+      "successTitle": "Got it!",
+      "successMessage": "Thanks for your interest!",
+      "successSubtext": "Someone from the Mybud team will reach out within one business day.",
+      "sending": "Sending...",
+      "errorMessage": "Something went wrong. Try again or email comercial@mybud.app",
+      "modal": {
+        "fields": {
+          "objective": "Partnership objective"
+        },
+        "subtitle": "Tell us more about your objective (optional)"
       }
     }
   },
