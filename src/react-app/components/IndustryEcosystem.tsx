@@ -58,18 +58,28 @@ const IndustryEcosystem: FC = () => {
                 </h3>
 
                 {/* New Pricing Anchor */}
-                <div className="glass-morphism rounded-3xl p-6 bg-white/[0.03] border border-white/10 w-full mb-10 space-y-4">
+                <div className="glass-morphism rounded-3xl p-8 bg-white/[0.03] border border-white/10 w-full mb-10 space-y-6">
                   <div className="flex justify-between items-center text-left">
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">{t('industry.ecosystem.setupTitle')}</p>
-                      <p className="text-white font-black text-lg">{t('industry.ecosystem.setupPrice')}</p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-1">{t('industry.ecosystem.setupTitle')}</p>
+                      <p className="text-white font-black text-2xl">{t('industry.ecosystem.setupPrice')}</p>
                     </div>
                   </div>
                   <div className="h-px bg-white/5 w-full" />
                   <div className="flex justify-between items-center text-left">
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">{t('industry.ecosystem.recurrentTitle')}</p>
-                      <p className="text-emerald-400 font-black text-lg">{t('industry.ecosystem.recurrentPrice')}</p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-1">{t('industry.ecosystem.recurrentTitle')}</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className="text-emerald-400 font-black text-2xl">{t('industry.ecosystem.recurrentPrice')}</p>
+                      </div>
+                      <p className="text-[10px] text-zinc-400 font-bold mt-1 lowercase">{t('industry.ecosystem.recurrentDetail')}</p>
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/5 w-full" />
+                  <div className="flex justify-between items-center text-left">
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-1">{t('industry.ecosystem.scaleLabel')}</p>
+                      <p className="text-white font-black text-lg">{t('industry.ecosystem.scaleDetail')}</p>
                     </div>
                   </div>
                 </div>

@@ -1911,23 +1911,16 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "Sua marca dentro do cultivo.",
-      "subtitle": "Não como anúncio. Como dose, tarefa e execução — no momento exato.",
-      "proof": "Transformamos seu PDF em ações dentro do grow.",
-      "cta": "Ver meu produto no app",
-      "secondaryCta": "Quero minha marca no cultivo",
+      "subtitle": "Semana, dose e pH aparecem automaticamente. Sem PDF. Sem erro.",
+      "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
+      "cta": "Ver minha marca no app",
+      "secondaryCta": "Entrar no cultivo agora",
       "discoveryHow": "descubra como",
       "words": {
-        "rule": "como regra",
-        "suggestion": "como sugestão",
-        "presence": "como presença",
-        "routine": "como rotina",
-        "plan": "como plano",
-        "belonging": "como pertencimento",
-        "representation": "como representação",
-        "instructions": "como instruções",
-        "nutritionalPlan": "como plano nutricional",
-        "usageSuggestion": "como sugestão de uso",
-        "dosage": "como dosagem"
+        "knows": "e já sabe o que fazer",
+        "bottle": "e vê qual garrafa abrir",
+        "dose": "e sabe quantos ml aplicar",
+        "rule": "e segue sua regra real"
       }
     },
     "experience": {
@@ -2022,34 +2015,40 @@
     },
     "problem": {
       "title": "Hoje, sua marca ensina.\nMas não acompanha.",
-      "intro": "O cliente compra. E você perde a visibilidade.\nUso mais consistente = mais recompra.",
+      "intro": "O cliente compra sua garrafa. E depois? Você perde o controle do uso. Nós trazemos sua marca para dentro da rega.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
       "pain3": "Queima a planta",
       "pain4": "Culpa a sua marca",
-      "pdfNote": "Seu PDF de dosagem virou peso de papel.",
-      "solution": "Vamos transformá-lo no motor do grow.",
-      "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação em fóruns e grupos de WhatsApp.",
+      "pdfNote": "O grower ignora seu PDF e erra a dose.",
+      "solution": "Transformamos seu cronograma em ação real.",
+      "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação.",
       "badge": "execução dentro do grow",
       "legacyBadge": "Sem MyBud (PDF)",
       "standardBadge": "Com MyBud (Execução)",
       "legacyPain1": "Erro de dosagem",
       "legacyPain2": "PDF ignorado",
       "legacyPain3": "Suporte repetitivo",
-      "standardBenefit1": "Tarefa automática",
-      "standardBenefit2": "Dose correta",
-      "standardBenefit3": "Execução guiada",
+      "standardBenefit1": "Qual garrafa abrir",
+      "standardBenefit2": "Quantos ml aplicar",
+      "standardBenefit3": "Quando fazer",
       "applyProductA": "aplicar produto a"
     },
     "howItWorks": {
-      "title": "O que fazemos exatamente",
-      "step1": "Pegamos sua tabela oficial (Veg, Bloom, Boost, Flush).",
-      "step2": "Codificamos a matemática exata de pH, EC e mililitros no algoritmo.",
-      "step3": "O app avisa o usuário: qual garrafa abrir e quantos ml aplicar.",
+      "title": "Como seu cliente entra",
+      "step1": "1. Usa seu produto",
+      "step2": "2. Acessa o MyBud (link ou código)",
+      "step3": "3. Já vê o que fazer",
       "noTech": "👉 Sem integração técnica | 👉 Sem esforço do seu lado",
-      "step1Title": "Mapeamento",
-      "step2Title": "Digitalização",
-      "step3Title": "Execução Guiada"
+      "step1Title": "Uso",
+      "step2Title": "Acesso",
+      "step3Title": "Execução"
+    },
+    "freeTier": {
+      "title": "Funciona desde o primeiro uso",
+      "description": "O cultivador entra no app e já pode usar calculadora, preparar o tanque e acompanhar até 3 plantas. Sem custo.",
+      "evolution": "E evolui com sua marca",
+      "evolutionDesc": "Com uma ativação PRO, ele desbloqueia o cultivo completo e segue seu protocolo à risca."
     },
     "data": {
       "title": "O que você finalmente descobre",
@@ -2078,10 +2077,13 @@
       "badge": "Licenciamento B2B e Retenção",
       "title": "Para marcas que querem escalar",
       "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
-      "setupTitle": "Setup Inicial",
-      "setupPrice": "R$ 1.000 – R$ 2.500",
-      "recurrentTitle": "Recorrência Mensal",
-      "recurrentPrice": "R$ 300 – R$ 500",
+      "setupTitle": "Setup",
+      "setupPrice": "R$ 1.300",
+      "recurrentTitle": "Mensal",
+      "recurrentPrice": "R$ 299 / mês",
+      "recurrentDetail": "Inclui 10 ativações PRO (30 dias cada)",
+      "scaleLabel": "Escala",
+      "scaleDetail": "+10 ativações → +R$ 100",
       "benefit1": {
         "title": "Mais recompra",
         "desc": "Para manter o acesso, o cultivador continua usando sua marca."
@@ -2110,7 +2112,8 @@
       "mock": {
         "tasks": {
           "todayTasks": "tarefas de hoje",
-          "wateringNutrients": "rega + nutrientes",
+          "wateringNutrients": "qual garrafa abrir + quantos ml aplicar",
+          "openBottle": "abrir {brand}",
           "vegWeek3": "Blue Dream — veg sem 3",
           "phCheck": "checagem de ph",
           "optimalRange": "6.3 — zona ótima",
@@ -2176,9 +2179,9 @@
           "poweredBy": "powered by"
         },
         "descriptions": {
-          "tasks": "Seu produto aparece exatamente quando a planta precisa. Sem achismos.",
+          "tasks": "O app avisa o usuário: qual garrafa abrir e quantos ml aplicar.",
           "timeline": "Transparência total. Mostramos a evolução real usando seus nutrientes.",
-          "activity": "Captura de dados: descubra o pH, EC e volume exato utilizado.",
+          "activity": "O app mostra para o usuário quanto usar de cada nutriente.",
           "recommendations": "Alertas inteligentes guiando o cultivador a usar seu produto agora.",
           "hub": "O painel da sua marca. Deixe os growers importarem sua tabela de nutrição.",
           "calculator": "Digitalizamos sua tabela PDF virando uma ferramenta interativa.",

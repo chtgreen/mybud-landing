@@ -13,6 +13,7 @@ import IndustryFinalCTA from '../components/IndustryFinalCTA';
 import IndustryDeliverables from '../components/IndustryDeliverables';
 import IndustryDemo from '../components/IndustryDemo';
 import IndustryBrandExperience from '../components/IndustryBrandExperience';
+import IndustryFreeTier from '../components/IndustryFreeTier';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -78,13 +79,16 @@ export default function IndustryLandingPage() {
       {/* Section 4: Demo — here's exactly how it looks inside the app (Multi-tab) */}
       <IndustryDemo onCTAClick={handleCTAClick} />
 
-      {/* Section 5: The 3 Pillars / Deliverables */}
+      {/* Section 5: The 3 Pillars / Deliverables / Journey */}
       <IndustryDeliverables />
 
-      {/* Section 6: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      {/* Section 6: FREE TIER -> "Funciona desde o primeiro uso" */}
+      <IndustryFreeTier />
+
+      {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
       <IndustryEcosystem />
 
-      {/* Section 7: Final CTA — dark closing */}
+      {/* Section 8: Final CTA — dark closing */}
       <IndustryFinalCTA onCTAClick={handleCTAClick} />
 
       <Footer />

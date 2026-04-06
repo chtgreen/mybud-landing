@@ -30,9 +30,9 @@ const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> =
   const displayBrand = brandName || 'MyBud Fert';
 
   return (
-    <div className="w-[280px] h-[540px] rounded-[48px] border-[6px] border-zinc-800 bg-zinc-950 relative overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] flex-shrink-0 animate-in fade-in zoom-in-95 duration-1000">
+    <div className="w-[260px] h-[480px] rounded-[40px] border-[6px] border-zinc-800 bg-zinc-950 relative overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] flex-shrink-0 animate-in fade-in zoom-in-95 duration-1000">
       {/* Notch */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[110px] h-[30px] bg-zinc-950 rounded-b-[20px] z-20 border-[2px] border-zinc-800 border-t-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100px] h-[25px] bg-zinc-950 rounded-b-[18px] z-20 border-[2px] border-zinc-800 border-t-0" />
 
       {/* Screen content */}
       <div className="absolute inset-0 bg-zinc-950 flex flex-col pt-9">
@@ -161,26 +161,26 @@ const PhoneFrame: FC<{ brandName: string; logoUrl?: string; view?: DemoView }> =
 // ── Step components ──────────────────────────────────────────────────────────
 
 const StepWrapper: FC<{ children: React.ReactNode; showPhone?: boolean; brandName?: string; logoUrl?: string; view?: DemoView }> = ({ children, showPhone, brandName, logoUrl, view }) => (
-  <div className="flex flex-col items-center gap-12 w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
+  <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 w-full animate-in fade-in slide-in-from-bottom-8 duration-700 max-w-6xl mx-auto px-6">
     {showPhone && (
-      <div className="relative group">
+      <div className="relative group shrink-0 scale-90 md:scale-100 origin-center">
         <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
         <PhoneFrame brandName={brandName || ''} logoUrl={logoUrl} view={view} />
       </div>
     )}
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-md shrink-0">
       {children}
     </div>
   </div>
 );
 
 const StepHeadline: FC<{ title: string; subtitle?: string }> = ({ title, subtitle }) => (
-  <div className="text-center mb-8 px-4">
-    <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3 tracking-tight leading-tight">
+  <div className="text-center md:text-left mb-6 px-4 md:px-0">
+    <h3 className="text-2xl md:text-5xl font-black text-white mb-2 tracking-tighter lowercase leading-[1.1]">
       {title}
     </h3>
     {subtitle && (
-      <p className="text-zinc-400 text-base font-medium">
+      <p className="text-zinc-500 text-lg font-bold lowercase">
         {subtitle}
       </p>
     )}
@@ -274,7 +274,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
   };
 
   return (
-    <section id="brand-experience" className="py-24 md:py-32 bg-zinc-900 overflow-hidden relative">
+    <section id="brand-experience" className="py-16 md:py-24 bg-zinc-900 overflow-hidden relative">
       {/* Background patterns - lightened */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.02)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(16,185,129,0.02)_1.5px,transparent_1.5px)] bg-[size:40px_40px]" />
       <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
@@ -370,7 +370,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
               </div>
               <button
                 type="submit"
-                className="w-full py-5 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/10 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/10 transition-all flex items-center justify-center gap-2"
               >
                 {t('industry.experience.form.nextStep')}
               </button>
@@ -395,7 +395,7 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-5 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {t('industry.experience.form.cta')}
               </button>

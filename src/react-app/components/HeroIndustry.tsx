@@ -85,8 +85,8 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
                 </div>
               </div>
             </h1>
-            <p className="mt-8 text-xl md:text-2xl text-zinc-400 font-bold lowercase tracking-tight animate-in fade-in slide-in-from-left-8 duration-1000 delay-300">
-              {t('industry.hero.proof')}
+            <p className="mt-8 text-xl md:text-3xl text-zinc-400 font-bold lowercase tracking-tight animate-in fade-in slide-in-from-left-8 duration-1000 delay-300 max-w-2xl leading-tight">
+              {t('industry.hero.subtitle')}
             </p>
           </div>
 

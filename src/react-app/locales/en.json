@@ -1870,24 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "Your brand inside the real cultivation routine.",
-      "subtitle": "Not as an ad. As dose, task, and execution — at the exact moment.",
-      "proof": "We transform your PDF into actions inside the grow.",
-      "cta": "See my product in the app",
-      "secondaryCta": "I want my brand in the cultivation",
+      "title": "Your customer opens the app and already knows what to do.",
+      "subtitle": "Week, dose, and pH appear automatically. No PDF. No error.",
+      "proof": "Which bottle to open, how many ml to apply, and when to do it.",
+      "cta": "See my brand in the app",
+      "secondaryCta": "Enter the grow now",
       "discoveryHow": "discover how",
       "words": {
-        "rule": "as a rule",
-        "suggestion": "as a suggestion",
-        "presence": "as a presence",
-        "routine": "as a routine",
-        "plan": "as a plan",
-        "belonging": "as a belonging",
-        "representation": "as a representation",
-        "instructions": "as instructions",
-        "nutritionalPlan": "as a nutritional plan",
-        "usageSuggestion": "as a usage suggestion",
-        "dosage": "as a dosage"
+        "knows": "and already knows what to do",
+        "bottle": "and sees which bottle to open",
+        "dose": "and knows how many ml to apply",
+        "rule": "and follows your rule"
       }
     },
     "reframe": {
@@ -1942,20 +1935,26 @@
       "legacyPain1": "Dosage error",
       "legacyPain2": "PDF ignored",
       "legacyPain3": "Repetitive support",
-      "standardBenefit1": "Automatic task",
-      "standardBenefit2": "Correct dose",
-      "standardBenefit3": "Guided execution",
+      "standardBenefit1": "Which bottle to open",
+      "standardBenefit2": "How many ml to apply",
+      "standardBenefit3": "When to do it",
       "applyProductA": "apply product a"
     },
     "howItWorks": {
-      "title": "What we do exactly",
-      "step1": "We take your official chart (Veg, Bloom, Boost, Flush).",
-      "step2": "We encode the exact math for pH, EC, and milliliters into the algorithm.",
-      "step3": "The app notifies the user: which bottle to open and how many ml to apply.",
+      "title": "How your customer enters",
+      "step1": "1. Uses your product",
+      "step2": "2. Accesses MyBud (link or code)",
+      "step3": "3. Already knows what to do",
       "noTech": "👉 No technical integration | 👉 No effort on your side",
-      "step1Title": "Mapping",
-      "step2Title": "Digitization",
-      "step3Title": "Guided Execution"
+      "step1Title": "Usage",
+      "step2Title": "Access",
+      "step3Title": "Execution"
+    },
+    "freeTier": {
+      "title": "Works from the first use",
+      "description": "The grower enters the app and can already use the calculator, prepare the tank, and follow up to 3 plants. No cost.",
+      "evolution": "And evolves with your brand",
+      "evolutionDesc": "With a PRO activation, they unlock the full cultivation and follow your protocol precisely."
     },
     "experience": {
       "headline": "Test your brand in MyBud",
@@ -2036,10 +2035,13 @@
       "badge": "B2B Licensing & Retention",
       "title": "For brands that want to scale",
       "subtitle": "License MyBud together with your product. The customer buys your fertilizer and gets app access.",
-      "setupTitle": "Initial Setup",
-      "setupPrice": "R$ 1.000 – R$ 2.500",
-      "recurrentTitle": "Monthly Recurring",
-      "recurrentPrice": "R$ 300 – R$ 500",
+      "setupTitle": "Setup",
+      "setupPrice": "R$ 1,300",
+      "recurrentTitle": "Monthly",
+      "recurrentPrice": "R$ 299 / month",
+      "recurrentDetail": "Includes 10 PRO activations (30 days each)",
+      "scaleLabel": "Scale",
+      "scaleDetail": "+10 activations → +R$ 100",
       "benefit1": {
         "title": "More repurchase",
         "desc": "To keep the access, the grower continues to use your brand."
@@ -2068,7 +2070,7 @@
       "mock": {
         "tasks": {
           "todayTasks": "today's tasks",
-          "wateringNutrients": "watering + nutrients",
+          "wateringNutrients": "which bottle to open + how much to apply",
           "vegWeek3": "Blue Dream — veg week 3",
           "phCheck": "ph check",
           "optimalRange": "6.3 — optimal range",
@@ -2132,9 +2134,9 @@
           "poweredBy": "Powered by"
         },
         "descriptions": {
-          "tasks": "Your product appears exactly when they need it. No guessing.",
-          "timeline": "Build trust. We show the exact history of your nutrients.",
-          "activity": "Detailed data capture: know exactly the pH, EC and volume used.",
+          "tasks": "The app tells the user: which bottle to open and how much to apply.",
+          "timeline": "Total transparency. We show the real evolution using your nutrients.",
+          "activity": "The app shows the user how much of each nutrient to use.",
           "recommendations": "Smart nudges driving users to apply your product right now.",
           "hub": "Your dedicated profile. Let growers import your exact feeding chart.",
           "calculator": "We digitize your PDF feeding tables into an interactive tool.",

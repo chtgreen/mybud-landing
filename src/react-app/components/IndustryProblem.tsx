@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { t } from '../lib/i18n';
-import { MoveRight, Layers, FileCode2, Play } from 'lucide-react';
+import { MoveRight } from 'lucide-react';
 
 const IndustryProblem: FC = () => {
   return (
@@ -78,42 +78,6 @@ const IndustryProblem: FC = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Section Transition / Separator */}
-        <div className="flex flex-col items-center mb-40">
-          <div className="w-px h-24 bg-gradient-to-b from-emerald-500/50 to-transparent" />
-        </div>
-
-        {/* Process Hierarchy - Standardized Software Flow */}
-        <div className="grid md:grid-cols-3 gap-20 pt-48 border-t border-zinc-100 relative">
-          {[
-            { id: 1, Icon: Layers, title: t('industry.howItWorks.step1Title'), desc: t('industry.howItWorks.step1') },
-            { id: 2, Icon: FileCode2, title: t('industry.howItWorks.step2Title'), desc: t('industry.howItWorks.step2') },
-            { id: 3, Icon: Play, title: t('industry.howItWorks.step3Title'), desc: t('industry.howItWorks.step3') },
-          ].map((step) => (
-            <div key={step.id} className="space-y-12 group">
-              <div className="flex items-center gap-8">
-                <div className="w-24 h-24 rounded-[36px] bg-zinc-50 border border-zinc-100 flex items-center justify-center text-zinc-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-hover:border-emerald-500 transition-all duration-700">
-                  <step.Icon className="w-12 h-12 transition-transform group-hover:scale-110" />
-                </div>
-                <h3 className="text-4xl font-black text-zinc-950 tracking-tighter lowercase">{step.title}</h3>
-              </div>
-              <p className="text-2xl text-zinc-600 font-black leading-relaxed lowercase opacity-90 pl-2 group-hover:text-zinc-950 transition-colors">
-                {step.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Frictionless Operational Badge */}
-        <div className="mt-48 flex justify-center">
-          <div className="px-10 py-5 rounded-full bg-zinc-50 border border-zinc-100 flex items-center gap-6 group hover:bg-white hover:border-emerald-500 transition-all duration-500 cursor-default shadow-sm hover:shadow-xl">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 group-hover:animate-ping" />
-            <p className="text-[11px] font-black text-zinc-400 uppercase tracking-[0.5em] group-hover:text-zinc-950 transition-colors">
-              {t('industry.howItWorks.noTech')}
-            </p>
           </div>
         </div>
 

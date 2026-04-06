@@ -153,7 +153,7 @@ const TasksMockup: FC<MockupProps> = ({ brandName }) => (
         </div>
         <div className="flex-1">
           <h4 className="text-white font-black">{t('industry.demo.mock.tasks.wateringNutrients')}</h4>
-          <p className="text-xs font-bold text-emerald-400 mt-1">{brandName} — 2.5ml/L</p>
+          <p className="text-xs font-bold text-emerald-400 mt-1">2.5ml/L — abrir {brandName}</p>
         </div>
         <div className="w-6 h-6 rounded-full border-2 border-emerald-500/30" />
       </div>
@@ -207,9 +207,15 @@ const ActivityMockup: FC<MockupProps> = ({ brandName }) => (
         </div>
         <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl">
           <p className="text-[10px] font-black text-emerald-500 uppercase mb-3">{t('industry.demo.mock.activity.product')}</p>
-          <div className="flex justify-between items-center">
-            <span className="text-white font-black">{brandName}</span>
-            <span className="bg-zinc-950 px-2 py-1 rounded text-emerald-400 font-mono text-xs">2 ml/L</span>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <span className="text-white font-black">{brandName}</span>
+              <span className="bg-zinc-950 px-2 py-1 rounded text-emerald-400 font-mono text-xs">2.5 ml/L</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-white font-black">CalMag</span>
+              <span className="bg-zinc-950 px-2 py-1 rounded text-emerald-400 font-mono text-xs">1 ml/L</span>
+            </div>
           </div>
         </div>
       </div>
