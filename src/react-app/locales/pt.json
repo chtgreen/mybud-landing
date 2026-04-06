@@ -1910,17 +1910,17 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "seu cliente abre o app",
+      "title": "sua marca vira parte da rotina do cultivo",
       "subtitle": "semana, dose e pH aparecem automaticamente.",
       "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
       "cta": "Ver minha marca no app",
       "secondaryCta": "Como funciona",
       "discoveryHow": "descubra como",
       "words": {
-        "knows": "e já sabe o que fazer",
-        "bottle": "e vê qual garrafa abrir",
-        "dose": "e segue sua regra real",
-        "rule": "e colhe o melhor resultado"
+        "knows": "vira decisão no manejo",
+        "bottle": "vira precisão na rega",
+        "dose": "vira guia no cultivo",
+        "rule": "vira rotina no resultado"
       }
     },
     "experience": {
@@ -2085,7 +2085,7 @@
       "urgency": "Estamos abrindo 3 marcas para o lançamento deste mês.",
       "exclusivity": "As primeiras entram com exclusividade por categoria.",
       "title": "Para marcas que querem escalar",
-      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
+      "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra sua marca e ganha acesso ao app. Uso consistente = mais recompra.",
       "setupTitle": "Setup",
       "setupPrice": "R$ 1.300",
       "recurrentTitle": "Mensal",
@@ -2111,6 +2111,29 @@
       "licensingBadge": "Licenciamento B2B e Retenção",
       "licensedBy": "powered by mybud",
       "secondaryFinalCta": "Falar com o time"
+    },
+    "expansion": {
+      "title": "Funciona para qualquer tipo de produto",
+      "punchline": "Não importa o produto.\nImporta o momento em que ele é usado.",
+      "subPunchline": "Se tem momento de uso, tem espaço no MyBud.",
+      "items": {
+        "nutrition": {
+          "title": "Nutrição",
+          "desc": "Dose, pH, semana → execução automática"
+        },
+        "ipm": {
+          "title": "Defensivos (IPM)",
+          "desc": "Aplicação preventiva → momento certo"
+        },
+        "substrate": {
+          "title": "Solo / substrato",
+          "desc": "Preparo e correção → instrução no início"
+        },
+        "equipment": {
+          "title": "Equipamentos",
+          "desc": "Uso e operação → checklist e rotina"
+        }
+      }
     },
     "demo": {
       "title": "Sua marca dentro da rotina do cultivo",

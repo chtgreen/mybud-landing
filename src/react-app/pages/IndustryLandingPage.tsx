@@ -15,6 +15,7 @@ import IndustryEntry from '../components/IndustryEntry';
 import IndustryExecution from '../components/IndustryExecution';
 import IndustryDemo from '../components/IndustryDemo';
 import IndustryBrandExperience from '../components/IndustryBrandExperience';
+import IndustryProductExpansion from '../components/IndustryProductExpansion';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -74,7 +75,10 @@ export default function IndustryLandingPage() {
       {/* Section 5: Execution (NEW) — Your protocol becomes execution */}
       <IndustryExecution />
 
-      {/* Section 6: FREE TIER -> "Onboarding Zero Suporte" */}
+      {/* Section 6: Portfolio Expansion (NEW) — Nutrition, IPM, Equipment... */}
+      <IndustryProductExpansion />
+
+      {/* Section 7: FREE TIER -> "Onboarding Zero Suporte" */}
       <IndustryFreeTier />
 
       {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}

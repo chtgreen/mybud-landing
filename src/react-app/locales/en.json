@@ -1870,17 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your customer opens the app",
+      "title": "your brand becomes part of the routine",
       "subtitle": "week, dose, and pH appear automatically.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
       "cta": "See my brand in the app",
       "secondaryCta": "How it works",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "and already knows what to do",
-        "bottle": "and sees which bottle to open",
-        "dose": "and follows your protocol",
-        "rule": "and gets the best result"
+        "knows": "becomes the decision",
+        "bottle": "becomes the exact dose",
+        "dose": "becomes the grower's guide",
+        "rule": "becomes the grow routine"
       }
     },
     "reframe": {
@@ -2042,7 +2042,7 @@
       "urgency": "We are opening 3 brands for this month's launch.",
       "exclusivity": "The first ones enter with category exclusivity.",
       "title": "For brands that want to scale",
-      "subtitle": "License MyBud along with your product. The customer buys your fertilizer and gets access to the app. Consistent usage = more repurchase.",
+      "subtitle": "License MyBud along with your product. The customer buys your brand and gets access to the app. Consistent usage = more repurchase.",
       "setupTitle": "Setup",
       "setupPrice": "R$ 1,300",
       "recurrentTitle": "Monthly",
@@ -2068,6 +2068,29 @@
       "licensingBadge": "B2B Licensing & Retention",
       "licensedBy": "powered by mybud",
       "secondaryFinalCta": "Talk to the team"
+    },
+    "expansion": {
+      "title": "Works for any type of product",
+      "punchline": "The product doesn't matter.\nWhat matters is the moment it's used.",
+      "subPunchline": "If there's a moment of use, there's a space in MyBud.",
+      "items": {
+        "nutrition": {
+          "title": "Nutrition",
+          "desc": "Dose, pH, week → automatic execution"
+        },
+        "ipm": {
+          "title": "IPM / Defensives",
+          "desc": "Preventive application → right moment"
+        },
+        "substrate": {
+          "title": "Soil / Substrate",
+          "desc": "Preparation and correction → early cycle instruction"
+        },
+        "equipment": {
+          "title": "Equipment",
+          "desc": "Usage and operation → checklist and routine"
+        }
+      }
     },
     "demo": {
       "title": "Your brand inside the grow routine",
