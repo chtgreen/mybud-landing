@@ -2048,7 +2048,13 @@
       "title": "Funciona desde o primeiro uso",
       "description": "O cultivador entra no app e já pode usar calculadora, preparar o tanque e acompanhar até 3 plantas. Sem custo.",
       "evolution": "E evolui com sua marca",
-      "evolutionDesc": "Com uma ativação PRO, ele desbloqueia o cultivo completo e segue seu protocolo à risca."
+      "evolutionDesc": "Com uma ativação PRO, ele desbloqueia o cultivo completo e segue seu protocolo à risca.",
+      "features": {
+        "calculator": "Calculadora Ilimitada",
+        "tankPrep": "Preparo de Tanque",
+        "plantsLimit": "Até 3 plantas",
+        "brandProtocol": "Protocolo da Marca"
+      }
     },
     "data": {
       "title": "O que você finalmente descobre",

@@ -1954,7 +1954,13 @@
       "title": "Works from the first use",
       "description": "The grower enters the app and can already use the calculator, prepare the tank, and follow up to 3 plants. No cost.",
       "evolution": "And evolves with your brand",
-      "evolutionDesc": "With a PRO activation, they unlock the full cultivation and follow your protocol precisely."
+      "evolutionDesc": "With a PRO activation, they unlock the full cultivation and follow your protocol precisely.",
+      "features": {
+        "calculator": "Unlimited Calculator",
+        "tankPrep": "Tank Preparation",
+        "plantsLimit": "Up to 3 plants",
+        "brandProtocol": "Brand Protocol"
+      }
     },
     "experience": {
       "headline": "Test your brand in MyBud",

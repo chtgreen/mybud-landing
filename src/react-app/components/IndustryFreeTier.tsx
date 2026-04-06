@@ -50,10 +50,10 @@ const IndustryFreeTier: FC = () => {
                         <div className="bg-zinc-50 rounded-[60px] p-10 md:p-16 border border-zinc-100 relative z-10 transform lg:translate-x-12">
                             <div className="space-y-4">
                                 {[
-                                    { icon: 'Calculator', label: 'Calculadora Ilimitada', active: true },
-                                    { icon: 'Droplet', label: 'Preparo de Tanque', active: true },
-                                    { icon: 'Leaf', label: 'Até 3 plantas simultâneas', active: true },
-                                    { icon: 'Shield', label: 'Protocolo da Marca', active: false, badge: 'PRO' }
+                                    { icon: 'Calculator', label: t('industry.freeTier.features.calculator'), active: true },
+                                    { icon: 'Droplet', label: t('industry.freeTier.features.tankPrep'), active: true },
+                                    { icon: 'Leaf', label: t('industry.freeTier.features.plantsLimit'), active: true },
+                                    { icon: 'Shield', label: t('industry.freeTier.features.brandProtocol'), active: false, badge: 'PRO' }
                                 ].map((item, i) => (
                                     <div key={i} className={`flex items-center justify-between p-6 rounded-3xl border transition-all duration-500 ${item.active ? 'bg-white border-zinc-200 shadow-sm' : 'bg-zinc-100/50 border-zinc-200 opacity-60'}`}>
                                         <div className="flex items-center gap-4">
