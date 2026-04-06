@@ -1910,17 +1910,17 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "sua marca dentro do cultivo",
-      "subtitle": "Semana, dose e pH aparecem automaticamente — no momento exato da rega.",
+      "title": "sua marca vira decisão no cultivo",
+      "subtitle": "O app diz qual produto usar, quanto aplicar e quando — automaticamente.",
       "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
-      "cta": "Ver minha marca no app",
-      "secondaryCta": "Entrar no cultivo agora",
+      "cta": "Ver minha marca dentro do cultivo",
+      "secondaryCta": "Quero testar com minha marca",
       "discoveryHow": "descubra como",
       "words": {
         "knows": "na hora de preparar a rega",
         "bottle": "na hora de preparar o tanque",
         "dose": "definindo a dose exata",
-        "rule": "no momento da decisão"
+        "rule": "no centro do resultado"
       }
     },
     "experience": {
@@ -2082,7 +2082,8 @@
     },
     "ecosystem": {
       "badge": "Licenciamento B2B e Retenção",
-      "urgency": "Estamos abrindo para apenas 3 marcas este mês.",
+      "urgency": "Estamos abrindo 3 marcas para o lançamento deste mês.",
+      "exclusivity": "As primeiras entram com exclusividade por categoria.",
       "title": "Para marcas que querem escalar",
       "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
       "setupTitle": "Setup",

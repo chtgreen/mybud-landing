@@ -6,7 +6,7 @@ interface HeroIndustryProps {
   onCTAClick: () => void;
 }
 
-const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
+const HeroIndustry: FC<HeroIndustryProps> = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -32,7 +32,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
 
     const handleType = () => {
       const baseText = words[currentWordIndex];
-      const fullText = `${baseText}.`;
+      const fullText = baseText;
 
       if (isDeleting) {
         setDisplayText(fullText.substring(0, displayText.length - 1));
@@ -100,7 +100,7 @@ const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
-              onClick={onCTAClick}
+              onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full md:w-auto px-14 py-5 rounded-full text-xl font-bold text-white border border-white/20 bg-white/5 backdrop-blur-3xl hover:bg-white/10 transition-all flex items-center justify-center gap-3 lowercase"
             >
               {t('industry.hero.secondaryCta')}

@@ -1870,17 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your brand inside the grow",
-      "subtitle": "Week, dose, and pH appear automatically — at the exact moment of watering.",
+      "title": "your brand becomes the decision",
+      "subtitle": "The app tells which product to use, how much, and when — automatically.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
-      "cta": "See my brand in the app",
-      "secondaryCta": "Enter the grow now",
+      "cta": "See my brand inside the grow",
+      "secondaryCta": "I want to test with my brand",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "when preparing the watering",
+        "knows": "inside the grow routine",
         "bottle": "when preparing the tank",
         "dose": "defining the exact dose",
-        "rule": "at the moment of decision"
+        "rule": "as the key to results"
       }
     },
     "reframe": {
@@ -2039,7 +2039,8 @@
     },
     "ecosystem": {
       "badge": "B2B Licensing and Retention",
-      "urgency": "We are opening for only 3 brands this month.",
+      "urgency": "We are opening 3 brands for this month's launch.",
+      "exclusivity": "The first ones enter with category exclusivity.",
       "title": "For brands that want to scale",
       "subtitle": "License MyBud along with your product. The customer buys your fertilizer and gets access to the app. Consistent usage = more repurchase.",
       "setupTitle": "Setup",
