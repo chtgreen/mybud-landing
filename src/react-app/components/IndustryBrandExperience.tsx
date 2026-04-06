@@ -326,54 +326,71 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
         {step === 'form-brand' && (
           <StepWrapper showPhone brandName={form.brandName} logoUrl={form.logoUrl} view="tasks">
             <StepHeadline title={t('industry.experience.form.step1Headline')} />
-            <form onSubmit={handleNextToEmail} className="space-y-4">
-              <input
-                autoFocus
-                type="text"
-                value={form.brandName}
-                onChange={handleChange('brandName')}
-                placeholder={t('industry.experience.form.brandName')}
-                required
-                className="w-full px-6 py-5 bg-zinc-900 border-2 border-zinc-800 focus:border-emerald-500/50 rounded-2xl text-white text-lg font-medium placeholder-zinc-600 focus:outline-none transition-all"
-              />
+            <form onSubmit={handleNextToEmail} className="flex flex-col gap-5">
               <div className="space-y-2">
-                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-2">{t('industry.experience.form.optionalLogo')}</p>
+                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] px-2 block">
+                  {t('industry.experience.form.brandName')}
+                </label>
                 <input
-                  type="file"
-                  ref={logoInputRef}
-                  onChange={handleLogoChange}
-                  accept="image/*"
-                  className="hidden"
+                  autoFocus
+                  type="text"
+                  value={form.brandName}
+                  onChange={handleChange('brandName')}
+                  className="w-full px-6 py-4 bg-zinc-900 border-2 border-zinc-800 focus:border-emerald-500/50 rounded-2xl text-white text-lg font-bold placeholder-zinc-600 focus:outline-none transition-all"
+                  required
                 />
-                <button
-                  type="button"
-                  onClick={() => logoInputRef.current?.click()}
-                  className="w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800/50 hover:border-emerald-500/30 rounded-2xl text-left transition-all group/logo overflow-hidden relative"
-                >
-                  {form.logoUrl ? (
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded bg-white/10 p-1 flex items-center justify-center overflow-hidden">
-                        <img src={form.logoUrl} alt="Logo preview" className="w-full h-full object-contain" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] px-2 block">
+                  {t('industry.experience.form.optionalLogo')}
+                </label>
+                <div className="relative group/upload">
+                  <input
+                    type="file"
+                    ref={logoInputRef}
+                    onChange={handleLogoChange}
+                    accept="image/*"
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => logoInputRef.current?.click()}
+                    className={`w-full px-6 py-4 bg-zinc-900/50 border-2 border-zinc-800 hover:border-emerald-500/30 rounded-2xl text-left transition-all flex items-center justify-between overflow-hidden ${form.logoUrl ? 'border-emerald-500/20' : ''}`}
+                  >
+                    <span className={`text-sm font-bold ${form.logoUrl ? 'text-emerald-400' : 'text-zinc-600'}`}>
+                      {form.logoUrl ? t('industry.experience.form.logoLoaded') : t('industry.experience.form.logoPlaceholder')}
+                    </span>
+                    {form.logoUrl ? (
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded bg-white p-1 flex items-center justify-center shadow-lg">
+                          <img src={form.logoUrl} alt="Logo preview" className="w-full h-full object-contain" />
+                        </div>
+                        <span
+                          onClick={(e) => { e.stopPropagation(); setForm(prev => ({ ...prev, logoUrl: '' })); }}
+                          className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center hover:text-red-400 text-[10px] font-black"
+                        >
+                          ×
+                        </span>
                       </div>
-                      <span className="text-zinc-300 text-sm font-medium">{t('industry.experience.form.logoLoaded')}</span>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setForm(prev => ({ ...prev, logoUrl: '' })); }}
-                        className="ml-auto text-zinc-600 hover:text-red-400 text-xs font-black"
-                      >
-                        {t('industry.experience.form.removeLogo')}
-                      </button>
-                    </div>
-                  ) : (
-                    <span className="text-zinc-700 text-sm font-medium group-hover/logo:text-zinc-500">{t('industry.experience.form.logoPlaceholder')}</span>
-                  )}
+                    ) : (
+                      <div className="w-8 h-8 rounded-xl border-2 border-dashed border-zinc-800 flex items-center justify-center group-hover/upload:border-emerald-500/30 transition-colors">
+                        <div className="w-1 h-3 bg-zinc-800 rounded-full group-hover/upload:bg-emerald-500/30 transition-colors" />
+                        <div className="absolute w-3 h-1 bg-zinc-800 rounded-full group-hover/upload:bg-emerald-500/30 transition-colors" />
+                      </div>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-black text-xl hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
+                >
+                  {t('industry.experience.form.nextStep')}
                 </button>
               </div>
-              <button
-                type="submit"
-                className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/10 transition-all flex items-center justify-center gap-2"
-              >
-                {t('industry.experience.form.nextStep')}
-              </button>
             </form>
           </StepWrapper>
         )}
@@ -382,27 +399,35 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
         {step === 'form-email' && (
           <StepWrapper showPhone brandName={form.brandName} logoUrl={form.logoUrl} view="tasks">
             <StepHeadline title={t('industry.experience.form.step2Headline')} />
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                autoFocus
-                type="email"
-                value={form.email}
-                onChange={handleChange('email')}
-                placeholder={t('industry.experience.form.email')}
-                required
-                className="w-full px-6 py-5 bg-zinc-900 border-2 border-emerald-500/30 focus:border-emerald-500 rounded-2xl text-white text-lg font-medium placeholder-zinc-600 focus:outline-none transition-all"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-extrabold text-lg hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {t('industry.experience.form.cta')}
-              </button>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] px-2 block">
+                  {t('industry.experience.form.email')}
+                </label>
+                <input
+                  autoFocus
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange('email')}
+                  className="w-full px-6 py-4 bg-zinc-900 border-2 border-emerald-500/30 focus:border-emerald-500 rounded-2xl text-white text-lg font-bold placeholder-zinc-600 focus:outline-none transition-all"
+                  required
+                />
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-black text-xl hover:bg-emerald-400 shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {t('industry.experience.form.cta')}
+                </button>
+              </div>
+
               <button
                 type="button"
                 onClick={() => setStep('form-brand')}
-                className="w-full py-2 text-zinc-500 text-sm font-bold hover:text-zinc-300 transition-colors"
+                className="w-full py-2 text-zinc-500 text-sm font-black hover:text-zinc-300 transition-colors"
               >
                 ← {t('industry.experience.form.brandName')}: {form.brandName}
               </button>
