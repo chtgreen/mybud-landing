@@ -1877,11 +1877,28 @@
       "secondaryCta": "How it works",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "becomes the decision",
-        "bottle": "becomes the exact dose",
-        "dose": "becomes the grower's guide",
-        "rule": "becomes the grow routine"
+        "execution": "turns guidance into action",
+        "decision": "becomes the command at feeding time",
+        "standard": "becomes the usage standard in the grow",
+        "presence": "becomes presence throughout the cycle",
+        "consistency": "becomes consistency in the results",
+        "automatic": "becomes the grower's automatic choice"
       }
+    },
+    "dashboard": {
+      "badge": "data and insights",
+      "title": "data-driven decisions",
+      "subtitle": "know exactly how, when and how much of your product is being used. 100% anonymous.",
+      "anonymousNote": "data is aggregated anonymously to preserve grower privacy.",
+      "statGrowers": "active growers",
+      "statAdhesion": "plan adhesion",
+      "statReorder": "sales alert",
+      "reorderMsg": "42% of growers entering pre-sale week.",
+      "feature1Title": "anticipate repurchase",
+      "feature1Desc": "know when stock is running low and trigger replacement offers at the perfect timing.",
+      "feature2Title": "protocol validation",
+      "feature2Desc": "see which dosages perform best and adjust your schedules with field data.",
+      "weekShort": "week"
     },
     "reframe": {
       "title": "You don't need more visibility.\nYou need to be used.",
@@ -1942,6 +1959,7 @@
     },
     "howItWorks": {
       "title": "How your customer enters",
+      "headline": "how your brand enters the grow routine",
       "step1": "1. Uses your product",
       "step2": "2. Accesses MyBud (link or code)",
       "step3": "3. Already knows what to do",

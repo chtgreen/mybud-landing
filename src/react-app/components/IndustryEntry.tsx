@@ -15,7 +15,7 @@ const IndustryEntry: FC = () => {
                         {t('industry.howItWorks.title')}
                     </div>
                     <h2 className="text-5xl md:text-8xl font-black text-white tracking-[-0.05em] leading-[0.9] lowercase max-w-4xl mx-auto">
-                        é simples entrar no cultivo.
+                        {t('industry.howItWorks.headline')}
                     </h2>
                 </div>
 

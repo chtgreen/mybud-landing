@@ -1368,11 +1368,28 @@
       "secondaryCta": "Cómo funciona",
       "discoveryHow": "descubre cómo",
       "words": {
-        "knows": "se vuelve decisión en el manejo",
-        "bottle": "se vuelve precisión en el riego",
-        "dose": "se vuelve guía en el cultivo",
-        "rule": "se vuelve rutina en el resultado"
+        "execution": "se vuelve ejecución en el cultivo",
+        "decision": "se vuelve decisión al momento del riego",
+        "standard": "se vuelve estándar de uso en el grow",
+        "presence": "se vuelve presencia en todo el ciclo",
+        "consistency": "se vuelve consistencia en el resultado",
+        "automatic": "es la elección automática del grower"
       }
+    },
+    "dashboard": {
+      "badge": "datos e insights",
+      "title": "decisiones basadas en el uso real",
+      "subtitle": "sepa exactamente cómo, cuándo y cuánto de su producto se está usando. todo 100% anónimo.",
+      "anonymousNote": "los datos se agregan de forma anónima para preservar la privacidad del cultivador.",
+      "statGrowers": "cultivadores activos",
+      "statAdhesion": "adhesión al plan",
+      "statReorder": "alerta de venta",
+      "reorderMsg": "42% de los cultivadores entrando en semana de preventa.",
+      "feature1Title": "anticipe la recompra",
+      "feature1Desc": "sepa cuándo se está agotando el stock y dispare ofertas de reposición en el momento perfecto.",
+      "feature2Title": "validación de protocolo",
+      "feature2Desc": "vea qué dosis funcionan mejor y ajuste sus cronogramas con datos de campo.",
+      "weekShort": "sem"
     },
     "reframe": {
       "title": "No necesitas más visibilidad.\nNecesitas ser usado.",
@@ -1423,6 +1440,7 @@
     },
     "howItWorks": {
       "title": "Lo que hacemos exactamente",
+      "headline": "cómo tu marca entra en la rutina del grow",
       "step1": "Tomamos tu tabla oficial (Veg, Bloom, Engorde, Flush).",
       "step2": "Incorporamos la matemática exacta de pH, EC y mililitros al algoritmo.",
       "step3": "La app notifica al usuario: qué frasco abrir y cuántos ml aplicar.",

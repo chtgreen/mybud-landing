@@ -1910,18 +1910,35 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "sua marca vira parte da rotina do cultivo",
+      "title": "sua marca dentro do cultivo",
       "subtitle": "semana, dose e pH aparecem automaticamente.",
       "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
       "cta": "Digitalizar meu protocolo agora",
       "secondaryCta": "Como funciona",
       "discoveryHow": "descubra como",
       "words": {
-        "knows": "vira decisão no manejo",
-        "bottle": "vira precisão na rega",
-        "dose": "vira guia no cultivo",
-        "rule": "vira rotina no resultado"
+        "execution": "vira execução no cultivo",
+        "decision": "vira decisão na hora da rega",
+        "standard": "vira padrão de uso no grow",
+        "presence": "vira presença em todo o ciclo",
+        "consistency": "vira consistência no resultado",
+        "automatic": "vira escolha automática do grower"
       }
+    },
+    "dashboard": {
+      "badge": "dados e insights",
+      "title": "decisões baseadas em uso real",
+      "subtitle": "saiba exatamente como, quando e quanto do seu produto está sendo usado. tudo 100% anônimo.",
+      "anonymousNote": "os dados são agregados de forma anônima para preservar a privacidade do grower.",
+      "statGrowers": "growers ativos",
+      "statAdhesion": "adesão ao plano",
+      "statReorder": "alerta de venda",
+      "reorderMsg": "42% dos growers entrando em semana de pré-venda.",
+      "feature1Title": "antecipe a recompra",
+      "feature1Desc": "saiba quando o estoque está acabando e dispare ofertas de reposição no timing perfeito.",
+      "feature2Title": "validação de protocolo",
+      "feature2Desc": "veja quais dosagens performam melhor e ajuste seus cronogramas com dados de campo.",
+      "weekShort": "sem"
     },
     "experience": {
       "headline": "Sua marca na rotina",
@@ -2015,7 +2032,7 @@
       "punchline": "Seu produto aparece no momento exato da rega."
     },
     "problem": {
-      "title": "Hoje, sua marca ensina.\nMas não acompanha.",
+      "title": "sua marca ensina\nmas não está na hora da aplicação",
       "intro": "O cliente compra sua garrafa. E depois? Você perde o controle do uso. Nós trazemos sua marca para dentro da rega.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
@@ -2037,6 +2054,7 @@
     },
     "howItWorks": {
       "title": "Como seu cliente entra",
+      "headline": "como sua marca entra na rotina do grow",
       "step1": "1. Usa seu produto",
       "step2": "2. Acessa o MyBud (link ou código)",
       "step3": "3. Já vê o que fazer",
@@ -2304,7 +2322,7 @@
         }
       },
       "problem": {
-        "headline": "Hoje, sua marca ensina.\nMas não acompanha.",
+        "headline": "sua marca ensina\nmas não está na hora da aplicação",
         "channels": "Sua marca entrega protocolo em PDF, tabela, rótulo e posts. Mas o grower vive na rotina.",
         "pain1": "Não sabem quando aplicar",
         "pain2": "Não seguem a sequência",

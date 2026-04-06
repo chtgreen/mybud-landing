@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import posthog from 'posthog-js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollEnhancement } from '../hooks/useScrollEnhancement';
@@ -16,6 +16,8 @@ import IndustryExecution from '../components/IndustryExecution';
 import IndustryDemo from '../components/IndustryDemo';
 import IndustryBrandExperience from '../components/IndustryBrandExperience';
 import IndustryProductExpansion from '../components/IndustryProductExpansion';
+import IndustryDashboard from '../components/IndustryDashboard';
+import ContactModal from '../components/ContactModal';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -24,6 +26,7 @@ const INDUSTRY_CALENDAR_URL =
 export default function IndustryLandingPage() {
   const { currentLanguage, changeLanguage } = useLanguage();
   useScrollEnhancement();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     trackPageView(window.location.pathname, 'MyBud - Brands Landing Page');
@@ -34,14 +37,13 @@ export default function IndustryLandingPage() {
 
   const handleCTAClick = () => {
     trackCTAClick({
-      ctaName: 'Schedule Industry Demo',
+      ctaName: 'Open Industry Contact Modal',
       ctaLocation: 'Hero Section',
       ctaType: 'button',
       ctaText: 'Talk to us',
-      destinationUrl: INDUSTRY_CALENDAR_URL,
       customProperties: {
         page_type: 'industry',
-        action: 'calendar_redirect',
+        action: 'open_modal',
         language: currentLanguage
       }
     });
@@ -49,16 +51,22 @@ export default function IndustryLandingPage() {
     posthog.capture('industry_cta_clicked', {
       button: 'primary_cta',
       location: 'hero',
-      action: 'calendar_redirect'
+      action: 'open_modal'
     });
 
-    window.open(INDUSTRY_CALENDAR_URL, '_blank');
+    setIsModalOpen(true);
   };
 
   return (
     <div className="min-h-screen bg-zinc-950">
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
+
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        language={currentLanguage}
+      />
 
       {/* Section 1: Hero — simple, punchy, centered */}
       <HeroIndustry />
@@ -74,6 +82,9 @@ export default function IndustryLandingPage() {
 
       {/* Section 5: Execution (NEW) — Your protocol becomes execution */}
       <IndustryExecution />
+
+      {/* Section 5.5: Dashboard (NEW) — Live anonymous insights */}
+      <IndustryDashboard />
 
       {/* Section 6: Portfolio Expansion (NEW) — Nutrition, IPM, Equipment... */}
       <IndustryProductExpansion />
