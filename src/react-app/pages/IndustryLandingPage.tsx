@@ -60,33 +60,28 @@ export default function IndustryLandingPage() {
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
 
-      {/* 
-          Restoring the original layout structure from the previous session,
-          but integrating the new 'Brand Experience' (Step 0) at the heart of it.
-      */}
-
       {/* Section 1: Hero — simple, punchy, centered */}
       <HeroIndustry onCTAClick={handleCTAClick} />
 
-      {/* Section 2: THE EXPERIENCE (STEP 0 - INTERACTIVE) 
-          This is now the central interaction point.
-      */}
-      <IndustryBrandExperience onCTAClick={handleCTAClick} />
-
-      {/* Section 3: Problem — why the brand needs this */}
+      {/* Section 2: Problem — why the brand needs this */}
       <IndustryProblem />
 
-      {/* Section 4: Demo — here's exactly how it looks inside the app (Multi-tab) */}
+      {/* Section 3: Demo — here's exactly how it looks inside the app (Multi-tab) */}
       <IndustryDemo onCTAClick={handleCTAClick} />
 
-      {/* Section 5: The 3 Pillars / Deliverables / Journey */}
+      {/* Section 4: The 3 Pillars / Deliverables / Journey */}
       <IndustryDeliverables />
 
-      {/* Section 6: FREE TIER -> "Funciona desde o primeiro uso" */}
+      {/* Section 5: FREE TIER -> "Funciona desde o primeiro uso" */}
       <IndustryFreeTier />
 
-      {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      {/* Section 6: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
       <IndustryEcosystem />
+
+      {/* Section 7: THE EXPERIENCE (STEP 0 - INTERACTIVE) 
+          Moved to the end (after pricing) to capture convinced users.
+      */}
+      <IndustryBrandExperience onCTAClick={handleCTAClick} />
 
       {/* Section 8: Final CTA — dark closing */}
       <IndustryFinalCTA onCTAClick={handleCTAClick} />

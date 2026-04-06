@@ -36,9 +36,13 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-8xl font-black text-white mb-8 tracking-[-0.05em] lowercase leading-[0.9]">
-            {t('industry.demo.title')}
+        <div className="text-center mb-24 max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-black mb-10 tracking-widest uppercase">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            {t('industry.experience.result.betaStatus')}
+          </div>
+          <h2 className="text-4xl md:text-8xl font-black text-white mb-10 tracking-[-0.05em] lowercase leading-[0.9]">
+            {t('industry.presence.title')}
           </h2>
         </div>
 
@@ -150,8 +154,8 @@ interface MockupProps {
 
 const MockItemWrapper: FC<{ children: React.ReactNode; active?: boolean }> = ({ children, active }) => (
   <div className={`p-5 rounded-[28px] border transition-all duration-500 mb-4 ${active
-      ? 'bg-white/[0.03] border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] shadow-emerald-500/5'
-      : 'bg-zinc-900 border-zinc-800/50 opacity-60'
+    ? 'bg-white/[0.03] border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] shadow-emerald-500/5'
+    : 'bg-zinc-900 border-zinc-800/50 opacity-60'
     }`}>
     {children}
   </div>

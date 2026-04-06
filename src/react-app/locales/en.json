@@ -1870,17 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your customer opens the app",
-      "subtitle": "Week, dose, and pH appear automatically. No PDF. No error.",
+      "title": "your product becomes the decision inside the grow",
+      "subtitle": "Week, dose, and pH appear automatically — at the exact moment of watering.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
       "cta": "See my brand in the app",
       "secondaryCta": "Enter the grow now",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "and knows what to do",
-        "bottle": "and sees which bottle to open",
-        "dose": "and knows how many ml to apply",
-        "rule": "and follows your rule"
+        "knows": "and they know how many ml to apply",
+        "bottle": "and they see which bottle to open",
+        "dose": "and they follow your protocol",
+        "rule": "and they get the best result"
       }
     },
     "reframe": {
@@ -1891,7 +1891,7 @@
       "punchline": "If your product isn't inside the routine, it's outside the result."
     },
     "presence": {
-      "title": "Where your product appears",
+      "title": "Where your brand appears:",
       "tasks": {
         "title": "At watering time",
         "example": "\"Apply MyBud Fert — 2ml/L\"",
@@ -1900,7 +1900,7 @@
         "point3": "Action-based"
       },
       "timeline": {
-        "title": "In the weekly routine",
+        "title": "When preparing the tank",
         "example": "Day 14 → MyBud Fert applied",
         "point1": "Visible history",
         "point2": "Repeated usage patterns"
@@ -1945,7 +1945,7 @@
       "step1": "1. Uses your product",
       "step2": "2. Accesses MyBud (link or code)",
       "step3": "3. Already knows what to do",
-      "noTech": "👉 No technical integration | 👉 No effort on your side",
+      "noTech": "👉 No technical integration. No effort on your side.",
       "step1Title": "Usage",
       "step2Title": "Access",
       "step3Title": "Execution"
@@ -1985,7 +1985,7 @@
       },
       "result": {
         "appHeader": "Today",
-        "tasksSection": "Today's tasks",
+        "tasksSection": "This is where your brand appears:",
         "scheduleSection": "Brand schedule",
         "week12": "Wk 1–2",
         "week35": "Wk 3–5",
@@ -1998,14 +1998,14 @@
         "dose1": "2ml/L — Vegetative Wk 3",
         "phTarget": "pH target: 6.2",
         "dose2": "1ml/L — supplement",
-        "phCheck": "pH check",
-        "phMeta": "Target: 6.0–6.5",
-        "message": "This is how {brand} appears inside the grow.",
+        "phCheck": "Check pH",
+        "phMeta": "Meta: 6.0–6.5",
+        "message": "This is how your brand appears inside the grow routine.",
         "subMessage": "Every grower using MyBud will see your product at the exact moment of use.",
-        "primaryCta": "See {brand} working fully",
-        "secondaryCta": "I want my brand in the cultivation",
-        "fullAppCta": "See in the full app",
-        "vegSemana3": "Veg Week 3"
+        "primaryCta": "I want this",
+        "secondaryCta": "Test this with my products",
+        "fullAppCta": "See full app",
+        "betaStatus": "Already in use by growers in beta phase"
       },
       "demo": {
         "title": "Your brand in the routine",
@@ -2038,9 +2038,10 @@
       "effect3": "Creates differentiation"
     },
     "ecosystem": {
-      "badge": "B2B Licensing & Retention",
+      "badge": "B2B Licensing and Retention",
+      "urgency": "We are opening for only 3 brands this month.",
       "title": "For brands that want to scale",
-      "subtitle": "License MyBud together with your product. The customer buys your fertilizer and gets app access.",
+      "subtitle": "License MyBud along with your product. The customer buys your fertilizer and gets access to the app. Consistent usage = more repurchase.",
       "setupTitle": "Setup",
       "setupPrice": "R$ 1,300",
       "recurrentTitle": "Monthly",

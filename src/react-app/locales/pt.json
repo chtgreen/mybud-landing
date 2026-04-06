@@ -1910,17 +1910,17 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "seu cliente abre o app",
-      "subtitle": "Semana, dose e pH aparecem automaticamente. Sem PDF. Sem erro.",
+      "title": "sua marca dentro do cultivo",
+      "subtitle": "Semana, dose e pH aparecem automaticamente — no momento exato da rega.",
       "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
       "cta": "Ver minha marca no app",
       "secondaryCta": "Entrar no cultivo agora",
       "discoveryHow": "descubra como",
       "words": {
-        "knows": "e já sabe o que fazer",
-        "bottle": "e vê qual garrafa abrir",
-        "dose": "e sabe quantos ml aplicar",
-        "rule": "e segue sua regra real"
+        "knows": "e ele sabe quantos ml aplicar",
+        "bottle": "e ele vê qual garrafa abrir",
+        "dose": "e ele segue sua regra real",
+        "rule": "e ele colhe o melhor resultado"
       }
     },
     "experience": {
@@ -1948,7 +1948,7 @@
       },
       "result": {
         "appHeader": "Hoje",
-        "tasksSection": "Dentro da rotina do cultivo",
+        "tasksSection": "É aqui que sua marca aparece:",
         "scheduleSection": "Cronograma de execução",
         "week12": "Sem 1–2",
         "week35": "Sem 3–5",
@@ -1968,7 +1968,8 @@
         "primaryCta": "Quero isso",
         "secondaryCta": "Testar isso com meus produtos",
         "fullAppCta": "Ver no app completo",
-        "vegSemana3": "Veg Semana 3"
+        "vegSemana3": "Veg Semana 3",
+        "betaStatus": "Já em uso por growers em fase beta"
       },
       "demo": {
         "title": "Sua marca na rotina",
@@ -1985,7 +1986,7 @@
       "punchline": "Se seu produto não está na rotina, ele está fora do resultado."
     },
     "presence": {
-      "title": "Onde seu produto aparece",
+      "title": "Onde sua marca aparece no cultivo:",
       "tasks": {
         "title": "Na hora da rega",
         "example": "\"Aplicar MyBud Fert — 2ml/L\"",
@@ -1994,13 +1995,13 @@
         "point3": "Baseado em ação"
       },
       "timeline": {
-        "title": "Na rotina semanal",
+        "title": "No preparo do tanque",
         "example": "Dia 14 → MyBud Fert aplicado",
         "point1": "Histórico visível",
         "point2": "Padrões de uso repetidos"
       },
       "activityLog": {
-        "title": "No histórico do cultivo",
+        "title": "No histórico do grow",
         "example": "Usuário registra alimentação com seu produto",
         "point1": "Dados estruturados",
         "point2": "Vinculado à planta + estágio"
@@ -2039,7 +2040,7 @@
       "step1": "1. Usa seu produto",
       "step2": "2. Acessa o MyBud (link ou código)",
       "step3": "3. Já vê o que fazer",
-      "noTech": "👉 Sem integração técnica | 👉 Sem esforço do seu lado",
+      "noTech": "👉 Sem integração técnica. Sem esforço do seu lado.",
       "step1Title": "Uso",
       "step2Title": "Acesso",
       "step3Title": "Execução"
@@ -2081,6 +2082,7 @@
     },
     "ecosystem": {
       "badge": "Licenciamento B2B e Retenção",
+      "urgency": "Estamos abrindo para apenas 3 marcas este mês.",
       "title": "Para marcas que querem escalar",
       "subtitle": "Licencie o MyBud junto com seu produto. O cliente compra seu fertilizante e ganha acesso ao app. Uso consistente = mais recompra.",
       "setupTitle": "Setup",

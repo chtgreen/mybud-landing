@@ -13,8 +13,13 @@ const IndustryEcosystem: FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
-              <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">
-                {t('industry.ecosystem.licensingBadge')}
+              <div className="flex flex-wrap gap-3">
+                <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">
+                  {t('industry.ecosystem.badge')}
+                </div>
+                <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400 animate-pulse">
+                  {t('industry.ecosystem.urgency')}
+                </div>
               </div>
 
               <div className="space-y-6">

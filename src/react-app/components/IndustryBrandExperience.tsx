@@ -472,14 +472,26 @@ const IndustryBrandExperience: FC<IndustryBrandExperienceProps> = ({ onCTAClick 
         {/* STEP 4: Result */}
         {step === 'result' && (
           <div className="flex flex-col items-center animate-in fade-in scale-95 duration-700">
-            <div className="text-center mb-16 max-w-2xl px-4">
-              <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-black mb-8 tracking-widest uppercase">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                {t('industry.experience.result.message').replace('{brand}', form.brandName)}
+            <div className="text-center mb-16 max-w-2xl px-4 flex flex-col items-center">
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-black tracking-widest uppercase">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  {t('industry.experience.result.message').replace('{brand}', form.brandName)}
+                </div>
+                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-500 text-xs font-black tracking-widest uppercase">
+                  {t('industry.experience.result.betaStatus')}
+                </div>
               </div>
-              <h2 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-[-0.05em] lowercase leading-[0.9]">
+
+              <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-[-0.05em] lowercase leading-[0.9]">
                 {t('industry.experience.result.subMessage')}
               </h2>
+
+              <p className="text-emerald-500 font-black uppercase text-xs tracking-[0.3em] mt-4 opacity-100 flex items-center gap-2">
+                <span className="w-8 h-px bg-emerald-500/30" />
+                {t('industry.experience.result.tasksSection')}
+                <span className="w-8 h-px bg-emerald-500/30" />
+              </p>
             </div>
 
             <div className="relative group mb-20 scale-110 md:scale-125 origin-center">
