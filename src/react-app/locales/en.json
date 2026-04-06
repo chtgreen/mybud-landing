@@ -1870,19 +1870,13 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your brand becomes part of the routine",
-      "subtitle": "week, dose, and pH appear automatically.",
-      "proof": "Which bottle to open, how many ml to apply, and when to do it.",
-      "cta": "Digitize my protocol now",
+      "title": "the rule of cultivation.",
+      "subtitle": "your brand doesn't need ads. it needs consistent execution.",
+      "cta": "See my brand",
       "secondaryCta": "How it works",
       "discoveryHow": "discover how",
       "words": {
-        "execution": "turns guidance into action",
-        "decision": "becomes the command at feeding time",
-        "standard": "becomes the usage standard in the grow",
-        "presence": "becomes presence throughout the cycle",
-        "consistency": "becomes consistency in the results",
-        "automatic": "becomes the grower's automatic choice"
+        "digitalized": "digitized."
       }
     },
     "dashboard": {
@@ -2223,10 +2217,10 @@
       },
       "finalCta": {
         "text": "We are opening few brands for this April launch.\nThose who enter now set the execution standard in the market.",
-        "headline": "your customer doesn't need to think.\n{italic}",
-        "headlineItalic": "the app shows what to do.",
-        "punchline": "your brand becomes the grow routine. no distractions, just execution.",
-        "primaryCta": "See my brand in MyBud",
+        "headline": "the rule of cultivation.\n{italic}",
+        "headlineItalic": "digitized.",
+        "punchline": "your brand doesn't need ads. it needs consistent execution.",
+        "primaryCta": "See my brand",
         "secondaryCta": "Join as a partner brand",
         "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
         "community": "Join the first brands shaping the future of cannabis cultivation.",

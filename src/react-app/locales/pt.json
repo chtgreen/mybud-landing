@@ -1910,18 +1910,13 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "sua marca dentro do cultivo",
-      "subtitle": "seu cliente compra seu produto\ne usa errado",
-      "cta": "Digitalizar meu protocolo agora",
+      "title": "a regra do cultivo.",
+      "subtitle": "sua marca não precisa de anúncios. precisa de execução consistente.",
+      "cta": "Ver minha marca",
       "secondaryCta": "Como funciona",
       "discoveryHow": "descubra como",
       "words": {
-        "execution": "vira execução no cultivo",
-        "decision": "vira decisão na hora da rega",
-        "standard": "vira padrão de uso no grow",
-        "presence": "vira presença em todo o ciclo",
-        "consistency": "vira consistência no resultado",
-        "automatic": "vira escolha automática do grower"
+        "digitalized": "digitalizada."
       }
     },
     "dashboard": {
@@ -2032,25 +2027,25 @@
       "punchline": "Seu produto aparece no momento exato da rega."
     },
     "problem": {
-      "badge": "a ponte entre marca e cultivo",
-      "title": "sua marca ensina,\nmas não conecta os pontos do cultivo",
+      "title": "sua marca ensina\nmas não está na hora da aplicação",
       "intro": "O cultivador compra seu produto, mas muitas vezes tem dúvidas de como usar eles, seja na hora da rega, no MIP, na preparação do solo. O MyBud conecta o seu produto a forma de usar.",
       "pain1": "Erra a dose",
       "pain2": "Mistura errado",
-      "pain3": "Peca no manejo",
+      "pain3": "Queima a planta",
       "pain4": "Culpa a sua marca",
-      "pdfNote": "O grower ignora seu PDF e erra o manejo.",
-      "solution": "Conectamos sua marca à execução real.",
-      "narrative": "Eles erram o PPM, entram em overfert, não sabem tratar pragas e queimam sua reputação.",
-      "legacyBadge": "Sem MyBud (Dúvida)",
+      "pdfNote": "O grower ignora seu PDF e erra a dose.",
+      "solution": "Transformamos seu cronograma em ação real.",
+      "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação.",
+      "badge": "execução dentro do grow",
+      "legacyBadge": "Sem MyBud (PDF)",
       "standardBadge": "Com MyBud (Execução)",
-      "legacyPain1": "Dúvida no manejo",
+      "legacyPain1": "Erro de dosagem",
       "legacyPain2": "PDF ignorado",
       "legacyPain3": "Suporte repetitivo",
-      "standardBenefit1": "Qual produto usar",
-      "standardBenefit2": "Dose e aplicação",
-      "standardBenefit3": "Timing do manejo",
-      "applyProductA": "executar protocolo"
+      "standardBenefit1": "Qual garrafa abrir",
+      "standardBenefit2": "Quantos ml aplicar",
+      "standardBenefit3": "Quando fazer",
+      "applyProductA": "aplicar produto a"
     },
     "howItWorks": {
       "title": "Como seu cliente entra",
@@ -2144,53 +2139,35 @@
       "secondaryFinalCta": "Falar com o time"
     },
     "expansion": {
-      "title": "o ecossistema completo no bolso do grower",
-      "punchline": "sua marca não é um anúncio.\né a solução no manejo.",
-      "subPunchline": "concluímos a ponte entre indústria e cultivo, conectando nutrientes, equipamentos e protocolos de pragas diretamente à rotina.",
+      "title": "Funciona para qualquer tipo de produto",
+      "punchline": "Não importa o produto.\nO que importa é quando ele é usado.",
+      "subPunchline": "Todos os dias do cultivo, sua marca presente na rotina.",
       "items": {
         "nutrition": {
-          "title": "nutrição e fertis",
-          "desc": "dosagem, pH e cronograma → execução automática na rega"
+          "title": "Nutrição",
+          "desc": "Dose, pH, semana → execução automática"
         },
         "ipm": {
-          "title": "pragas e ipm",
-          "desc": "manejo preventivo contra gnats e pragas no timing exato"
+          "title": "Defensivos (IPM)",
+          "desc": "Aplicação preventiva → momento certo"
         },
         "substrate": {
-          "title": "solos e substratos",
-          "desc": "preparo de receitas e misturas guiadas passo a passo"
+          "title": "Solo / substrato",
+          "desc": "Preparo e correção → instrução no início"
         },
         "equipment": {
-          "title": "equipamentos e tech",
-          "desc": "operação de luzes e ventilação vinculada ao ciclo da planta"
+          "title": "Equipamentos",
+          "desc": "Uso e operação → checklist e rotina"
         }
       }
     },
     "demo": {
       "title": "sua marca em todos os dias do cultivo",
       "cta": "Quero ver minha marca no app",
-      "scenarios": {
-        "watering": {
-          "title": "Rega e Tanque",
-          "desc": "O grower precisa regar. O MyBud mostra a dose exata por litro, pH e PPM para o preparo do tanque na semana certa."
-        },
-        "soil": {
-          "title": "Solo e Amendas",
-          "desc": "Para criar o substrato perfeito ou amendar o solo, o app guia o uso dos seus insumos e aditivos passo a passo."
-        },
-        "pests": {
-          "title": "Manejo e Pragas",
-          "desc": "Problemas com Gnats, Mites ou pragas? O app entrega o plano de aplicação (ex: EM-5) da sua linha no timing exato."
-        },
-        "seeds": {
-          "title": "Seeds e Breeders",
-          "desc": "O cultivador registra a genética e o MyBud sincroniza o cronograma ideal da sua marca para aquela strain."
-        },
-        "equipment": {
-          "title": "Potes e Equipos",
-          "desc": "Instruções sobre tamanho de vasos, fotoperíodos e equipamentos vinculados ao ciclo de vida da planta."
-        }
-      },
+      "tasksHint": "seu produto aparece em contexto, acionado pelo estágio da planta",
+      "timelineHint": "cada uso é rastreado — histórico visível constrói confiança na marca",
+      "activityHint": "dados estruturados — vinculados à planta, estágio e dosagem",
+      "recommendationsHint": "recomendações baseadas no estado real do cultivo — não anúncios genéricos",
       "mock": {
         "tasks": {
           "todayTasks": "tarefas de hoje",
@@ -2301,10 +2278,10 @@
     },
     "finalCta": {
       "text": "Estamos abrindo poucas marcas para este lançamento de Abril.\nQuem entra agora define o padrão de execução no mercado.",
-      "headline": "seu cliente não precisa pensar.\n{italic}",
-      "headlineItalic": "o app mostra o que fazer.",
-      "punchline": "sua marca vira rotina no cultivo. sem distrações, apenas execução.",
-      "primaryCta": "Ver minha marca no MyBud",
+      "headline": "a regra do cultivo.\n{italic}",
+      "headlineItalic": "digitalizada.",
+      "punchline": "sua marca não precisa de anúncios. precisa de execução consistente.",
+      "primaryCta": "Ver minha marca",
       "secondaryCta": "Entrar como marca parceira",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
       "community": "Entre as primeiras marcas a moldar o futuro do cultivo canábico no Brasil.",
