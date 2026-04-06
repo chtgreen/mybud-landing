@@ -1911,12 +1911,12 @@
     "hero": {
       "badge": "O app que growers usam para cultivar",
       "title": "sua marca dentro do cultivo",
-      "subtitle": "seu cliente compra seu produto\ne usa errado",
-      "cta": "falar com o time",
-      "secondaryCta": "como funciona?",
+      "subtitle": "vira execução no grow",
+      "cta": "ver minha marca no cultivo",
+      "secondaryCta": "ativar minha marca",
       "discoveryHow": "descubra como",
       "words": {
-        "execution": "vira execução no cultivo",
+        "execution": "vira execução no grow",
         "decision": "vira decisão na hora da rega",
         "standard": "vira padrão de uso no grow",
         "presence": "vira presença em todo o ciclo",
@@ -1932,8 +1932,9 @@
       "anonymousNote": "todos os dados são processados de forma 100% anônima e agregada.",
       "statGrowers": "growers ativos",
       "statAdhesion": "adesão ao plano",
+      "buyAgainAlert": "o app identifica quando o cliente vai precisar comprar de novo",
       "statReorder": "alerta de venda",
-      "reorderMsg": "42% dos growers entrando em semana de pré-venda.",
+      "reorderMsg": "42% dos growers entrando em semana de recompra.",
       "feature1Title": "aprenda como estao usando seus produtos.",
       "feature1Desc": "saiba exatamente quando e quanto seu protocolo está sendo executado no campo.",
       "feature2Title": "saiba como esta sendo usado.",
@@ -2035,7 +2036,7 @@
         "point1": "Baseado no estado do cultivo",
         "point2": "Sem sugestões genéricas"
       },
-      "punchline": "o que era tabela vira tarefa dentro do app. o grower não interpreta, ele executa.",
+      "punchline": "o grower não interpreta ele executa",
       "mock": {
         "week3": "semana 3",
         "wateringNutrients": "rega + nutrientes",
@@ -2047,26 +2048,12 @@
     },
     "problem": {
       "title": "sua marca ensina\nmas não controla como é usada",
-      "intro": "na hora da rega, o grower:\n\nprocura no google\nolha a tabela\ntenta lembrar a dose\n\nsua marca para na embalagem\na execução acontece fora dela",
-      "pain1": "Erra a dose",
-      "pain2": "Mistura errado",
-      "pain3": "Queima a planta",
-      "pain4": "Culpa a sua marca",
-      "blameLabel": "quando usa errado",
-      "blamePunch": "ele culpa sua marca",
-      "pdfNote": "O grower ignora seu PDF e erra a dose.",
-      "solution": "Transformamos seu cronograma em ação real.",
-      "narrative": "Eles erram o PPM, entram em overfert, queimam a raiz e queimam sua reputação.",
-      "badge": "execução dentro do grow",
-      "legacyBadge": "Sem MyBud (PDF)",
-      "standardBadge": "Com MyBud (Execução)",
-      "legacyPain1": "Erro de dosagem",
-      "legacyPain2": "PDF ignorado",
-      "legacyPain3": "Suporte repetitivo",
-      "timeForWatering": "na hora da rega",
+      "timeForWatering": "na hora da rega:",
       "searchGoogle": "procura no google",
       "checkTable": "olha a tabela",
       "rememberDose": "tenta lembrar a dose",
+      "blameLabel": "quando usa errado",
+      "blamePunch": "ele culpa sua marca",
       "brandStopsAtPackaging": "sua marca para na embalagem",
       "executionHappensOutside": "a execução acontece fora dela",
       "atMyBud": "no mybud",
@@ -2075,10 +2062,11 @@
       "exactDose": "dose exata",
       "rightWeek": "semana certa",
       "errorFreeExecution": "execução sem erro",
-      "ctaDigitalize": "Digitalizar meu protocolo",
-      "standardBenefit1": "Qual garrafa abrir",
-      "standardBenefit2": "Quantos ml aplicar",
-      "standardBenefit3": "Quando fazer",
+      "ctaDigitalize": "ver minha marca no cultivo",
+      "solution": "Transformamos seu cronograma em ação real.",
+      "badge": "execução dentro do grow",
+      "legacyBadge": "Sem MyBud (PDF)",
+      "standardBadge": "Com MyBud (Execução)",
       "applyProductA": "aplicar produto a"
     },
     "howItWorks": {
@@ -2090,20 +2078,21 @@
       "noTech": "👉 sem QR complexo | 👉 sem integração | 👉 sem esforço",
       "step1Title": "o grower usa seu produto",
       "step2Title": "abre o app",
-      "step3Title": "já sabe o que fazer",
-      "acceptedFiles": "Pronto em até 48h (PDF, Excel ou Imagem)"
+      "step3Title": "já sabe o que fazer"
     },
     "progression": {
       "title": "como seu produto domina o cultivo",
       "entryTitle": "seu produto entra no cultivo no primeiro uso",
-      "entryPoint1": "o grower entra no app e seu produto já aparece no cronograma",
-      "entryPoint2": "ele segue as instruções sem precisar pensar ou interpretar",
+      "entryPoint1": "o grower abre o app seu produto já está no cronograma",
+      "entryPoint2": "ele segue sem interpretar",
       "entryBadge": "foco em execução real",
       "scaleTitle": "e vira escolha padrão do grower",
-      "scalePoint1": "ele usa do jeito certo e repete o uso ao longo do ciclo",
-      "scalePoint2": "fidelização natural: ele tende a continuar com a mesma marca para manter o resultado",
+      "scalePoint1": "repete o uso ao longo do ciclo",
+      "scalePoint2": "vira padrão",
       "scaleBadge": "recompra e escala",
-      "cta": "Como escala minha marca?"
+      "cta": "Como escala minha marca?",
+      "benefit1": "fidelização natural",
+      "benefit2": "resultado consistente → recompra"
     },
     "freeTier": {
       "title": "Onboarding imediato. Sem esforço.",
@@ -2122,9 +2111,37 @@
       "point1": "quando usam",
       "point2": "quanto usam",
       "point3": "como usam",
-      "point4": "Frequência de uso",
-      "future": "Correlação com resultados",
       "punchline": "dados reais. não suposição."
+    },
+    "smartSuggestions": {
+      "title": "quando o cultivo pede\no app responde com execução",
+      "footer": "o grower não precisa decidir o app mostra — com sua marca",
+      "suggestions": {
+        "slugs": {
+          "trigger": "larvas no solo detectadas",
+          "action": "→ bacillus thuringiensis\n→ 2ml/L a cada 3 dias"
+        },
+        "ph": {
+          "trigger": "pH fora da faixa",
+          "action": "→ ajustar para 6.2\n→ pH down — 0.2ml/L"
+        },
+        "growth": {
+          "trigger": "crescimento desacelerado",
+          "action": "→ aumentar base nutrient\n→ +1ml/L na próxima rega"
+        },
+        "excess": {
+          "trigger": "sinais de excesso",
+          "action": "→ reduzir EC\n→ flush pH 6.2"
+        },
+        "light": {
+          "trigger": "baixa luz na flora",
+          "action": "→ aumentar intensidade\n→ meta: 300–400 PPFD"
+        },
+        "newCycle": {
+          "trigger": "novo ciclo iniciado",
+          "action": "→ 70% soil + 30% perlita\n→ pré-umedecer substrato"
+        }
+      }
     },
     "sales": {
       "title": "Uso → dados → repetição",
@@ -2142,41 +2159,39 @@
     },
     "ecosystem": {
       "badge": "Licenciamento B2B e Retenção",
-      "urgency": "Estamos abrindo 3 marcas para o lançamento deste mês.",
-      "exclusivity": "As primeiras entram com exclusividade por categoria.",
+      "urgency": "",
+      "exclusivity": "",
       "consistency": "uso consistente = mais recompra",
-      "title": "Para marcas que querem escalar",
-      "subtitle": "O cliente usa sua marca e entra automaticamente no app. uso consistente = mais recompra. Ativo em até 48h.",
+      "title": "para marcas que querem escalar",
+      "subtitle": "o cliente usa sua marca e entra automaticamente no app. uso consistente = mais recompra. ativo em até 48h.",
       "setupTitle": "Setup",
       "setupPrice": "R$ 1.300",
       "recurrentTitle": "Mensal",
-      "recurrentPrice": "R$ 299 / mês",
-      "recurrentDetail": "Inclui presença no app, protocolo executado e 10 ativações PRO mensais",
+      "recurrentPrice": "R$ 299",
+      "recurrentDetail": "inclui: presença no app, protocolo executado, 10 ativações PRO",
       "scaleLabel": "Escala",
-      "scaleDetail": "+10 ativações → +$ 20",
+      "scaleDetail": "+10 ativações → +R$20",
+      "evolution": "ativo em até 48h",
+      "noEffort": "sem integração | sem esforço",
       "benefit1": {
-        "title": "Mais recompra",
-        "desc": "Para manter o acesso, o cultivador continua usando sua marca."
+        "title": "mais recompra",
+        "desc": "uso consistente leva a resultados repetíveis."
       },
       "benefit2": {
-        "title": "Mais retenção",
-        "desc": "Seu produto se destaca da concorrência oferecendo uma ferramenta digital sem custo extra."
+        "title": "mais retenção",
+        "desc": "sua marca vira parte do sucesso do grower."
       },
       "card": {
-        "line1": "A marca paga a licença",
-        "line2": "O cliente leva o PRO",
-        "desc": "Seu produto ativa o MyBud. O cultivador escaneia e tem a inteligência premium nas mãos.",
-        "licensingBadge": "Licenciamento B2B",
+        "line1": "a marca paga a licença",
+        "line2": "o cliente leva o PRO",
+        "desc": "uso consistente = mais recompra. ativo em até 48h. sem integração. sem esforço.",
         "licensedBy": "licensed by mybud"
       },
-      "licensingBadge": "Licenciamento B2B e Retenção",
-      "licensedBy": "powered by mybud",
       "secondaryFinalCta": "Falar com o time"
     },
     "expansion": {
-      "title": "sua marca não é um anúncio\né o que o grower usa",
-      "punchline": "Não importa o produto.\nO que importa é quando ele é usado.",
-      "subPunchline": "Todos os dias do cultivo, sua marca presente na rotina.",
+      "title": "não importa o produto\nimporta quando ele é usado",
+      "subPunchline": "todos os dias do cultivo, sua marca presente:",
       "items": {
         "nutrition": {
           "title": "Nutrição",
@@ -2316,7 +2331,7 @@
       "headline": "a regra do cultivo.\n{italic}",
       "headlineItalic": "digitalizada.",
       "punchline": "seu cliente não precisa pensar\nele só executa — com sua marca",
-      "primaryCta": "falar com o time",
+      "primaryCta": "ativar minha marca",
       "secondaryCta": "ver o preço",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
       "community": "Entre as primeiras marcas a moldar o futuro do cultivo canábico no Brasil.",

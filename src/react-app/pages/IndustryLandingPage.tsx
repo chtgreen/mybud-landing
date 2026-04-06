@@ -14,6 +14,7 @@ import IndustryFreeToPro from '../components/IndustryFreeToPro';
 import IndustryEntry from '../components/IndustryEntry';
 import IndustryExecution from '../components/IndustryExecution';
 import IndustryProductExpansion from '../components/IndustryProductExpansion';
+import IndustrySmartSuggestions from '../components/IndustrySmartSuggestions';
 import IndustryDashboard from '../components/IndustryDashboard';
 import ContactModal from '../components/ContactModal';
 
@@ -78,6 +79,9 @@ export default function IndustryLandingPage() {
 
       {/* Block 4: Features — CUT / REDUCED (Updated) */}
       <IndustryProductExpansion />
+
+      {/* Block 6: Smart Suggestions — NEW 💣 */}
+      <IndustrySmartSuggestions />
 
       {/* Block 5: Data — SHORTENED (Updated) */}
       <IndustryDashboard />

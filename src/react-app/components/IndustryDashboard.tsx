@@ -76,17 +76,26 @@ const IndustryDashboard: FC = () => {
                                 </div>
                             </div>
 
-                            {/* Floating Re-order Alert */}
-                            <div className="absolute -right-8 bottom-24 bg-white text-zinc-950 p-6 rounded-3xl shadow-2xl border border-white/10 animate-in fade-in slide-in-from-right-8 duration-1000 hidden md:block max-w-[200px]">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-8 h-8 rounded-xl bg-orange-500/10 flex items-center justify-center">
+                            {/* Prediction Alert */}
+                            <div className="absolute -right-8 bottom-24 bg-white text-zinc-950 p-6 rounded-[32px] shadow-2xl border border-white/5 animate-in fade-in slide-in-from-right-8 duration-1000 hidden md:block max-w-[220px]">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-8 h-8 rounded-xl bg-orange-100 flex items-center justify-center">
                                         <ShoppingCart className="w-4 h-4 text-orange-600" />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase tracking-tighter text-zinc-400">{t('industry.dashboard.statReorder')}</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-orange-500">{t('industry.dashboard.statReorder')}</span>
                                 </div>
-                                <p className="text-sm font-black leading-tight lowercase tracking-tighter">
-                                    {t('industry.dashboard.reorderMsg')}
-                                </p>
+                                <div className="space-y-3">
+                                    <p className="text-sm font-black leading-tight lowercase tracking-tight text-zinc-900">
+                                        {t('industry.dashboard.buyAgainAlert')}
+                                    </p>
+                                    <div className="h-px bg-zinc-100 w-full" />
+                                    <p className="text-xl font-black leading-none text-emerald-600">
+                                        {t('industry.dashboard.reorderMsg').split(' ')[0]}
+                                    </p>
+                                    <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">
+                                        {t('industry.dashboard.reorderMsg').split(' ').slice(1).join(' ')}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

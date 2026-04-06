@@ -1870,14 +1870,14 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your brand becomes part of the routine",
-      "subtitle": "week, dose, and pH appear automatically.",
+      "title": "your brand inside the grow",
+      "subtitle": "becomes execution in the grow",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
-      "cta": "talk to the team",
-      "secondaryCta": "how it works?",
+      "cta": "see my brand in the grow",
+      "secondaryCta": "activate my brand",
       "discoveryHow": "discover how",
       "words": {
-        "execution": "turns guidance into action",
+        "execution": "becomes execution in the grow",
         "decision": "becomes the command at feeding time",
         "standard": "becomes the usage standard in the grow",
         "presence": "becomes presence throughout the cycle",
@@ -1892,8 +1892,9 @@
       "anonymousNote": "data is aggregated anonymously to preserve grower privacy.",
       "statGrowers": "active growers",
       "statAdhesion": "plan adhesion",
+      "buyAgainAlert": "the app identifies when the customer will need to buy again",
       "statReorder": "sales alert",
-      "reorderMsg": "42% of growers entering pre-sale week.",
+      "reorderMsg": "42% of growers entering repurchase week.",
       "feature1Title": "anticipate repurchase",
       "feature1Desc": "know when stock is running low and trigger replacement offers at the perfect timing.",
       "feature2Title": "protocol validation",
@@ -2062,13 +2063,41 @@
       }
     },
     "data": {
-      "title": "What you finally get access to",
-      "point1": "When your product is used",
-      "point2": "How much is used",
-      "point3": "In which stage",
-      "point4": "Frequency of usage",
-      "future": "Correlation with outcomes",
-      "punchline": "From guesswork → to real usage data"
+      "title": "you see how your product is really used",
+      "point1": "when they use",
+      "point2": "how much they use",
+      "point3": "how they use",
+      "punchline": "real data. not guesswork."
+    },
+    "smartSuggestions": {
+      "title": "when the grow asks\nthe app responds with execution",
+      "footer": "the grower doesn't need to decide, the app shows — with your brand",
+      "suggestions": {
+        "slugs": {
+          "trigger": "soil larvae detected",
+          "action": "→ bacillus thuringiensis\n→ 2ml/L every 3 days"
+        },
+        "ph": {
+          "trigger": "pH out of range",
+          "action": "→ adjust to 6.2\n→ pH down — 0.2ml/L"
+        },
+        "growth": {
+          "trigger": "slowed growth",
+          "action": "→ increase base nutrient\n→ +1ml/L next watering"
+        },
+        "excess": {
+          "trigger": "excess signs",
+          "action": "→ reduce EC\n→ flush pH 6.2"
+        },
+        "light": {
+          "trigger": "low light in bloom",
+          "action": "→ increase intensity\n→ target: 300–400 PPFD"
+        },
+        "newCycle": {
+          "trigger": "new cycle started",
+          "action": "→ 70% soil + 30% perlite\n→ pre-moisten substrate"
+        }
+      }
     },
     "sales": {
       "title": "Usage → data → repetition",
@@ -2086,35 +2115,34 @@
     },
     "ecosystem": {
       "badge": "B2B Licensing and Retention",
-      "urgency": "We are opening 3 brands for this month's launch.",
-      "exclusivity": "The first ones enter with category exclusivity.",
+      "urgency": "",
+      "exclusivity": "",
       "consistency": "consistent usage = more repurchase",
-      "title": "For brands that want to scale",
-      "subtitle": "License MyBud along with your product. The customer buys your brand and gets access to the app. Consistent usage = more repurchase.",
+      "title": "for brands that want to scale",
+      "subtitle": "The customer uses your brand and enters automatically in the app. consistent usage = more repurchase. active in 48h.",
       "setupTitle": "Setup",
       "setupPrice": "$ 250",
       "recurrentTitle": "Monthly",
-      "recurrentPrice": "$ 59 / month",
-      "recurrentDetail": "Includes 10 PRO activations (30 days each)",
+      "recurrentPrice": "$ 59",
+      "recurrentDetail": "includes: presence in app, protocol executed, 10 PRO activations",
       "scaleLabel": "Scale",
-      "scaleDetail": "+10 activations → +$ 20",
+      "scaleDetail": "+10 activations → +$20",
+      "evolution": "active in 48h",
+      "noEffort": "no integration | no effort",
       "benefit1": {
-        "title": "More repurchase",
-        "desc": "To keep the access, the grower continues to use your brand."
+        "title": "more repurchase",
+        "desc": "consistent use leads to repeatable results."
       },
       "benefit2": {
-        "title": "More retention",
-        "desc": "Your product stands out from competition by offering a digital tool at no extra cost."
+        "title": "more retention",
+        "desc": "your brand becomes part of the grower's success."
       },
       "card": {
-        "line1": "The brand pays the license",
-        "line2": "The customer gets PRO",
-        "desc": "Your product activates MyBud. The grower scans and gets premium intelligence in their hands.",
-        "licensingBadge": "B2B Licensing",
+        "line1": "the brand pays the license",
+        "line2": "the customer gets PRO",
+        "desc": "consistent usage = more repurchase. active in 48h. no integration. no effort.",
         "licensedBy": "licensed by mybud"
       },
-      "licensingBadge": "B2B Licensing & Retention",
-      "licensedBy": "powered by mybud",
       "secondaryFinalCta": "Talk to the team"
     },
     "expansion": {
@@ -2256,7 +2284,7 @@
         "headline": "the rule of cultivation.\n{italic}",
         "headlineItalic": "digitized.",
         "punchline": "your brand doesn't need ads. it needs consistent execution.",
-        "primaryCta": "talk to the team",
+        "primaryCta": "activate my brand",
         "secondaryCta": "see pricing",
         "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
         "community": "Join the first brands shaping the future of cannabis cultivation.",

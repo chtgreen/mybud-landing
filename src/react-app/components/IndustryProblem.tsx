@@ -80,7 +80,7 @@ const IndustryProblem: FC = () => {
                 </div>
 
                 <div
-                  onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="flex items-center gap-6 group/cta cursor-pointer"
                 >
                   <div className="w-14 h-14 rounded-full bg-white text-zinc-950 flex items-center justify-center group-hover/cta:scale-110 transition-all">

@@ -1361,11 +1361,11 @@
     },
     "hero": {
       "badge": "La app que los growers usan para cultivar",
-      "title": "tu marca se vuelve parte de la rutina",
-      "subtitle": "semana, dosis y pH aparecen automáticamente.",
+      "title": "tu marca dentro del cultivo",
+      "subtitle": "se convierte en ejecución en el grow",
       "proof": "Qué botella abrir, cuántos ml aplicar y cuándo hacerlo.",
-      "cta": "hablar con el equipo",
-      "secondaryCta": "¿cómo funciona?",
+      "cta": "ver mi marca en el cultivo",
+      "secondaryCta": "activar mi marca",
       "discoveryHow": "descubre cómo",
       "words": {
         "execution": "se vuelve ejecución en el cultivo",
@@ -1383,8 +1383,9 @@
       "anonymousNote": "los datos se agregan de forma anónima para preservar la privacidad del cultivador.",
       "statGrowers": "cultivadores activos",
       "statAdhesion": "adhesión al plan",
+      "buyAgainAlert": "el app identifica cuándo el cliente va a necesitar comprar de nuevo",
       "statReorder": "alerta de venta",
-      "reorderMsg": "42% de los cultivadores entrando en semana de preventa.",
+      "reorderMsg": "42% de los cultivadores entrando en semana de recompra.",
       "feature1Title": "anticipe la recompra",
       "feature1Desc": "sepa cuándo se está agotando el stock y dispare ofertas de reposición en el momento perfecto.",
       "feature2Title": "validación de protocolo",
@@ -1527,13 +1528,41 @@
       }
     },
     "data": {
-      "title": "Lo que finalmente descubres",
-      "point1": "Cuándo se usa tu producto",
-      "point2": "Cuánto se usa",
-      "point3": "En qué etapa",
-      "point4": "Frecuencia de uso",
-      "future": "Correlación con resultados",
-      "punchline": "De suposiciones → a datos reales de uso"
+      "title": "ves cómo se usa realmente tu producto",
+      "point1": "cuándo usan",
+      "point2": "cuánto usan",
+      "point3": "cómo usan",
+      "punchline": "datos reales. sin adivinanzas."
+    },
+    "smartSuggestions": {
+      "title": "cuando el cultivo pide\nel app responde con ejecución",
+      "footer": "el cultivador no necesita decidir, el app muestra — con tu marca",
+      "suggestions": {
+        "slugs": {
+          "trigger": "larvas en el suelo detectadas",
+          "action": "→ bacillus thuringiensis\n→ 2ml/L cada 3 días"
+        },
+        "ph": {
+          "trigger": "pH fuera de rango",
+          "action": "→ ajustar a 6.2\n→ pH down — 0.2ml/L"
+        },
+        "growth": {
+          "trigger": "crecimiento desacelerado",
+          "action": "→ aumentar base nutrient\n→ +1ml/L en el próximo riego"
+        },
+        "excess": {
+          "trigger": "señales de exceso",
+          "action": "→ reducir EC\n→ flush pH 6.2"
+        },
+        "light": {
+          "trigger": "baja luz en flora",
+          "action": "→ aumentar intensidad\n→ meta: 300–400 PPFD"
+        },
+        "newCycle": {
+          "trigger": "nuevo ciclo iniciado",
+          "action": "→ 70% suelo + 30% perlita\n→ pre-humedecer sustrato"
+        }
+      }
     },
     "sales": {
       "title": "Uso → datos → repetición",
@@ -1551,35 +1580,34 @@
     },
     "ecosystem": {
       "badge": "Licenciamiento B2B y Retención",
-      "urgency": "Estamos abriendo 3 marcas para el lanzamiento de este mes.",
-      "exclusivity": "Las primeras entran con exclusividad por categoría.",
+      "urgency": "",
+      "exclusivity": "",
       "consistency": "uso consistente = más recompra",
-      "title": "Para marcas que quieren escalar",
-      "subtitle": "Licencie el MyBud junto con su producto. El cliente compra su marca y gana acceso a la app. Uso consistente = más recompra.",
+      "title": "para marcas que quieren escalar",
+      "subtitle": "El cliente usa su marca y entra automáticamente en el app. uso consistente = más recompra. activo en 48h.",
       "setupTitle": "Setup",
       "setupPrice": "$ 250",
       "recurrentTitle": "Mensual",
-      "recurrentPrice": "$ 59 / mes",
-      "recurrentDetail": "Incluye 10 activaciones PRO (30 días cada)",
+      "recurrentPrice": "$ 59",
+      "recurrentDetail": "incluye: presencia en app, protocolo ejecutado, 10 activaciones PRO",
       "scaleLabel": "Escala",
-      "scaleDetail": "+10 activaciones → +$ 20",
+      "scaleDetail": "+10 activaciones → +$20",
+      "evolution": "activo en 48h",
+      "noEffort": "sin integración | sin esfuerzo",
       "benefit1": {
-        "title": "Más recompra",
-        "desc": "Para mantener el acceso, el cultivador continúa usando su marca."
+        "title": "más recompra",
+        "desc": "el uso consistente lleva a resultados repetibles."
       },
       "benefit2": {
-        "title": "Más retención",
-        "desc": "Su producto se destaca de la competencia ofreciendo una herramienta digital sin costo extra."
+        "title": "más retención",
+        "desc": "su marca se convierte en parte del éxito del cultivador."
       },
       "card": {
-        "line1": "La marca paga la licencia",
-        "line2": "El cliente lleva el PRO",
-        "desc": "Su producto activa el MyBud. El cultivador escanea y tiene la inteligencia premium en las manos.",
-        "licensingBadge": "Licenciamiento B2B",
+        "line1": "la marca paga la licencia",
+        "line2": "el cliente lleva el PRO",
+        "desc": "uso consistente = más recompra. activo en 48h. sin integración. sin esfuerzo.",
         "licensedBy": "licensed by mybud"
       },
-      "licensingBadge": "Licenciamiento B2B y Retención",
-      "licensedBy": "powered by mybud",
       "secondaryFinalCta": "Hablar con el equipo"
     },
     "expansion": {
@@ -1719,7 +1747,7 @@
       "headline": "tu cliente no tiene que pensar.\n{italic}",
       "headlineItalic": "el app muestra qué hacer.",
       "punchline": "tu marca se vuelve rutina en el cultivo. sin distracciones, solo ejecución.",
-      "primaryCta": "hablar con el equipo",
+      "primaryCta": "activar mi marca",
       "secondaryCta": "ver precios",
       "description": "Complete el formulario y volveremos con una evaluación inicial en hasta 1 día hábil.",
       "community": "Entre las primeras marcas en moldear el futuro del cultivo cannábico.",
