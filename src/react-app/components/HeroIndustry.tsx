@@ -3,7 +3,6 @@ import { t, tObject } from '../lib/i18n';
 import { MoveRight } from 'lucide-react';
 
 interface HeroIndustryProps {
-  onCTAClick: () => void;
 }
 
 const HeroIndustry: FC<HeroIndustryProps> = () => {

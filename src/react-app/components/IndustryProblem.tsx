@@ -37,19 +37,19 @@ const IndustryProblem: FC = () => {
                 <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{t('industry.problem.legacyBadge')}</span>
                 <div className="w-2 h-2 rounded-full bg-zinc-200" />
               </div>
-              <div className="p-8 bg-white border border-zinc-200 rounded-3xl shadow-sm mb-10 group-hover:border-zinc-300 transition-colors">
-                <p className="text-zinc-400 font-mono text-sm mb-6 pb-2 border-b border-zinc-50">nutrition_table_v2.pdf</p>
+              <div className="p-8 bg-zinc-100/50 border border-zinc-200/50 rounded-3xl opacity-40 blur-[0.5px] grayscale mb-10 transition-all duration-700">
+                <p className="text-zinc-400 font-mono text-sm mb-6 pb-2 border-b border-zinc-100 italic">nutrition_table_v2.pdf</p>
                 <div className="space-y-4">
                   {[1, 2, 3].map((n) => (
                     <div key={n} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-400/50" />
-                      <span className="text-sm font-bold text-zinc-400 lowercase">{t(`industry.problem.legacyPain${n}`)}</span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-300" />
+                      <span className="text-sm font-bold text-zinc-300 lowercase line-through">{t(`industry.problem.legacyPain${n}`)}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-xl text-zinc-500 font-bold lowercase leading-relaxed italic border-l-2 border-zinc-200 pl-8 transition-colors group-hover:text-zinc-700">{t('industry.problem.pdfNote')}</p>
+            <p className="text-xl text-zinc-400 font-bold lowercase leading-relaxed italic border-l-2 border-zinc-200 pl-8 opacity-60">{t('industry.problem.pdfNote')}</p>
           </div>
 
           {/* Evolution Side: Software Execution */}

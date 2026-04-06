@@ -54,7 +54,7 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
               onClick={onCTAClick}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-bold text-zinc-950 border-2 border-zinc-100 bg-white hover:border-zinc-300 transition-all lowercase shadow-sm"
             >
-              {t('industry.hero.secondaryCta')}
+              {t('industry.ecosystem.secondaryFinalCta')}
             </button>
           </div>
 

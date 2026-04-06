@@ -1910,17 +1910,17 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "sua marca vira decisão no cultivo",
-      "subtitle": "O app diz qual produto usar, quanto aplicar e quando — automaticamente.",
+      "title": "seu cliente abre o app",
+      "subtitle": "semana, dose e pH aparecem automaticamente.",
       "proof": "Qual garrafa abrir, quantos ml aplicar e quando fazer.",
-      "cta": "Ver minha marca dentro do cultivo",
-      "secondaryCta": "Quero testar com minha marca",
+      "cta": "Ver minha marca no app",
+      "secondaryCta": "Como funciona",
       "discoveryHow": "descubra como",
       "words": {
-        "knows": "na hora de preparar a rega",
-        "bottle": "na hora de preparar o tanque",
-        "dose": "definindo a dose exata",
-        "rule": "no centro do resultado"
+        "knows": "e já sabe o que fazer",
+        "bottle": "e vê qual garrafa abrir",
+        "dose": "e segue sua regra real",
+        "rule": "e colhe o melhor resultado"
       }
     },
     "experience": {
@@ -2040,21 +2040,21 @@
       "step1": "1. Usa seu produto",
       "step2": "2. Acessa o MyBud (link ou código)",
       "step3": "3. Já vê o que fazer",
-      "noTech": "👉 Sem integração técnica. Sem esforço do seu lado.",
-      "step1Title": "Uso",
-      "step2Title": "Acesso",
-      "step3Title": "Execução"
+      "noTech": "👉 sem QR complexo | 👉 sem integração | 👉 sem esforço",
+      "step1Title": "Use o produto",
+      "step2Title": "Entre no MyBud",
+      "step3Title": "Siga o cultivo"
     },
     "freeTier": {
-      "title": "Funciona desde o primeiro uso",
-      "description": "O cultivador entra no app e já pode usar calculadora, preparar o tanque e acompanhar até 3 plantas. Sem custo.",
-      "evolution": "E evolui com sua marca",
-      "evolutionDesc": "Com uma ativação PRO, ele desbloqueia o cultivo completo e segue seu protocolo à risca.",
+      "title": "Onboarding imediato. Zero suporte.",
+      "description": "Seu cliente entra no app e já começa a usar — sem que você precise explicar nada. O MyBud já está em uso em beta fechado, automatizando o suporte básico.",
+      "evolution": "Melhor experiência. Menos custo.",
+      "evolutionDesc": "Com a ativação PRO, seu cliente segue seu protocolo técnico à risca, garantindo o resultado e a recompra.",
       "features": {
         "calculator": "Calculadora Ilimitada",
         "tankPrep": "Preparo de Tanque",
         "plantsLimit": "Até 3 plantas",
-        "brandProtocol": "Protocolo da Marca"
+        "brandProtocol": "Protocolo da Marca (PRO)"
       }
     },
     "data": {
@@ -2102,14 +2102,15 @@
         "desc": "Seu produto se destaca da concorrência oferecendo uma ferramenta digital sem custo extra."
       },
       "card": {
-        "line1": "A Marca Paga a Licença",
-        "line2": "O Cliente Leva o PRO",
-        "desc": "Você adquire pacotes B2B. O cultivador escaneia o frasco e tem a inteligência premium nas mãos.",
+        "line1": "A marca paga a licença",
+        "line2": "O cliente leva o PRO",
+        "desc": "Seu produto ativa o MyBud. O cultivador escaneia e tem a inteligência premium nas mãos.",
         "licensingBadge": "Licenciamento B2B",
         "licensedBy": "licensed by mybud"
       },
       "licensingBadge": "Licenciamento B2B e Retenção",
-      "licensedBy": "powered by mybud"
+      "licensedBy": "powered by mybud",
+      "secondaryFinalCta": "Falar com o time"
     },
     "demo": {
       "title": "Sua marca dentro da rotina do cultivo",
@@ -2227,10 +2228,10 @@
       }
     },
     "finalCta": {
-      "text": "Estamos abrindo poucas marcas neste modelo.\nQuem entra agora define o padrão dentro do app.",
-      "headline": "a regra do cultivo.\n{italic}",
-      "headlineItalic": "digitalizada.",
-      "punchline": "sua marca não precisa de anúncios. precisa de execução consistente.",
+      "text": "Estamos abrindo poucas marcas para este lançamento de Abril.\nQuem entra agora define o padrão de execução no mercado.",
+      "headline": "seu cliente não precisa pensar.\n{italic}",
+      "headlineItalic": "o app mostra o que fazer.",
+      "punchline": "sua marca vira rotina no cultivo. sem distrações, apenas execução.",
       "primaryCta": "Ver minha marca no MyBud",
       "secondaryCta": "Entrar como marca parceira",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",

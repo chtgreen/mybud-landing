@@ -1870,17 +1870,17 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "your brand becomes the decision",
-      "subtitle": "The app tells which product to use, how much, and when — automatically.",
+      "title": "your customer opens the app",
+      "subtitle": "week, dose, and pH appear automatically.",
       "proof": "Which bottle to open, how many ml to apply, and when to do it.",
-      "cta": "See my brand inside the grow",
-      "secondaryCta": "I want to test with my brand",
+      "cta": "See my brand in the app",
+      "secondaryCta": "How it works",
       "discoveryHow": "discover how",
       "words": {
-        "knows": "inside the grow routine",
-        "bottle": "when preparing the tank",
-        "dose": "defining the exact dose",
-        "rule": "as the key to results"
+        "knows": "and already knows what to do",
+        "bottle": "and sees which bottle to open",
+        "dose": "and follows your protocol",
+        "rule": "and gets the best result"
       }
     },
     "reframe": {
@@ -1945,21 +1945,21 @@
       "step1": "1. Uses your product",
       "step2": "2. Accesses MyBud (link or code)",
       "step3": "3. Already knows what to do",
-      "noTech": "👉 No technical integration. No effort on your side.",
-      "step1Title": "Usage",
-      "step2Title": "Access",
-      "step3Title": "Execution"
+      "noTech": "👉 no complex QR | 👉 no integration | 👉 no effort",
+      "step1Title": "Use the product",
+      "step2Title": "Enter MyBud",
+      "step3Title": "Follow the grow"
     },
     "freeTier": {
-      "title": "Works from the first use",
-      "description": "The grower enters the app and can already use the calculator, prepare the tank, and follow up to 3 plants. No cost.",
-      "evolution": "And evolves with your brand",
-      "evolutionDesc": "With a PRO activation, they unlock the full cultivation and follow your protocol precisely.",
+      "title": "Immediate Onboarding. Zero support.",
+      "description": "Your customer enters the app and starts using it immediately — without you needing to explain anything. MyBud is already in use in closed beta, automating basic support.",
+      "evolution": "Better experience. Lower cost.",
+      "evolutionDesc": "With a PRO activation, your customer follows your technical protocol to the letter, ensuring results and repurchase.",
       "features": {
         "calculator": "Unlimited Calculator",
         "tankPrep": "Tank Preparation",
         "plantsLimit": "Up to 3 plants",
-        "brandProtocol": "Brand Protocol"
+        "brandProtocol": "Brand Protocol (PRO)"
       }
     },
     "experience": {
@@ -2059,14 +2059,15 @@
         "desc": "Your product stands out from competition by offering a digital tool at no extra cost."
       },
       "card": {
-        "line1": "The Brand Pays the License",
-        "line2": "The Customer Gets PRO",
-        "desc": "You buy B2B packages. The grower scans the bottle and gets premium intelligence in their hands.",
+        "line1": "The brand pays the license",
+        "line2": "The customer gets PRO",
+        "desc": "Your product activates MyBud. The grower scans and gets premium intelligence in their hands.",
         "licensingBadge": "B2B Licensing",
         "licensedBy": "licensed by mybud"
       },
       "licensingBadge": "B2B Licensing & Retention",
-      "licensedBy": "powered by mybud"
+      "licensedBy": "powered by mybud",
+      "secondaryFinalCta": "Talk to the team"
     },
     "demo": {
       "title": "Your brand inside the grow routine",
@@ -2180,10 +2181,10 @@
         }
       },
       "finalCta": {
-        "text": "We are opening spots for a few brands in this model.\nWho joins now defines the standard inside the app.",
-        "headline": "the grow rule.\n{italic}",
-        "headlineItalic": "digitized.",
-        "punchline": "your brand doesn't need ads. it needs consistent execution.",
+        "text": "We are opening few brands for this April launch.\nThose who enter now set the execution standard in the market.",
+        "headline": "your customer doesn't need to think.\n{italic}",
+        "headlineItalic": "the app shows what to do.",
+        "punchline": "your brand becomes the grow routine. no distractions, just execution.",
         "primaryCta": "See my brand in MyBud",
         "secondaryCta": "Join as a partner brand",
         "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",

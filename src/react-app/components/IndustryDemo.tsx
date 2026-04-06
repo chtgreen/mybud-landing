@@ -131,12 +131,18 @@ const IndustryDemo: FC<IndustryDemoProps> = ({ onCTAClick }) => {
         </div>
 
         {onCTAClick && (
-          <div className="text-center mt-24">
+          <div className="text-center mt-24 flex flex-col md:flex-row items-center justify-center gap-6">
             <button
-              onClick={onCTAClick}
-              className="px-12 py-5 rounded-2xl text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-[0_20px_40px_rgba(16,185,129,0.2)] transition-all hover:-translate-y-1"
+              onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-12 py-5 rounded-[32px] text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-[0_20px_40px_rgba(16,185,129,0.2)] transition-all hover:-translate-y-1 active:scale-95"
             >
               {t('industry.demo.cta')}
+            </button>
+            <button
+              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-12 py-5 rounded-[32px] text-xl font-bold text-white border border-white/10 bg-white/5 hover:bg-white/10 transition-all active:scale-95 lowercase"
+            >
+              {t('industry.hero.secondaryCta')}
             </button>
           </div>
         )}
@@ -171,10 +177,13 @@ const TasksMockup: FC<MockupProps> = ({ brandName }) => (
           <Droplet className="w-6 h-6" />
         </div>
         <div className="flex-1">
-          <h4 className="text-white font-black text-sm lowercase leading-tight">{t('industry.demo.mock.tasks.wateringNutrients')}</h4>
-          <p className="text-[10px] font-black text-emerald-500 mt-1 uppercase tracking-wider">2.5ml/L — {brandName}</p>
+          <p className="text-[10px] font-black text-emerald-500 uppercase tracking-widest leading-none mb-1">semana 3</p>
+          <h4 className="text-white font-black text-sm lowercase leading-tight group-hover:text-emerald-400 transition-colors">grow a — 2ml/l</h4>
+          <p className="text-[10px] font-bold text-zinc-500 mt-0.5 lowercase tracking-tight">ph alvo: 6.2</p>
         </div>
-        <div className="w-6 h-6 rounded-full border-2 border-emerald-500/20" />
+        <div className="px-3 py-1.5 rounded-full bg-emerald-500 text-zinc-950 text-[10px] font-black uppercase tracking-tighter animate-pulse lowercase">
+          aplicar agora
+        </div>
       </div>
     </MockItemWrapper>
 

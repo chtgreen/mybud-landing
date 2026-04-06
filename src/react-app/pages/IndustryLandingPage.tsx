@@ -10,10 +10,11 @@ import HeroIndustry from '../components/HeroIndustry';
 import IndustryProblem from '../components/IndustryProblem';
 import IndustryEcosystem from '../components/IndustryEcosystem';
 import IndustryFinalCTA from '../components/IndustryFinalCTA';
-import IndustryDeliverables from '../components/IndustryDeliverables';
+import IndustryFreeTier from '../components/IndustryFreeTier';
+import IndustryEntry from '../components/IndustryEntry';
+import IndustryExecution from '../components/IndustryExecution';
 import IndustryDemo from '../components/IndustryDemo';
 import IndustryBrandExperience from '../components/IndustryBrandExperience';
-import IndustryFreeTier from '../components/IndustryFreeTier';
 
 // Shared URL for scheduling Industry calls
 const INDUSTRY_CALENDAR_URL =
@@ -53,37 +54,36 @@ export default function IndustryLandingPage() {
     window.open(INDUSTRY_CALENDAR_URL, '_blank');
   };
 
-
-
   return (
     <div className="min-h-screen bg-zinc-950">
       <SEO pageType="industry" />
       <Header onLanguageChange={changeLanguage} isIndustry onCTAClick={handleCTAClick} />
 
       {/* Section 1: Hero — simple, punchy, centered */}
-      <HeroIndustry onCTAClick={handleCTAClick} />
+      <HeroIndustry />
 
       {/* Section 2: Problem — why the brand needs this */}
       <IndustryProblem />
 
-      {/* Section 3: Demo — here's exactly how it looks inside the app (Multi-tab) */}
+      {/* Section 3: ENTRY BLOCK (NEW) — Use -> Enter -> Follow */}
+      <IndustryEntry />
+
+      {/* Section 4: Demo — here's exactly how it looks inside the app (Multi-tab) */}
       <IndustryDemo onCTAClick={handleCTAClick} />
 
-      {/* Section 4: The 3 Pillars / Deliverables / Journey */}
-      <IndustryDeliverables />
+      {/* Section 5: Execution (NEW) — Your protocol becomes execution */}
+      <IndustryExecution />
 
-      {/* Section 5: FREE TIER -> "Funciona desde o primeiro uso" */}
+      {/* Section 6: FREE TIER -> "Onboarding Zero Suporte" */}
       <IndustryFreeTier />
 
-      {/* Section 6: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
+      {/* Section 7: PRO UNLOCK -> "Compre o produto -> desbloqueie o app" */}
       <IndustryEcosystem />
 
-      {/* Section 7: THE EXPERIENCE (STEP 0 - INTERACTIVE) 
-          Moved to the end (after pricing) to capture convinced users.
-      */}
+      {/* Section 8: THE EXPERIENCE (STEP 0 - INTERACTIVE) */}
       <IndustryBrandExperience onCTAClick={handleCTAClick} />
 
-      {/* Section 8: Final CTA — dark closing */}
+      {/* Section 9: Final CTA — dark closing */}
       <IndustryFinalCTA onCTAClick={handleCTAClick} />
 
       <Footer />
