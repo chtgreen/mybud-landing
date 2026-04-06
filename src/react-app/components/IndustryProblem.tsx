@@ -20,7 +20,7 @@ const IndustryProblem: FC = () => {
 
         {/* Impact Headline */}
         <div className="grid lg:grid-cols-2 gap-24 items-end mb-40">
-          <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-zinc-950 tracking-[-0.03em] leading-[0.95] md:leading-[0.9] lowercase animate-in fade-in slide-in-from-bottom-8 duration-1000 whitespace-pre-line">
+          <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-zinc-950 tracking-[-0.03em] leading-tight md:leading-[0.9] lowercase animate-in fade-in slide-in-from-bottom-8 duration-1000 whitespace-pre-line">
             {t('industry.problem.title')}
           </h2>
           <p className="text-xl md:text-2xl text-zinc-950 font-black leading-relaxed lowercase max-w-lg mb-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
@@ -86,8 +86,16 @@ const IndustryProblem: FC = () => {
                   <p className="text-[9px] font-black text-zinc-950">quantos ML de em-5 foliar?</p>
                 </div>
 
-                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[5deg] max-w-[160px] opacity-60 scale-90">
+                <div className="absolute left-1/2 -bottom-12 -translate-x-1/2 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[5deg] max-w-[160px] opacity-60 scale-90">
                   <p className="text-[9px] font-black text-zinc-950">o que usar para combater gnats?</p>
+                </div>
+
+                <div className="absolute -left-12 bottom-10 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[-5deg] max-w-[140px] opacity-70 scale-90">
+                  <p className="text-[9px] font-black text-zinc-950">luz a 100% ou 60%?</p>
+                </div>
+
+                <div className="absolute left-4 -top-16 bg-white p-3 rounded-xl shadow-md border border-zinc-100 rotate-[3deg] max-w-[150px] opacity-60 scale-90">
+                  <p className="text-[9px] font-black text-zinc-950">qual a receita do solo?</p>
                 </div>
               </div>
 
@@ -112,23 +120,26 @@ const IndustryProblem: FC = () => {
 
             <div className="space-y-12 relative z-10">
               <div className="max-w-md">
-                <h4 className="text-3xl md:text-5xl font-black text-white lowercase leading-[0.95] mb-8">Agora o app diz o que fazer.</h4>
+                <h4 className="text-3xl md:text-5xl font-black text-white lowercase leading-[0.95] mb-8">Agora o MyBud conecta os pontos.</h4>
                 <div className="p-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl mb-8 group-hover:scale-105 transition-transform">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-zinc-950">
-                      <span className="font-black">✓</span>
+                      <span className="font-black text-xl">✓</span>
                     </div>
-                    <p className="text-white font-black text-xl lowercase">Seguir sua tabela</p>
+                    <p className="text-white font-black text-xl lowercase">conectar os produtos ao manejo</p>
                   </div>
-                  <p className="text-emerald-500/60 font-black text-xs uppercase tracking-widest">Execução garantida todos os dias.</p>
+                  <p className="text-emerald-500/60 font-black text-xs uppercase tracking-widest">Sua marca em todos os passos.</p>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-6 group/cta cursor-pointer">
-                <div className="w-14 h-14 rounded-full bg-white text-zinc-950 flex items-center justify-center group-hover/cta:scale-110 transition-all">
-                  <MoveRight className="w-6 h-6 group-hover/cta:translate-x-1 transition-transform" />
+                <div
+                  onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="flex items-center gap-6 group/cta cursor-pointer"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white text-zinc-950 flex items-center justify-center group-hover/cta:scale-110 transition-all">
+                    <MoveRight className="w-6 h-6 group-hover/cta:translate-x-1 transition-transform" />
+                  </div>
+                  <span className="text-xl font-black text-white lowercase group-hover/cta:text-emerald-400 transition-colors">Digitalizar meu protocolo</span>
                 </div>
-                <span className="text-xl font-black text-white lowercase group-hover/cta:text-emerald-400 transition-colors">Digitalizar meu protocolo</span>
               </div>
             </div>
           </div>
