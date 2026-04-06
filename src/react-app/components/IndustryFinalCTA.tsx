@@ -41,20 +41,20 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
             </p>
           </div>
 
-          {/* SaaS High-Contrast Actions */}
+          {/* High-Contrast Actions */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 pt-16">
             <button
-              onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={onCTAClick}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
-              {t('industry.hero.cta')}
+              Contactar time
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
-              onClick={onCTAClick}
+              onClick={() => document.getElementById('ecosystem')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-bold text-zinc-950 border-2 border-zinc-100 bg-white hover:border-zinc-300 transition-all lowercase shadow-sm"
             >
-              {t('industry.ecosystem.secondaryFinalCta')}
+              Ver pricing
             </button>
           </div>
 
