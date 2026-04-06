@@ -23,20 +23,10 @@ const THEMES = {
     '213': { bg: '#EB4C80', title: '#FFFFFF', text: '#FFFFFF', accent: '#AAD268', logo: '/mybud-logo-white.svg', name: 'Pantone 213 U' },
     '517': { bg: '#F9C9DE', title: '#EB4C80', text: '#000000', accent: '#288664', logo: '/mybud-logo-green.svg', name: 'Pantone 517 U' },
     '7541': { bg: '#E6E7E8', title: '#288664', text: '#000000', accent: '#AAD268', logo: '/mybud-logo-green.svg', name: 'Pantone 7541 U' },
-    'white': { bg: '#FFFFFF', title: '#288664', text: '#121212', accent: '#AAD268', logo: '/mybud-logo-green.svg', name: 'White' },
-    'black': { bg: '#000000', title: '#AAD268', text: '#FFFFFF', accent: '#288664', logo: '/mybud-logo-white.svg', name: 'Black' },
-    '446': { bg: '#373D3F', title: '#AAD268', text: '#FFFFFF', accent: '#288664', logo: '/mybud-logo-white.svg', name: 'Deep Charcoal' },
-    '7481': { bg: '#00D26A', title: '#000000', text: '#000000', accent: '#FFFFFF', logo: '/mybud-logo-green.svg', name: 'Toxic Neon' },
-    '663': { bg: '#F2F2F2', title: '#288664', text: '#000000', accent: '#EB4C80', logo: '/mybud-logo-green.svg', name: 'Ghostly Gray' },
-    '5415': { bg: '#5B7B8E', title: '#FFFFFF', text: '#E6E7E8', accent: '#AAD268', logo: '/mybud-logo-white.svg', name: 'Dusk Blue' },
-    '2425': { bg: '#5A2D81', title: '#AAD268', text: '#FFFFFF', accent: '#EB4C80', logo: '/mybud-logo-white.svg', name: 'Royal Plum' },
-    '7527': { bg: '#D6D2C4', title: '#288664', text: '#373D3F', accent: '#AAD268', logo: '/mybud-logo-green.svg', name: 'Warm Sand' },
-    '411': { bg: '#4A4139', title: '#AAD268', text: '#FFFFFF', accent: '#288664', logo: '/mybud-logo-white.svg', name: 'Earth Soil' },
-    '1235': { bg: '#FFB81C', title: '#000000', text: '#000000', accent: '#288664', logo: '/mybud-logo-green.svg', name: 'Honey Mustard' },
-    '7401': { bg: '#F5E1A4', title: '#288664', text: '#000000', accent: '#EB4C80', logo: '/mybud-logo-green.svg', name: 'Creamy Silk' },
-    '555': { bg: '#1D4F38', title: '#AAD268', text: '#FFFFFF', accent: '#AAD268', logo: '/mybud-logo-white.svg', name: 'Deep Forest' },
-    'midnight': { bg: '#090909', title: '#00D26A', text: '#FFFFFF', accent: '#5B7B8E', logo: '/mybud-logo-white.svg', name: 'Dark Glow' }
+    'white': { bg: '#FFFFFF', title: '#288664', text: '#121212', accent: '#AAD268', logo: '/mybud-logo-green.svg', name: 'Brand White' },
+    'black': { bg: '#000000', title: '#AAD268', text: '#FFFFFF', accent: '#288664', logo: '/mybud-logo-white.svg', name: 'Brand Black' }
 };
+
 
 const SHAPES = [
     { id: 'shape-1', type: 'gradient', className: 'bg-gradient-to-br from-white/10 to-transparent rounded-full blur-2xl' },
@@ -109,15 +99,15 @@ const PRESETS: Preset[] = [
         ]
     },
     {
-        id: 'organic-sand',
-        name: 'Organic Aura',
-        theme: '7527',
-        title: 'LIVING\nSOIL\nSCIENCE',
-        content: 'The most advanced biological tracking system ever built.',
+        id: 'brand-pulse',
+        name: 'Brand Pulse',
+        theme: '213',
+        title: 'VIBRANT\nENERGY',
+        content: 'Unleash the full potential of your brand with our premium tools.',
         titleSize: 56, contentSize: 20, titlePos: { x: 0, y: 40 }, contentPos: { x: 0, y: 180 },
         items: [
-            { id: 'or-1', type: 'shape', className: SHAPES[5].className, size: 300, position: { x: -100, y: 200 } },
-            { id: 'or-2', type: 'shape', className: 'bg-emerald-900/10 blur-2xl rounded-full', size: 200, position: { x: 120, y: -200 } }
+            { id: 'bp-1', type: 'shape', className: SHAPES[5].className, size: 300, position: { x: -100, y: 200 } },
+            { id: 'bp-2', type: 'shape', className: 'bg-white/10 blur-2xl rounded-full', size: 200, position: { x: 120, y: -200 } }
         ]
     },
     {
@@ -139,15 +129,43 @@ const PRESETS: Preset[] = [
         items: [{ id: 'p2-1', type: 'shape', className: SHAPES[5].className, size: 160, position: { x: 0, y: 180 } }]
     },
     {
-        id: 'founder-pink',
-        name: 'Founder Club',
-        theme: '213',
-        title: 'JOIN THE\nELITE 1%',
-        content: 'Founders Edition 2025. Unlock exclusive features and shape the ecosystem.',
+        id: 'royal-insight',
+        name: 'Royal Insight',
+        theme: '2635',
+        title: 'PREMIUM\nDATA',
+        content: 'The most sophisticated analytics platform for the modern cannabis industry.',
         titleSize: 64, contentSize: 22, titlePos: { x: 0, y: 80 }, contentPos: { x: 0, y: 200 },
-        items: [{ id: 'p3-1', type: 'shape', className: SHAPES[2].className, size: 200, position: { x: 0, y: -100 } }]
+        items: [{ id: 'ri-1', type: 'shape', className: SHAPES[2].className, size: 200, position: { x: 0, y: -100 } }]
+    },
+    {
+        id: 'clinical-white',
+        name: 'Clinical White',
+        theme: 'white',
+        title: 'MEDICAL\nGRADE',
+        content: 'Strict adherence to global standards for professional cultivation.',
+        titleSize: 52, contentSize: 18, titlePos: { x: 0, y: 20 }, contentPos: { x: 0, y: 140 },
+        items: [{ id: 'cw-1', type: 'shape', className: SHAPES[4].className, size: 320, position: { x: 0, y: 80 } }]
+    },
+    {
+        id: 'emerald-dark',
+        name: 'Emerald Deep',
+        theme: '6167',
+        title: 'GROWER\nEXCELLENCE',
+        content: 'Mastering the art and science of premium botanical growth.',
+        titleSize: 48, contentSize: 20, titlePos: { x: 0, y: 0 }, contentPos: { x: 0, y: 120 },
+        items: [{ id: 'ed-1', type: 'shape', className: SHAPES[0].className, size: 400, position: { x: 0, y: 0 } }]
+    },
+    {
+        id: 'lime-neon',
+        name: 'Lime Energy',
+        theme: '2299',
+        title: 'NEXT GEN\nTRACKER',
+        content: 'Reimagining how professionals interact with their crops.',
+        titleSize: 56, contentSize: 18, titlePos: { x: 0, y: 40 }, contentPos: { x: 0, y: 160 },
+        items: [{ id: 'ln-1', type: 'shape', className: SHAPES[3].className, size: 300, position: { x: 0, y: 100 } }]
     },
 ];
+
 
 const StoriesPage: React.FC = () => {
     const [theme, setTheme] = useState<keyof typeof THEMES>('6167');
@@ -300,7 +318,7 @@ const StoriesPage: React.FC = () => {
                             <Sparkles size={16} className="text-emerald-400" />
                             <span className="text-[10px] uppercase font-black tracking-widest text-zinc-500">2025 Presets</span>
                         </div>
-                        <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">20 TOTAL</span>
+                        <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">{PRESETS.length} TOTAL</span>
                     </div>
                     <div className="grid grid-cols-1 gap-3">
                         {PRESETS.map((p) => (
