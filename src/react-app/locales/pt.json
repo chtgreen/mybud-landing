@@ -1910,13 +1910,18 @@
     },
     "hero": {
       "badge": "O app que growers usam para cultivar",
-      "title": "a regra do cultivo.",
-      "subtitle": "sua marca não precisa de anúncios. precisa de execução consistente.",
-      "cta": "Ver minha marca",
-      "secondaryCta": "Como funciona",
+      "title": "sua marca dentro do cultivo",
+      "subtitle": "seu cliente compra seu produto\ne usa errado",
+      "cta": "falar com o time",
+      "secondaryCta": "ver o preço",
       "discoveryHow": "descubra como",
       "words": {
-        "digitalized": "digitalizada."
+        "execution": "vira execução no cultivo",
+        "decision": "vira decisão na hora da rega",
+        "standard": "vira padrão de uso no grow",
+        "presence": "vira presença em todo o ciclo",
+        "consistency": "vira consistência no resultado",
+        "automatic": "vira escolha automática do grower"
       }
     },
     "dashboard": {
@@ -2281,8 +2286,8 @@
       "headline": "a regra do cultivo.\n{italic}",
       "headlineItalic": "digitalizada.",
       "punchline": "seu cliente não precisa pensar\nele só executa — com sua marca",
-      "primaryCta": "Ver minha marca",
-      "secondaryCta": "Entrar como marca parceira",
+      "primaryCta": "falar com o time",
+      "secondaryCta": "ver o preço",
       "description": "Preencha o formulário e retornaremos com um diagnóstico inicial em até 1 dia útil.",
       "community": "Entre as primeiras marcas a moldar o futuro do cultivo canábico no Brasil.",
       "form": {

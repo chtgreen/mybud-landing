@@ -65,7 +65,7 @@ export default function IndustryLandingPage() {
       />
 
       {/* Section 1: Hero — simple, punchy, centered (UNTOUCHED) */}
-      <HeroIndustry />
+      <HeroIndustry onCTAClick={handleCTAClick} />
 
       {/* Block 1: Problem + Google + Gap — MERGED (Updated) */}
       <IndustryProblem />

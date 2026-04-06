@@ -36,9 +36,6 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
                 </Fragment>
               ))}
             </h2>
-            <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl mx-auto leading-relaxed font-bold lowercase opacity-90 backdrop-blur-sm">
-              {t('industry.finalCta.punchline')}
-            </p>
           </div>
 
           {/* High-Contrast Actions */}
@@ -47,14 +44,14 @@ const IndustryFinalCTA: FC<IndustryFinalCTAProps> = ({ onCTAClick }) => {
               onClick={onCTAClick}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-black bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
-              Contactar time
+              {t('industry.finalCta.primaryCta')}
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
               onClick={() => document.getElementById('ecosystem')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full md:w-auto px-16 py-6 rounded-full text-xl font-bold text-zinc-950 border-2 border-zinc-100 bg-white hover:border-zinc-300 transition-all lowercase shadow-sm"
             >
-              Ver pricing
+              {t('industry.finalCta.secondaryCta')}
             </button>
           </div>
 

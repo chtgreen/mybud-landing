@@ -1870,13 +1870,19 @@
     },
     "hero": {
       "badge": "The app growers use to grow",
-      "title": "the rule of cultivation.",
-      "subtitle": "your brand doesn't need ads. it needs consistent execution.",
-      "cta": "See my brand",
-      "secondaryCta": "How it works",
+      "title": "your brand becomes part of the routine",
+      "subtitle": "week, dose, and pH appear automatically.",
+      "proof": "Which bottle to open, how many ml to apply, and when to do it.",
+      "cta": "talk to the team",
+      "secondaryCta": "see pricing",
       "discoveryHow": "discover how",
       "words": {
-        "digitalized": "digitized."
+        "execution": "turns guidance into action",
+        "decision": "becomes the command at feeding time",
+        "standard": "becomes the usage standard in the grow",
+        "presence": "becomes presence throughout the cycle",
+        "consistency": "becomes consistency in the results",
+        "automatic": "becomes the grower's automatic choice"
       }
     },
     "dashboard": {
@@ -2220,8 +2226,8 @@
         "headline": "the rule of cultivation.\n{italic}",
         "headlineItalic": "digitized.",
         "punchline": "your brand doesn't need ads. it needs consistent execution.",
-        "primaryCta": "See my brand",
-        "secondaryCta": "Join as a partner brand",
+        "primaryCta": "talk to the team",
+        "secondaryCta": "see pricing",
         "description": "Fill out the form and we'll get back with an initial assessment within 1 business day.",
         "community": "Join the first brands shaping the future of cannabis cultivation.",
         "form": {

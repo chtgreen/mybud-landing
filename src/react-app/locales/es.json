@@ -1364,8 +1364,8 @@
       "title": "tu marca se vuelve parte de la rutina",
       "subtitle": "semana, dosis y pH aparecen automáticamente.",
       "proof": "Qué botella abrir, cuántos ml aplicar y cuándo hacerlo.",
-      "cta": "Digitalizar mi protocolo ahora",
-      "secondaryCta": "Cómo funciona",
+      "cta": "hablar con el equipo",
+      "secondaryCta": "ver precios",
       "discoveryHow": "descubre cómo",
       "words": {
         "execution": "se vuelve ejecución en el cultivo",
@@ -1686,12 +1686,11 @@
       }
     },
     "finalCta": {
-      "text": "Estamos abriendo pocas marcas para este lanzamiento de Abril.\nQuien entra ahora define el estándar de ejecución en el mercado.",
       "headline": "tu cliente no tiene que pensar.\n{italic}",
       "headlineItalic": "el app muestra qué hacer.",
       "punchline": "tu marca se vuelve rutina en el cultivo. sin distracciones, solo ejecución.",
-      "primaryCta": "Ver mi marca en MyBud",
-      "secondaryCta": "Entrar como marca socia",
+      "primaryCta": "hablar con el equipo",
+      "secondaryCta": "ver precios",
       "description": "Complete el formulario y volveremos con una evaluación inicial en hasta 1 día hábil.",
       "community": "Entre las primeras marcas en moldear el futuro del cultivo cannábico.",
       "form": {

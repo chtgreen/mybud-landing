@@ -3,9 +3,10 @@ import { t, tObject } from '../lib/i18n';
 import { MoveRight } from 'lucide-react';
 
 interface HeroIndustryProps {
+  onCTAClick: () => void;
 }
 
-const HeroIndustry: FC<HeroIndustryProps> = () => {
+const HeroIndustry: FC<HeroIndustryProps> = ({ onCTAClick }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -84,22 +85,19 @@ const HeroIndustry: FC<HeroIndustryProps> = () => {
                 </div>
               </div>
             </h1>
-            <p className="mt-8 text-sm md:text-xl text-zinc-500 font-bold lowercase tracking-tight animate-in fade-in slide-in-from-left-8 duration-1000 delay-300 max-w-md leading-relaxed opacity-80">
-              {t('industry.hero.subtitle')}
-            </p>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col md:flex-row items-center gap-6 animate-in fade-in slide-in-from-left-8 duration-1200 delay-500 w-full md:w-auto mb-20">
             <button
-              onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={onCTAClick}
               className="w-full md:w-auto px-14 py-5 rounded-full text-xl font-black bg-white text-zinc-950 hover:bg-zinc-100 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl flex items-center justify-center gap-4 group"
             >
               {t('industry.hero.cta')}
               <MoveRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
             </button>
             <button
-              onClick={() => document.getElementById('brand-experience')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('ecosystem')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full md:w-auto px-14 py-5 rounded-full text-xl font-bold text-white border border-white/20 bg-white/5 backdrop-blur-3xl hover:bg-white/10 transition-all flex items-center justify-center gap-3 lowercase"
             >
               {t('industry.hero.secondaryCta')}

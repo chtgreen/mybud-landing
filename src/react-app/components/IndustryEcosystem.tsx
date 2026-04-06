@@ -4,7 +4,7 @@ import { Target, CheckCircle2 } from './icons';
 
 const IndustryEcosystem: FC = () => {
   return (
-    <section className="py-24 md:py-40 bg-zinc-950 text-white relative border-b border-white/5">
+    <section id="ecosystem" className="py-24 md:py-40 bg-zinc-950 text-white relative border-b border-white/5">
       {/* 2026 Dark Background Layering */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-700/5 rounded-full blur-[160px] pointer-events-none" />
 
