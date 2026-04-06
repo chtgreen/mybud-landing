@@ -46,18 +46,21 @@ const IndustryProductExpansion: FC = () => {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {items.map((item) => (
-                        <div key={item.key} className="p-10 rounded-[32px] bg-zinc-50 border border-zinc-100 hover:border-emerald-500/30 transition-all group">
-                            <div className="w-14 h-14 rounded-2xl bg-white border border-zinc-100 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-all duration-500">
-                                <item.Icon className="w-7 h-7" />
+                        <div key={item.key} className="p-12 rounded-[40px] bg-zinc-50 border border-zinc-100 hover:border-emerald-500/30 hover:bg-white hover:shadow-[0_20px_60px_rgba(16,185,129,0.05)] transition-all group relative overflow-hidden">
+                            <div className="w-16 h-16 rounded-[24px] bg-white border border-zinc-100 flex items-center justify-center mb-10 shadow-sm group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-hover:shadow-[0_10px_20px_rgba(16,185,129,0.2)] transition-all duration-500 relative z-10">
+                                <item.Icon className="w-8 h-8" />
                             </div>
-                            <h4 className="text-2xl font-black text-zinc-950 mb-3 lowercase tracking-tight">
+                            <h4 className="text-2xl font-black text-zinc-950 mb-4 lowercase tracking-tight relative z-10">
                                 {t(`industry.expansion.items.${item.key}.title`)}
                             </h4>
-                            <p className="text-zinc-500 font-bold lowercase leading-relaxed">
+                            <p className="text-zinc-500 font-bold lowercase leading-relaxed relative z-10">
                                 {t(`industry.expansion.items.${item.key}.desc`)}
                             </p>
+
+                            {/* Decorative Glow */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                     ))}
                 </div>
